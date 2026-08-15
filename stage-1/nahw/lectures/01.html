@@ -1,39 +1,877 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>محاضرة كاملة - مدخل إلى علم النحو</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../../style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مدخل إلى علم النحو</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --deep-green:#1f4d3d;
+    --deep-green-2:#173a2e;
+    --gold:#b8873a;
+    --gold-light:#e8c988;
+    --cream:#faf5ea;
+    --paper:#fffdf8;
+    --brown:#5c4530;
+    --ink:#2a241c;
+    --muted:#7a7161;
+    --line:#e5dcc6;
+    --shadow: 0 10px 30px rgba(31,77,61,.10);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Cairo', sans-serif;
+    line-height:1.9;
+    background-image:
+      radial-gradient(circle at 10% 8%, rgba(184,135,58,.08) 0, transparent 40%),
+      radial-gradient(circle at 90% 15%, rgba(31,77,61,.07) 0, transparent 45%);
+  }
+  a{color:inherit;}
+  .container{max-width:920px;margin:0 auto;padding:0 20px;}
+
+  /* ===== Top banner ===== */
+  .banner{
+    background:linear-gradient(135deg,var(--gold) 0%, var(--gold-light) 100%);
+    color:var(--deep-green-2);
+    text-align:center;
+    font-weight:700;
+    padding:10px 14px;
+    font-size:.95rem;
+  }
+  .banner button{
+    background:var(--deep-green-2);
+    color:var(--gold-light);
+    border:none;
+    padding:6px 16px;
+    border-radius:20px;
+    font-family:inherit;
+    font-weight:700;
+    cursor:pointer;
+    margin-right:10px;
+    font-size:.9rem;
+  }
+  .banner button:hover{background:var(--deep-green);}
+
+  /* ===== Header ===== */
+  header{
+    position:relative;
+    background:
+      linear-gradient(180deg, rgba(23,58,46,.92), rgba(23,58,46,.97)),
+      repeating-linear-gradient(45deg, rgba(232,201,136,.05) 0 2px, transparent 2px 40px);
+    color:var(--cream);
+    padding:56px 20px 44px;
+    text-align:center;
+    overflow:hidden;
+  }
+  header::before, header::after{
+    content:"";
+    position:absolute;
+    width:260px;height:260px;
+    border:2px solid rgba(232,201,136,.18);
+    border-radius:50%;
+    top:-120px;
+  }
+  header::before{right:-100px;}
+  header::after{left:-120px;top:auto;bottom:-140px;}
+  .series-tag{
+    display:inline-block;
+    background:rgba(232,201,136,.15);
+    border:1px solid var(--gold-light);
+    color:var(--gold-light);
+    padding:5px 18px;
+    border-radius:20px;
+    font-size:.85rem;
+    font-weight:700;
+    margin-bottom:18px;
+    letter-spacing:.5px;
+  }
+  header h1{
+    font-family:'Amiri', serif;
+    font-size:2.6rem;
+    margin:0 0 14px;
+    font-weight:700;
+  }
+  header .subtitle{
+    max-width:640px;
+    margin:0 auto 20px;
+    color:#dcece3;
+    font-size:1.05rem;
+  }
+  .meta-row{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+    font-size:.9rem;
+    color:var(--gold-light);
+  }
+  .meta-row span{
+    background:rgba(0,0,0,.15);
+    padding:5px 14px;
+    border-radius:14px;
+    border:1px solid rgba(232,201,136,.25);
+  }
+  .ornament{
+    text-align:center;
+    color:var(--gold);
+    font-size:1.4rem;
+    letter-spacing:10px;
+    margin:0;
+    padding:14px 0;
+    background:var(--paper);
+  }
+
+  /* ===== TOC ===== */
+  .toc-wrap{background:var(--paper);padding:10px 0 40px;}
+  .toc{
+    background:var(--cream);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:26px 28px;
+    box-shadow:var(--shadow);
+  }
+  .toc h2{
+    margin:0 0 16px;
+    font-family:'Amiri', serif;
+    color:var(--deep-green-2);
+    font-size:1.35rem;
+    border-bottom:2px solid var(--gold-light);
+    padding-bottom:10px;
+  }
+  .toc ol{
+    columns:2;
+    column-gap:30px;
+    margin:0;
+    padding-inline-start:22px;
+  }
+  .toc li{margin-bottom:9px; break-inside:avoid;}
+  .toc a{
+    text-decoration:none;
+    color:var(--brown);
+    font-weight:600;
+    font-size:.95rem;
+    transition:color .2s;
+  }
+  .toc a:hover{color:var(--deep-green);}
+  @media(max-width:640px){.toc ol{columns:1;}}
+
+  /* ===== Sections ===== */
+  main{background:var(--paper);}
+  section.block{
+    max-width:920px;
+    margin:0 auto;
+    padding:46px 20px;
+    border-bottom:1px dashed var(--line);
+  }
+  section.block:last-of-type{border-bottom:none;}
+  .sec-head{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:22px;
+  }
+  .sec-icon{
+    flex:0 0 auto;
+    width:48px;height:48px;
+    border-radius:12px;
+    background:linear-gradient(135deg,var(--deep-green),var(--deep-green-2));
+    color:var(--gold-light);
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.4rem;
+    box-shadow:var(--shadow);
+  }
+  .sec-head h2{
+    font-family:'Amiri', serif;
+    color:var(--deep-green-2);
+    font-size:1.6rem;
+    margin:0;
+  }
+  .lead{color:var(--muted); font-size:1.02rem; margin-bottom:18px;}
+  p{margin:0 0 16px;}
+  h3.sub{
+    color:var(--brown);
+    font-family:'Amiri', serif;
+    font-size:1.2rem;
+    margin:26px 0 12px;
+    border-right:4px solid var(--gold);
+    padding-right:12px;
+  }
+
+  /* ===== Blocks ===== */
+  .definition-box{
+    background:#f4efe0;
+    border:1px solid var(--gold-light);
+    border-right:5px solid var(--gold);
+    border-radius:10px;
+    padding:16px 20px;
+    margin:16px 0;
+  }
+  .definition-box .tag{
+    color:var(--gold);
+    font-weight:800;
+    font-size:.82rem;
+    display:block;
+    margin-bottom:6px;
+  }
+  .evidence-block{
+    background:#eef5f0;
+    border:1px solid #c9e0d2;
+    border-right:5px solid var(--deep-green);
+    border-radius:10px;
+    padding:16px 20px;
+    margin:16px 0;
+    font-family:'Amiri', serif;
+    font-size:1.08rem;
+    color:var(--deep-green-2);
+  }
+  .evidence-block .tag{
+    font-family:'Cairo',sans-serif;
+    color:var(--deep-green);
+    font-weight:800;
+    font-size:.82rem;
+    display:block;
+    margin-bottom:6px;
+  }
+  .evidence-block .who{
+    display:block;
+    margin-top:8px;
+    font-family:'Cairo',sans-serif;
+    font-size:.85rem;
+    color:var(--muted);
+  }
+  .quote-block{
+    background:#fff;
+    border-right:5px solid var(--brown);
+    border-radius:10px;
+    padding:16px 20px;
+    margin:16px 0;
+    box-shadow:var(--shadow);
+  }
+  .quote-block .tag{color:var(--brown);font-weight:800;font-size:.82rem;display:block;margin-bottom:6px;}
+  .key-point{
+    background:linear-gradient(90deg,#fff8ea,#fffdf8);
+    border:1px solid var(--gold-light);
+    border-radius:10px;
+    padding:14px 20px;
+    margin:14px 0;
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+  }
+  .key-point .ic{color:var(--gold); font-size:1.2rem;}
+  .warning-box{
+    background:#fbeee9;
+    border:1px solid #e7b9a5;
+    border-right:5px solid #b3452c;
+    border-radius:10px;
+    padding:16px 20px;
+    margin:16px 0;
+  }
+  .warning-box .tag{color:#b3452c;font-weight:800;font-size:.82rem;display:block;margin-bottom:6px;}
+  .comparison-table{width:100%;border-collapse:collapse;margin:18px 0;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);}
+  .comparison-table th{background:var(--deep-green-2);color:var(--gold-light);padding:12px 14px;text-align:right;font-size:.92rem;}
+  .comparison-table td{background:#fff;padding:12px 14px;border-bottom:1px solid var(--line);font-size:.92rem;}
+  .comparison-table tr:nth-child(even) td{background:#faf6ec;}
+  .flow-wrap{display:flex;flex-direction:column;gap:0;margin:20px 0;}
+  .flow-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:14px 18px;
+    position:relative;
+    margin-right:36px;
+    box-shadow:var(--shadow);
+  }
+  .flow-card::before{
+    content:attr(data-n);
+    position:absolute;
+    right:-36px;
+    top:8px;
+    width:30px;height:30px;
+    border-radius:50%;
+    background:var(--deep-green);
+    color:var(--gold-light);
+    display:flex;align-items:center;justify-content:center;
+    font-weight:800;
+    font-size:.85rem;
+  }
+  .flow-card + .flow-card{margin-top:22px;}
+  .flow-card + .flow-card::after{
+    content:"";
+    position:absolute;
+    right:-21px;top:-22px;
+    width:2px;height:22px;
+    background:var(--gold-light);
+  }
+  .flow-card h4{margin:0 0 6px;color:var(--deep-green-2);font-family:'Amiri',serif;font-size:1.1rem;}
+  .action-card{
+    background:linear-gradient(135deg,var(--deep-green),var(--deep-green-2));
+    color:var(--cream);
+    border-radius:12px;
+    padding:20px 22px;
+    margin:18px 0;
+  }
+  .action-card .tag{color:var(--gold-light);font-weight:800;font-size:.82rem;display:block;margin-bottom:8px;}
+  .action-card ul{margin:0;padding-inline-start:20px;}
+  .action-card li{margin-bottom:6px;}
+
+  .badges{display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 22px;}
+  .badge{
+    background:#f4efe0; border:1px solid var(--gold-light);
+    color:var(--brown); padding:6px 14px; border-radius:16px; font-size:.85rem; font-weight:700;
+  }
+
+  .story{
+    background:#fffaf0;
+    border:1px dashed var(--gold);
+    border-radius:10px;
+    padding:18px 20px;
+    margin:16px 0;
+  }
+  .story h4{margin:0 0 8px; color:var(--brown); font-family:'Amiri',serif;}
+
+  footer{
+    background:linear-gradient(180deg,var(--deep-green-2),var(--deep-green));
+    color:var(--cream);
+    text-align:center;
+    padding:50px 20px 40px;
+  }
+  footer .dua{
+    font-family:'Amiri', serif;
+    font-size:1.3rem;
+    color:var(--gold-light);
+    max-width:640px;
+    margin:0 auto 22px;
+  }
+  footer button{
+    background:var(--gold);
+    color:var(--deep-green-2);
+    border:none;
+    padding:12px 30px;
+    border-radius:24px;
+    font-family:inherit;
+    font-weight:800;
+    font-size:1rem;
+    cursor:pointer;
+    margin-top:6px;
+  }
+  footer button:hover{background:var(--gold-light);}
+  footer .fine{margin-top:24px; color:#a9c2b6; font-size:.8rem;}
+
+  ::selection{background:var(--gold-light); color:var(--deep-green-2);}
+
+  @media(max-width:640px){
+    header h1{font-size:2rem;}
+    .sec-head h2{font-size:1.3rem;}
+  }
+
+  /* ===== Breadcrumbs & completion ===== */
+  .breadcrumbs{
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    padding:12px 20px;
+    font-size:.85rem;
+    color:var(--muted);
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:6px;
+    max-width:920px;
+    margin:0 auto;
+  }
+  .breadcrumbs a{text-decoration:none; color:var(--deep-green); font-weight:600;}
+  .breadcrumbs a:hover{color:var(--gold);}
+  .breadcrumbs .sep{color:var(--muted); padding:0 2px;}
+  .breadcrumbs [aria-current="page"]{color:var(--brown); font-weight:700;}
+
+  .checkbox-line{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:rgba(0,0,0,.15);
+    border:1px solid rgba(232,201,136,.3);
+    color:var(--gold-light);
+    padding:8px 16px;
+    border-radius:20px;
+    font-size:.9rem;
+    font-weight:700;
+    cursor:pointer;
+    margin-top:18px;
+  }
+  .checkbox-line input{width:16px;height:16px; accent-color:var(--gold);}
+
+  .lecture-nav{
+    max-width:920px;
+    margin:0 auto;
+    padding:30px 20px 0;
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-block;
+    text-decoration:none;
+    padding:10px 22px;
+    border-radius:20px;
+    font-weight:700;
+    font-size:.92rem;
+  }
+  .btn-outline{
+    border:1.5px solid var(--deep-green);
+    color:var(--deep-green);
+    background:transparent;
+  }
+  .btn-outline:hover{background:var(--deep-green); color:var(--cream);}
+</style>
 </head>
-<body class="" data-page="lecture" data-lecture-id="stage1_nahw_01">
-  <div class="page">
-    <nav class="breadcrumbs"><a href="../../../index.html">الرئيسية</a><span class="sep">/</span><a href="../../index.html">المرحلة الأولى</a><span class="sep">/</span><a href="../index.html">مدخل إلى علم النحو</a><span class="sep">/</span><span aria-current="page">محاضرة كاملة</span></nav>
-    
-      <header class="lecture-header">
-        <h1>محاضرة كاملة</h1>
-        <p class="lecture-meta">المادة: مدخل إلى علم النحو &nbsp;|&nbsp; الشيخ: سالم القحطاني &nbsp;|&nbsp; اليوم 1</p>
-        <label class="checkbox-line lecture-checkbox">
-          <input type="checkbox" data-lecture-id="stage1_nahw_01">
-          <span>إتمام هذه المحاضرة</span>
-        </label>
-      </header>
+<body data-page="lecture" data-lecture-id="stage1_nahw_01">
 
-      <div class="lecture-placeholder">
-        <p>سيتم إضافة المحاضرة هنا لاحقًا</p>
-        <p class="placeholder-hint">(رابط يوتيوب / فيديو / ملف صوتي / PDF / نص المحاضرة / ملاحظاتي)</p>
-      </div>
+<nav class="breadcrumbs">
+  <a href="../../../index.html">الرئيسية</a><span class="sep">/</span>
+  <a href="../../index.html">المرحلة الأولى</a><span class="sep">/</span>
+  <a href="../index.html">مدخل إلى علم النحو</a><span class="sep">/</span>
+  <span aria-current="page">محاضرة كاملة</span>
+</nav>
 
-      <div class="lecture-nav">
-        <a href="../index.html" class="btn btn-outline">الرجوع إلى المادة</a>
-        <a href="../../index.html" class="btn btn-outline">الرجوع إلى المرحلة</a>
-      </div>
-    
+<div class="banner">
+  📿 مدخل إلى علم النحو — بطاقات المراجعة جاهزة للتحميل
+  <button onclick="downloadAnkiDeck()">🗂️ حمّل بطاقات أنكي</button>
+</div>
+
+<header>
+  <div class="series-tag">سلسلة مداخل علوم اللغة العربية · اليوم 1</div>
+  <h1>مدخل إلى علم النحو</h1>
+  <p class="subtitle">لماذا لا يستقيم فهم الشريعة بدون النحو؟ وكيف تبدأ رحلتك في هذا العلم بثقة وتدرّج؟ — مقدّمة تعريفية تشويقية تؤسس لفهم علم النحو: مكانته، فضله، والمبادئ العشرة التي يقوم عليها.</p>
+  <div class="meta-row">
+    <span>المادة: مدخل إلى علم النحو</span>
+    <span>الشيخ: سالم القحطاني</span>
+    <span>اليوم 1</span>
   </div>
-  <script src="../../../data.js"></script>
-  <script src="../../../script.js"></script>
+  <label class="checkbox-line">
+    <input type="checkbox" data-lecture-id="stage1_nahw_01">
+    <span>✅ إتمام هذه المحاضرة</span>
+  </label>
+</header>
+
+<div class="ornament">۞ ﷽ ۞</div>
+
+<div class="toc-wrap">
+  <div class="container">
+    <nav class="toc">
+      <h2>📑 محتويات المحاضرة</h2>
+      <ol>
+        <li><a href="#sec1">لماذا هذه المقدمة؟</a></li>
+        <li><a href="#sec2">علوم اللغة العربية الاثنا عشر</a></li>
+        <li><a href="#sec3">لا علم شريعة بلا نحو</a></li>
+        <li><a href="#sec4">اللغة العربية بين انحطاط الواقع وشهادة المنصفين</a></li>
+        <li><a href="#sec5">لغة لا تشيخ ولا تموت</a></li>
+        <li><a href="#sec6">مسألة اللحن: ما هو، ومتى بدأ؟</a></li>
+        <li><a href="#sec7">معنى كلمة "نحو" لغةً</a></li>
+        <li><a href="#sec8">المبادئ العشرة لعلم النحو</a></li>
+        <li><a href="#sec9">قصة تأسيس علم النحو</a></li>
+        <li><a href="#sec10">حكم تعلّم النحو</a></li>
+        <li><a href="#sec11">هل النحو صعب؟ وكيف تتقنه؟</a></li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<main>
+
+<section class="block" id="sec1">
+  <div class="sec-head"><div class="sec-icon">🎯</div><h2>لماذا هذه المقدمة؟</h2></div>
+  <p class="lead">قبل الدخول في أي علم، ينبغي أن يأخذ طالب العلم فكرة عامة عنه: ما اسمه؟ من وضعه؟ ما فائدته؟ وما أهم مسائله؟ وهذا بالضبط ما تقدّمه هذه المقدمة عن علم النحو.</p>
+  <p>يقوم هذا المدخل على أمرين اثنين لا ثالث لهما:</p>
+  <div class="key-point"><span class="ic">١</span><div><strong>التعريف العام بالعلم</strong> — معرفة حدوده وموضوعه وفائدته وأهم كتبه.</div></div>
+  <div class="key-point"><span class="ic">٢</span><div><strong>التشويق لدراسته</strong> — لأن النحو من الضروريات التي لا يستغني عنها طالب علم، ولا يكفي فيه مجرد "الدراسة"، بل لا بد من "الإتقان".</div></div>
+  <div class="definition-box">
+    <span class="tag">🔑 لماذا يُشترط الإتقان لا مجرد الدراسة؟</span>
+    لأن النحو أداة فهم، لا مادة معلومات تُحفظ وتُنسى. من درس النحو دراسة سطحية دون إتقان، سيظل عاجزًا عن ضبط كلامه وفهم النصوص الشرعية فهمًا دقيقًا، مهما بلغت معرفته النظرية بالقواعد.
+  </div>
+</section>
+
+<section class="block" id="sec2">
+  <div class="sec-head"><div class="sec-icon">🗂️</div><h2>علوم اللغة العربية الاثنا عشر</h2></div>
+  <p>تبلغ علوم اللغة العربية اثني عشر علمًا، لكن طالب العلم لا يحتاج إتقانها جميعًا، بل يكفيه التركيز على أهمها وفق ترتيب مقترح يبدأ بالأساس وينتهي بالثمرة الأدبية.</p>
+  <div class="flow-wrap">
+    <div class="flow-card" data-n="1"><h4>النحو</h4>ضبط أواخر الكلمات، وهو الأساس الذي لا يُفهم الكلام بدونه.</div>
+    <div class="flow-card" data-n="2"><h4>الصرف</h4>يليه مباشرة، ويُعنى ببنية الكلمة وتصريفها.</div>
+    <div class="flow-card" data-n="3"><h4>البلاغة (بفنونها الثلاثة)</h4>المعاني والبيان والبديع، بعد إتقان الأداة النحوية والصرفية.</div>
+    <div class="flow-card" data-n="4"><h4>الأدب</h4>العلم الرابع والأخير في هذا الترتيب المقترح للتدرّج.</div>
+  </div>
+  <div class="key-point"><span class="ic">💡</span><div>هذه العلوم الأربعة ستكون موضوع أربعة مداخل متتالية: مدخل النحو (هذا المجلس)، ثم مدخل الصرف، ثم مدخل البلاغة، ثم مدخل الأدب.</div></div>
+  <h3 class="sub">وماذا عن العلوم الثمانية الباقية؟</h3>
+  <p>ليست غير مهمة، لكنها أقل حاجةً لطالب العلم مقارنة بالأربعة السابقة. مثال ذلك <strong>علم متن اللغة</strong> (مفردات اللغة العربية)، وهو علم مهم جدًا في حقيقته، لكن ضعف همم كثير من طلاب العلم اليوم يجعلهم يعرضون عنه، رغم أن جزءًا منه يتخلل دراسة النحو والصرف والبلاغة والأدب تلقائيًا.</p>
+</section>
+
+<section class="block" id="sec3">
+  <div class="sec-head"><div class="sec-icon">⚖️</div><h2>لا علم شريعة بلا نحو</h2></div>
+  <p class="lead">أجمع علماء الأمة سلفًا وخلفًا على أن إتقان اللغة العربية والنحو شرط لا غنى عنه لفهم الشريعة، والنصوص التالية تجمع طرفًا من أقوالهم.</p>
+
+  <div class="quote-block">
+    <span class="tag">ابن حزم رحمه الله</span>
+    قرّر أن الجاهل باللغة العربية لا يحق له الخوض في مسائل الدين، معتبرًا ذلك أمرًا محرّمًا شرعًا.
+  </div>
+
+  <div class="evidence-block">
+    <span class="tag">الشاطبي في "الموافقات"</span>
+    الضعيف في العربية ضعيف في الشريعة، والمتوسط فيها متوسط في الشريعة، والمتقدم المجتهد فيها مجتهد في الشريعة.
+    <span class="who">— يربط الشاطبي مباشرة بين درجة التمكن من العربية ودرجة التمكن من الفهم الشرعي.</span>
+  </div>
+
+  <div class="key-point"><span class="ic">🕌</span><div>الأئمة الأربعة (أحمد، الشافعي، أبو حنيفة، مالك) وأمثالهم كالثوري، كانوا جميعًا أئمة في اللغة قبل أن يكونوا أئمة في الفقه. يُذكر أن الشافعي أقام في بادية هذيل ما يزيد على عشر سنين ليتشرّب اللغة العربية الفصيحة من أهلها مباشرة.</div></div>
+
+  <div class="evidence-block">
+    <span class="tag">أبو البركات ابن الأنباري</span>
+    أجمع الأئمة من السلف والخلف قاطبةً على أن اتقان النحو شرط في رتبة الاجتهاد، وأن المجتهد لو جمع كل العلوم ولم يتقن النحو لم يبلغ رتبة الاجتهاد.
+  </div>
+
+  <div class="evidence-block">
+    <span class="tag">أبو إسحاق الشيرازي، في صفة المفتي</span>
+    يشترط في المفتي أن يعرف من اللغة والنحو ما يعرف به مراد الله ومراد رسوله صلى الله عليه وسلم في خطابهما.
+  </div>
+
+  <div class="definition-box">
+    <span class="tag">🎯 لماذا هذا الشرط تحديدًا؟</span>
+    لأن فهم القرآن والسنة فهمًا دقيقًا وعميقًا — لا فهمًا سطحيًا عامًا — لا يتحقق إلا بأداة لغوية دقيقة. الجاهل بالنحو قد يفهم المعنى العام، لكنه يعجز عن الفهم الذي وصل إليه العلماء والصحابة، وقد يقع في تحريف المعنى كليًا كما سيأتي في قصة اللحن.</div>
+
+  <h3 class="sub">شهادات علماء متأخرين</h3>
+  <div class="evidence-block">
+    <span class="tag">العلامة خالد الأزهري، صاحب "موصل الطلاب إلى قواعد الإعراب"</span>
+    معرفة الإعراب من الواجبات التي لا بد لكل طالب علم منها، ومن مهمات ما لا يستغني الفقيه عنها.
+  </div>
+  <div class="evidence-block">
+    <span class="tag">شرف الدين العمريطي، في نظمه على الآجرومية</span>
+    والنحو أَوْلى أولًا أن يُعلما إذ الكلام دونه لن يُفهما.
+  </div>
+  <div class="quote-block">
+    <span class="tag">أبيات مأثورة في فضل النحو</span>
+    النحو زين للفتى يُكرمه حيث أتى، ومن لم يكن يعرفه فحقه أن يسكت. وقيل أيضًا: وكيف يرتقي إلى المعالي من ليس ذا نحو ولا بيان.
+  </div>
+  <div class="evidence-block">
+    <span class="tag">ابن مالك، في الكافية الشافية</span>
+    وبعد فالنحو صلاح الألسنة، والنفس إن تُعدم ثناه في سنة. عليك بالنحو فإن النحو لحن الخطاب لفظه والفحوى.
+  </div>
+  <div class="key-point"><span class="ic">📖</span><div>كان السلف يُكرمون من لا يلحن، وذكروا الحسن البصري والحجاج بن يوسف من قلة نادرة ممن وُصفوا بأنهم لا يلحنون — وذكرهم بالعدّ دليل على ندرة هذه الصفة، لا على استحالة وقوع الخطأ من عموم الناس.</div></div>
+
+  <div class="evidence-block">
+    <span class="tag">الرازي</span>
+    معرفة اللغة والنحو والتصريف فرض كفاية، لأن معرفة الأحكام الشرعية واجبة بالإجماع.
+  </div>
+  <div class="evidence-block">
+    <span class="tag">السيوطي</span>
+    اتُّفق على أن النحو يُحتاج إليه في كل فن من فنون العلم، لا سيما التفسير والحديث؛ فلا يجوز لأحد أن يتكلم في كتاب الله حتى يكون غنيًّا بالعربية.
+  </div>
+</section>
+
+<section class="block" id="sec4">
+  <div class="sec-head"><div class="sec-icon">🌍</div><h2>اللغة العربية بين انحطاط الواقع وشهادة المنصفين</h2></div>
+  <p class="lead">في هذا الزمن ضعفت مكانة اللغة العربية في نفوس أهلها أنفسهم، حتى صارت تُوصف عند البعض بأنها لغة الجهل أو التخلف، بينما الواقع التاريخي واللغوي يشهد بعكس ذلك تمامًا.</p>
+
+  <div class="warning-box">
+    <span class="tag">⚠️ الصورة المشوّهة عند كثير من الناس اليوم</span>
+    أن العربية "لغة ميتة"، أو "لغة المسلسلات التاريخية"، أو لغة معقدة بغيضة لا تصلح لهذا العصر. وهذه الصورة، كما توضح المحاضرة، لا تمت للحقيقة بصلة، بل هي أثر من آثار الهزيمة النفسية التي تعيشها الأمة.
+  </div>
+
+  <div class="evidence-block">
+    <span class="tag">الرافعي، في "وحي القلم"</span>
+    ما ذلّت لغة قوم إلا ذلّوا، ولا حطّت إلا كان أمرهم في ذهابٍ وإدبار.
+  </div>
+
+  <div class="key-point"><span class="ic">🧩</span><div><strong>الهوية ثلاثية:</strong> الدين واللغة والتاريخ. فحين ضاعت اللغة، ضاع الثلث الأول، فتبعه ضياع التاريخ، ثم ضياع الدين — والحاصل ضياع الهوية بكاملها إلا من رحم الله.</div></div>
+
+  <div class="evidence-block">
+    <span class="tag">الثعالبي</span>
+    من أحب الله أحب النبي صلى الله عليه وسلم، ومن أحب النبي العربي أحب العرب، ومن أحب العرب أحب اللغة العربية التي نزل بها أفضل الكتب على أفضل العرب والعجم، ومن أحب العربية عُني بها وثابر عليها وصرف همته إليها.
+  </div>
+  <div class="definition-box">
+    <span class="tag">🔑 لماذا يُحب المؤمن العربية؟</span>
+    ليس لذاتها، بل لأنها لغة القرآن، ولغة النبي صلى الله عليه وسلم، ولغة الصحابة، ولغة هذا الدين الذي وصفه الشاطبي بأنه "شريعة عربية".
+  </div>
+
+  <h3 class="sub">شهادات مستشرقين منصفين</h3>
+  <p>مع التحفظ على الإكثار من الاستشهاد بأقوال غير العرب في مدح لغتهم — لأن الأمة غنية عن شهادتهم بنصوص أئمتها — إلا أن شهادة هؤلاء تُساق أحيانًا من باب "وشهد شاهدٌ من أهلها"، أي من غير أهل اللغة أنفسهم فتكون أبعد عن تهمة التحيّز.</p>
+  <div class="quote-block">
+    <span class="tag">سيجريد هونكه، مستشرقة ألمانية</span>
+    وصفت سحر اللغة العربية ومنطقها السليم بأنه أمر يصعب مقاومته، وأشارت إلى أن شعوبًا فتحها العرب اندفعت إلى تعلم العربية بشغف حتى اندثرت لغات محلية كالقبطية أمامها، وتراجعت الآرامية عن مكانتها.
+  </div>
+  <div class="quote-block">
+    <span class="tag">إرنست رينان، مستشرق فرنسي</span>
+    استغرب كيف نشأت هذه اللغة القومية ووصلت إلى درجات الكمال وسط الصحاري عند أمة من الرحّل، متفوقة بكثرة مفرداتها ودقة معانيها وحسن نظام مبانيها، دون أن يُعرف لها طفولة أو شيخوخة كسائر اللغات.
+  </div>
+</section>
+
+<section class="block" id="sec5">
+  <div class="sec-head"><div class="sec-icon">🌿</div><h2>لغة لا تشيخ ولا تموت</h2></div>
+  <p class="lead">من أعجب خصائص اللغة العربية أنها لا تخضع للدورة الطبيعية لسائر اللغات: نشأة، ثم طفولة، ثم شباب، ثم شيخوخة وموت. فهي، كما وصفها رينان، ظهرت للباحثين كاملة من غير تدرج، وما زالت "فتيّة" رغم مرور أكثر من 1500 عام.</p>
+
+  <div class="comparison-table">
+    <table style="width:100%">
+      <tr><th>اللغة</th><th>القدرة على قراءة نصوص قديمة (500+ سنة) بيسر</th></tr>
+      <tr><td>العربية</td><td>نعم — يقرأ العربي شعر امرئ القيس والنابغة الذبياني (جاهلي، يعود لأكثر من 1500 عام) ويفهمه ويتذوقه ويستشهد به</td></tr>
+      <tr><td>الإنجليزية</td><td>لا — يعاني الإنجليزي المعاصر في فهم لغة شكسبير (قبل نحو 500 عام فقط) لاختلاف اللغة اختلافًا كبيرًا</td></tr>
+    </table>
+  </div>
+
+  <div class="story">
+    <h4>📍 قصة من قصر الحمراء</h4>
+    يروي الشيخ أنه كان يقرأ الأبيات المنقوشة على جدران قصر الحمراء في الأندلس ويشرحها لمن معه، فتعجّب رجل أوروبي بجواره وسأله: "هل تفهم أنت هذا الكلام؟" فأجابه: "نعم، هو كلام واضح." وكان استغراب الرجل الأوروبي نابعًا من كون اللغات عادة تتغير بمرور القرون بخلاف العربية.
+  </div>
+
+  <div class="key-point"><span class="ic">✨</span><div>القرآن الكريم نزل قبل أكثر من 1400 سنة، وما زال يُقرأ ويُتلذذ به وكأنه أُنزل اليوم — ولا تشارك أي لغة أخرى اللغة العربية في هذه الميزة.</div></div>
+</section>
+
+<section class="block" id="sec6">
+  <div class="sec-head"><div class="sec-icon">📝</div><h2>مسألة اللحن: ما هو، ومتى بدأ؟</h2></div>
+
+  <div class="definition-box">
+    <span class="tag">🔑 تعريف اللحن</span>
+    اللحن هو الخطأ في الإعراب، كأن يقول القائل "رأيت المسلمونَ" بدلًا من "رأيت المسلمينَ".
+  </div>
+
+  <div class="key-point"><span class="ic">🕊️</span><div>كان السلف يتجنبون اللحن كما يتجنب أحدهم المعصية، وكان بعضهم إذا لحن استغفر الله. ومع ذلك فاللحن خطأ لا يسلم منه أحد كليًا، وقد قال النبي صلى الله عليه وسلم: "كل ابن آدم خطّاء". فالهدف من دراسة النحو ليس بلوغ درجة عدم الخطأ مطلقًا، بل أن يكون غالب الكلام مستقيمًا.</div></div>
+
+  <div class="key-point"><span class="ic">✍️</span><div>اللحن في الكتابة أخطر وأولى بالتحرز منه من اللحن في الكلام الملقى ارتجالًا، لأن الكتابة تحتمل التدقيق والمراجعة، بخلاف الإلقاء المباشر.</div></div>
+
+  <h3 class="sub">متى بدأ انتشار اللحن؟</h3>
+  <p>بدأ اللحن بالانتشار بعد اتساع الفتوحات الإسلامية، حين اختلط العرب الفاتحون بالشعوب الأعجمية (الفرس والروم والأحباش)، فتأثر بعض العرب بألسنة هذه الشعوب.</p>
+
+  <div class="story">
+    <h4>📍 قصة القارئ في زمن عمر بن الخطاب</h4>
+    قرأ قارئ في المدينة قوله تعالى: "أنّ اللهَ بريءٌ من المشركين ورسولِه" بجرّ كلمة "رسوله" عطفًا على "المشركين"، فانقلب المعنى إلى أن الله بريء من رسوله كما هو بريء من المشركين — والعياذ بالله. فلما سمعها أعرابي قال: "وأنا أبرأ ممن برئ الله منه". فبلغ الخبر عمر رضي الله عنه، فاستدعى الأعرابي وتحقق من القصة، ثم أصدر أمرًا ألّا يُقرئ القرآن إلا عالم بالعربية. والصواب أن تُقرأ "ورسولُه" بالرفع، أي أن الرسول أيضًا بريء من المشركين.
+  </div>
+  <div class="warning-box">
+    <span class="tag">⚠️ لماذا هذه القصة محورية؟</span>
+    لأنها تُظهر بوضوح كيف يمكن لخطأ نحوي واحد (حركة إعرابية واحدة) أن يقلب معنى النص من التعظيم إلى ما يقارب الكفر. وهذا هو جوهر السبب الذي يجعل النحو ضرورة شرعية لا ترفًا لغويًا.
+  </div>
+
+  <div class="story">
+    <h4>📍 عبد الملك بن مروان واللحن</h4>
+    قال عبد الملك بن مروان: "اللحن في الكلام أقبح من التفتيق في الثوب ومن الجدَر (المرض) في الوجه." ولما قيل له إنه أسرع إليه الشيب، أجاب: "شيّبتني المنابر واجتناب اللحن" — أي أن محاولته الدائمة الحذر من اللحن أثناء الخطابة كانت مرهقة ومسرّعة للشيب.
+  </div>
+
+  <div class="story">
+    <h4>📍 الدراوردي وابن أبي ذئب</h4>
+    عندما قرأ عبد العزيز الدراوردي كتابًا وكان رديء اللسان يلحن لحنًا قبيحًا، قيل له: "أنت كنت إلى إصلاح لسانك قبل النظر في هذا الشأن أحوج."
+  </div>
+
+  <div class="evidence-block">
+    <span class="tag">ابن تيمية</span>
+    تعلّم العربية وتعليمها فرض على الكفاية، وقد كان السلف يؤدّبون أولادهم على اجتناب اللحن، فنحن مأمورون بأن نحفظ قوانين اللغة العربية ونصلح الألسنة المائلة عنها، لأن ذلك يحفظ لنا طريق فهم الكتاب والسنة والاقتداء بعرف خطابها.
+  </div>
+</section>
+
+<section class="block" id="sec7">
+  <div class="sec-head"><div class="sec-icon">🔤</div><h2>معنى كلمة "نحو" لغةً</h2></div>
+  <p class="lead">قبل بيان المصطلح الاصطلاحي، ينبغي معرفة أن كلمة "نحو" لها عدة معانٍ في أصل اللغة العربية، منها:</p>
+  <div class="comparison-table">
+    <table style="width:100%">
+      <tr><th>المعنى</th><th>مثال في الاستعمال</th></tr>
+      <tr><td>الجهة</td><td>"ذهبت نحو فلان" أي جهته</td></tr>
+      <tr><td>القصد</td><td>"نحوتُ معروف الأمير" أي قصدت معروفه</td></tr>
+      <tr><td>الشِّبه / المِثل</td><td>"هذا نحو هذا" أي يشبهه</td></tr>
+      <tr><td>النوع</td><td>"هذه المسألة على خمسة أنحاء" أي خمسة أنواع</td></tr>
+    </table>
+  </div>
+  <div class="key-point"><span class="ic">📎</span><div>لكلمة "نحو" في اللغة العربية نحو سبعة معانٍ إجمالًا، اقتُصر هنا على أبرزها.</div></div>
+</section>
+
+<section class="block" id="sec8">
+  <div class="sec-head"><div class="sec-icon">🏛️</div><h2>المبادئ العشرة لعلم النحو</h2></div>
+  <p class="lead">لكل علم — شرعيًا كان أو عربيًا — عشرة أسس تُعرف بـ"المبادئ العشرة"، جمعها الناظم في بيتين مشهورين معناهما: أن مبادئ كل فن عشرة: الحدّ، والموضوع، ثم الثمرة، والفضل، والنسبة، والواضع، والاسم، والاستمداد، وحكم الشارع، ومسائله.</p>
+
+  <div class="definition-box">
+    <span class="tag">١ — الحدّ (التعريف الاصطلاحي)</span>
+    النحو: علم بقواعد يُعرف بها أحكام أواخر الكلمات العربية حال تركيبها في الجملة — أي كيف تُضبط حركة آخر الكلمة (رفعًا، نصبًا، جرًّا، جزمًا) لا أولها ولا وسطها.
+  </div>
+
+  <div class="definition-box">
+    <span class="tag">٢ — الموضوع</span>
+    يبحث علم النحو في أحوال أواخر الكلمات العربية بعد تركيبها في جملة، لا في حال إفرادها. فكلمة "زيد" مفردةً لا إعراب لها حتى تُوضع في جملة: "جاء زيدٌ" (فاعل)، "ضربتُ زيدًا" (مفعول به)، "مررتُ بزيدٍ" (مجرور).
+  </div>
+
+  <div class="definition-box">
+    <span class="tag">٣ — الثمرة</span>
+    أهم ثمرة لتعلم النحو هي فهم القرآن والسنة فهمًا صحيحًا ودقيقًا. ومن ثمراته الأخرى: صون اللسان عن الخطأ في النطق، وصون القلم عن الخطأ في الكتابة، وصون القلب عن الخطأ في الفهم.
+  </div>
+
+  <div class="definition-box">
+    <span class="tag">٤ — الواضع</span>
+    أول من وضع هذا العلم وجمع قواعده (لا اخترعها، فهي موجودة أصلًا في سليقة العرب) هو <strong>أبو الأسود الدؤلي</strong> رحمه الله، التابعي تلميذ علي بن أبي طالب رضي الله عنه.
+  </div>
+
+  <div class="definition-box">
+    <span class="tag">٥ — الفضل</span>
+    فضل هذا العلم عظيم، وقد تقدّم بيانه مفصلًا في أقوال الأئمة وربطهم بين إتقان العربية ودرجة فهم الشريعة.
+  </div>
+
+  <div class="definition-box">
+    <span class="tag">٦ — الاسم</span>
+    اسمه المشهور "علم النحو"، ويُسمى أحيانًا "علم القواعد" أو "علم الإعراب"، لكن التسمية الشائعة هي "النحو".
+  </div>
+
+  <div class="definition-box">
+    <span class="tag">٧ — الاستمداد</span>
+    يُستمد هذا العلم من القرآن الكريم وكلام العرب الأوائل، ويدخل في ذلك شعر الجاهلية، وكلام النبي صلى الله عليه وسلم، وكلام الصحابة، إلى الفترة التي بدأ فيها انتشار اللحن.
+  </div>
+
+  <div class="definition-box">
+    <span class="tag">٨ — النسبة</span>
+    نسبة هذا العلم أنه فرع من فروع علوم اللغة العربية.
+  </div>
+
+  <div class="definition-box">
+    <span class="tag">٩ — حكم الشارع</span>
+    الأصل أن تعلّم النحو <strong>فرض كفاية</strong> على الأمة عمومًا، لكنه يتحول إلى <strong>فرض عين</strong> في حق طالب العلم الذي يريد أن يفسّر القرآن أو يشرح الحديث، إذ لا يجوز له ذلك دون إتقان النحو.
+  </div>
+
+  <div class="definition-box">
+    <span class="tag">١٠ — المسائل</span>
+    مسائل هذا العلم كثيرة، منها: الجملة الاسمية والجملة الفعلية، المبتدأ والخبر، الفعل والفاعل، باب "كان وأخواتها"، باب "إنّ وأخواتها"، حروف الجر، وغيرها مما يُدرس في كتبه المتخصصة.
+  </div>
+</section>
+
+<section class="block" id="sec9">
+  <div class="sec-head"><div class="sec-icon">📜</div><h2>قصة تأسيس علم النحو</h2></div>
+  <div class="story">
+    <h4>📍 أبو الأسود الدؤلي وابنته</h4>
+    يُروى أن أبا الأسود الدؤلي رحمه الله كان عند ابنته فتكلمت فلحنت، فصُدم لذلك، ثم ذهب إلى علي بن أبي طالب رضي الله عنه يشكو له انتشار اللحن بين الناس. فأمره علي رضي الله عنه — فيما يُروى — أن يأتي بكتاب ويكتب: "الكلمة إما اسم، وإما فعل، وإما حرف"، ثم قال له: "انحُ على هذا النحو"، فسُمّي العلم بعد ذلك بـ"علم النحو" — والله أعلم بصحة تفاصيل الرواية.
+  </div>
+  <div class="key-point"><span class="ic">🔗</span><div>هذه القصة تربط منطقيًا بين سبب نشأة العلم (خوف انتشار اللحن وتحريف المعنى، كما في قصة القارئ زمن عمر) ونتيجته (تدوين قواعد ضابطة لأواخر الكلمات).</div></div>
+</section>
+
+<section class="block" id="sec10">
+  <div class="sec-head"><div class="sec-icon">⚖️</div><h2>حكم تعلّم النحو</h2></div>
+  <div class="comparison-table">
+    <table style="width:100%">
+      <tr><th>الحالة</th><th>الحكم</th></tr>
+      <tr><td>عموم المسلمين</td><td>فرض كفاية — إذا قام به من يكفي سقط الإثم عن الباقين، وإن تركه الجميع أثِم الجميع</td></tr>
+      <tr><td>طالب العلم الذي يريد تفسير القرآن أو شرح الحديث</td><td>فرض عين — لا يجوز له الخوض في ذلك دون إتقان النحو</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="block" id="sec11">
+  <div class="sec-head"><div class="sec-icon">🌱</div><h2>هل النحو صعب؟ وكيف تتقنه؟</h2></div>
+  <p class="lead">يستصعب كثير من الطلاب علم النحو، لكن المحاضرة تؤكد أن الصعوبة ليست في العلم ذاته، بل غالبًا في الطريقة أو المعلم أو غياب التدرّج.</p>
+
+  <div class="evidence-block">
+    <span class="tag">دليل يُسر النحو</span>
+    اللغة العربية هي لغة القرآن، وقد قال الله تعالى: "ولقد يسّرنا القرآن للذكر"، ومن أوجه تيسير القرآن يُسر لغته. فلو كان النحو مستحيل الصعوبة لما اختاره الله عز وجل لغةً لآخر كتبه.
+  </div>
+  <div class="key-point"><span class="ic">🌍</span><div>شاهد واقعي على يُسر النحو: وجود إخوة من شتى الجنسيات والدول، من الشرق والغرب، تعلموا هذا العلم حتى صاروا يتكلمون ويكتبون بالفصحى.</div></div>
+
+  <h3 class="sub">ثلاث نصائح عملية للإتقان</h3>
+  <div class="flow-wrap">
+    <div class="flow-card" data-n="1"><h4>احفظ ما يُحفظ</h4>ليس كل النحو فهمًا، بل جزء منه (كحروف الجر، وحروف الجزم، ونواصب الفعل المضارع) يجب حفظه كما هو دون زيادة أو نقصان، إذ لا مجال فيه للفهم أو الاستنتاج.</div>
+    <div class="flow-card" data-n="2"><h4>طبّق كثيرًا</h4>معظم النحو (نسبة كبيرة منه) فهم وتطبيق لا حفظ. كل قاعدة تُدرس ينبغي تطبيقها فورًا: في الاستماع (لماذا رُفع هذا وجُرّ ذاك)، وفي الكتابة (رسالة، تغريدة)، ولو وقع الخطأ مرارًا، فهذا جزء طبيعي من الطريق إلى الإتقان.</div>
+    <div class="flow-card" data-n="3"><h4>لا تستعجل الثمرة</h4>إن لم تشعر بتقدّم رغم الدراسة الكثيرة، فابحث عن سبب الخلل: إما ضعف في الحفظ، أو غياب التطبيق، أو طريقة دراسة غير سليمة، أو اختيار كتاب أو معلم غير موفّق.</div>
+  </div>
+
+  <div class="action-card">
+    <span class="tag">🧭 خطة التدرّج الموصى بها لدراسة النحو</span>
+    <ul>
+      <li><strong>الآجرومية</strong> — كتاب صغير للبداية، يُتقن أولًا.</li>
+      <li><strong>قطر الندى</strong> — الخطوة التالية بعد إتقان الآجرومية.</li>
+      <li><strong>ألفية ابن مالك</strong> — المرحلة الأخيرة، وتُحفظ منها القدر المستطاع لا كاملة بالضرورة.</li>
+    </ul>
+    ينبغي مع هذا التدرج: تخليص النية، الدعاء، واختيار معلم موفّق لا يُشغل الطالب بالخلافيات ولا يُصعّب عليه الموضوع.
+  </div>
+  <div class="key-point"><span class="ic">📚</span><div>لمن أراد التفصيل في مسألة صعوبة النحو وطريقة تعلّمه، أشار الشيخ إلى كتابه "مدارج النحو" الذي يشرح فيه تجربته الشخصية في تعلّم هذا العلم.</div></div>
+</section>
+
+</main>
+
+<div class="lecture-nav">
+  <a href="../index.html" class="btn btn-outline">الرجوع إلى المادة</a>
+  <a href="../../index.html" class="btn btn-outline">الرجوع إلى المرحلة</a>
+</div>
+
+<footer>
+  <p class="dua">اللهم ارزقنا علمًا نافعًا وعملًا صالحًا، واجعلنا ممن يتعلمون العربية حبًا في كتابك ولغة نبيك صلى الله عليه وسلم</p>
+  <button onclick="downloadAnkiDeck()">🗂️ حمّل بطاقات أنكي</button>
+  <p class="fine">مدخل إلى علم النحو — المجلس الأول من سلسلة مداخل علوم اللغة العربية · الشيخ سالم القحطاني</p>
+</footer>
+
+<script>
+const ankiCards = [
+  ["ما تعريف علم النحو اصطلاحًا؟","علم بقواعد يُعرف بها أحكام أواخر الكلمات العربية حال تركيبها في الجملة"],
+  ["ما موضوع علم النحو؟","أحوال أواخر الكلمات العربية بعد تركيبها في جملة، لا في حال إفرادها"],
+  ["ما أهم ثمرة لتعلم علم النحو؟","فهم القرآن الكريم والسنة النبوية فهمًا صحيحًا ودقيقًا"],
+  ["من واضع علم النحو؟","أبو الأسود الدؤلي رحمه الله، التابعي تلميذ علي بن أبي طالب رضي الله عنه"],
+  ["ما اسم علم النحو المشهور، وما اسماه الآخران الأقل شهرة؟","اسمه المشهور علم النحو، ويُسمى أحيانًا علم القواعد أو علم الإعراب"],
+  ["مم يُستمد علم النحو؟","من القرآن الكريم وكلام العرب الأوائل (الجاهلية، النبي صلى الله عليه وسلم، الصحابة) إلى بداية انتشار اللحن"],
+  ["ما نسبة علم النحو إلى غيره من العلوم؟","هو فرع من فروع علوم اللغة العربية"],
+  ["ما حكم تعلم النحو على عموم المسلمين؟","فرض كفاية"],
+  ["متى يصبح تعلم النحو فرض عين؟","في حق طالب العلم الذي يريد تفسير القرآن أو شرح الحديث"],
+  ["ما تعريف اللحن؟","الخطأ في الإعراب"],
+  ["اذكر مثالًا على اللحن.","أن يقول القائل: رأيت المسلمونَ، بدلًا من: رأيت المسلمينَ"],
+  ["متى بدأ انتشار اللحن بين العرب؟","بعد اتساع الفتوحات الإسلامية، حين اختلط العرب الفاتحون بالشعوب الأعجمية (فرس وروم وأحباش)"],
+  ["ماذا قرأ القارئ في المدينة زمن عمر رضي الله عنه بدلًا من (ورسولُه)، وما أثر ذلك على المعنى؟","قرأها بالجر (ورسولِه) عطفًا على المشركين، فانقلب المعنى إلى أن الله بريء من رسوله كما هو بريء من المشركين"],
+  ["ماذا فعل عمر بن الخطاب رضي الله عنه بعد قصة القارئ الذي لحن في الآية؟","أمر ألا يُقرئ القرآن إلا عالم بالعربية"],
+  ["ما قول عبد الملك بن مروان في اللحن؟","اللحن في الكلام أقبح من التفتيق في الثوب والجدَر في الوجه"],
+  ["ما الذي قاله عبد الملك بن مروان لما قيل له إنه أسرع إليه الشيب؟","شيّبتني المنابر واجتناب اللحن"],
+  ["ما قول ابن مالك في فضل النحو في الكافية الشافية؟","وبعد فالنحو صلاح الألسنة، والنفس إن تُعدم ثناه في سنة"],
+  ["ما قول الشاطبي في العلاقة بين إتقان العربية ودرجة فهم الشريعة؟","الضعيف في العربية ضعيف في الشريعة، والمتوسط فيها متوسط في الشريعة، والمتقدم المجتهد فيها مجتهد في الشريعة"],
+  ["ما قول ابن حزم في حكم الكلام في الدين لمن يجهل اللغة العربية؟","حرام على من كان جاهلًا باللغة والنحو أن يتكلم في دين الله بكلمة"],
+  ["ما قول أبي البركات ابن الأنباري في اشتراط النحو لرتبة الاجتهاد؟","أجمع الأئمة سلفًا وخلفًا على أن اتقان النحو شرط في رتبة الاجتهاد، وأن المجتهد لو جمع كل العلوم ولم يتقن النحو لم يبلغ رتبة الاجتهاد"],
+  ["كم تبلغ علوم اللغة العربية عددًا؟","اثنا عشر علمًا"],
+  ["ما ترتيب العلوم الأربعة الأهم لطالب العلم من علوم اللغة العربية؟","النحو، ثم الصرف، ثم البلاغة بفنونها الثلاثة، ثم الأدب"],
+  ["كم معنى تقريبًا لكلمة (نحو) في اللغة العربية؟","نحو سبعة معانٍ"],
+  ["اذكر معنيين من معاني كلمة (نحو) في اللغة.","الجهة (ذهبت نحو فلان)، والقصد (نحوت معروف الأمير)، أو الشبه والنوع"],
+  ["ما القصة المروية عن سبب تسمية علم النحو بهذا الاسم؟","يُروى أن عليًا رضي الله عنه أمر أبا الأسود الدؤلي أن يكتب: الكلمة إما اسم وإما فعل وإما حرف، ثم قال له: انحُ على هذا النحو، فسُمي العلم بذلك"],
+  ["ما هي المبادئ العشرة التي تُذكر لكل علم؟","الحد، الموضوع، الثمرة، الفضل، النسبة، الواضع، الاسم، الاستمداد، حكم الشارع، المسائل"],
+  ["ما الكتاب الأول الذي يُنصح طالب النحو بالبدء به؟","متن الآجرومية"],
+  ["ما الكتاب الذي يلي الآجرومية في مسار التدرّج لدراسة النحو؟","قطر الندى"],
+  ["ما الكتاب الذي يُختم به مسار التدرّج في تعلم النحو؟","ألفية ابن مالك"],
+  ["ما هي النصائح الثلاث التي ذكرها الشيخ لإتقان النحو؟","الحفظ لما يُحفظ، كثرة التطبيق، وعدم استعجال الثمرة"],
+  ["ما مثال على أمور في النحو يجب حفظها ولا مجال للفهم فيها؟","حروف الجر، وحروف الجزم، ونواصب الفعل المضارع"],
+  ["ما الدليل القرآني الذي استُشهد به على يُسر تعلّم النحو؟","قوله تعالى: ولقد يسّرنا القرآن للذكر"],
+  ["ماذا قال أبو إسحاق الشيرازي في صفة المفتي بخصوص اللغة والنحو؟","ويعرف من اللغة والنحو ما يعرف به مراد الله ومراد رسوله صلى الله عليه وسلم في خطابهما"],
+  ["ما قول العلامة خالد الأزهري في أهمية معرفة الإعراب؟","معرفة الإعراب من الواجبات التي لا بد لكل طالب علم منها، ومن مهمات ما لا يستغني الفقيه عنها"],
+  ["ما قول ابن تيمية في حكم تعلّم العربية وتعليمها؟","فرض على الكفاية"],
+  ["ماذا وصفت المستشرقة الألمانية سيجريد هونكه أثر اللغة العربية على الشعوب التي فتحها العرب؟","وصفت أن هذه الشعوب اندفعت لتعلم العربية بشغف حتى اندثرت أمامها لغات محلية كالقبطية، وتراجعت الآرامية عن مكانتها"],
+  ["بم وصف المستشرق الفرنسي إرنست رينان اللغة العربية؟","بأنها لغة نشأت كاملة من غير تدرج، ولم يُعرف لها في أطوار حياتها طفولة ولا شيخوخة، خلافًا لعادة اللغات"],
+  ["ما الذي يميز اللغة العربية عن غيرها من اللغات من حيث القدرة على قراءة النصوص القديمة؟","يستطيع العربي اليوم قراءة شعر جاهلي يعود لأكثر من 1500 سنة وفهمه، بخلاف الإنجليزي الذي يصعب عليه فهم لغة شكسبير رغم أنها لا تتجاوز 500 سنة"],
+  ["ما الأبعاد الثلاثة التي تتكوّن منها الهوية بحسب المحاضرة؟","الدين، واللغة، والتاريخ"],
+  ["لماذا يحب المؤمن اللغة العربية بحسب كلام الثعالبي؟","لأنها لغة القرآن ولغة النبي صلى الله عليه وسلم ولغة الصحابة، لا لذاتها"]
+];
+
+// حفظ حالة "إتمام المحاضرة" محليًا في متصفح المستخدم
+(function(){
+  const cb = document.querySelector('.checkbox-line input[data-lecture-id]');
+  if(!cb) return;
+  const key = 'lecture_done_' + cb.getAttribute('data-lecture-id');
+  try{
+    cb.checked = localStorage.getItem(key) === '1';
+    cb.addEventListener('change', function(){
+      try{ localStorage.setItem(key, cb.checked ? '1' : '0'); }catch(e){}
+    });
+  }catch(e){}
+})();
+
+function downloadAnkiDeck() {
+  let content = ankiCards.map(([q, a]) => {
+    const clean = s => s.replace(/\t/g, ' ').replace(/\r?\n/g, '<br>');
+    return `${clean(q)}\t${clean(a)}`;
+  }).join('\n');
+  const BOM = '\uFEFF';
+  const blob = new Blob([BOM + content], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'بطاقات_أنكي_مدخل_الى_علم_النحو.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+</script>
+
 </body>
 </html>
