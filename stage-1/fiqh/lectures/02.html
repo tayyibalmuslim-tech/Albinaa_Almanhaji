@@ -7,8 +7,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../../style.css">
 <style>
+  *{box-sizing:border-box;}
+  body{margin:0;background:#efe8d6;}
+  .page{max-width:980px;margin:0 auto;padding:24px 16px 60px;}
+  a{color:inherit;}
   :root{
     --gold:#b8912f;
     --gold-light:#e8d6a0;
@@ -123,20 +126,43 @@
     text-align:center;padding:24px;color:var(--brown);font-family:'Amiri',serif;
     font-size:1.1rem;background:var(--cream-2);border-radius:14px;margin-top:10px;
   }
+  .page-header{
+    text-align:center;padding:34px 20px 30px;margin-bottom:8px;
+    background:linear-gradient(160deg, var(--green-deep), #12281e);
+    border-radius:0 0 26px 26px;color:var(--cream);
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+  }
+  .page-header h1{
+    font-size:2.1rem;margin:0 0 10px;color:var(--gold-light);
+    letter-spacing:.5px;
+  }
+  .page-header .meta{
+    font-size:.95rem;opacity:.9;margin:4px 0;
+  }
+  .page-header .yt-link{
+    display:inline-block;margin-top:10px;color:var(--gold);
+    font-weight:700;text-decoration:none;border:1px solid var(--gold);
+    padding:6px 16px;border-radius:999px;font-size:.88rem;
+  }
+  .page-header .yt-link:hover{background:var(--gold);color:var(--green-deep);}
+  .page-footer-nav{
+    display:flex;justify-content:center;gap:14px;margin-top:20px;
+  }
+  .btn-outline{
+    display:inline-block;padding:10px 20px;border:1.5px solid var(--brown);
+    border-radius:999px;color:var(--brown);text-decoration:none;font-weight:600;
+    font-size:.92rem;
+  }
+  .btn-outline:hover{background:var(--brown);color:#fff;}
 </style>
 </head>
-<body class="" data-page="lecture" data-lecture-id="stage1_fiqh_02">
+<body>
 <div class="page">
-  <nav class="breadcrumbs"><a href="../../../index.html">الرئيسية</a><span class="sep">/</span><a href="../../index.html">المرحلة الأولى</a><span class="sep">/</span><a href="../index.html">مدخل إلى علم الفقه</a><span class="sep">/</span><span aria-current="page">المحاضرة 2</span></nav>
 
-  <header class="lecture-header">
-    <h1>المحاضرة 2</h1>
-    <p class="lecture-meta">المادة: مدخل إلى علم الفقه &nbsp;|&nbsp; الشيخ: عامر بهجت &nbsp;|&nbsp; اليوم 3</p>
-    <p class="lecture-meta"><a href="https://www.youtube.com/watch?v=L3WdcXOa2C8&list=PLcWpmYxK9Obu4er6e2nxCERPFsWOcNRCg&index=2" target="_blank" rel="noopener">▶ رابط المحاضرة على يوتيوب</a></p>
-    <label class="checkbox-line lecture-checkbox">
-      <input type="checkbox" data-lecture-id="stage1_fiqh_02">
-      <span>إتمام هذه المحاضرة</span>
-    </label>
+  <header class="page-header">
+    <h1>المحاضرة 2: فقه الصحابة والتابعين ونشأة المذاهب</h1>
+    <p class="meta">مدخل إلى علم الفقه &nbsp;|&nbsp; الشيخ: عامر بهجت &nbsp;|&nbsp; اليوم 3</p>
+    <a class="yt-link" href="https://www.youtube.com/watch?v=L3WdcXOa2C8&list=PLcWpmYxK9Obu4er6e2nxCERPFsWOcNRCg&index=2" target="_blank" rel="noopener">▶ رابط المحاضرة على يوتيوب</a>
   </header>
 
   <div class="lec-wrap">
@@ -479,10 +505,6 @@
 
   </div>
 
-  <div class="lecture-nav">
-    <a href="../index.html" class="btn btn-outline">الرجوع إلى المادة</a>
-    <a href="../../index.html" class="btn btn-outline">الرجوع إلى المرحلة</a>
-  </div>
 </div>
 
 <script>
@@ -560,7 +582,5 @@ function downloadAnkiDeck() {
 }
 </script>
 
-<script src="../../../data.js"></script>
-<script src="../../../script.js"></script>
 </body>
 </html>
