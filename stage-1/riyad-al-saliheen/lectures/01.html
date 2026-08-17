@@ -1,39 +1,912 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>باب الإخلاص والنية 1 - شرح رياض الصالحين</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../../style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الإخلاص واستحضار النية | مجالس رياض الصالحين ١</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;500;600;700;800&family=Reem+Kufi:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f2b27;
+  --ink-2:#153a34;
+  --ink-3:#1c463f;
+  --parchment:#f6efdc;
+  --parchment-2:#eee2c2;
+  --parchment-3:#e6d6a8;
+  --gold:#c8992b;
+  --gold-light:#e3c366;
+  --gold-dim:#a9822a;
+  --maroon:#7c2431;
+  --maroon-light:#f1dcdb;
+  --green-deep:#204f43;
+  --green-light:#e7efe6;
+  --text-dark:#26200f;
+  --text-light:#f7f1de;
+  --muted:#7d715a;
+  --shadow:0 10px 30px rgba(15,43,39,.18);
+  --radius:14px;
+  --font-display:'Amiri', serif;
+  --font-body:'Cairo', sans-serif;
+  --font-kufi:'Reem Kufi', sans-serif;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:
+    radial-gradient(1200px 600px at 15% -10%, rgba(200,153,43,.10), transparent 60%),
+    radial-gradient(1000px 500px at 100% 0%, rgba(200,153,43,.08), transparent 55%),
+    var(--ink);
+  color:var(--text-dark);
+  font-family:var(--font-body);
+  line-height:1.9;
+  -webkit-font-smoothing:antialiased;
+}
+.page{max-width:980px; margin:0 auto; padding:0 18px 60px;}
+a{color:inherit;}
+.eyebrow{
+  font-family:var(--font-kufi);
+  letter-spacing:.12em;
+  font-size:.78rem;
+  color:var(--gold-light);
+  display:inline-flex; align-items:center; gap:8px;
+}
+.eyebrow::before, .eyebrow::after{content:""; width:22px; height:1px; background:var(--gold-light); opacity:.6;}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;
+  padding:56px 28px 46px;
+  color:var(--text-light);
+  border-radius:0 0 26px 26px;
+  overflow:hidden;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.02), rgba(0,0,0,.10)),
+    var(--ink);
+  border-bottom:1px solid rgba(227,195,102,.35);
+}
+.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(200,153,43,.045) 0 2px, transparent 2px 26px),
+    repeating-linear-gradient(-45deg, rgba(200,153,43,.045) 0 2px, transparent 2px 26px);
+  pointer-events:none;
+}
+.hero-frame{
+  position:absolute; inset:10px;
+  border:1px solid rgba(227,195,102,.28);
+  border-radius:18px;
+  pointer-events:none;
+}
+.hero-inner{position:relative; text-align:center; display:flex; flex-direction:column; align-items:center; gap:16px;}
+.rosette{width:118px; height:118px; opacity:.95;}
+.series-line{display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:center;}
+.badge{
+  font-family:var(--font-kufi);
+  font-size:.82rem;
+  border:1px solid var(--gold-light);
+  color:var(--gold-light);
+  padding:5px 14px;
+  border-radius:999px;
+  background:rgba(227,195,102,.08);
+}
+h1.title{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:clamp(2rem, 5vw, 3rem);
+  color:var(--text-light);
+  text-shadow:0 2px 18px rgba(0,0,0,.25);
+}
+.subtitle{
+  max-width:640px;
+  color:var(--parchment-3);
+  font-size:1.02rem;
+  font-weight:300;
+}
+.hero-meta{
+  font-family:var(--font-kufi);
+  font-size:.85rem;
+  color:var(--gold-light);
+  opacity:.9;
+}
+.btn-anki{
+  display:inline-flex; align-items:center; gap:8px;
+  background:linear-gradient(135deg, var(--gold-light), var(--gold-dim));
+  color:#28210c;
+  font-family:var(--font-body);
+  font-weight:700;
+  font-size:.95rem;
+  border:none;
+  padding:12px 22px;
+  border-radius:999px;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(0,0,0,.25);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.btn-anki:hover{transform:translateY(-2px); box-shadow:0 12px 26px rgba(0,0,0,.3);}
+.btn-anki:focus-visible{outline:3px solid var(--text-light); outline-offset:3px;}
+
+/* ===== TOC ===== */
+.toc-wrap{
+  margin:-26px auto 34px;
+  position:relative;
+  z-index:2;
+  background:var(--parchment);
+  border:1px solid var(--gold-dim);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:22px 24px;
+}
+.toc-title{
+  font-family:var(--font-kufi);
+  color:var(--maroon);
+  font-size:.92rem;
+  margin-bottom:14px;
+  display:flex; align-items:center; gap:8px;
+}
+.toc-list{
+  list-style:none;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+  gap:8px 18px;
+}
+.toc-list a{
+  display:flex; align-items:baseline; gap:8px;
+  text-decoration:none;
+  color:var(--text-dark);
+  font-size:.93rem;
+  padding:6px 4px;
+  border-bottom:1px dashed rgba(124,36,49,.25);
+  transition:color .15s ease;
+}
+.toc-list a:hover{color:var(--maroon);}
+.toc-num{font-family:var(--font-display); color:var(--gold-dim); font-weight:700; min-width:20px;}
+
+/* ===== SECTIONS ===== */
+main{display:flex; flex-direction:column; gap:8px;}
+section.block{
+  background:var(--parchment);
+  border:1px solid rgba(168,130,42,.35);
+  border-radius:var(--radius);
+  padding:32px 30px;
+  margin-bottom:22px;
+  box-shadow:var(--shadow);
+  position:relative;
+}
+section.block::before{
+  content:"";
+  position:absolute; top:14px; bottom:14px; right:0;
+  width:3px;
+  background:linear-gradient(180deg, var(--gold-light), transparent);
+  border-radius:3px;
+}
+.sec-head{display:flex; align-items:center; gap:12px; margin-bottom:18px; flex-wrap:wrap;}
+.sec-icon{
+  width:42px; height:42px; flex:none;
+  display:flex; align-items:center; justify-content:center;
+  border-radius:50%;
+  background:var(--ink);
+  color:var(--gold-light);
+  font-size:1.2rem;
+  border:1px solid var(--gold-dim);
+}
+h2.sec-title{
+  font-family:var(--font-display);
+  font-size:1.55rem;
+  color:var(--ink);
+}
+.sec-sub{font-family:var(--font-kufi); font-size:.78rem; color:var(--muted); display:block; margin-top:2px;}
+p{margin:12px 0; font-size:1.01rem;}
+strong{color:var(--maroon); font-weight:700;}
+
+/* ===== BLOCKS ===== */
+.evidence-block, .quote-block{
+  background:var(--parchment-2);
+  border-right:4px solid var(--gold-dim);
+  border-radius:8px;
+  padding:18px 20px;
+  margin:16px 0;
+  font-family:var(--font-display);
+  font-size:1.15rem;
+  color:var(--text-dark);
+  line-height:2.1;
+}
+.evidence-block .src, .quote-block .src{
+  display:block;
+  font-family:var(--font-body);
+  font-size:.82rem;
+  color:var(--muted);
+  margin-top:10px;
+  font-style:normal;
+}
+.definition-box{
+  background:var(--green-light);
+  border:1px dashed var(--green-deep);
+  border-radius:10px;
+  padding:16px 20px;
+  margin:16px 0;
+  position:relative;
+}
+.definition-box .tag{
+  position:absolute; top:-12px; right:16px;
+  background:var(--green-deep);
+  color:var(--text-light);
+  font-family:var(--font-kufi);
+  font-size:.72rem;
+  padding:3px 12px;
+  border-radius:999px;
+}
+.key-point{
+  background:rgba(200,153,43,.08);
+  border-right:4px solid var(--gold);
+  border-radius:8px;
+  padding:14px 18px;
+  margin:14px 0;
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+}
+.key-point .kp-icon{color:var(--gold-dim); font-size:1.2rem; flex:none; margin-top:2px;}
+.warning-box{
+  background:var(--maroon-light);
+  border-right:4px solid var(--maroon);
+  border-radius:8px;
+  padding:14px 18px;
+  margin:14px 0;
+  display:flex; gap:12px; align-items:flex-start;
+}
+.warning-box .w-icon{color:var(--maroon); font-size:1.2rem; flex:none;}
+.story-block{
+  background:linear-gradient(180deg, #fffdf6, var(--parchment-2));
+  border:1px solid var(--gold-dim);
+  border-radius:10px;
+  padding:20px 22px;
+  margin:18px 0;
+  position:relative;
+}
+.story-block::before{
+  content:"◆ حكاية";
+  position:absolute; top:-13px; right:18px;
+  background:var(--maroon);
+  color:var(--text-light);
+  font-family:var(--font-kufi);
+  font-size:.72rem;
+  padding:4px 14px;
+  border-radius:999px;
+}
+.action-card{
+  background:var(--ink);
+  color:var(--text-light);
+  border-radius:10px;
+  padding:20px 22px;
+  margin:18px 0;
+  border:1px solid var(--gold-dim);
+}
+.action-card .a-tag{
+  font-family:var(--font-kufi);
+  color:var(--gold-light);
+  font-size:.78rem;
+  display:block;
+  margin-bottom:8px;
+}
+.comparison-table{width:100%; border-collapse:collapse; margin:18px 0; font-size:.95rem;}
+.comparison-table th{
+  background:var(--ink);
+  color:var(--gold-light);
+  font-family:var(--font-kufi);
+  font-weight:500;
+  padding:12px;
+  text-align:right;
+  font-size:.85rem;
+}
+.comparison-table td{
+  padding:12px;
+  border-bottom:1px solid rgba(168,130,42,.25);
+  vertical-align:top;
+}
+.comparison-table tr:nth-child(even) td{background:rgba(200,153,43,.06);}
+.comparison-table .pick{position:relative;}
+.comparison-table .pick::after{
+  content:"✓ الراجح عند النووي";
+  display:block;
+  margin-top:6px;
+  font-family:var(--font-kufi);
+  font-size:.72rem;
+  color:var(--green-deep);
+}
+
+/* ===== FOOTER ===== */
+footer{
+  margin-top:20px;
+  background:var(--ink);
+  color:var(--text-light);
+  border-radius:var(--radius);
+  padding:40px 30px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+footer::before{
+  content:"";
+  position:absolute; inset:8px;
+  border:1px solid rgba(227,195,102,.25);
+  border-radius:10px;
+  pointer-events:none;
+}
+footer p.dua{
+  font-family:var(--font-display);
+  font-size:1.2rem;
+  color:var(--gold-light);
+  max-width:600px;
+  margin:0 auto 22px;
+  line-height:2;
+}
+.foot-note{font-size:.82rem; color:var(--parchment-3); opacity:.8; margin-top:18px;}
+
+@media(max-width:640px){
+  .hero{padding:42px 18px 34px;}
+  section.block{padding:24px 18px;}
+  .toc-wrap{padding:18px;}
+  .comparison-table{font-size:.85rem;}
+  .comparison-table th, .comparison-table td{padding:8px;}
+}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+</style>
 </head>
-<body class="" data-page="lecture" data-lecture-id="stage1_riyad-al-saliheen_01">
-  <div class="page">
-    <nav class="breadcrumbs"><a href="../../../index.html">الرئيسية</a><span class="sep">/</span><a href="../../index.html">المرحلة الأولى</a><span class="sep">/</span><a href="../index.html">شرح رياض الصالحين</a><span class="sep">/</span><span aria-current="page">باب الإخلاص والنية 1</span></nav>
-    
-      <header class="lecture-header">
-        <h1>باب الإخلاص والنية 1</h1>
-        <p class="lecture-meta">المادة: شرح رياض الصالحين &nbsp;|&nbsp; الشيخ: غير محدد حاليًا &nbsp;|&nbsp; اليوم 6</p>
-        <label class="checkbox-line lecture-checkbox">
-          <input type="checkbox" data-lecture-id="stage1_riyad-al-saliheen_01">
-          <span>إتمام هذه المحاضرة</span>
-        </label>
-      </header>
+<body>
+<div class="page">
 
-      <div class="lecture-placeholder">
-        <p>سيتم إضافة المحاضرة هنا لاحقًا</p>
-        <p class="placeholder-hint">(رابط يوتيوب / فيديو / ملف صوتي / PDF / نص المحاضرة / ملاحظاتي)</p>
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="top">
+    <div class="hero-frame"></div>
+    <div class="hero-inner">
+      <svg class="rosette" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="82" fill="none" stroke="#e3c366" stroke-width="1"/>
+        <circle cx="100" cy="100" r="64" fill="none" stroke="#e3c366" stroke-width="1.4"/>
+        <rect x="42" y="42" width="116" height="116" fill="none" stroke="#e3c366" stroke-width="2.4"/>
+        <rect x="42" y="42" width="116" height="116" fill="none" stroke="#e3c366" stroke-width="2.4" transform="rotate(45 100 100)"/>
+        <circle cx="100" cy="100" r="10" fill="#e3c366" opacity=".9"/>
+        <circle cx="100" cy="100" r="4" fill="#0f2b27"/>
+      </svg>
+      <div class="series-line">
+        <span class="badge">مجالس رياض الصالحين</span>
+        <span class="badge">الحلقة ١</span>
+      </div>
+      <h1 class="title">الإخلاص واستحضار النية</h1>
+      <p class="subtitle">
+        وقفات مع هدي النبي ﷺ من خلال باب الإخلاص واستحضار النية في جميع الأعمال والأقوال والأحوال،
+        من كتاب رياض الصالحين للإمام النووي رحمه الله — بين الآيات وأحاديث الباب الستة الأولى.
+      </p>
+      <p class="hero-meta">الكتاب: رياض الصالحين — المؤلف: الإمام النووي — الباب: الأول (الإخلاص)</p>
+      <button class="btn-anki" onclick="downloadAnkiDeck()">🗂️ حمّل بطاقات أنكي</button>
+    </div>
+  </header>
+
+  <!-- ===== TOC ===== -->
+  <nav class="toc-wrap" aria-label="جدول المحتويات">
+    <div class="toc-title">فِهرس المجلس</div>
+    <ul class="toc-list">
+      <li><a href="#manhaj"><span class="toc-num">٠</span> منهج هذه السلسلة ولماذا رياض الصالحين</a></li>
+      <li><a href="#ayat"><span class="toc-num">١</span> آيات الباب</a></li>
+      <li><a href="#hadith1"><span class="toc-num">٢</span> إنما الأعمال بالنيات</a></li>
+      <li><a href="#hadith2"><span class="toc-num">٣</span> جيش يُخسف به</a></li>
+      <li><a href="#hadith3"><span class="toc-num">٤</span> لا هجرة بعد الفتح</a></li>
+      <li><a href="#hadith4"><span class="toc-num">٥</span> أهل الأعذار في تبوك</a></li>
+      <li><a href="#hadith5"><span class="toc-num">٦</span> قصة معن بن يزيد والدنانير</a></li>
+      <li><a href="#hadith6"><span class="toc-num">٧</span> قصة سعد بن أبي وقاص</a></li>
+      <li><a href="#khatimah"><span class="toc-num">٨</span> خلاصة المجلس</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ===== 0. المنهج ===== -->
+    <section class="block" id="manhaj">
+      <div class="sec-head">
+        <div class="sec-icon">◈</div>
+        <div>
+          <h2 class="sec-title">منهج هذه السلسلة، ولماذا رياض الصالحين؟</h2>
+          <span class="sec-sub">مقدمة المجلس الأول</span>
+        </div>
+      </div>
+      <p>
+        افتتح الشيخ هذا المجلس بالتنبيه إلى طريقة السير في شرح أحاديث الكتاب: القصد ليس الوقوف التفصيلي على كل جملة
+        من جمل الحديث، ولا شرح الألفاظ والمفردات شمولاً، بل الوقوف مع <strong>مجمل الفوائد</strong>. ولذلك ستتفاوت
+        الوقفات؛ فبعض الأحاديث يُسترسل في التعليق عليها والدرس المستفاد منها، وبعضها يُمر عليه مروراً سريعاً،
+        خاصة أن أحاديث الكتاب كثيرة ومتنوعة الموضوعات.
+      </p>
+      <div class="key-point">
+        <span class="kp-icon">✺</span>
+        <div>
+          <strong>الزاوية التي يدخل منها الشيخ إلى الكتاب:</strong> ملاحظة <strong>هدي النبي ﷺ</strong> نفسه —
+          فعله، أخلاقه، توصياته، منهجه، ما أحبّه من أصحابه، وما أراده من أمته. القصد الأعظم: على ماذا كان النبي ﷺ،
+          وإلى ماذا دعا، وبم اهتمّ، وكيف بلّغ. وهذه ليست السلسلة الوحيدة في هذا الباب؛ فقد سبقتها سلسلة
+          "غيث الساري"، وكان الشيخ مترددًا بين استئنافها أو البدء برياض الصالحين، لكن الغرض واحد في النهاية:
+          التأسي بالحبيب المصطفى ﷺ.
+        </div>
+      </div>
+      <p>
+        أما ميزة كتاب رياض الصالحين تحديدًا، فذكر الشيخ أن الإمام النووي رحمه الله <strong>انتقى أحاديثه وأبوابه
+        انتقاءً حسنًا</strong>، واعتنى فيه بقصد السائر إلى طريق الآخرة كما نصّ في مقدمته، فجاء الكتاب شاملاً لأبواب
+        القلوب والرقائق والتزكية، وأبواب الآداب بتفصيلاتها.
+      </p>
+      <div class="warning-box">
+        <span class="w-icon">⚠</span>
+        <div>
+          <strong>تنبيه مهم ذكره الشيخ:</strong> من اقتصر في تفقّهه على أحاديث الأحكام دون العناية بأحاديث السير
+          العملي إلى الله وأعمال القلوب، فتفقّهه ناقص، وتصوّره لطريقة النبي ﷺ ناقص. ومن العجب أن يُفني طالب العلم
+          عمره في تطلّب بعض أبواب الدين دون أن يحرص على المرور بأهم الأبواب المتعلقة بالدار الآخرة والتعبد وتزكية
+          النفس.
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 1. الآيات ===== -->
+    <section class="block" id="ayat">
+      <div class="sec-head">
+        <div class="sec-icon">📖</div>
+        <div>
+          <h2 class="sec-title">آيات باب الإخلاص</h2>
+          <span class="sec-sub">الجمع بين القرآن والحديث في بناء الباب</span>
+        </div>
+      </div>
+      <p>
+        افتتح الإمام النووي الباب بثلاث آيات قبل أن يورد الأحاديث، وهي طريقة معتبرة عند علماء الحديث سيأتي بيان
+        قيمتها.
+      </p>
+      <div class="evidence-block">
+        وَمَا أُمِرُوا إِلَّا لِيَعْبُدُوا اللَّهَ مُخْلِصِينَ لَهُ الدِّينَ حُنَفَاءَ وَيُقِيمُوا الصَّلَاةَ
+        وَيُؤْتُوا الزَّكَاةَ وَذَلِكَ دِينُ الْقَيِّمَةِ
+        <span class="src">سورة البينة</span>
+      </div>
+      <div class="evidence-block">
+        لَنْ يَنَالَ اللَّهَ لُحُومُهَا وَلَا دِمَاؤُهَا وَلَكِنْ يَنَالُهُ التَّقْوَى مِنْكُمْ
+        <span class="src">سورة الحج</span>
+      </div>
+      <div class="evidence-block">
+        قُلْ إِنْ تُخْفُوا مَا فِي صُدُورِكُمْ أَوْ تُبْدُوهُ يَعْلَمْهُ اللَّهُ
+        <span class="src">سورة آل عمران</span>
+      </div>
+      <div class="key-point">
+        <span class="kp-icon">✺</span>
+        <div>
+          <strong>لماذا يجمع مؤلفو الحديث بين القرآن والحديث في الأبواب؟</strong> نبّه الشيخ إلى أن هذا منهج شريف
+          ومهم: الجمع بين القرآن والحديث في بناء التصوّر المتعلق بباب من أبواب الدين، حتى يتحقق قدر من التكامل بين
+          الكتاب والسنة. وهذه طريقة الإمام البخاري رحمه الله في صحيحه رغم أنه كتاب في الحديث، وكذلك طريقة الإمام
+          النووي في رياض الصالحين.
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 2. حديث إنما الأعمال بالنيات ===== -->
+    <section class="block" id="hadith1">
+      <div class="sec-head">
+        <div class="sec-icon">١</div>
+        <div>
+          <h2 class="sec-title">إنما الأعمال بالنيات</h2>
+          <span class="sec-sub">الحديث الأول — عن عمر بن الخطاب رضي الله عنه</span>
+        </div>
+      </div>
+      <div class="quote-block">
+        عن أمير المؤمنين أبي حفص عمر بن الخطاب رضي الله عنه قال: سمعت رسول الله ﷺ يقول:
+        «إنما الأعمال بالنيات، وإنما لكل امرئ ما نوى، فمن كانت هجرته إلى الله ورسوله فهجرته إلى الله ورسوله،
+        ومن كانت هجرته لدنيا يصيبها أو امرأة ينكحها فهجرته إلى ما هاجر إليه».
+        <span class="src">متفق عليه — رواه البخاري ومسلم في صحيحيهما، وهما أصح الكتب المصنَّفة</span>
       </div>
 
-      <div class="lecture-nav">
-        <a href="../index.html" class="btn btn-outline">الرجوع إلى المادة</a>
-        <a href="../../index.html" class="btn btn-outline">الرجوع إلى المرحلة</a>
+      <div class="definition-box">
+        <span class="tag">تعريف</span>
+        <strong>النية:</strong> عزم القلب على فعل العبادة أو العمل تقرّبًا إلى الله سبحانه وتعالى؛ وهي الأساس الذي
+        تُقبل به الأعمال، ويتحدد به وجهتها ومقدار أجرها.
       </div>
-    
-  </div>
-  <script src="../../../data.js"></script>
-  <script src="../../../script.js"></script>
+
+      <p>
+        هذا الحديث مرّ شرحه كثيرًا على الدارسين، فلم يُرد الشيخ إعادة تفصيل جُمَله، بل وقف عند قضية أهمّ: قال فيه
+        الأئمة المتقدمون عبارات معروفة — منهم من قال إنه ثلث الدين، ومنهم من عدّه أحد الأحاديث الأربعة التي يقوم
+        عليها الإسلام. والسؤال المهم: <strong>من أين جاء العلماء بهذا التقدير</strong>، ولا يوجد نص شرعي صريح ينص
+        على أن هذا الحديث بعينه له هذه المرتبة؟
+      </p>
+
+      <div class="key-point">
+        <span class="kp-icon">✺</span>
+        <div>
+          <strong>الجواب: عبر الاستنباط لا عبر نص صريح.</strong> نبّه الشيخ إلى أن باب معرفة مراتب الدين لا يزال
+          الاستنباط فيه مفتوحًا، مبنيًّا على ما له أصل في الشريعة، بخلاف باب مثل "أعظم آية في كتاب الله" الذي بيّنه
+          النبي ﷺ نفسه لأُبيّ بن كعب بقوله: "ليهنك العلم أبا المنذر". فمن يستطيع أن يستنبط عِظَم هذا الحديث؟
+          هو من يعلم تفاوت مراتب الدين، ويدرك أن الدين ليس على مرتبة واحدة. ولمّا تعلّق الحديث بالنية وإرادة وجه
+          الله والإخلاص، أدرك العلماء أنه من أهم الأحاديث؛ لأن صيغته العامة "إنما الأعمال بالنيات" جعلته متعلقًا
+          بسائر ما يعمله الإنسان: <strong>أعمال القلوب</strong> وأعمال الجوارح، إذ لا تُقبل الأخيرة إلا بنية خالصة
+          لوجه الله.
+        </div>
+      </div>
+
+      <div class="story-block">
+        <p>
+          لبيان مقدار تعظيم السلف للحديث الواحد، ذكر الشيخ نماذج: لمّا قال الشعبي عن حديث معيّن: "أُعطيناها بغير
+          شيء، وقد كان يُركب فيما دونها إلى المدينة" — يعني أن طلب هذا الحديث وحده كان يستحق أن يُرحَل إليه إلى
+          المدينة. وأن <strong>جابر بن عبد الله</strong> رضي الله عنه سافر مسيرة شهر كامل لأجل سماع حديث واحد.
+        </p>
+      </div>
+
+      <p>
+        وخلاصة ما أراد الشيخ إيصاله في هذا الحديث: أن <strong>باب النية والإخلاص من أعظم أبواب الدين</strong>،
+        وأن العناية به من أعظم المطالب التعبدية، وأنه ينبغي أن يراجع الإنسان نيته في نفسه يوميًّا. وأن أعظم ما يدل
+        عليه الحديث: أن الإنسان مهما تعِب وبذل وسعى، ولو عرّض نفسه للخطر فيما ظاهره جهاد أو هجرة، فلن ينتفع بذلك
+        ما لم يبتغِ به وجه الله.
+      </p>
+    </section>
+
+    <!-- ===== 3. حديث الجيش الذي يُخسف به ===== -->
+    <section class="block" id="hadith2">
+      <div class="sec-head">
+        <div class="sec-icon">٢</div>
+        <div>
+          <h2 class="sec-title">يُخسف بأولهم وآخرهم ثم يُبعثون على نياتهم</h2>
+          <span class="sec-sub">الحديث الثاني — عن أم المؤمنين عائشة رضي الله عنها</span>
+        </div>
+      </div>
+      <div class="quote-block">
+        عن عائشة رضي الله تعالى عنها قالت: قال رسول الله ﷺ: «يغزو جيشٌ الكعبةَ، فإذا كانوا ببيداءَ من الأرض
+        يُخسف بأولهم وآخرهم». قالت: قلت يا رسول الله، كيف يُخسف بأولهم وآخرهم وفيهم أسواقُهم ومَن ليس منهم؟
+        قال: «يُخسف بأولهم وآخرهم، ثم يُبعثون على نياتهم».
+        <span class="src">متفق عليه، هذا لفظ البخاري</span>
+      </div>
+
+      <div class="key-point">
+        <span class="kp-icon">✺</span>
+        <div>
+          <strong>لماذا أورد النووي هذا الحديث في باب الإخلاص تحديدًا؟</strong> هذا استنباط لطيف من الإمام النووي؛
+          فوجه ذكره في هذا الباب ليس ظاهرًا للوهلة الأولى. وأشار الشيخ إلى أن مثل هذا الإتيان يكون غالبًا مبنيًّا
+          على <strong>الحفظ</strong>: فمن رُزق حال الاستنباط مع سعة الحفظ يجد العلم في غير مضانّه — أي يهتدي إلى
+          النصوص التي تخدم موضوعًا ما رغم أنها ليست في بابه المباشر. والإمام البخاري رحمه الله كان إمام هذه القضية
+          تحديدًا: الاستنباط من النصوص غير المباشرة.
+        </div>
+      </div>
+
+      <div class="definition-box">
+        <span class="tag">تعريف</span>
+        <strong>أشراط الساعة:</strong> علامات اقتراب يوم القيامة، وتنقسم من حيث الوقوع إلى قسمين: ما وقع منها فعلاً،
+        وما لم يقع بعد. وحادثة الجيش الذي يُخسف به من القسم الذي <strong>لم يقع بعد</strong>، ويرى جماعة من أهل
+        العلم أنها مرتبطة بأحداث المهدي ولجوئه إلى الكعبة وتوجّه جيش لقتاله.
+      </div>
+
+      <p>
+        أما موضع الشاهد من الحديث في باب الإخلاص فهو قوله ﷺ: <strong>«ثم يُبعثون على نياتهم»</strong>. فسؤال عائشة
+        رضي الله عنها فهمته من عموم لفظ "يُخسف بأولهم وآخرهم" الذي يشمل حتى أصحاب الأسواق ومن ليس من الجيش أصلاً،
+        فأجاب النبي ﷺ ببيان أن العقوبة الظاهرة قد تعمّ، لكن البعث والمآل يوم القيامة إنما يكون على النيات.
+      </p>
+
+      <div class="warning-box">
+        <span class="w-icon">⚠</span>
+        <div>
+          <strong>فائدة: خطر مخالطة أهل الشر.</strong> من فوائد هذا الحديث أن الإنسان إذا خالط أهل الشر واقترب منهم
+          وكان معهم ولو في الصورة الظاهرة دون أن يكون بقلبه معهم، فقد يناله من العقاب الدنيوي العام ما ينالهم.
+          ومع ذلك، فحتى لو جاءت العقوبة عامة وهلك فيها من هلك، فليس معنى ذلك أن الجميع في نفس الدرجة يوم القيامة؛
+          فكل إنسان يُبعث على نيته، وقد يعفو الله عمّن قصّر تقصيرًا يسيرًا ولديه من الحسنات ما يرجّح كفته.
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 4. لا هجرة بعد الفتح ===== -->
+    <section class="block" id="hadith3">
+      <div class="sec-head">
+        <div class="sec-icon">٣</div>
+        <div>
+          <h2 class="sec-title">لا هجرة بعد الفتح، ولكن جهاد ونية</h2>
+          <span class="sec-sub">الحديث الثالث — عن أم المؤمنين عائشة رضي الله عنها</span>
+        </div>
+      </div>
+      <div class="quote-block">
+        عن عائشة رضي الله تعالى عنها قالت: قال النبي ﷺ: «لا هجرة بعد الفتح، ولكن جهاد ونية، وإذا استُنفرتم
+        فانفروا».
+        <span class="src">متفق عليه</span>
+      </div>
+
+      <p>
+        نبّه النووي رحمه الله إلى أن هذا الحديث وإن كان لفظه عامًّا، إلا أن المراد به الخصوص. فظاهر اللفظ "لا هجرة
+        بعد الفتح" يوهم أن الهجرة انتهت بالكلية، لكن العلماء ذكروا احتمالين في تقييد المعنى:
+      </p>
+
+      <table class="comparison-table">
+        <thead>
+          <tr><th>التفسير</th><th>المعنى</th><th>الأساس</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="pick"><strong>لا هجرة من مكة</strong></td>
+            <td>مكة صارت دار إسلام، فلم تعد هناك حاجة للهجرة منها فرارًا بالدين. وفيه تبشير بأنها ستظل دار إسلام
+              إلى يوم القيامة.</td>
+            <td>قول مشهور عند العلماء، ورجّحه الإمام النووي</td>
+          </tr>
+          <tr>
+            <td><strong>لا هجرة إلى النبي ﷺ</strong></td>
+            <td>انتهى فضل الهجرة إلى المدينة حيث النبي ﷺ، إذ بعد فتح مكة دخل الناس في دين الله أفواجًا فلم تعد
+              الهجرة إليه ﷺ بنفس القيمة السابقة.</td>
+            <td>ذكره بعض العلماء</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="definition-box">
+        <span class="tag">تعريف</span>
+        <strong>الهجرة في هذا السياق:</strong> الانتقال من دار الكفر أو موضع لا يتمكن فيه المسلم من إقامة دينه إلى
+        دار الإسلام، طلبًا لنصرة الدين وإقامة الشعائر، لا لمجرد التنقل الجغرافي.
+      </div>
+
+      <div class="key-point">
+        <span class="kp-icon">✺</span>
+        <div>
+          <strong>موضع الشاهد الأعظم: "ولكن جهاد ونية".</strong> لاحظ الشيخ أين وُضعت النية في الحديث — مقترنة
+          بالجهاد مباشرة بعد نفي الهجرة. فكأن النبي ﷺ يقول: قد ذهبت فضيلة الهجرة بمعناها الأول، لكن بقي ما هو في
+          فلكها: الجهاد، وأعظم من ذلك: <strong>النية</strong>. وهذا دليل على أن الإنسان قد يبلغ بقلبه وبنيته من
+          الدرجات ما لا يبلغه بكثير من العمل الظاهر.
+        </div>
+      </div>
+
+      <div class="action-card">
+        <span class="a-tag">تطبيق عملي — نية طالب العلم</span>
+        اربط الشيخ هذا المعنى بواقع طلاب العلم: من نوى بطلبه للعلم إحياء الإسلام وإعلاء كلمة الله وإصلاح أحوال
+        الأمة، فليعلم أن هذه النية بمجردها — ولو لم يتحقق المراد في حياته — من أعظم ما يُلقى الله به يوم القيامة،
+        وتبلغ من الأجر ما يبلغه العمل نفسه. فمن طوى قلبه على أعلى النيات الصالحة، لم يضرّه ألا يشهد ثمرة عمله في
+        الدنيا؛ لأنه لقي الله بنية هي عنده سبحانه تبلغ ما يبلغ العمل.
+      </div>
+    </section>
+
+    <!-- ===== 5. أهل الأعذار في تبوك ===== -->
+    <section class="block" id="hadith4">
+      <div class="sec-head">
+        <div class="sec-icon">٤</div>
+        <div>
+          <h2 class="sec-title">حبسهم العذر فشاركوكم في الأجر</h2>
+          <span class="sec-sub">الحديث الرابع — عن جابر بن عبد الله وأنس بن مالك رضي الله عنهما</span>
+        </div>
+      </div>
+      <div class="quote-block">
+        عن جابر بن عبد الله رضي الله عنهما قال: كنا مع النبي ﷺ في غزاة، فقال: «إن بالمدينة لَرجالاً ما سرتم مسيرًا
+        ولا قطعتم واديًا إلا كانوا معكم، حبسهم المرض» وفي رواية: «إلا شركوكم في الأجر».
+        <span class="src">رواه مسلم</span>
+      </div>
+      <div class="quote-block">
+        وعن أنس رضي الله عنه قال: رجعنا من غزوة تبوك مع النبي ﷺ، فقال: «إن أقوامًا خلَّفنا بالمدينة، ما سلكنا شِعبًا
+        ولا واديًا إلا وهم معنا، حبسهم العُذر».
+        <span class="src">رواه البخاري</span>
+      </div>
+
+      <p>
+        هذا الحديث ليس خاصًّا بتبوك والمدينة، بل هو حقيقة شرعية عامة. وقد كان بالمدينة أناس وصفهم الله سبحانه في
+        سورة التوبة بقوله:
+      </p>
+      <div class="evidence-block">
+        وَلَا عَلَى الَّذِينَ إِذَا مَا أَتَوْكَ لِتَحْمِلَهُمْ قُلْتَ لَا أَجِدُ مَا أَحْمِلُكُمْ عَلَيْهِ
+        تَوَلَّوْا وَأَعْيُنُهُمْ تَفِيضُ مِنَ الدَّمْعِ حَزَنًا أَلَّا يَجِدُوا مَا يُنْفِقُونَ
+        <span class="src">سورة التوبة — نزلت متعلقة بغزوة تبوك</span>
+      </div>
+
+      <div class="key-point">
+        <span class="kp-icon">✺</span>
+        <div>
+          هؤلاء فئة من الصحابة لم يكونوا يجدون النفقة ليخرجوا مع النبي ﷺ، فتذكّرهم النبي ﷺ ولم ينسهم، وهذا من الهدي
+          العظيم: <strong>الناس المتفاوتون في القدرة على نصرة الدين، ونيّتهم صادقة، يُجبَرون ولا يُنسَون.</strong>
+          فمن كانت نيته صادقة في بلوغ ميدان من ميادين نصرة الإسلام، وسعى إليه، ثم حبسه عذر حقيقي كالمرض أو قلة ذات
+          اليد، كتب الله له الأجر كاملاً، بل قد يكون أجرًا مفصَّلًا لا مجملًا فقط — لأن الحديث نصّ على "ما سرتم
+          مسيرًا ولا قطعتم واديًا"، أي تُكتب له نفس الخطوات والمسيرة.
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 6. قصة معن بن يزيد ===== -->
+    <section class="block" id="hadith5">
+      <div class="sec-head">
+        <div class="sec-icon">٥</div>
+        <div>
+          <h2 class="sec-title">لك ما نويت يا يزيد، ولك ما أخذت يا معن</h2>
+          <span class="sec-sub">الحديث الخامس — عن معن بن يزيد رضي الله عنهم</span>
+        </div>
+      </div>
+      <div class="story-block">
+        <p>
+          عن أبي يزيد مَعْن بن يزيد رضي الله عنهم — وأبوه وجده صحابيّان — قال: كان أبي يزيد أخرج دنانيرَ يتصدق بها،
+          فوضعها عند رجل في المسجد ليُعطيها لمن يستحقها من الفقراء. فجاء معنٌ ولم يعلم أن هذه الدنانير للصدقة، فأخذها
+          ورجع بها إلى أبيه. فلما رآها أبوه، قال: <strong>«والله ما إياك أردت»</strong> — أي لم أقصد إعطاءك إياها
+          أنت. فخاصمه إلى رسول الله ﷺ، فقال ﷺ: «لك ما نويت يا يزيد، ولك ما أخذت يا معن».
+        </p>
+        <span class="src">رواه البخاري</span>
+      </div>
+
+      <p>
+        دل الحديث على أن مدار الأجر على النية: فأبو يزيد نوى الصدقة على الفقراء والمحتاجين، فبلغ أجره بنيته رغم أن
+        المال لم يصل إلى من قصدهم تحديدًا. أما معن فأخذ المال وهو لا يعلم، فله ما أخذ.
+      </p>
+
+      <div class="warning-box">
+        <span class="w-icon">⚠</span>
+        <div>
+          <strong>تنبيه في الفهم الصحيح لـ"لك ما نويت":</strong> هذه البشارة مشروطة بألا يُقصِّر المتصدّق في موضع
+          صدقته. فمن تحرّى ووضع صدقته في موضع مؤتمن ثم تبيّن بعد سنوات أن الجهة لم تكن أمينة، فله أجر نيته ولم يُفرّط.
+          أما من يضع ماله عند من هم معروفون بالخيانة أو محاربة الدين وهو يعلم حالهم، ثم يعتذر بأنه "لم يدرِ"، فهذا
+          لا يدخل في معنى "لك ما نويت" إلا إذا كان يجهل حقيقة أمرهم فعلاً.
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 7. قصة سعد بن أبي وقاص ===== -->
+    <section class="block" id="hadith6">
+      <div class="sec-head">
+        <div class="sec-icon">٦</div>
+        <div>
+          <h2 class="sec-title">إنك لن تُنفق نفقة تبتغي بها وجه الله إلا أُجرت عليها</h2>
+          <span class="sec-sub">الحديث السادس — عن سعد بن أبي وقاص رضي الله عنه (لم يكتمل شرحه في هذا المجلس)</span>
+        </div>
+      </div>
+
+      <div class="story-block">
+        <p>
+          عن سعد بن أبي وقاص رضي الله عنه — أحد العشرة المشهود لهم بالجنة — قال: جاءني رسول الله ﷺ يعودني عام حجة
+          الوداع من وجعٍ اشتدّ بي، فقلت: يا رسول الله، إني قد بلغ بي من الوجع ما ترى، وأنا ذو مال ولا يرثني إلا ابنة
+          لي، أفأتصدق بثلثي مالي؟ قال: «لا». قلت: فالشطر يا رسول الله؟ قال: «لا». قلت: فالثلث يا رسول الله؟
+          قال: <strong>«الثلث، والثلث كثير</strong> — أو كبير — إنك أن تذر ورثتك أغنياء خير من أن تذرهم عالة
+          يتكففون الناس، وإنك لن تنفق نفقة تبتغي بها وجه الله إلا أُجرت عليها، حتى ما تجعل في امرأتك».
+          فقلت: يا رسول الله، أُخلَّف بعد أصحابي؟ قال: «إنك لن تُخلَّف فتعمل عملًا تبتغي به وجه الله إلا ازددتَ به
+          درجة ورفعة، ولعلك أن تُخلَّف حتى ينتفع بك أقوام ويُضَرَّ بك آخرون. اللهم أمضِ لأصحابي هجرتهم ولا تردهم على
+          أعقابهم، لكن البائس سعد بن خَوْلة» — يرثي له رسول الله ﷺ أن مات بمكة.
+        </p>
+        <span class="src">متفق عليه</span>
+      </div>
+
+      <p>
+        كان سعد رضي الله عنه مريضًا بمكة، وكان يخشى أن يموت فيها بعدما ترك دياره وأهله وماله هجرة إلى المدينة؛
+        فلذلك سأل النبي ﷺ: "أُخلَّف بعد أصحابي؟" خشية أن يتأخر أجله بعد أصحابه الذين سيعودون إلى المدينة.
+      </p>
+
+      <div class="key-point">
+        <span class="kp-icon">✺</span>
+        <div>
+          <strong>موضع الشاهد الأعظم في هذا الحديث:</strong> قوله ﷺ "وإنك لن تنفق نفقة تبتغي بها وجه الله إلا أُجرت
+          عليها، حتى ما تجعل في امرأتك". فالنص الظاهر ينصرف أول الأمر إلى الصدقة على المحتاجين، لكن النبي ﷺ وسّع
+          دائرة النية لتشمل حتى ما هو من قبيل <strong>العادات</strong> ورغبات النفس، كالنفقة على الزوجة والأهل.
+        </div>
+      </div>
+
+      <div class="definition-box">
+        <span class="tag">تعريف</span>
+        <strong>الحديث النبوي:</strong> قول النبي ﷺ، أو فعله، أو تقريره (وهو سكوته وعدم إنكاره لأمر وقع أمامه؛
+        لأنه ﷺ لا يسكت عمّا ينبغي بيانه).
+      </div>
+
+      <div class="evidence-block">
+        قال الإمام الشاطبي رحمه الله في "الموافقات": المنتصب للناس في بيان الدين منتصبٌ لهم بقوله وفعله، فإنه وارث
+        النبي، والنبي كان مبيّنًا بقوله وفعله، وكذلك الوارث لا بد أن يقوم مقام الموروث، وإلا لم يكن وارثًا على
+        الحقيقة.
+        <span class="src">استشهد به الشيخ لبيان أن سيرة النبي ﷺ العملية وقصصه اليومية مصدر تعليم لا يقل عن أقواله المجردة</span>
+      </div>
+
+      <div class="key-point">
+        <span class="kp-icon">✺</span>
+        <div>
+          <strong>لماذا تكثر القصص في السنة النبوية؟</strong> نبّه الشيخ إلى أن كثيرًا من أحاديث النبي ﷺ إنما نُقلت
+          بسبب مخالطة الصحابة له في مواقف الحياة اليومية، لا في دروس نظرية فقط. وهذا بيّن في تعريف الحديث نفسه
+          (قول/فعل/تقرير)، وهو ما يُبقي أثر العالم في أمته محدودًا إن اقتصرت علاقته بطلابه على العلاقة النظرية
+          التدريسية المجردة، دون مخالطة عملية تُري المتعلم أحواله.
+        </div>
+      </div>
+
+      <p>
+        ثم عاد الشيخ إلى موضع الشاهد الأصلي في باب النية: النية الحاضرة في العبادات المحضة (صلاة، صدقة، صيام، حج،
+        قيام ليل) أمرٌ متوقّع، لكن أن تحضر النية فيما هو من قبيل العادات — كالنوم، والطعام، والنفقة على الأهل — فهذا
+        أرقى، وقد أشار إليه معاذ رضي الله عنه بقوله: <strong>"وإني أحتسب في نومتي ما أحتسب في قَومتي"</strong>.
+      </p>
+
+      <div class="key-point">
+        <span class="kp-icon">✺</span>
+        <div>
+          <strong>لماذا الإخلاص في العادات أصعب من الإخلاص في العبادات المحضة؟</strong> لأن العبادة المحضة موطنٌ
+          يستحضر فيها الإنسان النية غالبًا بحكم طبيعتها التعبدية، بينما العادة (كالنوم والأكل) ستقع بطبعها سواء
+          نوى الإنسان أم لم ينوِ، فيسهل الغفلة عن استحضار النية فيها رغم إمكان الأجر عليها. ولذلك قال الشيخ:
+          "إذا كان يصعب على كثير من الناس الإخلاص في العبادات المحضة، فكيف يسهل على الربانيين الإخلاص والاحتساب
+          في العادات؟" فمن بلغ هذه المرتبة، يكون إنسانًا أخرويًّا وهو يمشي على الأرض.
+        </div>
+      </div>
+
+      <div class="warning-box">
+        <span class="w-icon">✎</span>
+        <div>
+          <strong>ملحوظة على هذا المجلس:</strong> صرّح الشيخ في ختام اللقاء بأن نيته كانت إكمال الباب كاملاً، إلا أن
+          الوقت لم يسعف (نحو ساعة وعشر دقائق)، فتُرك إكمال الباب — وما تبقى من أحاديثه — إلى اللقاء القادم في هذه
+          السلسلة.
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== الخاتمة ===== -->
+    <section class="block" id="khatimah">
+      <div class="sec-head">
+        <div class="sec-icon">✦</div>
+        <div>
+          <h2 class="sec-title">خلاصة المجلس</h2>
+          <span class="sec-sub">الرسالة الجامعة لأحاديث هذا اللقاء</span>
+        </div>
+      </div>
+      <p>
+        تدور أحاديث هذا المجلس الستة كلها حول محور واحد: <strong>أن النية هي مدار قبول الأعمال وتفاضلها</strong>.
+        فهي التي تُقبل بها الأعمال الظاهرة (حديث ١)، وهي التي يُبعث عليها الناس يوم القيامة لا على مجرد ظاهر
+        انضمامهم (حديث ٢)، وهي التي تبلغ أحيانًا منزلة العمل نفسه إذا صدقت في نصرة الدين (حديث ٣)، وهي التي تُكتب
+        بها أجور من حبسهم العذر عن العمل (حديث ٤)، وهي التي يُحاسَب عليها المرء دون النظر إلى وصول أثر عمله
+        (حديث ٥)، وهي التي تتجاوز حدود العبادة المحضة لتشمل العادات اليومية (حديث ٦).
+      </p>
+      <div class="action-card">
+        <span class="a-tag">وصية عملية</span>
+        من أعظم ما ينبغي أن يحرص عليه الإنسان، ويراجعه في نفسه يوميًّا، هو <strong>باب النية</strong>: أن يسأل نفسه
+        قبل كل عمل — عبادةً كان أو عادة — لمن يعمل هذا العمل؟ وهل يبتغي به وجه الله؟
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p class="dua">
+      اللهم اجعل أعمالنا كلها خالصة لوجهك الكريم، لا نشرك بها أحدًا، وارزقنا صدق النية في السرّ والعلن،
+      واجعلنا ممن يبعثون يوم القيامة على أحسن نياتهم، وصلِّ اللهم وسلم على نبينا محمد وعلى آله وصحبه أجمعين.
+    </p>
+    <button class="btn-anki" onclick="downloadAnkiDeck()">🗂️ حمّل بطاقات أنكي</button>
+    <p class="foot-note">مجالس رياض الصالحين — الحلقة ١ · باب الإخلاص واستحضار النية · يُتبع في الحلقة القادمة</p>
+  </footer>
+
+</div>
+
+<script>
+const ankiCards = [
+  ["ما تعريف الإخلاص شرعًا؟", "إفراد الله سبحانه بالقصد في العبادة والعمل، بحيث يبتغي العبد بعمله وجه الله وحده دون رياء الناس أو طلب دنيا."],
+  ["ما تعريف النية في الاصطلاح؟", "عزم القلب على فعل العبادة أو العمل تقربًا إلى الله، وهي الأساس الذي تُقبل به الأعمال وتتحدد به وجهتها وقيمتها."],
+  ["من راوي حديث «إنما الأعمال بالنيات»؟", "عمر بن الخطاب رضي الله عنه، ورواه البخاري ومسلم."],
+  ["أكمل الحديث: «إنما الأعمال بالنيات وإنما لكل امرئ ...»", "ما نوى."],
+  ["لماذا اعتبر بعض العلماء حديث «إنما الأعمال بالنيات» من أعظم أصول الدين مع عدم وجود نص صريح بذلك؟", "لأنهم استنبطوا ذلك استنباطًا مبنيًا على معرفتهم بتفاوت مراتب الدين، وإدراكهم أن هذا الحديث يضبط قبول جميع الأعمال، القلبية والعملية، بالإخلاص والنية."],
+  ["ما معنى «الاستنباط» في العلم الشرعي؟", "استخراج الأحكام والمعاني من النصوص بالنظر في مقاصدها ودلالاتها، ولو لم يرد نص صريح مباشر على ذلك المعنى."],
+  ["ما المثال الذي ذُكر على حرص السلف على سماع الحديث الواحد؟", "أن جابر بن عبد الله رضي الله عنه سافر مسيرة شهر كامل لسماع حديث واحد."],
+  ["ماذا قال الشعبي في تعظيم شأن الحديث الواحد؟", "قال: «أُعطيناها بغير شيء، وقد كان يُركب فيما دونها إلى المدينة» يعني في طلب حديث واحد."],
+  ["من راوية حديث «يغزو جيش الكعبة» الذي فيه الخسف؟", "أم المؤمنين عائشة رضي الله عنها، متفق عليه."],
+  ["أكمل الحديث: «يُخسف بأولهم وآخرهم ثم...»", "يُبعثون على نياتهم."],
+  ["ما الفائدة الأهم المستنبطة من حديث الجيش الذي يُخسف به في باب الإخلاص؟", "أن الناس يُبعثون يوم القيامة على نياتهم، لا على مجرد ظاهر انضمامهم لجماعة أو مكان."],
+  ["ما خطر مخالطة أهل الشر بحسب هذا الحديث؟", "قد يصيب الإنسان من العقاب الدنيوي العام ما يصيب أهل الشر إذا خالطهم وقارب أحوالهم الظاهرة، ولو لم يشاركهم بقلبه."],
+  ["إلى أي أحداث آخر الزمان ربط بعض العلماء حادثة الخسف بالجيش؟", "أحداث المهدي ولجوئه إلى الكعبة، وتوجيه جيش لقتاله هناك."],
+  ["من راوية حديث «لا هجرة بعد الفتح ولكن جهاد ونية»؟", "عائشة رضي الله عنها، متفق عليه."],
+  ["ما التفسيران اللذان ذكرهما العلماء لمعنى «لا هجرة بعد الفتح»؟", "الأول: لا هجرة من مكة لأنها صارت دار إسلام. الثاني: لا هجرة إلى النبي ﷺ بعد فتح مكة."],
+  ["أي التفسيرين رجّحه الإمام النووي رحمه الله؟", "أن المراد لا هجرة من مكة؛ لأنها صارت دار إسلام."],
+  ["ما دلالة اقتران «النية» بـ«الجهاد» في قوله ﷺ «ولكن جهاد ونية»؟", "أن النية وحدها، إذا صدقت في نصرة الدين وإعلاء كلمة الله، تبلغ صاحبها منزلة عالية حتى لو لم يتحقق العمل ذاته."],
+  ["ما ثمرة صدق النية في طلب العلم أو نصرة الدين حتى لو لم يتحقق المراد؟", "أنها من أعظم ما يُلقى الله به يوم القيامة، وأجرها يبلغ ما يبلغه العمل نفسه."],
+  ["من راوي حديث أهل الأعذار في غزوة تبوك؟", "رواه جابر بن عبد الله عند مسلم، وأنس بن مالك عند البخاري."],
+  ["أكمل حديث تبوك: «إن بالمدينة لرجالاً ما سرتم مسيرًا ولا قطعتم واديًا إلا...»", "كانوا معكم، حبسهم المرض."],
+  ["ما الفائدة المستنبطة من حديث أهل الأعذار في تبوك؟", "من صحّت نيته في بلوغ عمل من أعمال نصرة الدين ثم حبسه عذر حقيقي كالمرض أو العجز، كُتب له أجر ذلك العمل كاملاً."],
+  ["ما الآية من سورة التوبة التي أشار إليها الشيخ مرتبطة بغزوة تبوك؟", "قوله تعالى: «ولا على الذين إذا ما أتوك لتحملهم قلت لا أجد ما أحملكم عليه تولوا وأعينهم تفيض من الدمع حزنًا ألا يجدوا ما ينفقون»."],
+  ["من هو صاحب قصة الدنانير مع أبيه؟", "معن بن يزيد رضي الله عنهم، وأبوه أبو يزيد."],
+  ["ماذا قال النبي ﷺ لمّا تخاصم أبو يزيد وابنه معن في الدنانير؟", "«لك ما نويت يا يزيد، ولك ما أخذت يا معن»."],
+  ["ما الفائدة الفقهية من قصة معن بن يزيد والدنانير؟", "مدار الأجر على النية، فالمتصدق يُكتب له أجر نيته ولو لم يصل ماله إلى من قصده تحديدًا، ما دام لم يقصّر ووضعه في موضع مؤتمن."],
+  ["من هو صاحب حديث الوصية بالثلث في حجة الوداع؟", "سعد بن أبي وقاص رضي الله عنه، أحد العشرة المبشرين بالجنة."],
+  ["ما الأجزاء الثلاثة التي عرضها سعد على النبي ﷺ للصدقة بها من ماله، وبأيها أذن له؟", "عرض الثلثين ثم النصف ثم الثلث، وأذن له النبي ﷺ بالثلث فقط، وقال: «الثلث والثلث كثير»."],
+  ["ما تعريف الحديث النبوي عند العلماء؟", "قول النبي ﷺ، أو فعله، أو تقريره (سكوته وعدم إنكاره لأمر وقع أمامه)."],
+  ["ما مقولة الإمام الشاطبي التي استشهد بها الشيخ عن ورثة الأنبياء؟", "أن المنتصب للناس في بيان الدين ينبغي أن يبيّن بقوله وفعله؛ لأنه وارث النبي ﷺ، والوارث لا بد أن يقوم مقام الموروث."],
+  ["ما أعظم فائدة مستنبطة من حديث سعد بن أبي وقاص في باب النية؟", "أن النية تتجاوز العبادات المحضة إلى العادات اليومية، فحتى النفقة على الأهل والزوجة يُؤجر عليها المسلم إذا ابتغى بها وجه الله."],
+  ["لماذا يكون الإخلاص في العادات أصعب من الإخلاص في العبادات المحضة؟", "لأن العبادات المحضة موطن يستحضر فيها الإنسان النية غالبًا، أما العادات كالنوم والطعام فستقع بطبعها، فيغفل الإنسان عن استحضار النية فيها رغم إمكان الأجر عليها."],
+  ["لماذا لم يكتمل شرح باب الإخلاص في هذا المجلس؟", "لأن الوقت انتهى قبل إتمام أحاديث الباب، وسيُكمل الشيخ الباب في اللقاء القادم من السلسلة."]
+];
+
+function downloadAnkiDeck() {
+  let content = ankiCards.map(([q, a]) => {
+    const clean = s => s.replace(/\t/g, ' ').replace(/\r?\n/g, '<br>');
+    return `${clean(q)}\t${clean(a)}`;
+  }).join('\n');
+  const BOM = '\uFEFF';
+  const blob = new Blob([BOM + content], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'بطاقات_أنكي_مجالس_رياض_الصالحين_1_الإخلاص.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+</script>
 </body>
 </html>
