@@ -1,39 +1,1206 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>باب التوبة 1 - شرح رياض الصالحين</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../../style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الاستهداء بالسنة | باب التوبة - المحاضرة الأولى</title>
+<style>
+@font-face {
+  font-family: 'Amiri';
+  src: local('Amiri');
+}
+
+:root{
+  /* هوية "الاستهداء بالسنة": ليل + نور الطريق */
+  --night-900: #0f1b2d;
+  --night-800: #16263d;
+  --night-700: #1e3350;
+  --night-600: #274168;
+  --amber-500: #c98a3e;
+  --amber-400: #d9a45f;
+  --amber-300: #e8c391;
+  --amber-100: #fbf1e2;
+  --bone-50: #faf7f0;
+  --bone-100: #f2ecdf;
+  --ink-900: #1c1a16;
+  --ink-700: #3b362d;
+  --ink-500: #5f584a;
+  --line: #e2d6bd;
+  --correction: #7a3b3b;
+  --correction-bg: #fbeaea;
+  --shadow-soft: 0 10px 30px -10px rgba(15,27,45,0.18);
+  --radius: 14px;
+  --max-w: 780px;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+
+html{scroll-behavior:smooth;}
+
+body{
+  font-family:'Cairo', system-ui, sans-serif;
+  background:var(--bone-50);
+  color:var(--ink-900);
+  line-height:1.9;
+  font-size:17px;
+}
+
+img{max-width:100%; display:block;}
+
+/* ============ الهيدر ============ */
+.hero{
+  position:relative;
+  background:linear-gradient(160deg, var(--night-900) 0%, var(--night-700) 60%, var(--night-600) 100%);
+  color:var(--bone-50);
+  padding:64px 24px 56px;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(201,138,62,0.25), transparent 55%),
+    radial-gradient(circle at 10% 90%, rgba(201,138,62,0.12), transparent 50%);
+  pointer-events:none;
+}
+.hero-path{
+  position:absolute;
+  bottom:0; right:0; left:0;
+  height:3px;
+  background:linear-gradient(90deg, transparent, var(--amber-400), transparent);
+  opacity:0.6;
+}
+.hero-inner{
+  max-width:var(--max-w);
+  margin:0 auto;
+  position:relative;
+  z-index:1;
+}
+.hero-series{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-size:14px;
+  letter-spacing:0.3px;
+  color:var(--amber-300);
+  background:rgba(201,138,62,0.12);
+  border:1px solid rgba(201,138,62,0.35);
+  padding:6px 16px;
+  border-radius:999px;
+  margin-bottom:20px;
+}
+.hero h1{
+  font-family:'Amiri', serif;
+  font-size:clamp(32px, 5vw, 44px);
+  line-height:1.4;
+  margin-bottom:14px;
+  color:#fff;
+}
+.hero .subtitle{
+  font-size:18px;
+  color:var(--bone-100);
+  opacity:0.85;
+  max-width:600px;
+}
+.hero-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:28px;
+  font-size:14px;
+  color:var(--amber-300);
+}
+.hero-meta span{
+  display:flex; align-items:center; gap:6px;
+  background:rgba(255,255,255,0.06);
+  padding:6px 14px;
+  border-radius:999px;
+}
+
+/* ============ التنقل الثابت ============ */
+.toc-bar{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(250,247,240,0.96);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+  overflow-x:auto;
+  white-space:nowrap;
+  padding:10px 16px;
+  scrollbar-width:thin;
+}
+.toc-bar a{
+  display:inline-block;
+  color:var(--night-700);
+  text-decoration:none;
+  font-size:13.5px;
+  padding:7px 14px;
+  border-radius:999px;
+  margin-inline-end:6px;
+  border:1px solid transparent;
+  transition:0.2s;
+}
+.toc-bar a:hover, .toc-bar a.active{
+  background:var(--night-900);
+  color:var(--amber-300);
+}
+
+/* ============ المحتوى ============ */
+main{
+  max-width:var(--max-w);
+  margin:0 auto;
+  padding:48px 20px 40px;
+}
+
+section.block{
+  margin-bottom:56px;
+  scroll-margin-top:60px;
+}
+
+.section-title{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:24px;
+}
+.section-title .num{
+  flex:none;
+  width:40px; height:40px;
+  border-radius:10px;
+  background:var(--night-900);
+  color:var(--amber-300);
+  display:flex; align-items:center; justify-content:center;
+  font-weight:700;
+  font-size:16px;
+}
+.section-title h2{
+  font-family:'Amiri', serif;
+  font-size:clamp(24px, 3.4vw, 30px);
+  color:var(--night-900);
+}
+
+h3{
+  font-size:clamp(20px, 2.6vw, 23px);
+  color:var(--night-800);
+  margin:28px 0 14px;
+  font-family:'Amiri', serif;
+}
+h4{
+  font-size:19px;
+  color:var(--amber-500);
+  margin:20px 0 10px;
+}
+
+p{
+  margin-bottom:18px;
+  color:var(--ink-700);
+  max-width:100%;
+}
+
+strong{color:var(--night-900);}
+
+/* ============ بلوكات المحتوى ============ */
+.quran-box{
+  background:linear-gradient(180deg, var(--night-900), var(--night-800));
+  color:var(--amber-100);
+  border-radius:var(--radius);
+  padding:28px 26px;
+  margin:24px 0;
+  position:relative;
+  box-shadow:var(--shadow-soft);
+}
+.quran-box::before{
+  content:"﴿";
+  position:absolute;
+  top:6px; right:16px;
+  font-size:34px;
+  color:var(--amber-400);
+  opacity:0.5;
+  font-family:'Amiri', serif;
+}
+.quran-box .arabic{
+  font-family:'Amiri', serif;
+  font-size:24px;
+  line-height:2.1;
+  text-align:center;
+  margin-bottom:10px;
+}
+.quran-box .ref{
+  text-align:center;
+  font-size:13px;
+  color:var(--amber-300);
+}
+
+.hadith-box{
+  background:#fff;
+  border:1px solid var(--line);
+  border-right:5px solid var(--amber-500);
+  border-radius:var(--radius);
+  padding:24px 24px;
+  margin:24px 0;
+  box-shadow:var(--shadow-soft);
+}
+.hadith-box .hadith-head{
+  display:flex; align-items:center; gap:8px;
+  font-size:13px;
+  color:var(--amber-500);
+  font-weight:700;
+  margin-bottom:10px;
+}
+.hadith-box .arabic{
+  font-family:'Amiri', serif;
+  font-size:20px;
+  line-height:2.1;
+  color:var(--night-900);
+}
+.hadith-box .narrator{
+  margin-top:12px;
+  font-size:14px;
+  color:var(--ink-500);
+}
+
+.story-card{
+  background:var(--bone-100);
+  border:1px dashed var(--amber-400);
+  border-radius:var(--radius);
+  padding:26px 24px;
+  margin:24px 0;
+}
+.story-card .story-label{
+  display:inline-flex; align-items:center; gap:6px;
+  font-size:13px;
+  font-weight:700;
+  color:var(--night-700);
+  background:var(--amber-300);
+  padding:4px 14px;
+  border-radius:999px;
+  margin-bottom:14px;
+}
+.story-card p{color:var(--ink-700);}
+
+.definition-box{
+  background:#fff;
+  border:1px solid var(--line);
+  border-right:5px solid var(--night-700);
+  border-radius:var(--radius);
+  padding:22px 24px;
+  margin:22px 0;
+}
+.definition-box .label{
+  font-size:13px; font-weight:700; color:var(--night-700);
+  margin-bottom:8px;
+}
+
+.key-point{
+  display:flex;
+  gap:14px;
+  background:var(--amber-100);
+  border-radius:var(--radius);
+  padding:20px 22px;
+  margin:22px 0;
+  align-items:flex-start;
+}
+.key-point .icon{
+  flex:none;
+  font-size:20px;
+}
+.key-point p{margin-bottom:0; color:var(--night-900); font-weight:600;}
+
+.correction-box{
+  background:var(--correction-bg);
+  border:1px solid #e3bcbc;
+  border-right:5px solid var(--correction);
+  border-radius:var(--radius);
+  padding:20px 22px;
+  margin:22px 0;
+}
+.correction-box .label{
+  display:flex; align-items:center; gap:8px;
+  font-size:13px; font-weight:700; color:var(--correction);
+  margin-bottom:10px;
+}
+
+.example-box{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:20px 22px;
+  margin:22px 0;
+  position:relative;
+}
+.example-box .label{
+  font-size:12.5px; font-weight:700; color:var(--ink-500);
+  margin-bottom:8px;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+}
+
+.degrees-list{
+  margin:24px 0;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.degree-item{
+  display:flex;
+  gap:16px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:16px 20px;
+  align-items:flex-start;
+}
+.degree-item .d-num{
+  flex:none;
+  width:32px; height:32px;
+  border-radius:50%;
+  background:var(--night-900);
+  color:var(--amber-300);
+  display:flex; align-items:center; justify-content:center;
+  font-size:14px; font-weight:700;
+}
+.degree-item .d-text strong{display:block; margin-bottom:4px; color:var(--night-900);}
+.degree-item .d-text span{color:var(--ink-500); font-size:15px;}
+
+.takeaway{
+  background:linear-gradient(135deg, var(--night-900), var(--night-700));
+  color:#fff;
+  border-radius:var(--radius);
+  padding:26px 26px;
+  margin:32px 0;
+}
+.takeaway .label{
+  display:flex; align-items:center; gap:8px;
+  color:var(--amber-300);
+  font-weight:700;
+  margin-bottom:14px;
+  font-size:15px;
+}
+.takeaway ul{list-style:none;}
+.takeaway li{
+  position:relative;
+  padding-right:22px;
+  margin-bottom:10px;
+  color:var(--bone-100);
+}
+.takeaway li::before{
+  content:"◆";
+  position:absolute;
+  right:0; top:2px;
+  color:var(--amber-400);
+  font-size:11px;
+}
+.takeaway li:last-child{margin-bottom:0;}
+
+.divider{
+  border:none;
+  height:1px;
+  background:linear-gradient(90deg, transparent, var(--line), transparent);
+  margin:40px 0;
+}
+
+.note-box{
+  background:#fff8ec;
+  border:1px solid var(--amber-300);
+  border-radius:var(--radius);
+  padding:18px 20px;
+  margin:22px 0;
+  font-size:15.5px;
+  color:var(--ink-700);
+  display:flex; gap:12px;
+}
+.note-box .icon{flex:none;}
+
+/* ============ خاتمة ============ */
+.closing{
+  background:linear-gradient(160deg, var(--night-900), var(--night-800));
+  color:var(--bone-100);
+  border-radius:20px;
+  padding:36px 30px;
+  text-align:center;
+  margin-top:20px;
+}
+.closing .arabic{
+  font-family:'Amiri', serif;
+  font-size:22px;
+  line-height:2;
+  color:var(--amber-200, var(--amber-300));
+  margin-bottom:16px;
+}
+.closing .next-up{
+  margin-top:20px;
+  font-size:14.5px;
+  color:var(--amber-300);
+  background:rgba(255,255,255,0.07);
+  display:inline-block;
+  padding:10px 20px;
+  border-radius:999px;
+}
+
+/* ============ أنكي وفلاشكاردز ============ */
+.anki-section{
+  background:var(--night-900);
+  color:#fff;
+  padding:56px 20px;
+  margin-top:20px;
+}
+.anki-inner{
+  max-width:var(--max-w);
+  margin:0 auto;
+}
+.anki-header{
+  text-align:center;
+  margin-bottom:32px;
+}
+.anki-header h2{
+  font-family:'Amiri', serif;
+  font-size:28px;
+  color:#fff;
+  margin-bottom:10px;
+}
+.anki-header p{color:var(--amber-300); margin-bottom:0;}
+
+.flash-wrap{
+  max-width:560px;
+  margin:0 auto 24px;
+}
+.flashcard{
+  background:linear-gradient(135deg, #fff, var(--amber-100));
+  border-radius:18px;
+  min-height:220px;
+  padding:32px 26px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  cursor:pointer;
+  box-shadow:0 15px 40px -10px rgba(0,0,0,0.4);
+  position:relative;
+  user-select:none;
+  color:var(--ink-900);
+  font-size:18px;
+  line-height:1.8;
+}
+.flashcard .face-label{
+  position:absolute;
+  top:14px; right:18px;
+  font-size:12px;
+  font-weight:700;
+  color:var(--amber-500);
+}
+.flashcard.flipped{background:linear-gradient(135deg, var(--night-700), var(--night-900)); color:#fff;}
+.flashcard.flipped .face-label{color:var(--amber-300);}
+
+.flash-controls{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  margin-top:18px;
+}
+.flash-controls button{
+  background:var(--amber-500);
+  color:var(--night-900);
+  border:none;
+  padding:10px 22px;
+  border-radius:999px;
+  font-weight:700;
+  cursor:pointer;
+  font-size:14px;
+  font-family:inherit;
+  transition:0.2s;
+}
+.flash-controls button:hover{background:var(--amber-400);}
+.flash-controls button:disabled{opacity:0.4; cursor:default;}
+.flash-counter{
+  font-size:14px;
+  color:var(--amber-300);
+  min-width:90px;
+  text-align:center;
+}
+
+.anki-download{
+  text-align:center;
+  margin-top:34px;
+}
+.btn-download{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  background:var(--amber-500);
+  color:var(--night-900);
+  padding:14px 30px;
+  border-radius:999px;
+  font-weight:700;
+  text-decoration:none;
+  font-size:15px;
+  border:none;
+  cursor:pointer;
+  font-family:inherit;
+  transition:0.2s;
+}
+.btn-download:hover{background:var(--amber-400); transform:translateY(-1px);}
+.anki-download p{
+  margin-top:12px;
+  font-size:13px;
+  color:var(--bone-100);
+  opacity:0.7;
+}
+
+/* ============ فوتر ============ */
+footer{
+  background:var(--night-900);
+  color:var(--amber-300);
+  text-align:center;
+  padding:28px 20px 40px;
+  font-size:13px;
+}
+footer .btn-download{margin-bottom:16px;}
+
+/* ============ ريسبونسف ============ */
+@media (max-width:640px){
+  .hero{padding:44px 18px 40px;}
+  main{padding:32px 16px 24px;}
+  .quran-box .arabic, .hadith-box .arabic{font-size:19px;}
+  section.block{margin-bottom:44px;}
+}
+</style>
 </head>
-<body class="" data-page="lecture" data-lecture-id="stage1_riyad-al-saliheen_03">
-  <div class="page">
-    <nav class="breadcrumbs"><a href="../../../index.html">الرئيسية</a><span class="sep">/</span><a href="../../index.html">المرحلة الأولى</a><span class="sep">/</span><a href="../index.html">شرح رياض الصالحين</a><span class="sep">/</span><span aria-current="page">باب التوبة 1</span></nav>
-    
-      <header class="lecture-header">
-        <h1>باب التوبة 1</h1>
-        <p class="lecture-meta">المادة: شرح رياض الصالحين &nbsp;|&nbsp; الشيخ: غير محدد حاليًا &nbsp;|&nbsp; اليوم 20</p>
-        <label class="checkbox-line lecture-checkbox">
-          <input type="checkbox" data-lecture-id="stage1_riyad-al-saliheen_03">
-          <span>إتمام هذه المحاضرة</span>
-        </label>
-      </header>
+<body>
 
-      <div class="lecture-placeholder">
-        <p>سيتم إضافة المحاضرة هنا لاحقًا</p>
-        <p class="placeholder-hint">(رابط يوتيوب / فيديو / ملف صوتي / PDF / نص المحاضرة / ملاحظاتي)</p>
-      </div>
-
-      <div class="lecture-nav">
-        <a href="../index.html" class="btn btn-outline">الرجوع إلى المادة</a>
-        <a href="../../index.html" class="btn btn-outline">الرجوع إلى المرحلة</a>
-      </div>
-    
+<header class="hero">
+  <div class="hero-path"></div>
+  <div class="hero-inner">
+    <span class="hero-series">✦ سلسلة: الاستهداء بالسنة — فرع رياض الصالحين</span>
+    <h1>باب التوبة</h1>
+    <p class="subtitle">المحاضرة الأولى — بين شعار محبة النبي ﷺ وحقيقة الاتباع: فقه التوبة من كلام الإمام النووي، وهدي النبي ﷺ العملي في الاستغفار.</p>
+    <div class="hero-meta">
+      <span>📖 رياض الصالحين — الإمام النووي</span>
+      <span>⏱ محاضرة كاملة</span>
+      <span>🕯 المحاضرة الأولى</span>
+    </div>
   </div>
-  <script src="../../../data.js"></script>
-  <script src="../../../script.js"></script>
+</header>
+
+<nav class="toc-bar" id="tocBar">
+  <a href="#intro">المقدمة</a>
+  <a href="#definition">شروط التوبة</a>
+  <a href="#ayat">آيات التوبة</a>
+  <a href="#hadith1">هدي النبي ﷺ العملي</a>
+  <a href="#niyyat">تنوع النيات</a>
+  <a href="#anas">فرح الله بالتوبة</a>
+  <a href="#width">سعة باب التوبة</a>
+  <a href="#zir">قصة زر بن حبيش</a>
+  <a href="#closing">الخاتمة</a>
+  <a href="#anki">بطاقات المراجعة</a>
+</nav>
+
+<main>
+
+  <!-- ============ المقدمة ============ -->
+  <section class="block" id="intro">
+    <div class="section-title">
+      <div class="num">١</div>
+      <h2>الاستهداء بالسنة: لماذا هذا العنوان؟</h2>
+    </div>
+
+    <p>هذه الحلقة الأولى من مجالس <strong>"الاستهداء بالسنة"</strong>، وقبل الدخول في أحاديث اليوم، من المهم التوقف عند هذا العنوان نفسه: ما معنى أن يتخذ الإنسان سنة النبي ﷺ وسيرته سبباً للهداية؟</p>
+
+    <p>مطلب الهداية هو أعظم مطلب يطلبه المسلم في حياته اليومية، بدليل أن الله فرض على كل مسلم أن يقولها في صلاته كل يوم: <strong>"اهدنا الصراط المستقيم"</strong>. وما دام هذا هو أعظم مطلب يومي، فإن أهم ما يوصل إليه هو اتباع النبي ﷺ والاستنارة بهديه واقتفاء خطواته والفقه بسيرته وسنته.</p>
+
+    <div class="key-point">
+      <span class="icon">💡</span>
+      <p>لا يوجد مسلم لا يحب النبي ﷺ، ولا يوجد مسلم لا يرغب في اتباعه. اتباع النبي ﷺ شعار محل إجماع بين كل المسلمين. لكن بين الشعار وبين الحقيقة فجوات كثيرة يسقط فيها كثيرون.</p>
+    </div>
+
+    <p>أسباب هذه الفجوة نوعان: سبب نفسي قلبي مرتبط بأساس استجابة الإنسان لله، وسبب متعلق بالفقه — كيف تعرف هدي النبي ﷺ أصلاً وكيف تتبعه؟ وهذا الجانب الثاني، الفقهي، هو ما ستركز عليه هذه المجالس.</p>
+
+    <p>وقد يقول قائل: هل هذا يعني أن كثيراً من المسلمين يجهلون حقيقة الهدي النبوي؟ والجواب: نعم. هناك كثير من المسلمين يجهلون حقيقة الهدي النبوي من حيث الجهل الذي هو ضد العلم، ولأجل ذلك كانت هذه المجالس لبيان فقه اتباع النبي ﷺ وحقيقة هديه.</p>
+
+    <div class="definition-box">
+      <div class="label">تنبيه جوهري من الشيخ</div>
+      <p style="margin-bottom:0;">اتباع النبي ﷺ لا يكون عبر تجزئة الأعمال، بأن يأخذ الإنسان كل عمل على حدة بلا ترتيب. بل لا بد أن يُفهم <strong>منظومة أولويات العمل النبوي</strong>: أي شيء ركّز عليه النبي ﷺ وأعطاه اهتماماً أكبر، وبناءً على هذا التفاوت في اهتمام النبي ﷺ بقضايا الحق، ينبغي أن يكون تفاوت اهتمام المسلم بها هو نفسه.</p>
+    </div>
+
+    <p>هذه المجالس ستكون مع فرع <strong>رياض الصالحين</strong> للإمام النووي رحمه الله، والعنوان الأكبر "الاستهداء بالسنة" ثابت، بينما الكتاب المُعتمَد في كل مرحلة قد يتغير — لأن معرفة هدي النبي ﷺ لا تستقل بها كتب السيرة النبوية وحدها، بل أيضاً كتب الحديث.</p>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ============ شروط التوبة ============ -->
+  <section class="block" id="definition">
+    <div class="section-title">
+      <div class="num">٢</div>
+      <h2>باب التوبة — كلام الإمام النووي</h2>
+    </div>
+
+    <p>قال الإمام النووي رحمه الله في مقدمة الباب: <strong>"قال العلماء: التوبة واجبة من كل ذنب"</strong>.</p>
+
+    <div class="definition-box">
+      <div class="label">شروط التوبة من ذنب بين العبد وبين الله (لا يتعلق بحق آدمي)</div>
+      <p style="margin-bottom:0;">ثلاثة شروط، فإن فقد أحدها لم تصح التوبة:</p>
+      <ol style="margin:14px 0 0 0; padding-right:20px; color:var(--ink-700);">
+        <li style="margin-bottom:8px;"><strong>أن يُقلع عن المعصية.</strong></li>
+        <li style="margin-bottom:8px;"><strong>أن يندم على فعلها.</strong></li>
+        <li><strong>أن يعزم ألا يعود إليها أبداً.</strong></li>
+      </ol>
+    </div>
+
+    <div class="definition-box">
+      <div class="label">شروط التوبة إذا كانت المعصية تتعلق بحق آدمي</div>
+      <p style="margin-bottom:0;">أربعة شروط: الثلاثة السابقة، بالإضافة إلى:</p>
+      <ul style="margin:14px 0 0 0; padding-right:20px; color:var(--ink-700); list-style:disc;">
+        <li style="margin-bottom:8px;">أن <strong>يبرأ من حق صاحبها</strong>: فإن كانت مالاً أو نحوه، ردّه إليه.</li>
+        <li style="margin-bottom:8px;">إن كانت <strong>حدّ قذف</strong> ونحوه، مكّنه منه أو طلب عفوه.</li>
+        <li>إن كانت <strong>غيبة</strong>، استحلّه منها.</li>
+      </ul>
+    </div>
+
+    <p>ويجب أن يتوب الإنسان من جميع ذنوبه؛ فإن تاب من بعضها، صحت توبته عند أهل الحق من ذلك الذنب وحده، وبقي عليه الباقي. وقد تظاهرت دلائل الكتاب والسنة وإجماع الأمة على وجوب التوبة.</p>
+
+    <div class="key-point">
+      <span class="icon">⚖️</span>
+      <p>التوبة ليست عملاً تطوعياً كقيام الليل، يُثاب فاعله ويفوت تاركه خيراً فقط. التوبة <strong>تكليف واجب</strong> بذاته. من لا يتوب من ذنبه، يلقى الله بذنبين: بنفس الذنب، وبذنب عدم التوبة منه.</p>
+    </div>
+
+    <p>فالوقوع في الذنب قد يكون بسبب غلبة نفس أو عامل خارجي، وهذا من حيث الطبيعة البشرية متصوَّر ومفهوم وإن كان ذنباً. لكن أن يستمر الإنسان بقية عمره دون توبة، فهذا غير مفهوم باعتباره مسلماً مُقدِماً على الله ومحاسَباً على أعماله. فلماذا يستمر الإنسان في ذنبه؟ لماذا يصدّق الوساوس الشيطانية التي تقول له إنه ما دام وقع في الذنب فلا فائدة من التوبة؟</p>
+
+    <div class="takeaway">
+      <div class="label">✦ خلاصة القسم</div>
+      <ul>
+        <li>التوبة واجبة من كل ذنب، لا عمل تطوعي إضافي.</li>
+        <li>شروطها من حق الله: الإقلاع، الندم، العزم على عدم العود.</li>
+        <li>إن تعلقت بحق آدمي: يُضاف شرط رابع هو البراءة من حق صاحبها.</li>
+        <li>التوبة من بعض الذنوب تصح من ذلك الذنب فقط، ويبقى الباقي.</li>
+        <li>من لا يتوب يلقى الله بذنبين: الذنب نفسه، وذنب عدم التوبة منه.</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ============ آيات التوبة ============ -->
+  <section class="block" id="ayat">
+    <div class="section-title">
+      <div class="num">٣</div>
+      <h2>آيات التوبة والتوبة النصوح</h2>
+    </div>
+
+    <div class="quran-box">
+      <p class="arabic">وَتُوبُوا إِلَى اللَّهِ جَمِيعًا أَيُّهَا الْمُؤْمِنُونَ لَعَلَّكُمْ تُفْلِحُونَ</p>
+      <p class="ref">سورة النور — آية ٣١</p>
+    </div>
+
+    <div class="quran-box">
+      <p class="arabic">اسْتَغْفِرُوا رَبَّكُمْ ثُمَّ تُوبُوا إِلَيْهِ</p>
+      <p class="ref">سورة هود — آية ٩٠ (بمعناها)</p>
+    </div>
+
+    <div class="quran-box">
+      <p class="arabic">يَا أَيُّهَا الَّذِينَ آمَنُوا تُوبُوا إِلَى اللَّهِ تَوْبَةً نَصُوحًا</p>
+      <p class="ref">سورة التحريم — آية ٨</p>
+    </div>
+
+    <p>هذه الأوصاف التي تأتي بعد الأعمال في القرآن غالباً تكون <strong>مُقيِّدة</strong> لا زائدة شكلاً. تأمل: "جاهد في الله حق جهاده"، "من قال لا إله إلا الله صدقاً من قلبه"، "يبتغي بذلك وجه الله". هذه القيود مهمة جداً، لأن الشريعة كما أتت بأساس التكليف، أتت بحدود التكليف — أي أن الله لما أمرنا بالتوبة، يحب منا أن نراعي ما حدّده فيها.</p>
+
+    <div class="key-point">
+      <span class="icon">✨</span>
+      <p>هناك تفاوت في درجات التوبة. الله يحب توبة أكثر من أخرى، وأعلى هذه الدرجات هي <strong>التوبة النصوح</strong>: التوبة الصادقة الخالصة، وأقل ما يقال فيها أن معها <strong>عزماً صادقاً على عدم الرجوع إلى الذنب</strong>.</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ============ هدي النبي العملي ============ -->
+  <section class="block" id="hadith1">
+    <div class="section-title">
+      <div class="num">٤</div>
+      <h2>هدي النبي ﷺ العملي في الاستغفار</h2>
+    </div>
+
+    <div class="hadith-box">
+      <div class="hadith-head">📜 حديث</div>
+      <p class="arabic">"وَاللَّهِ إِنِّي لَأَسْتَغْفِرُ اللَّهَ وَأَتُوبُ إِلَيْهِ فِي أَكْثَرَ مِنْ سَبْعِينَ مَرَّةً"</p>
+      <p class="narrator">عن أبي هريرة رضي الله عنه — رواه البخاري</p>
+    </div>
+
+    <div class="hadith-box">
+      <div class="hadith-head">📜 حديث</div>
+      <p class="arabic">"يَا أَيُّهَا النَّاسُ تُوبُوا إِلَى اللَّهِ وَاسْتَغْفِرُوهُ، فَإِنِّي أَتُوبُ فِي الْيَوْمِ مِائَةَ مَرَّةٍ"</p>
+      <p class="narrator">عن الأغرّ بن يسار المزني رضي الله عنه — رواه مسلم</p>
+    </div>
+
+    <p>هذان الحديثان يبيّنان شيئاً من هدي النبي ﷺ اليومي المستمر، وهو تكرار الاستغفار والتوبة. وفيهما فوائد كثيرة تُفيد في هداية الإنسان واستهدائه بالنبي ﷺ وسنته.</p>
+
+    <h3>الفائدة الأولى: القدوة العملية</h3>
+
+    <p>النبي ﷺ كان قدوة بعمله أمام أصحابه، لا بقوله فقط. تعريف الحديث النبوي هو: <strong>قول النبي ﷺ أو فعله أو تقريره</strong>. وإذا فتحت كتب الحديث، ستجد كثرة كاثرة من الأحاديث التي فيها "كان النبي ﷺ يفعل كذا"، "كنا مع النبي ﷺ ففعل كذا". فماذا لو حُذفت هذه الأحاديث الفعلية وبقيت فقط النصوص القولية المباشرة؟ لضاع شيء أساسي وكبير ومحكم وجوهري من السنة النبوية.</p>
+
+    <p>ونحن الآن ننظر إلى هذه الأفعال عن بُعد، وبيننا وبين النبي ﷺ الأسانيد والرواة، ومع ذلك نرى في فعله حقيقة الهداية. فكيف بمن عاش في زمنه وكان يراه بعينيه يفعل ويقول ويغضب ويرضى ويضحك؟</p>
+
+    <div class="quran-box">
+      <p class="arabic">وَكَيْفَ تَكْفُرُونَ وَأَنتُمْ تُتْلَى عَلَيْكُمْ آيَاتُ اللَّهِ وَفِيكُمْ رَسُولُهُ</p>
+      <p class="ref">سورة آل عمران — آية ١٠١</p>
+    </div>
+
+    <div class="quran-box">
+      <p class="arabic">لَقَدْ كَانَ لَكُمْ فِي رَسُولِ اللَّهِ أُسْوَةٌ حَسَنَةٌ</p>
+      <p class="ref">سورة الأحزاب — آية ٢١</p>
+    </div>
+
+    <p>هذه الآية جاءت في سياق اضطراب المنافقين يوم الأحزاب، قبل أن يذكر الله الثابتين والصابرين والمؤمنين. فـ"الأسوة الحسنة" هنا ليست فقط في السواك واللباس والسنن الصغرى في الصلاة، بل أولاً في <strong>الثبات أمام أعداء الله، وجهاد المشركين، والصبر، وعدم الخوف</strong>. من يخوض معركة مع النبي ﷺ ويرى بعينه كيف ثبت وجاهد وكان شجاعاً، كيف يكون حاله بعد ذلك حين يخوض معركته الخاصة؟</p>
+
+    <p>لذلك الذين عاشوا مع النبي ﷺ أدركوا شيئاً من الفقه وقيمة الأشياء لم يدركه من بعدهم.</p>
+
+    <div class="story-card">
+      <span class="story-label">📖 قصة أبي برزة الأسلمي — يوم النهروان</span>
+      <p>كان أبو برزة الأسلمي رضي الله عنه يصلي، وكانت دابته بجواره أثناء الصلاة، فانفلتت هذه الدابة. وانفلات الدابة له ضريبة كبيرة جداً — قد يعني رجوعه مشياً مسافة شهر أو أسبوعين. فأخذ يتتبعها وهو في صلاته، والخوارج في الطرف الآخر من ساحة النهروان (حيث قاتل الصحابة الخوارج) ينظرون إليه ويقولون: "فعل الله بهذا الشيخ! يمسك الدابة في الصلاة! متخلف هذا، ولا يفهم الدين!"</p>
+      <p>لكن أبا برزة رضي الله عنه، مع أنه لم يكن عنده نص نبوي مباشر في حكم أخذ الدابة أثناء الصلاة، كان قد أخذ من رؤيته الشمولية لهدي النبي ﷺ الفعلي فهماً عميقاً. وهذا هو ما يبيّنه حديثه الآخر المعروف، وهو في صحيح البخاري:</p>
+      <p style="margin-bottom:0;"><strong>"لقد غزوت مع رسول الله ﷺ ست غزوات أو سبع، فشهدت تيسيره"</strong>. فهو لا يعني بذلك أنه رأى النبي ﷺ في موقف مماثل بالضبط، بل أنه بهذه الصحبة الطويلة أخذ هدياً شمولياً، فهم منه أنه لو رآه النبي ﷺ في مثل هذه الحال لم يُنكر عليه، بل هذا أقرب إلى عنوان "التيسير" الذي شهده من أفعال النبي ﷺ بمجموعها.</p>
+    </div>
+
+    <div class="key-point">
+      <span class="icon">🔑</span>
+      <p>الدين لا يؤخذ بمجرد النصوص القولية فقط، ولا يُجمَّد عند اجتهادات العلماء الفقهية فحسب. تلك الاجتهادات وسيلة مُسهِّلة لضبط الأشياء وحفظها، <strong>لا حاجز بينك وبين الهدي النبوي</strong>.</p>
+    </div>
+
+    <p>مثال يوضّح الفرق: هناك فرق كبير بين أن تقرأ مسألة فقهية جافة عنوانها "يجوز التطوّع جالساً"، وبين أن تقرأ:</p>
+
+    <div class="hadith-box">
+      <div class="hadith-head">📜 حديث</div>
+      <p class="arabic">"وَكَانَ يُصَلِّي اللَّيْلَ قَائِمًا، حَتَّى إِذَا كَانَ فِي آخِرِ عُمُرِهِ صَلَّى قَاعِدًا، وَكَانَ يَقْرَأُ قَاعِدًا، حَتَّى إِذَا لَمْ يَبْقَ مِنَ الرَّكْعَةِ إِلَّا خَمْسِينَ آيَةً أَوْ سِتِّينَ آيَةً، قَامَ فَقَرَأَهُنَّ قَائِمًا ثُمَّ رَكَعَ"</p>
+      <p class="narrator">في البخاري ومسلم — من صفة صلاة الليل عند النبي ﷺ آخر عمره</p>
+    </div>
+
+    <p>هذا هو الفرق بين معرفة الهدي النبوي بروحه وما فيه من هداية وذكاء ونور، وبين أخذ مستخلَصات جاهزة فقط.</p>
+
+    <div class="example-box">
+      <div class="label">إشارة إلى كلام الإمام الشاطبي</div>
+      <p style="margin-bottom:0;">للإمام الشاطبي رحمه الله كلام مضمونه أن <strong>وارث النبي ينبغي أن يقوم مقام النبي في الهداية بفعله وقوله</strong>، لأن الوارث قائم مقام الموروث. فكما كان النبي ﷺ مبيّناً للدين بقوله وفعله، ينبغي أن يكون الوارث (من العلماء والدعاة) مبيّناً للدين بقوله وفعله معاً — لا بالقول فقط.</p>
+    </div>
+
+    <p>ومن هنا تأتي أهمية القدوة الحسنة لأهل العلم والدعاة، وخطورة أن يأخذ الإنسان العلم بلا قدوة، وأن يظن العلم مجرد معلومات مفرَّقة يحصّلها من فيديو أو تغريدة أو مقال. كما جاء عن النبي ﷺ: <strong>"العلماء ورثة الأنبياء"</strong>، وهذه الوراثة ليست مجرد كون الشخص عنده معلومات شرعية عالية، حتى لو شابت لحيته في العلم.</p>
+
+    <div class="takeaway">
+      <div class="label">✦ خلاصة القسم</div>
+      <ul>
+        <li>هدي النبي ﷺ الفعلي جزء جوهري من السنة، لا يقل أهمية عن أقواله.</li>
+        <li>الأسوة الحسنة في الآية سياقها الأول: الثبات والجهاد والصبر، لا فقط السنن الصغرى.</li>
+        <li>قصة أبي برزة: الفهم الشمولي لهدي النبي ﷺ يُنتج فقهاً لا يُستمَد من نص مباشر بعينه.</li>
+        <li>حفظ متون الفقه وسيلة ضبط مفيدة، لكنها ليست بديلاً عن معايشة روح الهدي.</li>
+        <li>العلماء ورثة الأنبياء: قدوة في القول والفعل معاً، لا معلومات فقط.</li>
+      </ul>
+    </div>
+
+    <hr class="divider" style="margin:32px 0;">
+
+    <h3 id="niyyat">الفائدة الثانية: لماذا كان النبي ﷺ يستغفر ٧٠-١٠٠ مرة يومياً؟</h3>
+
+    <p>هذا يفتح باباً عظيماً وهو باب <strong>تنوّع النيات في العبادة الواحدة</strong> — ما الذي يريده الإنسان بالتسبيح؟ ما الذي يريده بالحمد؟ ما الذي يريده بالتكبير؟ من يفقه هذا الباب يفقه من أعظم أبواب التعبد وأحلاها وأزكاها.</p>
+
+    <div class="example-box">
+      <div class="label">مثال: التسبيح</div>
+      <p>التسبيح قد يراد به <strong>التعظيم المطلق</strong>، وقد يراد به <strong>التنزيه</strong> خاصة. تأمل: "سُبْحَانَ الَّذِي أَسْرَىٰ بِعَبْدِهِ لَيْلًا" — هنا التسبيح للتعظيم وذِكر شيء من آيات الله. أما "سُبْحَانَهُ وَتَعَالَىٰ عَمَّا يَقُولُونَ عُلُوًّا كَبِيرًا" — فهنا التسبيح للتنزيه. والذي يستحضره القلب في حالة التعظيم غير الذي يستحضره في حالة التنزيه.</p>
+    </div>
+
+    <div class="example-box">
+      <div class="label">مثال: الحمد</div>
+      <p style="margin-bottom:0;">قد يُراد بالحمد <strong>الشكر</strong> على نعمة معينة أو نِعَم كثيرة يستحضرها القلب. وقد يُراد به <strong>الثناء المطلق</strong> بلا استحضار نعمة بعينها، كما في "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ" في فاتحة الكتاب — حمد وثناء لا يقصد نعمة معينة.</p>
+    </div>
+
+    <p>وبنفس المنطق، السؤال: ما الذي يستحضره الإنسان أثناء الاستغفار؟</p>
+
+    <div class="degrees-list">
+      <div class="degree-item">
+        <div class="d-num">١</div>
+        <div class="d-text"><strong>استغفار من ذنب معيّن</strong><span>كمن اغتاب في مجلس، فيرجع لنفسه: "استغفر الله" يقصد تحديداً تلك الغيبة.</span></div>
+      </div>
+      <div class="degree-item">
+        <div class="d-num">٢</div>
+        <div class="d-text"><strong>استغفار عن الحياة الماضية كلها</strong><span>كمن كان مسرفاً في الذنوب وتاب، فاستغفاره يشمل زلاته وهفواته وكبائره وصغائره الماضية جميعاً.</span></div>
+      </div>
+      <div class="degree-item">
+        <div class="d-num">٣</div>
+        <div class="d-text"><strong>استغفار من التقصير في الطاعة</strong><span>وهذا التقصير ليس بالضرورة ذنباً يُؤاخذ عليه الإنسان، بل قد يكون نقص كمال. مثاله: الاستغفار ثلاثاً بعد الصلاة، وأولى أسبابه التقصير الذي قد يكون وقع في الصلاة نفسها من خاطر أو تسرّح.</span></div>
+      </div>
+      <div class="degree-item">
+        <div class="d-num">٤</div>
+        <div class="d-text"><strong>استغفار وقاية من الذنوب</strong><span>استباقي، لا عن ذنب وقع فعلاً.</span></div>
+      </div>
+      <div class="degree-item">
+        <div class="d-num">٥</div>
+        <div class="d-text"><strong>استغفار استحضاراً لجلال الله وضعف الإنسان المطلق</strong><span>وهذه أعلى الدرجات: لا يقصد ذنباً معيناً ولا طاعة معينة، بل يستحضر أن مجموع حياته لا تعبّر عن ما ينبغي في حق الله سبحانه، فيقول "استغفر الله" بمعنى: يا رب أنت تستحق كذا وكذا، وأنا مقصّر فيما ينبغي تجاهك.</span></div>
+      </div>
+    </div>
+
+    <div class="key-point">
+      <span class="icon">🌿</span>
+      <p>من يحصر الاستغفار في الذنب فقط، تنفتح عليه مسألة "هل الأنبياء يذنبون؟ وهل هم معصومون من الصغائر؟". لكن القضية ليست هكذا. الاستغفار في الشريعة <strong>باب أوسع من الذنب</strong>: باب للقنوت والإخبات والاعتراف بنقص الإنسان أمام الرحمن، وباب لتغذية القلب بهذه المعاني على طول الطريق.</p>
+    </div>
+
+    <div class="takeaway">
+      <div class="label">✦ خلاصة القسم</div>
+      <ul>
+        <li>العبادة الواحدة (تسبيح، حمد، استغفار) قد تحمل نيات ومقاصد متعددة.</li>
+        <li>التسبيح: بين التعظيم المطلق والتنزيه الخاص.</li>
+        <li>الحمد: بين الشكر على نعمة محددة والثناء المطلق.</li>
+        <li>الاستغفار: خمس درجات، من ذنب معين إلى استحضار جلال الله المطلق.</li>
+        <li>استغفار النبي ﷺ اليومي المتكرر لا يعني بالضرورة ذنباً متكرراً، بل تنوع مقاصد.</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ============ حديث أنس ============ -->
+  <section class="block" id="anas">
+    <div class="section-title">
+      <div class="num">٥</div>
+      <h2>فرح الله بتوبة عبده</h2>
+    </div>
+
+    <p>عن أبي حمزة أنس بن مالك رضي الله عنه، خادم رسول الله ﷺ — وهذا شرف فاتَ كل هذه الأمة بعد وفاة النبي ﷺ: أن يعيش الإنسان خادماً لرسول الله ﷺ.</p>
+
+    <div class="hadith-box">
+      <div class="hadith-head">📜 حديث</div>
+      <p class="arabic">"لَلَّهُ أَفْرَحُ بِتَوْبَةِ عَبْدِهِ مِنْ أَحَدِكُمْ سَقَطَ عَلَى بَعِيرِهِ وَقَدْ أَضَلَّهُ فِي أَرْضِ فَلَاةٍ"</p>
+      <p class="narrator">متفق عليه</p>
+    </div>
+
+    <div class="story-card">
+      <span class="story-label">📖 رواية مسلم الكاملة للحديث</span>
+      <p>"لَلَّهُ أَشَدُّ فَرَحًا بِتَوْبَةِ عَبْدِهِ حِينَ يَتُوبُ إِلَيْهِ، مِنْ أَحَدِكُمْ كَانَ عَلَى رَاحِلَتِهِ بِأَرْضِ فَلَاةٍ، فَانْفَلَتَتْ مِنْهُ وَعَلَيْهَا طَعَامُهُ وَشَرَابُهُ، فَأَيِسَ مِنْهَا، فَأَتَى شَجَرَةً فَاضْطَجَعَ فِي ظِلِّهَا وَقَدْ أَيِسَ مِنْ رَاحِلَتِهِ، فَبَيْنَا هُوَ كَذَلِكَ إِذْ هُوَ بِهَا قَائِمَةً عِنْدَهُ، فَأَخَذَ بِخِطَامِهَا، ثُمَّ قَالَ مِنْ شِدَّةِ الْفَرَحِ: اللَّهُمَّ أَنْتَ عَبْدِي وَأَنَا رَبُّكَ! أَخْطَأَ مِنْ شِدَّةِ الْفَرَحِ."</p>
+      <p style="margin-bottom:0; font-size:14px; color:var(--ink-500);">رواه مسلم</p>
+    </div>
+
+    <p>هذا الحديث في بيان منزلة التوبة من جهة عظيمة جداً: أن الله سبحانه، بجلاله وكبريائه وعظمته، يفرح لتوبة عبده إذ وافق الغاية التي خُلق لأجلها، وعاد وتحرّر من أسر عدوّه الشيطان. والله سبحانه غني عن عبده وعن أعماله، ولكن هذا يبيّن لنا أن الله رحيم رؤوف يحب عباده المؤمنين ويحب التوابين.</p>
+
+    <div class="note-box">
+      <span class="icon">📚</span>
+      <p style="margin-bottom:0;">لابن القيم رحمه الله تعليق طويل وجميل على هذا الحديث، يُراجَع في كتابه <strong>مدارج السالكين</strong>.</p>
+    </div>
+
+    <div class="takeaway">
+      <div class="label">✦ خلاصة القسم</div>
+      <ul>
+        <li>الله يفرح بتوبة عبده فرحاً عظيماً، مع أنه غني عن عبده وعمله.</li>
+        <li>هذا الفرح لأن العبد التائب وافق الغاية التي خُلق لأجلها.</li>
+        <li>مثال الراحلة يجسّد شدة الفرح حتى يُخطئ الإنسان في التعبير من فرحه.</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ============ سعة باب التوبة ============ -->
+  <section class="block" id="width">
+    <div class="section-title">
+      <div class="num">٦</div>
+      <h2>سعة باب التوبة... وحدّه</h2>
+    </div>
+
+    <div class="hadith-box">
+      <div class="hadith-head">📜 حديث</div>
+      <p class="arabic">"إِنَّ اللَّهَ تَعَالَى يَبْسُطُ يَدَهُ بِاللَّيْلِ لِيَتُوبَ مُسِيءُ النَّهَارِ، وَيَبْسُطُ يَدَهُ بِالنَّهَارِ لِيَتُوبَ مُسِيءُ اللَّيْلِ، حَتَّى تَطْلُعَ الشَّمْسُ مِنْ مَغْرِبِهَا"</p>
+      <p class="narrator">عن أبي موسى الأشعري رضي الله عنه — رواه مسلم</p>
+    </div>
+
+    <div class="hadith-box">
+      <div class="hadith-head">📜 حديث</div>
+      <p class="arabic">"مَنْ تَابَ قَبْلَ أَنْ تَطْلُعَ الشَّمْسُ مِنْ مَغْرِبِهَا تَابَ اللَّهُ عَلَيْهِ"</p>
+      <p class="narrator">عن أبي هريرة رضي الله عنه — رواه مسلم</p>
+    </div>
+
+    <div class="hadith-box">
+      <div class="hadith-head">📜 حديث</div>
+      <p class="arabic">"إِنَّ اللَّهَ يَقْبَلُ تَوْبَةَ الْعَبْدِ مَا لَمْ يُغَرْغِرْ"</p>
+      <p class="narrator">عن ابن عمر رضي الله عنهما — رواه الترمذي وقال: حديث حسن</p>
+    </div>
+
+    <p>هذه الأحاديث تبيّن أن الله رحيم، وأنه فتح باب التوبة، وهذا الباب مفتوح على مصراعيه يستقبل التائب مهما كان مذنباً أو عاصياً أو مقصراً أو مجرماً أو مسرفاً. لكن لهذا الباب أمَدٌ للإغلاق، وهذا الأمَد على نوعين:</p>
+
+    <div class="degrees-list">
+      <div class="degree-item">
+        <div class="d-num">١</div>
+        <div class="d-text"><strong>أمَد عام</strong><span>إلى أن تطلع الشمس من مغربها. فإذا طلعت، لا توبة بعد ذلك لأي إنسان.</span></div>
+      </div>
+      <div class="degree-item">
+        <div class="d-num">٢</div>
+        <div class="d-text"><strong>أمَد خاص</strong><span>حياة الإنسان نفسه. فإذا مات، انقطع وأُغلق باب التوبة دونه.</span></div>
+      </div>
+    </div>
+
+    <div class="key-point">
+      <span class="icon">⏳</span>
+      <p>على الإنسان المؤمن أن يعيش دائماً وهو يدرك أن هناك باباً مفتوحاً أمامه قد يُغلق في أي لحظة، باعتبار أنه قد يموت في أي لحظة. تعريف الحياة بأنها <strong>فرصة</strong> هو تعريف مهم جداً للمؤمن.</p>
+    </div>
+
+    <div class="takeaway">
+      <div class="label">✦ خلاصة القسم</div>
+      <ul>
+        <li>باب التوبة مفتوح على مصراعيه لكل تائب، مهما بلغ ذنبه.</li>
+        <li>الأمَد العام لإغلاقه: طلوع الشمس من مغربها (لكل الأمة).</li>
+        <li>الأمَد الخاص لكل فرد: موته.</li>
+        <li>الحياة فرصة قد تنتهي في أي لحظة.</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ============ قصة زر بن حبيش ============ -->
+  <section class="block" id="zir">
+    <div class="section-title">
+      <div class="num">٧</div>
+      <h2>قصة زِرّ بن حبيش وصفوان بن عسال</h2>
+    </div>
+
+    <p>قبل حديث اليوم الأخير، إشارة سريعة: في اللقاء القادم بإذن الله ستأتي قصة <strong>توبة كعب بن مالك</strong> — وهي من أهم الوسائل الكبرى للتعرف على هدي النبي ﷺ عبر القصص التي وقعت في حياته. أما اليوم، نختم بهذا الحديث الجميل.</p>
+
+    <div class="story-card">
+      <span class="story-label">📖 القصة كاملة</span>
+      <p>عن زِرّ بن حبيش رحمه الله (وهو تابعي) قال: <strong>أتيت صفوان بن عسال</strong> رضي الله عنه (وهو صحابي) أسأله عن المسح على الخفين. فقال لي: "ما جاء بك يا زر؟" فقلت: "ابتغاء العلم". فقال: <strong>"إن الملائكة تضع أجنحتها لطالب العلم رضاً بما يطلب"</strong>.</p>
+      <p>فقلت: "إنه قد حكّ في صدري المسح على الخفين بعد الغائط والبول، وكنت امرأً من أصحاب النبي ﷺ، فجئت أسألك هل سمعتَه يذكر في ذلك شيئاً؟" قال: "نعم، كان يأمرنا إذا كنا سفراً أو مسافرين ألا ننزع خفافنا ثلاثة أيام ولياليهن، إلا من جنابة، لكن من غائط وبول ونوم".</p>
+      <p>فقلت: "هل سمعتَه يذكر في الهوى شيئاً؟" قال: "نعم. كنا مع رسول الله ﷺ في سفر، فبينا نحن عنده إذ ناداه أعرابي بصوت له جهوري، فقال: يا محمد! فأجابه رسول الله ﷺ نحواً من صوته: 'هاء'. فقلت له (أي قال أحد الصحابة للأعرابي): 'ويحك، اغضض من صوتك، إنك عند النبي ﷺ وقد نُهيت عن هذا'. فقال الأعرابي: 'والله لا أغضض'."</p>
+      <p>ثم قال الأعرابي: "المرء يحب القوم ولما يلحق بهم؟" فقال النبي ﷺ: <strong>"المرء مع من أحب"</strong>. هذا كان جواب سؤاله عن "الهوى" الذي سُئل عنه.</p>
+      <p style="margin-bottom:0;">"فما زال يحدّثنا حتى ذكر باباً من المغرب، مسيرة عرضه أربعون أو سبعون عاماً — قال سفيان (أحد الرواة): قِبَل الشام — خلقه الله تعالى يوم خلق السماوات والأرض، مفتوحاً للتوبة لا يُغلق حتى تطلع الشمس منه." رواه الترمذي وقال: حديث حسن صحيح.</p>
+    </div>
+
+    <div class="note-box">
+      <span class="icon">ℹ️</span>
+      <p style="margin-bottom:0;">اختلاف الرواية بين "أربعين عاماً" و"سبعين عاماً" في مسافة الباب مذكور في الحديث نفسه على لسان الشيخ ضمن كلامه عن اختلاف الروايات، وليس خطأ في التفريغ.</p>
+    </div>
+
+    <h4>الفائدة الأولى: أهمية الهدي العملي المُعاش</h4>
+
+    <p>لاحظ الفرق: زِرّ التابعي يسأل عن حكم فقهي، فيأتيه الجواب من صفوان الصحابي: "كنا مع رسول الله ﷺ". هذا الجواب له وقع مختلف تماماً، مع أن الفرق الزمني بينهما لا يُذكر. من يقول "كنا مع النبي ﷺ، خرجنا معه، قاتلنا معه" له شعور وشرف لا يبلغه من يجيب بمجرد حكم فقهي مجرد.</p>
+
+    <div class="example-box">
+      <div class="label">مثال إضافي: قيس بن أبي حازم</div>
+      <p style="margin-bottom:0;">تابعي جليل روى عن عشرة من المبشَّرين بالجنة: أبي بكر وعمر وعثمان وعلي وبقيتهم، ومع ذلك لم يُدرك النبي ﷺ رؤية، بل كان بعضهم حياً في زمن النبي ﷺ لكن لم يتيسر له أن يهاجر أو يراه، ثم لقي الصحابة بعد ذلك.</p>
+    </div>
+
+    <p>وزِرّ بن حبيش نفسه قدِم المدينة بعد وفاة النبي ﷺ بخمسة أيام فقط، فأدرك كل الصحابة وصلى خلف أبي بكر رضي الله عنه.</p>
+
+    <div class="note-box">
+      <span class="icon">📌</span>
+      <p style="margin-bottom:0;">قول صفوان: "إن الملائكة تضع أجنحتها لطالب العلم رضاً بما يطلب" — لم يُنسب مباشرة إلى النبي ﷺ في هذا اللفظ، لكنه في حكم المرفوع لأنه ليس اجتهاداً يمكن أن يقوله الصحابي من نفسه.</p>
+    </div>
+
+    <p>وهذا يفتح على قضية عالم الغيب المحيط بنا في هذه الحياة نفسها، لا فقط في الآخرة: الملائكة تضع أجنحتها لطالب العلم، الشياطين تبيت على خيشوم من لا يستنثر بعد نومه، البسملة تحجب الشيطان من المبيت والعشاء في البيت، والملائكة السيّارة تلتمس مجالس الذكر.</p>
+
+    <h4>الفائدة الثانية: شرح موقف الأعرابي</h4>
+
+    <p>اختلف الشراح في تفسير رفع الأعرابي صوته: بعضهم قال إنما رفع صوته من باب المحبة والشوق. والشيخ يرى في هذا نظراً، لأن رواية أخرى للحديث فيها وصفه بأن "كان فيه غلظة وجفاء"، وهذا أقرب لتفسير الموقف.</p>
+
+    <p>لكن رد النبي ﷺ عليه بلفظ <strong>"هاؤم"</strong> (وهي اللفظة التي وردت في القرآن: "هَاؤُمُ اقْرَؤُوا كِتَابِيَهْ") كان ردّاً لطيفاً متيسّراً، لا زجراً. تخيّل عالماً له هيبته ومجلسه، فيأتيه شخص من عوام الناس ينادي بصوت عالٍ، فيرد عليه العالم بهدوء ولطف — هذا فارق واضح بين جفاء الأعرابي ولين رد النبي ﷺ.</p>
+
+    <div class="key-point">
+      <span class="icon">❤️</span>
+      <p>كأنّ هذا الأعرابي الصادق يعبّر عن نفسه ويقول: "يا رسول الله، أنت حولك هؤلاء الصحابة دائماً يتعلمون منك ويعبدون الله ويجاهدون في سبيلك، وأنا أعرابي على قدر حالي، والمرء يحب القوم ولو لم يلحق بهم في العمل". فأجابه النبي ﷺ: <strong>"المرء مع من أحب"</strong> — وهذا من أرجى أحاديث الرجاء: قد يبلغ الإنسان بصدق محبته للصالحين وللنبي ﷺ منازل في الآخرة لم يبلغها عمله وحده.</p>
+    </div>
+
+    <div class="note-box">
+      <span class="icon">⚠️</span>
+      <p style="margin-bottom:0;">لكن صدق هذه المحبة شرط أساسي، بمعنى أن لا يعيش الإنسان حياته على عكس ما تقتضيه محبته. المحبة الصادقة قد تقطع بالإنسان درجات في الطريق لا يقطعها بمجرد عمله، لكن لا ينبغي أن يراهن الإنسان على مجرد دعوى المحبة دون صدقها.</p>
+    </div>
+
+    <div class="takeaway">
+      <div class="label">✦ خلاصة القسم</div>
+      <ul>
+        <li>فرق كبير بين معرفة الحكم نظرياً ومعايشة "كنا مع رسول الله ﷺ" عملياً.</li>
+        <li>قول الصحابي غير المنسوب صراحة للنبي ﷺ قد يكون له حكم الرفع.</li>
+        <li>عالم الغيب حاضر في حياتنا اليومية، لا فقط في الآخرة.</li>
+        <li>رد النبي ﷺ اللطيف على جفاء الأعرابي نموذج في التيسير والحكمة.</li>
+        <li>"المرء مع من أحب" من أرجى أحاديث الرجاء، بشرط صدق المحبة.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ الخاتمة ============ -->
+  <section class="block" id="closing">
+    <div class="closing">
+      <p class="arabic">فَاللَّهُمَّ يَا رَبَّنَا يَا أَرْحَمَ الرَّاحِمِينَ، إِنَّا نَسْتَغْفِرُكَ وَنَتُوبُ إِلَيْكَ، وَنَسْأَلُكَ أَنْ تَتُوبَ عَلَيْنَا وَتَهْدِيَنَا يَا رَبَّ الْعَالَمِينَ</p>
+      <p style="color:var(--bone-100); opacity:0.85; margin-bottom:0;">دعا الشيخ أن يجعلنا الله ممن يحب النبي ﷺ محبة صادقة، وممن يحب أصحابه والتابعين لهم بإحسان محبة صادقة، وأن يحشرنا معهم بفضله وجوده وكرمه.</p>
+      <span class="next-up">🔜 في اللقاء القادم: قصة توبة كعب بن مالك رضي الله عنه</span>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ قسم أنكي والفلاشكاردز ============ -->
+<section class="anki-section" id="anki">
+  <div class="anki-inner">
+    <div class="anki-header">
+      <h2>بطاقات المراجعة</h2>
+      <p id="cardCountLabel">راجع أهم نقاط المحاضرة بطريقة تفاعلية</p>
+    </div>
+
+    <div class="flash-wrap">
+      <div class="flashcard" id="flashcard">
+        <span class="face-label" id="faceLabel">سؤال</span>
+        <div id="cardText">جاري التحميل...</div>
+      </div>
+      <div class="flash-controls">
+        <button id="prevBtn">◀ السابق</button>
+        <span class="flash-counter" id="flashCounter">١ / ١</span>
+        <button id="nextBtn">التالي ▶</button>
+      </div>
+    </div>
+
+    <div class="anki-download">
+      <button class="btn-download" id="downloadBtn">⬇ تحميل ملف Anki (TSV)</button>
+      <p>يبني الملف مباشرة من نفس بطاقات هذا العرض — لا يوجد تعارض بين ما تراه وما تنزّله.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <button class="btn-download" id="downloadBtnFooter">⬇ تحميل ملف Anki (TSV)</button>
+  <p>سلسلة الاستهداء بالسنة — رياض الصالحين — باب التوبة، المحاضرة الأولى</p>
+</footer>
+
+<script>
+// =============================================
+// مصفوفة البيانات الأساسية (Source of Truth)
+// =============================================
+const CARDS = [
+  {q:"ما حكم التوبة شرعاً بحسب كلام العلماء في مقدمة باب التوبة؟", a:"التوبة واجبة من كل ذنب، وليست عملاً تطوعياً فقط."},
+  {q:"اذكر شروط التوبة الثلاثة إذا كانت المعصية بين العبد وبين الله فقط.", a:"١) الإقلاع عن المعصية. ٢) الندم على فعلها. ٣) العزم على ألا يعود إليها أبداً."},
+  {q:"ما الشرط الرابع الذي يُضاف لشروط التوبة إذا كانت المعصية متعلقة بحق آدمي؟", a:"أن يبرأ من حق صاحبها: يرد المال، أو يمكّن من حد القذف أو يطلب عفوه، أو يستحل من الغيبة."},
+  {q:"إذا تاب الإنسان من بعض ذنوبه دون بعضها، ما حكم توبته؟", a:"تصح توبته من ذلك الذنب الذي تاب منه عند أهل الحق، ويبقى عليه الباقي."},
+  {q:"ماذا يلقى الله من لم يتب من ذنبه، بحسب شرح الشيخ؟", a:"يلقى الله بذنبين: بنفس الذنب، وبذنب عدم التوبة منه."},
+  {q:"ما أقل ما يقال في تعريف 'التوبة النصوح'؟", a:"أن يكون معها عزم صادق على عدم الرجوع إلى الذنب."},
+  {q:"كم مرة كان النبي ﷺ يستغفر الله في اليوم بحسب حديث أبي هريرة؟ ومن رواه؟", a:"أكثر من سبعين مرة، رواه البخاري."},
+  {q:"كم مرة كان النبي ﷺ يستغفر الله في اليوم بحسب حديث الأغرّ بن يسار المزني؟ ومن رواه؟", a:"مئة مرة، رواه مسلم."},
+  {q:"ما تعريف الحديث النبوي كما ذُكر في المحاضرة؟", a:"قول النبي ﷺ أو فعله أو تقريره."},
+  {q:"من هو أبو برزة الأسلمي، وما القصة المرتبطة به في هذه المحاضرة؟", a:"صحابي انفلتت دابته وهو يصلي يوم النهروان، فتتبعها وهو في صلاته، واستهزأ به الخوارج، وهو مستدل بفهمه الشمولي لتيسير هدي النبي ﷺ."},
+  {q:"من قال: 'لقد غزوت مع رسول الله ﷺ ست غزوات أو سبعاً، فشهدت تيسيره'؟ وأين ورد؟", a:"أبو برزة الأسلمي رضي الله عنه، في صحيح البخاري."},
+  {q:"في أي سياق قرآني وردت آية 'لقد كان لكم في رسول الله أسوة حسنة'؟", a:"في سياق اضطراب المنافقين يوم الأحزاب، قبل ذكر الثابتين والصابرين من المؤمنين."},
+  {q:"كيف كان النبي ﷺ يصلي الليل في آخر عمره حين تعب؟", a:"كان يصلي قاعداً ويقرأ قاعداً، فإذا لم يبق على الركعة إلا خمسون أو ستون آية، قام فقرأهن قائماً ثم ركع."},
+  {q:"ماذا قال الإمام الشاطبي عن وارث النبي ﷺ؟", a:"ينبغي أن يقوم مقام النبي ﷺ في الهداية بفعله وقوله، لأن الوارث قائم مقام الموروث."},
+  {q:"ما معنى حديث 'العلماء ورثة الأنبياء' كما شرحه الشيخ؟", a:"ليست مجرد معلومات شرعية عالية، بل قدوة في القول والفعل معاً، لا بالقول فقط."},
+  {q:"اذكر الفرق بين استحضار 'التعظيم' و'التنزيه' في التسبيح مع مثال لكل منهما.", a:"التعظيم مثل: سبحان الذي أسرى بعبده ليلاً. التنزيه مثل: سبحانه وتعالى عما يقولون علواً كبيراً."},
+  {q:"اذكر الفرق بين الحمد بمعنى الشكر والحمد بمعنى الثناء المطلق.", a:"الشكر: يستحضر نعمة معينة أو نعماً كثيرة. الثناء المطلق: كـ'الحمد لله رب العالمين' بلا استحضار نعمة بعينها."},
+  {q:"اذكر درجات النية في الاستغفار كما فصّلها الشيخ (على الأقل ٣).", a:"١) استغفار من ذنب معين. ٢) استغفار عن الحياة الماضية كاملة. ٣) استغفار من تقصير في الطاعة (نقص كمال لا ذنب بالضرورة). ٤) استغفار وقاية من الذنوب. ٥) استغفار استحضاراً لجلال الله وضعف الإنسان المطلق."},
+  {q:"ما أعلى درجات الاستغفار بحسب المحاضرة؟", a:"الاستغفار استحضاراً لجلال الله وعظمته وضعف الإنسان المطلق، دون قصد ذنب أو طاعة معينة."},
+  {q:"من هو خادم رسول الله ﷺ الذي روى حديث 'لله أفرح بتوبة عبده'؟", a:"أنس بن مالك رضي الله عنه، أبو حمزة."},
+  {q:"اذكر تفاصيل قصة الرجل وراحلته في حديث فرح الله بتوبة عبده (رواية مسلم).", a:"رجل في أرض فلاة انفلتت راحلته وعليها طعامه وشرابه، فيئس واضطجع تحت شجرة، فوجدها قائمة عنده، فأخذ بخطامها وقال من شدة الفرح: اللهم أنت عبدي وأنا ربك، أخطأ من شدة الفرح."},
+  {q:"في أي كتاب يمكن مراجعة تعليق ابن القيم على حديث فرح الله بتوبة عبده؟", a:"في كتاب مدارج السالكين."},
+  {q:"اذكر الأمَدين اللذين يُغلق بهما باب التوبة.", a:"أمَد عام: طلوع الشمس من مغربها (لكل الأمة). أمَد خاص: موت الإنسان نفسه."},
+  {q:"من روى حديث 'إن الله يقبل توبة العبد ما لم يغرغر'؟ وما درجته؟", a:"رواه الترمذي عن ابن عمر رضي الله عنهما، وقال: حديث حسن."},
+  {q:"من روى حديث 'إن الله تعالى يبسط يده بالليل ليتوب مسيء النهار...'؟", a:"أبو موسى الأشعري رضي الله عنه، رواه مسلم."},
+  {q:"من هو التابعي الذي سأل صفوان بن عسال عن المسح على الخفين؟", a:"زِرّ بن حبيش رحمه الله."},
+  {q:"ماذا أجاب صفوان بن عسال زِرّاً حين سأله عن سبب قدومه؟", a:"قال له: إن الملائكة تضع أجنحتها لطالب العلم رضاً بما يطلب."},
+  {q:"ما جواب النبي ﷺ للأعرابي الذي سأله: 'المرء يحب القوم ولما يلحق بهم'؟", a:"المرء مع من أحب."},
+  {q:"بأي لفظ رد النبي ﷺ على الأعرابي الذي نادى بصوت جهوري؟ وأين ورد هذا اللفظ في القرآن أيضاً؟", a:"رد بلفظ 'هاؤم'، وهو اللفظ الوارد في آية: هاؤم اقرؤوا كتابيه."},
+  {q:"مسيرة عرض الباب المفتوح للتوبة من جهة المغرب، كما ورد في حديث زر بن حبيش؟", a:"أربعون عاماً أو سبعون عاماً (اختلاف رواية مذكور في الحديث نفسه)."},
+  {q:"من هو قيس بن أبي حازم، وما أهمية ذكره في سياق هذه المحاضرة؟", a:"تابعي جليل روى عن عشرة من المبشرين بالجنة، ولم يُدرك رؤية النبي ﷺ، مما يبيّن الفارق بين الصحبة المباشرة وبين الرواية عن الصحابة."},
+  {q:"ما حكم قول صفوان بن عسال 'إن الملائكة تضع أجنحتها لطالب العلم' من حيث الرواية؟", a:"له حكم الرفع، لأنه ليس كلاماً اجتهادياً يمكن أن يقوله الصحابي من نفسه."},
+  {q:"لماذا اعتبر الشيخ أن رفع الأعرابي صوته كان جفاءً لا شوقاً؟", a:"لأن رواية أخرى للحديث وصفت الأعرابي بأن فيه غلظة وجفاء، وهذا أقرب لتفسير رفضه غض صوته."},
+  {q:"ما الحديث الذي وُصف بأنه من أرجى أحاديث الرجاء في هذه المحاضرة؟ ولماذا؟", a:"حديث 'المرء مع من أحب'، لأنه يبيّن أن صدق المحبة قد يبلغ بالإنسان درجات لا يبلغها بمجرد عمله."},
+  {q:"ما الشرط الذي يجب أن يتحقق في محبة الإنسان للنبي ﷺ والصالحين ليُرجى له أثر حديث 'المرء مع من أحب'؟", a:"أن تكون المحبة صادقة، بحيث لا يعيش الإنسان حياته على عكس ما تقتضيه هذه المحبة."},
+  {q:"ما القصة التي أشار الشيخ أنها ستُروى في اللقاء القادم؟", a:"قصة توبة كعب بن مالك رضي الله عنه."}
+];
+
+// =============================================
+// عرض الفلاشكاردز
+// =============================================
+let currentIndex = 0;
+let isFlipped = false;
+
+const flashcardEl = document.getElementById('flashcard');
+const cardTextEl = document.getElementById('cardText');
+const faceLabelEl = document.getElementById('faceLabel');
+const counterEl = document.getElementById('flashCounter');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const cardCountLabel = document.getElementById('cardCountLabel');
+
+function toArabicDigits(n){
+  const map = {'0':'٠','1':'١','2':'٢','3':'٣','4':'٤','5':'٥','6':'٦','7':'٧','8':'٨','9':'٩'};
+  return String(n).split('').map(d => map[d] !== undefined ? map[d] : d).join('');
+}
+
+function renderCard(){
+  const card = CARDS[currentIndex];
+  isFlipped = false;
+  flashcardEl.classList.remove('flipped');
+  faceLabelEl.textContent = 'سؤال';
+  cardTextEl.textContent = card.q;
+  counterEl.textContent = toArabicDigits(currentIndex + 1) + ' / ' + toArabicDigits(CARDS.length);
+  prevBtn.disabled = currentIndex === 0;
+  nextBtn.disabled = currentIndex === CARDS.length - 1;
+}
+
+flashcardEl.addEventListener('click', () => {
+  const card = CARDS[currentIndex];
+  isFlipped = !isFlipped;
+  flashcardEl.classList.toggle('flipped', isFlipped);
+  faceLabelEl.textContent = isFlipped ? 'إجابة' : 'سؤال';
+  cardTextEl.textContent = isFlipped ? card.a : card.q;
+});
+
+prevBtn.addEventListener('click', () => {
+  if(currentIndex > 0){ currentIndex--; renderCard(); }
+});
+nextBtn.addEventListener('click', () => {
+  if(currentIndex < CARDS.length - 1){ currentIndex++; renderCard(); }
+});
+
+cardCountLabel.textContent = 'راجع ' + toArabicDigits(CARDS.length) + ' بطاقة من محاضرة اليوم بطريقة تفاعلية';
+renderCard();
+
+// =============================================
+// تحميل ملف Anki (TSV) — من نفس مصفوفة CARDS
+// =============================================
+function downloadAnkiTSV(){
+  const BOM = '\uFEFF';
+  const rows = CARDS.map(c => {
+    const q = c.q.replace(/\t/g, ' ').replace(/\n/g, '<br>');
+    const a = c.a.replace(/\t/g, ' ').replace(/\n/g, '<br>');
+    return q + '\t' + a;
+  });
+  const tsvContent = BOM + rows.join('\n');
+  const blob = new Blob([tsvContent], {type: 'text/tab-separated-values;charset=utf-8;'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'anki_استهداء_بالسنة_رياض_الصالحين_باب_التوبة_محاضرة_1.tsv';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+document.getElementById('downloadBtn').addEventListener('click', downloadAnkiTSV);
+document.getElementById('downloadBtnFooter').addEventListener('click', downloadAnkiTSV);
+
+// =============================================
+// تفعيل رابط التنقل النشط أثناء التمرير
+// =============================================
+const sections = document.querySelectorAll('main section.block, #anki');
+const navLinks = document.querySelectorAll('.toc-bar a');
+
+function updateActiveLink(){
+  let currentId = '';
+  sections.forEach(sec => {
+    const rect = sec.getBoundingClientRect();
+    if(rect.top <= 120 && rect.bottom >= 120){
+      currentId = sec.id;
+    }
+  });
+  navLinks.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === '#' + currentId);
+  });
+}
+window.addEventListener('scroll', updateActiveLink);
+updateActiveLink();
+</script>
+
+
+
 </body>
 </html>
