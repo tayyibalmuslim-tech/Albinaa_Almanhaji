@@ -1,39 +1,1212 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>باب الإخلاص والنية 2 - شرح رياض الصالحين</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../../style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>باب الإخلاص واستحضار النية — المجلس الثاني | رياض الصالحين</title>
+<meta name="description" content="شرح الأحاديث السابع إلى الثاني عشر من باب الإخلاص واستحضار النية من رياض الصالحين للإمام النووي">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   0) المتغيرات التصميمية — Design Tokens
+   ========================================================================== */
+:root{
+  --ink:#241C12;
+  --ink-soft:#4A3E2C;
+  --ink-faint:#7A6C52;
+
+  --green-deep:#1F3D2E;
+  --green-deeper:#132920;
+  --green-mid:#2E5443;
+  --green-tint:#EEF2E9;
+  --green-tint-2:#E2EADF;
+
+  --gold:#A9832E;
+  --gold-soft:#C7A45A;
+  --gold-pale:#F2E6C4;
+  --gold-line:#D8C588;
+
+  --paper:#FBF7EE;
+  --paper-card:#FFFEFA;
+  --brown-line:#DED0AE;
+  --brown-deep:#5A4A2E;
+
+  --warn:#8C3B2E;
+  --warn-tint:#F5E7E2;
+
+  --shadow-sm:0 1px 3px rgba(36,28,18,.07);
+  --shadow-md:0 6px 24px rgba(31,61,46,.08);
+
+  --font-display:'Amiri', 'Traditional Arabic', serif;
+  --font-body:'Cairo', 'Tahoma', sans-serif;
+
+  --sp-1:8px; --sp-2:12px; --sp-3:16px; --sp-4:24px;
+  --sp-5:32px; --sp-6:48px; --sp-7:64px;
+
+  --content-w:740px;
+  --radius:12px;
+  --radius-sm:7px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:.001ms !important; transition-duration:.001ms !important;}
+}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:17px;
+  line-height:1.9;
+  -webkit-font-smoothing:antialiased;
+}
+
+img,svg{max-width:100%;}
+a{color:inherit;}
+button{font-family:inherit;}
+
+/* ==========================================================================
+   1) شريط التقدم
+   ========================================================================== */
+#progressBar{
+  position:fixed; top:0; right:0; left:0; height:3px;
+  background:var(--gold);
+  width:0%;
+  z-index:200;
+  transition:width .1s linear;
+}
+
+/* ==========================================================================
+   2) الهيدر
+   ========================================================================== */
+header.site-header{
+  background:linear-gradient(160deg, var(--green-deeper) 0%, var(--green-deep) 55%, var(--green-mid) 100%);
+  color:var(--paper);
+  padding:var(--sp-6) var(--sp-4) var(--sp-5);
+  position:relative;
+  overflow:hidden;
+}
+header.site-header::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:radial-gradient(circle at 15% 20%, rgba(201,164,90,.10) 0, transparent 45%),
+                    radial-gradient(circle at 85% 80%, rgba(201,164,90,.08) 0, transparent 40%);
+  pointer-events:none;
+}
+.header-inner{
+  max-width:900px; margin:0 auto; position:relative; text-align:center;
+}
+.eyebrow{
+  display:inline-block;
+  font-size:13px; font-weight:600; letter-spacing:.4px;
+  color:var(--gold-soft);
+  border:1px solid rgba(199,164,90,.45);
+  padding:5px 16px; border-radius:999px;
+  margin-bottom:var(--sp-3);
+}
+h1.lecture-title{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:clamp(32px,5.4vw,46px);
+  line-height:1.35;
+  margin:0 0 var(--sp-2);
+}
+.lecture-desc{
+  font-size:clamp(15px,2vw,17px);
+  color:#EDE7D4;
+  max-width:620px;
+  margin:0 auto var(--sp-4);
+  line-height:1.85;
+}
+.header-meta{
+  display:flex; flex-wrap:wrap; justify-content:center; gap:var(--sp-2);
+  font-size:13.5px; color:var(--gold-pale);
+  margin-bottom:var(--sp-4);
+}
+.header-meta span{
+  border-right:1px solid rgba(242,230,196,.35);
+  padding-right:var(--sp-2);
+}
+.header-meta span:last-child{border-right:none; padding-right:0;}
+
+.btn-anki{
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--gold);
+  color:var(--green-deeper);
+  font-weight:700; font-size:14.5px;
+  border:none; border-radius:999px;
+  padding:11px 24px;
+  cursor:pointer;
+  box-shadow:var(--shadow-sm);
+  transition:transform .15s ease, background .15s ease;
+}
+.btn-anki:hover{background:var(--gold-soft); transform:translateY(-1px);}
+.btn-anki:focus-visible{outline:3px solid var(--paper); outline-offset:2px;}
+
+/* ==========================================================================
+   3) تخطيط الصفحة: الفهرس + المحتوى
+   ========================================================================== */
+.page-layout{
+  max-width:1180px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:250px 1fr;
+  gap:var(--sp-6);
+  padding:var(--sp-6) var(--sp-4);
+  align-items:start;
+}
+
+nav.toc{
+  position:sticky;
+  top:var(--sp-4);
+  background:var(--paper-card);
+  border:1px solid var(--brown-line);
+  border-radius:var(--radius);
+  padding:var(--sp-4) var(--sp-3);
+  max-height:calc(100vh - 48px);
+  overflow-y:auto;
+}
+.toc-title{
+  font-weight:700; font-size:14px; color:var(--green-deep);
+  margin:0 0 var(--sp-3);
+  padding-bottom:var(--sp-2);
+  border-bottom:2px solid var(--gold-pale);
+}
+nav.toc ul{list-style:none; margin:0; padding:0;}
+nav.toc > ul > li{margin-bottom:2px;}
+nav.toc ul ul{list-style:none; margin:2px 0 6px; padding-right:14px; border-right:1px solid var(--brown-line);}
+nav.toc a{
+  display:block;
+  text-decoration:none;
+  color:var(--ink-soft);
+  font-size:13.6px;
+  padding:6px 8px;
+  border-radius:6px;
+  line-height:1.5;
+  transition:background .12s ease, color .12s ease;
+}
+nav.toc ul ul a{font-size:12.6px; color:var(--ink-faint);}
+nav.toc a:hover{background:var(--green-tint); color:var(--green-deep);}
+nav.toc a.active{
+  background:var(--green-tint-2);
+  color:var(--green-deep);
+  font-weight:700;
+  box-shadow:inset 3px 0 0 var(--gold);
+}
+nav.toc a:focus-visible{outline:2px solid var(--gold); outline-offset:1px;}
+
+.toc-toggle-mobile{
+  display:none;
+}
+
+main{min-width:0;}
+
+/* ==========================================================================
+   4) طباعة النص العام — Typography
+   ========================================================================== */
+.section-block{
+  max-width:var(--content-w);
+  margin:0 auto var(--sp-7);
+  scroll-margin-top:20px;
+}
+.section-block:last-of-type{margin-bottom:var(--sp-5);}
+
+.section-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:38px; height:38px;
+  border:2px solid var(--gold);
+  border-radius:50%;
+  font-family:var(--font-display);
+  font-weight:700; font-size:17px;
+  color:var(--green-deep);
+  background:var(--paper-card);
+  flex-shrink:0;
+}
+.section-heading{
+  display:flex; align-items:flex-start; gap:var(--sp-2);
+  margin-bottom:var(--sp-4);
+}
+.section-heading .section-num{margin-top:2px;}
+h2{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:clamp(25px,3.4vw,31px);
+  color:var(--green-deep);
+  margin:0;
+  line-height:1.4;
+}
+h3{
+  font-family:var(--font-body);
+  font-weight:700;
+  font-size:clamp(19px,2.4vw,22px);
+  color:var(--green-mid);
+  margin:var(--sp-5) 0 var(--sp-3);
+  line-height:1.5;
+}
+h4{
+  font-family:var(--font-body);
+  font-weight:700;
+  font-size:17.5px;
+  color:var(--brown-deep);
+  margin:var(--sp-4) 0 var(--sp-2);
+}
+p{margin:0 0 var(--sp-3); color:var(--ink);}
+p.lede{font-size:18px; color:var(--ink-soft);}
+strong{color:var(--green-deep); font-weight:700;}
+ul.plain,ol.plain{margin:0 0 var(--sp-3); padding-right:22px;}
+ul.plain li,ol.plain li{margin-bottom:6px;}
+
+hr.divider{
+  border:none; border-top:1px solid var(--brown-line);
+  margin:var(--sp-5) 0;
+}
+
+/* ==========================================================================
+   5) بطاقة النص النبوي — العنصر المميز للصفحة
+   ========================================================================== */
+blockquote.matn-card{
+  position:relative;
+  margin:var(--sp-4) 0;
+  background:linear-gradient(180deg, var(--green-tint) 0%, var(--paper-card) 65%);
+  border-right:4px solid var(--gold);
+  border-radius:var(--radius);
+  padding:var(--sp-4) var(--sp-4);
+  box-shadow:var(--shadow-sm);
+}
+.matn-label{
+  display:inline-block;
+  font-size:12.5px; font-weight:700;
+  color:var(--gold);
+  letter-spacing:.3px;
+  margin-bottom:var(--sp-2);
+}
+.matn-text{
+  font-family:var(--font-display);
+  font-size:clamp(19px,2.6vw,22px);
+  line-height:2;
+  color:var(--green-deeper);
+  margin:0;
+}
+.matn-source{
+  margin-top:var(--sp-3);
+  padding-top:var(--sp-2);
+  border-top:1px dashed var(--brown-line);
+  font-size:13.5px;
+  color:var(--brown-deep);
+  display:flex; flex-wrap:wrap; gap:14px;
+}
+
+/* ==========================================================================
+   6) بلوكات المحتوى الوظيفية
+   ========================================================================== */
+.block{
+  margin:var(--sp-4) 0;
+  border-radius:var(--radius-sm);
+  padding:var(--sp-3) var(--sp-4);
+}
+.block-label{
+  font-size:12px; font-weight:800; letter-spacing:.4px;
+  margin-bottom:6px; display:block;
+}
+
+.definition-box{background:var(--gold-pale); border-right:3px solid var(--gold);}
+.definition-box .block-label{color:var(--brown-deep);}
+.definition-box .term{font-weight:800; color:var(--green-deep); font-size:17.5px;}
+
+.evidence-box{background:var(--paper-card); border:1px solid var(--brown-line); border-right:3px solid var(--green-mid);}
+.evidence-box .block-label{color:var(--green-mid);}
+.evidence-box .ev-text{font-family:var(--font-display); font-size:18px; color:var(--green-deeper); line-height:1.95;}
+.evidence-box .ev-source{margin-top:6px; font-size:13px; color:var(--ink-faint);}
+
+.key-point{background:var(--green-tint); border-right:3px solid var(--green-deep); display:flex; gap:12px; align-items:flex-start;}
+.key-point .marker{color:var(--gold); font-weight:800; font-size:18px; line-height:1.7;}
+.key-point p{margin:0; color:var(--green-deeper); font-weight:600;}
+
+.warning-box{background:var(--warn-tint); border-right:3px solid var(--warn);}
+.warning-box .block-label{color:var(--warn);}
+
+.example-box{background:var(--paper-card); border:1px dashed var(--gold-line);}
+.example-box .block-label{color:var(--gold);}
+
+.takeaway{background:var(--green-tint-2); border-radius:var(--radius); padding:var(--sp-4);}
+.takeaway .block-label{color:var(--green-deep); font-size:13px; margin-bottom:10px;}
+.takeaway ul{margin:0; padding-right:20px;}
+.takeaway li{margin-bottom:7px; color:var(--ink);}
+
+.action-card{background:var(--paper-card); border:1px solid var(--gold-line); border-radius:var(--radius);}
+.action-card .block-label{color:var(--gold);}
+.action-card ol{margin:8px 0 0; padding-right:20px;}
+.action-card li{margin-bottom:8px;}
+
+/* مخطط التسلسل - Flow */
+.flow{
+  margin:var(--sp-4) 0;
+  display:flex; flex-direction:column; align-items:stretch; gap:0;
+}
+.flow-step{
+  background:var(--paper-card);
+  border:1px solid var(--brown-line);
+  border-radius:var(--radius-sm);
+  padding:12px 16px;
+  text-align:center;
+  font-size:15px; font-weight:600; color:var(--green-deeper);
+}
+.flow-arrow{
+  align-self:center;
+  color:var(--gold);
+  font-size:20px;
+  line-height:1;
+  padding:4px 0;
+}
+
+/* جدول المقارنة */
+.table-wrap{overflow-x:auto; margin:var(--sp-4) 0; border-radius:var(--radius-sm); border:1px solid var(--brown-line);}
+table.cmp{width:100%; border-collapse:collapse; font-size:14.8px; background:var(--paper-card);}
+table.cmp th{
+  background:var(--green-deep); color:var(--paper);
+  padding:12px 14px; text-align:center; font-weight:700;
+}
+table.cmp td{padding:12px 14px; text-align:center; border-top:1px solid var(--brown-line);}
+table.cmp td:first-child{font-weight:700; color:var(--green-deep); background:var(--green-tint); text-align:right;}
+table.cmp tr:nth-child(even) td:not(:first-child){background:#F7F3E6;}
+
+/* ==========================================================================
+   7) خريطة المحاضرة (Overview)
+   ========================================================================== */
+.overview-card{
+  background:var(--paper-card);
+  border:1px solid var(--brown-line);
+  border-radius:var(--radius);
+  padding:var(--sp-5);
+  box-shadow:var(--shadow-md);
+}
+.overview-grid{display:grid; gap:var(--sp-4); margin-top:var(--sp-3);}
+.overview-item .ov-label{font-size:13px; font-weight:800; color:var(--gold); margin-bottom:4px; display:block;}
+.overview-item p{margin:0;}
+.axes-list{list-style:none; margin:0; padding:0; display:grid; gap:8px;}
+.axes-list li{
+  display:flex; align-items:baseline; gap:10px;
+  background:var(--green-tint); padding:9px 12px; border-radius:8px;
+  font-size:14.8px;
+}
+.axes-list .ax-num{
+  font-family:var(--font-display); font-weight:700; color:var(--gold);
+  min-width:20px;
+}
+
+/* ==========================================================================
+   8) الفوتر
+   ========================================================================== */
+footer.site-footer{
+  background:var(--green-deeper);
+  color:#EDE7D4;
+  padding:var(--sp-6) var(--sp-4) var(--sp-5);
+  margin-top:var(--sp-6);
+  text-align:center;
+}
+footer .footer-inner{max-width:620px; margin:0 auto;}
+footer p{color:#D9D0B0; font-size:14.5px; line-height:1.9;}
+footer .footer-note{
+  font-family:var(--font-display); font-size:19px; color:var(--gold-pale); margin-bottom:var(--sp-3);
+}
+
+/* ==========================================================================
+   9) أزرار عائمة
+   ========================================================================== */
+#backToTop{
+  position:fixed; bottom:22px; left:22px;
+  width:44px; height:44px;
+  border-radius:50%;
+  background:var(--green-deep);
+  color:var(--paper);
+  border:none;
+  font-size:18px;
+  cursor:pointer;
+  box-shadow:var(--shadow-md);
+  opacity:0; visibility:hidden;
+  transition:opacity .2s ease, transform .2s ease;
+  z-index:150;
+}
+#backToTop.show{opacity:1; visibility:visible;}
+#backToTop:hover{transform:translateY(-3px);}
+#backToTop:focus-visible{outline:2px solid var(--gold);}
+
+/* ==========================================================================
+   10) الاستجابة للشاشات الصغيرة
+   ========================================================================== */
+@media (max-width:1000px){
+  .page-layout{grid-template-columns:1fr; padding:var(--sp-4) var(--sp-3);}
+  nav.toc{
+    display:none;
+    position:fixed; inset:0 12% 0 auto;
+    right:0; top:0; bottom:0; left:auto;
+    width:82%; max-width:340px;
+    max-height:none;
+    border-radius:0;
+    z-index:250;
+    box-shadow:-8px 0 30px rgba(0,0,0,.15);
+  }
+  nav.toc.open{display:block;}
+  .toc-toggle-mobile{
+    display:flex; align-items:center; gap:8px;
+    position:fixed; bottom:22px; right:22px;
+    background:var(--gold); color:var(--green-deeper);
+    border:none; border-radius:999px;
+    padding:12px 18px; font-weight:700; font-size:14px;
+    box-shadow:var(--shadow-md);
+    cursor:pointer; z-index:220;
+  }
+  .toc-backdrop{
+    display:none; position:fixed; inset:0; background:rgba(19,41,32,.45); z-index:240;
+  }
+  .toc-backdrop.show{display:block;}
+  #backToTop{left:auto; right:22px; bottom:86px;}
+}
+
+@media (max-width:640px){
+  body{font-size:16px;}
+  header.site-header{padding:var(--sp-5) var(--sp-3) var(--sp-4);}
+  .matn-text{font-size:18px;}
+  .header-meta span{border-right:none; padding-right:0;}
+}
+
+/* حالة التركيز العامة لإمكانية الوصول */
+a:focus-visible, button:focus-visible{outline:2px solid var(--gold); outline-offset:2px;}
+</style>
 </head>
-<body class="" data-page="lecture" data-lecture-id="stage1_riyad-al-saliheen_02">
-  <div class="page">
-    <nav class="breadcrumbs"><a href="../../../index.html">الرئيسية</a><span class="sep">/</span><a href="../../index.html">المرحلة الأولى</a><span class="sep">/</span><a href="../index.html">شرح رياض الصالحين</a><span class="sep">/</span><span aria-current="page">باب الإخلاص والنية 2</span></nav>
-    
-      <header class="lecture-header">
-        <h1>باب الإخلاص والنية 2</h1>
-        <p class="lecture-meta">المادة: شرح رياض الصالحين &nbsp;|&nbsp; الشيخ: غير محدد حاليًا &nbsp;|&nbsp; اليوم 13</p>
-        <label class="checkbox-line lecture-checkbox">
-          <input type="checkbox" data-lecture-id="stage1_riyad-al-saliheen_02">
-          <span>إتمام هذه المحاضرة</span>
-        </label>
-      </header>
+<body>
 
-      <div class="lecture-placeholder">
-        <p>سيتم إضافة المحاضرة هنا لاحقًا</p>
-        <p class="placeholder-hint">(رابط يوتيوب / فيديو / ملف صوتي / PDF / نص المحاضرة / ملاحظاتي)</p>
-      </div>
+<div id="progressBar" role="progressbar" aria-label="نسبة التقدم في القراءة"></div>
 
-      <div class="lecture-nav">
-        <a href="../index.html" class="btn btn-outline">الرجوع إلى المادة</a>
-        <a href="../../index.html" class="btn btn-outline">الرجوع إلى المرحلة</a>
-      </div>
-    
+<header class="site-header">
+  <div class="header-inner">
+    <span class="eyebrow">سلسلة شرح رياض الصالحين — الإمام النووي</span>
+    <h1 class="lecture-title">باب الإخلاص واستحضار النية</h1>
+    <p class="lecture-desc">
+      المجلس الثاني: من حديث «إن الله لا ينظر إلى أجسامكم» إلى ختام الباب بقصة أصحاب الغار الثلاثة —
+      كيف توزن الأعمال بميزان النية لا بميزان الصورة الظاهرة؟
+    </p>
+    <div class="header-meta">
+      <span>المجلس الثاني</span>
+      <span>الأحاديث ٧ – ١٢</span>
+      <span>رياض الصالحين، كتاب الإمام النووي</span>
+    </div>
+    <button class="btn-anki" onclick="downloadAnkiDeck()" aria-label="تحميل بطاقات المراجعة بصيغة أنكي">
+      🗂️ حمّل بطاقات أنكي
+    </button>
   </div>
-  <script src="../../../data.js"></script>
-  <script src="../../../script.js"></script>
+</header>
+
+<button class="toc-toggle-mobile" id="tocToggleMobile" aria-expanded="false" aria-controls="toc">
+  ☰ فهرس المحاضرة
+</button>
+<div class="toc-backdrop" id="tocBackdrop"></div>
+
+<div class="page-layout">
+
+  <nav class="toc" id="toc" aria-label="فهرس المحاضرة">
+    <p class="toc-title">فهرس المحاضرة</p>
+    <ul>
+      <li><a href="#overview">خريطة المحاضرة</a></li>
+      <li><a href="#intro">مقدمة: لماذا هذا الدرس؟</a></li>
+      <li>
+        <a href="#hadith-7">٧ — محل نظر الله: القلوب لا الصور</a>
+        <ul>
+          <li><a href="#h7-1">لماذا لا ينظر الله إلى الأجسام؟</a></li>
+          <li><a href="#h7-2">كيف تراقب قلبك يوميًا؟</a></li>
+          <li><a href="#h7-3">القلب أولًا ثم العمل</a></li>
+          <li><a href="#h7-4">أعظم هدي النبي: العناية بالقلوب</a></li>
+        </ul>
+      </li>
+      <li><a href="#hadith-8-9">٨ – ٩ — الجهاد الخالص ومحاسبة النية</a></li>
+      <li><a href="#hadith-10">١٠ — النية في الذهاب إلى الصلاة</a></li>
+      <li><a href="#hadith-11">١١ — كيف تُكتب الحسنات والسيئات؟</a></li>
+      <li>
+        <a href="#hadith-12">١٢ — قصة أصحاب الغار الثلاثة</a>
+        <ul>
+          <li><a href="#h12-1">الراعي البار بوالديه</a></li>
+          <li><a href="#h12-2">العفيف الذي خاف الله</a></li>
+          <li><a href="#h12-3">الأمين الذي أدّى الحق كاملًا</a></li>
+          <li><a href="#h12-4">الفوائد المستخلصة</a></li>
+        </ul>
+      </li>
+      <li><a href="#closing">خاتمة: ما معنى السنة حقًا؟</a></li>
+      <li><a href="#final-summary">الخلاصة النهائية</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ============================= خريطة المحاضرة ============================= -->
+    <section class="section-block" id="overview">
+      <div class="overview-card">
+        <h2 style="margin-bottom:4px;">خريطة المحاضرة</h2>
+        <p style="color:var(--ink-faint); font-size:14px; margin-bottom:0;">قبل أن تبدأ القراءة، خذ هذه اللمحة السريعة</p>
+        <div class="overview-grid">
+          <div class="overview-item">
+            <span class="ov-label">ماذا ستتعلم؟</span>
+            <p>كيف يزن الشرع العمل بالنية لا بالمظهر ولا حتى بالنتيجة الظاهرة، ولماذا يُعامَل القلب باعتباره
+            أصل صلاح الجسد كله، لا مجرد شعور داخلي عابر.</p>
+          </div>
+          <div class="overview-item">
+            <span class="ov-label">الفكرة المركزية</span>
+            <p>الله سبحانه وتعالى لا ينظر إلى الصورة الظاهرة للعمل، بل إلى ما تنطوي عليه القلوب من نية وإخلاص،
+            وكل عمل — مهما بدا صالحًا في الظاهر — لا قيمة له عند الله إلا بقدر خلوصه له وحده.</p>
+          </div>
+          <div class="overview-item">
+            <span class="ov-label">أهم المحاور</span>
+            <ul class="axes-list">
+              <li><span class="ax-num">١</span> لماذا لا ينظر الله إلى أجسامكم؟</li>
+              <li><span class="ax-num">٢</span> متى يكون القتال «في سبيل الله» حقًا؟</li>
+              <li><span class="ax-num">٣</span> ما الذي ينبغي أن يحرّكك حين تخرج إلى الصلاة؟</li>
+              <li><span class="ax-num">٤</span> كيف تُكتب حسناتك وسيئاتك عند الله؟</li>
+              <li><span class="ax-num">٥</span> قصة الثلاثة الذين حبستهم صخرة، وسرّ نجاتهم</li>
+              <li><span class="ax-num">٦</span> تصحيح: ما معنى «السنة» في حقيقتها؟</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= المقدمة ============================= -->
+    <section class="section-block" id="intro">
+      <div class="section-heading">
+        <span class="section-num">◇</span>
+        <h2>مقدمة: لماذا هذا الدرس؟</h2>
+      </div>
+
+      <p class="lede">هذا المجلس هو الثاني من سلسلة مطوّلة في شرح كتاب «رياض الصالحين» للإمام النووي رحمه الله،
+      وسبب اختيار هذا الكتاب تحديدًا ليس مجرد الرغبة في تحرير الألفاظ وتحقيق الأحاديث، وإن كان هذا مطلوبًا،
+      بل السبب الأعمق أن الاتصال بهدي النبي صلى الله عليه وسلم وأحاديثه هو شفاء ودواء للقلب، وطريق للتعرّف
+      على القدوة الكاملة، خاصة في الأحاديث التي تُعنى بالسلوك والتزكية وأحوال المصطفى صلى الله عليه وسلم مع
+      أصحابه وأمته.</p>
+
+      <p>فهذه السلسلة مادة للتداوي، وليروى بها شيء من الشوق إلى النبي صلى الله عليه وسلم، ولنقتبس من نوره:
+      ماذا كان يفعل؟ كيف كان يعلّم؟ إلى ماذا كان يدعو؟ ما الذي كان يشغل باله تجاه أمته؟ كيف كان يصلح ويضحّي
+      لدين الله سبحانه وتعالى؟</p>
+
+      <div class="block key-point">
+        <span class="marker">◆</span>
+        <p>حسن الاقتداء بالنبي صلى الله عليه وسلم يحتاج إلى هداية وفقه، فليس كل من علم حديثًا من أحاديثه قد
+        رُزق التوفيق للاقتداء الصحيح به.</p>
+      </div>
+
+      <h3>مراتب الهدي النبوي</h3>
+      <p>من أخطر المعاني التي تحتاج إلى تجديد وتثبيت في الواقع: أن هدي النبي صلى الله عليه وسلم ليس على مرتبة
+      واحدة، فكما أن القرآن كلام الله كله، ومع ذلك فيه أعظم آية وأعظم سورة، فكذلك هدي النبي صلى الله عليه
+      وسلم فيه ما هو أعظم في ميزان الشرع، وفيه ما هو دونه، وكله مهم. والقضية ليست في مجرد معرفة الأحاديث أو
+      حفظها، بل في فقه هذا الهدي وإعطاء كل جزء منه قدره الحقيقي كما كان في ميزان النبي صلى الله عليه وسلم
+      نفسه. وسيعود هذا المعنى بوضوح أكبر في خاتمة هذا المجلس عند الحديث عن معنى «السنة».</p>
+
+      <p>وقد سبق في المجلس الأول تقديم الكتاب وأخذ ستة أحاديث من باب «الإخلاص واستحضار النية في جميع الأعمال
+      والأقوال والأحوال البارزة والخفية»، ويبدأ هذا المجلس بالحديث السابع من الباب نفسه، ويختم به الباب كاملًا
+      عند الحديث الثاني عشر.</p>
+    </section>
+
+    <!-- ============================= الحديث السابع ============================= -->
+    <section class="section-block" id="hadith-7">
+      <div class="section-heading">
+        <span class="section-num">٧</span>
+        <h2>محل نظر الله: القلوب لا الصور</h2>
+      </div>
+
+      <blockquote class="matn-card">
+        <span class="matn-label">نص الحديث</span>
+        <p class="matn-text">«إنَّ اللهَ لا يَنْظُرُ إلى أجْسامِكُمْ ولا إلى صُوَرِكُمْ، ولكِنْ يَنْظُرُ إلى قُلوبِكُمْ
+        وأعْمالِكُمْ».</p>
+        <div class="matn-source">
+          <span>الراوي: أبو هريرة عبد الرحمن بن صخر رضي الله عنه</span>
+          <span>المصدر: رواه مسلم</span>
+        </div>
+      </blockquote>
+
+      <h3 id="h7-1">لماذا لا ينظر الله إلى الأجسام؟</h3>
+      <p>هذا الحديث يبيّن المحل الذي ينبغي أن يُعتنى به لأنه هو محل نظر الله سبحانه وتعالى؛ فالله لا ينظر إلى
+      أجسامنا ولا إلى صورنا: شكل الجسد، ملامح الوجه، أو أي معيار من هذا القبيل. وهذا وإن لم يكن محل نظر الله،
+      فهو محل نظر الناس، وكلما تدنّت معايير الناس تعلّقت أنظارهم بالصور والأجسام، وهذه معادلة تتكرر دائمًا:</p>
+
+      <div class="flow">
+        <div class="flow-step">ارتفاع معيار الإنسان</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step">النظر إلى الحقائق والمعاني</div>
+      </div>
+      <div class="flow" style="margin-top:-8px;">
+        <div class="flow-step">انخفاض معيار الإنسان</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step">النظر إلى الشكل والصورة والمكانة الاجتماعية</div>
+      </div>
+
+      <p>ولهذا نجد في القرآن أن كثيرًا من الأقوام حين دعاهم الأنبياء استجاب الضعفاء أولًا، بينما تعلّل المستكبرون
+      برفض الدعوة لأن أتباعها في نظرهم من «الأرذلين»، أي أصحاب المكانة الاجتماعية المتدنية؛ فمعيارهم كان الصورة
+      لا الحقيقة. أما الله سبحانه وتعالى فإنما ينظر إلى القلوب والأعمال.</p>
+
+      <h3 id="h7-2">كيف تراقب قلبك يوميًا؟</h3>
+      <div class="block example-box">
+        <span class="block-label">مثال</span>
+        <p>الإنسان يعتني كل يوم بالحد الأدنى من مظهره: يغسل وجهه، يتأكد ألا تبقى آثار المخدة على وجهه، يفرش
+        أسنانه، يمشّط شعره. هذه عناية يومية طبيعية لا يتساهل فيها أحد. فكما تعتني يوميًا بمظهرك وتخشى العيب فيه،
+        يجب أن تعتني يوميًا بقلبك بالقدر نفسه من الجدّية.</p>
+      </div>
+
+      <p>وليس المقصود بالنظر إلى القلب أجهزة تقيس النبضات أو ما شابه، وإنما النظر إلى ما يحمله القلب من معانٍ،
+      وأعظم معنى ينبغي أن تتفقده يوميًا فيه هو: مراقبتك لله، واستحضارك لعبوديتك له، واطلاعه عليك، ويقينك بأنك
+      صائر إليه سبحانه وتعالى في الدار الآخرة.</p>
+
+      <div class="block warning-box">
+        <span class="block-label">تنبيه</span>
+        <p>إن لم تفعل ذلك، فاعلم أن الله سينظر إلى قلبك على كل حال؛ فهل يليق بمن يظن نفسه مسلمًا أن يستحي من
+        نظر الناس إلى عيوب مظهره، ولا يستحي من نظر الله إلى قلب امتلأ بالغفلة، ومحبة البشر مع غياب محبة الله،
+        والخوف من الناس مع غياب الخوف منه سبحانه؟</p>
+      </div>
+
+      <h3 id="h7-3">القلب أولًا ثم العمل</h3>
+      <p>محل نظر الله سبحانه هو القلب أولًا، ثم العمل؛ لأن العمل لا يزكو إلا إذا زكا القلب الذي صدر عنه.</p>
+
+      <div class="block evidence-box">
+        <span class="block-label">الدليل</span>
+        <p class="ev-text">«ألا وإنَّ في الجسدِ مُضْغَةً، إذا صلَحَتْ صلَحَ الجسدُ كُلُّهُ، وإذا فسَدَتْ فسَدَ
+        الجسدُ كُلُّهُ، ألا وهي القلبُ».</p>
+        <p class="ev-source">متفق عليه — استُشهِد به لبيان أن صلاح الجوارح كلها تابع لصلاح القلب.</p>
+      </div>
+
+      <p>وبناءً على ذلك، فعملك الذي تعمله هو أيضًا محل نظر الله واطلاعه، لكن هذا الاطلاع يختلف عن اطلاع البشر؛
+      فقد يراقبك مديرك في العمل نهاية اليوم أو الأسبوع بتقرير أو اجتماع إنجازات، لكنه لا يدرك حقيقة ما في قلبك.
+      قد تُتقن عملًا في ظاهره وأنت تريد به التخلص من شر إنسان أو التقرب إلى إنسان، بينما الله لا يقبل من العمل
+      إلا ما كان طيبًا، ولا يكون طيبًا إلا إذا كان خالصًا، والله يعلم هذا الإخلاص ويطّلع عليه.</p>
+
+      <h3 id="h7-4">أعظم هدي النبي: العناية بالقلوب</h3>
+      <p>من أعظم هدي النبي صلى الله عليه وسلم، ومن أعظم السنن التي حرص على إيصالها لأصحابه وأمته، العناية
+      بالقلوب. ولم يكن هذا حديثًا واحدًا أو حديثين، بل تكرر هذا المعنى وتأكّد.</p>
+
+      <div class="block evidence-box">
+        <span class="block-label">الدليل</span>
+        <p class="ev-text">قال صلى الله عليه وسلم: «التقوى هاهنا» — وأشار إلى صدره ثلاث مرات.</p>
+        <p class="ev-source">حديث صحيح — إشارة النبي إلى صدره تعليم مباشر بأن محل التقوى هو القلب، لا الأعمال
+        الظاهرة التي يراها الناس ويصنّفون بها بعضهم.</p>
+      </div>
+
+      <p>وعبودية القلب تتكوّن من معانٍ عدة، أبرزها: <strong>الإخلاص، والتوكل، والخشية، واليقين، والمحبة،
+      والإنابة، والرجاء</strong>. وهذه كلها معانٍ قلبية ينبغي أن تكون محل متابعة يومية، تمامًا كمتابعة المظهر.</p>
+
+      <div class="block action-card">
+        <span class="block-label">تطبيق عملي</span>
+        <ol>
+          <li>خصّص لحظة قصيرة كل يوم — قبل النوم أو بعد الفجر — لسؤال نفسك: «ما الذي يملأ قلبي الآن؟»</li>
+          <li>عند كل عمل تنوي فعله، اسأل: «هل أريد به وجه الله وحده، أم يخالطه غرض آخر؟»</li>
+          <li>إذا وجدت في قلبك تعلقًا بمحبة الناس أو الخوف منهم أكثر من الله، فاجعل ذلك محل إصلاح لا تجاهل.</li>
+        </ol>
+      </div>
+
+      <div class="block takeaway">
+        <span class="block-label">خلاصة الحديث السابع</span>
+        <ul>
+          <li>الله لا يحكم على الناس بمظهرهم أو مكانتهم، بل بما في قلوبهم وأعمالهم.</li>
+          <li>كلما ارتفع معيار الإنسان نظر إلى المعاني، وكلما انخفض نظر إلى الصورة والشكل.</li>
+          <li>مراقبة القلب يجب أن تكون عملًا يوميًا كمراقبة المظهر تمامًا، لا أقل.</li>
+          <li>صلاح القلب شرط سابق لصلاح العمل، فلا يقبل الله عملًا إلا إن كان خالصًا.</li>
+          <li>العناية بالقلوب — إخلاصًا وتوكلًا وخشية ومحبة — من أعظم ما حرص النبي صلى الله عليه وسلم على تعليمه.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================= الحديثان الثامن والتاسع ============================= -->
+    <section class="section-block" id="hadith-8-9">
+      <div class="section-heading">
+        <span class="section-num">٨‑٩</span>
+        <h2>الجهاد الخالص ومحاسبة النية</h2>
+      </div>
+      <p class="lede">إذا كان الحديث السابع قد بيّن أن محل نظر الله هو القلب، فإن هذين الحديثين يطبّقان هذا
+      الأصل على أدقّ المواقف وأشدّها: ساحة القتال، حيث تتشابه الصورة الظاهرة تمامًا بين المخلص وغيره، ولا يبقى
+      الفارق إلا في النية.</p>
+
+      <h3>الحديث الثامن: متى يكون القتال «في سبيل الله»؟</h3>
+      <blockquote class="matn-card">
+        <span class="matn-label">نص الحديث</span>
+        <p class="matn-text">سُئِلَ رسولُ اللهِ صلى الله عليه وسلم عن الرَّجُلِ يُقاتِلُ شَجاعةً، ويُقاتِلُ حَمِيَّةً،
+        ويُقاتِلُ رِياءً، أيُّ ذلكَ في سبيلِ اللهِ؟ فقالَ رسولُ اللهِ صلى الله عليه وسلم: «مَنْ قاتَلَ لِتَكونَ
+        كَلِمَةُ اللهِ هيَ العُلْيا فَهُوَ في سبيلِ اللهِ».</p>
+        <div class="matn-source">
+          <span>الراوي: أبو موسى عبد الله بن قيس الأشعري رضي الله عنه</span>
+          <span>المصدر: متفق عليه</span>
+        </div>
+      </blockquote>
+
+      <p>ثلاث دوافع للقتال طرحها السؤال: الشجاعة الفطرية، والحميّة، والرياء. والجواب النبوي حصر «سبيل الله»
+      في نية واحدة فقط: أن تكون كلمة الله هي العليا.</p>
+
+      <div class="block definition-box">
+        <span class="block-label">تعريف</span>
+        <p><span class="term">الحَمِيّة:</span> العصبية والانفعال النفسي، وقد تكون عصبية لقبيلة أو عرق أو
+        وطن معيّن بذاته، دون أن يحرّك صاحبها معنى نصرة أمة الإسلام والدين. فمن لا ينهضه إلا القتال دفاعًا عن
+        وطن بعينه، ولا يَعنيه أمر إخوانه في بقاع أخرى من العالم الإسلامي، فحاله داخل في هذا المعنى.</p>
+      </div>
+
+      <div class="block key-point">
+        <span class="marker">◆</span>
+        <p>حب الوطن أمر فطري لا حرج فيه، لكنه ليس هو الميزان الذي توزن به الموالاة والمعاداة. الميزان الحقيقي
+        للولاء والبراء هو ما كان لله، ولإعلاء كلمته، لا مجرد الانتماء الجغرافي.</p>
+      </div>
+
+      <p>وقد ضرب الشيخ لذلك مثالًا معاصرًا: حين تصيب المسلمين في بقاع أخرى — كما يجري في غزة وغيرها — مصائب
+      وشدائد، فإن الاكتفاء بمعيار «هذا ليس وطني فلا يعنيني» هو بعينه المعيار المنقوص الذي حذّر منه الحديث،
+      بخلاف من ينهض قلبه لنصرة إخوانه لأن الرابطة عنده هي الدين، لا حدود الجغرافيا وحدها.</p>
+
+      <hr class="divider">
+
+      <h3>الحديث التاسع: القاتل والمقتول في النار</h3>
+      <blockquote class="matn-card">
+        <span class="matn-label">نص الحديث</span>
+        <p class="matn-text">قال النبي صلى الله عليه وسلم: «إذا التَقَى المسلِمانِ بسَيفَيهِما فالقاتِلُ
+        والمقتولُ في النارِ». قلتُ: يا رسولَ اللهِ، هذا القاتِلُ، فما بالُ المقتولِ؟ قال: «إنَّه كان حَريصًا
+        على قَتلِ صاحِبِهِ».</p>
+        <div class="matn-source">
+          <span>الراوي: أبو بكرة نفيع بن الحارث الثقفي رضي الله عنه</span>
+          <span>المصدر: متفق عليه</span>
+        </div>
+      </blockquote>
+
+      <p>هذا الحديث يطرح مفارقة لافتة: رجل مقتول — أي متألم، مُصاب، لم يبلغ مراده — ومع ذلك فهو في النار!
+      والسبب أن الصورة الظاهرة (كونه مقتولًا لا قاتلًا) لم تكن هي محل الحساب، وإنما محل الحساب ما كان في قلبه:</p>
+
+      <div class="flow">
+        <div class="flow-step">النية الباطنة: الحرص على قتل صاحبه</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step">محل نظر الله ومحاسبته: القلب لا النتيجة الظاهرة</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-step">الحكم: في النار، وإن كان مقتولًا لا قاتلًا</div>
+      </div>
+
+      <p>فالله سبحانه حاسبه باعتباره متجرئًا على أن يكون قاتلًا، لا باعتبار الصورة الظاهرة التي انتهى إليها
+      القتال. وهذا امتداد مباشر لأصل الباب كله: أن الأعمال بالنيات.</p>
+
+      <div class="block takeaway">
+        <span class="block-label">خلاصة الحديثين الثامن والتاسع</span>
+        <ul>
+          <li>الشجاعة والحمية والرياء وحدها لا تجعل القتال «في سبيل الله»؛ الشرط الوحيد إعلاء كلمة الله.</li>
+          <li>حب الوطن فطري ومشروع، لكنه ليس معيار الولاء والبراء في الدين.</li>
+          <li>الحساب عند الله يقع على نية القلب، ولو خالفتها الصورة الظاهرة للنتيجة تمامًا.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================= الحديث العاشر ============================= -->
+    <section class="section-block" id="hadith-10">
+      <div class="section-heading">
+        <span class="section-num">١٠</span>
+        <h2>النية في الذهاب إلى الصلاة</h2>
+      </div>
+
+      <blockquote class="matn-card">
+        <span class="matn-label">نص الحديث</span>
+        <p class="matn-text">قال رسول الله صلى الله عليه وسلم: «صَلاةُ الرَّجُلِ في جَماعةٍ تَزيدُ على صَلاتِهِ
+        في سُوقِهِ وبَيتِهِ بِضْعًا وعِشرينَ دَرَجةً، وذلكَ أنَّ أحَدَهُم إذا توَضَّأَ فأحسَنَ الوُضوءَ، ثمَّ أتى
+        المسجدَ لا يُريدُ إلَّا الصَّلاةَ، لا يَنهَزُهُ إلَّا الصَّلاةُ، لم يَخطُ خُطوةً إلَّا رُفِعَتْ له بها
+        دَرَجةٌ، وحُطَّتْ عنه بها خَطيئةٌ، حتى يَدخُلَ المسجدَ، فإذا دخَلَ المسجدَ كانَ في الصَّلاةِ ما كانَتِ
+        الصَّلاةُ هي تَحبِسُهُ، والملائكةُ يُصَلُّونَ على أحَدِكُم ما دامَ في مَجلِسِهِ الذي صلَّى فيه، يَقولونَ:
+        اللَّهُمَّ ارحَمْهُ، اللَّهُمَّ اغفِرْ له، اللَّهُمَّ تُبْ عليه، ما لَمْ يُؤذِ فيه، ما لَمْ يُحدِثْ فيه».</p>
+        <div class="matn-source">
+          <span>الراوي: أبو هريرة رضي الله عنه</span>
+          <span>المصدر: متفق عليه، واللفظ لمسلم</span>
+        </div>
+      </blockquote>
+
+      <div class="block definition-box">
+        <span class="block-label">فائدة لغوية — الإمام النووي</span>
+        <p><span class="term">يَنهَزُهُ:</span> بفتح الياء والهاء وبالزاي، أي يُخرِجه ويُنهِضه.</p>
+      </div>
+
+      <p>هذا الحديث في ظاهره عن فضل صلاة الجماعة، فلماذا ساقه الإمام النووي هنا في باب الإخلاص واستحضار النية؟
+      الجواب: ليس الغرض تكرار فضائل الجماعة، بل التنبيه إلى أن الخارج إلى أي عمل صالح — كالخروج إلى المسجد —
+      ينبغي ألا ينوي بقلبه غير ذلك العمل نفسه خالصًا لله.</p>
+
+      <div class="block key-point">
+        <span class="marker">◆</span>
+        <p>موضع الشاهد على معنى النية في هذا الحديث: قوله صلى الله عليه وسلم «لا يُريدُ إلَّا الصَّلاةَ»،
+        و«لا يَنهَزُهُ إلَّا الصَّلاةُ».</p>
+      </div>
+
+      <div class="block example-box">
+        <span class="block-label">مثال</span>
+        <p>تخيّل طالبًا يتردد على مركز علمي يقدّم برامج دعوية وشرعية. السؤال: ما الذي ينهزه حين يخرج إليه؟
+        هل الدافع الداخلي هو تعلّم دين الله، ومجالسة الصحبة الصالحة، والسير في طريق يرجو فيه أن يكون صالحًا
+        مصلحًا؟ أم أنه يخرج فقط فرارًا من إزعاج في البيت؟ الخروج هربًا من الإزعاج ليس محرّمًا في ذاته، لكن من
+        يخرج إلى مجالس الخير وهو يقصد بها قصدًا محرّمًا فذلك شرّ على شرّ.</p>
+      </div>
+
+      <p>ومن فضائل صلاة الجماعة الواردة في الحديث: زيادتها على صلاة الفرد ببضع وعشرين درجة، وأن كل خطوة نحو
+      المسجد ترفع درجة وتحط خطيئة، وأن المصلي يظل في حكم الصلاة طالما ينتظرها، وأن الملائكة تدعو له بالرحمة
+      والمغفرة والتوبة ما دام في مجلسه ولم يؤذِ أحدًا أو ينقض وضوءه.</p>
+
+      <p>وقد طُرح في الدرس سؤال تأملي: أيهما أصعب على النفس — أن تنوي الصلاة لله خالصة، أم أن تقوم من نومك
+      وتتوضأ بماء بارد وتمشي إلى المسجد؟ الجواب عند كثير من الناس أن الأصعب هو <strong>النية نفسها</strong>،
+      لأن الأفعال الجسدية قد تصير مع الوقت أشبه بالعادة، بينما استحضار الإخلاص القلبي يحتاج مجاهدة متجددة في
+      كل مرة.</p>
+
+      <div class="block takeaway">
+        <span class="block-label">خلاصة الحديث العاشر</span>
+        <ul>
+          <li>لم يُسق الحديث هنا لبيان فضل الجماعة فحسب، بل ليعلّم أن كل خروج لعمل صالح يجب أن يكون خالصًا لذلك العمل.</li>
+          <li>موضع الشاهد: «لا يريد إلا الصلاة»، «لا ينهزه إلا الصلاة».</li>
+          <li>غالبًا ما تكون مجاهدة النية أصعب على النفس من مجاهدة الجسد.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================= الحديث الحادي عشر ============================= -->
+    <section class="section-block" id="hadith-11">
+      <div class="section-heading">
+        <span class="section-num">١١</span>
+        <h2>كيف تُكتب الحسنات والسيئات؟</h2>
+      </div>
+
+      <blockquote class="matn-card">
+        <span class="matn-label">نص الحديث — قدسي</span>
+        <p class="matn-text">عن عبد الله بن عباس رضي الله عنهما، عن رسول الله صلى الله عليه وسلم فيما يرويه عن
+        ربه تبارك وتعالى، قال: «إنَّ اللهَ كَتَبَ الحسَناتِ والسَّيِّئاتِ، ثُمَّ بَيَّنَ ذلكَ: فمَنْ هَمَّ
+        بحَسَنةٍ فلَمْ يَعمَلْها، كَتَبَها اللهُ عِندَهُ حَسَنةً كامِلةً، وإنْ هَمَّ بها فعَمِلَها، كَتَبَها
+        اللهُ له عَشْرَ حَسَناتٍ إلى سَبعِمِئةِ ضِعفٍ إلى أضعافٍ كَثيرةٍ، وإنْ هَمَّ بسَيِّئةٍ فلَمْ يَعمَلْها،
+        كَتَبَها اللهُ عِندَهُ حَسَنةً كامِلةً، وإنْ هَمَّ بها فعَمِلَها، كَتَبَها اللهُ سَيِّئةً واحِدةً».</p>
+        <div class="matn-source">
+          <span>الراوي: عبد الله بن عباس رضي الله عنهما</span>
+          <span>المصدر: متفق عليه</span>
+        </div>
+      </blockquote>
+
+      <p>هذا الحديث يبيّن أهمية النية والعزيمة على الخير، وأن الله سبحانه من رحمته جعل بلوغ الحسنة الكاملة
+      ممكنًا بمجرد النية، بل جعل من أبواب الحسنات ترك السيئة بعد التفكير فيها.</p>
+
+      <div class="table-wrap">
+        <table class="cmp">
+          <thead>
+            <tr><th>حال القلب</th><th>هَمّ ولم يعمل</th><th>هَمّ وعمِل</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>همّ بحسنة</td><td>حسنة كاملة</td><td>من ١٠ إلى ٧٠٠ ضعف فأكثر</td></tr>
+            <tr><td>همّ بسيئة</td><td>حسنة كاملة</td><td>سيئة واحدة فقط</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="block key-point">
+        <span class="marker">◆</span>
+        <p>لاحظ التفاوت: نية الخير — عُملت أو لم تُعمل — لا تُكتب إلا حسنة أو مضاعَفة. أما نية الشر، فإن تُركت
+        كُتبت حسنة، وإن وقعت لم تُضاعف بل كُتبت سيئة واحدة بلا زيادة. وهذا من عظيم فضل الله على عباده.</p>
+      </div>
+    </section>
+
+    <!-- ============================= الحديث الثاني عشر ============================= -->
+    <section class="section-block" id="hadith-12">
+      <div class="section-heading">
+        <span class="section-num">١٢</span>
+        <h2>قصة أصحاب الغار الثلاثة</h2>
+      </div>
+
+      <p class="lede">بهذا الحديث الطويل يُختم باب الإخلاص واستحضار النية، وهو حديث عن ثلاثة رجال حبستهم صخرة
+      في غار، فما نجّاهم إلا توسّلهم إلى الله بأخلص أعمالهم.</p>
+
+      <blockquote class="matn-card">
+        <span class="matn-label">مطلع الحديث</span>
+        <p class="matn-text">عن عبد الله بن عمر بن الخطاب رضي الله عنهما قال: سمعت رسول الله صلى الله عليه وسلم
+        يقول: «انطلَقَ ثلاثةُ نَفَرٍ مِمَّنْ كانَ قَبلَكُم، حتى آواهُمُ المَبيتُ إلى غارٍ فدخَلوهُ، فانحَدَرَتْ
+        صخرةٌ مِنَ الجبلِ فسَدَّتْ عليهِمُ الغارَ، فقالوا: إنَّه لا يُنجِّيكُم مِن هذه الصَّخرةِ إلَّا أنْ
+        تَدْعوا اللهَ بصالِحِ أعمالِكُم».</p>
+        <div class="matn-source">
+          <span>الراوي: عبد الله بن عمر رضي الله عنهما</span>
+          <span>المصدر: متفق عليه</span>
+        </div>
+      </blockquote>
+
+      <h3 id="h12-1">الراعي البار بوالديه</h3>
+      <blockquote class="matn-card">
+        <p class="matn-text">فقال رجلٌ منهم: اللَّهُمَّ كانَ لي أبَوانِ شَيخانِ كَبيرانِ، وكُنتُ لا أغبِقُ
+        قَبلَهُما أهلًا ولا مالًا، فنَأى بي طَلَبُ الشَّجَرِ يومًا، فلم أرُحْ عليهِما حتى ناما، فحلَبتُ لهُما
+        غَبوقَهُما فوجَدتُهُما نائِمَينِ، فكَرِهتُ أنْ أوقِظَهُما، وأنْ أغبِقَ قَبلَهُما أهلًا أو مالًا، فلَبِثتُ
+        والقَدَحُ على يَدي، أنتَظِرُ استيقاظَهُما، حتى بَرَقَ الفَجرُ، والصِّبيةُ يتَضاغَونَ عِندَ قَدَمَيَّ
+        جِياعًا، حتى استَيقَظا فشَرِبا غَبوقَهُما. اللَّهُمَّ إنْ كُنتُ فَعَلتُ ذلك ابتِغاءَ وجهِكَ، فَفَرِّجْ
+        عنَّا ما نحنُ فيهِ مِن هذه الصَّخرةِ. فانفَرَجَتْ شيئًا لا يستَطيعونَ الخُروجَ منهُ.</p>
+      </blockquote>
+      <p><strong>ماذا نتعلّم من القصة؟</strong> رجل قدّم حق والديه المسنّين على حق أهله وأولاده في أمر مشروع
+      وهو سقيا اللبن اليومية، حتى إنه بقي ساهرًا حتى الفجر والقدح في يده، والأطفال يتباكون من الجوع عند قدميه،
+      ولم يقدّم عليهما أحدًا. هذا معنى أضافه الشرح لتوضيح عِظم الموقف، لا جزء من متن الحديث نفسه.</p>
+
+      <h3 id="h12-2">العفيف الذي خاف الله</h3>
+      <blockquote class="matn-card">
+        <p class="matn-text">وقال الآخَرُ: اللَّهُمَّ إنَّه كانَتْ لي ابنةُ عَمٍّ، كانَتْ أحَبَّ النَّاسِ إليَّ،
+        فأرَدْتُها عن نَفسِها فامتَنَعَتْ مِنِّي، حتى ألَمَّتْ بها سَنةٌ مِنَ السِّنينَ فجاءَتني، فأعطَيتُها
+        عِشرينَ ومِئةَ دينارٍ على أنْ تُخَلِّيَ بَيني وبَينَ نَفسِها، فَفَعَلَتْ، حتى إذا قَدَرتُ عليها، قالتْ:
+        اتَّقِ اللهَ ولا تَفُضَّ الخاتَمَ إلَّا بحَقِّهِ. فانصَرَفتُ عنها وهيَ أحَبُّ النَّاسِ إليَّ، وتَرَكتُ
+        الذَّهَبَ الذي أعطَيتُها. اللَّهُمَّ إنْ كُنتُ فَعَلتُ ذلك ابتِغاءَ وجهِكَ، فَفَرِّجْ عنَّا ما نحنُ فيهِ.
+        فانفَرَجَتِ الصَّخرةُ، غيرَ أنَّهُم لا يستَطيعونَ الخُروجَ منها.</p>
+      </blockquote>
+      <p><strong>ماذا نتعلّم من القصة؟</strong> بلغ به القرب من الحرام أقصاه، ومع ذلك تركه بمجرد أن ذكّرته
+      بتقوى الله، فانصرف عن أحبّ الناس إليه، وترك المال الذي بذله دون أن يستردّه.</p>
+
+      <h3 id="h12-3">الأمين الذي أدّى الحق كاملًا</h3>
+      <blockquote class="matn-card">
+        <p class="matn-text">وقال الثَّالِثُ: اللَّهُمَّ إنِّي استَأجَرتُ أُجَراءَ، وأعطَيتُهُم أجرَهُم، غيرَ
+        رَجُلٍ واحِدٍ تَرَكَ الَّذي له وذهَبَ، فثَمَّرتُ أجرَهُ حتى كَثُرَتْ منهُ الأموالُ، فجاءَني بَعدَ حينٍ
+        فقالَ: يا عَبدَ اللهِ، أدِّ إليَّ أجْري. فقُلتُ: كُلُّ ما تَرى مِن أجْرِكَ، مِنَ الإبِلِ والبَقَرِ
+        والغَنَمِ والرَّقيقِ. فقالَ: يا عَبدَ اللهِ، لا تَستَهزِئْ بي! فقُلتُ: لا أستَهزِئُ بكَ، فأخَذَهُ كُلَّهُ
+        فاستاقَهُ، فلَمْ يَترُكْ منهُ شيئًا. اللَّهُمَّ إنْ كُنتُ فَعَلتُ ذلك ابتِغاءَ وجهِكَ، فَفَرِّجْ عنَّا ما
+        نحنُ فيهِ. فانفَرَجَتِ الصَّخرةُ، فخَرَجوا يَمشونَ.</p>
+        <div class="matn-source">
+          <span>متفق عليه — نهاية الحديث</span>
+        </div>
+      </blockquote>
+      <p><strong>ماذا نتعلّم من القصة؟</strong> استثمر أجر عامل غاب سنوات، حتى صار مالًا كثيرًا، ثم ردّه إليه
+      كاملًا دون أن يستبقي منه شيئًا، رغم أن الأمر كان بيده أن يماطل أو يجحد.</p>
+
+      <h3 id="h12-4">الفوائد المستخلصة</h3>
+      <p>لم يعلّق الشيخ على الحديث بعد سرده مباشرة، بل أشار إلى أن الفائدة الجوهرية التي من أجلها ساقه الإمام
+      النووي في هذا الباب تحديدًا هي تكرار عبارة واحدة في كل دعاء من الأدعية الثلاثة:</p>
+
+      <div class="block key-point">
+        <span class="marker">◆</span>
+        <p>لم يقل أحدهم: «اللهم إن كنتَ تعلم أني تعبتُ في هذا العمل»، ولا «اللهم إن كنتَ تعلم أني اجتهدتُ
+        اجتهادًا كبيرًا»، وإنما قال كل واحد منهم: <strong>«اللهم إن كنت فعلت ذلك ابتغاء وجهك»</strong>. فالمعيار
+        في التوسل لم يكن مقدار الجهد المبذول، بل خلوص القصد لله وحده.</p>
+      </div>
+
+      <div class="block takeaway">
+        <span class="block-label">فوائد إضافية من الحديث</span>
+        <ul>
+          <li>الأعمال الصالحة الخالصة سبب من أسباب إجابة الدعاء، خاصة عند الشدائد والكربات، بالتوسل إلى الله بها.</li>
+          <li>فضل بر الوالدين ومنزلته عند الله، خاصة حين يكونان كبيرين في السن.</li>
+          <li>فضل العفاف وترك الشهوة المحرّمة ابتغاء ما عند الله، ولو بلغ القرب منها أقصاه.</li>
+          <li>فضل الأمانة ورعاية حقوق الناس، وأنها من علامات الإيمان الكبرى، لا مجرد فضيلة ثانوية.</li>
+          <li>أهمية القصة الحقيقية في استخراج الدروس واستنباط الفوائد، كما في قوله تعالى:
+          <span style="white-space:nowrap;"></span> «لقد كان في قصصهم عبرة لأولي الألباب».</li>
+          <li>لا حرج في تفصيل الدعاء وذكر الأحوال فيه عند الحاجة، كما في دعاء زكريا عليه السلام: «ربِّ إني وهَن
+          العظمُ مني واشتعل الرأسُ شَيبًا».</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================= الخاتمة ============================= -->
+    <section class="section-block" id="closing">
+      <div class="section-heading">
+        <span class="section-num">◈</span>
+        <h2>خاتمة: ما معنى «السنة» حقًا؟</h2>
+      </div>
+
+      <p class="lede">تخيّل أن الصحابة، ومنهم عبد الله بن عمر راوي حديث الغار، كانوا يسمعون هذه الأحاديث من
+      النبي صلى الله عليه وسلم مباشرة، يرون تعابير وجهه وهو يحدّثهم. فاتنا هذا السماع المباشر، لكن السنة فيها
+      بركة وخير كبير لمن لم يقصّر في العناية بها.</p>
+
+      <div class="block warning-box">
+        <span class="block-label">فهم شائع يحتاج تصحيحًا</span>
+        <p>من الظلم الشديد لمعنى «السنة» أن تُختزل في بعض المستحبات اليومية فحسب — كسنن الصلاة وسنن الوضوء
+        ونحوها — وكأن كلمة «سنة» تعني بالضرورة «غير واجب».</p>
+      </div>
+
+      <div class="block definition-box">
+        <span class="block-label">تعريف أوسع</span>
+        <p><span class="term">السنة:</span> أول وأهم ما يدخل فيها هي الأمور الكبرى في الدين، الفرائض العظيمة،
+        ومدارات الإسلام ومركزياته: ما حرص عليه النبي صلى الله عليه وسلم دائمًا، وكرّره، وأكّده، ونادى إليه،
+        ودعا إليه، وربّى عليه أصحابه. أما السنن الصغرى فتأتي بعد ذلك، تابعة لا مستقلة.</p>
+      </div>
+
+      <div class="block evidence-box">
+        <span class="block-label">الدليل من القرآن</span>
+        <p class="ev-text">﴿يا أيها النبي إنّا أرسلناك شاهدًا ومبشرًا ونذيرًا، وداعيًا إلى الله بإذنه وسراجًا
+        منيرًا﴾ · ﴿قل هذه سبيلي أدعو إلى الله على بصيرة أنا ومن اتبعني، وسبحان الله وما أنا من المشركين﴾</p>
+        <p class="ev-source">استُشهِد بهاتين الآيتين لبيان أن الدعوة إلى الله ونشر الدين وإعلاء كلمته هي في
+        صميم السنة النبوية، لا خارجة عنها.</p>
+      </div>
+
+      <p>فالعناية بالتزكية وأعمال القلوب، والتضحية والجهاد في سبيل الله، وقيام الليل، والخشوع في الفرائض، كل
+      ذلك من صميم السنة الكبرى. ثم تأتي بعدها السنن الصغرى كالسواك ونحوه، وهي مطلوبة ومحبوبة، لكنها تكتسب
+      قيمتها الحقيقية حين تكون تابعة للسنن الكبرى لا بديلًا عنها.</p>
+
+      <div class="block key-point">
+        <span class="marker">◆</span>
+        <p>إذا أُعطيت السنن الكبرى حقها، كان التمسك بالسنن الصغرى إضافة ذات قيمة حقيقية. أما التمسك بالصغرى مع
+        إهمال الكبرى، فهذا اختلال في الفهم، وإن كان الله لا يضيع أجر من أحسن عملًا ولو كان صغيرًا.</p>
+      </div>
+
+      <div class="block takeaway">
+        <span class="block-label">خلاصة الخاتمة</span>
+        <ul>
+          <li>«السنة» في أصلها ليست مرادفة لـ«غير الواجب»، بل أول ما تشمله الفرائض الكبرى ومركزيات الدين.</li>
+          <li>الدعوة إلى الله وإعلاء كلمته وتزكية القلوب من صميم السنة، لا هوامشها.</li>
+          <li>السنن الصغرى محبوبة، لكن قيمتها تكتمل حين تتبع السنن الكبرى ولا تحل محلها.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================= الخلاصة النهائية ============================= -->
+    <section class="section-block" id="final-summary">
+      <div class="section-heading">
+        <span class="section-num">✦</span>
+        <h2>الخلاصة النهائية للمجلس</h2>
+      </div>
+      <div class="block takeaway" style="background:var(--gold-pale);">
+        <span class="block-label" style="color:var(--brown-deep);">خيط واحد يجمع كل أحاديث هذا المجلس</span>
+        <ul>
+          <li>الله ينظر إلى القلوب لا إلى الأجسام والصور، ومعيار الناس كلما تدنّى تعلّق بالمظاهر.</li>
+          <li>حتى في أشد المواقف تشابهًا في الظاهر — كساحة القتال — فإن النية وحدها تفرّق بين المخلص وغيره.</li>
+          <li>القلب محل الحساب حتى لو خالفته نتيجة الفعل الظاهرة، كما في حديث القاتل والمقتول.</li>
+          <li>كل خروج لعمل صالح ينبغي أن يُقصد به ذلك العمل وحده خالصًا لله، لا أي غرض آخر يخالطه.</li>
+          <li>من رحمة الله أن جعل النية الصالحة — ولو لم تُنفَّذ — سببًا لكتابة حسنة كاملة.</li>
+          <li>الإخلاص («ابتغاء وجهك») هو مفتاح إجابة الدعاء وتفريج الكرب، لا مجرد بذل الجهد.</li>
+          <li>السنة الحقيقية أولًا وقبل كل شيء: الدعوة إلى الله، وتزكية القلوب، لا المستحبات الصغرى فقط.</li>
+        </ul>
+      </div>
+      <p style="margin-top:var(--sp-4); color:var(--ink-faint); font-size:14.5px;">
+        يمكنك الآن مراجعة أهم عناصر هذا المجلس عبر بطاقات المذاكرة أدناه، أو من خلال زر التحميل في أعلى الصفحة.
+      </p>
+    </section>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-note">«إنما الأعمال بالنيات»</p>
+    <p>نسأل الله سبحانه وتعالى أن يرزقنا حسن الاقتداء بهدي نبينا محمد صلى الله عليه وسلم، وأن يجعل أعمالنا
+    كلها خالصة لوجهه الكريم، وأن يجمعنا به في الفردوس الأعلى.</p>
+    <button class="btn-anki" onclick="downloadAnkiDeck()" aria-label="تحميل بطاقات المراجعة بصيغة أنكي">
+      🗂️ حمّل بطاقات أنكي
+    </button>
+  </div>
+</footer>
+
+<button id="backToTop" aria-label="العودة إلى أعلى الصفحة" title="العودة إلى الأعلى">↑</button>
+
+<script>
+/* ==================== شريط التقدم ==================== */
+const progressBar = document.getElementById('progressBar');
+function updateProgress(){
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  progressBar.style.width = pct + '%';
+  progressBar.setAttribute('aria-valuenow', Math.round(pct));
+}
+window.addEventListener('scroll', updateProgress, {passive:true});
+updateProgress();
+
+/* ==================== زر العودة للأعلى ==================== */
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 600){ backToTop.classList.add('show'); }
+  else { backToTop.classList.remove('show'); }
+}, {passive:true});
+backToTop.addEventListener('click', () => {
+  window.scrollTo({top:0, behavior:'smooth'});
+});
+
+/* ==================== فهرس الهاتف (Drawer) ==================== */
+const toc = document.getElementById('toc');
+const tocToggle = document.getElementById('tocToggleMobile');
+const tocBackdrop = document.getElementById('tocBackdrop');
+function closeToc(){
+  toc.classList.remove('open');
+  tocBackdrop.classList.remove('show');
+  tocToggle.setAttribute('aria-expanded','false');
+}
+function openToc(){
+  toc.classList.add('open');
+  tocBackdrop.classList.add('show');
+  tocToggle.setAttribute('aria-expanded','true');
+}
+tocToggle.addEventListener('click', () => {
+  if(toc.classList.contains('open')) closeToc(); else openToc();
+});
+tocBackdrop.addEventListener('click', closeToc);
+toc.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  if(window.innerWidth <= 1000) closeToc();
+}));
+
+/* ==================== تظليل عنصر الفهرس النشط ==================== */
+const sections = document.querySelectorAll('main section[id]');
+const tocLinks = document.querySelectorAll('nav.toc a');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const id = entry.target.getAttribute('id');
+      tocLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+      });
+    }
+  });
+}, {rootMargin:'-15% 0px -70% 0px', threshold:0});
+sections.forEach(sec => observer.observe(sec));
+
+/* ==================== بطاقات أنكي ==================== */
+const ankiCards = [
+["ما معنى قول النبي ﷺ: «إن الله لا ينظر إلى أجسامكم ولا إلى صوركم»؟", "أن الله سبحانه لا يحكم على الناس بمظهرهم الخارجي، وإنما بما في قلوبهم وأعمالهم."],
+["من راوي حديث «إن الله لا ينظر إلى أجسامكم»؟", "أبو هريرة عبد الرحمن بن صخر رضي الله عنه."],
+["من أخرج حديث «لا ينظر إلى أجسامكم ولكن ينظر إلى قلوبكم وأعمالكم»؟", "الإمام مسلم."],
+["ما العلاقة بين معيار الإنسان ونظره إلى المظاهر؟", "كلما ارتفع معيار الإنسان نظر إلى المعاني والحقائق، وكلما انخفض نظر إلى الشكل والصورة والمكانة."],
+["ما أهم معنى ينبغي أن يراقبه المسلم يوميًا في قلبه؟", "مدى استحضاره لمراقبة الله له، وعبوديته له، ويقينه برجوعه إليه في الآخرة."],
+["ما الدليل على أن صلاح القلب أساس صلاح الجوارح؟", "حديث: «ألا وإن في الجسد مضغة إذا صلحت صلح الجسد كله، وإذا فسدت فسد الجسد كله، ألا وهي القلب»."],
+["أين أشار النبي ﷺ حين قال «التقوى هاهنا»؟", "أشار إلى صدره (القلب)."],
+["اذكر بعض معاني عبودية القلب التي ذكرها الشيخ.", "الإخلاص، والتوكل، والخشية، واليقين، والمحبة، والإنابة، والرجاء."],
+["من راوي حديث «سئل النبي عن الرجل يقاتل شجاعة وحمية ورياء»؟", "أبو موسى عبد الله بن قيس الأشعري رضي الله عنه."],
+["بماذا أجاب النبي ﷺ حين سُئل عن أي القتال في سبيل الله؟", "«من قاتل لتكون كلمة الله هي العليا فهو في سبيل الله»."],
+["ما معنى «الحمية» كسبب غير مقبول وحده للقتال في سبيل الله؟", "العصبية أو الانتماء لقبيلة أو وطن معيّن، دون مراعاة لنصرة الدين وأمة الإسلام."],
+["ما الميزان الصحيح للولاء والبراء بحسب الحديث؟", "ما كان لله وفي سبيله ولإعلاء كلمته، لا مجرد الانتماء الوطني وحده."],
+["ماذا قال النبي ﷺ عن القاتل والمقتول إذا التقى مسلمان بسيفيهما؟", "«فالقاتل والمقتول في النار»."],
+["لماذا يكون المقتول في النار مع أنه لم يقتل أحدًا؟", "لأنه كان حريصًا على قتل صاحبه، فحوسب على نيته لا على ما آل إليه فعله."],
+["من راوي حديث «إذا التقى المسلمان بسيفيهما»؟", "أبو بكرة نفيع بن الحارث الثقفي رضي الله عنه."],
+["بكم درجة تزيد صلاة الجماعة على صلاة الفرد؟", "بضع وعشرين درجة."],
+["ما معنى «ينهزه» في حديث فضل الجماعة كما فسّرها النووي؟", "أي يُخرجه ويُنهضه."],
+["ما موضع الشاهد على النية في حديث فضل صلاة الجماعة؟", "قوله ﷺ: «لا يريد إلا الصلاة» و«لا ينهزه إلا الصلاة»."],
+["لماذا ساق النووي حديث فضل الجماعة في باب الإخلاص؟", "ليبيّن أن الخارج إلى أي عمل صالح ينبغي ألا يقصد بقلبه إلا ذلك العمل خالصًا لله."],
+["بم تدعو الملائكة للمصلي في مجلسه بعد الصلاة؟", "«اللهم ارحمه، اللهم اغفر له، اللهم تب عليه» ما لم يؤذِ أو يُحدث فيه."],
+["عمّن رُوي حديث «إن الله كتب الحسنات والسيئات ثم بيّن ذلك»؟", "عبد الله بن عباس رضي الله عنهما، عن النبي ﷺ فيما يرويه عن ربه (حديث قدسي)."],
+["ماذا يكتب الله لمن همّ بحسنة فلم يعملها؟", "حسنة كاملة."],
+["ماذا يكتب الله لمن همّ بحسنة فعملها؟", "من عشر حسنات إلى سبعمئة ضعف فأكثر."],
+["ماذا يكتب الله لمن همّ بسيئة فلم يعملها؟", "حسنة كاملة."],
+["ماذا يكتب الله لمن همّ بسيئة فعملها؟", "سيئة واحدة فقط، دون مضاعفة."],
+["من راوي قصة أصحاب الغار الثلاثة؟", "عبد الله بن عمر بن الخطاب رضي الله عنهما."],
+["ما الذي حبس الثلاثة في الغار؟", "صخرة انحدرت من الجبل فسدّت عليهم باب الغار."],
+["بماذا توسل الرجل الأول من أصحاب الغار؟", "ببره بوالديه، إذ لم يقدّم عليهما أهله ولا ماله في سقيا اللبن، حتى استيقظا."],
+["بماذا توسل الرجل الثاني من أصحاب الغار؟", "بتركه الحرام مع ابنة عمه حين ذكّرته بتقوى الله، وتركه المال الذي بذله لها."],
+["بماذا توسل الرجل الثالث من أصحاب الغار؟", "بأدائه أمانة أجير ترك أجره عنده، فنمّاه له حتى ردّه إليه كاملًا دون أن يستبقي شيئًا."],
+["ما الصيغة التي تكررت في دعاء كل واحد من أصحاب الغار؟", "«اللهم إن كنت فعلت ذلك ابتغاء وجهك فافرج عنا ما نحن فيه»."],
+["ما الفائدة الجوهرية التي ساق الإمام النووي القصة لأجلها؟", "بيان أثر الإخلاص (ابتغاء وجه الله) في إجابة الدعاء وتفريج الكرب."],
+["ما أحد أسباب إجابة الدعاء عند الشدائد بحسب فوائد الحديث؟", "التوسل إلى الله بصالح الأعمال الخالصة."],
+["ما الخطأ الشائع في فهم معنى «السنة» الذي نبّه إليه الشيخ؟", "قصر معنى السنة على الأعمال المستحبة الصغرى، وإغفال أن أعظمها الفرائض الكبرى وأصول الدين."],
+["ما أعظم معاني السنة النبوية بحسب ما ذكر الشيخ؟", "الدعوة إلى الله، ونشر الدين، وإعلاء كلمة الله، والعناية بالتزكية وأعمال القلوب."],
+["كم عدد الأحاديث التي تناولها هذا المجلس من رياض الصالحين؟", "ستة أحاديث، من السابع إلى الثاني عشر، ويُختم بها باب الإخلاص واستحضار النية."],
+["من مؤلف كتاب رياض الصالحين؟", "الإمام النووي رحمه الله تعالى."],
+["ما اسم الباب الذي تندرج تحته أحاديث هذا المجلس؟", "باب الإخلاص واستحضار النية في جميع الأعمال والأقوال والأحوال البارزة والخفية."]
+];
+
+function downloadAnkiDeck() {
+  let content = ankiCards.map(([q, a]) => {
+    const clean = s => s.replace(/\t/g, ' ').replace(/\r?\n/g, '<br>');
+    return `${clean(q)}\t${clean(a)}`;
+  }).join('\n');
+
+  const BOM = '\uFEFF';
+
+  const blob = new Blob(
+    [BOM + content],
+    { type: 'text/plain;charset=utf-8' }
+  );
+
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+
+  a.href = url;
+  a.download = 'بطاقات_أنكي_الإخلاص_واستحضار_النية.txt';
+
+  document.body.appendChild(a);
+  a.click();
+
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+</script>
+
 </body>
 </html>
