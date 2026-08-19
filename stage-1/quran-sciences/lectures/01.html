@@ -1,39 +1,1488 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>المحاضرة 1 - مدخل إلى علوم القرآن</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../../style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المدخل إلى علوم القرآن والتفسير — الشيخ أحمد السيد</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16283d;
+  --ink-soft:#2f4459;
+  --paper:#f6f2e9;
+  --paper-2:#fffdf8;
+  --line:#ddd2bd;
+  --gold:#a67c2b;
+  --gold-1:#9a6f28;
+  --gold-2:#c9a227;
+  --muted:#6c6355;
+
+  --ax1:#1f4e6b;  /* المحور الأول: التأسيس */
+  --ax1-bg:#eaf1f6;
+  --ax2:#8a5a2b;  /* المحور الثاني: المكتبة */
+  --ax2-bg:#f6efe4;
+  --ax3:#7a2f3a;  /* المحور الثالث: الأهمية والتحديات */
+  --ax3-bg:#f7ebec;
+  --ax4:#3a6350;  /* المحور الرابع: التفسير عملياً */
+  --ax4-bg:#eaf2ed;
+
+  --radius:14px;
+  --shadow:0 2px 10px rgba(22,40,61,.07);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{
+  font-family:'Cairo',system-ui,'Segoe UI',Tahoma,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  font-size:17.5px;
+  line-height:1.95;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:800px;margin:0 auto;padding:0 20px}
+
+/* ============ الترويسة ============ */
+.hero{
+  background:
+    radial-gradient(1200px 300px at 80% -50%, rgba(201,162,39,.22), transparent 60%),
+    linear-gradient(160deg,#16283d 0%,#1f4e6b 55%,#16283d 100%);
+  color:#f6f2e9;padding:58px 0 46px;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.028) 0 2px,transparent 2px 12px);
+  pointer-events:none;
+}
+.hero .wrap{position:relative;z-index:2}
+.kicker{
+  display:inline-block;font-size:13.5px;letter-spacing:.5px;
+  border:1px solid rgba(246,242,233,.35);border-radius:999px;
+  padding:5px 16px;margin-bottom:20px;color:#e9dfc6;
+}
+.hero h1{
+  font-family:'Amiri',serif;font-size:40px;line-height:1.4;font-weight:700;
+  margin-bottom:12px;
+}
+.hero h1 span{color:var(--gold-2)}
+.hero .sub{font-size:17px;color:#d8cfbc;max-width:640px;line-height:1.85}
+.meta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.meta-chip{
+  background:rgba(246,242,233,.10);border:1px solid rgba(246,242,233,.22);
+  border-radius:10px;padding:8px 15px;font-size:14px;color:#eee6d4;
+}
+.dl-btn{
+  display:inline-flex;align-items:center;gap:9px;margin-top:24px;
+  background:var(--gold-2);color:#16283d;border:none;cursor:pointer;
+  font-family:'Cairo',sans-serif;font-weight:700;font-size:15.5px;
+  padding:12px 24px;border-radius:11px;transition:.2s;
+  box-shadow:0 4px 14px rgba(201,162,39,.3);
+}
+.dl-btn:hover{background:#e0b93a;transform:translateY(-2px)}
+
+/* ============ شريط التنقل ============ */
+.navbar{
+  position:sticky;top:0;z-index:50;background:rgba(246,242,233,.96);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+}
+.navbar .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:9px;padding-bottom:9px;scrollbar-width:thin}
+.navbar a{
+  white-space:nowrap;font-size:13.5px;color:var(--ink-soft);text-decoration:none;
+  padding:6px 12px;border-radius:8px;transition:.18s;font-weight:600;
+}
+.navbar a:hover{background:#e8e0d0;color:var(--ink)}
+
+/* ============ المحاور والأقسام ============ */
+.axis-head{
+  margin:62px 0 26px;padding:22px 24px;border-radius:var(--radius);
+  color:#fff;position:relative;overflow:hidden;
+}
+.axis-head .num{font-size:13px;opacity:.85;letter-spacing:1px;margin-bottom:6px;display:block}
+.axis-head h2{font-family:'Amiri',serif;font-size:29px;font-weight:700;line-height:1.5}
+.axis-head p{font-size:15px;opacity:.92;margin-top:8px;line-height:1.8}
+.ax1 .axis-head,.axis-head.a1{background:linear-gradient(135deg,#1f4e6b,#2d6a8f)}
+.ax2 .axis-head,.axis-head.a2{background:linear-gradient(135deg,#8a5a2b,#a97840)}
+.ax3 .axis-head,.axis-head.a3{background:linear-gradient(135deg,#7a2f3a,#9d4653)}
+.ax4 .axis-head,.axis-head.a4{background:linear-gradient(135deg,#3a6350,#527f6a)}
+
+section.el{margin-bottom:44px}
+.el-title{
+  display:flex;align-items:flex-start;gap:14px;margin:38px 0 18px;
+}
+.el-title .idx{
+  flex-shrink:0;width:38px;height:38px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:16px;color:#fff;margin-top:4px;
+}
+.el-title h3{font-family:'Amiri',serif;font-size:26px;font-weight:700;line-height:1.5}
+.ax1 .el-title .idx{background:var(--ax1)}
+.ax2 .el-title .idx{background:var(--ax2)}
+.ax3 .el-title .idx{background:var(--ax3)}
+.ax4 .el-title .idx{background:var(--ax4)}
+.ax1 h4{color:var(--ax1)}.ax2 h4{color:var(--ax2)}.ax3 h4{color:var(--ax3)}.ax4 h4{color:var(--ax4)}
+h4{font-family:'Cairo',sans-serif;font-size:19px;font-weight:700;margin:26px 0 10px}
+p{margin-bottom:14px}
+p.lead{font-size:18.5px;color:var(--ink-soft)}
+strong{font-weight:700;color:var(--ink)}
+em{font-style:normal;background:linear-gradient(transparent 62%,rgba(201,162,39,.35) 62%);font-weight:600}
+
+/* ============ البلوكات ============ */
+.box{
+  background:var(--paper-2);border-radius:var(--radius);padding:20px 22px;
+  margin:22px 0;box-shadow:var(--shadow);border:1px solid var(--line);
+}
+.box .box-t{font-weight:700;font-size:15px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+
+.def{border-right:5px solid var(--ax1);background:var(--ax1-bg)}
+.def .box-t{color:var(--ax1)}
+.evid{border-right:5px solid #4a7c59;background:#eef4ef}
+.evid .box-t{color:#3a6350}
+.quote{
+  border:none;background:#fffaf0;border-right:5px solid var(--gold-2);
+  font-family:'Amiri',serif;font-size:20px;line-height:2;
+}
+.quote .box-t{font-family:'Cairo',sans-serif;font-size:14px;color:var(--gold-1)}
+.quote .src{display:block;font-family:'Cairo',sans-serif;font-size:13.5px;color:var(--muted);margin-top:12px;font-weight:600}
+.ayah{
+  font-family:'Amiri',serif;font-size:21px;line-height:2.1;color:#1b4030;
+  background:#eff5f0;border-radius:12px;padding:16px 20px;margin:20px 0;
+  border-right:5px solid #3a6350;text-align:center;
+}
+.key{border-right:5px solid var(--gold-2);background:#fdf7e6}
+.key .box-t{color:var(--gold-1)}
+.warn{border-right:5px solid #b4632a;background:#fbf0e6}
+.warn .box-t{color:#a2551f}
+.corr{border:1.5px dashed #7a2f3a;background:#fbeef0;border-right:5px solid #7a2f3a}
+.corr .box-t{color:#7a2f3a}
+.corr .pair{display:grid;grid-template-columns:1fr;gap:10px;margin-top:8px}
+.corr .cell{background:#fff;border-radius:9px;padding:11px 14px;font-size:15.5px}
+.corr .cell b{display:block;font-size:12.5px;color:var(--muted);margin-bottom:3px;font-weight:700}
+.ex{border-right:5px solid #5b6d8c;background:#eef1f6}
+.ex .box-t{color:#48597a}
+.take{background:linear-gradient(135deg,#16283d,#20405c);color:#f2ece0;border:none}
+.take .box-t{color:var(--gold-2);font-size:16px}
+.take ul{padding-right:20px}
+.take li{margin-bottom:9px;line-height:1.85}
+.take li::marker{color:var(--gold-2)}
+.take strong{color:#fff}
+
+ul,ol{padding-right:24px;margin-bottom:16px}
+li{margin-bottom:8px}
+
+/* بطاقات الكتب */
+.books{display:grid;gap:14px;margin:22px 0}
+.book{
+  background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px 20px;box-shadow:var(--shadow);position:relative;
+}
+.book .bt{font-family:'Amiri',serif;font-size:21px;font-weight:700;line-height:1.5;margin-bottom:3px}
+.book .ba{font-size:14px;color:var(--muted);font-weight:600;margin-bottom:10px}
+.book .bd{font-size:16px;line-height:1.85}
+.book .tag{
+  display:inline-block;font-size:12px;font-weight:700;padding:3px 11px;
+  border-radius:999px;margin-bottom:9px;
+}
+.ax2 .book{border-right:4px solid var(--ax2)}
+.ax2 .book .bt{color:var(--ax2)}
+.ax2 .tag{background:var(--ax2-bg);color:var(--ax2)}
+.ax4 .book{border-right:4px solid var(--ax4)}
+.ax4 .book .bt{color:var(--ax4)}
+.ax4 .tag{background:var(--ax4-bg);color:var(--ax4)}
+.ax3 .book{border-right:4px solid var(--ax3)}
+.ax3 .book .bt{color:var(--ax3)}
+.ax3 .tag{background:var(--ax3-bg);color:var(--ax3)}
+
+/* جدول */
+.tbl-wrap{overflow-x:auto;margin:22px 0;border-radius:var(--radius);border:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;background:var(--paper-2);font-size:15.5px;min-width:480px}
+th{background:#16283d;color:#f2ece0;padding:12px 14px;text-align:right;font-weight:700;font-size:14.5px}
+td{padding:12px 14px;border-top:1px solid var(--line);vertical-align:top;line-height:1.75}
+tbody tr:nth-child(even){background:#faf6ee}
+
+/* الخط الزمني */
+.tl{position:relative;padding-right:26px;margin:24px 0}
+.tl::before{content:"";position:absolute;right:8px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl-item{position:relative;margin-bottom:20px}
+.tl-item::before{
+  content:"";position:absolute;right:-24px;top:9px;width:13px;height:13px;
+  border-radius:50%;background:var(--gold-2);border:2.5px solid var(--paper);
+}
+.tl-item .tl-h{font-weight:700;font-size:16.5px;color:var(--ax1);margin-bottom:4px}
+.tl-item .tl-b{font-size:16px;line-height:1.85}
+
+/* خطوات / تدفق */
+.flow{display:grid;gap:12px;margin:22px 0}
+.step{
+  display:flex;gap:14px;background:var(--paper-2);border:1px solid var(--line);
+  border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow);
+}
+.step .sn{
+  flex-shrink:0;width:34px;height:34px;border-radius:9px;background:var(--ax4);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;
+}
+.step .sh{font-weight:700;font-size:17px;margin-bottom:4px;color:var(--ax4)}
+.step .sb{font-size:16px;line-height:1.85}
+
+/* عشرة علوم */
+.ten{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin:22px 0}
+.ten .t{
+  background:var(--paper-2);border:1px solid var(--line);border-right:4px solid var(--ax1);
+  border-radius:12px;padding:14px 16px;box-shadow:var(--shadow);
+}
+.ten .t h5{font-size:16.5px;font-weight:700;color:var(--ax1);margin-bottom:5px}
+.ten .t p{font-size:14.5px;color:var(--ink-soft);line-height:1.75;margin:0}
+.ten .t .n{font-size:12px;color:var(--muted);font-weight:700}
+
+/* ============ البطاقات ============ */
+.cards-sec{
+  margin:70px 0 0;padding:40px 0 50px;
+  background:linear-gradient(160deg,#16283d,#1e3d57);color:#f2ece0;
+  border-radius:22px;
+}
+.cards-sec h2{font-family:'Amiri',serif;font-size:31px;text-align:center;color:var(--gold-2);margin-bottom:8px}
+.cards-sec .csub{text-align:center;font-size:15.5px;color:#c8bfae;margin-bottom:26px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:24px}
+.filters button{
+  font-family:'Cairo',sans-serif;font-size:13.5px;font-weight:600;cursor:pointer;
+  padding:8px 16px;border-radius:999px;border:1px solid rgba(242,236,224,.3);
+  background:transparent;color:#e6ddca;transition:.18s;
+}
+.filters button:hover{background:rgba(242,236,224,.1)}
+.filters button.on{background:var(--gold-2);color:#16283d;border-color:var(--gold-2);font-weight:700}
+.filters button[data-f="1"].on{background:#4d8ab3;border-color:#4d8ab3;color:#0d1c29}
+.filters button[data-f="2"].on{background:#c99257;border-color:#c99257;color:#2b1a08}
+.filters button[data-f="3"].on{background:#c4707e;border-color:#c4707e;color:#2b0d12}
+.filters button[data-f="4"].on{background:#6fa88b;border-color:#6fa88b;color:#0c2119}
+.flash{
+  background:var(--paper-2);color:var(--ink);border-radius:18px;
+  min-height:230px;padding:30px 26px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;cursor:pointer;
+  box-shadow:0 8px 28px rgba(0,0,0,.28);position:relative;user-select:none;
+}
+.flash .side{font-size:12px;font-weight:700;letter-spacing:1px;color:var(--muted);margin-bottom:14px}
+.flash .txt{font-size:20px;line-height:1.9;font-weight:600}
+.flash.ans .txt{font-size:18px;font-weight:400}
+.flash .hint{position:absolute;bottom:12px;font-size:12px;color:#a89e8c}
+.flash .badge{position:absolute;top:12px;inset-inline-start:14px;font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:999px}
+.b1{background:var(--ax1-bg);color:var(--ax1)}
+.b2{background:var(--ax2-bg);color:var(--ax2)}
+.b3{background:var(--ax3-bg);color:var(--ax3)}
+.b4{background:var(--ax4-bg);color:var(--ax4)}
+.ctrls{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:20px}
+.ctrls button{
+  font-family:'Cairo',sans-serif;font-size:15px;font-weight:700;cursor:pointer;
+  background:rgba(242,236,224,.12);color:#f2ece0;border:1px solid rgba(242,236,224,.28);
+  border-radius:11px;padding:10px 22px;transition:.18s;
+}
+.ctrls button:hover{background:rgba(242,236,224,.22)}
+.counter{font-size:14.5px;color:#c8bfae;min-width:110px;text-align:center;font-weight:600}
+
+footer{text-align:center;padding:44px 0 60px;color:var(--muted);font-size:14.5px;line-height:1.9}
+footer .dl-btn{background:#16283d;color:var(--gold-2);box-shadow:none}
+footer .dl-btn:hover{background:#20405c}
+
+@media(max-width:640px){
+  body{font-size:16.5px}
+  .hero h1{font-size:29px}
+  .hero{padding:40px 0 34px}
+  .axis-head h2{font-size:23px}
+  .el-title h3{font-size:21px}
+  .quote{font-size:18px}
+  .ayah{font-size:18.5px}
+  .cards-sec{border-radius:0;margin-left:-20px;margin-right:-20px;padding-left:0;padding-right:0}
+  .flash .txt{font-size:18px}
+}
+</style>
 </head>
-<body class="" data-page="lecture" data-lecture-id="stage1_quran-sciences_01">
-  <div class="page">
-    <nav class="breadcrumbs"><a href="../../../index.html">الرئيسية</a><span class="sep">/</span><a href="../../index.html">المرحلة الأولى</a><span class="sep">/</span><a href="../index.html">مدخل إلى علوم القرآن</a><span class="sep">/</span><span aria-current="page">المحاضرة 1</span></nav>
-    
-      <header class="lecture-header">
-        <h1>المحاضرة 1</h1>
-        <p class="lecture-meta">المادة: مدخل إلى علوم القرآن &nbsp;|&nbsp; الشيخ: أحمد السيد &nbsp;|&nbsp; اليوم 17</p>
-        <label class="checkbox-line lecture-checkbox">
-          <input type="checkbox" data-lecture-id="stage1_quran-sciences_01">
-          <span>إتمام هذه المحاضرة</span>
-        </label>
-      </header>
+<body>
 
-      <div class="lecture-placeholder">
-        <p>سيتم إضافة المحاضرة هنا لاحقًا</p>
-        <p class="placeholder-hint">(رابط يوتيوب / فيديو / ملف صوتي / PDF / نص المحاضرة / ملاحظاتي)</p>
-      </div>
-
-      <div class="lecture-nav">
-        <a href="../index.html" class="btn btn-outline">الرجوع إلى المادة</a>
-        <a href="../../index.html" class="btn btn-outline">الرجوع إلى المرحلة</a>
-      </div>
-    
+<header class="hero">
+  <div class="wrap">
+    <span class="kicker">سلسلة مداخل العلوم</span>
+    <h1>المدخل إلى <span>علوم القرآن والتفسير</span></h1>
+    <p class="sub">تسعة عناصر تبني تصوراً كاملاً عن علم علوم القرآن وأصول التفسير: تعريفه، تاريخه، أهم كتبه، التحديات المعاصرة التي تُوجَّه إليه، وخطة عملية لقراءة التفسير.</p>
+    <div class="meta-row">
+      <span class="meta-chip">المحاضر: الشيخ أحمد السيد</span>
+      <span class="meta-chip">9 عناصر · 4 محاور</span>
+      <span class="meta-chip">83 بطاقة مراجعة</span>
+      <span class="meta-chip">زمن القراءة ≈ 45 دقيقة</span>
+    </div>
+    <button class="dl-btn" onclick="downloadAnki()">⬇ تحميل بطاقات Anki</button>
   </div>
-  <script src="../../../data.js"></script>
-  <script src="../../../script.js"></script>
+</header>
+
+<nav class="navbar">
+  <div class="wrap">
+    <a href="#e1">١. التعريف</a>
+    <a href="#e2">٢. التاريخ</a>
+    <a href="#e3">٣. العلاقة</a>
+    <a href="#e4">٤. الكتب</a>
+    <a href="#e5">٥. الأهمية</a>
+    <a href="#e6">٦. الحداثيون</a>
+    <a href="#e7">٧. كتب التفسير</a>
+    <a href="#e8">٨. كيف نقرأ</a>
+    <a href="#e9">٩. الخطة</a>
+    <a href="#cards">🃏 البطاقات</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <p class="lead" style="margin-top:34px">هذه المحاضرة حلقة من سلسلة يقصد فيها الشيخ أن يمرّ على العلوم الشرعية علماً علماً، حتى يتكوّن عند طالب العلم تصوّر تفصيلي عنها. والسبب — كما يقول — أن <em>من أنجع وسائل تحديد التخصص أن تتعرّف على العلم تعرّفاً تفصيلياً لا إجمالياً</em>؛ فكثير من الناس لا يميل قلبه إلى علمٍ لأنه لم يسمع عنه إلا سماعاً مجملاً، ولو عرفه على وجه التفصيل لأحبّه. وهكذا في الحديث، والسيرة، والفقه وقواعده، وأصول الفقه.</p>
+
+  <div class="box key">
+    <div class="box-t">🗺️ خريطة المحاضرة — العناصر التسعة</div>
+    <ol>
+      <li>التعريف بعلم علوم القرآن وموضوعاته</li>
+      <li>نبذة تاريخية عن علم علوم القرآن</li>
+      <li>العلاقة بين علوم القرآن وأصول التفسير والتفسير</li>
+      <li>أهم الكتب المؤلَّفة في علوم القرآن وأصول التفسير</li>
+      <li>ما أهمية علم علوم القرآن وأصول التفسير</li>
+      <li>موقف الحداثيين والمستشرقين من علوم القرآن والتفسير</li>
+      <li>التعريف بأهم كتب التفسير</li>
+      <li>كيف نقرأ كتب التفسير</li>
+      <li>خطة مختصرة منهجية لدراسة علوم القرآن وقراءة كتب التفسير</li>
+    </ol>
+  </div>
+
+  <!-- ================= المحور الأول ================= -->
+  <div class="ax1" id="axis1">
+    <div class="axis-head a1">
+      <span class="num">المحور الأول</span>
+      <h2>التأسيس: ما هذا العلم، ومن أين جاء، وأين موقعه؟</h2>
+      <p>العناصر ١ – ٣: تعريف علوم القرآن وموضوعاته العشرة، نشأته التاريخية، وعلاقته بأصول التفسير والتفسير.</p>
+    </div>
+
+    <!-- العنصر 1 -->
+    <section class="el" id="e1">
+      <div class="el-title"><div class="idx">١</div><h3>التعريف بعلم علوم القرآن وموضوعاته</h3></div>
+
+      <p>بدأ الشيخ بسؤال الحاضرين: ماذا تعرفون عن علوم القرآن قبل أن نذكر التعريف؟ فجاءت إجاباتهم تدور حول أنه <strong>كل ما يتعلق بالقرآن شرحاً</strong>: أسباب النزول، طرائق الوحي، الناسخ والمنسوخ، المحكم والمتشابه، المجمل والمفصّل، الأحكام المستنبطة من ألفاظ القرآن، تفسير القرآن بالقرآن، التجويد، الإعجاز، المكي والمدني.</p>
+
+      <div class="box def">
+        <div class="box-t">📖 تعريف علوم القرآن</div>
+        <p>هي <strong>المباحث الكلية التي تتعلق بالقرآن الكريم</strong> من ناحية نزوله، وترتيبه، وجمعه، وكتابته، وتفسيره، وإعجازه، وناسخه ومنسوخه، وغير ذلك.</p>
+        <p style="font-size:14.5px;color:var(--muted);margin-top:8px">(تعريف بعض الباحثين، ذكره الشيخ ولم ينسبه لمعيّن)</p>
+      </div>
+
+      <h4>قاعدة عامة في التعريفات — لا تخص علوم القرآن وحده</h4>
+      <p>وقف الشيخ عند التعريف وقفة منهجية وقال: «خذوها قاعدة». التعريفات على قسمين:</p>
+      <div class="box key">
+        <div class="box-t">🔑 قسمَا التعريفات</div>
+        <ul>
+          <li><strong>تعريفات ينبغي أن تُحفظ بنصوصها</strong> — لأنها تدل على معنى محدد معيّن لا يُعبَّر عنه إلا بها أو بقريب منها.</li>
+          <li><strong>تعريفات لا تحتاج إلى حفظ رسمٍ معيّن بألفاظه</strong> — وإنما تحتاج أن تفهم القضية ثم تعبّر عنها بما تشاء.</li>
+        </ul>
+        <p style="margin-top:10px">وعلوم القرآن من القسم الثاني؛ ولهذا قال الشيخ: لو لم نذكر التعريف أصلاً، وذكرنا عناصر المحاضرة كاملة، لاستطاع كل واحد منا أن يعرّف علوم القرآن كما يراه هو، بدون التزام بألفاظ معينة.</p>
+      </div>
+
+      <h4>أهم المباحث التي يشتمل عليها العلم — التقسيم العشري</h4>
+      <p>ثم عرض الشيخ تقسيماً عشرياً لموضوعات علوم القرآن، وهو <strong>اجتهاد من الدكتور مساعد الطيار</strong> — أحد أبرز المتخصصين في علوم القرآن وأصول التفسير في الوقت الحالي — في تجميع فروع علوم القرآن تحت أصول كلية معينة.</p>
+
+      <div class="ten">
+        <div class="t"><span class="n">العلم ١</span><h5>علم نزول القرآن</h5><p>أسباب النزول، المكي والمدني، الأحرف السبعة، كيفية إنزال القرآن.</p></div>
+        <div class="t"><span class="n">العلم ٢</span><h5>علم جمع القرآن</h5><p>تدوين المصحف وتاريخ ذلك، ورسم المصحف وما إلى ذلك.</p></div>
+        <div class="t"><span class="n">العلم ٣</span><h5>علم القراءات</h5><p>ويدخل فيه التجويد، وتوجيه القراءات، وأنواع القراءات، وطبقات القراء.</p></div>
+        <div class="t"><span class="n">العلم ٤</span><h5>علم معاني القرآن</h5><p>غريب القرآن، إعراب القرآن، مشكل القرآن، متشابه القرآن، وقد يدخل فيه إعجاز القرآن من جهة البلاغة.</p></div>
+        <div class="t"><span class="n">العلم ٥</span><h5>علم التفسير</h5><p>تاريخ علم التفسير، أصول التفسير، الناسخ والمنسوخ، أمثال القرآن، المحكم والمتشابه، قواعد التفسير، مبهمات القرآن.</p></div>
+        <div class="t"><span class="n">العلم ٦</span><h5>علم سور القرآن</h5><p>أسماء السور، ترتيب السور، المناسبات بين السور، ترتيب الآيات، المناسبات بين الآيات، الفواتح والخواتيم، فواصل الآي، عدّ الآي.</p></div>
+        <div class="t"><span class="n">العلم ٧</span><h5>علم فضائل القرآن</h5><p>ما ورد في فضل القرآن وسوره وآياته.</p></div>
+        <div class="t"><span class="n">العلم ٨</span><h5>علم أحكام القرآن</h5><p>ووجوه الاستنباطات منه.</p></div>
+        <div class="t"><span class="n">العلم ٩</span><h5>علم الوقف والابتداء</h5><p>مواضع الوقف والابتداء وأثرها في المعنى.</p></div>
+        <div class="t"><span class="n">العلم ١٠</span><h5>علم جدل القرآن</h5><p>القواعد الجدلية القرآنية: كيف يعتني القرآن بالحجة وبيانها، والجدل القرآني.</p></div>
+      </div>
+
+      <div class="box warn">
+        <div class="box-t">⚠️ تنبيه مهم: علوم القرآن ليست عشرة</div>
+        <p>سُئل الشيخ: «يعني علوم القرآن ليست عشرة؟» فأجاب: <strong>علوم القرآن كثيرة جداً</strong>؛ هذه عشرة أصول كلية، وتحت كل واحد منها علوم جزئية متفرعة عنه.</p>
+      </div>
+
+      <div class="box corr">
+        <div class="box-t">📌 توثيق: أين ورد هذا التقسيم؟</div>
+        <p>الشيخ نفسه لم يجزم، فقال: «في أي كتاب؟ أظنه في <strong>المحرر في علوم القرآن</strong>، نسيت والله في أي كتاب».</p>
+        <div class="pair">
+          <div class="cell"><b>ما تحققتُ منه</b>كتاب «المحرر في علوم القرآن» للدكتور مساعد بن سليمان الطيار صادر عن <strong>مركز الدراسات والمعلومات القرآنية بمعهد الإمام الشاطبي</strong> (لا عن مركز تفسير)، في نحو ٣٢٠ صفحة، وقد تعدّدت طبعاته. فنسبةُ التقسيم إليه واردة، لكن تحفّظَ الشيخ في تحديد الكتاب يبقى كما هو.</div>
+        </div>
+      </div>
+
+      <div class="box take">
+        <div class="box-t">✦ خلاصة العنصر الأول</div>
+        <ul>
+          <li>علوم القرآن هي <strong>المباحث الكلية</strong> المتعلقة بالقرآن: نزولاً وجمعاً وترتيباً وكتابةً وتفسيراً وإعجازاً ونسخاً.</li>
+          <li>تعريفه من النوع الذي <strong>يُفهم ولا يُحفَظ بلفظه</strong>؛ ومعرفة موضوعاته تغني عن حفظ حدٍّ معيّن.</li>
+          <li>يُجمَع في <strong>عشرة أصول كلية</strong> (نزول — جمع — قراءات — معاني — تفسير — سور — فضائل — أحكام — وقف وابتداء — جدل)، وهو تقسيم اجتهادي للدكتور مساعد الطيار.</li>
+          <li>العشرة أصولٌ لا حصر؛ تحت كل أصل منها علوم جزئية كثيرة.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- العنصر 2 -->
+    <section class="el" id="e2">
+      <div class="el-title"><div class="idx">٢</div><h3>نبذة تاريخية عن علم علوم القرآن</h3></div>
+
+      <p>سأل الشيخ الحاضرين: متى تتوقعون أن بدأ الحديث عن علوم القرآن؟ فأجابوا: من عهد الصحابة، بل من عهد النبي ﷺ. وصوّب الشيخ هذا وقال: إذا قلنا إن من علوم القرآن أسبابَ النزول والتفسيرَ والغريبَ وما يتعلق بالآيات وكتابةَ المصحف — <strong>فقد بدأ من النبي ﷺ</strong>.</p>
+
+      <div class="box ex">
+        <div class="box-t">📚 مرجع أشار إليه الشيخ</div>
+        <p>هناك اليوم كتاب اسمه <strong>«علوم القرآن في السنة النبوية»</strong>، ومحاضرة بهذا العنوان على يوتيوب. والنتيجة المستفادة: <strong>السنة النبوية مصدر من مصادر علوم القرآن، وهي مليئة بعلوم القرآن</strong> — ووصفها الشيخ بأنها «نقطة في غاية الأهمية».</p>
+      </div>
+
+      <div class="box key">
+        <div class="box-t">🔑 القاعدة التاريخية الكبرى</div>
+        <p>علوم القرآن <strong>ليس علماً تأسّس في مرحلة متأخرة</strong>. يمكن أن نقول إنه تأسّس <em>من ناحية الجمع والترتيب فقط</em>، أما من ناحية <em>المحتوى والمضمون فهو قديم</em>.</p>
+      </div>
+
+      <h4>مراحل التأليف في القرون الأولى</h4>
+      <p>القرون الأولى إلى القرن الثالث تقريباً أو حتى الرابع، كانت الكتب المؤلَّفة في علوم القرآن هي <strong>الكتب المفردة</strong> المتعلقة بعلم معيّن من علومه؛ فلا نجد في تلك المرحلة كتاباً جمع علوم القرآن، وإنما نجد كتباً مفردة اعتنت بباب معيّن.</p>
+
+      <div class="tl">
+        <div class="tl-item">
+          <div class="tl-h">القرن الثالث الهجري</div>
+          <div class="tl-b">كتاب <strong>أسباب النزول</strong> لعلي بن المديني — وكتاب <strong>الناسخ والمنسوخ</strong> لأبي عبيد القاسم بن سلّام.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-h">القرن الثالث الهجري أيضاً</div>
+          <div class="tl-b">الإمام <strong>ابن قتيبة</strong> اعتنى بعلم من علوم القرآن، فألّف <strong>«تأويل مشكل القرآن»</strong>، ردّ فيه على الطعون التي أُثيرت على القرآن من جهة معانيه وسياقات ألفاظه وآياته. وهذا تأليف متقدّم متعلق بعلم من علوم القرآن.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-h">القرن الرابع الهجري</div>
+          <div class="tl-b">للأنباري كتاب <strong>«عجائب علوم القرآن»</strong> — ولابن أبي داود السجستاني كتاب <strong>«المصاحف»</strong>.</div>
+        </div>
+      </div>
+
+      <div class="box corr">
+        <div class="box-t">🔎 تصحيح التباس في الاسم (خطأ تفريغ)</div>
+        <div class="pair">
+          <div class="cell"><b>ما ورد في التسجيل الصوتي</b>«لأبي داود ابن أبي داود السجستاني» — بصيغة مضطربة تُوهم أنه أبو داود صاحب السنن.</div>
+          <div class="cell"><b>الصحيح</b>صاحب كتاب «المصاحف» هو <strong>ابن أبي داود السجستاني</strong> (عبد الله بن سليمان بن الأشعث)، وهو <strong>ابنُ</strong> الإمام أبي داود صاحب السنن لا هو نفسه.</div>
+        </div>
+      </div>
+
+      <h4>مصدر مهم يغفل عنه كثيرون: مقدمات كتب التفسير</h4>
+      <p>ينبّه الشيخ إلى أن المفسّرين يعتنون في مقدمات كتبهم بذكر العلوم القرآنية أو العلوم المرتبطة بالقرآن الكريم؛ <strong>فمنهم مُقِلّ ومنهم مُستكثِر، ومنهم من توسّع ومنهم من اختصر</strong>. فإذا أردت أن ترجع إلى علوم القرآن في وقت متقدّم، فيمكنك مطالعة مقدمات كتب التفسير المتقدمة، وستجد فيها موضوعات علوم القرآن.</p>
+
+      <div class="box take">
+        <div class="box-t">✦ خلاصة العنصر الثاني</div>
+        <ul>
+          <li>علوم القرآن <strong>بدأت من عهد النبي ﷺ</strong> مضموناً، وإنما تأخّر جمعها وترتيبها.</li>
+          <li><strong>السنة النبوية مصدر أصيل</strong> من مصادر علوم القرآن.</li>
+          <li>حتى القرن الثالث/الرابع كان التأليف <strong>مفرداً</strong>: كتاب لكل باب، لا كتاب جامع.</li>
+          <li>نماذج مبكرة: أسباب النزول لعلي بن المديني، الناسخ والمنسوخ لأبي عبيد، تأويل مشكل القرآن لابن قتيبة، عجائب علوم القرآن للأنباري، المصاحف لابن أبي داود.</li>
+          <li><strong>مقدمات كتب التفسير</strong> خزانة مبكرة لعلوم القرآن يغفل عنها كثير من الطلاب.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- العنصر 3 -->
+    <section class="el" id="e3">
+      <div class="el-title"><div class="idx">٣</div><h3>العلاقة بين علوم القرآن وأصول التفسير والتفسير</h3></div>
+
+      <p>عندنا ثلاثة أمور: <strong>علوم القرآن</strong>، و<strong>أصول التفسير</strong>، و<strong>التفسير</strong>. فأيها أشمل؟ الجواب الذي قرّره الشيخ: <em>علوم القرآن أشمل شيء</em>، لأن أصول التفسير والتفسير هما أصلاً من علوم القرآن.</p>
+
+      <div class="box def">
+        <div class="box-t">🧭 المفارقة المهمة</div>
+        <p>مع أن الثلاثة في الأصل واحدٌ يشمل اثنين، إلا أن <strong>كلاً منها شقّ طريقاً حتى صار كأنه علم مستقل بذاته</strong>: علوم القرآن استقلّت بالتأليف والكتب، والتفسير استقلّ بالتأليف والكتب، وأصول التفسير استقلّت أيضاً بالتأليف والكتب.</p>
+      </div>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>العلم</th><th>موقعه من الشمول</th><th>حال استقلاله</th></tr></thead>
+          <tbody>
+            <tr><td><strong>علوم القرآن</strong></td><td>الأشمل — يندرج تحته الاثنان الآخران</td><td>مستقل بالتأليف والكتب</td></tr>
+            <tr><td><strong>التفسير</strong></td><td>علم من علوم القرآن</td><td>مستقل بالتأليف والكتب</td></tr>
+            <tr><td><strong>أصول التفسير</strong></td><td>كان مندرجاً ضمن العلمين معاً</td><td><strong>آخر الثلاثة استقلالاً</strong> — استقلّ متأخراً</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>وأصول التفسير كانت ضمن العلمين — ضمن علوم القرآن وضمن التفسير — ثم استقلّت متأخراً، فصار يُؤلَّف فيها كتب بعناوين مثل: <strong>أصول التفسير</strong>، و<strong>قواعد التفسير</strong>، و<strong>قواعد الترجيح عند المفسرين</strong>، وما إلى ذلك.</p>
+
+      <div class="box take">
+        <div class="box-t">✦ خلاصة العنصر الثالث</div>
+        <ul>
+          <li><strong>علوم القرآن</strong> هي الدائرة الكبرى، وتحتها التفسير وأصول التفسير.</li>
+          <li>الثلاثة صارت عملياً <strong>علوماً مستقلة</strong> بمؤلفاتها ومصطلحاتها.</li>
+          <li><strong>أصول التفسير</strong> آخرها استقلالاً، وعناوين كتبه المميزة: أصول التفسير، قواعد التفسير، قواعد الترجيح عند المفسرين.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= المحور الثاني ================= -->
+  <div class="ax2" id="axis2">
+    <div class="axis-head a2">
+      <span class="num">المحور الثاني</span>
+      <h2>المكتبة: الكتب التي بُني بها هذا العلم</h2>
+      <p>العنصر ٤: خمسة كتب مركزية — ثلاثة في علوم القرآن واثنان في أصول التفسير — مع وقفة موسّعة مع علم الوجوه والنظائر.</p>
+    </div>
+
+    <section class="el" id="e4">
+      <div class="el-title"><div class="idx">٤</div><h3>أهم الكتب المؤلَّفة في علوم القرآن وأصول التفسير</h3></div>
+
+      <p>لاحِظ أن الشيخ قال «علوم القرآن وأصول التفسير» ولم يقل «والتفسير» — لأن كتب التفسير سيكون لها عنصر مستقل (العنصر السابع).</p>
+
+      <div class="box key">
+        <div class="box-t">🔑 حكم الشيخ على هذا المجال</div>
+        <p>هذا المجال <strong>خُدم خدمة متينة جداً</strong>؛ فهناك مؤلفات في غاية الأهمية والنفاسة كُتبت في علم علوم القرآن وفي علم أصول التفسير. ولذلك نستطيع أن نقول إن هذا العلم <em>خُدم بإتقان</em>، والمؤلفات التي كُتبت فيه تقدّم صورة منهجية مرتّبة قوية متينة عنه، ويمكن للإنسان — إذا قرأ هذه الكتب — أن يأخذ تصوراً كافياً عن هذه العلوم.</p>
+      </div>
+
+      <h4>أولاً: ثلاثة كتب في علوم القرآن</h4>
+
+      <div class="books">
+        <div class="book">
+          <span class="tag">علوم القرآن · ١</span>
+          <div class="bt">البرهان في علوم القرآن</div>
+          <div class="ba">الإمام بدر الدين الزركشي</div>
+          <div class="bd">
+            <p>ذكر فيه الزركشي أنواعاً كثيرة من أنواع علوم القرآن، وكل نوع منها يمكن أن يُفرَد في كتاب مستقل؛ فهو علم قائم بذاته يمكن أن يُقرأ وحده. والكتاب <strong>موسوعة قرآنية</strong> متعلقة بكل ما يخطر في بالك عن علوم القرآن.</p>
+            <p style="margin-top:8px">ومن الأنواع التي ذكرها: أسباب نزوله، الوجوه والنظائر، أسماؤه، جدله، الوقف والابتداء، إعجازه، المناسبات بين الآيات، أسرار الفواتح، غريبه، آداب تلاوته، ناسخه ومنسوخه، توجيه القراءات.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="box corr">
+        <div class="box-t">🔎 تصحيح رقمي: عدد أنواع البرهان</div>
+        <div class="pair">
+          <div class="cell"><b>ما ورد في التسجيل</b>«ذكر في هذا الكتاب ٤٦ نوعاً من أنواع علوم القرآن».</div>
+          <div class="cell"><b>الصحيح المشهور</b>قسّم الزركشي كتابه إلى <strong>سبعة وأربعين نوعاً (٤٧)</strong>. وهذا هو العدد المتّفق عليه في تراجم الكتاب ودراساته، ومنه انطلق السيوطي في «الإتقان» فأوصلها إلى <strong>ثمانين نوعاً</strong>، أي بزيادة ثلاثة وثلاثين نوعاً.</div>
+        </div>
+        <p style="margin-top:10px;font-size:14.5px">والفارق بين ٤٦ و٤٧ يسير، والغالب أنه سبق لسان أو خطأ تفريغ لا أكثر — لكن الرقم الصحيح للحفظ هو <strong>٤٧</strong>.</p>
+      </div>
+
+      <h4>وقفة موسّعة: علم الوجوه والنظائر</h4>
+      <p>سأل الشيخ الحاضرين عن معنى «الوجوه والنظائر»، فتنوّعت الإجابات (متشابه الكلمات، الظاهر والباطن) حتى قرّبهم من الصواب ثم قرّره:</p>
+
+      <div class="box def">
+        <div class="box-t">📖 تعريف الوجوه والنظائر</div>
+        <p>هي <strong>الكلمات القرآنية التي لها معانٍ متعددة</strong>: الكلمة الواحدة لها معانٍ متعددة.</p>
+        <ul style="margin-top:8px;margin-bottom:0">
+          <li><strong>الوجوه</strong>: تعدد المعاني للكلمة الواحدة — فكل معنى يُسمّى وجهاً.</li>
+          <li><strong>النظائر</strong>: الآيات التي تدلّ على معنى واحد من هذه الوجوه — فكل آية تتشابه في الدلالة على وجهٍ واحد تُسمّى نظائر.</li>
+        </ul>
+      </div>
+
+      <div class="box ex">
+        <div class="box-t">🔍 مثال ذكره الزركشي</div>
+        <p>كلمة <strong>«الهدى»</strong> تأتي في القرآن على <strong>سبعة عشر معنى</strong>. كل معنى منها يُسمّى وجهاً، والآيات المتشابهة في الدلالة على أحد هذه الوجوه هي النظائر.</p>
+      </div>
+
+      <p>ووصف الشيخ هذا العلم بأنه <em>في غاية النفاسة والأهمية، ويزيد الإنسان فقهاً بكتاب الله سبحانه وتعالى</em>.</p>
+
+      <h4>وبمناسبته: كتب غريب القرآن على قسمين</h4>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>القسم</th><th>وظيفته</th><th>الحال</th></tr></thead>
+          <tbody>
+            <tr><td>كتب تهتم بالكلمات الغريبة</td><td>تفسّر اللفظ الغريب وتكتفي</td><td>وهذا القسم <strong>الأشهر</strong></td></tr>
+            <tr><td>كتب تعتني باللفظ ووجوه معانيه</td><td>تذكر اللفظ وتعدّد معانيه في القرآن الكريم</td><td>أبرزها وأنفسها: <strong>المفردات للراغب الأصفهاني</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>وقال الشيخ عن «المفردات»: كتاب في غاية الروعة والجمال؛ يأتيك باللفظ فيقول لك: يُذكر في القرآن على معنى كذا وكذا وكذا، ويعدّد لك المعاني — <em>وهذا يُشكِّل لك فقه المفردة القرآنية</em>.</p>
+
+      <h4>القواعد الكلية: فائدة جانبية من علم الوجوه والنظائر</h4>
+      <p>أحياناً تُذكر في هذا الباب قواعد كلية لطيفة جداً، وبعضهم يسمّيها «الكليات». وهي كثيرة جداً في كتب علوم القرآن، وفائدتها أنها تعينك على تحصيل التفسير القرآني — <strong>لا من باب تتبّع آية آية، وإنما من باب القواعد الكلية التي تضبط لك الألفاظ ومعانيها</strong>. ومن أمثلتها عند الزركشي:</p>
+
+      <div class="box quote">
+        <div class="box-t">قاعدة كلية ١</div>
+        كل ما في القرآن من ذكر <strong>البروج</strong> فإنها <strong>الكواكب</strong>، إلا التي في سورة النساء فإنها <strong>القصور الطوال</strong>.
+        <span class="src">والموضع المستثنى: ﴿أَيْنَمَا تَكُونُوا يُدْرِكْكُمُ الْمَوْتُ وَلَوْ كُنْتُمْ فِي بُرُوجٍ مُشَيَّدَةٍ﴾</span>
+      </div>
+
+      <div class="box quote">
+        <div class="box-t">قاعدة كلية ٢</div>
+        كل ما في القرآن من ذكر <strong>البعل</strong> فهو <strong>الزوج</strong>، إلا في موضع واحد فهو <strong>الصنم</strong>.
+        <span class="src">والموضع المستثنى: ﴿أَتَدْعُونَ بَعْلًا﴾</span>
+      </div>
+
+      <div class="books">
+        <div class="book">
+          <span class="tag">علوم القرآن · ٢</span>
+          <div class="bt">الإتقان في علوم القرآن</div>
+          <div class="ba">الإمام جلال الدين السيوطي</div>
+          <div class="bd"><p>من <strong>أشهر الكتب وأهمها</strong> في علوم القرآن. وقد عرض الشيخ في المجلس مختصراً له — «مختصر الإتقان في علوم القرآن» — وعلّق بأن المختصر <em>لا يفي بالغرض تماماً، ولكنه على الأقل يعطي صورة مقرّبة</em>.</p></div>
+        </div>
+
+        <div class="book">
+          <span class="tag">علوم القرآن · ٣</span>
+          <div class="bt">المحرر في علوم القرآن</div>
+          <div class="ba">د. مساعد بن سليمان الطيار</div>
+          <div class="bd"><p>الكتاب الثالث الذي ينصح به الشيخ في علوم القرآن، ويقول إنه <strong>يعطي صورة ممتازة ومهمة</strong> عن العلم. وهو الكتاب الذي رجّح الشيخُ أن التقسيم العشري المذكور في العنصر الأول ورد فيه.</p></div>
+        </div>
+      </div>
+
+      <h4>ثانياً: كتابان في أصول التفسير</h4>
+
+      <div class="books">
+        <div class="book">
+          <span class="tag">أصول التفسير · ١</span>
+          <div class="bt">مقدمة في أصول التفسير</div>
+          <div class="ba">شيخ الإسلام ابن تيمية رحمه الله</div>
+          <div class="bd">
+            <p>على أنه <strong>مختصر وصغير</strong>، إلا أنه من أهم وأنفس ما كُتب في هذا العلم. تناول فيه مسألة مهمة جداً: <strong>ما وجوه تفسير القرآن؟ ما طرق تفسير القرآن؟</strong></p>
+            <ul style="margin-top:8px">
+              <li>تفسير القرآن بالقرآن</li>
+              <li>تفسير القرآن بالسنة</li>
+              <li>تفسير القرآن بأقوال الصحابة</li>
+              <li>تفسير القرآن بأقوال التابعين</li>
+            </ul>
+            <p>كما تناول: <strong>ما أنواع الخلاف الذي يقع في التفسير؟ هل هو خلاف تنوّع أم خلاف تضاد؟</strong> مع ذكر الأمثلة.</p>
+            <p style="margin-top:8px"><strong>توصية الشيخ:</strong> من يقرأ تفسير القرآن على وجه تفصيلي، فليطالع هذه الرسالة المختصرة قبل ذلك. وعليها شروحات، وممن شرحها الدكتور مساعد الطيار في كتاب مستقل اسمه <strong>«شرح مقدمة في أصول التفسير»</strong>.</p>
+          </div>
+        </div>
+
+        <div class="book">
+          <span class="tag">أصول التفسير · ٢</span>
+          <div class="bt">فصول في أصول التفسير</div>
+          <div class="ba">د. مساعد بن سليمان الطيار</div>
+          <div class="bd">
+            <p>هذا الكتاب <strong>جمع ما في كتاب ابن تيمية وزاد عليه، ورتّبه ترتيباً سهلاً واضحاً جداً</strong>. وينصح الشيخ بقراءته، <em>وخاصة قبل رمضان</em> استعداداً لقراءة التفسير فيه.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="box ex">
+        <div class="box-t">📖 للتوسّع فقط</div>
+        <p>يرى الشيخ أن هذين الكتابين فيهما <strong>أهمّ ما في هذا العلم</strong>. وهناك كتب أوسع، مثل كتاب الدكتور <strong>خالد السبت</strong> في مجلدين — لكن الكتابين السابقين هما الأهم <em>كمقدمة وكتأسيس أوّلي</em>.</p>
+      </div>
+
+      <div class="box key">
+        <div class="box-t">🔑 حصيلة العنصر: خمسة كتب</div>
+        <p><strong>ثلاثة في علوم القرآن:</strong> البرهان للزركشي — الإتقان للسيوطي — المحرر للطيار.<br>
+        <strong>واثنان في أصول التفسير:</strong> مقدمة في أصول التفسير لابن تيمية — فصول في أصول التفسير للطيار.</p>
+      </div>
+
+      <h4>إضافة استدركها الشيخ: مركز تفسير</h4>
+      <p>عاد الشيخ إلى هذا العنصر بعد أن تجاوزه فقال: «نسيت أمراً، ارجعوا بالله للعنصر الذي فيه كتب علوم القرآن وأصول التفسير». وأشار إلى <strong>مركز تفسير</strong>، وهو الذي طبع «المختصر في التفسير» الذي صار مشهوراً جداً، وطبعاتهم من أفضل الطبعات (مجلّدة وملوّنة).</p>
+
+      <div class="box ex">
+        <div class="box-t">🎬 مادة مرئية موصى بها</div>
+        <p>لمركز تفسير قائمة تشغيل على يوتيوب اسمها <strong>«لقاء أهل التفسير»</strong>، فيها نحو ٥٣ مقطعاً (والشيخ قدّرها ابتداءً بنحو ٥٠ جلسة)، يستضيفون فيها متخصصين. ووصفها الشيخ بأنها <em>كتابٌ في علوم القرآن، ولكنه مرئي لا مكتوب</em>، ويمتاز بمعالجة المشكلات المعاصرة وفيه تجديد.</p>
+          <p style="margin-top:10px"><strong>ومن عناوين حلقاتها التي قرأها الشيخ:</strong> أصول تدبر القرآن · ترجمات القرآن: الواقع والمأمول · لغة القرآن: رؤى جديدة · مدخل إلى البلاغة في القرآن · المصاحف المخطوطة وقيمتها · سنن القرّاء ومناهج المجوّدين · خطة عملية لإنشاء مشاريع قرآنية · نحو مشروع عالمي جامع لخدمة القرآن · تأهيل الكفاءات الإعلامية · منهج مقترح لتدريس التفسير · نظرة الغربيين للقرآن الكريم · الاستدلال بالقرآن الكريم على قضية الحرية · التجديد في التفسير · اللغة وخدمتها لتفسير القرآن.</p>
+        <p style="margin-top:10px">وخلاصة نصيحته: <strong>المعتني بعلوم القرآن لا بد أن يتابع إصدارات مركز تفسير</strong>؛ فعندهم إصدارات كثيرة جداً.</p>
+      </div>
+
+      <div class="box take">
+        <div class="box-t">✦ خلاصة العنصر الرابع</div>
+        <ul>
+          <li>علم علوم القرآن وأصول التفسير <strong>خُدم بإتقان</strong>، ومؤلفاته تكفي لبناء تصور منهجي كامل.</li>
+          <li><strong>خمسة كتب مركزية</strong>: البرهان، الإتقان، المحرر (علوم القرآن) — مقدمة ابن تيمية، فصول في أصول التفسير (أصول التفسير).</li>
+          <li><strong>الوجوه</strong> تعدد معاني اللفظ، و<strong>النظائر</strong> الآيات المتشابهة في الدلالة على وجه واحد؛ ومثاله «الهدى» على ١٧ معنى.</li>
+          <li>كتب غريب القرآن قسمان: مفسِّرة للفظ فقط، ومعدِّدة لوجوه معانيه — وأبرز الثاني: <strong>المفردات للراغب الأصفهاني</strong>.</li>
+          <li><strong>القواعد الكلية</strong> (البروج، البعل...) طريق مختصر لضبط المعاني دون تتبّع آية آية.</li>
+          <li><strong>إصدارات مركز تفسير</strong> ومادته المرئية «لقاء أهل التفسير» مرجع معاصر لا يُستغنى عنه.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= المحور الثالث ================= -->
+  <div class="ax3" id="axis3">
+    <div class="axis-head a3">
+      <span class="num">المحور الثالث</span>
+      <h2>لماذا هذا العلم؟ وما التحدي الذي يواجهه اليوم؟</h2>
+      <p>العنصران ٥ – ٦: أربع فوائد عملية لدراسة علوم القرآن وأصول التفسير، ثم عرض صريح لموقف الحداثيين والمستشرقين — وقاعدة منهجية خطيرة يقترحها الشيخ لكل العلوم الشرعية.</p>
+    </div>
+
+    <section class="el" id="e5">
+      <div class="el-title"><div class="idx">٥</div><h3>ما أهمية علم علوم القرآن وأصول التفسير؟</h3></div>
+
+      <h4>الفائدة الأولى: فهمٌ أفضل لكتب التفسير</h4>
+      <p>من يدرس علوم القرآن وأصول التفسير على وجه صحيح، فسيكون فهمه لكتب تفسير القرآن أفضل — مقارنة بمن لم يقرأ فيهما. ووجه ذلك أن كتب التفسير المرجعية الكبرى <strong>موسوعات، بعضها فيه كل العلوم</strong>؛ فحتى تقرأ كتاباً منها تحتاج إلى مقدمة في أصول التفسير وعلوم القرآن. فإذا قرأت مقدمة صحيحة ثم رجعت إلى التفسير — الذي هو من أهم علوم الشريعة على الإطلاق — <em>كان فهمك أفضل وأضبط وأدق</em> من فهم من قرأ التفسير بدون أن يؤسّس القواعد المتعلقة به.</p>
+
+      <div class="box key">
+        <div class="box-t">🔑 ترتيب زمني حاسم</div>
+        <p>سُئل الشيخ: متى نقرأ أصول التفسير — قبل التفسير أم بعده؟ فقرّر: <strong>قبل التفسير</strong>؛ وأحال تفصيل ذلك إلى العنصر الأخير (الخطة المنهجية) حيث تُمزَج علوم القرآن وأصول التفسير والتفسير في خطة واحدة.</p>
+      </div>
+
+      <h4>الفائدة الثانية: تجاوز الصعوبات المعرفية في كتب التفسير</h4>
+      <p>هناك تحدّيات معرفية تشكّل صعوبة على قرّاء كتب التفسير. مثالها: تقرأ ﴿اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ﴾، فيقول لك أي كتاب تفسير: الصراط المستقيم <em>قيل هو القرآن، وقيل هو الإسلام، وقيل كذا، وقيل كذا</em>… وهكذا في آيات كثيرة جداً ستجد أقوال علماء التفسير في الآية الواحدة.</p>
+      <p>والسؤال: ماذا تفعل أمام هذه الأقوال؟ بماذا تأخذ؟ هل تكتفي بأن تدرك أن هناك أقوالاً وتمشي؟</p>
+
+      <div class="box def">
+        <div class="box-t">🧩 الحل: التمييز بين اختلاف التنوع واختلاف التضاد</div>
+        <p>حين تقرأ في كتب التفسير — وقد تأسّست — <strong>ستستبعد كثيراً من الأقوال التي إنما تشكّل تنويعاً لا خلاف تضاد</strong>.</p>
+        <p style="margin-top:8px">فالذي يقول «الصراط المستقيم هو القرآن» والذي يقول «هو الإسلام» — هذا ليس اختلاف تضاد، بل <strong>اختلاف تنوّع</strong>؛ وهما في الحقيقة شيء واحد. فلا يصلح أن نقول إن هذه الآية فيها اختلاف بين المفسرين.</p>
+        <p style="margin-top:8px">وابن تيمية في «مقدمة التفسير» ذكر أمثلة على ذلك: كيف يختلف المفسرون اختلاف تنوّع، وكيف يختلفون اختلاف تضاد. وكذلك في «فصول في أصول التفسير».</p>
+      </div>
+
+      <h4>الفائدة الثالثة: ازدياد عظمة القرآن في نفوسنا</h4>
+      <p>علوم القرآن <strong>تزيد القرآن قيمةً لديك</strong>؛ ستدرك أنواعاً من العلوم والجمال في هذا الكتاب العزيز ربما لم تكن تدركها قبل قراءة هذه العلوم. بل إن بعض مباحث هذه العلوم <em>سِيقت أصلاً لإثبات عظمة القرآن</em> — مثل مبحث بيان <strong>إعجاز القرآن</strong>.</p>
+      <p>وذكّر الشيخُ الحاضرين بمحاضرة سابقة له بعنوان «إعجاز القرآن عند المتقدمين»، ونبّه أن تلك المحاضرة كلها هي في الحقيقة <strong>واحد من علوم القرآن</strong>. وأشار إلى أن الزركشي فصّل تفصيلاً طويلاً في إعجاز القرآن ووجوه الإعجاز.</p>
+
+      <div class="box warn">
+        <div class="box-t">⚠️ معلومة نطق بها الشيخ متردداً</div>
+        <p>قال عن عدد وجوه الإعجاز عند الزركشي: <em>«أظنه ذكر ١٧ وجهاً أو نحو ذلك»</em>. فالرقم <strong>غير مجزوم به من الشيخ نفسه</strong>، ولذلك يُنقل هنا كما ورد بتحفّظه ولا يُبنى عليه.</p>
+      </div>
+
+      <h4>الفائدة الرابعة: الردّ على الشبهات</h4>
+      <p>الرد على الشبهات المثارة حول التفسير وعلوم القرآن — <strong>وما أكثرها في هذا الزمن</strong>. وهذه الفائدة هي التي نقلت المجلس مباشرة إلى العنصر السادس.</p>
+
+      <div class="box take">
+        <div class="box-t">✦ خلاصة العنصر الخامس</div>
+        <ul>
+          <li><strong>الفائدة ١:</strong> فهمٌ أضبط وأدقّ لكتب التفسير المرجعية، لأنها موسوعات تحتاج مفاتيح.</li>
+          <li><strong>الفائدة ٢:</strong> تجاوز الصعوبة المعرفية بتمييز <strong>اختلاف التنوع</strong> من <strong>اختلاف التضاد</strong>؛ ومثاله الصراط المستقيم.</li>
+          <li><strong>الفائدة ٣:</strong> ازدياد عظمة القرآن في النفس، وأوضح شواهدها مبحث الإعجاز.</li>
+          <li><strong>الفائدة ٤:</strong> الردّ على الشبهات المثارة اليوم حول التفسير وعلوم القرآن.</li>
+          <li><strong>قاعدة ترتيب:</strong> أصول التفسير تُقرأ <strong>قبل</strong> التفسير لا بعده.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="el" id="e6">
+      <div class="el-title"><div class="idx">٦</div><h3>موقف الحداثيين والمستشرقين من علوم القرآن والتفسير</h3></div>
+
+      <p>افتتح الشيخ هذا العنصر بمقارنة صادمة: تتعجّب حين تقرأ تعظيم علماء المسلمين المتقدمين — من الصحابة والسلف الصالح — لخطر <strong>القول في القرآن بلا علم</strong>، وتجد التشديد الشديد في مثل: <em>من قال في القرآن برأيه فأصاب فقد أخطأ</em>، والتأكيد الكبير أن هذا كتاب الله فلا تدخل فيه بالاجتهاد وأنت لست أهلاً.</p>
+
+      <div class="flow">
+        <div class="step" style="--c:var(--ax3)"><div class="sn" style="background:var(--ax3)">١</div><div><div class="sh" style="color:var(--ax3)">المرحلة التاريخية</div><div class="sb">منتسبون إلى العلوم الشرعية ممن لم يكونوا على اعتقاد صحيح، مارسوا عبر التاريخ الإسلامي نوعاً من الممارسات التفسيرية والتأويلية غير الصحيحة تجاه القرآن — <strong>فردّ عليهم علماء أهل السنة وناقشوهم بالأدلة</strong>.</div></div></div>
+        <div class="step"><div class="sn" style="background:var(--ax3)">٢</div><div><div class="sh" style="color:var(--ax3)">المرحلة الجديدة</div><div class="sb">نحن الآن أمام مرحلة <strong>تختلف اختلافاً جذرياً</strong> عن التأويلات الخاطئة وعن مجرّد القول في القرآن بلا علم. نحن أمام <strong>تيار زندقي</strong> مملوء بالزنادقة الذين يتعاملون مع القرآن الكريم بصورة غريبة جداً.</div></div></div>
+      </div>
+
+      <div class="box ex">
+        <div class="box-t">📕 كُتيّب صغير أشار إليه الشيخ</div>
+        <p><strong>«تاريخية القرآن في الفكر الحداثي العربي»</strong> — من قرأه سيرى قدر ما وقع من الطعن الصريح في الكتاب العزيز في بعض حالات الفكر العربي المعاصر.</p>
+      </div>
+
+      <h4>أعلام هذا التيار كما عرضهم الشيخ</h4>
+
+      <div class="books">
+        <div class="book">
+          <span class="tag">الأشدّ</span>
+          <div class="bt">محمد أركون</div>
+          <div class="bd">
+            <p>وصفه الشيخ بأنه <strong>«أحد كبار الزنادقة في هذا العصر بدون شك ولا ريب»</strong>. ونقل عنه نصاً في مسألة جمع المصحف، حاصله عنده: أنه كان طبيعياً بعد وفاة النبي أن تُطرح مسألة جمع هذه السور في محل متكامل، وأن الخليفة الأول فكّر بتجميع أكبر عدد من السور وكتابتها من أجل حفظها، فتشكّل بذلك أول مصحف — ثم يزعم أن هذه السور القرآنية سوف تُستخدم مباشرة بصيغ جدلية <em>هدفها الصراع على السلطة السياسية</em>، وأن هذا ما يمكن استشفافه مما تسرّب من التراث المنقول على الرغم من الرقابة الصارمة التي يحيط بها التراث.</p>
+          </div>
+        </div>
+
+        <div class="book">
+          <span class="tag">أخفّ درجة</span>
+          <div class="bt">محمد عابد الجابري</div>
+          <div class="bd">
+            <p>له كتاب <strong>«مدخل إلى القرآن الكريم»</strong> وفيه إشكالات. ونبّه الشيخ صراحة أن <strong>الجابري ليس مثل أركون</strong>؛ فأركون «زندقة مخيفة تجاه القرآن الكريم».</p>
+            <p style="margin-top:8px"><strong>وقد رُدّ عليه:</strong> الباحثان <strong>عبد السلام البكاري</strong> و<strong>الصديق بوعلام</strong> كتبا كتاباً بعنوان «الشبه الاستشراقية في كتاب مدخل إلى القرآن الكريم لمحمد عابد الجابري».</p>
+          </div>
+        </div>
+
+        <div class="book">
+          <span class="tag">إشكاله كبير</span>
+          <div class="bt">عبد المجيد الشرفي</div>
+          <div class="bd"><p>تونسي، وإشكاله تجاه القرآن الكريم كبير جداً.</p></div>
+        </div>
+      </div>
+
+      <div class="box key">
+        <div class="box-t">🔑 التوصيف المنهجي لهذا التيار</div>
+        <p>هؤلاء <strong>استعملوا أدوات نقدية غربية لنقد النص القرآني</strong>. وكثير منهم لا يصرّح بأنه لا يؤمن بالقرآن، وإنما يأتون بمقاربات تدلّ في الآخر على أنهم <em>لا يعترفون بالقرآن الكريم وحياً إلهياً</em> — وليسوا كلهم على درجة واحدة.</p>
+      </div>
+
+      <h4>اعتراض الشيخ على تسمية «المدرسة العقلية»</h4>
+      <p>أشار الشيخ إلى كتاب من مجلدين من إصدارات مركز تفسير بعنوان <strong>«موقف المدرسة العقلية المعاصرة من علوم القرآن وأصول التفسير»</strong>، ثم سجّل اعتراضه:</p>
+
+      <div class="box warn">
+        <div class="box-t">⚠️ اعتراض على المصطلح</div>
+        <p>تسمية هذه المدرسة بـ«المدرسة العقلية» يعترض عليها الشيخ، لأنها صارت كأنها <strong>ذمٌّ للعقل نفسه</strong>، وهم في الحقيقة <em>لا يمتّون إلى العقلية المحضة بصلة</em>؛ فأطروحاتهم ليست نابعة من العقل المجرّد، وإنما هي نابعة من <strong>مدرسة استشراقية بدون شك ولا ريب</strong>.</p>
+      </div>
+
+      <div class="box ex">
+        <div class="box-t">📗 لمن أراد التحقق من دعوى «الاستعارة من المستشرقين»</div>
+        <p>يقرأ كتاب <strong>«التأويل الحداثي للتراث»</strong>. يقول الشيخ: <em>ستسقط من عينك تماماً هذه الصورة والأبّهة لهؤلاء الحداثيين العرب</em>، وستدرك كيف أنهم إنما صنعوا مصانع لإعادة إنتاج وتعليب وتصدير ما طرحه المستشرقون.</p>
+      </div>
+
+      <h4>وأما المستشرقون أنفسهم…</h4>
+      <p>يقول الشيخ: ما طرحه المستشرقون شيء غريب جداً جداً، ويؤسف أن يُقال إن <strong>اهتمام بعض المدارس الاستشراقية بالقرآن أكثر من اهتمام كثير من المسلمين به</strong>. ومَثَّل لذلك بكتاب <strong>«آثار الاستشراق الألماني في الدراسات القرآنية»</strong>، وقال: انظروا حجم الدراسات الاستشراقية من الألمان فقط — دعك من الفرنسيين والإنجليز — <em>شيء مخيف</em>. بل أخرجوا لنا بعض الكتب التي لم نعرفها أصلاً في علوم القرآن إلا من طريقهم؛ كتب نسمع عنها في كتب المسلمين ولم تُطبع ولم تُحقَّق، هم حققوها وأخرجوها، ومخطوطات هم أخرجوها.</p>
+
+      <div class="box corr">
+        <div class="box-t">📌 توثيق الكتاب (بحث خارجي)</div>
+        <div class="pair">
+          <div class="cell"><b>ما ذكره الشيخ</b>الكتاب من إصدارات مركز تفسير، ومؤلفه «أمجد يونس الجنابي» عراقي، ومن توصياته إنشاء معهد للدراسات الاستشراقية في جامعته بالعراق.</div>
+          <div class="cell"><b>ما تحققتُ منه</b>الاسم الدقيق للكتاب: <strong>«آثار الاستشراق الألماني في الدراسات القرآنية — دراسة نقدية»</strong>، إعداد الباحث <strong>أمجد يونس الجنابي</strong>، من إصدارات <strong>مركز تفسير للدراسات القرآنية</strong>، الطبعة الأولى ١٤٣٦هـ/٢٠١٥م، في مجلد واحد يقع في ٤٣٤ صفحة. فكلام الشيخ دقيق، والفارق فقط أن العنوان بصيغة الجمع «آثار» لا «أثر».</div>
+        </div>
+      </div>
+
+      <h4>مراحل التعامل الاستشراقي مع النص</h4>
+      <div class="flow">
+        <div class="step"><div class="sn" style="background:var(--ax3)">١</div><div><div class="sh" style="color:var(--ax3)">الإخراج والتحقيق</div><div class="sb">إخراج كتب ومخطوطات في علوم القرآن لم تكن معروفة أو محقَّقة.</div></div></div>
+        <div class="step"><div class="sn" style="background:var(--ax3)">٢</div><div><div class="sh" style="color:var(--ax3)">الاستقصاء والدراسة</div><div class="sb">استقصاء ودراسة تفصيلية جداً للمادة.</div></div></div>
+        <div class="step"><div class="sn" style="background:var(--ax3)">٣</div><div><div class="sh" style="color:var(--ax3)">النقد التشكيكي</div><div class="sb">وهي المرحلة التي تظهر فيها الغاية الحقيقية: النقد المفضي إلى التشكيك.</div></div></div>
+      </div>
+
+      <div class="box ex">
+        <div class="box-t">📘 كتاب لرصد اتجاهات التفسير المعاصرة</div>
+        <p><strong>«اتجاهات التفسير في القرن الرابع عشر الهجري»</strong> لفهد الرومي، في ثلاث مجلدات. درس فيه اتجاهات التفسير الموجودة سواء عند الشيعة أو الإباضية أو المفكرين العرب. ووصفه الشيخ بأنه مفيد في هذا الباب، يعطي نبذة واسعة عن المدارس التفسيرية.</p>
+      </div>
+
+      <h4>تحدٍّ قادم: «التفسير النسوي»</h4>
+      <p>نبّه الشيخ إلى حملة في القراءة التفسيرية المنحرفة <strong>لم تظهر بعد على الساحة بشكل كامل</strong>، لكنها من التحديات الكبيرة: <strong>التفسير النسوي للقرآن الكريم</strong>.</p>
+
+      <div class="box def">
+        <div class="box-t">🧩 منطلَق هذه الدعوى</div>
+        <p>الانطلاق من الدعوى التالية: أن علماء المسلمين المفسّرين كانوا ينطلقون من <em>نظرة ذكورية</em> في تفسير القرآن الكريم، وبناءً على ذلك يجب أن نعيد قراءة القرآن وأن نعيد تفسيره بنظرة نسوية.</p>
+      </div>
+
+      <div class="box warn">
+        <div class="box-t">⚠️ ما قاله الشيخ بدقة — وما لم يقله</div>
+        <p>قال الشيخ إن هذا الاتجاه موجود الآن <strong>«ولكن بشكل مشاريع متفرقة»</strong>، وصرّح بأنه <em>«لا أعرف كتاباً أُلّف في تفسير القرآن بهذه الطريقة»</em> — لكنه توقّع أنه <strong>لا بدّ أن يظهر</strong>. فينبغي ألا يُنسب إليه الجزم بوجود تفسير كامل مؤلَّف على هذا المنهج. ونبّه أن على النساء والرجال معاً الاهتمام بهذه القضية.</p>
+      </div>
+
+      <h4>القاعدة الكبرى التي ختم بها الشيخ هذا العنصر</h4>
+      <p>قال الشيخ: «ركّزوا معي في هذه النقطة التي سأقولها الآن»…</p>
+
+      <div class="box key">
+        <div class="box-t">🔑 مبحث جديد يجب أن يُضاف لكل علم شرعي</div>
+        <p>كل العلوم الشرعية التراثية — كل العلوم الإسلامية — نحتاج أن نضيف إليها <strong>مبحثاً جديداً في بداية تدريسها</strong>، وهو:</p>
+        <p style="margin-top:8px;font-size:19px;font-weight:700;color:var(--ax3)">تثبيت صحة هذا العلم: الأدلة المثبتة لصحته، والمبرزة لأهميته وواقعيته وموضوعيته.</p>
+        <p style="margin-top:8px">وليس معنى ذلك أنه غير موجود في الكتب الشرعية القديمة — بل هو موجود، <strong>ولكنه متفرّق</strong>؛ ونحتاج الآن أن نجمعه ونزيد عليه ونؤكّد عليه.</p>
+      </div>
+
+      <h4>ولماذا صار هذا المبحث ضرورياً؟</h4>
+      <p>لأن المنازعة اليوم <strong>ليست في كيف نفسّر القرآن</strong>، ولا في بعض الآيات أو ألفاظ معينة، وإنما المنازعة في <strong>أصل منهجية التفسير</strong> — بل في ما هو أعمق من ذلك:</p>
+
+      <div class="box quote">
+        <div class="box-t">جوهر المنازعة اليوم</div>
+        هل يوجد تفسير صحيح للقرآن أصلاً؟ أم لا يمكن الوصول إلى تفسير صحيح، وإنما تكون «الصحة» بقدر عدد من يفسّر؟
+      </div>
+
+      <div class="box def">
+        <div class="box-t">🧩 أطروحة «تعدد القراءات»</div>
+        <p>من أبرز الأطروحات المطروحة اليوم: <strong>تعدّد القراءات — أي التفسيرات — بعدد القرّاء</strong>؛ فمعاني القرآن تتعدّد بتعدّد قارئيه.</p>
+        <p style="margin-top:8px">ويربطها الشيخ بجذرها الفلسفي فيقول: هذه جزءٌ أصلاً من <strong>فلسفة وثقافة ما بعد الحداثة</strong> التي تقول: لا حقيقة، ولا مركزية، ولا منهجية، ولا حتى عقل مركزي معين يمكن أن يُتحاكم إليه.</p>
+      </div>
+
+      <p><strong>والنتيجة العملية:</strong> أصول التفسير لا نكتفي فيه بقواعد أصول التفسير وأنواع التفسير فحسب، وإنما يجب أن نزيد عليه <strong>القواعد والأدلة التي تُثبت صحة هذا العلم</strong>. ووصف الشيخ هذه القاعدة بأنها «في غاية الأهمية».</p>
+
+      <div class="box take">
+        <div class="box-t">✦ خلاصة العنصر السادس</div>
+        <ul>
+          <li>الفرق جذري بين <strong>تأويلات خاطئة قديمة</strong> رُدّ عليها بالأدلة، و<strong>تيار معاصر</strong> لا يعترف أصلاً بالقرآن وحياً.</li>
+          <li>أعلامٌ متفاوتون: <strong>أركون</strong> (الأشدّ) — <strong>الشرفي</strong> — <strong>الجابري</strong> (أخفّ، ورُدّ عليه بكتاب مستقل).</li>
+          <li>أدواتهم <strong>مستعارة من الاستشراق</strong> لا نابعة من عقل مجرّد؛ ولذلك يعترض الشيخ على تسميتهم «المدرسة العقلية».</li>
+          <li>الاستشراق مرّ بثلاث مراحل: <strong>إخراج وتحقيق → استقصاء ودراسة → نقد تشكيكي</strong>.</li>
+          <li>تحدٍّ قادم: <strong>التفسير النسوي</strong>، ما زال مشاريع متفرقة لا كتاباً مؤلَّفاً.</li>
+          <li>القاعدة الكبرى: <strong>كل علم شرعي يحتاج مبحثاً افتتاحياً في تثبيت صحته وأهميته</strong>، لأن المنازعة انتقلت من فروع العلم إلى أصل وجوده.</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= المحور الرابع ================= -->
+  <div class="ax4" id="axis4">
+    <div class="axis-head a4">
+      <span class="num">المحور الرابع</span>
+      <h2>التفسير عملياً: الكتب، وطريقة القراءة، والخطة</h2>
+      <p>العناصر ٧ – ٩: جولة في أهم كتب التفسير، ثم طريقتان لقراءتها، ثم خطة منهجية مرتّبة من البداية إلى مشروع العمر.</p>
+    </div>
+
+    <section class="el" id="e7">
+      <div class="el-title"><div class="idx">٧</div><h3>التعريف بأهم كتب التفسير</h3></div>
+
+      <div class="box warn">
+        <div class="box-t">⚠️ تحفّظ صريح من الشيخ</div>
+        <p>التعريف بكتب التفسير <strong>يستدعي محاضرات لا محاضرة واحدة</strong>، ولا يمكن أبداً أن نلخّص في عنصر واحد كتبَ التفسير ولا حتى أهمّها. لكن — كما قال — <em>«إذا ما استطعنا أن ندرك الشيء تاماً فلا بأس أن ندركه ولو بصورة من الصور»</em>.</p>
+      </div>
+
+      <h4>أولاً: أين نجد التعريف بكتب التفسير؟ تخصص «مناهج المفسرين»</h4>
+      <p>كما أن عندنا «مناهج المحدّثين»، يوجد تخصص اسمه <strong>مناهج المفسرين</strong>، وتوجد كتب بهذا العنوان أو بعنوان «مناهج التفسير». وميزة هذه الكتب أنها <strong>تعرّفك بأبرز كتب التفسير: من هو المؤلف، وما منهجه، وما طريقته في التفسير</strong>؛ وهي مرجع جيد ينبغي أن يكون في مكتبة طالب العلم.</p>
+
+      <div class="books">
+        <div class="book">
+          <span class="tag">مناهج</span>
+          <div class="bt">مناهج المفسرين</div>
+          <div class="ba">منيع عبد الحليم محمود</div>
+          <div class="bd"><p>مفيد في هذا الباب، ويعطي لمحة جيدة.</p></div>
+        </div>
+        <div class="book">
+          <span class="tag">الأشهر</span>
+          <div class="bt">التفسير والمفسّرون</div>
+          <div class="ba">محمد حسين الذهبي</div>
+          <div class="bd"><p>أشهر كتاب في العصر الحالي في هذه القضية.</p></div>
+        </div>
+        <div class="book">
+          <span class="tag">بنفس العنوان</span>
+          <div class="bt">التفسير والمفسّرون</div>
+          <div class="ba">د. فضل عباس</div>
+          <div class="bd"><p>كتاب جميل بنفس العنوان، ذكره الشيخ إلى جانب كتاب الذهبي.</p></div>
+        </div>
+      </div>
+
+      <div class="box corr">
+        <div class="box-t">🔎 تنبيه على التباس في الأسماء</div>
+        <p>نبّه الشيخ في المجلس نفسه إلى هذا الالتباس فقال: «كتاب الذهبي — الذي هو الذهبي ليس المؤرّخ». وتوضيحه:</p>
+        <div class="pair">
+          <div class="cell"><b>محمد حسين الذهبي</b>معاصر، صاحب كتاب <strong>«التفسير والمفسرون»</strong> — وهو المقصود هنا.</div>
+          <div class="cell"><b>شمس الدين الذهبي</b>الحافظ المؤرخ (ت ٧٤٨هـ)، صاحب <strong>«سير أعلام النبلاء»</strong> — وسيأتي ذكره لاحقاً في سياق المقارنة بين الجمع والنقد.</div>
+        </div>
+      </div>
+
+      <h4>١) تفسير الطبري — إمام المفسرين</h4>
+
+      <div class="box quote">
+        <div class="box-t">شهادة في تفسير الطبري</div>
+        هو مدرسة علمية متكاملة في التفسير، وقارئه ومدمن دراسته ومدارسته يكتسب ملكة في التفسير لا يكاد يغنيه عنه غيره من الكتب المطوّلة.
+        <span class="src">أ.د. عبد الرحمن بن معاضة الشهري، مدير مركز تفسير — وعلّق الشيخ: «وأنا أبصم على هذا الكلام»</span>
+      </div>
+
+      <p>وأشار الشيخ إلى المفارقة اللطيفة: الطبري قدّم كتابه <strong>بوصفه مختصراً</strong> — حين فترت الهمم — <em>وهو اليوم مطبوع في نحو ٢٤ إلى ٢٥ مجلداً</em>.</p>
+      <p>ثم قال عن تجربته الشخصية معه: <strong>عظيم جداً؛ لا تغادر الآية التي تقرأها إلا وقد فهمتها وعرفت أقوال أئمة المسلمين قبل الطبري فيها</strong>؛ فهو لا يترك قولاً لابن عباس أو لمجاهد أو لقتادة أو للحسن البصري في آية إلا وأتى به بإسناده: «حدثنا فلان، قال حدثنا فلان، قال حدثنا فلان، عن ابن عباس كذا».</p>
+
+      <div class="box warn">
+        <div class="box-t">⚠️ خطأ شائع في تصنيف الطبري</div>
+        <p>من أبرز تقسيمات كتب التفسير: <strong>تفسير بالمأثور</strong> و<strong>تفسير بالرأي</strong>. وكثير من طلاب العلم — وهو موجود في بعض الكتب — يصنّفون تفسير الطبري على أنه تفسير بالمأثور فقط، <strong>ويغفلون التفسير بالرأي الذي فيه</strong>.</p>
+        <p style="margin-top:8px">والتفسير بالرأي قسمان: <em>محمود</em> و<em>مذموم</em>، والكلام هنا عن المحمود. والصواب أن الإمام الطبري في تفسيره <strong>جمع بين التفسير بالمأثور والتفسير بالرأي</strong> — أو قل: جمع بين المنقول وبين ما كتبه هو وما قدّمه هو في تفسير الآية من صياغته.</p>
+      </div>
+
+      <h4>طريقة الطبري بالتفصيل</h4>
+      <div class="flow">
+        <div class="step"><div class="sn">١</div><div><div class="sh">يفتتح بالعبارة المميزة</div><div class="sb">يأتي بالآية فيقول: <strong>«القول في تأويل قول الله تعالى كذا»</strong>. وتنبيه مهم: كلمة <em>تأويل</em> عند الطبري في كل تفسيره معناها <strong>تفسير</strong>.</div></div></div>
+        <div class="step"><div class="sn">٢</div><div><div class="sh">يفصّل جمل الآية</div><div class="sb">فإذا كانت الآية مكوّنة من جمل متنوعة، وفي بعضها خلاف في الألفاظ أو تحتاج بياناً، يقول: «وأما معنى هذه الكلمة فكذا».</div></div></div>
+        <div class="step"><div class="sn">٣</div><div><div class="sh">يسوق الموافقين بأسانيدهم</div><div class="sb">«وإلى مثل ما ذهبنا ذهب أهل التأويل: حدثنا فلان قال حدثنا فلان»… ويأتي بما قد يبلغ خمسة أسانيد لعلماء أيّدوه في تفسير هذه الكلمة.</div></div></div>
+        <div class="step"><div class="sn">٤</div><div><div class="sh">ثم يسوق المخالفين بأسانيدهم</div><div class="sb">«ومنهم من قال…» ويأتي بخلاف قوله: حدثنا فلان، حدثنا فلان — خمسة أسانيد أخرى لأقوال علماء خالفوه في تفسير الكلمة.</div></div></div>
+        <div class="step"><div class="sn">٥</div><div><div class="sh">ثم يرجّح ويعلّل</div><div class="sb">«وأولى القولين بالصواب هو ما ذكرتُه في البداية، لأنه كذا وكذا وكذا».</div></div></div>
+        <div class="step"><div class="sn">٦</div><div><div class="sh">ثم ينتقل للكلمة التالية</div><div class="sb">ويمشي على هذا النسق في الآية. فبعض الآيات يفسّرها تفسيراً طويلاً جداً، وبعضها لا يكون فيها خلاف في مفرداتها فيفسّرها تفسيراً مجملاً.</div></div></div>
+      </div>
+
+      <h4>نموذج من صياغة الطبري نفسه</h4>
+      <p>قرأ الشيخ نموذجاً ليُري الحاضرين أن الطبري ليس ناقلاً فحسب، بل صائغ للمعنى بأسلوبه — حتى ليقول القارئ: «هل هذا معاصر؟» من طريقة التسهيل. والآية هي قوله تعالى:</p>
+
+      <div class="ayah">﴿وَإِذَا مَسَّ الْإِنسَانَ الضُّرُّ دَعَانَا لِجَنبِهِ أَوْ قَاعِدًا أَوْ قَائِمًا فَلَمَّا كَشَفْنَا عَنْهُ ضُرَّهُ مَرَّ كَأَن لَّمْ يَدْعُنَا إِلَىٰ ضُرٍّ مَّسَّهُ ۚ كَذَٰلِكَ زُيِّنَ لِلْمُسْرِفِينَ مَا كَانُوا يَعْمَلُونَ﴾</div>
+
+      <div class="box quote">
+        <div class="box-t">تفسير الطبري للآية كما قرأه الشيخ</div>
+        وإذا أصاب الإنسانَ الشدةُ والجهدُ، دعانا لجنبه — يقول: استغاث بنا في كشف ذلك عنه — لجنبه، يعني مضطجعاً لجنبه، أو قاعداً أو قائماً، بالحال التي يكون بها عند نزول ذلك الضرّ به. فلما كشفنا عنه ضرّه — يقول: فلما فرّجنا عنه الجهد الذي أصابه — مرّ كأن لم يدعنا إلى ضرّ، على طريقته الأولى قبل أن يصيبه الضرّ، ونسي ما كان فيه من الجهد والبلاء أو تناساه، وترك الشكر لربه الذي فرّج عنه ما كان قد نزل به من البلاء حين استعاذ به، وعاد للشرك ودعوةِ الآلهة والأوثانِ أرباباً معه. يقول تعالى ذكره: كذلك زُيّن للمسرفين ما كانوا يعملون — يقول: كما زُيّن لهذا الإنسان الذي وصفنا صفته استمرارُه على كفره بعد كشف الله عنه ما كان فيه من الضرّ، كذلك زُيّن للذين أسرفوا في الكذب على الله وعلى أنبيائه، فتجاوزوا في القول فيهم إلى غير ما أذن الله لهم به، ما كانوا يعملون من معاصي الله.
+        <span class="src">نموذج ساقه الشيخ للتدليل على صياغة الطبري بكلامه هو لمعنى الآية</span>
+      </div>
+
+      <p><strong>وخلاصة حكم الشيخ:</strong> تفسير الطبري باختصار <em>لا يُستغنى عنه، ولا تقل لي إنه يوجد كتاب آخر في التفسير يغني عنه</em>؛ فهو تفسير متقدّم ومهم في غاية الأهمية والنفاسة.</p>
+
+      <div class="box corr">
+        <div class="box-t">🔎 توضيح بشأن الطبعة</div>
+        <div class="pair">
+          <div class="cell"><b>ما ذكره الشيخ</b>«من أفضل الطبعات: طبعة عالم الكتب، تحقيق عبد الله التركي».</div>
+          <div class="cell"><b>التفصيل بعد التحقق</b>التحقيق صحيح النسبة للدكتور <strong>عبد الله بن عبد المحسن التركي</strong>، لكن <strong>الطبعة الأولى صدرت عن دار هجر</strong> (١٤٢٢هـ/٢٠٠١م) في ٢٦ مجلداً (٢٤ ومجلدان فهارس)، بالتعاون مع مركز البحوث والدراسات الإسلامية بدار هجر. ثم <strong>أُعيد نشرها تصويراً عن دار عالم الكتب بالرياض وغيرها</strong> — فكلام الشيخ صحيح باعتبار الطبعة المتداولة، والأصل دار هجر.</div>
+        </div>
+      </div>
+
+      <div class="box key">
+        <div class="box-t">🔑 قاعدة عملية: اهتمّوا بالطبعات</div>
+        <p>وقف الشيخ وقفة مهمة: نحن طلاب علم نريد أن نبني العلم الشرعي والفكر — <strong>فاهتمّوا بالطبعات</strong>. لا نذهب فنشتري أيّ كتاب بأي طبعة؛ خاصة <strong>الكتب المرجعية الأساسية</strong>، لا بد أن تكون طبعات معيّنة، لأنها <em>متعوب عليها في التحقيق وإخراج النص بشكل جيد</em> — لا لأنها «ألوان أحمر وأسود».</p>
+      </div>
+
+      <h4>مسألة عرضت في المجلس: الإسرائيليات</h4>
+      <p>سُئل الشيخ: بعض العلماء قال إن في تفسير الطبري بعض الإسرائيليات، هل هذا صحيح؟ فأجاب: الإسرائيليات موجودة في كثير من كتب التفسير، من باب «لا تصدّقوا أهل الكتاب ولا تكذّبوهم» — <strong>لكن تفسير الطبري من الكتب القليل فيها الإسرائيليات</strong>. والمفسرون في هذا مُقِلّ ومُستكثِر، وبعضهم ينقل بدون نقد وبعضهم ينقل بنقد.</p>
+
+      <div class="box def">
+        <div class="box-t">📖 معنى «النقد» هنا</div>
+        <p>نبّه الشيخ: <strong>النقد ليس معناه الردّ، النقد معناه الفحص</strong>.</p>
+      </div>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>نوع الإسرائيليات</th><th>الحكم</th><th>البيان</th></tr></thead>
+          <tbody>
+            <tr><td><strong>الموافقة</strong> للشرع</td><td>لا إشكال في روايتها</td><td>وإن كنا لا نحتاجها، لأن الشرع أثبتها.</td></tr>
+            <tr><td><strong>المخالفة</strong> للكتاب أو السنة</td><td><strong>مردودة جملة وتفصيلاً</strong></td><td>«أي شيء عن الإسرائيليات فيه معارضة للكتاب أو للسنة مردود مباشرة، ما في نقاش».</td></tr>
+            <tr><td><strong>لا موافقة ولا معارضة</strong></td><td>لا تُصدَّق ولا تُكذَّب</td><td>لا نستطيع أن نبني عليها علماً، ولا نقول إنها كذب؛ قد تكون صحيحة، قد تكون من الوحي الصحيح، ما نعلم — طالما لم تُؤيَّد من الشرع ولم تُعارَض.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box ex">
+        <div class="box-t">🔍 مثال ذكره الشيخ</div>
+        <p>الاستئناس بالإسرائيليات كأن يقال في أهل الكهف: «ثلاثة رابعهم كلبهم» ما كانت أسماؤهم؟ — فهذه إسرائيليات <strong>لا تُصدَّق ولا تُكذَّب</strong>.</p>
+      </div>
+
+      <h4>٢) تفسير القرطبي — الجامع لأحكام القرآن</h4>
+
+      <div class="box quote">
+        <div class="box-t">شهادة في تفسير القرطبي</div>
+        من أعمدة كتب التفسير التي ينبغي للباحث أن يقرأها قراءة فاحصة، وأن يعوّد طالب العلم نفسه أن يصبر ويجتهد في ختم هذا الكتاب دراسةً وقراءةً ومراجعةً وتفقّهاً، فإنه سوف يتخرّج به في علم التفسير؛ وقد تعب القرطبي تعباً شديداً في جمع هذا الكتاب وتحريره.
+        <span class="src">أ.د. عبد الرحمن الشهري، مدير مركز تفسير</span>
+      </div>
+
+      <p>وأبرز ما اعتنى به القرطبي في تفسيره هو <strong>الأحكام</strong>؛ ولذلك فهو من مصادر التفسيرات الفقهية للقرآن، واسم الكتاب نفسه: <strong>الجامع لأحكام القرآن</strong>.</p>
+
+      <div class="box def">
+        <div class="box-t">📖 لكنّه ليس ككتب «أحكام القرآن» المفرَدة</div>
+        <p>كتب أحكام القرآن المفردة لا تفسّر إلا آيات الأحكام أو تهتم بها فقط. أما القرطبي فطريقته: يأتي بالآية فيقول «تفسير هذه الآية في مسائل»، ثم:</p>
+        <ul style="margin-top:8px;margin-bottom:0">
+          <li><strong>المسألة الأولى:</strong> مسألة لغوية.</li>
+          <li><strong>المسألة الثانية:</strong> مسألة في القراءات.</li>
+          <li><strong>المسألة الثالثة:</strong> مسألة في الأحكام الفقهية.</li>
+          <li><strong>المسألة الرابعة:</strong> حلّ الإشكال بين هذه الآية وآية أخرى.</li>
+          <li>وهكذا حتى <strong>يستوعب</strong>.</li>
+        </ul>
+      </div>
+      <p><strong>الطبعة:</strong> للقرطبي طبعات متعددة، ومن الجيدة <strong>طبعة مؤسسة الرسالة</strong>.</p>
+
+      <h4>٣) تفسير ابن كثير</h4>
+      <p>من كتب التفسير التي شاعت وذاعت بين المسلمين، <em>وهو كتاب يستحق أن يشيع ويذيع</em>. ويصفه الشيخ بأنه <strong>وسط بين الطبري وبين القرطبي</strong>.</p>
+
+      <div class="box key">
+        <div class="box-t">🔑 مزايا ابن كثير</div>
+        <ul>
+          <li>اهتمّ بذكر أقوال أئمة التفسير من الصحابة والتابعين <strong>مثل الطبري، لكن بدون أسانيد ومع تلخيص</strong>. فهو من مصادر معرفة تفسير الصحابة والتابعين: الطبري بشكل أوسع، وابن كثير بشكل أخصر.</li>
+          <li>اعتنى بـ<strong>تفسير القرآن بالقرآن</strong>.</li>
+          <li>اعتنى بصورة أكبر بـ<strong>تفسير القرآن بالسنة</strong>: فلا يكاد يوجد حديث له ارتباط بالآية بأي صورة من صور الارتباط إلا وتجده عنده — لا الذي يفسّر الآية فحسب.</li>
+          <li><strong>إمام ناقد</strong>، ليس من العلماء الذين يجمعون الروايات دون نقد وتحرير؛ هو فاحص.</li>
+          <li><strong>ليس محشوّاً بالإسرائيليات</strong>.</li>
+          <li><strong>لم يتبنَّ منظومة عقدية مُشكِلة</strong> في التفسير، وإنما تبنّى عقيدة صحيحة — ولذلك يُعتبر مرجعاً مركزياً.</li>
+        </ul>
+      </div>
+
+      <div class="box ex">
+        <div class="box-t">🔍 مقارنة استطرادية: الجامع والناقد</div>
+        <p>ضرب الشيخ مثالاً للفرق بين مجرّد الجمع وبين الجمع مع النقد: ما الفرق بين <strong>«سير أعلام النبلاء» للذهبي</strong> وبين <strong>«حلية الأولياء» لأبي نعيم الأصبهاني</strong>؟ من أبرز ما يميّز السير هو <strong>ظهور قيمة الذهبي ليس كجامع فقط، بل كجامع وناقد</strong> — ولذلك صار «سير أعلام النبلاء» من أجمل كتب المسلمين في التاريخ والتراجم عموماً.</p>
+      </div>
+
+      <div class="box corr">
+        <div class="box-t">🔎 توضيح الصلة بين ابن كثير والمزّي</div>
+        <p>دار في المجلس حوار متقطع عن صلة القرابة، جاء في التفريغ مضطرباً («أبو زوجة»، «عم حماه»، «لازم أم حماه»…). والتوضيح:</p>
+        <div class="pair">
+          <div class="cell"><b>الصحيح</b>الإمام <strong>جمال الدين المزّي</strong> صاحب «تهذيب الكمال» هو <strong>حَمُو ابن كثير</strong>، أي والدُ زوجته؛ فابن كثير تزوّج ابنة الحافظ المزّي ولازمه وتخرّج به.</div>
+        </div>
+      </div>
+
+      <p>ونقل الشيخ أنه يعرف أحد المشايخ الكرام <strong>يقرأ تفسير ابن كثير كل سنة مرة</strong>. ووصفه بأنه كتاب ممتع مليء بالعلوم، ومن يعرف في الحديث والأسانيد يستمتع به أكثر لأنه يذكر أيضاً أسانيد الأحاديث.</p>
+
+      <div class="box ex">
+        <div class="box-t">📗 الطبعات وتحفّظ على المختصرات</div>
+        <p><strong>الطبعات الجيدة:</strong> طبعة <strong>دار ابن الجوزي</strong> بتحقيق <strong>حكمت بشير ياسين</strong>، وطبعة <strong>دار طيبة</strong> — «وهاتان الطبعتان جيدتان». ويقع في نحو ستة مجلدات كبار بحسب الطبعة، فهو تفسير متوسط لا مختصر ولا مطوّل.</p>
+        <p style="margin-top:8px"><strong>وسُئل الشيخ:</strong> هل المقصود المختصر؟ فأجاب: <em>لا لا؛ لابن كثير مختصرات كثيرة</em> — والمقصود الأصل لا المختصر.</p>
+      </div>
+
+      <div class="box corr">
+        <div class="box-t">🔎 اسم مُحقِّق ورد مشوّشاً في التفريغ</div>
+        <div class="pair">
+          <div class="cell"><b>ما ورد صوتياً</b>«طبعة دار طيبة تحقيق ياسر السلام».</div>
+          <div class="cell"><b>الصحيح المشهور</b>محقّق طبعة <strong>دار طيبة</strong> لتفسير ابن كثير هو <strong>سامي بن محمد سلامة</strong>. والغالب أن «ياسر السلام» تحريف صوتي عن «سامي سلامة».</div>
+        </div>
+      </div>
+
+      <h4>٤) الكشّاف للزمخشري</h4>
+      <p>أول ما يُذكر «الكشاف» يأتي في البال: <strong>الاعتزال</strong>. وأقرّ الشيخ ذلك: نعم، الزمخشري معتزلي وتفسيره فيه اعتزال. لكنه بنى على ذلك قاعدة منهجية مهمة:</p>
+
+      <div class="box key">
+        <div class="box-t">🔑 قاعدة: لا تحرم نفسك من العلم بسبب خطأ في الكتاب</div>
+        <p>من العقبات التي قد يحرم بها الإنسان نفسه من شيء من العلم المهم: <strong>ألّا يقرأ الكتاب إذا كان فيه بعض الأخطاء</strong>.</p>
+        <p style="margin-top:8px">ويحكي الشيخ مشكلته العملية: يوصي بكتاب، فيأتيه من يقول: في صفحة كذا خطأ عقدي! فيردّ: <em>ومن قال لك إنني إذا وصّيتك بالكتاب فمعناه أنه ما فيه أخطاء؟</em></p>
+        <p style="margin-top:8px">والقاعدة الكلية التي يوصي بها — <strong>لا منه ولا من غيره</strong>: لا تستمع من أحد ولا تقرأ لأحد وأنت تأخذ ما فيه «نسخ ولصق» على الذهن والاعتقاد. احرص على أن تفهم العلم وعلى الدليل، ولا تكن مقلّداً في كل شيء.</p>
+      </div>
+
+      <div class="box warn">
+        <div class="box-t">⚠️ لكن متى يُقرأ الكشاف؟</div>
+        <p>سُئل الشيخ: هل يصح أن يكون الكشاف في البداية؟ فأجاب بوضوح: <strong>لا</strong>، والإنسان لا يعرف شيئاً في الاعتقاد — <em>ما يصير</em>. لكن ليس معنى ذلك أنه ممنوع مطلقاً؛ فبعد أن تدرس وتؤصّل وتعرف الاعتقاد الصحيح والقواعد المنهجية، <strong>خذ الكشاف واستفد منه</strong>، ففيه إشارات ولطائف منهجية ممتازة ومهمة.</p>
+      </div>
+
+      <p><strong>وقيمته الأصلية:</strong> لم يمرّ على كتب التفسير كتاب اعتنى بالبلاغة وأبرزها مثله؛ فهو <strong>المرجع الأساسي في البلاغة</strong>، و<em>لا يكاد يوجد مفسّر جاء بعد الزمخشري إلا استفاد منه من الناحية البلاغية</em>. وهو كتاب متوسط في نحو أربع مجلدات بحسب الطبعة.</p>
+      <div class="box ex">
+        <div class="box-t">📝 موضع نقص صرّح به الشيخ</div>
+        <p>لم يستطع الشيخ تذكّر دار النشر الأفضل للكشاف، فقال: «نسيت والله ما هي الدار». فيُترك الموضع كما هو <strong>دون تخمين</strong>.</p>
+      </div>
+
+      <h4>٥) التحرير والتنوير — الطاهر بن عاشور</h4>
+      <p>مهّد له الشيخ بعبارة: <strong>«ترك الأول للآخِر»</strong>. فالتفسير من أكثر العلوم الإسلامية عدداً في المؤلفات: من الحنابلة والمالكية والشافعية والحنفية، ومن مختلف المذاهب والطبقات الزمنية والأماكن — حتى تقول: هل بقي أحدٌ يمكن أن يأتي بكتاب تفسير جديد؟</p>
+      <p>ثم يقول: <em>لما جاء الطاهر بن عاشور بـ«التحرير والتنوير» تقول: كم ترك الأولُ للآخر! وليس لك إلا أن ترفع الراية معترفاً بالإبداع والفضل</em>.</p>
+
+      <div class="box key">
+        <div class="box-t">🔑 وصف الكتاب</div>
+        <p>سمع الشيخ أنه كتبه في <strong>٣٩ سنة</strong> — قرابة نصف قرن. ويقول عنه: ماذا تقول فيه؟ <strong>لا تستطيع أن تقول إنه يتميّز بشيء على حساب شيء آخر</strong>؛ فهو يمسك بالآية فلا يغادرك وأنت تقرأ تفسيره لها إلا وقد فهمتها واستوعبتها، وعرفت <em>لماذا سِيقت هنا، وما علاقتها بما قبلها، وما وجوه البلاغة المتعلقة بها</em>. وأما الإعراب فلا يتتبّع إعراب كل الآيات، وإنما إذا كان فيه شيء مُشكِل.</p>
+      </div>
+
+      <div class="box warn">
+        <div class="box-t">⚠️ تحفّظ على وصف شائع، ومشكلة عملية</div>
+        <p><strong>الوصف الشائع:</strong> أنه اهتمّ باللغة أكثر من غيره. ويعلّق الشيخ: <em>قد لا يكون هذا الوصف دقيقاً</em>؛ نعم اهتمّ باللغة والبلاغة كثيراً، ولكنه حاول أن يأتي بمختلف العلوم المتعلقة بالآية.</p>
+        <p style="margin-top:8px"><strong>المشكلة:</strong> فيه صعوبة نوعاً ما؛ فالمبتدئ الذي لم يمارس لغة العلم كثيراً قد يجد صعوبة في بعض المواضع.</p>
+      </div>
+
+      <div class="box quote">
+        <div class="box-t">تجربة الشيخ الشخصية</div>
+        لمّا أريد أن أبحث في تفسير آية أبحث في الطبري، وفي ابن كثير، وفي القرطبي — وهذه أبرز الكتب التي أرجع لها — وأحياناً أشعر أنه بقي شيء، فأجد الشفاء عند ابن عاشور.
+      </div>
+
+      <div class="box key">
+        <div class="box-t">🔑 فائدة عامة ختم بها الشيخ الكلام على ابن عاشور</div>
+        <p>يصلح أن يكون <strong>مشروع قراءة عمر</strong>؛ لأنك حين تقرأ في تفسير القرآن <em>أنت لا تقرأ في علم واحد، وإنما تقرأ بعدد موضوعات القرآن</em>: تقرأ في العقيدة، وفي السيرة، وإلى آخره.</p>
+      </div>
+
+      <div class="box ex">
+        <div class="box-t">📝 كتب تجاوزها الشيخ عمداً</div>
+        <p>صرّح بأنه كان في باله الحديث سريعاً عن <strong>أحكام القرآن لابن العربي</strong>، ولمحات سريعة عن <strong>تفسير النسفي</strong> و<strong>ابن عطية</strong> — لكنه تجاوزها ليصل إلى ابن عاشور. فهذه الكتب <strong>لم تُشرح في المحاضرة</strong>، وذُكرت أسماؤها فقط.</p>
+      </div>
+
+      <h4>سادساً: التفاسير المختصرة</h4>
+      <div class="books">
+        <div class="book">
+          <span class="tag">للبداية</span>
+          <div class="bt">المختصر في التفسير</div>
+          <div class="ba">لجنة علمية — مركز تفسير</div>
+          <div class="bd"><p>من أشدّ الكتب اختصاراً وأسهلها للبداية. مُيّز بأنه <strong>فسّر كل آية في القرآن</strong> بصياغة جيدة واضحة، ومطبوع مع المصحف بأحجام كبيرة ومتوسطة وصغيرة، وقد تُرجم إلى لغات وانتشر في العالم. وأحياناً يذكر الفوائد من الآيات — وإن كان ذلك قليلاً. <strong>ينصح به الشيخ في البداية.</strong></p></div>
+        </div>
+        <div class="book">
+          <span class="tag">مكمّل</span>
+          <div class="bt">تيسير الكريم الرحمن (تفسير السعدي)</div>
+          <div class="ba">الشيخ عبد الرحمن بن ناصر السعدي</div>
+          <div class="bd"><p>لم يعتنِ ببيان الألفاظ لفظاً لفظاً، وإنما يحاول أن <strong>يصوغ جُملاً مناسبة في مقاصد الآية وظلالها</strong>. كتاب جيد ومكمّل للمختصر في التفسير.</p></div>
+        </div>
+        <div class="book">
+          <span class="tag">مختصر</span>
+          <div class="bt">التفسير الميسّر</div>
+          <div class="ba">مجمع طباعة المصحف الشريف بالمدينة</div>
+          <div class="bd"><p>صدر قبل «المختصر في التفسير»، وهو قريب منه وجيد أيضاً. ويقول الشيخ: <strong>هذان الاثنان يُغنيان عن غيرهما</strong>.</p></div>
+        </div>
+        <div class="book">
+          <span class="tag">مشهورة</span>
+          <div class="bt">الجلالين · الوجيز للواحدي · تفسير ابن جُزَيّ</div>
+          <div class="ba">تفاسير مختصرة شائعة</div>
+          <div class="bd"><p>كلها تقريباً متقاربة. وخصّ الشيخ <strong>تفسير ابن جُزَيّ</strong> بأنه من المختصرات <em>المتينة والجيدة جداً</em>.</p></div>
+        </div>
+      </div>
+
+      <div class="box corr">
+        <div class="box-t">🔎 التباس مهم: «التفسير الميسّر» — أيّهما؟</div>
+        <p>سأل أحد الحاضرين عن كتاب لعائض القرني، فقال الشيخ: <em>«ما اطّلعت عليه، اشتهر كثيراً… لكن أعتقد أن المختصر في التفسير أفضل بكثير، بحكم أنه من مركز متخصص ومن ناس متخصصين»</em>.</p>
+        <div class="pair">
+          <div class="cell"><b>احذر الخلط</b>هناك <strong>«التفسير الميسّر»</strong> الصادر عن <strong>مجمع الملك فهد لطباعة المصحف الشريف</strong> بالمدينة — وهو الذي أثنى عليه الشيخ. وهناك كتاب مشهور لعائض القرني بعنوان قريب منه — وهو الذي لم يطّلع عليه الشيخ ولم يرجّحه. فلا يُنسب ثناء الشيخ إلى غير موضعه.</div>
+        </div>
+      </div>
+
+      <div class="box take">
+        <div class="box-t">✦ خلاصة العنصر السابع</div>
+        <ul>
+          <li>تخصص <strong>مناهج المفسرين</strong> هو باب التعريف بكتب التفسير؛ وأشهر كتبه «التفسير والمفسرون» لمحمد حسين الذهبي (لا المؤرّخ).</li>
+          <li><strong>الطبري</strong>: إمام المفسرين، جمع بين المأثور والرأي المحمود، طريقته «القول في تأويل…» ثم الأقوال بالأسانيد ثم الترجيح.</li>
+          <li><strong>القرطبي</strong>: عمدة في الأحكام، طريقته تقسيم الآية إلى مسائل (لغوية، قراءات، فقهية، إشكالات).</li>
+          <li><strong>ابن كثير</strong>: وسط، ناقد لا جامع فحسب، مميّز في تفسير القرآن بالقرآن وبالسنة، قليل الإسرائيليات، سليم العقيدة.</li>
+          <li><strong>الكشاف</strong>: مرجع البلاغة، لكن لا يُقرأ إلا بعد التأصيل العقدي.</li>
+          <li><strong>ابن عاشور</strong>: «ترك الأول للآخر»، مشروع عمر، يستوعب الآية معنى وسياقاً وبلاغةً.</li>
+          <li><strong>الإسرائيليات</strong> ثلاثة أقسام: موافقة (لا إشكال) — مخالفة (مردودة) — لا هذا ولا ذاك (لا تُصدَّق ولا تُكذَّب).</li>
+          <li>قاعدتان عمليتان: <strong>اهتمّ بالطبعات</strong>، و<strong>لا تحرم نفسك من كتاب لأن فيه خطأ</strong> — بشرط التأصيل أولاً.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="el" id="e8">
+      <div class="el-title"><div class="idx">٨</div><h3>كيف نقرأ كتب التفسير؟</h3></div>
+
+      <p>لدينا <strong>طريقتان</strong>، وقرّر الشيخ من البداية: <em>كلا الطريقتين نحتاجهما معاً</em>.</p>
+
+      <h4>الطريقة الأولى: الطريقة البحثية</h4>
+      <p>نحتاجها لأننا كطلاب علم نحتاج أن نرجع إلى <strong>آيات معينة</strong> — لا أن نقرأ كتاباً كاملاً. والمفتاح هنا: <strong>لكل حاجة كتابها</strong>؛ فلا ترجع لكتاب واحد في كل شيء.</p>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>إذا أردتَ…</th><th>فارجع إلى</th><th>ملاحظة</th></tr></thead>
+          <tbody>
+            <tr><td>أقوال العلماء في الآية ومذاهبهم</td><td><strong>زاد المسير</strong> لابن الجوزي</td><td>يأتيك بالأقوال كموضوعات: «القول الأول، القول الثاني…» وقد ينسبها.</td></tr>
+            <tr><td>التحقيقات اللغوية والبلاغية</td><td><strong>الزمخشري</strong> — <strong>البحر المحيط</strong> لأبي حيان — <strong>ابن عاشور</strong></td><td>الزمخشري يعتني بالناحية البلاغية بشكل دقيق.</td></tr>
+            <tr><td>الأحكام الفقهية للآية</td><td>كتب <strong>أحكام القرآن</strong>: <strong>الجصّاص</strong> — <strong>ابن العربي المالكي</strong> — و<strong>القرطبي</strong></td><td>القرطبي متنوع؛ أما كتب أحكام القرآن المفردة فلا تفسّر كل القرآن بل <strong>آيات الأحكام</strong> فقط. ومن المعاصر: كتب «تفسير آيات الأحكام».</td></tr>
+            <tr><td>الأحاديث والآثار الواردة في الآية</td><td><strong>ابن كثير</strong></td><td>لجمعه ما يرتبط بالآية من الأحاديث.</td></tr>
+            <tr><td>الآثار عن الصحابة والتابعين</td><td><strong>الطبري</strong> — <strong>الدر المنثور</strong> للسيوطي — <strong>موسوعة التفسير المأثور</strong></td><td>الموسوعة عمل ضخم حديث الصدور.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="box corr">
+        <div class="box-t">🔎 توضيح: موسوعة التفسير المأثور</div>
+        <p>وردت في التفريغ بصيغة متقطعة وذُكرت معها كلمة «الشاطبي» دون وضوح. والتوضيح بعد التحقق:</p>
+        <div class="pair">
+          <div class="cell"><b>البيان الصحيح</b><strong>«موسوعة التفسير المأثور»</strong> من إعداد <strong>مركز الدراسات والمعلومات القرآنية بمعهد الإمام الشاطبي</strong>، بإشراف علمي من <strong>أ.د. مساعد بن سليمان الطيار</strong> ود. نوح بن يحيى الشهري، وصدرت عن <strong>دار ابن حزم</strong> سنة ١٤٣٩هـ/٢٠١٧م في <strong>٢٤ مجلداً</strong> — كأكبر جامع لأحاديث وآثار التفسير عن النبي ﷺ والسلف. فذكرُ «الشاطبي» في التسجيل إنما هو إشارة إلى معهد الإمام الشاطبي، لا إلى الإمام الشاطبي الأصولي.</div>
+        </div>
+      </div>
+
+      <h4>أدوات رقمية للطريقة البحثية</h4>
+      <div class="books">
+        <div class="book">
+          <span class="tag">موقع</span>
+          <div class="bt">المصحف الجامع</div>
+          <div class="bd">
+            <p>شرح الشيخ طريقته: تفتح المصحف أو تكتب في البحث، فتظهر لك الآية ومعها خيارات (تفسير، تلاوة…). تضغط على «التفسير» فيسألك: <strong>تريد كل التفاسير أم بعضها؟</strong> فتقول: كل التفاسير — فيضع الآية في صدر الصفحة، ثم قائمة طويلة تنزل فيها بالمؤشر حتى تنتهي: <strong>تفسير تفسير، كل التفاسير على الآية في موضع واحد</strong>.</p>
+            <p style="margin-top:8px">وفيه خيار <strong>ترتيب التفاسير تاريخياً</strong>: يبدأ معك من أقدم تفسير للآية حتى تصل إلى المعاصرين — وحتى كتب المعاصرين موجودة فيه. وقدّر الشيخ أنه قد يمرّ عليك قرابة <strong>٤٠ تفسيراً</strong> للآية الواحدة.</p>
+            <p style="margin-top:8px">ويقول: <em>«أنا أرجع له دائماً»</em>، مع ملاحظة أن الإنسان قد يحتاج أحياناً أن يرجع إلى الكتاب بعينه ليقرأ ما قبله وما بعده بصورة أوسع.</p>
+          </div>
+        </div>
+        <div class="book">
+          <span class="tag">تطبيق جوال</span>
+          <div class="bt">تطبيق «آيات» — جامعة الملك سعود</div>
+          <div class="bd"><p>يتيح خدمة مشابهة ولكن <strong>بصورة مختصرة</strong>: تضغط على الآية فيسألك: تريد تلاوة أم تفسيراً؟ وعنده عدد من التفاسير (الطبري، ابن عاشور…) وتلاوات. ووصفه الشيخ بأنه <strong>ممتاز جداً</strong>.</p>
+          <p style="margin-top:8px"><strong>تنبيه على الالتباس:</strong> ميّز الشيخ في المجلس بين تطبيقين متقاربَي الاسم — «<strong>آيات</strong>» و«<strong>آية</strong>» — والمقصود هنا <strong>«آيات» التابع لجامعة الملك سعود</strong>.</p></div>
+        </div>
+      </div>
+
+      <h4>الطريقة الثانية: الطريقة الشمولية</h4>
+      <p>وهي أن <strong>تقرأ كتاب تفسير كاملاً</strong>. وهذه — بشكل أدقّ — <em>تحتاج إلى المقدمات المتعلقة بأصول التفسير خاصة</em>. وهنا انتقل الشيخ مباشرة إلى العنصر الأخير، لأن تقسيم الكتب الشمولية هو مدخل الخطة المنهجية.</p>
+
+      <div class="box take">
+        <div class="box-t">✦ خلاصة العنصر الثامن</div>
+        <ul>
+          <li><strong>طريقتان لا واحدة</strong>: بحثية (آية معينة) وشمولية (كتاب كامل) — وكلاهما مطلوب.</li>
+          <li>البحثية تقوم على قاعدة: <strong>لكل مطلوب كتابُه</strong> — أقوال (زاد المسير)، لغة وبلاغة (الزمخشري/أبو حيان/ابن عاشور)، أحكام (الجصاص/ابن العربي/القرطبي)، أحاديث (ابن كثير)، آثار (الطبري/الدر المنثور/موسوعة التفسير المأثور).</li>
+          <li>أدوات رقمية موصى بها: موقع <strong>المصحف الجامع</strong> (ترتيب تاريخي لكل التفاسير)، وتطبيق <strong>آيات</strong> لجامعة الملك سعود.</li>
+          <li>الشمولية <strong>لا تُبدأ بلا مقدمات</strong> في أصول التفسير.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="el" id="e9">
+      <div class="el-title"><div class="idx">٩</div><h3>خطة منهجية مختصرة لدراسة علوم القرآن وقراءة كتب التفسير</h3></div>
+
+      <h4>أولاً: تقسيم كتب التفسير الشمولية إلى ثلاثة أقسام</h4>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>القسم</th><th>الكتب</th></tr></thead>
+          <tbody>
+            <tr><td><strong>كتب تأسيس وبناء</strong></td><td>المختصر في التفسير · السراج في غريب القرآن · الوجيز للواحدي · تفسير السعدي</td></tr>
+            <tr><td><strong>كتب تمكين</strong></td><td>تفسير ابن كثير · تفسير البيضاوي</td></tr>
+            <tr><td><strong>كتب تخصص وإتقان</strong></td><td>الطبري · القرطبي · ابن عاشور</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>ثانياً: الخطة المقترحة</h4>
+
+      <div class="flow">
+        <div class="step"><div class="sn">١</div><div><div class="sh">المرحلة الأولى: ابدأ بمختصر في التفسير — قبل أصول التفسير وقبل علوم القرآن</div><div class="sb">
+          الترشيح: <strong>المختصر في التفسير</strong> + <strong>السراج في غريب القرآن</strong>. يقول الشيخ: هذان الكتابان في رأيي هما البداية في التفسير، وإذا رُتّبا بشكل جيد <strong>يمكن أن تنتهي منهما — من تفسير القرآن كاملاً — في شهرين إلى ثلاثة أشهر</strong>.
+          <br><br>وإن ضُمّ إليهما <strong>تفسير السعدي</strong> فهو جيد — <em>وليس ضرورياً، لكنه جيد</em>.
+        </div></div></div>
+
+        <div class="step"><div class="sn">٢</div><div><div class="sh">المرحلة الثانية: أصول التفسير</div><div class="sb">
+          <strong>الضروري:</strong> «مقدمة في أصول التفسير» لابن تيمية + «فصول في أصول التفسير» للطيار — وهذان كافيان وجيدان.
+          <br><br><strong>التكميلي (من باب الكمال لمن أراد الاستزادة):</strong> «المحرر في علوم القرآن» في علوم القرآن.
+        </div></div></div>
+
+        <div class="step"><div class="sn">٣</div><div><div class="sh">المرحلة الأخيرة: اتخاذ كتاب مطوّل يُقرأ على فترة طويلة</div><div class="sb">
+          واحد من ثلاثة: <strong>الطبري</strong> أو <strong>القرطبي</strong> أو <strong>ابن عاشور</strong>.
+        </div></div></div>
+      </div>
+
+      <div class="box warn">
+        <div class="box-t">⚠️ ملاحظة على ترقيم المراحل</div>
+        <p>تعثّر ترقيم المراحل في المجلس نفسه (تردّد بين «الثالثة» و«الرابعة» وجرى نقاش حول ذلك)، والمضمون واضح وهو <strong>ثلاث مراحل متتابعة</strong> كما هي أعلاه — والترقيم هنا اجتهاد في ترتيب ما قاله الشيخ، لا نصٌّ حرفي لأرقامه.</p>
+      </div>
+
+      <div class="box key">
+        <div class="box-t">🔑 توصية زمنية: ابدأ قبل رمضان لا فيه</div>
+        <p>يقول الشيخ: الناس في رمضان تتوجه إلى القرآن والتفسير بشكل خاص، ويمكن أن تجرّب هذه الخطة في رمضان — <strong>لكنه دائماً يرجّح قراءة التفسير قبل رمضان</strong>، وأن تبدأ المشاريع التفسيرية قبله، <em>حتى يدخل الإنسان رمضان وعنده رصيد جيد من المعاني القرآنية</em>.</p>
+      </div>
+
+      <h4>أيّ المطوّلات تختار؟ حوار صريح ختم به الشيخ</h4>
+      <p>سُئل: أيّ الثلاثة تختار؟ فقال بصراحة: <em>«ما أعرف»</em>. لكنه أعطى ترتيباً عملياً:</p>
+
+      <div class="box def">
+        <div class="box-t">🧭 موازنة الشيخ</div>
+        <ul>
+          <li><strong>القرطبي</strong> يمكن تأخيره قليلاً؛ فيبقى الاختيار بين ابن جرير الطبري وابن عاشور.</li>
+          <li><strong>الجمع بينهما يكاد يكون مستحيلاً</strong> في هذا الزمن — «خلّينا من الخيالات»؛ فمن جمع بينهما وقرأ الطبري كاملاً وابن عاشور كاملاً <em>يستحق جائزة: مكتبة كاملة</em>.</li>
+          <li>والمشكلة أنه <strong>لا واحد منهما يغني عن الآخر</strong>؛ فلا تقول: أخذتُ ابن عاشور فيغنيني عن الطبري، ولا العكس — <em>كلاهما حاجة</em>.</li>
+          <li><strong>الأقرب للذوق المعاصر: ابن عاشور</strong> — نَفَساً وكتابةً وبلاغةً وطريقةً.</li>
+          <li><strong>الطبري</strong> جزء كبير منه أسانيد: «حدثنا… حدثنا…»، وبالتالي <strong>غير المتخصص في العلوم الشرعية قد يستثقله كثيراً</strong>.</li>
+        </ul>
+        <p style="margin-top:10px;font-size:14.5px;color:var(--muted)">وختم بـ: «وهذا والله أعلم».</p>
+      </div>
+
+      <div class="box ex">
+        <div class="box-t">📐 توضيح عن حجم «التحرير والتنوير»</div>
+        <p>جرى في المجلس تصحيح متبادل: ليس ٣٠ مجلداً وإنما <strong>٣٠ جزءاً</strong>، وكل جزئين أو ثلاثة مطبوعة في مجلد — <em>فصار نحو ١٣ مجلداً تقريباً</em> بحسب الطبعة.</p>
+      </div>
+
+      <div class="box take">
+        <div class="box-t">✦ خلاصة العنصر التاسع</div>
+        <ul>
+          <li>كتب التفسير الشمولية ثلاثة أقسام: <strong>تأسيس وبناء</strong> — <strong>تمكين</strong> — <strong>تخصص وإتقان</strong>.</li>
+          <li>ابدأ بـ<strong>المختصر في التفسير + السراج في غريب القرآن</strong>، ويمكن ختم تفسير القرآن بهما في شهرين إلى ثلاثة.</li>
+          <li>ثم <strong>مقدمة ابن تيمية + فصول في أصول التفسير</strong> (ضروري)، والمحرر في علوم القرآن (تكميلي).</li>
+          <li>ثم <strong>مطوّل واحد لمدى طويل</strong>: الطبري أو ابن عاشور — والقرطبي يمكن تأخيره.</li>
+          <li>لا أحدهما يُغني عن الآخر، لكن <strong>ابن عاشور أقرب للذوق المعاصر</strong>، والطبري أثقل على غير المتخصص لكثرة الأسانيد.</li>
+          <li>ابدأ مشروعك التفسيري <strong>قبل رمضان</strong> لا فيه.</li>
+        </ul>
+      </div>
+
+      <div class="box key">
+        <div class="box-t">🏁 خاتمة المجلس</div>
+        <p>ختم الشيخ المحاضرة بقوله: <strong>«وصلّى اللهم على رسول الله»</strong>. والمحاضرة جزء من سلسلة مستمرة في التعريف بالعلوم الشرعية علماً علماً.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= البطاقات ================= -->
+  <section class="cards-sec" id="cards">
+    <div class="wrap">
+      <h2>بطاقات المراجعة</h2>
+      <p class="csub">اضغط على البطاقة لقلبها · فلتِر حسب المحور · ثم حمّل الملف لأنكي</p>
+      <div class="filters" id="filters">
+        <button class="on" data-f="all">الكل</button>
+        <button data-f="1">التأسيس</button>
+        <button data-f="2">المكتبة</button>
+        <button data-f="3">الأهمية والتحديات</button>
+        <button data-f="4">التفسير عملياً</button>
+      </div>
+      <div class="flash" id="flash" onclick="flip()">
+        <span class="badge b1" id="badge">التأسيس</span>
+        <span class="side" id="side">السؤال</span>
+        <div class="txt" id="txt">…</div>
+        <span class="hint">اضغط للقلب</span>
+      </div>
+      <div class="ctrls">
+        <button onclick="prevCard()">السابق ›</button>
+        <span class="counter" id="counter">بطاقة ١ من ١</span>
+        <button onclick="nextCard()">‹ التالي</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <button class="dl-btn" onclick="downloadAnki()">⬇ تحميل بطاقات Anki (TSV)</button>
+    <p style="margin-top:22px">ملف دراسي من تفريغ محاضرة <strong>«المدخل إلى علوم القرآن والتفسير»</strong> — الشيخ أحمد السيد<br>
+    سلسلة مداخل العلوم · التصحيحات الموثّقة داخل الملف مبنية على تحقق خارجي مستقل عن التفريغ</p>
+  </div>
+</footer>
+
+<script>
+/* ====== مصدر البيانات الوحيد للبطاقات ====== */
+const CARDS = [
+  // ---- المحور 1: التأسيس ----
+  {ax:1,q:"ما تعريف علوم القرآن كما ذكره الشيخ؟",a:"المباحث الكلية التي تتعلق بالقرآن الكريم من ناحية نزوله وترتيبه وجمعه وكتابته وتفسيره وإعجازه وناسخه ومنسوخه وغير ذلك."},
+  {ax:1,q:"ما القاعدة التي ذكرها الشيخ في أقسام التعريفات؟",a:"قسم يُحفظ بنصّه لأنه يدل على معنى محدد لا يُعبَّر عنه إلا به، وقسم لا يحتاج حفظ رسمٍ معيّن وإنما يُفهم ثم يُعبَّر عنه بما تشاء — وعلوم القرآن من القسم الثاني."},
+  {ax:1,q:"لمن التقسيم العشري لموضوعات علوم القرآن؟ وما وصفه؟",a:"للدكتور مساعد الطيار، وهو اجتهاد منه في تجميع فروع علوم القرآن تحت أصول كلية معينة."},
+  {ax:1,q:"عدّد العلوم العشرة في التقسيم العشري.",a:"١ نزول القرآن · ٢ جمع القرآن · ٣ القراءات · ٤ معاني القرآن · ٥ التفسير · ٦ سور القرآن · ٧ فضائل القرآن · ٨ أحكام القرآن ووجوه الاستنباطات · ٩ الوقف والابتداء · ١٠ جدل القرآن."},
+  {ax:1,q:"ماذا يدخل تحت «علم نزول القرآن»؟",a:"أسباب النزول، والمكي والمدني، والأحرف السبعة، وكيفية إنزال القرآن."},
+  {ax:1,q:"ماذا يدخل تحت «علم سور القرآن»؟",a:"أسماء السور، ترتيب السور، المناسبات بين السور، ترتيب الآيات، المناسبات بين الآيات، الفواتح والخواتيم، فواصل الآي، عدّ الآي."},
+  {ax:1,q:"ما المقصود بـ «علم جدل القرآن»؟",a:"القواعد الجدلية القرآنية: كيف يعتني القرآن بالحجة وبيانها، والجدل القرآني."},
+  {ax:1,q:"هل علوم القرآن عشرة فقط؟",a:"لا؛ علوم القرآن كثيرة جداً، وهذه عشرة أصول كلية يتفرع تحت كل واحد منها علوم جزئية."},
+  {ax:1,q:"متى بدأ الحديث عن علوم القرآن؟",a:"من عهد النبي ﷺ؛ لأن أسباب النزول والتفسير والغريب وكتابة المصحف كلها بدأت منه ﷺ. وهناك كتاب ومحاضرة بعنوان «علوم القرآن في السنة النبوية»."},
+  {ax:1,q:"بأي معنى يقال إن علوم القرآن عِلمٌ متأخر؟",a:"متأخر من ناحية الجمع والترتيب فقط، أما من ناحية المحتوى والمضمون فهو قديم."},
+  {ax:1,q:"ما طبيعة التأليف في علوم القرآن حتى القرن الثالث أو الرابع؟",a:"كتب مفردة تعتني بباب واحد من أبواب علوم القرآن، ولم يوجد في تلك المرحلة كتاب جامع لعلوم القرآن."},
+  {ax:1,q:"اذكر كتابين من القرن الثالث في علوم القرآن ومؤلفيهما.",a:"«أسباب النزول» لعلي بن المديني، و«الناسخ والمنسوخ» لأبي عبيد القاسم بن سلّام."},
+  {ax:1,q:"ما كتاب ابن قتيبة الذي ذكره الشيخ، وفيمَ ألّفه؟",a:"«تأويل مشكل القرآن»، ردّ فيه على الطعون التي أُثيرت على القرآن من جهة معانيه وسياقات ألفاظه وآياته."},
+  {ax:1,q:"اذكر كتابين من القرن الرابع في علوم القرآن ومؤلفيهما.",a:"«عجائب علوم القرآن» للأنباري، و«المصاحف» لابن أبي داود السجستاني."},
+  {ax:1,q:"تنبيه: من صاحب كتاب «المصاحف»، وما الالتباس الذي يقع فيه؟",a:"صاحبه ابن أبي داود السجستاني (عبد الله بن سليمان بن الأشعث) — وهو ابنُ الإمام أبي داود صاحب السنن، لا هو نفسه."},
+  {ax:1,q:"ما المصدر المبكر لعلوم القرآن الذي يغفل عنه كثير من الطلاب؟",a:"مقدمات كتب التفسير؛ فالمفسرون يذكرون فيها العلوم القرآنية، ومنهم مُقِلّ ومُستكثِر."},
+  {ax:1,q:"رتّب الثلاثة من حيث الشمول: علوم القرآن، التفسير، أصول التفسير.",a:"علوم القرآن أشملها، لأن التفسير وأصول التفسير من علوم القرآن."},
+  {ax:1,q:"أيّ العلوم الثلاثة كان آخرها استقلالاً بالتأليف؟ وما عناوين كتبه؟",a:"أصول التفسير؛ كان مندرجاً ضمن علوم القرآن وضمن التفسير ثم استقل متأخراً، وعناوين كتبه: أصول التفسير، قواعد التفسير، قواعد الترجيح عند المفسرين."},
+
+  // ---- المحور 2: المكتبة ----
+  {ax:2,q:"ما الكتب الثلاثة التي رشّحها الشيخ في علوم القرآن؟",a:"البرهان في علوم القرآن للزركشي، والإتقان في علوم القرآن للسيوطي، والمحرر في علوم القرآن للدكتور مساعد الطيار."},
+  {ax:2,q:"كم نوعاً قسّم الزركشي كتابه «البرهان»؟ (مع التصحيح)",a:"سبعة وأربعون نوعاً (٤٧) — وقد ورد في التسجيل «٤٦» وهو سبق لسان؛ والسيوطي في «الإتقان» أوصلها إلى ثمانين نوعاً."},
+  {ax:2,q:"اذكر خمسة من الأنواع التي ذكرها الزركشي في البرهان.",a:"أسباب النزول، الوجوه والنظائر، أسماء القرآن، جدله، الوقف والابتداء، الإعجاز، المناسبات بين الآيات، أسرار الفواتح، غريبه، آداب تلاوته، الناسخ والمنسوخ، توجيه القراءات."},
+  {ax:2,q:"ما الفرق بين «الوجوه» و«النظائر»؟",a:"الوجوه: تعدد المعاني للكلمة القرآنية الواحدة، فكل معنى وجه. والنظائر: الآيات المتشابهة في الدلالة على وجه واحد من هذه الوجوه."},
+  {ax:2,q:"ما المثال الذي ذكره الزركشي على الوجوه والنظائر؟",a:"كلمة «الهدى» تأتي في القرآن على سبعة عشر معنى."},
+  {ax:2,q:"إلى كم قسم تنقسم كتب غريب القرآن؟",a:"قسمان: كتب تفسّر الكلمات الغريبة وتكتفي (وهو الأشهر)، وكتب تذكر اللفظ ووجوه معانيه في القرآن."},
+  {ax:2,q:"ما أبرز كتاب في ذكر اللفظ ووجوه معانيه؟ وما فائدته؟",a:"«المفردات» للراغب الأصفهاني؛ يعدّد لك معاني اللفظ في القرآن، فيُشكّل لك فقه المفردة القرآنية."},
+  {ax:2,q:"ما القاعدة الكلية في لفظ «البروج» عند الزركشي؟",a:"كل ما في القرآن من ذكر البروج فهي الكواكب، إلا التي في سورة النساء ﴿ولو كنتم في بروج مشيّدة﴾ فهي القصور الطوال."},
+  {ax:2,q:"ما القاعدة الكلية في لفظ «البعل» عند الزركشي؟",a:"كل ما في القرآن من ذكر البعل فهو الزوج، إلا في موضع واحد ﴿أتدعون بعلاً﴾ فهو الصنم."},
+  {ax:2,q:"ما فائدة «القواعد الكليات» في علوم القرآن؟",a:"تعينك على تحصيل التفسير القرآني لا بتتبّع آية آية، بل بضبط الألفاظ ومعانيها بقواعد كلية."},
+  {ax:2,q:"ما الكتابان اللذان رشّحهما الشيخ في أصول التفسير؟",a:"«مقدمة في أصول التفسير» لابن تيمية، و«فصول في أصول التفسير» للدكتور مساعد الطيار."},
+  {ax:2,q:"ما أبرز المسائل التي عالجتها «مقدمة في أصول التفسير» لابن تيمية؟",a:"طرق تفسير القرآن (بالقرآن، بالسنة، بأقوال الصحابة، بأقوال التابعين)، وأنواع الخلاف في التفسير: خلاف تنوّع وخلاف تضاد، مع الأمثلة."},
+  {ax:2,q:"من شرح مقدمة ابن تيمية في أصول التفسير؟ وفي أي كتاب؟",a:"الدكتور مساعد الطيار، في كتاب مستقل اسمه «شرح مقدمة في أصول التفسير»."},
+  {ax:2,q:"ما ميزة كتاب «فصول في أصول التفسير» للطيار؟ ومتى ينصح بقراءته؟",a:"جمع ما في كتاب ابن تيمية وزاد عليه ورتّبه ترتيباً سهلاً واضحاً؛ وينصح بقراءته خاصة قبل رمضان."},
+  {ax:2,q:"لمن الكتاب الأوسع في أصول التفسير الذي أشار إليه الشيخ للتوسع؟",a:"للدكتور خالد السبت، في مجلدين."},
+  {ax:2,q:"ما المادة المرئية التي أوصى بها الشيخ من مركز تفسير؟",a:"قائمة تشغيل «لقاء أهل التفسير» على يوتيوب، فيها نحو ٥٣ مقطعاً لمتخصصين، وتمتاز بمعالجة المشكلات المعاصرة."},
+
+  // ---- المحور 3: الأهمية والتحديات ----
+  {ax:3,q:"ما الفوائد الأربع لعلوم القرآن وأصول التفسير؟",a:"١ فهم أفضل وأضبط لكتب التفسير · ٢ تجاوز الصعوبات المعرفية فيها · ٣ ازدياد عظمة القرآن في النفوس · ٤ الردّ على الشبهات المثارة."},
+  {ax:3,q:"ما مثال الصعوبة المعرفية التي ضربه الشيخ؟ وكيف تُحلّ؟",a:"﴿اهدنا الصراط المستقيم﴾: قيل هو القرآن وقيل هو الإسلام. وتُحلّ بمعرفة أنه اختلاف تنوّع لا تضاد، فهما شيء واحد."},
+  {ax:3,q:"متى يُقرأ أصول التفسير: قبل التفسير أم بعده؟",a:"قبل التفسير."},
+  {ax:3,q:"ما المبحث الذي سِيق أصلاً لإثبات عظمة القرآن؟",a:"مبحث إعجاز القرآن — وهو أحد علوم القرآن، وقد فصّل فيه الزركشي في وجوه الإعجاز."},
+  {ax:3,q:"كيف وصف الشيخ الفرق بين التأويلات القديمة الخاطئة والتيار المعاصر؟",a:"القديم: ممارسات تأويلية خاطئة من منتسبين للعلوم الشرعية، ردّ عليهم أهل السنة بالأدلة. والمعاصر: مرحلة مختلفة جذرياً — تيار زندقي لا يعترف بالقرآن وحياً."},
+  {ax:3,q:"من هو محمد أركون عند الشيخ؟ وما مضمون النص المنقول عنه؟",a:"وصفه بأنه من كبار الزنادقة في هذا العصر. ونصّه يزعم أن جمع المصحف كان لحفظ السور، ثم استُخدمت بصيغ جدلية هدفها الصراع على السلطة السياسية."},
+  {ax:3,q:"ما موقف الشيخ من محمد عابد الجابري؟ ومن ردّ عليه؟",a:"له «مدخل إلى القرآن الكريم» وفيه إشكالات، لكنه ليس مثل أركون. وردّ عليه عبد السلام البكاري والصديق بوعلام في «الشبه الاستشراقية في كتاب مدخل إلى القرآن الكريم»."},
+  {ax:3,q:"لماذا اعترض الشيخ على تسمية «المدرسة العقلية المعاصرة»؟",a:"لأنهم لا يمتّون للعقلية المحضة بصلة؛ فأطروحاتهم ليست نابعة من العقل المجرد بل من مدرسة استشراقية، والتسمية توهم ذمّ العقل."},
+  {ax:3,q:"ما الكتاب الذي يكشف استعارة الحداثيين من المستشرقين؟",a:"«التأويل الحداثي للتراث» — يبيّن أنهم صنعوا مصانع لإعادة إنتاج وتعليب وتصدير ما طرحه المستشرقون."},
+  {ax:3,q:"ما بيانات كتاب «آثار الاستشراق الألماني في الدراسات القرآنية»؟",a:"للباحث أمجد يونس الجنابي، من إصدارات مركز تفسير للدراسات القرآنية، الطبعة الأولى ١٤٣٦هـ/٢٠١٥م في مجلد واحد."},
+  {ax:3,q:"ما المراحل الثلاث لتعامل الاستشراق مع التراث القرآني؟",a:"١ إخراج الكتب والمخطوطات وتحقيقها · ٢ الاستقصاء والدراسة التفصيلية · ٣ النقد التشكيكي."},
+  {ax:3,q:"ما كتاب فهد الرومي الذي أشار إليه الشيخ؟ وما موضوعه؟",a:"«اتجاهات التفسير في القرن الرابع عشر الهجري» في ثلاث مجلدات؛ درس اتجاهات التفسير عند الشيعة والإباضية والمفكرين العرب."},
+  {ax:3,q:"ما «التفسير النسوي»؟ وما حاله بحسب كلام الشيخ؟",a:"دعوى أن المفسرين انطلقوا من نظرة ذكورية فيجب إعادة تفسير القرآن بنظرة نسوية. وحاله: مشاريع متفرقة، والشيخ لا يعرف كتاباً مؤلّفاً على هذا المنهج، لكنه يتوقّع ظهوره."},
+  {ax:3,q:"ما المبحث الجديد الذي يقترح الشيخ إضافته لكل علم شرعي؟",a:"مبحث تثبيت صحة العلم: الأدلة المثبتة لصحته والمبرزة لأهميته وواقعيته وموضوعيته — وهو موجود قديماً لكن متفرقاً."},
+  {ax:3,q:"أين انتقلت المنازعة اليوم في مجال التفسير؟",a:"من الاختلاف في آيات أو ألفاظ معينة، إلى أصل منهجية التفسير، بل إلى: هل يوجد تفسير صحيح للقرآن أصلاً؟"},
+  {ax:3,q:"ما أطروحة «تعدد القراءات»؟ وبأي فلسفة ربطها الشيخ؟",a:"أن التفسيرات تتعدد بعدد القرّاء، فمعاني القرآن تتعدد بتعدد قارئيه. وربطها بفلسفة ما بعد الحداثة: لا حقيقة ولا مركزية ولا منهجية ولا عقل مركزي يُتحاكم إليه."},
+
+  // ---- المحور 4: التفسير عملياً ----
+  {ax:4,q:"ما اسم التخصص الذي يعرّف بكتب التفسير ومناهج مؤلفيها؟",a:"مناهج المفسرين (أو مناهج التفسير)، كما أن هناك مناهج المحدّثين."},
+  {ax:4,q:"من صاحب أشهر كتاب معاصر بعنوان «التفسير والمفسرون»؟ وما التنبيه عليه؟",a:"محمد حسين الذهبي — وهو ليس الذهبي المؤرّخ صاحب سير أعلام النبلاء. وهناك كتاب بنفس العنوان للدكتور فضل عباس."},
+  {ax:4,q:"ماذا قال د. عبد الرحمن الشهري عن تفسير الطبري؟",a:"إنه مدرسة علمية متكاملة في التفسير، وقارئه ومدمن دراسته يكتسب ملكة في التفسير لا يكاد يغنيه عنه غيره من الكتب المطوّلة."},
+  {ax:4,q:"ما الخطأ الشائع في تصنيف تفسير الطبري؟",a:"تصنيفه على أنه تفسير بالمأثور فقط، وإغفال التفسير بالرأي المحمود الذي فيه؛ والصواب أنه جمع بين المأثور والرأي — بين المنقول وصياغته هو."},
+  {ax:4,q:"صف طريقة الطبري في تفسير الآية.",a:"يقول: «القول في تأويل قول الله تعالى كذا»، ثم يبيّن معنى الكلمة، ثم يسوق الموافقين بأسانيدهم، ثم المخالفين بأسانيدهم، ثم يقول: «وأولى القولين بالصواب كذا لأنه كذا»، ثم ينتقل للكلمة التالية."},
+  {ax:4,q:"ما معنى كلمة «تأويل» عند الطبري؟",a:"تفسير؛ فقوله «القول في تأويل» أي في تفسير."},
+  {ax:4,q:"ما بيانات أفضل طبعات تفسير الطبري؟",a:"تحقيق د. عبد الله بن عبد المحسن التركي، وقد صدرت الطبعة الأولى عن دار هجر (١٤٢٢هـ) في ٢٦ مجلداً، ثم أُعيد نشرها تصويراً عن دار عالم الكتب بالرياض."},
+  {ax:4,q:"ما أقسام الإسرائيليات وأحكامها؟",a:"موافقة للشرع: لا إشكال في روايتها وإن كنا لا نحتاجها · مخالفة للكتاب أو السنة: مردودة جملة وتفصيلاً · لا موافقة ولا معارضة: لا تُصدَّق ولا تُكذَّب."},
+  {ax:4,q:"ما معنى «النقد» في اصطلاح المحدثين كما نبّه الشيخ؟",a:"النقد معناه الفحص، وليس معناه الردّ."},
+  {ax:4,q:"ما أبرز ما اعتنى به القرطبي في تفسيره؟ وما اسم كتابه؟",a:"اعتنى بالأحكام، واسم كتابه «الجامع لأحكام القرآن»."},
+  {ax:4,q:"صف طريقة القرطبي في تفسير الآية.",a:"يقسّم تفسير الآية إلى مسائل: مسألة لغوية، ثم مسألة في القراءات، ثم مسألة في الأحكام الفقهية، ثم حلّ الإشكال بينها وبين آية أخرى، وهكذا حتى يستوعب."},
+  {ax:4,q:"لماذا وُصف تفسير ابن كثير بأنه «وسط بين الطبري والقرطبي»؟",a:"لأنه يذكر أقوال الصحابة والتابعين مثل الطبري لكن بلا أسانيد ومع تلخيص، فهو ليس مختصراً ولا مطوّلاً."},
+  {ax:4,q:"اذكر أربعاً من مزايا تفسير ابن كثير.",a:"العناية بتفسير القرآن بالقرآن · العناية الكبيرة بتفسير القرآن بالسنة · أنه إمام ناقد لا جامع فحسب · قلة الإسرائيليات فيه · سلامة منظومته العقدية."},
+  {ax:4,q:"ما صلة القرابة بين ابن كثير والحافظ المزّي؟",a:"المزّي صاحب «تهذيب الكمال» هو حَمُو ابن كثير، أي والد زوجته؛ فابن كثير تزوّج ابنته."},
+  {ax:4,q:"ما طبعتا تفسير ابن كثير اللتان أثنى عليهما الشيخ؟",a:"طبعة دار ابن الجوزي بتحقيق حكمت بشير ياسين، وطبعة دار طيبة (بتحقيق سامي بن محمد سلامة)."},
+  {ax:4,q:"ما مأخذ الشيخ على الكشاف؟ وما ميزته الكبرى؟",a:"المأخذ: أن الزمخشري معتزلي وتفسيره فيه اعتزال. والميزة: أنه المرجع الأساسي في البلاغة، ولا يكاد يوجد مفسّر بعده إلا استفاد منه بلاغياً."},
+  {ax:4,q:"ما القاعدة التي قرّرها الشيخ بمناسبة الكشاف؟",a:"لا تحرم نفسك من علم مهم لأن في الكتاب أخطاء؛ ولا تقرأ لأحد بطريقة «نسخ ولصق» على الذهن، احرص على الفهم والدليل ولا تكن مقلّداً — لكن بعد التأصيل أولاً."},
+  {ax:4,q:"في كم سنة كُتب «التحرير والتنوير» بحسب ما سمع الشيخ؟ وكم حجمه؟",a:"في ٣٩ سنة تقريباً؛ وهو ٣٠ جزءاً مطبوعة في نحو ١٣ مجلداً بحسب الطبعة."},
+  {ax:4,q:"ما التحفّظ الذي أبداه الشيخ على وصف تفسير ابن عاشور؟",a:"أن وصفه بالاهتمام باللغة أكثر من غيرها قد لا يكون دقيقاً؛ فهو اعتنى باللغة والبلاغة كثيراً، لكنه حاول أن يأتي بمختلف العلوم المتعلقة بالآية."},
+  {ax:4,q:"أين ترجع إذا أردت أقوال العلماء ومذاهبهم في الآية؟",a:"إلى «زاد المسير» لابن الجوزي."},
+  {ax:4,q:"أين ترجع للتحقيقات اللغوية والبلاغية في الآية؟",a:"إلى الزمخشري، و«البحر المحيط» لأبي حيان، وابن عاشور."},
+  {ax:4,q:"أين ترجع لأحكام الآية الفقهية؟",a:"إلى كتب أحكام القرآن: الجصّاص، وابن العربي المالكي، والقرطبي (المتنوّع)، ومن المعاصر كتب تفسير آيات الأحكام."},
+  {ax:4,q:"أين ترجع للآثار عن الصحابة والتابعين في الآية؟",a:"إلى الطبري، و«الدر المنثور» للسيوطي، و«موسوعة التفسير المأثور»."},
+  {ax:4,q:"ما بيانات «موسوعة التفسير المأثور»؟",a:"إعداد مركز الدراسات والمعلومات القرآنية بمعهد الإمام الشاطبي، بإشراف د. مساعد الطيار ود. نوح الشهري، صدرت عن دار ابن حزم ١٤٣٩هـ في ٢٤ مجلداً."},
+  {ax:4,q:"ما ميزة موقع «المصحف الجامع»؟",a:"يجمع كل التفاسير على الآية الواحدة في موضع واحد، مع خيار ترتيبها تاريخياً من الأقدم إلى المعاصرين — وقد تبلغ نحو ٤٠ تفسيراً للآية."},
+  {ax:4,q:"ما تطبيق الجوال الذي رشّحه الشيخ؟ وما التنبيه على اسمه؟",a:"تطبيق «آيات» التابع لجامعة الملك سعود؛ والتنبيه أن هناك تطبيقاً آخر قريب الاسم «آية» فلا يُخلط بينهما."},
+  {ax:4,q:"ما الطريقتان لقراءة كتب التفسير؟",a:"الطريقة البحثية (الرجوع لآيات معينة في كتب متخصصة)، والطريقة الشمولية (قراءة كتاب تفسير كامل) — وكلاهما مطلوب معاً."},
+  {ax:4,q:"إلى كم قسم تنقسم كتب التفسير الشمولية؟ مع المثال.",a:"ثلاثة: كتب تأسيس وبناء (المختصر في التفسير، السراج في غريب القرآن، الوجيز للواحدي، السعدي) · كتب تمكين (ابن كثير، البيضاوي) · كتب تخصص وإتقان (الطبري، القرطبي، ابن عاشور)."},
+  {ax:4,q:"ما المرحلة الأولى في الخطة المنهجية؟ وكم تستغرق؟",a:"قراءة «المختصر في التفسير» مع «السراج في غريب القرآن» قبل أصول التفسير وعلوم القرآن — ويمكن ختمها في شهرين إلى ثلاثة أشهر، ويُستحسن ضمّ تفسير السعدي (وليس ضرورياً)."},
+  {ax:4,q:"ما المرحلة الثانية في الخطة؟ وما الضروري فيها والتكميلي؟",a:"الضروري: «مقدمة في أصول التفسير» لابن تيمية مع «فصول في أصول التفسير» للطيار. والتكميلي: «المحرر في علوم القرآن»."},
+  {ax:4,q:"ما المرحلة الأخيرة في الخطة؟ وما ترجيح الشيخ فيها؟",a:"اتخاذ كتاب مطوّل يُقرأ على فترة طويلة: الطبري أو القرطبي أو ابن عاشور. ويؤخّر القرطبي قليلاً، والاختيار بين الطبري وابن عاشور — وابن عاشور أقرب للذوق المعاصر، والطبري يستثقله غير المتخصص لكثرة الأسانيد."},
+  {ax:4,q:"متى ينصح الشيخ ببدء المشروع التفسيري؟",a:"قبل رمضان لا في رمضان، حتى يدخل الإنسان رمضان وعنده رصيد جيد من المعاني القرآنية."},
+  {ax:4,q:"ما التفاسير المختصرة التي رشّحها الشيخ للبداية؟",a:"«المختصر في التفسير» لمركز تفسير، و«التفسير الميسّر» لمجمع طباعة المصحف بالمدينة — وهما يغنيان عن غيرهما؛ ويُضمّ إليهما تفسير السعدي، ومن المتينة أيضاً تفسير ابن جُزَيّ."}
+];
+
+const AXN = {1:"التأسيس",2:"المكتبة",3:"الأهمية والتحديات",4:"التفسير عملياً"};
+let filter="all", idx=0, showingAnswer=false;
+
+function pool(){ return filter==="all" ? CARDS : CARDS.filter(c=>c.ax==filter); }
+function ar(n){ return String(n).replace(/[0-9]/g,d=>"٠١٢٣٤٥٦٧٨٩"[d]); }
+
+function render(){
+  const p = pool();
+  if(!p.length) return;
+  if(idx>=p.length) idx=0;
+  if(idx<0) idx=p.length-1;
+  const c = p[idx];
+  const flash=document.getElementById("flash");
+  const badge=document.getElementById("badge");
+  badge.className="badge b"+c.ax;
+  badge.textContent=AXN[c.ax];
+  document.getElementById("side").textContent = showingAnswer ? "الإجابة" : "السؤال";
+  document.getElementById("txt").textContent = showingAnswer ? c.a : c.q;
+  flash.classList.toggle("ans", showingAnswer);
+  document.getElementById("counter").textContent = "بطاقة "+ar(idx+1)+" من "+ar(p.length);
+}
+function flip(){ showingAnswer=!showingAnswer; render(); }
+function nextCard(){ showingAnswer=false; idx++; render(); }
+function prevCard(){ showingAnswer=false; idx--; render(); }
+
+document.getElementById("filters").addEventListener("click",e=>{
+  const b=e.target.closest("button"); if(!b) return;
+  document.querySelectorAll("#filters button").forEach(x=>x.classList.remove("on"));
+  b.classList.add("on");
+  filter = b.dataset.f==="all" ? "all" : parseInt(b.dataset.f,10);
+  idx=0; showingAnswer=false; render();
+});
+
+function downloadAnki(){
+  const clean = s => String(s).replace(/\t/g," ").replace(/\r?\n/g," ").trim();
+  const lines = CARDS.map(c => clean(c.q)+"\t"+clean(c.a));
+  const blob = new Blob(["\uFEFF"+lines.join("\n")], {type:"text/tab-separated-values;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href=url; a.download="المدخل_إلى_علوم_القرآن_والتفسير_أحمد_السيد.tsv";
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(()=>URL.revokeObjectURL(url),1500);
+}
+
+render();
+</script>
 </body>
 </html>
