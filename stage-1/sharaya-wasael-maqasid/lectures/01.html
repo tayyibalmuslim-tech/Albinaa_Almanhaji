@@ -1,39 +1,735 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>محاضرة كاملة - العلوم الشرعية بين الوسائل والمقاصد</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../../style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>العلوم الشرعية: بين المقاصد والوسائل | الشيخ أحمد بن يوسف السيد</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EEF0E9;
+  --paper-card:#F7F8F3;
+  --ink:#1E2A26;
+  --ink-soft:#4A564E;
+  --ink-faint:#7C8579;
+  --brand:#1F4B47;
+  --brand-light:#2C645D;
+  --brand-pale:#DCE7E4;
+  --gold:#A5822F;
+  --gold-pale:#EFE4C8;
+  --bab1:#3E5C86;
+  --bab1-pale:#E3E9F3;
+  --bab2:#7A3B4A;
+  --bab2-pale:#F2E3E8;
+  --correction:#9C4A28;
+  --correction-pale:#FAE7DA;
+  --warning:#8A6018;
+  --warning-pale:#F8EFD8;
+  --border:#D7DACB;
+  --shadow:0 8px 24px rgba(31,75,71,.10);
+  --accent:var(--brand);
+  --accent-pale:var(--brand-pale);
+  --maxw:760px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'IBM Plex Sans Arabic', Tahoma, sans-serif;
+  font-size:17.5px;
+  line-height:1.9;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{
+  font-family:'Amiri', 'IBM Plex Sans Arabic', serif;
+  color:var(--ink);
+  line-height:1.5;
+  margin:0 0 .5em;
+  font-weight:700;
+}
+p{margin:0 0 1.1em;}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px;}
+@media(max-width:600px){ body{font-size:16.5px;} }
+
+/* ===== progress bar ===== */
+#progressBar{
+  position:fixed; top:0; right:0; left:0; height:3px; background:var(--gold);
+  width:0%; z-index:999; transition:width .1s linear;
+}
+
+/* ===== hero ===== */
+.hero{
+  background:linear-gradient(160deg, var(--brand) 0%, #123330 100%);
+  color:#F3F1E6;
+  padding:64px 20px 56px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:radial-gradient(circle at 15% 20%, rgba(255,255,255,.05) 0, transparent 40%),
+                    radial-gradient(circle at 85% 80%, rgba(255,255,255,.05) 0, transparent 45%);
+  pointer-events:none;
+}
+.hero-inner{max-width:var(--maxw); margin:0 auto; position:relative; z-index:1;}
+.hero-eyebrow{
+  font-size:13.5px; letter-spacing:.08em; color:var(--gold-pale);
+  display:flex; align-items:center; gap:10px; margin-bottom:18px; opacity:.9;
+}
+.hero-eyebrow .line{flex:0 0 28px; height:1px; background:var(--gold-pale); opacity:.6;}
+.hero h1{
+  font-size:clamp(30px,5vw,42px); color:#fff; margin:0 0 18px; font-weight:700;
+}
+.hero .lead-quote{
+  font-size:19px; line-height:1.85; color:#EDEAD9; border-right:3px solid var(--gold);
+  padding-right:16px; margin:0 0 28px; font-style:italic; max-width:620px;
+}
+.hero-meta{display:flex; flex-wrap:wrap; gap:22px; font-size:14.5px; color:#CFE0DC; margin-bottom:34px;}
+.hero-meta strong{color:#fff; font-weight:600;}
+.scale-wrap{width:130px; height:100px; opacity:.92;}
+@media (prefers-reduced-motion:no-preference){
+  .beam{animation:sway 6s ease-in-out infinite;}
+}
+@keyframes sway{
+  0%,100%{transform:rotate(-2.2deg);}
+  50%{transform:rotate(2.2deg);}
+}
+
+/* ===== TOC ===== */
+.toc{
+  position:sticky; top:0; z-index:50; background:rgba(238,240,233,.92); backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--border); overflow-x:auto; white-space:nowrap;
+}
+.toc-inner{max-width:var(--maxw); margin:0 auto; padding:10px 20px; display:flex; gap:8px;}
+.toc a{
+  font-size:13.5px; color:var(--ink-soft); text-decoration:none; padding:6px 12px;
+  border-radius:20px; border:1px solid var(--border); flex:0 0 auto; transition:.15s;
+}
+.toc a:hover{background:var(--brand); color:#fff; border-color:var(--brand);}
+
+/* ===== sections ===== */
+main{padding:20px 0 10px;}
+.content-section{padding:52px 0 8px; scroll-margin-top:56px;}
+.section-eyebrow{
+  font-size:13px; letter-spacing:.06em; color:var(--accent); font-weight:600;
+  text-transform:uppercase; margin-bottom:10px; display:flex; align-items:center; gap:8px;
+}
+.section-eyebrow .num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:24px; height:24px; border-radius:50%; background:var(--accent); color:#fff;
+  font-size:12px; font-family:'IBM Plex Sans Arabic'; font-weight:700;
+}
+.section-title{font-size:clamp(24px,3.4vw,32px); margin-bottom:22px;}
+.wrap p{max-width:100%;}
+
+/* bab (باب) section styling */
+.bab-section{
+  --accent-local: var(--accent);
+  background:var(--paper-card);
+  border-top:5px solid var(--accent);
+  padding-top:44px; padding-bottom:36px; margin-top:10px;
+}
+.bab-badge{
+  display:inline-block; background:var(--accent-pale); color:var(--accent);
+  font-size:13px; font-weight:700; padding:5px 14px; border-radius:6px; margin-bottom:14px;
+}
+
+/* ===== blocks ===== */
+.block{
+  margin:26px 0; padding:20px 22px; border-radius:10px; border:1px solid var(--border);
+  background:var(--paper-card); box-shadow:var(--shadow);
+}
+.block h4{font-size:16.5px; margin-bottom:10px; display:flex; align-items:center; gap:8px;}
+.block p:last-child{margin-bottom:0;}
+.block-def{border-right:4px solid var(--brand);}
+.block-def h4{color:var(--brand);}
+.block-evidence{border-right:4px solid var(--gold); background:var(--gold-pale);}
+.block-evidence h4{color:var(--gold);}
+.ayah{font-family:'Amiri'; font-size:21px; line-height:2.1; color:var(--ink); margin:10px 0; display:block;}
+.ayah-ref{font-size:13.5px; color:var(--ink-faint);}
+.block-quote{border-right:4px solid var(--ink-soft); font-family:'Amiri'; font-size:19px; line-height:1.95; background:#fff;}
+.block-quote p{font-style:italic;}
+.block-key{border-right:4px solid var(--accent); background:var(--accent-pale);}
+.block-key h4{color:var(--accent);}
+.block-warning{border-right:4px solid var(--warning); background:var(--warning-pale);}
+.block-warning h4{color:var(--warning);}
+.block-example{border-right:4px solid var(--ink-faint); background:#fff;}
+.block-example h4{color:var(--ink-soft);}
+.block-correction{border-right:4px solid var(--correction); background:var(--correction-pale);}
+.block-correction h4{color:var(--correction);}
+.block-takeaway{
+  border:1px solid var(--accent); border-right:4px solid var(--accent);
+  background:linear-gradient(180deg, var(--accent-pale) 0%, var(--paper-card) 100%);
+}
+.block-takeaway h4{color:var(--accent); font-size:17.5px;}
+.block-takeaway ul{margin:0; padding-right:20px;}
+.block-takeaway li{margin-bottom:7px;}
+.block-action{
+  border:1px dashed var(--gold); background:#fff; text-align:center;
+}
+.block-action h4{justify-content:center; color:var(--gold);}
+
+/* flow */
+.flow{display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:center; margin:14px 0;}
+.flow-step{
+  background:#fff; border:1.5px solid var(--accent); color:var(--accent); font-weight:600;
+  padding:10px 18px; border-radius:8px; font-size:15px;
+}
+.flow-arrow{color:var(--accent); font-size:20px;}
+
+/* compare table */
+.compare{width:100%; border-collapse:collapse; margin:14px 0; font-size:15px;}
+.compare th,.compare td{border:1px solid var(--border); padding:10px 12px; text-align:right; vertical-align:top;}
+.compare thead th{background:var(--accent); color:#fff; font-weight:600;}
+.compare tbody th{background:var(--accent-pale); color:var(--accent); font-weight:600; white-space:nowrap;}
+.compare tbody tr:nth-child(even) td{background:#fbfbf7;}
+
+/* named-person tag */
+.tag-name{display:inline-block; background:var(--brand-pale); color:var(--brand); padding:2px 8px; border-radius:5px; font-size:14.5px;}
+
+hr.sep{border:none; border-top:1px solid var(--border); margin:40px 0;}
+
+/* ===== anki section ===== */
+.anki-section{background:var(--brand); color:#F3F1E6; padding:56px 0 68px; margin-top:24px;}
+.anki-inner{max-width:var(--maxw); margin:0 auto; padding:0 20px;}
+.anki-section h2{color:#fff; font-size:28px; text-align:center; margin-bottom:8px;}
+.anki-sub{text-align:center; color:#CFE0DC; font-size:15px; margin-bottom:34px;}
+.flashcard-stage{perspective:1400px; margin:0 auto 22px; max-width:560px;}
+.flashcard{
+  position:relative; min-height:220px; border-radius:14px; cursor:pointer;
+  transform-style:preserve-3d; transition:transform .5s cubic-bezier(.4,.2,.2,1);
+}
+.flashcard.flipped{transform:rotateY(180deg);}
+.fc-face{
+  position:absolute; inset:0; backface-visibility:hidden; border-radius:14px;
+  background:#fff; color:var(--ink); padding:30px 28px; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; text-align:center; box-shadow:0 12px 30px rgba(0,0,0,.25);
+}
+.fc-face .fc-label{font-size:12.5px; letter-spacing:.08em; color:var(--gold); font-weight:700; margin-bottom:14px; text-transform:uppercase;}
+.fc-face .fc-text{font-size:19px; line-height:1.8; font-family:'Amiri', serif;}
+.fc-back{transform:rotateY(180deg); background:var(--gold-pale);}
+.fc-hint{text-align:center; font-size:13px; color:#CFE0DC; margin-bottom:26px;}
+.fc-controls{display:flex; align-items:center; justify-content:center; gap:16px; margin-bottom:10px;}
+.fc-btn{
+  background:#fff; color:var(--brand); border:none; border-radius:8px; padding:11px 20px;
+  font-family:'IBM Plex Sans Arabic'; font-size:15px; font-weight:600; cursor:pointer; transition:.15s;
+}
+.fc-btn:hover{background:var(--gold-pale);}
+.fc-btn:disabled{opacity:.4; cursor:default;}
+.fc-counter{font-size:14.5px; color:#EDEAD9; min-width:90px; text-align:center;}
+.fc-download{
+  display:block; margin:34px auto 0; background:var(--gold); color:#241a06;
+  border:none; padding:13px 26px; border-radius:8px; font-size:15px; font-weight:700;
+  cursor:pointer; font-family:'IBM Plex Sans Arabic'; transition:.15s;
+}
+.fc-download:hover{background:#BE9A45;}
+
+footer{
+  text-align:center; padding:26px 20px 40px; font-size:13.5px; color:var(--ink-faint);
+}
+footer .fname{font-weight:600; color:var(--ink-soft);}
+
+@media(max-width:600px){
+  .hero-meta{gap:14px;}
+  .fc-face .fc-text{font-size:17px;}
+}
+</style>
 </head>
-<body class="" data-page="lecture" data-lecture-id="stage1_sharaya-wasael-maqasid_01">
-  <div class="page">
-    <nav class="breadcrumbs"><a href="../../../index.html">الرئيسية</a><span class="sep">/</span><a href="../../index.html">المرحلة الأولى</a><span class="sep">/</span><a href="../index.html">العلوم الشرعية بين الوسائل والمقاصد</a><span class="sep">/</span><span aria-current="page">محاضرة كاملة</span></nav>
-    
-      <header class="lecture-header">
-        <h1>محاضرة كاملة</h1>
-        <p class="lecture-meta">المادة: العلوم الشرعية بين الوسائل والمقاصد &nbsp;|&nbsp; الشيخ: أحمد السيد &nbsp;|&nbsp; اليوم 18</p>
-        <label class="checkbox-line lecture-checkbox">
-          <input type="checkbox" data-lecture-id="stage1_sharaya-wasael-maqasid_01">
-          <span>إتمام هذه المحاضرة</span>
-        </label>
-      </header>
+<body>
 
-      <div class="lecture-placeholder">
-        <p>سيتم إضافة المحاضرة هنا لاحقًا</p>
-        <p class="placeholder-hint">(رابط يوتيوب / فيديو / ملف صوتي / PDF / نص المحاضرة / ملاحظاتي)</p>
-      </div>
+<div id="progressBar"></div>
 
-      <div class="lecture-nav">
-        <a href="../index.html" class="btn btn-outline">الرجوع إلى المادة</a>
-        <a href="../../index.html" class="btn btn-outline">الرجوع إلى المرحلة</a>
-      </div>
-    
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow"><span class="line"></span> لقاء علمي · العلوم الإسلامية</div>
+    <h1>العلوم الشرعية: بين المقاصد والوسائل</h1>
+    <p class="lead-quote">"التفريق بين وسائل العلم ومقاصده هي — برأيي — المشكلة الكبرى الموجودة اليوم في السياق العلمي."</p>
+    <div class="hero-meta">
+      <span>الملقي: <strong>الشيخ أحمد بن يوسف السيد</strong></span>
+      <span>نوع اللقاء: <strong>مقدمة لبرنامج علمي قادم</strong></span>
+      <span>محاضرة مستقلة</span>
+    </div>
+    <svg class="scale-wrap" viewBox="0 0 130 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g class="beam" style="transform-origin:65px 30px;">
+        <line x1="65" y1="10" x2="65" y2="30" stroke="#EFE4C8" stroke-width="2.5"/>
+        <line x1="20" y1="30" x2="110" y2="30" stroke="#EFE4C8" stroke-width="2.5"/>
+        <line x1="20" y1="30" x2="14" y2="52" stroke="#EFE4C8" stroke-width="1.5"/>
+        <line x1="20" y1="30" x2="26" y2="52" stroke="#EFE4C8" stroke-width="1.5"/>
+        <path d="M8 52 Q20 68 32 52" stroke="#EFE4C8" stroke-width="1.5" fill="none"/>
+        <line x1="110" y1="30" x2="104" y2="52" stroke="#EFE4C8" stroke-width="1.5"/>
+        <line x1="110" y1="30" x2="116" y2="52" stroke="#EFE4C8" stroke-width="1.5"/>
+        <path d="M98 52 Q110 68 122 52" stroke="#EFE4C8" stroke-width="1.5" fill="none"/>
+      </g>
+      <circle cx="65" cy="10" r="3.5" fill="#EFE4C8"/>
+      <line x1="65" y1="30" x2="65" y2="86" stroke="#EFE4C8" stroke-width="3"/>
+      <path d="M48 86 h34 l-6 8 h-22 z" fill="#EFE4C8"/>
+    </svg>
   </div>
-  <script src="../../../data.js"></script>
-  <script src="../../../script.js"></script>
+</header>
+
+<nav class="toc" aria-label="فهرس سريع">
+  <div class="toc-inner">
+    <a href="#s0">لماذا "علمًا"؟</a>
+    <a href="#s1">واقع الاختلاف</a>
+    <a href="#s2">المشكلة الكبرى</a>
+    <a href="#bab1">الباب الأول</a>
+    <a href="#bab2">الباب الثاني</a>
+    <a href="#s3">مقاصد كل علم</a>
+    <a href="#s4">الخاتمة</a>
+    <a href="#ankiSection">البطاقات</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- ===================== SECTION 0 ===================== -->
+<section class="content-section wrap" id="s0">
+  <div class="section-eyebrow"><span class="num">١</span> المدخل القرآني</div>
+  <h2 class="section-title">لماذا سمّى الله الوحي "علمًا"؟</h2>
+
+  <p>بعث الله سبحانه وتعالى محمدًا صلى الله عليه وسلم بالحق، وأنزل عليه الكتاب، وذكر سبحانه وتعالى اسم العلم ولفظه في كتابه، ووصف الوحي الذي أنزله على نبيه صلى الله عليه وسلم بأنه علم. وجعل الله هذا العلم سببًا في أن يكون كافيًا ومغنيًا لصاحبه، ولمن يتلقاه، عن الاحتياج إلى شيء آخر يخالفه من أهواء الناس، أو ما يتمسك به الناس كمرجعيات عامة بديلة عنه.</p>
+
+  <div class="block block-evidence">
+    <h4>◆ الأدلة القرآنية</h4>
+    <span class="ayah">﴿وَلَئِنِ اتَّبَعْتَ أَهْوَاءَهُم بَعْدَ مَا جَاءَكَ مِنَ الْعِلْمِ مَا لَكَ مِنَ اللَّهِ مِن وَلِيٍّ وَلَا وَاقٍ﴾</span>
+    <span class="ayah-ref">سورة الرعد: 37</span>
+    <p style="margin-top:14px;">﴿وَلَئِنِ اتَّبَعْتَ أَهْوَاءَهُم مِّن بَعْدِ مَا جَاءَكَ مِنَ الْعِلْمِ إِنَّكَ إِذًا لَّمِنَ الظَّالِمِينَ﴾ <span class="ayah-ref">— سورة البقرة: 145</span></p>
+    <p>﴿وَقُل رَّبِّ زِدْنِي عِلْمًا﴾ <span class="ayah-ref">— سورة طه: 114</span></p>
+    <p>﴿أَمَّنْ هُوَ قَانِتٌ آنَاءَ اللَّيْلِ سَاجِدًا وَقَائِمًا يَحْذَرُ الْآخِرَةَ وَيَرْجُو رَحْمَةَ رَبِّهِ ۗ قُلْ هَلْ يَسْتَوِي الَّذِينَ يَعْلَمُونَ وَالَّذِينَ لَا يَعْلَمُونَ﴾ <span class="ayah-ref">— سورة الزمر: 9</span></p>
+    <p style="margin-top:14px;">لاحظ أن الله سبحانه أمر باتباع هذا العلم، ونهى عن اتباع ما يخالفه من الأهواء. ولم يذكر الله العلم غالبًا بصيغة المعلومات النظرية المجردة، بل ذكره مقترنًا بما يستلزمه من اتباع وسير واستغناء وعمل بمقتضاه. واللافت أن آية الزمر جاءت في سياق الحديث عن قيام الليل وخشية الآخرة، لا في سياق الحفظ أو الاستنباط الدقيق، ومع ذلك جعل الله هذا الخشوع والقيام من أثر العلم.</p>
+  </div>
+
+  <div class="block block-correction">
+    <h4>⚠ تصحيح</h4>
+    <p>ورد في التفريغ الصوتي للمحاضرة نص آية الرعد بصيغة: "ما لك من الله من ولي ولا <strong>نصير</strong>". والثابت في المصحف هو: "ما لك من الله من ولي ولا <strong>واق</strong>" [الرعد: 37]. الأرجح أن هذا سبق لسان أثناء الإلقاء الشفهي لا موقفًا علميًا مقصودًا، وقد صُحح هنا لضبط النص القرآني.</p>
+  </div>
+
+  <p>وبالمقابل، ذكر الله سبحانه أناسًا لا يعلمون الكتاب إلا أمانيّ، وذكر أناسًا كان لديهم شيء من العلم فشبّههم بالحمير التي تحمل أسفارًا ولا تدري ما تحمل (إشارة إلى مثل سورة الجمعة)، وذكر بعض من أوتي آياته ولم يعمل بها فشبّهه بالكلب (إشارة إلى مثل سورة الأعراف). فقضية العلم إذًا ليست قضية متأخرة عن التاريخ، وإنما هي قضية متصلة بالوحي في أساسه، آتية في كتاب الله وفي سنة رسوله صلى الله عليه وسلم.</p>
+
+  <div class="block block-takeaway">
+    <h4>✺ خلاصة</h4>
+    <ul>
+      <li>الوحي نفسه سمّى نفسه "علمًا"، وربط هذا العلم دومًا بالعمل والخشية والاتباع، لا بالمعلومات المجردة.</li>
+      <li>من امتدحهم الله بالعلم لم يكتفوا بالمعرفة النظرية، بل قرنوها بالقنوت والخشوع وخشية الآخرة.</li>
+      <li>من أوتي علمًا ولم يعمل به، أو اتخذ الكتاب أمانيّ فقط، ذمّه الله بأشد الذم.</li>
+      <li>من أراد أن يبني نفسه في سلك العلم الممدوح، فعليه أن يراعي ما جاء في سياق الوحي نفسه من لوازم هذا العلم.</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="sep wrap">
+
+<!-- ===================== SECTION 1 ===================== -->
+<section class="content-section wrap" id="s1">
+  <div class="section-eyebrow"><span class="num">٢</span> واقع طالب العلم اليوم</div>
+  <h2 class="section-title">حين يُعزل الوحي عن مرجعيته، ونوعا الاختلاف</h2>
+
+  <p>كل من يتكلم عن العلم ويريد أن يبني نفسه فيه، ويدخل في سلك من امتدحهم الله بالعلم، ثم لا يراعي ما جاء في سياق الوحي، يكون قد أخذ بشيء فيه نقص، مهما كان الأمر الذي بنى نفسه عليه صحيحًا في ذاته. وهذه القضية ليست خاصة بتصور العلم فحسب، بل تتكرر في كثير من التصورات التفصيلية الإسلامية.</p>
+
+  <div class="block block-example">
+    <h4>مثال: حين يصبح "السلف" حاجزًا لا جسرًا</h4>
+    <p>بعض الناس يتمسكون باسم السلف — وهم يستحقون فعلًا أن يُعتنى بعلمهم وبما كانوا عليه — لكن بعضهم يجعل السلف حاجزًا بينه وبين ما جاء في الوحي نفسه، فيرى أن نصًا لأحد علماء القرن الثاني أولى من نص أتى في سنة رسول الله صلى الله عليه وسلم، فيبدأ البحث من مرحلة أهل العلم مهما كانوا، ويقطع الصلة بين الإنسان ومرجعية الوحي مباشرة. وهذا وإن كان صحيحًا من حيث المستمدات العلمية، ففيه نقص.</p>
+  </div>
+
+  <div class="block block-example">
+    <h4>من تجربة الشيخ الشخصية</h4>
+    <p>يذكر الشيخ أنه بحث قبل فترة في بعض المسائل المتعلقة بالسلوك والقلب، فوجد أن أكثر من بحث فيها يستمد أساسًا من كلام المتقدمين في هذه المسألة، مع أن وجود هذه المسألة في الوحي — وخاصة فيما يتعلق بالسيرة النبوية — وجود واضح وظاهر؛ فيعزل الباحث نفسه عن هذه المرجعية المباشرة، ولا يعتبر شيئًا في العلم والبحث إلا ما كان داخلًا تحت عنوان "التراث الإسلامي" أو "السلف".</p>
+  </div>
+
+  <p>واقعنا اليوم فيه مدارس علمية كثيرة واختلافات مذهبية وعقدية وفقهية، مبنية على خلافات موجودة في التاريخ: مدارس عقدية مختلفة، ومدارس فقهية مختلفة، بل صار حتى دخول السياسة يؤثر في بعض المكونات العلمية لبعض المدارس. فالطالب اليوم أمام بحر من الأقوال والمدارس والتنوع والاختلاف، وهذا الاختلاف على نوعين:</p>
+
+  <table class="compare">
+    <thead>
+      <tr><th></th><th>اختلاف تنوّع</th><th>اختلاف تضاد</th></tr>
+    </thead>
+    <tbody>
+      <tr><th>طبيعته</th><td>يقبل الاشتراك؛ يسلك كل طرف مسلكًا مقبولاً دون ترجيح حتمي</td><td>فيه صواب وخطأ لا يجتمعان</td></tr>
+      <tr><th>أمثلة</th><td>أغلب الخلافات الفقهية الاجتهادية؛ اختيار أفضل المراجع في باب معين؛ هل يحفظ الطالب منظومات أم يكتفي بالسنة والقرآن؛ الخلاف بين ألفية العراقي وألفية السيوطي</td><td>الموقف من نصوص الصفات: التسليم أم التفويض أم التأويل؟</td></tr>
+      <tr><th>الموقف المطلوب</th><td>لا ينبغي التشديد فيه، ولا الموالاة والمعاداة عليه</td><td>يُحدَّد الصواب بموافقة ما كان عليه الصحابة والقرون المفضلة</td></tr>
+    </tbody>
+  </table>
+
+  <div class="block block-warning">
+    <h4>⚠ تنبيه: الحكم على القول ≠ الحكم على القائل</h4>
+    <p>يخلط البعض بين تحديد الصواب من الخطأ في المسائل العقدية، وبين الموقف ممن أخطأ فيها؛ فيظنون أن وجود الخطأ يعني وجوب التعامل مع كل من أخطأ تعاملاً صارمًا حديًا لا يقبل معه الاستفادة منه في باب آخر، بل قد يصل الأمر عند البعض إلى التكفير وعدم قبول كون الإنسان من المسلمين أصلاً. والصواب هو التفريق بين أساس الموقف الصحيح في المسألة — وهو ما وافق ما كان عليه أصحاب النبي صلى الله عليه وسلم ومن تبعهم بإحسان — وبين الحكم على أعيان من أخطأ فيها.</p>
+  </div>
+
+  <div class="block block-takeaway">
+    <h4>✺ خلاصة</h4>
+    <ul>
+      <li>عزل الإنسان نفسه عن مرجعية الوحي المباشرة نقصٌ، حتى لو كان مستمده صحيحًا في ذاته.</li>
+      <li>اختلاف التنوع يقبل تعدد المسالك، ولا ينبغي التشديد فيه.</li>
+      <li>اختلاف التضاد له معيار للصواب مبني على موقف الصحابة والقرون المفضلة.</li>
+      <li>التفريق بين الحكم على القول والحكم على قائله ضروري لتفادي التشدد غير المنضبط.</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="sep wrap">
+
+<!-- ===================== SECTION 2 ===================== -->
+<section class="content-section wrap" id="s2">
+  <div class="section-eyebrow"><span class="num">٣</span> جوهر الموضوع</div>
+  <h2 class="section-title">المشكلة الكبرى: التفريق بين وسائل العلم ومقاصده</h2>
+
+  <div class="block block-def">
+    <h4>◆ تعريف</h4>
+    <p>التفريق بين وسائل العلم ومقاصده — بحسب الشيخ — هو <strong>"المشكلة الكبرى الموجودة اليوم في السياق العلمي"</strong>، وهي تحتاج عناية وانتباهًا خاصًا من طلاب العلم، ولها أكثر من صورة، أولاها التفريق بين الوسائل والمقاصد العامة الغائية للعلم.</p>
+  </div>
+
+  <p>العلم له غايات كبرى في الإسلام، وأعظم هذه الغايات هو العمل، أي التمسك بمقتضى هذا العلم. وهذا العمل يسبقه تعظيمٌ للأمر، ويسبق هذا التعظيم تصديقٌ به. فصار عندنا ثلاثة أمور فيما يتعلق بالأوامر والنواهي:</p>
+
+  <div class="flow">
+    <div class="flow-step">تصديق</div><div class="flow-arrow">←</div>
+    <div class="flow-step">تعظيم</div><div class="flow-arrow">←</div>
+    <div class="flow-step">عمل</div>
+  </div>
+
+  <p>أما فيما يتعلق بالأخبار — والوحي فيه أخبار كما فيه أوامر ونواهٍ — فالمقصد الغائي الأعظم هو التصديق بهذه الأخبار، وامتثال ما يترتب عليها من العظة والاعتبار: فإن كانت الأخبار متعلقة بالأنبياء، فالمطلوب الاقتداء بهم. وإن كانت متعلقة بإهلاك الله للأمم السابقة، فالمطلوب الاعتبار والاتعاظ والابتعاد عن الأسباب التي أهلكوا لأجلها. وإن كانت متعلقة بالله سبحانه وتعالى — وهي من أعظم القضايا المركزية في كتاب الله — فالمطلوب المعرفة بالله، وما يتبع هذه المعرفة من أعمال القلوب: محبة، وخشية، وإنابة، وصدق، وصبر، وإخلاص.</p>
+
+  <div class="block block-example">
+    <h4>نوعا العمل كمقصد</h4>
+    <p><strong>عمل ذاتي</strong> غير متعدٍ، كالصلاة والصيام وسائر العبادات الشخصية. و<strong>عمل متعدٍ</strong> متعلق بواقع المسلمين، كالإحسان إليهم ونصرتهم والقيام بحقوقهم والمسؤوليات العامة تجاههم.</p>
+  </div>
+
+  <div class="block block-quote">
+    <h4>« من واقع طلبة العلم »</h4>
+    <p>ينقل الشيخ لسان حال بعض المتخصصين الذين يزهدون في هذه الغايات: "يا عمي، بلاش شغل دروشة... إحنا شغلنا شغل تفكيك عبارات وحواشي ومتون". ويعلّق بأن هذه الغايات — التزكية والقلب والخلق — هي بعينها من صميم العلم في الإسلام، ومن جملة اتباع الأنبياء، وهي ما عاش لأجله الرسل وضحّوا وبذلوا، وهي ما يحيا به الإسلام وينتصر به الدين حقًا.</p>
+  </div>
+
+  <p>ومما يزيد الإشكال أن بعض المتخصصين قد يقضي سنوات يشرح لطلابه متنًا من المتون — في المنطق أو اللغة أو المصطلح أو أصول الفقه — دون أن يذكّرهم بالله، أو يربيهم على مكارم الأخلاق، فإذا نُبّه لذلك قال: إن التربية ليست من شأنه، وأن مهمته تنحصر في تعليمهم كيف يفككون العبارات ويبنون كتابًا على كتاب. وهذا بحد ذاته مشكلة كبيرة جدًا، يزيدها انتشارًا كثير من السياقات الأكاديمية.</p>
+
+  <div class="block block-key">
+    <h4>✦ نقطة مفصلية</h4>
+    <p>الفصل بين العلوم الإسلامية والشرعية من جهة، ومعاني التزكية والامتثال والاستصلاح الأخلاقي والقلبي من جهة أخرى، هو فصل بين الغايات والوسائل، وبين المقاصد والوسائل. والمعيار الذي يدلنا على الصواب فيه هو ما جاء في مدرسة النبي صلى الله عليه وسلم.</p>
+  </div>
+
+  <p>مجرد الإتقان المعرفي والتخصص — ولو في علم من علوم الشريعة — إذا جاء بلا أثر عملي، ولا إيمان بالله، ولا خشية له، ولا قيام بحق العلم، ففيه نقص. فإذا صدر ممن تخصص فيه ما يناقض المقصد الشرعي، صار النقص مضاعفًا ومركبًا. ومن هنا تتحدد ثلاثة مقامات لطالب العلم:</p>
+
+  <div class="block block-example">
+    <h4>المقامات الثلاثة لطالب العلم</h4>
+    <p><strong>١.</strong> القائم بأثر العلم ومقتضاه.<br>
+    <strong>٢.</strong> المقصّر في تحقيق أثر العلم، لا يعتني به ولا يربط علمه بعمله.<br>
+    <strong>٣.</strong> المناقض لمقتضى هذا العلم، فتكون القضية مضاعفة في الإشكال.</p>
+  </div>
+
+  <div class="block block-takeaway">
+    <h4>✺ خلاصة</h4>
+    <ul>
+      <li>التفريق بين وسائل العلم ومقاصده هو المشكلة الكبرى في السياق العلمي المعاصر.</li>
+      <li>مقاصد الأوامر والنواهي: تصديق، تعظيم، عمل. ومقاصد الأخبار: تصديق وامتثال ما تستلزمه.</li>
+      <li>العلم المجرد عن أثره العملي فيه نقص، ولو كان صحيحًا في ذاته.</li>
+      <li>طالب العلم بين ثلاثة مقامات: القائم بأثر العلم، أو المقصّر فيه، أو المناقض له.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== BAB 1 ===================== -->
+<section class="content-section bab-section" id="bab1" style="--accent:var(--bab1); --accent-pale:var(--bab1-pale);">
+  <div class="wrap">
+    <span class="bab-badge">الباب الأول · سبب علمي</span>
+    <div class="section-eyebrow"><span class="num">٤</span> أسباب تخلف العمل عن العلم (١)</div>
+    <h2 class="section-title">النقص في التكوين العلمي ذاته</h2>
+
+    <p>ما الذي يجعل طالب العلم يقف عند المقام الثاني أو الثالث ولا يحقق المقام الأول؟ هنا مربط الفرس. هناك بابان من الأسباب تؤديان إلى ألا يحقق طالب العلم أثر العلم ومقامات التعبد والعمل الناتجة عنه. الباب الأول باب علمي محض.</p>
+
+    <div class="block block-def">
+      <h4>◆ الصورة الأولى: استبعاد علوم القلب من دائرة "العلم المحترم"</h4>
+      <p>طبيعة العلم الذي اعتنى به طالب العلم قد تكون موغلة في النظرية، وقد دخلها عبر التاريخ ومرّ القرون ما أثّر سلبًا على صفائها، حتى تكلم علماء المسلمين على مر القرون عن ذم بعض العلوم رغم كونها مما يُدرَّس ويُحتفى به.</p>
+    </div>
+
+    <p>من أبواب هذا السبب: ألا يُدرَّس من العلوم إلا ما كان من باب الصنعة المحضة، وكأن المرء يتعامل مع معادلات رياضية بحتة، بينما لا يكون المحتوى العلمي المُحتفى به من صميم علوم الوحي: هدي النبي صلى الله عليه وسلم في تعبده، وقيامه، وجهاده، وبذله، ونصرته، وتضحيته في سبيل الله. فلسان حال البعض: "مالها ومال العلم؟ هذه أمور رقائق" — بينما هي من صميم العلم في الإسلام.</p>
+
+    <div class="block block-key">
+      <h4>✦ نقطة مفصلية</h4>
+      <p>تخلّف العمل عن العلم كثيرًا ما يكون سببه تخلّف هذه الموضوعات (التزكية، هدي النبي، السلوك) عن دائرة "العلم المقدس المحترم" أصلًا؛ فإن تخلّفت هذه الموضوعات عن دائرة الاهتمام العلمي، تخلّفت آثارها العملية تبعًا لذلك.</p>
+    </div>
+
+    <p>قد يقول قائل: هناك علوم كثيرة لم يرد في الوحي ذكر لها، واحتاج إليها الناس عبر التاريخ لأجل مشكلات نشأت، فصار هناك حاجة لبعض "علوم الآلة" التي وإن لم يأتِ لها ذكر في الوحي، فإن لها أصولاً عامة تدل على اعتبارها. والمقصود ليس اجتناب هذه العلوم — بل يجب الحفاوة بها والاعتناء بها — ولكن يجب أن يُستحضر دومًا أنها جزء من الخارطة، بل هي وسيلة، وهي أدوات وآلات. والفصل بين الموضوعات الكبرى التي أتى بها الإسلام وعزلها عن سياق تكوين طالب العلم هو من أعظم أسباب تخلف العمل عن تحقيق المقاصد الشرعية.</p>
+
+    <div class="block block-example">
+      <h4>مثال تاريخي: مصطلح الحديث</h4>
+      <p>يذكر الشيخ أن المتقدمين من أئمة الحديث — <span class="tag-name">سفيان بن عيينة</span>، <span class="tag-name">سفيان الثوري</span>، <span class="tag-name">شعبة</span>، <span class="tag-name">عبد الرحمن بن مهدي</span>، <span class="tag-name">أحمد بن حنبل</span>، <span class="tag-name">البخاري</span> — كانت لهم عبارات مركزية تدل على خطورة الانفصال بين التكوين الحديثي المجرد المتعلق بالرجال والرواة، وبين ما ينبغي أن يكون عليه طالب الحديث من جهة السلوك. ثم انتظمت هذه الإشارات لاحقًا في مباحث داخل علوم الحديث، فنجد في مقدمة <span class="tag-name">ابن الصلاح</span> نوعين مستقلين من أنواع علوم الحديث: النوع السابع والعشرون "معرفة آداب المحدث"، والنوع الثامن والعشرون "معرفة آداب طالب الحديث". وهذا يدل على أن الجانب السلوكي والأخلاقي كان يُعدّ — عند المتقدمين — جزءًا لا ينفصل عن جانب التكوين المعرفي، وهو تحقيق فاق في اعتنائه بهذه الشمولية واقعنا المعاصر.</p>
+    </div>
+
+    <p>الأمر الثاني ضمن هذا الباب من الأسباب هو الاستغراق التفصيلي فيما ليس من روح الشريعة ولا مقاصدها، والاستنزاف لهمم الإنسان وإرادته ومقاصده في تحقيق فروع العلم مع الغياب عن أصوله. وهذا فرع عن السبب الأول؛ فمن لا يجعل مركزيات الوحي مركزيات في تكوينه العلمي، لا بد أن تعظم لديه بعض الفروع والتفصيلات لتحل محل هذه المركزيات، وإن لم تكن مؤسسة على مرجعية الوحي.</p>
+
+    <div class="block block-example">
+      <h4>مثال: "المجدد" المختل الميزان</h4>
+      <p>شخص عنده تقصير بالغ في نصرة الإسلام والمسلمين، وعنده إشكالات قلبية وأخلاقية ظاهرة، لكن عنده تخصص دقيق في اللغة أو المنطق أو علم الكلام أو المصطلح، وأتى ببعض الإضافات العلمية الدقيقة أو حقّق بعض المخطوطات؛ فيجد حفاوة كبيرة توصف بـ"المجدد العظيم"، بينما لا تحظى قضايا نصرة الدين والعمل للإسلام وهداية الخلق ونصرة المستضعفين بنفس الحفاوة والاهتمام. وهذا التضخيم أثر مباشر لاختلال المركزيات.</p>
+    </div>
+
+    <div class="block block-takeaway">
+      <h4>✺ خلاصة الباب الأول</h4>
+      <ul>
+        <li>النقص العلمي له صورتان: استبعاد علوم القلب والسلوك من دائرة "العلم المحترم"، والاستغراق في الفروع مع الغياب عن الأصول.</li>
+        <li>المتقدمون من أئمة الحديث جعلوا "أدب المحدث" و"أدب طالب الحديث" نوعين مستقلين من أنواع علم الحديث، لا هامشًا عرضيًا.</li>
+        <li>علوم الآلة (كاللغة والمنطق) وسائل لا مقاصد، ويجب أن تبقى كذلك في وعي طالب العلم.</li>
+        <li>اختلال المركزيات يؤدي إلى تعظيم الجزئيات على حساب القضايا الكبرى كنصرة الدين والمستضعفين.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BAB 2 ===================== -->
+<section class="content-section bab-section" id="bab2" style="--accent:var(--bab2); --accent-pale:var(--bab2-pale);">
+  <div class="wrap">
+    <span class="bab-badge">الباب الثاني · سبب قلبي / عملي</span>
+    <div class="section-eyebrow"><span class="num">٥</span> أسباب تخلف العمل عن العلم (٢)</div>
+    <h2 class="section-title">الموانع القلبية والسلوكية</h2>
+
+    <p>البوابة الثانية من أبواب الأسباب المؤدية إلى تخلف العمل عن العلم هي بوابة الفساد، أو الموانع القلبية والسلوكية: موانع استقامة القلوب وصلاحها، وموانع من باب مثبطات الهمم والعزائم. فالباب الأول كان بابًا علميًا، وهذا الباب الثاني باب عملي متعلق بالقلوب والإرادات والهمم والعزائم.</p>
+
+    <div class="block block-key">
+      <h4>✦ نقطة مفصلية: ترابط البابين</h4>
+      <p>البابان مترابطان؛ فأحيانًا يحصل الإشكال في هذا الباب الثاني لأن العلوم التي درسها الإنسان في الباب الأول ليست ذات الشأن والمكانة التي تبعث الإنسان على الانطلاق ووقدة الروح وصلاح القلب.</p>
+    </div>
+
+    <div class="block block-quote">
+      <p>"بدون شك أن صلاح القلب هو البوابة الأساسية لتحقيق العمل بالعلم؛ فليس كل من علم فسيعمل، وليس كل من أراد أن يعمل فسيعمل، وإنما يجب أن توافق هذه الإرادة قلبًا صادقًا صالحًا، فيه من الصدق والإخلاص والتوكل والاستعانة ما يعينه — بإذن الله — على تحقيق هذه الإرادة الصادقة."</p>
+    </div>
+
+    <div class="block block-takeaway">
+      <h4>✺ خلاصة الباب الثاني</h4>
+      <ul>
+        <li>تخلف العمل عن العلم له باب ثانٍ غير علمي: موانع قلبية وسلوكية تتعلق بصلاح القلب وقوة الهمة.</li>
+        <li>العلم وحده — مهما بلغت دقته — لا يكفي لضمان العمل، ما لم يصاحبه صدق وإخلاص وتوكل.</li>
+        <li>الباب العلمي والباب القلبي مترابطان: نوعية العلم المدروس تؤثر في قوة الأثر القلبي الناتج عنه.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="sep wrap">
+
+<!-- ===================== SECTION 3 ===================== -->
+<section class="content-section wrap" id="s3">
+  <div class="section-eyebrow"><span class="num">٦</span> الصورة الثانية للمقاصد</div>
+  <h2 class="section-title">المقاصد الخاصة بكل علم</h2>
+
+  <p>بعد الحديث عن الغايات الكبرى العامة للعلم في الإسلام، هناك باب آخر هو باب المقاصد الصغرى أو الغايات الصغرى، وهي الغايات المتعلقة بكل علم في ذاته: مقاصد علم الحديث، ومقاصد أصول الفقه، ومقاصد اللغة العربية، ومقاصد العقيدة، وهكذا. وهذا باب فيه إشكال كبير منتشر، وفيه قدر كبير من الجمود والغياب في التفاصيل عن مراعاة هذه المقاصد الخاصة.</p>
+
+  <p>غياب هذا النوع من استحضار المقاصد يؤدي أيضًا إلى خلل في المركزيات، لكنه خلل مختلف عن خلل الصورة الأولى؛ فذاك خلل في المركزيات الكبرى المتعلقة بأساس الدين وكليات الشريعة، أما هذا فخلل في المركزيات المتعلقة بموضوعات كل علم في ذاته.</p>
+
+  <div class="block block-warning">
+    <h4>⚠ الخطورة: العجز عن مواجهة التحديات المعاصرة</h4>
+    <p>غياب مقاصد العلم عن طالب العلم والمحققين فيه يجعل هذا العلم قاصرًا عن مواجهة التحديات الجديدة التي ينبغي أن تُواجَه به. فحين تأتي موجات تشكيكية متعلقة بحجية السنة والثوابت الشرعية، من المسؤول عن التعامل معها؟</p>
+  </div>
+
+  <div class="block block-example">
+    <h4>مثال: علم الحديث ومقصده التأسيسي</h4>
+    <p>علم الحديث نشأ أصلاً مرتبطًا بالرواية والدفاع عنها، وكانت صورة الدفاع عن السنة في تلك المرحلة هي حمايتها من أن يدخل فيها ما ليس منها؛ ولذلك اشتغل المحدثون بتنقيح الروايات وتحقيقها والدفاع عنها وبناء الأسوار حولها. هذه الغاية يجب أن تستمر وإن اختلفت صورتها اليوم. لكن حين تجد طالب حديث — وما أكثرهم — همّه تحقيق الألفاظ الدقيقة للمصطلحات، والفرق الدقيق بين مسألة وأخرى، دون أن يربط ذلك بمقصد الدفاع عن الرواية، فإنه لا يكون مؤهلًا للرد حين يُقال له: "عندي مشكلة في السنة ذاتها، عندي مشكلة في طريقة نقلها". فمن سيرد إذًا على مثل هذه الإشكالات؟</p>
+  </div>
+
+  <p>مثال آخر في أصول الفقه: الإمام <span class="tag-name">الشاطبي</span> حين نظر إلى أصول الفقه وكتب "الموافقات"، رأى أن بعض المباحث التي دخلت في أصول الفقه ليست منه أصلًا — لا من ناحية الاستمداد فقط — لأنه كان ينظر إلى تحقيق مقاصد هذا العلم، وأشار في مقدمات الموافقات إلى ارتباط أصول الفقه بالفقه، وأن هذه الأصول أُضيفت لتكون نافعة في الفقه، فالمسائل التي لا علاقة لها بالعمل والفقه ذكرها الشاطبي على وجه الإشكال.</p>
+
+  <div class="block block-correction">
+    <h4>⚠ تصحيح / توضيح: أيّ الشاطبيَّين؟</h4>
+    <p>قد يُخلط الإمام الشاطبي صاحب "الموافقات" — وهو <strong>أبو إسحاق إبراهيم بن موسى اللخمي الغرناطي الأندلسي</strong> (ت 790هـ) — بالإمام الشاطبي الآخر، وهو <strong>القاسم بن فيرّه الرعيني</strong> (ت 590هـ)، صاحب منظومة "حرز الأماني ووجه التهاني" الشهيرة بـ"الشاطبية" في القراءات السبع. وهما عالمان مختلفان يفصل بينهما نحو قرنين من الزمان، ولا علاقة لأحدهما بكتاب الآخر. والمقصود في هذه المحاضرة هو صاحب الموافقات حصرًا.</p>
+  </div>
+
+  <table class="compare">
+    <thead>
+      <tr><th></th><th>عند الشاطبي</th><th>عند بعض المعاصرين</th></tr>
+    </thead>
+    <tbody>
+      <tr><th>المسائل الكلامية النظرية</th><td>يُقترح إزالتها من أصول الفقه</td><td>يُرى أن فهم أصول الفقه لا يتم إلا بدراسة خلفياتها الكلامية</td></tr>
+      <tr><th>المرجع</th><td>مقصد العلم (خدمة الفقه والعمل)</td><td>تحقيق المتن ودراسة الخلفيات النظرية</td></tr>
+      <tr><th>معنى "التحقيق"</th><td>تحقيق العلم = عودة إلى مقصده</td><td>تحقيق العلم = استيعاب أكبر قدر من التفاصيل النظرية</td></tr>
+    </tbody>
+  </table>
+
+  <p>البعض يظن أن التجديد أو التحقيق في العلم هو التحقيق في جزئيات هذا العلم وتفصيلاته المنفصلة، وأن الانفراد بجزئية أو مجموعة جزئيات وتحقيق القول فيها إلى أبعد مدى هو "الفتح في العلم" و"النصر فيه" و"الخير كله".</p>
+
+  <div class="block block-quote">
+    <p>"الوهم كل الوهم هو أن يظن الظانّ أن هذا الانشغال الجزئي هو حقيقة العلم وتحقيقه، وأن ما سواه ليس هو حقيقة العلم."</p>
+  </div>
+
+  <p>التجديد الحقيقي في العلم — إذا سلكه العلماء والمحققون بوعي — ليس بالضرورة إضافة، بل كثيرًا ما يكون إزالة لبعض المتراكمات المعرفية التي دخلت في هذا العلم وليست منه، كما فعل الشاطبي.</p>
+
+  <div class="block block-def">
+    <h4>◆ كيف تُدرك مقاصد علم معين؟</h4>
+    <p>لا تتضح مقاصد أي علم عند طالبه إلا إذا قرأ في تاريخ هذا العلم، ونظر في أقوال رؤوسه الكبار الذين أسسوه أو كانوا من أوائل المشتغلين فيه. فمن أراد مقاصد أصول الفقه حقًا، فلينظر إلى <span class="tag-name">الشافعي</span> وكلامه ورسالته والأمور التي دفعته إلى التأليف في هذا العلم، لا أن يكتفي بما استقرت عليه المسائل الجزئية النظرية المتأخرة، ثم يحمل نفسه عبء فهم كل مسألة منها ظانًا أن هذا هو التحقيق في العلم.</p>
+  </div>
+
+  <div class="block block-takeaway">
+    <h4>✺ خلاصة</h4>
+    <ul>
+      <li>لكل علم مقاصد خاصة به، وغيابها يؤدي لخلل في تحديد أولويات هذا العلم.</li>
+      <li>غياب مقصد علم الحديث (الدفاع عن الرواية) يُعجز طلابه عن مواجهة شبهات حجية السنة المعاصرة.</li>
+      <li>الشاطبي في "الموافقات" أزال مباحث كلامية من أصول الفقه التزامًا بمقصد العلم، خلافًا لمن يُدخلها اليوم باسم "التحقيق".</li>
+      <li>الانشغال بالجزئيات وحده ليس تحقيقًا للعلم؛ التحقيق الحقيقي يبدأ من الرجوع إلى مقاصد العلم وتاريخ مؤسسيه.</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="sep wrap">
+
+<!-- ===================== SECTION 4 (خاتمة) ===================== -->
+<section class="content-section wrap" id="s4">
+  <div class="section-eyebrow"><span class="num">٧</span> الخاتمة</div>
+  <h2 class="section-title">طلب العلم للهداية، لا للتحقيق النظري المجرد</h2>
+
+  <p>يختم الشيخ بأن غاية طلب العلم هي الهداية والاهتداء به، لا مجرد تتبع تفصيلاته وجزئياته. وفرق كبير بين من يطلب العلم لهذا المعنى، وبين من لا يطلبه إلا لغرض التحقيق المعرفي النظري المجرد.</p>
+
+  <div class="block block-key">
+    <h4>✦ نقطة مفصلية</h4>
+    <p>طلب العلم بقصد الهداية لا يعود على التحقيق العلمي النظري بالإبطال، بل بالعكس، يجعل المرء حريصًا جاهدًا على تتبع النواحي النظرية التي يمكن أن تفيد وتثمر، فيتعب ويجتهد ويحتسب كل لحظة يبذلها في سبيل العلم لله سبحانه وتعالى.</p>
+  </div>
+
+  <p>وهذا الترتيب — الإرادة والهمة الصادقة، ثم التحقيق المعرفي النظري، ثم الوصول إلى الصواب العملي الغائي — هو الترتيب الأقرب إلى مقاصد الشريعة ومرجعية الوحي ومدرسة النبي صلى الله عليه وسلم.</p>
+
+  <div class="block block-warning">
+    <h4>⏸ ملاحظة: هذا اللقاء مقدمة فقط</h4>
+    <p>أشار الشيخ في مطلع اللقاء إلى أنه مقدمة لبرنامج ولقاءات قادمة إن شاء الله، يتناول فيها تفصيلاً المقاصد الخاصة بكل علم من العلوم الشرعية، علمًا مقصدًا مقصدًا. لم يتطرق هذا اللقاء لتلك التفصيلات، واقتصر على المقدمات والأسس التي يُبنى عليها الموضوع.</p>
+  </div>
+
+  <div class="block block-action">
+    <h4>✎ قبل اللقاء القادم</h4>
+    <p>تأمل: ما مقصد العلم الذي تتخصص فيه أو تدرسه الآن؟ وهل ما زلت تستحضره وأنت تنشغل بتفاصيله؟</p>
+  </div>
+
+  <div class="block block-takeaway">
+    <h4>✺ خلاصة عامة للمحاضرة</h4>
+    <ul>
+      <li>الوحي سمّى نفسه علمًا، وربطه دومًا بالعمل والخشية، لا بالمعرفة المجردة.</li>
+      <li>المشكلة الكبرى المعاصرة: الفصل بين وسائل العلم ومقاصده العامة والخاصة.</li>
+      <li>تخلف العمل عن العلم سببه بابان: نقص علمي (استبعاد علوم القلب، والاستغراق في الفروع)، وموانع قلبية سلوكية.</li>
+      <li>لكل علم مقاصده الخاصة التي تُدرك بالرجوع إلى تاريخه ومؤسسيه، لا بجمع الجزئيات فحسب.</li>
+      <li>غاية طلب العلم الهداية والاهتداء، وهذا يقوّي التحقيق العلمي لا يضعفه.</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== ANKI SECTION ===================== -->
+<section class="anki-section" id="ankiSection">
+  <div class="anki-inner">
+    <h2>بطاقات المراجعة</h2>
+    <p class="anki-sub">اضغط على البطاقة لقلبها، وتنقّل بالأسهم — أو حمّل الملف لاستخدامه في تطبيق Anki</p>
+
+    <div class="flashcard-stage">
+      <div class="flashcard" id="flashcard">
+        <div class="fc-face fc-front">
+          <div class="fc-label">سؤال</div>
+          <div class="fc-text" id="fcFrontText"></div>
+        </div>
+        <div class="fc-face fc-back">
+          <div class="fc-label">إجابة</div>
+          <div class="fc-text" id="fcBackText"></div>
+        </div>
+      </div>
+    </div>
+    <p class="fc-hint">اضغط على البطاقة لعرض الإجابة</p>
+
+    <div class="fc-controls">
+      <button class="fc-btn" id="prevBtn">السابق ←</button>
+      <span class="fc-counter" id="fcCounter">١ / ٣٢</span>
+      <button class="fc-btn" id="nextBtn">→ التالي</button>
+    </div>
+
+    <button class="fc-download" id="downloadBtn">⭳ تحميل ملف Anki (TSV)</button>
+  </div>
+</section>
+
+<footer>
+  <p>العلوم الشرعية: بين المقاصد والوسائل — <span class="fname">الشيخ أحمد بن يوسف السيد</span></p>
+</footer>
+
+<script>
+/* ============ Source of truth: بطاقات المراجعة ============ */
+const CARDS = [
+["لماذا وصف الله الوحي الذي أنزله على النبي ﷺ بأنه \"علم\"؟","ليكون كافيًا ومغنيًا لصاحبه عن الاحتياج لمرجعيات أخرى تخالفه من أهواء الناس."],
+["أكمل: \"ولئن اتبعت أهواءهم بعد ما جاءك من العلم ما لك من الله من ___\"","ولي ولا واق (سورة الرعد: 37) — تنبيه: يشيع الخلط بينها وبين صيغة (ولي ولا نصير) وهي غير دقيقة."],
+["في أي سورة وردت: \"ولئن اتبعت أهواءهم من بعد ما جاءك من العلم إنك إذًا لمن الظالمين\"؟","سورة البقرة، آية 145."],
+["ما الآية التي ربطت بين قيام الليل وخشية الآخرة، وبين مسألة التفاضل بالعلم؟","\"قل هل يستوي الذين يعلمون والذين لا يعلمون\" (سورة الزمر: 9)."],
+["ما الفرق بين \"اختلاف التنوع\" و\"اختلاف التضاد\"؟","التنوع يقبل الاشتراك وتعدد المسالك (كالمسائل الفقهية الاجتهادية)، أما التضاد ففيه صواب وخطأ لا يجتمعان (كموقف من نصوص الصفات)."],
+["اذكر مثالاً على \"اختلاف تضاد\" ذكره الشيخ.","الموقف من نصوص الصفات: هل هو التسليم أم التفويض أم التأويل؟"],
+["ما الفرق الذي شدد عليه الشيخ بين \"الحكم على القول\" و\"الحكم على قائله\"؟","الخطأ في مسألة عقدية لا يعني بالضرورة معاملة كل من أخطأ فيها بنفس الصرامة، أو الحكم عليه بالتكفير."],
+["ما \"المشكلة الكبرى\" التي خصص لها الشيخ محور حديثه؟","التفريق بين وسائل العلم ومقاصده."],
+["ما الأمور الثلاثة المترتبة على الأمر والنهي في الشريعة كمقاصد؟","التصديق، ثم التعظيم، ثم العمل بمقتضى الأمر أو النهي."],
+["ما المقصد الأعظم من \"الأخبار\" الواردة في الوحي؟","التصديق بها، وامتثال ما تستلزمه (كالاقتداء بالأنبياء، أو الاعتبار بمصير الأمم الهالكة، أو معرفة الله وأعمال القلوب التابعة لها)."],
+["ما نوعا \"العمل\" المترتب على العلم كما قسّمهما الشيخ؟","عمل ذاتي (كالصلاة والصيام) وعمل متعدٍ (متعلق بنصرة المسلمين والقيام بحقوقهم)."],
+["ما مضمون \"ظاهرة الدروشة\" التي انتقدها الشيخ؟","وصف بعض المتخصصين للتزكية والقلب والسلوك بأنها \"دروشة\" لا علاقة لها بالعلم الحقيقي، مع أنها من صميم العلم في الإسلام."],
+["ما المقامات الثلاثة لطالب العلم بحسب علاقته بأثر العلم؟","القائم بأثر العلم ومقتضاه، والمقصّر في تحقيقه، والمناقض له بالكلية."],
+["ما البابان الرئيسيان اللذان ذكرهما الشيخ كأسباب لتخلف العمل عن العلم؟","الباب الأول: النقص في التكوين العلمي ذاته. الباب الثاني: الموانع القلبية والسلوكية."],
+["ما الصورة الأولى للنقص العلمي في الباب الأول؟","استبعاد بعض علوم الوحي (كالتزكية والسلوك وهدي النبي ﷺ) من دائرة \"العلم المحترم\" في تكوين طالب العلم."],
+["ما النوعان من أنواع علوم الحديث اللذان خصصهما ابن الصلاح للآداب؟","النوع السابع والعشرون: \"معرفة آداب المحدث\"، والنوع الثامن والعشرون: \"معرفة آداب طالب الحديث\"."],
+["اذكر بعض أئمة الحديث المتقدمين الذين أشار الشيخ لعباراتهم في خطورة الانفصال بين التكوين الحديثي والسلوك.","سفيان بن عيينة، سفيان الثوري، شعبة، عبد الرحمن بن مهدي، أحمد بن حنبل، البخاري."],
+["ما الصورة الثانية للنقص العلمي في الباب الأول؟","الاستغراق التفصيلي في فروع العلم مع الغياب عن أصوله ومركزياته الكبرى."],
+["ما الأثر المترتب على اختلال المركزيات عند طالب العلم؟","تعظيم أمور جزئية (كتحقيق مخطوطة) على حساب مركزيات كبرى كنصرة الدين والاهتمام بالمستضعفين."],
+["ما الباب الثاني من أبواب تخلف العمل عن العلم؟","الموانع القلبية والسلوكية: فساد القلب، ومثبطات الهمم والعزائم."],
+["بم وصف الشيخ العلاقة بين صلاح القلب والعمل بالعلم؟","صلاح القلب بوابة أساسية لتحقيق العمل بالعلم؛ فليس كل من علم سيعمل، ولا كل من أراد العمل فسيعمل، ما لم يصادف ذلك قلبًا صادقًا فيه إخلاص وتوكل."],
+["ما الفرق بين \"المقاصد العامة الكبرى\" و\"المقاصد الخاصة\" للعلوم؟","العامة تتعلق بغايات العلم في الإسلام عمومًا (كالهداية والعمل)، والخاصة تتعلق بمقصد كل علم بعينه (كمقصد علم الحديث أو أصول الفقه)."],
+["لماذا نشأ علم الحديث أصلاً بحسب الشيخ؟","للدفاع عن الرواية الصحيحة وحمايتها من أن يتسلل إليها ما ليس منها."],
+["ما الإشكال الذي يترتب على غياب استحضار مقصد علم الحديث اليوم؟","عجز بعض طلاب الحديث المتخصصين عن الرد على الشبهات المعاصرة حول حجية السنة، لانشغالهم بتفاصيل المصطلحات دون ربطها بمقصد الدفاع عن الرواية."],
+["من صاحب كتاب \"الموافقات\" الذي أزال فيه بعض المباحث من أصول الفقه؟","الإمام الشاطبي، أبو إسحاق إبراهيم بن موسى اللخمي الغرناطي الأندلسي، المتوفى سنة 790هـ."],
+["تنبيه: بم يشتهر \"الشاطبي\" الآخر الذي قد يُخلط بصاحب الموافقات؟","الإمام الشاطبي القاسم بن فيرّه (ت 590هـ)، صاحب منظومة \"حرز الأماني\" الشهيرة بـ\"الشاطبية\" في القراءات، وهو غير صاحب الموافقات."],
+["لماذا أزال الشاطبي بعض المباحث الكلامية من أصول الفقه؟","لأنه رأى أنها ليست من صميم أصول الفقه، إذ الأصول أُضيفت لتكون نافعة في الفقه والعمل، وهذه المباحث لا علاقة لها بذلك."],
+["ما \"الوهم\" الذي حذر منه الشيخ في تصور \"تحقيق العلم\"؟","ظن أن مجرد الانشغال بجزئيات العلم المنفصلة هو حقيقة التحقيق العلمي، بينما التحقيق الحق هو العودة إلى المقاصد والمركزيات."],
+["كيف يمكن لطالب العلم أن يدرك مقاصد علم معين بحسب الشيخ؟","بالرجوع إلى تاريخ هذا العلم وكلام مؤسسيه الأوائل، كالرجوع إلى الشافعي ورسالته لمعرفة مقاصد أصول الفقه."],
+["ما الغاية الأساسية التي شدد عليها الشيخ في ختام اللقاء لطلب العلم؟","أن يكون طلب العلم بقصد الهداية والاهتداء به، لا لمجرد تتبع التفصيلات والتحقيق النظري المجرد."],
+["هل طلب العلم بقصد الهداية يضعف التحقيق العلمي النظري؟","لا، بل يقوّيه ويدفع صاحبه لبذل الجهد في التحقيق المعرفي احتسابًا لله، فيكون التحقيق النظري وسيلة موصلة للصواب العملي الغائي."],
+["بم وصف الشيخ هذا اللقاء بالنسبة لما بعده؟","وصفه بأنه مقدمة لبرنامج ولقاءات قادمة تتناول المقاصد الخاصة بكل علم من العلوم الشرعية تفصيلاً."]
+];
+
+/* ============ Progress bar ============ */
+const progressBar = document.getElementById('progressBar');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  progressBar.style.width = scrolled + '%';
+});
+
+/* ============ Flashcards ============ */
+let idx = 0;
+const flashcard = document.getElementById('flashcard');
+const fcFront = document.getElementById('fcFrontText');
+const fcBack = document.getElementById('fcBackText');
+const fcCounter = document.getElementById('fcCounter');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+const arabicDigits = ['٠','١','٢','٣','٤','٥','٦','٧','٨','٩'];
+function toArabicNum(n){
+  return String(n).split('').map(d => arabicDigits[+d] || d).join('');
+}
+
+function renderCard(){
+  flashcard.classList.remove('flipped');
+  fcFront.textContent = CARDS[idx][0];
+  fcBack.textContent = CARDS[idx][1];
+  fcCounter.textContent = toArabicNum(idx+1) + ' / ' + toArabicNum(CARDS.length);
+  prevBtn.disabled = idx === 0;
+  nextBtn.disabled = idx === CARDS.length - 1;
+}
+
+flashcard.addEventListener('click', () => flashcard.classList.toggle('flipped'));
+prevBtn.addEventListener('click', () => { if(idx>0){ idx--; renderCard(); } });
+nextBtn.addEventListener('click', () => { if(idx<CARDS.length-1){ idx++; renderCard(); } });
+renderCard();
+
+/* ============ TSV download (built from the same CARDS array) ============ */
+document.getElementById('downloadBtn').addEventListener('click', () => {
+  const rows = CARDS.map(c => c[0].replace(/\t/g,' ') + '\t' + c[1].replace(/\t/g,' '));
+  const tsv = rows.join('\r\n');
+  const bom = '\uFEFF';
+  const blob = new Blob([bom + tsv], {type:'text/tab-separated-values;charset=utf-8;'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'العلوم_الشرعية_بين_المقاصد_والوسائل_anki.tsv';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+});
+</script>
 </body>
 </html>
