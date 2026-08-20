@@ -200,6 +200,122 @@ footer .dl-btn{margin-top:16px}
   .isnad{font-size:17px}
 }
 </style>
+
+<style>
+/* ===== تثبيت الفهم — الأسئلة التفاعلية ===== */
+.quiz-block{
+  margin:32px 0 24px;
+  background:var(--green-deeper, #132920);
+  border-radius:12px;
+  padding:24px;
+  box-shadow:0 6px 24px rgba(31,61,46,.14);
+  position:relative;
+  overflow:hidden;
+  direction:rtl;
+  text-align:right;
+}
+.quiz-block::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:radial-gradient(circle at 90% 10%, rgba(201,164,90,.12) 0, transparent 45%);
+  pointer-events:none;
+}
+.quiz-block-title{
+  display:flex; align-items:center; gap:8px;
+  font-weight:800; font-size:14px;
+  color:var(--gold-pale, #F2E6C4);
+  letter-spacing:.3px;
+  margin-bottom:16px;
+  position:relative;
+}
+.quiz-item{
+  background:rgba(255,254,250,.06);
+  border:1px solid rgba(199,164,90,.25);
+  border-radius:8px;
+  padding:16px;
+  margin-bottom:16px;
+  position:relative;
+}
+.quiz-item:last-child{margin-bottom:0;}
+.quiz-q{
+  font-size:15.5px; font-weight:700;
+  color:#FBF7EE;
+  margin:0 0 16px;
+  line-height:1.7;
+}
+.quiz-options{display:flex; flex-direction:column; gap:8px;}
+.quiz-opt{
+  display:block; width:100%; text-align:right;
+  background:rgba(251,247,238,.08);
+  border:1px solid rgba(251,247,238,.18);
+  color:#FBF7EE;
+  font-family:inherit; font-size:14px; line-height:1.6;
+  border-radius:8px;
+  padding:10px 14px;
+  cursor:pointer;
+  transition:background .15s ease, border-color .15s ease, transform .1s ease;
+}
+.quiz-opt:hover{background:rgba(251,247,238,.15); border-color:rgba(199,164,90,.5);}
+.quiz-opt:active{transform:scale(.99);}
+.quiz-opt.correct{
+  background:rgba(46,84,67,.9);
+  border-color:#8FBF9E;
+  color:#EAF6EE;
+  font-weight:700;
+}
+.quiz-opt.correct::after{content:" \2713"; color:#8FBF9E;}
+.quiz-opt.wrong{
+  background:rgba(140,59,46,.55);
+  border-color:#D89A8C;
+  color:#F7E6E2;
+}
+.quiz-opt.wrong::after{content:" \2715"; color:#F1B3A6;}
+.quiz-opt.disabled{cursor:default; pointer-events:none;}
+.quiz-feedback{
+  margin-top:10px;
+  font-size:13.5px; line-height:1.8;
+  color:var(--gold-pale, #F2E6C4);
+  background:rgba(0,0,0,.15);
+  border-right:3px solid var(--gold, #A9832E);
+  border-radius:6px;
+  padding:9px 12px;
+  display:none;
+}
+.quiz-feedback.show{display:block;}
+.quiz-reflect{
+  border-top:1px dashed rgba(199,164,90,.3);
+  padding-top:16px;
+  margin-top:16px;
+}
+.quiz-item > .quiz-reflect:first-child{border-top:none; padding-top:0; margin-top:0;}
+.quiz-reflect-q{
+  font-size:14.5px; color:var(--gold-pale, #F2E6C4); font-weight:600;
+  margin:0 0 8px;
+}
+.quiz-reveal-btn{
+  background:var(--gold, #A9832E);
+  color:var(--green-deeper, #132920);
+  border:none; border-radius:999px;
+  font-family:inherit;
+  font-weight:700; font-size:13px;
+  padding:8px 18px;
+  cursor:pointer;
+  transition:background .15s ease;
+}
+.quiz-reveal-btn:hover{background:var(--gold-soft, #C7A45A);}
+.quiz-answer{
+  display:none;
+  margin-top:10px;
+  font-size:14px; line-height:1.85;
+  color:#FBF7EE;
+  background:rgba(255,254,250,.08);
+  border-radius:8px;
+  padding:11px 14px;
+}
+.quiz-answer.show{display:block;}
+@media (max-width:640px){ .quiz-block{padding:16px;} }
+</style>
+
 </head>
 <body>
 
@@ -279,7 +395,9 @@ footer .dl-btn{margin-top:16px}
       <li>استحضار المقصد الغائي أثناء الطلب يعين على الإخلاص، لأن في علم الحديث فتنةً كما تنبّه لها المتقدمون.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s1"></div>
+    </section>
 
 <!-- ===== 2 ===== -->
 <section id="s2" class="sec" style="--accent:var(--s2)">
@@ -363,7 +481,9 @@ footer .dl-btn{margin-top:16px}
       <li>بالدارقطني تُختم مدرسة المتقدمين، وهي مدرسة منهج لا مجرد مدرسة زمن.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s2"></div>
+    </section>
 
 <!-- ===== 3 ===== -->
 <section id="s3" class="sec" style="--accent:var(--s3)">
@@ -430,7 +550,9 @@ footer .dl-btn{margin-top:16px}
       <li>حفظ تعريفات المصطلح وحده لا يُنتج فهمًا لحقيقة النقل ولا قدرةً على الدفاع عن السنة.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s3"></div>
+    </section>
 
 <!-- ===== 4 ===== -->
 <section id="s4" class="sec" style="--accent:var(--s4)">
@@ -510,7 +632,9 @@ footer .dl-btn{margin-top:16px}
       <li>القاعدة في التعامل: يُحفظ للعالم فضله، ولا يُسلَّم له في كل شيء.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s4"></div>
+    </section>
 
 <!-- ===== 5 ===== -->
 <section id="s5" class="sec" style="--accent:var(--s5)">
@@ -605,7 +729,9 @@ footer .dl-btn{margin-top:16px}
       <li>«السنن» في الاصطلاح: أحاديث أحكام في الأصل، ولذلك اختلف مقصد البيهقي عن مقصد الحاكم.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s5"></div>
+    </section>
 
 <!-- ===== 6 ===== -->
 <section id="s6" class="sec" style="--accent:var(--s6)">
@@ -684,7 +810,9 @@ footer .dl-btn{margin-top:16px}
       <li>الشروح نمت على النوعين معًا: على الأصول (فتح الباري، المنهاج) وعلى الفروع (نيل الأوطار، منحة العلّام).</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s6"></div>
+    </section>
 
 <!-- ===== 7 ===== -->
 <section id="s7" class="sec" style="--accent:var(--s7)">
@@ -740,7 +868,9 @@ footer .dl-btn{margin-top:16px}
       <li>الدارقطني تتبّع الصحيحين في «الإلزامات والتتبع»، وردّ عليه النووي في ثنايا شرحه وابن حجر في «هدي الساري» بصورة أعلى.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s7"></div>
+    </section>
 
 <!-- ===== 8 ===== -->
 <section id="s8" class="sec" style="--accent:var(--s8)">
@@ -812,7 +942,9 @@ footer .dl-btn{margin-top:16px}
       <li>ابن حجر ألّف في كل مجال بجودة عالية: بلوغ المرام، فتح الباري، تهذيب التهذيب، تقريب التهذيب، إتحاف المهرة، النخبة والنزهة، النكت.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s8"></div>
+    </section>
 
 <!-- ===== 9 ===== -->
 <section id="s9" class="sec" style="--accent:var(--s9)">
@@ -942,7 +1074,9 @@ footer .dl-btn{margin-top:16px}
       <li>الخاتمة: عينٌ على الإسناد وعينٌ على الهدي؛ ومن انغمس في الصنعة حتى صارت غايةً فاته من الخير بقدر ما فاته من الغاية.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s9"></div>
+    </section>
 
 </main>
 
@@ -1136,6 +1270,358 @@ function downloadTSV(){
 
 buildFilters();
 render();
+</script>
+
+
+<script>
+window.quizData = {
+ "s1": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما العلاقة بين الباب الأول (المتن) والباب الثاني (الصنعة الحديثية)؟",
+    "options": [
+     "الباب الثاني غاية، والأول وسيلة",
+     "الباب الأول غاية، والباب الثاني وسيلة",
+     "كلاهما غاية مستقلة"
+    ],
+    "correct": 1,
+    "feedback": "فالصنعة الحديثية وسيلة إلى نقل السنة صافية، والنقل وسيلة إلى التفقه، والتفقه وسيلة إلى العمل — هذه هي السلسلة المقصدية."
+   },
+   {
+    "type": "reflect",
+    "q": "قال الشيخ إن في علم الحديث فتنة. ما وجه ذلك؟ وما الذي يعين على السلامة منها؟",
+    "answer": "حفظ الأسانيد والرجال والرواة قد يورث الزهو والافتخار؛ حتى إن أحد المحدّثين قال: «حدثنا فلان، حدثنا فلان» ثم قال: «أستغفر الله» لما وجد في نفسه شيئًا. والذي يعين على السلامة هو استحضار المقصد الغائي أثناء الطلب، فيبقى العلم بحجمه الذي يناسبه."
+   }
+  ]
+ },
+ "s2": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "سُئل أبو حاتم الرازي عمّن بقي يُحسن الصنعة الحديثية وعلم العلل، فماذا قال؟",
+    "options": [
+     "كثيرٌ ولله الحمد",
+     "ما بقي من يُحسن هذا",
+     "لا أعلم"
+    ],
+    "correct": 1,
+    "feedback": "وقد حصل بالفعل ضمور شديد في الصنعة الحديثية، وبقيت بقايا قليلة — وهم أئمة القرن الرابع الثلاثة: ابن عديّ، والعقيلي، والدارقطني."
+   },
+   {
+    "type": "mcq",
+    "q": "ما أعظم ميزة في كتاب «الكامل في ضعفاء الرجال» لابن عديّ؟",
+    "options": [
+     "أنه أكبر كتب الرجال حجمًا",
+     "أنه ينقل الحكم على الراوي من مُجمَل إلى مفصَّل، فيسوق الأحاديث المنتقَدة عليه بأعيانها",
+     "أنه اقتصر على رواة الكتب الستة"
+    ],
+    "correct": 1,
+    "feedback": "وربما قال: وعامّة ما انتُقد عليه هذه الأحاديث وباقي أحاديثه مستقيمة. وهذه الميزة كانت في أذهان العلماء يطبّقونها عمليًا، لكن الذي دوّنها هو ابن عديّ."
+   },
+   {
+    "type": "reflect",
+    "q": "ما معنى قول عبد الرحمن بن مهدي: «عِلمنا عند من لا يعرفه كالكهانة»؟",
+    "answer": "أي أنهم يقولون: هذا الحديث معلول، فيقول من لا يعرف الصنعة: أين العلة؟ أعطني إياها! أما هم فينزلون بالكشّاف إلى الجذور فيتبيّن لهم أن في الرواية خطأ — وهذا لا يتقنه إلا القلة في العالم."
+   }
+  ]
+ },
+ "s3": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما المعلم الثالث من معالم طريقة الحفاظ المتقدمين؟",
+    "options": [
+     "الاكتفاء بظواهر الأسانيد",
+     "العمل بالقرائن المتعلقة بكل رواية على حِدَة، لا بأحكام نظرية عامة",
+     "ردّ التفرد مطلقًا"
+    ],
+    "correct": 1,
+    "feedback": "فلا يقولون: زيادة الثقة مقبولة مطلقًا، ولا: التفرد مردود مطلقًا — وإنما قد يُقبل وقد يُردّ بحسب القرائن في كل رواية بعينها."
+   },
+   {
+    "type": "mcq",
+    "q": "ما الفرق بين طريقة الفقهاء وطريقة الحفاظ في التعامل مع الأحاديث؟",
+    "options": [
+     "الفقهاء يتعاملون مع الظاهر، والحفاظ يتعاملون مع البواطن والعلل الخفية أيضًا",
+     "الفقهاء أدقّ في العلل من الحفاظ",
+     "لا فرق بينهما"
+    ],
+    "correct": 0,
+    "feedback": "فقد صار كثير من المتأخرين يقولون: نحن ما لنا في العلل الخفية، إنما نتعامل مع الظاهر. أما الحفاظ فيفتشون حتى يبدو الحديث سليمًا في ظاهره ثم يتبيّن الخلل عند تسليط الضوء على الجذور."
+   },
+   {
+    "type": "reflect",
+    "q": "لماذا لا تكفي دراسة المصطلح وحدها لفهم حقيقة نقل السنة؟",
+    "answer": "لأن معرفة تعريف الحسن والضعيف والصحيح والمنكر والشاذ، والفرق بين المتواتر والآحاد وتسمياته — لا تكفي لفهم حقيقة ما جرى في نقل السنة النبوية، ومن ثَمّ لا تكفي للدفاع عنها دفاعًا حقيقيًا. وقد أشار الشيخ إلى «شرح علل الترمذي» لابن رجب بوصفه أفضل ما كتبه إمام متأخر على طريقة المتقدمين."
+   }
+  ]
+ },
+ "s4": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "كيف دخلت الروافد الكلامية والمنطقية إلى علم الحديث؟",
+    "options": [
+     "عن طريق كتب التفسير",
+     "عن طريق علم أصول الفقه الذي اشتغل فيه المتكلمون، في مبحث الأدلة",
+     "عن طريق كتب التاريخ"
+    ],
+    "correct": 1,
+    "feedback": "ففي كتب الأصول الموسّعة كلام تفصيلي عن الحديث: الجرح والتعديل، وزيادة الثقة، وقبول الرواية وردّها — لكن على القانون الأصولي أو الكلامي، لا على قانون النقاد."
+   },
+   {
+    "type": "mcq",
+    "q": "من القطبان اللذان دارت عليهما علوم الحديث المتأخرة؟",
+    "options": [
+     "الدارقطني (385هـ) وابن عديّ (365هـ)",
+     "الخطيب البغدادي (463هـ) وابن الصلاح (643هـ)",
+     "المزّي (742هـ) وابن حجر (852هـ)"
+    ],
+    "correct": 1,
+    "feedback": "ولاحظ حيلة الحفظ: الرقمان نفسهما مع تقديم وتأخير — 463 و643. وابن عبد البر توفي أيضًا سنة 463هـ."
+   },
+   {
+    "type": "reflect",
+    "q": "نقل ابن رجب أن الخطيب البغدادي «تناقض» في مسألة زيادة الثقة. ما المنهجية الصحيحة في التعامل مع مثل هذا؟",
+    "answer": "هذا لا يُقلّل من قيمة الخطيب؛ فهو من أئمة الإسلام في الحديث، والناس عيالٌ عليه، وكل من جاء بعده دار في فلك كتبه. لكن هذا لا يمنع أن ننقل نقد ابن رجب وأن نفهم في السياق التاريخي أن التغيّر قد حصل — فيُحفظ لكل عالمٍ حقه، ولا يسلم أحدٌ من الخطأ."
+   }
+  ]
+ },
+ "s5": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "اصطلاح مهم: إذا قيل «رواه البيهقي» مطلقًا، فما المقصود؟",
+    "options": [
+     "شعب الإيمان",
+     "السنن الكبرى (أو الكبير)",
+     "دلائل النبوة"
+    ],
+    "correct": 1,
+    "feedback": "وإذا كان في غيرها بيّنوا: «رواه البيهقي في شعب الإيمان» أو «في دلائل النبوة». والسنن الكبير يجمع الأقسام الثلاثة كما يجمعها جامع الترمذي."
+   },
+   {
+    "type": "mcq",
+    "q": "للحاكم النيسابوري كتابان بمصيرين مختلفين. ما تقويم كل منهما؟",
+    "options": [
+     "كلاهما نفيس موفَّق",
+     "«معرفة علوم الحديث» نفيس يوافق نَفَس المتقدمين، أما «المستدرك» فلم يوفَّق فيه وانتُقد كثيرًا",
+     "كلاهما منتقد"
+    ],
+    "correct": 1,
+    "feedback": "وقال ابن الصلاح عنه بعبارة لطيفة: «وهو واسع الخَطْو في شرط الصحيح» — أي عنده تساهل؛ فقد يقول: صحيح على شرط البخاري، ثم يقول الذهبي: فيه فلانٌ وضّاعٌ كذّاب!"
+   }
+  ]
+ },
+ "s6": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما الفرق بين «الكتب الأصلية» و«الكتب الفرعية» في نقل السنة؟",
+    "options": [
+     "الأصلية تنقل بأسانيد المؤلف، والفرعية تأخذ من الأصلية وترتّب وتحذف الأسانيد ويُكتفى بالعزو",
+     "الأصلية أقدم زمنًا فقط",
+     "الفرعية أصح من الأصلية"
+    ],
+    "correct": 0,
+    "feedback": "ولذلك لا نقول «رواه النووي»، وإنما: ذكره النووي في رياض الصالحين، ومن أخرجه هو البخاري أو مسلم أو أبو داود أو أحمد."
+   },
+   {
+    "type": "mcq",
+    "q": "ما شرط عبد الغني المقدسي في كتابه «عمدة الأحكام»؟",
+    "options": [
+     "أن يخرّج كل ما في الكتب الستة",
+     "ألا يخرّج إلا ما اتفق عليه الشيخان",
+     "أن يقتصر على أحاديث الترغيب والترهيب"
+    ],
+    "correct": 1,
+    "feedback": "بخلاف «المنتقى» للمجد ابن تيمية الذي توسّع في أحاديث الأحكام، و«الترغيب والترهيب» للمنذري الذي جمع آلاف الأحاديث في الترغيب والترهيب."
+   },
+   {
+    "type": "reflect",
+    "q": "ما الفرق بين «نيل الأوطار» و«فتح الباري» من جهة نوع الأصل المشروح؟",
+    "answer": "«فتح الباري» لابن حجر شرح لصحيح البخاري وهو كتاب أصل، أما «نيل الأوطار» للشوكاني فشرح لـ«منتقى الأخبار» وهو كتاب فرعي محذوف الأسانيد. وكذلك «منحة العلّام» لعبد الله الفوزان شرح لبلوغ المرام وهو فرعي — وقد رآه الشيخ أفضل شرح لبلوغ المرام، مصرّحًا بأنه رأي شخصي غير ملزم."
+   }
+  ]
+ },
+ "s7": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "لماذا وُصف كتاب «علوم الحديث» لابن الصلاح بأن العلماء تركوا ما سواه وانشغلوا به؟",
+    "options": [
+     "لأنه أول كتاب في المصطلح",
+     "لكثرة من نظمه واختصره وشرحه وكتب عليه النكت من كبار العلماء",
+     "لأنه أصغر الكتب حجمًا"
+    ],
+    "correct": 1,
+    "feedback": "النووي اختصره (التقريب) ← السيوطي شرحه (تدريب الراوي)؛ وابن كثير اختصره ← أحمد شاكر شرحه (الباعث الحثيث)؛ والعراقي نظمه (الألفية) ← السخاوي شرحها (فتح المغيث)؛ وابن حجر كتب عليه النكت."
+   },
+   {
+    "type": "reflect",
+    "q": "تعقّب النووي وابن حجر انتقادات الدارقطني على الصحيحين. لماذا كان صنيع ابن حجر أعلى؟",
+    "answer": "لأن النووي نثر تعقباته داخل الشرح، أما ابن حجر فجمعها في المقدمة — «هدي الساري» — فذكر الأحاديث التي تعقّب بها الدارقطني البخاريَّ وناقشه فيها بنقاش عالٍ جدًا. وتنبيه مهم: هذا النقد لا يعني بالضرورة نقد متنٍ معيّن، فقد يكون الحديث واردًا من ثلاثة أسانيد فينقد الدارقطني إسنادًا واحدًا منها."
+   }
+  ]
+ },
+ "s8": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما أصعب وأعظم ما في «تهذيب الكمال» للمِزّي؟",
+    "options": [
+     "أنه ذكر تراجم رواة الكتب الستة فقط",
+     "أنه ذكر روايات كل راوٍ عن كل شيخ من شيوخه مع بيان في أي كتاب وردت بالرموز",
+     "أنه رتّبه على حروف المعجم"
+    ],
+    "correct": 1,
+    "feedback": "فلو ذهبتَ تفتّش في ابن ماجه حتى تموت لن تجد رواية موجودة في غيره، وهو قد حسمها لك من بين آلاف الأسانيد. وله أيضًا «تحفة الأشراف» في علم التخريج والأطراف."
+   },
+   {
+    "type": "mcq",
+    "q": "ما سلسلة الاختصار في كتب الرجال للترتيب الذهني؟",
+    "options": [
+     "تقريب التهذيب ← تهذيب التهذيب ← تهذيب الكمال",
+     "تهذيب الكمال (المزّي) ← تهذيب التهذيب (ابن حجر) ← تقريب التهذيب (ابن حجر)",
+     "الكامل لابن عديّ ← تهذيب الكمال ← تقريب التهذيب"
+    ],
+    "correct": 1,
+    "feedback": "فتهذيب التهذيب مبنيّ على تهذيب الكمال، وتقريب التهذيب اختصار لتهذيب التهذيب في مجلد واحد. وميزة ابن حجر أن الجودة عالية مع كثرة المجالات."
+   },
+   {
+    "type": "reflect",
+    "q": "ذُكر لابن كثير «اختصار علوم الحديث»، لكن الشيخ ذكر ما هو أعلى منه في الصنعة. ما هو؟",
+    "answer": "«مسند الفاروق» ففيه تطبيقات عملية وأحكام على الأحاديث مهمة جدًا، و«البداية والنهاية» ففيها صنعة حديثية رائقة، و«التفسير» فالأسانيد التي يسوقها ويحكم عليها متميزة وفريدة. وهو زوج ابنة المزّي."
+   }
+  ]
+ },
+ "s9": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "أين موضع مبحث «حجية السنة» في التقسيم؟",
+    "options": [
+     "هو غاية الباب الثاني (الصنعة الحديثية)",
+     "اعتنى به الأصوليون في الأساس، لا الصنعة الحديثية",
+     "لم يعتنِ به أحد"
+    ],
+    "correct": 1,
+    "feedback": "فغاية الصنعة الحديثية حماية السنة من جهة التأكد من صحة نسبة الأحاديث المعيّنة للنبي ﷺ، لا إثبات حجيتها في ذاتها. ومن أوائل من اعتنى بذلك الإمام الشافعي في «الرسالة»."
+   },
+   {
+    "type": "mcq",
+    "q": "ما فكرة «علم التخريج»؟ وما فائدته العملية؟",
+    "options": [
+     "استخراج الأحاديث الصحيحة من الضعيفة في كتاب واحد",
+     "أن يأخذ عالمٌ أحاديث كتابٍ ذُكرت فيه استشهادًا ولم تُدرَس، فيدرسها حديثًا حديثًا",
+     "ترتيب الأحاديث على الأبواب"
+    ],
+    "correct": 1,
+    "feedback": "كـ«تلخيص الحبير» لابن حجر و«نصب الراية» للزيلعي. وفائدته أنك تقرأ كتاب الفقه ومعه كتاب التخريج فتعرف أي أحاديثه صحيح وأيها ضعيف — فكثير من الفقهاء يستدلّ بأحاديث ضعيفة، وأحيانًا شديدة الضعف."
+   },
+   {
+    "type": "reflect",
+    "q": "ما الذي دعا إليه الشيخ بخصوص تدريس علوم الحديث في هذا الزمن؟",
+    "answer": "أن يضيف مدرّسو علوم الحديث الكلامَ على حجية السنة النبوية إلى مباحثها — لكثرة المعارضة والتشكيك؛ فوجب على طلاب الحديث أن يتقنوا هذا الباب، ويعرفوا كيف يثبتون صحة السنة وصحة علم الحديث في ذاته، إذ وقع التشكيك كذلك في موضوعية هذا العلم."
+   }
+  ]
+ }
+};
+</script>
+
+<script>
+/* ===== تثبيت الفهم: محرك الرندر ===== */
+(function(){
+  function renderQuizBlocks(){
+    document.querySelectorAll('.quiz-block[data-quiz]').forEach(function(container){
+      var key = container.getAttribute('data-quiz');
+      var data = (window.quizData || {})[key];
+      if(!data || container.dataset.rendered) return;
+      container.dataset.rendered = '1';
+
+      var title = document.createElement('div');
+      title.className = 'quiz-block-title';
+      title.textContent = '\uD83E\uDDE0 تثبيت الفهم';
+      container.appendChild(title);
+
+      data.items.forEach(function(item){
+        var itemEl = document.createElement('div');
+        itemEl.className = 'quiz-item';
+
+        if(item.type === 'mcq'){
+          var qEl = document.createElement('p');
+          qEl.className = 'quiz-q';
+          qEl.textContent = item.q;
+          itemEl.appendChild(qEl);
+
+          var optsWrap = document.createElement('div');
+          optsWrap.className = 'quiz-options';
+
+          var feedbackEl = document.createElement('div');
+          feedbackEl.className = 'quiz-feedback';
+          feedbackEl.textContent = item.feedback || '';
+
+          item.options.forEach(function(optText, optIdx){
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'quiz-opt';
+            btn.textContent = optText;
+            btn.addEventListener('click', function(){
+              var allBtns = optsWrap.querySelectorAll('.quiz-opt');
+              allBtns.forEach(function(b){ b.classList.add('disabled'); });
+              if(optIdx === item.correct){
+                btn.classList.add('correct');
+              } else {
+                btn.classList.add('wrong');
+                if(allBtns[item.correct]) allBtns[item.correct].classList.add('correct');
+              }
+              feedbackEl.classList.add('show');
+            });
+            optsWrap.appendChild(btn);
+          });
+
+          itemEl.appendChild(optsWrap);
+          itemEl.appendChild(feedbackEl);
+
+        } else if(item.type === 'reflect'){
+          var wrap = document.createElement('div');
+          wrap.className = 'quiz-reflect';
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-reflect-q';
+          qText.textContent = '\uD83D\uDCAD ' + item.q;
+          wrap.appendChild(qText);
+
+          var revealBtn = document.createElement('button');
+          revealBtn.type = 'button';
+          revealBtn.className = 'quiz-reveal-btn';
+          revealBtn.textContent = 'إظهار الإجابة';
+
+          var answerEl = document.createElement('div');
+          answerEl.className = 'quiz-answer';
+          answerEl.textContent = item.answer;
+
+          revealBtn.addEventListener('click', function(){
+            answerEl.classList.toggle('show');
+            revealBtn.textContent = answerEl.classList.contains('show') ? 'إخفاء الإجابة' : 'إظهار الإجابة';
+          });
+
+          wrap.appendChild(revealBtn);
+          wrap.appendChild(answerEl);
+          itemEl.appendChild(wrap);
+        }
+
+        container.appendChild(itemEl);
+      });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', renderQuizBlocks);
+  } else {
+    renderQuizBlocks();
+  }
+})();
 </script>
 
 </body>
