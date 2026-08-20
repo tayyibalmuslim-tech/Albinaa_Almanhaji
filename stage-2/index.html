@@ -3,25 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>المرحلة 2 - قريبًا</title>
+  <title>المرحلة الثانية - منهجي في طلب العلم</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
 </head>
-<body class="" >
+<body class="" data-page="stage" data-stage-id="stage2">
   <div class="page">
-    <nav class="breadcrumbs"><a href="../index.html">الرئيسية</a><span class="sep">/</span><span aria-current="page">المرحلة 2</span></nav>
+    <nav class="breadcrumbs"><a href="../index.html">الرئيسية</a><span class="sep">/</span><span aria-current="page">المرحلة الثانية</span></nav>
     
     <header class="stage-header">
       <h1>المرحلة الثانية</h1>
-      <p class="coming-soon-badge">قريبًا 🚧</p>
+      <div class="stage-progress" id="stage-progress-header" data-stage="stage2">
+        <!-- تُملأ بواسطة script.js -->
+      </div>
     </header>
-    <div class="empty-state">
-      <p>لم يتم إضافة محتوى هذه المرحلة بعد.</p>
-      <p>سيتم تفعيلها لاحقًا بنفس أسلوب المرحلة الأولى.</p>
-      <a href="../index.html" class="btn">العودة إلى الرئيسية</a>
+
+    <section class="continue-section" id="stage-continue-card" data-stage="stage2">
+      <!-- تُملأ بواسطة script.js -->
+    </section>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="subjects">المواد</button>
+      <button class="tab-btn" data-tab="days">الأيام</button>
     </div>
+
+    <section id="tab-subjects" class="tab-panel active" data-stage-subjects="stage2">
+      <!-- تُملأ بواسطة script.js -->
+    </section>
+
+    <section id="tab-days" class="tab-panel" data-stage-days="stage2">
+      <!-- تُملأ بواسطة script.js -->
+    </section>
   
   </div>
   <script src="../data.js"></script>
