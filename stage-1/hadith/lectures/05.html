@@ -1,39 +1,1142 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>المحاضرة الثانية 2/2 - مدخل إلى علم الحديث</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../../style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مدخل إلى علوم الحديث (2) — الشيخ أحمد السيد</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#17211D;
+  --ink-soft:#3D4C46;
+  --paper:#F4F2EA;
+  --paper-2:#FDFCF7;
+  --line:#DCD6C6;
+  --gold:#A8761C;
+  --navy:#0F2620;
+
+  --s1:#146356;
+  --s2:#8A4B1E;
+  --s3:#2A5FA8;
+  --s4:#96305A;
+  --s5:#5C5AA0;
+  --s6:#A8761C;
+  --s7:#3C7A2E;
+  --s8:#A03B2A;
+  --s9:#2C6E7A;
+
+  --accent:var(--s1);
+  --radius:14px;
+  --shadow:0 2px 10px rgba(15,38,32,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:'Cairo',system-ui,'Segoe UI',sans-serif;
+  font-size:17.5px; line-height:1.95;
+}
+img{max-width:100%}
+
+.hero{
+  background:
+    radial-gradient(1100px 380px at 15% -10%, rgba(168,118,28,.30), transparent 60%),
+    linear-gradient(155deg,#0A1F1A 0%, #123A31 55%, #14453C 100%);
+  color:#F2EFE4; padding:56px 20px 46px; position:relative; overflow:hidden;
+}
+.hero::after{
+  content:""; position:absolute; inset:0; opacity:.09;
+  background-image:repeating-linear-gradient(45deg,transparent 0 26px,#E7DCC2 26px 27px);
+  mask-image:linear-gradient(to bottom,transparent,#000 45%,transparent);
+}
+.hero-in{max-width:860px; margin:0 auto; position:relative; z-index:2}
+.kicker{
+  display:inline-block; font-size:13.5px; letter-spacing:1px; padding:5px 14px;
+  border:1px solid rgba(231,220,194,.45); border-radius:100px; color:#E7DCC2; margin-bottom:18px;
+}
+.hero h1{font-family:'Amiri',serif; font-size:42px; line-height:1.4; margin:0 0 10px; font-weight:700}
+.hero .sub{font-size:18px; color:#C7D6CF; margin:0 0 24px}
+.hero-meta{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px}
+.chip{
+  background:rgba(255,255,255,.07); border:1px solid rgba(231,220,194,.22);
+  padding:6px 14px; border-radius:100px; font-size:14px; color:#ECE5D5;
+}
+.dl-btn{
+  display:inline-flex; align-items:center; gap:8px; margin-top:22px;
+  background:var(--gold); color:#12241F; font-weight:700; font-size:15.5px;
+  border:none; padding:12px 22px; border-radius:100px; cursor:pointer;
+  box-shadow:0 6px 18px rgba(168,118,28,.3); font-family:'Cairo',sans-serif;
+}
+.dl-btn:hover{filter:brightness(1.07)}
+
+.toc{max-width:820px; margin:34px auto 0; padding:0 20px}
+.toc-box{
+  background:var(--paper-2); border:1px solid var(--line); border-radius:var(--radius);
+  padding:22px 24px; box-shadow:var(--shadow);
+}
+.toc-box h2{font-family:'Amiri',serif; font-size:24px; margin:0 0 14px; color:var(--navy)}
+.toc-list{list-style:none; margin:0; padding:0; display:grid; gap:8px}
+.toc-list a{
+  display:flex; gap:12px; align-items:flex-start; text-decoration:none; color:var(--ink);
+  padding:8px 12px; border-radius:10px; border-right:4px solid var(--c);
+  background:#FAF8F1; font-size:16px;
+}
+.toc-list a:hover{background:#F0EBDE}
+.toc-list .n{font-weight:700; color:var(--c); font-family:'Amiri',serif; font-size:19px}
+
+main{max-width:820px; margin:0 auto; padding:10px 20px 60px}
+section{padding-top:46px}
+.sec-head{border-bottom:2px solid var(--accent); padding-bottom:10px; margin-bottom:22px}
+.sec-num{
+  display:inline-block; background:var(--accent); color:#fff; font-weight:700;
+  font-size:13px; padding:3px 12px; border-radius:100px; margin-bottom:10px;
+}
+h2.sec-title{font-family:'Amiri',serif; font-size:30px; margin:0; color:var(--navy); line-height:1.5}
+h3{font-family:'Amiri',serif; font-size:23px; color:var(--accent); margin:30px 0 10px}
+h4{font-size:19px; margin:22px 0 8px; color:var(--ink)}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:18.5px; color:var(--ink-soft)}
+
+.box{
+  background:var(--paper-2); border:1px solid var(--line); border-right:5px solid var(--accent);
+  border-radius:var(--radius); padding:16px 20px; margin:18px 0; box-shadow:var(--shadow);
+}
+.box .lbl{display:inline-block; font-size:12.5px; font-weight:700; letter-spacing:.5px; color:var(--accent); margin-bottom:6px}
+.box p:last-child{margin-bottom:0}
+.def{background:#FAFAF4}
+.evid{background:#F4FAF6; border-right-color:#2E7D5B}
+.evid .lbl{color:#2E7D5B}
+.key{background:#FFFBEE; border-right-color:var(--gold)}
+.key .lbl{color:#87601A}
+.warn{background:#FFF5F0; border-right-color:#BE5A1C}
+.warn .lbl{color:#BE5A1C}
+.fix{background:#FDF0F3; border-right-color:#A6194B}
+.fix .lbl{color:#A6194B}
+.add{background:#F2F6FC; border-right-color:#2C6DA8; border-style:dashed}
+.add .lbl{color:#2C6DA8}
+.story{background:#FAF6EF; border-right-color:#8A5A28}
+.story .lbl{color:#8A5A28}
+
+.quote{
+  font-family:'Amiri',serif; font-size:21px; line-height:2.1; color:#10302A;
+  background:#EFF6F2; border:1px solid #CBE0D6; border-radius:var(--radius);
+  padding:18px 22px; margin:18px 0;
+}
+.quote .src{display:block; font-family:'Cairo',sans-serif; font-size:13.5px; color:#4A6A5E; margin-top:8px}
+.isnad{
+  font-family:'Amiri',serif; font-size:19px; line-height:2; background:#F7F4EA;
+  border:1px dashed var(--line); border-radius:12px; padding:14px 18px; margin:14px 0; color:#37342A;
+}
+
+.takeaway{
+  background:linear-gradient(160deg,#102B24,#1B453A); color:#EDE9DB;
+  border-radius:16px; padding:20px 24px; margin:26px 0 10px; box-shadow:0 8px 22px rgba(15,38,32,.16);
+}
+.takeaway h4{color:#E7DCC2; margin:0 0 12px; font-family:'Amiri',serif; font-size:22px}
+.takeaway ul{margin:0; padding:0 18px 0 0}
+.takeaway li{margin-bottom:8px}
+.takeaway li::marker{color:var(--gold)}
+
+ul.plain{padding:0 20px 0 0; margin:0 0 14px}
+ul.plain li{margin-bottom:7px}
+
+table{
+  width:100%; border-collapse:collapse; margin:18px 0; background:var(--paper-2);
+  border-radius:12px; overflow:hidden; box-shadow:var(--shadow); font-size:16px;
+}
+th,td{padding:11px 14px; text-align:right; border-bottom:1px solid var(--line)}
+th{background:var(--accent); color:#fff; font-weight:600; font-size:15px}
+tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even){background:#FAF8F1}
+
+.tl{position:relative; padding-right:24px; margin:20px 0}
+.tl::before{content:""; position:absolute; right:6px; top:6px; bottom:6px; width:2px; background:var(--line)}
+.tl-item{position:relative; margin-bottom:18px}
+.tl-item::before{
+  content:""; position:absolute; right:-24px; top:9px; width:12px; height:12px;
+  background:var(--accent); border-radius:50%; border:3px solid var(--paper);
+}
+.tl-item .yr{font-weight:700; color:var(--accent); font-family:'Amiri',serif; font-size:19px}
+
+.cards-wrap{max-width:820px; margin:0 auto; padding:40px 20px 70px}
+.cards-head{text-align:center; margin-bottom:22px}
+.cards-head h2{font-family:'Amiri',serif; font-size:30px; color:var(--navy); margin:0 0 6px}
+.cards-head p{color:var(--ink-soft); font-size:16px}
+.filters{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-bottom:20px}
+.filters button{
+  font-family:'Cairo',sans-serif; font-size:13.5px; padding:6px 14px; border-radius:100px;
+  border:1.5px solid var(--fc,#999); background:transparent; color:var(--fc,#333); cursor:pointer;
+}
+.filters button.active{background:var(--fc,#333); color:#fff}
+.flash{
+  background:var(--paper-2); border:1px solid var(--line); border-radius:18px;
+  min-height:210px; display:flex; align-items:center; justify-content:center; text-align:center;
+  padding:28px 26px; cursor:pointer; box-shadow:0 6px 20px rgba(15,38,32,.08);
+  position:relative; user-select:none;
+}
+.flash .face{font-size:19px; line-height:1.9}
+.flash .side-tag{position:absolute; top:12px; right:16px; font-size:12px; color:#948E7C; letter-spacing:.5px}
+.flash.back{background:#102B24; color:#EFE9DB; border-color:#102B24}
+.nav-cards{display:flex; align-items:center; justify-content:center; gap:14px; margin-top:16px}
+.nav-cards button{
+  font-family:'Cairo',sans-serif; background:var(--navy); color:#EFE9DB; border:none;
+  padding:9px 20px; border-radius:100px; cursor:pointer; font-size:15px;
+}
+.nav-cards .count{font-size:15px; color:var(--ink-soft); min-width:90px; text-align:center}
+
+footer{background:var(--navy); color:#C7D6CF; text-align:center; padding:34px 20px 40px}
+footer p{margin:6px 0; font-size:14.5px}
+footer .dl-btn{margin-top:16px}
+
+@media (max-width:640px){
+  body{font-size:16.5px}
+  .hero h1{font-size:29px}
+  h2.sec-title{font-size:24px}
+  h3{font-size:20px}
+  .quote{font-size:19px}
+  .isnad{font-size:17px}
+}
+</style>
 </head>
-<body class="" data-page="lecture" data-lecture-id="stage1_hadith_05">
-  <div class="page">
-    <nav class="breadcrumbs"><a href="../../../index.html">الرئيسية</a><span class="sep">/</span><a href="../../index.html">المرحلة الأولى</a><span class="sep">/</span><a href="../index.html">مدخل إلى علم الحديث</a><span class="sep">/</span><span aria-current="page">المحاضرة الثانية 2/2</span></nav>
-    
-      <header class="lecture-header">
-        <h1>المحاضرة الثانية 2/2</h1>
-        <p class="lecture-meta">المادة: مدخل إلى علم الحديث &nbsp;|&nbsp; الشيخ: أحمد السيد &nbsp;|&nbsp; اليوم 39</p>
-        <label class="checkbox-line lecture-checkbox">
-          <input type="checkbox" data-lecture-id="stage1_hadith_05">
-          <span>إتمام هذه المحاضرة</span>
-        </label>
-      </header>
+<body>
 
-      <div class="lecture-placeholder">
-        <p>سيتم إضافة المحاضرة هنا لاحقًا</p>
-        <p class="placeholder-hint">(رابط يوتيوب / فيديو / ملف صوتي / PDF / نص المحاضرة / ملاحظاتي)</p>
-      </div>
-
-      <div class="lecture-nav">
-        <a href="../index.html" class="btn btn-outline">الرجوع إلى المادة</a>
-        <a href="../../index.html" class="btn btn-outline">الرجوع إلى المرحلة</a>
-      </div>
-    
+<header class="hero">
+  <div class="hero-in">
+    <span class="kicker">سلسلة مدخل إلى علوم الحديث — المجلس الثاني</span>
+    <h1>من بقايا الجهابذة إلى المكتبة المعاصرة: تغيّر الطريقة، وثبات الغاية</h1>
+    <p class="sub">القرن الرابع وما بعده: ختم مدرسة المتقدمين، ودخول الروافد الجديدة، وانفجار التأليف، ثم العين التي لا ينبغي أن تغيب.</p>
+    <div class="hero-meta">
+      <span class="chip">المحاضر: الشيخ أحمد السيد</span>
+      <span class="chip">9 أقسام</span>
+      <span class="chip" id="cardCount">بطاقات مراجعة</span>
+    </div>
+    <button class="dl-btn" onclick="downloadTSV()">⬇ تحميل بطاقات Anki (TSV)</button>
   </div>
-  <script src="../../../data.js"></script>
-  <script src="../../../script.js"></script>
+</header>
+
+<nav class="toc">
+  <div class="toc-box">
+    <h2>محتوى المجلس</h2>
+    <ul class="toc-list">
+      <li><a href="#s1" style="--c:var(--s1)"><span class="n">1</span><span>مقدمة مقصدية: باب غاية وباب وسيلة</span></a></li>
+      <li><a href="#s2" style="--c:var(--s2)"><span class="n">2</span><span>القرن الرابع: «ما بقي من يُحسن هذا»</span></a></li>
+      <li><a href="#s3" style="--c:var(--s3)"><span class="n">3</span><span>معالم طريقة المتقدمين</span></a></li>
+      <li><a href="#s4" style="--c:var(--s4)"><span class="n">4</span><span>الروافد الجديدة: الخطيب البغدادي وابن الصلاح</span></a></li>
+      <li><a href="#s5" style="--c:var(--s5)"><span class="n">5</span><span>القرن الخامس: البيهقي والحاكم</span></a></li>
+      <li><a href="#s6" style="--c:var(--s6)"><span class="n">6</span><span>التحول الكبير: كتب بلا أسانيد</span></a></li>
+      <li><a href="#s7" style="--c:var(--s7)"><span class="n">7</span><span>مدرسة ابن الصلاح ومن دار في فلكه</span></a></li>
+      <li><a href="#s8" style="--c:var(--s8)"><span class="n">8</span><span>انتعاشة القرنين الثامن والتاسع</span></a></li>
+      <li><a href="#s9" style="--c:var(--s9)"><span class="n">9</span><span>حجية السنة، المكتبة المعاصرة، والعينان</span></a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+<!-- ===== 1 ===== -->
+<section id="s1" class="sec" style="--accent:var(--s1)">
+  <div class="sec-head">
+    <span class="sec-num">القسم الأول</span>
+    <h2 class="sec-title">مقدمة مقصدية: الباب الأول غايةٌ، والباب الثاني وسيلة</h2>
+  </div>
+
+  <p class="lead">افتتح الشيخ المجلس بالتذكير بالمفتاح الذي انطلقت منه المادة: علم الحديث يتكوّن من بابين — بابٍ مرتبط بالمتن النبوي، وبابٍ مرتبط بالصنعة الحديثية وضبط وسائل التثبت من نقل هذا المتن؛ والباب الأول ينقسم إلى قسمين: نقلٍ مجرد، وتفقّهٍ فيه. ثم أضاف إضافةً وصفها بأنها <strong>مهمة جدًا</strong>.</p>
+
+  <div class="box key">
+    <span class="lbl">الإضافة الجديدة</span>
+    <p><strong>الباب الأول بابٌ غائي، والباب الثاني بابُ وسائل.</strong> فكل ما يتعلق بالصنعة الحديثية — العلل والأسانيد والرجال والرواة — إنما هو <strong>وسيلة</strong> للباب الأول. وداخل الباب الأول أيضًا: <strong>القسم الأول (النقل) وسيلةٌ للقسم الثاني (التفقه)، والتفقه وسيلة إلى العمل</strong>.</p>
+  </div>
+
+  <div class="isnad">
+    الصنعة الحديثية (الباب الثاني) ← وسيلة إلى: نقل السنة صافيةً (القسم الأول) ← وسيلة إلى: التفقه فيها (القسم الثاني) ← وسيلة إلى: <strong>العمل بها</strong>.
+  </div>
+
+  <p>ولماذا هذا التصنيف مهم؟ لأن من مركزيات الإصلاح التي يحرص الشيخ على تبيينها دائمًا: <strong>أهمية العناية بالمقاصد</strong>. فأنت وأنت تدرس العلم لا بد أن تتذكر مقاصده؛ وأنت في وسط دائرة العلل والأسانيد والرجال، لا تنغمس فيها انغماسًا يُنسيك غايتها.</p>
+
+  <div class="box def">
+    <span class="lbl">غاية الباب الثاني</span>
+    <p><strong>تثبيت المنقول عن رسول الله ﷺ، وحماية السنة من الدخيل</strong> ومن كل ما يمكن أن يُلحق بها وليس منها. وجهات النظر التي مرّت في المجلس السابق — الاتصال والانقطاع، وتمييز الرواة، وعدالة الرواة وضبطهم وإتقانهم، والعلل الباطنة الخفية — غايتها كلها هذه.</p>
+    <p>ثم تثبيتُ المنقول غايتُه أن يكون لدينا <strong>المرجع صافيًا</strong> بحيث يمكننا أن نتفقه فيه، وإذا تفقّهنا فيه أمكننا <strong>العمل</strong> به. هذه هي الخلاصة.</p>
+  </div>
+
+  <h3>علم الحديث فيه فتنة</h3>
+
+  <div class="box story">
+    <span class="lbl">موقف من أخبار المحدّثين</span>
+    <p>حين يدرس طالب العلم العللَ والأسانيدَ والرجال، فمن النعمة عليه أن يتذكر ذلك المقصد الغائي، <strong>وهذا يعينه على الإخلاص أثناء الطلب</strong>. فالمحدّثون السابقون كان عندهم انتباهٌ لهذه القضية، وكانوا يعلمون أن الحديث فتنة؛ حتى إن أحدهم قال مرة: «حدثنا فلان، حدثنا فلان»، ثم قال: <strong>«أستغفر الله»</strong> — كأنه وجد في نفسه شيئًا من الزهو والافتخار.</p>
+    <p>فحفظ الأسانيد والرجال والرواة فيه فتنة، وأحيانًا يغترّ الإنسان. لكن حين يفهم الأبعاد ويعطيها حقها، تبقى القضية بحجمها الذي يناسبها.</p>
+  </div>
+
+  <div class="takeaway">
+    <h4>خلاصة القسم</h4>
+    <ul>
+      <li>الباب الثاني (الصنعة الحديثية) كله وسيلة، والباب الأول هو الغاية.</li>
+      <li>وداخل الباب الأول: النقل وسيلة للتفقه، والتفقه وسيلة للعمل.</li>
+      <li>غاية الصنعة الحديثية: تثبيت المنقول عن النبي ﷺ وحماية السنة من الدخيل.</li>
+      <li>استحضار المقصد الغائي أثناء الطلب يعين على الإخلاص، لأن في علم الحديث فتنةً كما تنبّه لها المتقدمون.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 2 ===== -->
+<section id="s2" class="sec" style="--accent:var(--s2)">
+  <div class="sec-head">
+    <span class="sec-num">القسم الثاني</span>
+    <h2 class="sec-title">القرن الرابع: «ما بقي من يُحسن هذا» — وبقايا الجهابذة الثلاثة</h2>
+  </div>
+
+  <p>عاد الشيخ إلى التسلسل الزمني: كنّا قد وصلنا إلى القرن الثالث الهجري، وآخر ما ذُكر كتاب ابن جرير الطبري — وهو يُعدّ في بداية القرن الرابع. والمنهج في السير: في كل مرحلة زمنية نسأل ثلاثة أسئلة — ماذا حصل في <strong>النقل</strong>؟ وماذا حصل في <strong>التفقه</strong>؟ وماذا حصل في <strong>الصنعة الحديثية</strong>؟</p>
+
+  <div class="box story">
+    <span class="lbl">موقف طريف وجميل — في القرن الثالث</span>
+    <p>سُئل <strong>أبو حاتم الرازي</strong> — وهو أحد الأئمة الكبار في علم الحديث والعلل — عمّن بقي من العلماء يُحسن الصنعة الحديثية وعلم العلل، فقال: <strong>«ما بقي من يُحسن هذا»</strong>.</p>
+    <p>وقد حصل بالفعل ضمورٌ شديد في الصنعة الحديثية والعلم بها، وبقيت بقايا قليلة.</p>
+  </div>
+
+  <div class="box add">
+    <span class="lbl">تنبيه على الترتيب الزمني</span>
+    <p>الإمام <strong>النسائي</strong> صاحب السنن الكبرى — وهو صاحب صنعة حديثية عالية جدًا، يُفضَّل على بعض الكبار والمشاهير — نعدّه من علماء <strong>القرن الثالث</strong> لا الرابع، بحكم أنه توفي سنة <strong>303هـ</strong>، أي في بداية الرابع.</p>
+  </div>
+
+  <h3>ثلاثة أئمة هم بقايا من يُحسن هذا</h3>
+
+  <p>في القرن الرابع ثلاثة من الأئمة يجب أن نذكرهم وأن يكونوا على بال، وهم الذين ساروا على طريقة أحمد والبخاري وعليّ بن المديني ويحيى بن معين وعبد الرحمن بن مهدي ويحيى القطان وشعبة بن الحجاج — ممن ذُكروا في المجلس السابق:</p>
+
+  <table>
+    <thead><tr><th>الإمام</th><th>كتابه</th><th>ميزته</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>أبو أحمد <strong>ابن عديّ</strong></td>
+        <td>الكامل في ضعفاء الرجال</td>
+        <td>يذكر ترجمة الراوي وكلام الحفاظ فيه، ثم — وهذه أعظم ميزاته — <strong>يسوق الأحاديث التي انتُقدت عليه</strong> بأعيانها، وربما قال: وعامّة ما انتُقد عليه هذه الأحاديث وباقي أحاديثه مستقيمة</td>
+      </tr>
+      <tr>
+        <td>أبو جعفر <strong>العقيلي</strong></td>
+        <td>الضعفاء الكبير</td>
+        <td>كتاب عظيم أيضًا، وإن كان كتاب ابن عديّ أعلى منه، وابن عديّ نفسه أعلى من العقيلي علمًا</td>
+      </tr>
+      <tr>
+        <td>أبو الحسن <strong>الدارقطني</strong></td>
+        <td>العلل</td>
+        <td>كتاب كبير (قرابة 14 مجلدًا) في صورة سؤال وجواب: «وسُئل عن حديث كذا» — يحشد أسانيد الحديث كلها ثم يفكّكها ويبيّن الأصحّ والأرجح</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="box key">
+    <span class="lbl">الميزة التي دُوّنت لأول مرة</span>
+    <p>صنيع ابن عديّ (وكذلك العقيلي بدرجة أقل وضوحًا) نقل الحكم على الراوي من <strong>حكمٍ مُجمَل</strong> إلى <strong>حكمٍ مفصَّل</strong>: هذه أحاديثه المنتقَدة بعينها، وبقية حديثه مستقيم. وهذه الميزة كانت في أذهان العلماء سابقًا يطبّقونها عمليًا، لكن <strong>لم يدوّنوها</strong>؛ والذي دوّنها هو ابن عديّ.</p>
+  </div>
+
+  <div class="box story">
+    <span class="lbl">شهادة الذهبي في الدارقطني</span>
+    <p>قال الذهبي في «السير» عن الدارقطني: ويُقال إنه كتب كتاب العلل هذا <strong>من حفظه</strong>؛ فإن صحّ ذلك <strong>فهو أحفظ من في الدنيا</strong>. وشبّه الشيخ صورة الكتاب بمن يطلب اليوم تقريرًا مفصّلًا فيُكتب له كاملًا — إلا أن كتاب الدارقطني هكذا من أوله إلى آخره.</p>
+  </div>
+
+  <div class="box def">
+    <span class="lbl">خاتمة مرحلة</span>
+    <p>بالدارقطني نستطيع أن نقول إنه <strong>خُتمت مدرسة المتقدمين</strong> في الحديث. وهذه المدرسة ليست مدرسة زمنية فقط، وإنما هي <strong>مدرسة منهج</strong> كذلك.</p>
+  </div>
+
+  <div class="quote">
+    «عِلمنا عند من لا يعرفه كالكهانة»
+    <span class="src">عبد الرحمن بن مهدي — في وصف دقة أحكام النقاد على الأحاديث</span>
+  </div>
+
+  <p>ومعناه: نحن نقول: هذا الحديث معلول، فيقول من لا يعرف الصنعة: أين العلة؟ أعطني إياها! أما هم فينزلون بالكشّاف إلى الجذور، فيتبيّن لهم أن هذه الرواية فيها خطأ. <strong>وهذا لا يتقنه إلا القلة في العالم.</strong></p>
+
+  <div class="box add">
+    <span class="lbl">إضافة توضيحية (تواريخ لم يذكرها الشيخ)</span>
+    <p>للضبط الزمني: أبو حاتم الرازي (ت 277هـ)، والعقيلي (ت 322هـ)، وابن عديّ (ت 365هـ)، والدارقطني (ت 385هـ).</p>
+  </div>
+
+  <div class="takeaway">
+    <h4>خلاصة القسم</h4>
+    <ul>
+      <li>قال أبو حاتم الرازي في القرن الثالث: «ما بقي من يُحسن هذا» — تعبيرًا عن ضمور الصنعة الحديثية.</li>
+      <li>النسائي (ت 303هـ) يُعدّ من علماء القرن الثالث لا الرابع.</li>
+      <li>بقايا المتقدمين في القرن الرابع ثلاثة: ابن عديّ (الكامل)، والعقيلي (الضعفاء الكبير)، والدارقطني (العلل).</li>
+      <li>ابن عديّ أول من دوّن تفصيل الأحاديث المنتقدة على الراوي بعينها بدل الحكم المجمل.</li>
+      <li>بالدارقطني تُختم مدرسة المتقدمين، وهي مدرسة منهج لا مجرد مدرسة زمن.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 3 ===== -->
+<section id="s3" class="sec" style="--accent:var(--s3)">
+  <div class="sec-head">
+    <span class="sec-num">القسم الثالث</span>
+    <h2 class="sec-title">معالم طريقة الحفّاظ المتقدمين</h2>
+  </div>
+
+  <p>قبل الانتقال إلى ما بعد القرن الرابع، وقف الشيخ ليحدّد أبرز المعالم التي ميّزت طريقة الحفاظ والنقاد المتقدمين — وهي معالم، لا كل المعالم:</p>
+
+  <div class="box def">
+    <span class="lbl">المعلم الأول</span>
+    <p><strong>عدم الاكتفاء بظواهر الأسانيد</strong>، والحرص على التفتيش عن بواطن العلل وخفاياها.</p>
+  </div>
+
+  <div class="box def">
+    <span class="lbl">المعلم الثاني</span>
+    <p><strong>جمع الطرق والمقارنة بينها وتقديم الأرجح منها</strong> — ولا يتأتّى المعلم الأول إلا بهذا.</p>
+  </div>
+
+  <div class="box def">
+    <span class="lbl">المعلم الثالث</span>
+    <p><strong>العمل بالقرائن المتعلقة بكل رواية على حِدَة</strong>، لا بأحكام نظرية عامة تشمل كل الروايات. فلا يقولون: زيادة الثقة مقبولة مطلقًا، وإنما: قد تُقبل وقد تُردّ بحسب القرائن المتعلقة بالزيادة في كل رواية بعينها. ولا يقولون: التفرد مردود مطلقًا، ولا مقبول مطلقًا، وإنما قد يُقبل وقد يُردّ بحسب القرائن.</p>
+  </div>
+
+  <div class="box add">
+    <span class="lbl">إحالة من الشيخ</span>
+    <p>ذكر الشيخ أن تفصيل هذا الكلام ليس موضعه هنا، وأنه بسطه في شرح <strong>«النظم المعين»</strong>، وبتفصيل أكثر في <strong>الشرح المطوّل على «نزهة النظر»</strong>.</p>
+  </div>
+
+  <h3>طريقة الفقهاء وطريقة الحفاظ</h3>
+
+  <p>لما تغيّرت الطريقة، صار كثير من المتأخرين من المحدثين يوافقون طريقة الفقهاء في التعامل مع الأحاديث؛ فقالوا: نحن ما لنا في العلل الخفية، إنما نتعامل مع <strong>الظاهر</strong>. أما طريقة الحفاظ فكان التعامل فيها مع <strong>البواطن</strong> أيضًا لا الظواهر وحدها: العلل الخفية، والتفتيش الذي يبدو الحديث معه سليمًا في صورته الظاهرة، ثم إذا سُلّط الضوء على الجذور تبيّن الخلل.</p>
+
+  <p>وكان عامّة العلماء في القرنين الثاني والثالث على هذه الطريقة، ثم بقيت في الرابع بقايا منهم — الثلاثة السابقون — ثم بدأ التغيّر.</p>
+
+  <div class="box warn">
+    <span class="lbl">تنبيه على الإنصاف</span>
+    <p>قولنا «بدأ التغيّر» لا يعني أن كل من جاء بعدهم ليس على طريقتهم؛ وإنما حصل تغيّر: <strong>فمُستقلٌّ ومستكثر</strong>؛ منهم من ابتعد كثيرًا، ومنهم من بقي في منطقة قريبة.</p>
+  </div>
+
+  <h3>من أحيا طريقة المتقدمين من المتأخرين</h3>
+
+  <div class="box key">
+    <span class="lbl">ابن رجب و«شرح علل الترمذي»</span>
+    <p>من العلماء الذين اقتربوا جدًا من طريقة المتقدمين وأحيوها واعتنوا بها — بل بيّنوا الأشياء التي <strong>دخلت في قواعد النقد وليست منها</strong> — الإمام الفذّ <strong>ابن رجب</strong> في كتابه شرح علل الترمذي (المجلدان اللذان مرّ ذكرهما في المجلس السابق).</p>
+    <p>وقال الشيخ عن نفسه: هذا الكتاب من أفضل وأهم ما كتبه إمامٌ متأخر على طريقة المتقدمين، وهو حريٌّ بأن يُدرَس ويُفهم فهمًا جيدًا؛ ووجدتُ — على المستوى الشخصي — <strong>نقلةً كبيرة وهائلة</strong> في علم الحديث بعد دراستي له: لا القراءة، وإنما <strong>الدراسة</strong> بمعنى الكلمة، مع حفظ بعض ما فيه.</p>
+  </div>
+
+  <div class="box story">
+    <span class="lbl">لماذا هذا العلم ليس سهلًا؟</span>
+    <p>هذا العلم عظيم ودقيق، وله تأثير على <strong>نظام التفكير</strong> عند الإنسان، وعلى <strong>المستوى النقدي</strong>، وله تأثير حتى على قضية <strong>الدفاع عن السنة</strong> — لأنك تفهم حقيقة النقل.</p>
+    <p>أما مجرد دراسة المصطلح — أن تعرف تعريف الحسن والضعيف والصحيح والمنكر والشاذ، والفرق بين المتواتر والآحاد، وتسميات الآحاد: الغريب والعزيز والمشهور — <strong>فهذه لا تكفي</strong> لفهم حقيقة ما جرى في نقل السنة النبوية، ومن ثَمّ لا تكفي لإمكان الدفاع عنها دفاعًا حقيقيًا.</p>
+  </div>
+
+  <div class="takeaway">
+    <h4>خلاصة القسم</h4>
+    <ul>
+      <li>معالم طريقة المتقدمين: عدم الاكتفاء بالظواهر، وجمع الطرق والمقارنة، والعمل بالقرائن لا بالأحكام المطلقة.</li>
+      <li>زيادة الثقة والتفرد عندهم: تُقبل تارةً وتُردّ تارةً بحسب قرائن كل رواية.</li>
+      <li>طريقة الفقهاء وكثير من المتأخرين: الاكتفاء بالظاهر؛ وطريقة الحفاظ: النظر في البواطن أيضًا.</li>
+      <li>التغيّر بعد القرن الرابع لم يكن شاملًا: منهم من ابتعد كثيرًا ومنهم من بقي قريبًا.</li>
+      <li>«شرح علل الترمذي» لابن رجب أهم مدخل متأخر إلى طريقة المتقدمين، ودراسته تُحدث نقلة.</li>
+      <li>حفظ تعريفات المصطلح وحده لا يُنتج فهمًا لحقيقة النقل ولا قدرةً على الدفاع عن السنة.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 4 ===== -->
+<section id="s4" class="sec" style="--accent:var(--s4)">
+  <div class="sec-head">
+    <span class="sec-num">القسم الرابع</span>
+    <h2 class="sec-title">الروافد الجديدة: كيف دخلت مباحثُ من خارج علم الحديث فيه؟</h2>
+  </div>
+
+  <p>الذي حصل بعد ذلك أن <strong>روافد جديدة</strong> بدأت تدخل في علم الحديث، غير الروافد التي كانت عند المتقدمين؛ ومنها <strong>الروافد الكلامية والمنطقية</strong> عبر علم أصول الفقه الذي اشتغل فيه المتكلمون.</p>
+
+  <div class="box def">
+    <span class="lbl">كيف دخلت؟</span>
+    <p>في أصول الفقه <strong>مبحث الأدلة</strong>: القرآن، السنة، الإجماع، القياس، قول الصحابي، الاستحسان، المصالح المرسلة… فإذا فتحتَ كتب الأصول الموسّعة وجدتَ كلامًا تفصيليًا عن الحديث: قواعد في الجرح والتعديل، وزيادة الثقة، وأمورًا متعلقة بقبول الرواية وردّها — <strong>لكن على القانون الأصولي أو الكلامي أو المنطقي</strong> بحسب المسألة، لا على قانون النقاد.</p>
+  </div>
+
+  <h3>القطبان اللذان دارت عليهما علوم الحديث المتأخرة</h3>
+
+  <table>
+    <thead><tr><th>الإمام</th><th>سنة الوفاة</th><th>موقعه</th></tr></thead>
+    <tbody>
+      <tr><td>الخطيب البغدادي</td><td>463هـ</td><td>القطب الأول: قرّب علوم الحديث للمتأخرين، وألّف في كل مبحث تقريبًا</td></tr>
+      <tr><td>ابن الصلاح</td><td>643هـ</td><td>القطب الثاني: «علوم الحديث» الذي دارت عليه الدراسات بعده</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box add">
+    <span class="lbl">حيلة لحفظ التواريخ</span>
+    <p>لاحظ أن الرقمين نفسهما مع تقديم وتأخير: <strong>463</strong> و<strong>643</strong>. وسأل الشيخ أثناء المجلس عن ابن عبد البر: هل توفي في السنة نفسها التي توفي فيها الخطيب البغدادي؟ <strong>والجواب: نعم، ابن عبد البر توفي سنة 463هـ</strong> أيضًا (تحقّقتُ من ذلك). ومن طرق حفظ التواريخ: أن تنظر من العلماء الذين توفوا في سنة واحدة.</p>
+  </div>
+
+  <h3>نصّ ابن رجب على التغيّر — مسألة زيادة الثقة</h3>
+
+  <p>قد تقول: هل من دليل يثبت هذا الكلام؟ فالجواب: نعم، كلام <strong>ابن رجب</strong> في شرح علل الترمذي (في طبعة تحقيق نور الدين عتر، دار المنهاج القويم: المجلد الأول ص 428، وبحسب الطبعات الأخرى).</p>
+
+  <div class="box story">
+    <span class="lbl">صورة المسألة أولًا</span>
+    <p>مسألة <strong>زيادة الثقة</strong> من المسائل التي وقع فيها الخلاف بين المتقدمين وكثير من المتأخرين. وصورتها في الإسناد: راوٍ <strong>يُرسل</strong> الحديث، وآخر <strong>يصله</strong> — فالذي وصله قد <strong>زاد</strong> رجلًا في الإسناد. فهل نقبل قول من أرسل (نقص) أم من وصل (زاد)؟ <strong>المتقدمون: تارةً يقبلون وتارةً يردّون بحسب القرائن.</strong></p>
+  </div>
+
+  <p>وقد ذكر ابن رجب أولًا أن للخطيب البغدادي في كتابٍ آخر — هو <strong>«تمييز المزيد في متصل الأسانيد»</strong> — قولًا <strong>يوافق قول المتقدمين</strong>. لكنه في كتابه الأشهر والأهم — <strong>«الكفاية»</strong> — ذكر قولًا آخر. قال ابن رجب:</p>
+
+  <div class="quote">
+    ثم إن الخطيب تناقض، فذكر في كتاب الكفاية للناس مذاهبَ في اختلاف الرواة في إرسال الحديث ووصله… <strong>كلها لا تُعرف عن أحدٍ من متقدمي الحفاظ، إنما هي مأخوذة من كتب المتكلمين</strong>. ثم إنه اختار أن الزيادة من الثقة تُقبل مطلقًا، كما نصره المتكلمون وكثير من الفقهاء.
+    <span class="src">ابن رجب — شرح علل الترمذي</span>
+  </div>
+
+  <div class="box warn">
+    <span class="lbl">منهجية في التعامل مع أخطاء العلماء</span>
+    <p>هذا لا يُقلّل من قيمة الخطيب البغدادي؛ فهو من أئمة الإسلام في الحديث، ومن الأئمة الكبار، وله فضل ومنزلة كبيرة جدًا، بل <strong>الناس عيالٌ عليه في علم الحديث</strong> وكل من جاء بعده دار في فلك كتبه. لكن هذا لا يمنع أن نقول: قال ابن رجب كذا، وأن نفهم في السياق التاريخي أن هذا التغيّر قد حصل. <strong>ويُحفظ لكل عالمٍ حقه، ولا يسلم أحدٌ من الخطأ.</strong></p>
+    <p>ونبّه الشيخ أن هذه الأمور <strong>لا ينتبه لها إلا المتخصصون</strong>؛ فالطالب في سياق البناء والتكوين العادي لا ينتبه لها.</p>
+  </div>
+
+  <h3>مسألة ثانية: المتواتر والآحاد</h3>
+
+  <p>هذه المسألة لم يكن لها حجمها الكبير عند الحفاظ المتقدمين، اللهم إلا من جهة التأكيد على أن <strong>خبر الواحد يُقبل ويُعتدّ به ويُعمل به</strong> — ولذلك اعتنى الإمام البخاري في صحيحه بقضية أخبار الآحاد. لكنها في علم الحديث المتأخر أخذت صورة معينة.</p>
+
+  <div class="box story">
+    <span class="lbl">شاهدٌ من ابن الصلاح نفسه</span>
+    <p>ابن الصلاح في كتابه «علوم الحديث» ذكر <strong>65 نوعًا</strong> من أنواع علوم الحديث، <strong>ولم يذكر فيها المتواتر</strong> نوعًا مستقلًا! وإنما ذكره ضمن <strong>المشهور</strong>. ثم قال هذا النص المهم:</p>
+  </div>
+
+  <div class="quote">
+    ومن المشهور: المتواتر الذي يذكره أهل الفقه وأصوله، وأهل الحديث لا يذكرونه باسمه الخاص المشعر بمعناه الخاص، وإن كان الحافظ الخطيب قد ذكره… <strong>ففي كلامه ما يُشعر أنه اتّبع فيه غير أهل الحديث</strong>، ولعل ذلك لكونه لا تشمله صناعتهم ولا يكاد يوجد في رواياتهم…
+    <span class="src">ابن الصلاح — علوم الحديث</span>
+  </div>
+
+  <p>ولاحظ المقارنة: في الكتب المتأخرة جدًا — كنخبة الفكر ونزهة النظر — <strong>يُبدأ بالمتواتر</strong> أول شيء. ونبّه الشيخ أن في نصّ ابن الصلاح كلامًا ناقشه العلماء، وأنه لا يريد الدخول في تفصيل المسألة، وإنما الإشارة إلى أن <strong>القطبين معًا</strong> شهدا بدخول مسائل من خارج علم الحديث إليه: ابن رجب قال عن الخطيب إنه أخذها من المتكلمين والفقهاء، وابن الصلاح قال: «وفي كلامه ما يُشعر أنه اتّبع فيه غير أهل الحديث».</p>
+
+  <div class="takeaway">
+    <h4>خلاصة القسم</h4>
+    <ul>
+      <li>دخلت على علم الحديث روافد كلامية ومنطقية عبر أصول الفقه ومبحث الأدلة فيه.</li>
+      <li>القطبان في علوم الحديث المتأخرة: الخطيب البغدادي (463هـ) وابن الصلاح (643هـ) — وابن عبد البر توفي 463هـ أيضًا.</li>
+      <li>ابن رجب نصّ على أن مذاهب «الكفاية» في زيادة الثقة لا تُعرف عن متقدمي الحفاظ، وأنها مأخوذة من كتب المتكلمين.</li>
+      <li>الخطيب نفسه في «تمييز المزيد في متصل الأسانيد» وافق المتقدمين، فوقع التناقض بين كتابيه.</li>
+      <li>مسألة المتواتر لم تكن مبحثًا مستقلًا عند أهل الحديث؛ وابن الصلاح لم يجعلها نوعًا من الأنواع الخمسة والستين.</li>
+      <li>القاعدة في التعامل: يُحفظ للعالم فضله، ولا يُسلَّم له في كل شيء.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 5 ===== -->
+<section id="s5" class="sec" style="--accent:var(--s5)">
+  <div class="sec-head">
+    <span class="sec-num">القسم الخامس</span>
+    <h2 class="sec-title">القرن الخامس: انفجار التأليف — الخطيب، والبيهقي، والحاكم</h2>
+  </div>
+
+  <h3>الخطيب البغدادي: يدٌ بيضاء على علوم الحديث</h3>
+
+  <p>الخطيب البغدادي ما ترك مبحثًا من مباحث علم الحديث إلا وألّف فيه تقريبًا؛ فذكرنا في الباب الثاني (الصنعة الحديثية) أربعة أمور، وهو ألّف ربما في عشرة. ومما عمله: أنه <strong>أسهم في ترتيب بعض المنثور من كتب الحديث</strong>. وأشهر كتبه في علم الحديث: <strong>«الكفاية»</strong> — كتاب ثمين نفيس، وفيه بعض الأشياء المضافة كما مرّ. ومع الخطيب البغدادي يمكن أن نقول: <strong>انفجرت المؤلفات الحديثية</strong>.</p>
+
+  <h3>الإمام البيهقي (ت 458هـ)</h3>
+
+  <div class="box def">
+    <span class="lbl">السنن الكبرى</span>
+    <p>البيهقي من فقهاء الشافعية ومن العلماء الكبار الذين خدموا السنة؛ ولم يكن مشتغلًا بالمتون الفقهية المجردة وإنما بالسنة النبوية. وكتابه <strong>«السنن الكبرى»</strong> كتاب ضخم <strong>أسند فيه الحديث إلى النبي ﷺ</strong>، فيُضاف إلى كتب السنة في الباب الأول.</p>
+    <p><strong>اصطلاح مهم:</strong> إذا قيل «رواه البيهقي» أو «أخرجه البيهقي» مطلقًا فالأصل أنه في السنن الكبرى (أو الكبير)؛ وإذا كان في غيرها بيّنوا: «رواه البيهقي في شعب الإيمان» أو «في دلائل النبوة».</p>
+  </div>
+
+  <div class="box key">
+    <span class="lbl">موقع كتاب البيهقي من المفتاح</span>
+    <p>كما قلنا إن جامع الترمذي يجمع الثلاثة (النقل + التفقه + الصنعة الحديثية)، فكذلك <strong>السنن الكبير للبيهقي يجمع الثلاثة</strong>.</p>
+  </div>
+
+  <div class="box add">
+    <span class="lbl">ملاحظة زمنية</span>
+    <p>لاحظ المسافة: الإمام أحمد (ت 241هـ) والبيهقي (ت 458هـ) — بينهما قرنان، فالبيهقي <strong>من آخر من جاء راويًا بإسناده</strong>. وجاء بعده مثل <strong>ابن عساكر</strong>، لكن ما أسنده لا يُعدّ ذا قيمة إضافية جديدة لم تكن موجودة قبله.</p>
+  </div>
+
+  <h3>الحاكم النيسابوري: كتابان ومصيران مختلفان</h3>
+
+  <p>ونبّه الشيخ أنه فاته ذكر الحاكم في موضعه: فهو عاش في القرن الرابع ويُقال توفي في بداية الخامس.</p>
+
+  <table>
+    <thead><tr><th>الكتاب</th><th>وصفه</th><th>تقويمه</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>معرفة علوم الحديث</td>
+        <td>تكلّم فيه عن أنواع علوم الحديث، وأتى بقواعد وشروحات للمصطلحات الحديثية</td>
+        <td>نفيس وثمين، <strong>يوافق نَفَس الحفاظ المتقدمين</strong>؛ أبدع فيه وأجاد وأفاد</td>
+      </tr>
+      <tr>
+        <td>المستدرك</td>
+        <td>كتاب عملي تطبيقي، استدرك فيه على البخاري ومسلم أحاديث رأى أنها على شرطهما أو شرط أحدهما أو أنها ينبغي أن تكون في رتبتهما</td>
+        <td><strong>لم يوفَّق فيه</strong>؛ وانتقد العلماء تصرّفه فيه كثيرًا — مستقلٌّ ومستكثر</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="box story">
+    <span class="lbl">عبارة ابن الصلاح اللطيفة</span>
+    <p>لما أتى ابن الصلاح إلى الحاكم قال: <strong>«وهو واسع الخَطْو في شرط الصحيح»</strong> — أي عنده تساهل، لكن بعبارة لطيفة رقيقة.</p>
+  </div>
+
+  <p>وصورة الإشكال: يقول الحاكم أحيانًا: «هذا حديث صحيح على شرط البخاري» أو «على شرط مسلم» أو «هذا حديث صحيح لا أعرف له علة»، ثم يأتي <strong>الذهبي</strong> فيقول: فيه فلانٌ وضّاعٌ كذّاب! فهو <strong>استدراكٌ في أقصى درجاته</strong>، وهذا كثير عند الحاكم رحمه الله وغفر له.</p>
+
+  <div class="box story">
+    <span class="lbl">مثال تطبيقي: حديث «ازهد في الدنيا»</span>
+    <p>ومن الأمثلة الحديث المشهور الذي ذكره النووي في <strong>الأربعين النووية</strong>، من حديث <strong>سهل بن سعد</strong> رضي الله عنه قال: جاء رجل إلى النبي ﷺ فقال: يا رسول الله، دلّني على عملٍ إذا عملتُه أحبّني الله وأحبّني الناس، فقال: <strong>«ازهد في الدنيا يحبّك الله، وازهد فيما في أيدي الناس يحبّك الناس»</strong>.</p>
+    <p>قال الشيخ: هذا حديث لا شك ولا ريب في نكارته وضعفه. <strong>تفرّد به خالد بن عمرو عن سفيان الثوري</strong>؛ ولما حُدِّث الإمام أحمد بن حنبل بهذا الحديث قال: <strong>«لا إله إلا الله، لا إله إلا الله! من حدّث بهذا؟»</strong> قالوا: خالد بن عمرو. قال: <strong>«وقعنا في خالد بن عمرو»</strong>.</p>
+    <p>وخالد بن عمرو شديد الضعف، بل متّهم بالكذب. وله إسناد آخر من طريق <strong>محمد بن كثير</strong> متابعًا لخالد بن عمرو — عن الثوري عن أبي حازم عن سهل بن سعد — ومن يعرف الأسانيد يعرف أن هذا لا يستقيم؛ وقال <strong>أبو حاتم</strong>: وهذا أيضًا باطلٌ بهذا الإسناد.</p>
+    <p>فالحديث باطل منكر، <strong>والحاكم صحّحه، والذهبي تعقّبه</strong> وقال: فيه خالد بن عمرو وضّاع.</p>
+  </div>
+
+  <div class="box fix">
+    <span class="lbl">تصحيح تفريغ</span>
+    <p>ورد في التفريغ الصوتي «خادن عمرو»، والصواب <strong>خالد بن عمرو</strong> (القرشي). وورد «الباعث الحديث» في موضع لاحق، وصوابه <strong>الباعث الحثيث</strong>، و«دحفة الأشراف» صوابها <strong>تحفة الأشراف</strong>.</p>
+  </div>
+
+  <div class="box warn">
+    <span class="lbl">إنصافٌ في التقويم</span>
+    <p>مع ذلك ففي كتاب المستدرك فوائد كثيرة يستفيد منها المتخصص، خاصة في <strong>جمع الطرق</strong>؛ وليس كل ما حكم عليه أخطأ فيه، بل أصاب في كثير. وللذهبي تفصيل في ذلك يُراجَع في ترجمة الحاكم من «سير أعلام النبلاء»، ولابن رجب كلام في نسبة الأحاديث الصحيحة وغيرها في المستدرك.</p>
+    <p>وموازنة الشيخ: ما ذُكر عن الخطيب البغدادي لا يُقارن بهذا؛ <strong>فعلم الخطيب كان أوسع بكثير وصوابه أكثر بكثير</strong>. والحاكم — وإن قارب المتقدمين زمنًا — <strong>لا يمكن إلحاقه بهم في الصنعة قولًا واحدًا</strong>، والبيهقي أعلى قدمًا منه في الحكم على الأحاديث.</p>
+  </div>
+
+  <div class="box def">
+    <span class="lbl">فرقٌ منهجي بين الكتابين</span>
+    <p>معنى «السنن» في اصطلاحهم — سنن الترمذي، سنن النسائي — أن الأصل فيها <strong>أحاديث الأحكام الفقهية</strong>، وإن دخل فيها غيرها في الجملة. فالسنن الكبرى للبيهقي أحاديث أحكام في الأصل، وكان يشغله <strong>الناحية الفقهية</strong>.</p>
+    <p>أما الحاكم فلا نجد عنده كل الأبواب بل توسّعًا في أبواب أخرى؛ لأن الذي كان يشغله ليس جمع الفقه، وإنما <strong>الاستدراك على الصحيحين</strong>: يأتي بأي حديث في أي باب يظنّه على شرط الصحيح.</p>
+    <p>فالنتيجة: كتاب الحاكم جامعٌ بين <strong>النقل والصنعة الحديثية</strong>، وكتاب البيهقي جامعٌ بين <strong>الثلاثة</strong>.</p>
+  </div>
+
+  <div class="takeaway">
+    <h4>خلاصة القسم</h4>
+    <ul>
+      <li>مع الخطيب البغدادي انفجرت المؤلفات الحديثية، وأشهر كتبه «الكفاية».</li>
+      <li>البيهقي (ت 458هـ) من آخر من روى بإسناده، والسنن الكبرى تجمع النقل والتفقه والصنعة.</li>
+      <li>«رواه البيهقي» مطلقًا = في السنن الكبرى، وما سواها يُقيَّد باسم كتابه.</li>
+      <li>الحاكم: أبدع في «معرفة علوم الحديث» على نَفَس المتقدمين، وتُعُقِّب كثيرًا في «المستدرك».</li>
+      <li>مثال المستدرك: حديث «ازهد في الدنيا» صححه الحاكم وتعقّبه الذهبي، ومداره على خالد بن عمرو المتّهم.</li>
+      <li>«السنن» في الاصطلاح: أحاديث أحكام في الأصل، ولذلك اختلف مقصد البيهقي عن مقصد الحاكم.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 6 ===== -->
+<section id="s6" class="sec" style="--accent:var(--s6)">
+  <div class="sec-head">
+    <span class="sec-num">القسم السادس</span>
+    <h2 class="sec-title">التحوّل الكبير في النقل: كتبٌ فرعية بلا أسانيد</h2>
+  </div>
+
+  <p>في مقابل ما حصل في الصنعة الحديثية، حصل في <strong>نقل السنة</strong> تغيّرٌ كبير جدًا ومهم وأساسي.</p>
+
+  <div class="box def">
+    <span class="lbl">ما هو التغيّر؟</span>
+    <p>كانت الأحاديث تُنقل <strong>بأسانيد المؤلف</strong> الذي جمع الكتاب: البخاري يقول «حدثنا القعنبي عن مالك عن الزهري عن أنس»، وأحمد يقول «حدثنا عبد الرزاق عن معمر عن الزهري عن سالم عن ابن عمر».</p>
+    <p>ثم صارت الكتب التي تنقل السنة <strong>كتبًا فرعية</strong>: تأخذ من الكتب الأصلية، وترتّبها، وتحذف مكررها، وتضمّ كتابًا إلى كتاب، <strong>وتحذف الأسانيد</strong> — ويُكتفى بعزو الحديث: «أخرجه أحمد»، «رواه البخاري».</p>
+  </div>
+
+  <div class="box story">
+    <span class="lbl">الفرق عمليًا</span>
+    <p>حين تقرأ البخاري لا تجد بعد الحديث «أخرجه أحمد» أو «أخرجه مالك» — لأنه <strong>كتاب أصل</strong>. أما حين تقرأ رياض الصالحين فتجد بعد الحديث عزوًا إلى من أخرجه. ولذلك لا نقول «رواه النووي»، وإنما نقول: <strong>ذكره النووي</strong> في رياض الصالحين، ومن <strong>أخرجه</strong> هو البخاري أو مسلم أو أبو داود أو أحمد.</p>
+  </div>
+
+  <h3>أمثلة الكتب الفرعية</h3>
+
+  <table>
+    <thead><tr><th>الكتاب</th><th>مؤلفه</th><th>طبيعته</th></tr></thead>
+    <tbody>
+      <tr><td>رياض الصالحين، والأربعون النووية</td><td>النووي</td><td>انتقاء عام من الكتب الأصلية</td></tr>
+      <tr><td>الجمع بين الصحيحين</td><td>الحميدي، وعبد الحق الإشبيلي</td><td>ضمّ كتابٍ إلى كتاب</td></tr>
+      <tr><td>مصابيح السنة، ومشكاة المصابيح</td><td>البغوي (والمشكاة زيادة عليه)</td><td>جمع وترتيب بلا أسانيد</td></tr>
+      <tr><td>الإلمام في أحاديث الأحكام</td><td>ابن دقيق العيد</td><td>أحاديث الأحكام</td></tr>
+      <tr><td>بلوغ المرام في أدلة الأحكام</td><td>ابن حجر</td><td>أحاديث الأحكام (مختصر)</td></tr>
+      <tr><td>المحرر في أحاديث الأحكام</td><td>ابن عبد الهادي</td><td>أحاديث الأحكام</td></tr>
+      <tr><td>عمدة الأحكام</td><td>عبد الغني المقدسي</td><td>شرطه: <strong>لا يخرّج إلا ما اتفق عليه الشيخان</strong></td></tr>
+      <tr><td>المنتقى (منتقى الأخبار)</td><td>المجد ابن تيمية (جدّ شيخ الإسلام)</td><td>توسّع في أحاديث الأحكام</td></tr>
+      <tr><td>الترغيب والترهيب</td><td>المنذري</td><td>آلاف الأحاديث في الترغيب في عمل أو الترهيب منه</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box add">
+    <span class="lbl">إضافة توضيحية (ليست من كلام الشيخ)</span>
+    <p>«مشكاة المصابيح» للخطيب التبريزي، وهي زيادةٌ وتهذيبٌ على أصلها «مصابيح السنة» للبغوي — وقد ذكر الشيخ الكتابين معًا في سياق واحد.</p>
+  </div>
+
+  <h3>الشروح: القسم الثاني ينمو على النوعين</h3>
+
+  <p>وبتوسّع النقل توسّع <strong>التفقه</strong>؛ فصار العلماء يشرحون النوعين معًا: الكتب الأصلية، والكتب الفرعية محذوفة الأسانيد.</p>
+
+  <table>
+    <thead><tr><th>الشرح</th><th>على أي كتاب؟</th><th>نوع الأصل</th></tr></thead>
+    <tbody>
+      <tr><td>فتح الباري لابن حجر</td><td>صحيح البخاري</td><td>كتاب أصل</td></tr>
+      <tr><td>المنهاج للنووي</td><td>صحيح مسلم</td><td>كتاب أصل</td></tr>
+      <tr><td>التمهيد والاستذكار لابن عبد البر</td><td>الموطأ</td><td>كتاب أصل</td></tr>
+      <tr><td>القبس والمسالك لابن العربي، والمنتقى للباجي</td><td>الموطأ</td><td>كتاب أصل</td></tr>
+      <tr><td>أعلام الحديث للخطابي</td><td>صحيح البخاري</td><td>كتاب أصل</td></tr>
+      <tr><td>معالم السنن للخطابي، وتهذيب السنن لابن القيم</td><td>سنن أبي داود</td><td>كتاب أصل</td></tr>
+      <tr><td>نيل الأوطار للشوكاني</td><td>منتقى الأخبار</td><td>كتاب فرعي</td></tr>
+      <tr><td>منحة العلّام لعبد الله الفوزان</td><td>بلوغ المرام</td><td>كتاب فرعي</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box add">
+    <span class="lbl">رأي شخصي صرّح به الشيخ</span>
+    <p>قال الشيخ إن <strong>«منحة العلّام» للشيخ عبد الله الفوزان</strong> — في 11 مجلدًا — هو في نظره <strong>أفضل شرح لبلوغ المرام على الإطلاق</strong>، ونبّه أن هذا رأيه الشخصي غير الملزِم وأن الناس تختلف في الآراء.</p>
+  </div>
+
+  <p>ثم صار الأمر لا ينتهي: أغلب الكتب الكبيرة الأساسية تجد من يخدمها بعدها؛ فيأتيك من يختصر فتح الباري، ومن يقارن بين شرحٍ وشرح… ولأجل ذلك قال الشيخ في بداية المادة إن <strong>الإحاطة بالكتب المؤلفة في علوم الحديث صعبة جدًا</strong>.</p>
+
+  <div class="takeaway">
+    <h4>خلاصة القسم</h4>
+    <ul>
+      <li>التحول الأساسي في باب النقل: من كتبٍ أصلية بالأسانيد إلى كتبٍ فرعية منتقاة بلا أسانيد مع العزو.</li>
+      <li>لذلك يقال: «ذكره النووي في الرياض» و«أخرجه البخاري» — لا «رواه النووي».</li>
+      <li>أمثلته: رياض الصالحين، الأربعون، الجمع بين الصحيحين، المشكاة، الإلمام، بلوغ المرام، المحرر، عمدة الأحكام، المنتقى، الترغيب والترهيب.</li>
+      <li>عمدة الأحكام تميّزت بشرط الاقتصار على المتفق عليه بين الشيخين.</li>
+      <li>الشروح نمت على النوعين معًا: على الأصول (فتح الباري، المنهاج) وعلى الفروع (نيل الأوطار، منحة العلّام).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 7 ===== -->
+<section id="s7" class="sec" style="--accent:var(--s7)">
+  <div class="sec-head">
+    <span class="sec-num">القسم السابع</span>
+    <h2 class="sec-title">مدرسة ابن الصلاح: الكتاب الذي تركوا ما سواه وانشغلوا به</h2>
+  </div>
+
+  <p>جاء ابن الصلاح في القرن السابع، وفي نفس المرحلة تقريبًا كان النووي رحمه الله وإن كان ابن الصلاح قبله بقليل. ولما ألّف ابن الصلاح كتابه <strong>«علوم الحديث»</strong> — الجليل النفيس المهم — <strong>ترك العلماء ما سواه وانشغلوا به</strong>؛ فلا يُحصى كم ناظمٍ له ومختصِرٍ وشارحٍ ومقتصِر، كما أشار ابن حجر في مقدمة النخبة والنزهة. والذين التفّوا حوله <strong>كبار</strong>:</p>
+
+  <table>
+    <thead><tr><th>العالم</th><th>ما صنعه بالكتاب</th><th>الكتاب</th></tr></thead>
+    <tbody>
+      <tr><td>النووي</td><td>اختصره</td><td>التقريب</td></tr>
+      <tr><td>السيوطي</td><td>شرح مختصر النووي</td><td>تدريب الراوي شرح تقريب النواوي — واشتهر حتى صار مقررًا في بعض الجامعات إلى اليوم</td></tr>
+      <tr><td>ابن كثير</td><td>اختصره</td><td>اختصار علوم الحديث</td></tr>
+      <tr><td>أحمد شاكر (معاصر)</td><td>شرح اختصار ابن كثير</td><td>الباعث الحثيث</td></tr>
+      <tr><td>العراقي</td><td>نظمه</td><td>الألفية المشهورة</td></tr>
+      <tr><td>السخاوي</td><td>شرح ألفية العراقي</td><td>فتح المغيث — مطبوع في خمس مجلدات، ومن الشروح الثمينة جدًا</td></tr>
+      <tr><td>الذهبي</td><td>اختصر «الاقتراح» لابن دقيق العيد</td><td>الموقظة — فصارت كالحفيد لكتاب ابن الصلاح</td></tr>
+      <tr><td>ابن حجر</td><td>كتب عليه نكتًا علمية كالحاشية</td><td>النكت على ابن الصلاح</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box key">
+    <span class="lbl">النتيجة</span>
+    <p>صار <strong>كثيرٌ من كتب الصنعة الحديثية يدور في فلك كتاب ابن الصلاح</strong> — حتى ابن حجر نفسه خدم هذا الكتاب خدمة مباشرة.</p>
+  </div>
+
+  <h3>النووي: فقيهٌ له اشتغال بالحديث</h3>
+
+  <p>النووي رحمه الله له اشتغال بالحديث، لكن اشتغاله بالفقه أكثر وأكبر؛ وهو يسير على طريقة الحفاظ المتأخرين، وكان له علم واسع بالحديث، ويخالف في بعض القواعد الحديثية كما يخالف غيره — وله قواعد ذكرها في <strong>مقدمة «المنهاج» شرح صحيح مسلم</strong> تُعُقِّب عليها.</p>
+
+  <div class="box def">
+    <span class="lbl">الإلزامات والتتبع للدارقطني</span>
+    <p>بعكس صنيع الحاكم في «المستدرك»، كان للدارقطني كتاب <strong>«الإلزامات والتتبع»</strong> على البخاري ومسلم، يتتبّع فيه أحاديث يرى أن فيها خللًا أو شيئًا.</p>
+    <p>فانشغل <strong>النووي</strong> في شرحه بتعقّب الدارقطني في الأحاديث التي تعقّب بها مسلمًا، وصنع <strong>ابن حجر</strong> مثله في تعقّب ما انتقده الدارقطني على البخاري.</p>
+  </div>
+
+  <div class="box add">
+    <span class="lbl">موازنة بين الصنيعين</span>
+    <p>صنيع ابن حجر <strong>أعلى بكثير</strong> من صنيع النووي رحمهما الله: فالنووي <strong>نثر تعقباته داخل الشرح</strong>، أما ابن حجر <strong>فجمعها في المقدمة</strong> — «هدي الساري» مقدمة فتح الباري — فذكر الأحاديث التي تعقّب بها الدارقطني البخاريَّ وناقشه فيها. ونقاش ابن حجر كان عاليًا جدًا، وردّ على الدارقطني أكثر ما تعقّبه، وفي بعضها يكاد يسلّم له أو يصل معه إلى مرحلة وسيطة.</p>
+    <p><strong>وتنبيه مهم:</strong> هذا النقد لا يعني بالضرورة نقد متنٍ معيّن؛ فأحيانًا يكون الحديث واردًا من ثلاثة أسانيد فينقد الدارقطني إسنادًا واحدًا منها.</p>
+  </div>
+
+  <div class="takeaway">
+    <h4>خلاصة القسم</h4>
+    <ul>
+      <li>«علوم الحديث» لابن الصلاح صار محور الدراسات الحديثية المتأخرة: نظمًا واختصارًا وشرحًا ونكتًا.</li>
+      <li>سلسلته: النووي (التقريب) ← السيوطي (تدريب الراوي)؛ وابن كثير (الاختصار) ← أحمد شاكر (الباعث الحثيث)؛ والعراقي (الألفية) ← السخاوي (فتح المغيث).</li>
+      <li>«الموقظة» للذهبي اختصارٌ لـ«الاقتراح» لابن دقيق العيد، فهي متصلة بفلك ابن الصلاح.</li>
+      <li>النووي أقرب إلى الفقه، وله قواعد في مقدمة شرح مسلم تُعُقِّب عليها.</li>
+      <li>الدارقطني تتبّع الصحيحين في «الإلزامات والتتبع»، وردّ عليه النووي في ثنايا شرحه وابن حجر في «هدي الساري» بصورة أعلى.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 8 ===== -->
+<section id="s8" class="sec" style="--accent:var(--s8)">
+  <div class="sec-head">
+    <span class="sec-num">القسم الثامن</span>
+    <h2 class="sec-title">انتعاشة القرنين الثامن والتاسع: المزّي وابن كثير والذهبي وابن حجر</h2>
+  </div>
+
+  <p>القرنان الثامن والتاسع حصلت فيهما <strong>ثروة في علوم الحديث</strong>، وانتعاشة جديدة في الصنعة الحديثية، وحضرت إلى الساحة أسماء كبيرة لم يأتِ بعدها مثلها إلا النادر القليل.</p>
+
+  <h3>أبو الحجاج المِزّي</h3>
+
+  <div class="box story">
+    <span class="lbl">تهذيب الكمال</span>
+    <p>كتاب جليل نفيس عظيم مهم، يتحدث عن <strong>تراجم الرواة الذين في الكتب الستة</strong>: أي راوٍ في أي إسنادٍ لأي حديثٍ في هذه الكتب، تجد له ترجمة تشمل: الاسم، واسم الأب، والكنية، واللقب، وهل هو مولى أو غير مولى، وتاريخ الوفاة، ثم كلام العلماء فيه جرحًا وتعديلًا.</p>
+    <p>وفيه ما هو أعظم من ذلك وأصعب: <strong>ذكر رواياته عن كل شيخ من شيوخه مع بيان في أي كتاب وردت هذه الرواية بعينها</strong> بالرموز. فإذا كان قد روى عن مئتي شيخ، يقول لك: الأول روى عنه في سنن أبي داود، والثاني في أبي داود والبخاري ومسلم، والثالث في «د ق»… ثم يفعل مثل ذلك في تلاميذه: «وروى عنه فلان» في أي كتاب. قال الشيخ: <strong>شيء مذهل، شيء مخيف</strong> — فلو ذهبتَ تفتّش في ابن ماجه حتى تموت لن تجد رواية موجودة في غيره، وهو قد حسمها لك من بين آلاف الأسانيد.</p>
+  </div>
+
+  <div class="box def">
+    <span class="lbl">تحفة الأشراف بمعرفة الأطراف</span>
+    <p>كتاب آخر للمِزّي في علمٍ من علوم الصنعة الحديثية: <strong>علم التخريج والأطراف</strong>؛ خدم فيه أحاديث الكتب الستة بذكر طرقها وأسانيدها في كتاب واحد.</p>
+  </div>
+
+  <h3>ابن كثير</h3>
+
+  <p>وهو <strong>زوج ابنة المزّي</strong>. وقد خدم علوم الحديث كثيرًا؛ ذُكر له «اختصار علوم الحديث»، لكن له ما هو أكثر وأعلى:</p>
+
+  <ul class="plain">
+    <li><strong>مسند الفاروق</strong>: فيه تطبيقات عملية وأحكام على الأحاديث مهمة جدًا.</li>
+    <li><strong>البداية والنهاية</strong>: فيها صنعة حديثية رائقة ورائعة.</li>
+    <li><strong>التفسير</strong>: الأسانيد التي يسوقها ويحكم عليها شيء متميز وفريد.</li>
+  </ul>
+
+  <p>فابن كثير صاحب قدمٍ عالية جدًا في معرفة الحديث رحمه الله.</p>
+
+  <h3>الذهبي وابن رجب وابن عبد الهادي</h3>
+
+  <p>وفي هذه الدائرة تقريبًا — أو قبل ذلك بقليل — جاء <strong>الذهبي</strong> الإمام الفذّ الكبير، وكتابه <strong>«الموقظة»</strong> متصل بفلك ابن الصلاح كما مرّ. ثم جاء <strong>ابن رجب الحنبلي</strong> و<strong>ابن عبد الهادي</strong>، وكلاهما صاحب قدمٍ عالية في الحديث — وقد تقدّم أن «شرح علل الترمذي» لابن رجب هو <strong>أنفس كتب المتأخرين</strong> في نظر الشيخ.</p>
+
+  <h3>ابن حجر (ت 852هـ): توسيع التأليف في كل اتجاه</h3>
+
+  <p>وكما انفجرت المؤلفات مع الخطيب البغدادي، كذلك وسّع ابن حجر التأليف في علوم الحديث وخدم السنة خدمة كبيرة — وميزته أن <strong>الجودة عالية</strong> مع كثرة المجالات، بخلاف بعض من يؤلف في كل شيء فتنخفض جودته:</p>
+
+  <table>
+    <thead><tr><th>المجال</th><th>الكتاب</th><th>ملاحظة</th></tr></thead>
+    <tbody>
+      <tr><td>النقل المجرد</td><td>بلوغ المرام</td><td>من الكتب الفرعية في أحاديث الأحكام</td></tr>
+      <tr><td>التفقه</td><td>فتح الباري</td><td>يكفيه</td></tr>
+      <tr><td>الرواة والجرح والتعديل</td><td>تهذيب التهذيب</td><td>مبنيّ على «تهذيب الكمال» للمزّي؛ من طبعاته ما هو في 10–11 مجلدًا، وطبعة مضغوطة في أربعة</td></tr>
+      <tr><td>الرواة (مختصرًا)</td><td>تقريب التهذيب</td><td>في مجلد واحد، اختصارٌ لتهذيب التهذيب</td></tr>
+      <tr><td>الأطراف والتخريج</td><td>إتحاف المهرة</td><td>أكبر من «تحفة الأشراف» للمزي</td></tr>
+      <tr><td>المصطلح</td><td>نخبة الفكر ونزهة النظر</td><td>المتن وشرحه</td></tr>
+      <tr><td>خدمة كتاب ابن الصلاح</td><td>النكت على ابن الصلاح</td><td>كالحاشية العلمية عليه</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box add">
+    <span class="lbl">سلسلة الاختصار في كتب الرجال</span>
+    <p>للترتيب الذهني: <strong>تهذيب الكمال</strong> (المزّي) ← <strong>تهذيب التهذيب</strong> (ابن حجر) ← <strong>تقريب التهذيب</strong> (ابن حجر) — وهو الذي مرّ في المجلس السابق بطبقاته الاثنتي عشرة وأكثر من ثمانية آلاف راوٍ.</p>
+  </div>
+
+  <div class="takeaway">
+    <h4>خلاصة القسم</h4>
+    <ul>
+      <li>القرنان الثامن والتاسع انتعاشة كبرى في الصنعة الحديثية.</li>
+      <li>المزّي: «تهذيب الكمال» في رجال الكتب الستة مع بيان مواضع كل رواية بالرموز، و«تحفة الأشراف» في الأطراف.</li>
+      <li>ابن كثير زوج ابنة المزّي، وله «مسند الفاروق» وصنعة حديثية ظاهرة في البداية والنهاية والتفسير.</li>
+      <li>الذهبي («الموقظة» اختصار الاقتراح)، وابن رجب، وابن عبد الهادي في الطبقة نفسها.</li>
+      <li>ابن حجر ألّف في كل مجال بجودة عالية: بلوغ المرام، فتح الباري، تهذيب التهذيب، تقريب التهذيب، إتحاف المهرة، النخبة والنزهة، النكت.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 9 ===== -->
+<section id="s9" class="sec" style="--accent:var(--s9)">
+  <div class="sec-head">
+    <span class="sec-num">القسم التاسع</span>
+    <h2 class="sec-title">حجية السنة، والمكتبة المعاصرة، والعينان</h2>
+  </div>
+
+  <h3>أين مبحث حجية السنة؟</h3>
+
+  <div class="box def">
+    <span class="lbl">تفريق دقيق</span>
+    <p>غاية الباب الثاني (الصنعة الحديثية) هي حماية السنة <strong>من جهة التأكد من صحة نسبة الأحاديث المعيّنة إلى النبي ﷺ</strong> — لا من جهة إثبات حجيتها في ذاتها.</p>
+    <p>أما <strong>حجية السنة في ذاتها</strong>، والأدلة عليها، وتثبيت حجية أخبار الآحاد: فهذا المبحث اعتنى به في الأساس <strong>الأصوليون</strong> عناية كبيرة.</p>
+  </div>
+
+  <p>وقد كانت هناك معارضة وتشكيك في بعض أمور السنة في الأزمنة المتقدمة — ليس كثيرًا لكنه كان موجودًا. ومن أوائل من اعتنى بهذا الباب — إن لم يكن أولَ من اعتنى به عناية خاصة — <strong>الإمام الشافعي في «الرسالة»</strong>؛ فهو وإن كان كتابًا في أصول الفقه، إلا أن فيه كلامًا كثيرًا عن <strong>مكانة السنة وعلاقتها بالقرآن</strong>.</p>
+
+  <div class="box key">
+    <span class="lbl">دعوة الشيخ</span>
+    <p>يرى الشيخ أن مما ينبغي أن يعتني به مدرّسو علوم الحديث في هذا الزمن: أن <strong>يضيفوا إلى مباحث علوم الحديث الكلامَ على حجية السنة النبوية</strong> — لكثرة المعارضة والتشكيك فيها؛ فوجب على طلاب الحديث أن يتقنوا هذا الباب، وأن يعرفوا كيف يثبتون صحة السنة وصحة علم الحديث في ذاته، إذ وقع التشكيك كذلك في موضوعية هذا العلم.</p>
+  </div>
+
+  <h3>المرحلة المعاصرة: الدراسات الأكاديمية</h3>
+
+  <p>جزءٌ أساسي من رفد المكتبات الإسلامية اليوم هو <strong>الدراسات الأكاديمية</strong>، والمتعلقة منها بعلوم الحديث لا حصر لها، وهي أنواع:</p>
+
+  <table>
+    <thead><tr><th>النوع</th><th>وصفه</th></tr></thead>
+    <tbody>
+      <tr><td>التحقيق</td><td>خُدمت به كتب كثيرة كانت مخطوطات أو كانت مطبوعة بلا خدمة جيدة، عبر رسائل الماجستير والدكتوراه</td></tr>
+      <tr><td>مناهج المحدّثين</td><td>دراسة منهج عالمٍ بعينه أو كتابٍ بعينه، باستقراء كتبه — وقد مرّت الدراسات على العلماء واحدًا واحدًا</td></tr>
+      <tr><td>الموضوعات الجزئية المتخصصة</td><td>رسالة كاملة عن «الحديث المدرَج»، أو عن راوٍ واحد (ذكر الشيخ كتابًا في خمس مجلدات عن شهر بن حوشب)، أو عن «الحديث الحسن» في خمس مجلدات</td></tr>
+    </tbody>
+  </table>
+
+  <p>فصارت المكتبة المعاصرة واسعة ممتدة، واتّسمت بكونها <strong>أكثر تخصصية وأكثر جزئية</strong>. ولذلك طالب الحديث اليوم أمام <strong>بحرٍ لا ساحل له</strong>، فيحتاج إلى الهداية: بماذا يبدأ؟ وكيف يتدرّج؟</p>
+
+  <div class="box add">
+    <span class="lbl">إحالة من الشيخ</span>
+    <p>ذكر الشيخ أن <strong>منهجيات دراسة علم الحديث</strong> بسطها في <strong>الدرس الأول من الشرح المطوّل على «نزهة النظر»</strong> (وهو شرح مكوّن من 39 مجلسًا)، ويعتبرها جزءًا من هذا المدخل. ونبّه أن الإحالة ليست تخلّصًا من الجواب، وإنما توجيه لمن أراد التوسّع.</p>
+  </div>
+
+  <h3>علم التخريج</h3>
+
+  <div class="box def">
+    <span class="lbl">فكرة التخريج</span>
+    <p>أن يأتي عالمٌ إلى كتابٍ ذُكرت فيه أحاديث على سبيل الاستشهاد أو الاستدلال — ولم تُدرَس فيه — <strong>فيأخذ هذه الأحاديث ويدرسها حديثًا حديثًا</strong>: من أخرجه؟ وما أسانيده؟ وما الحكم عليه؟ وتتفاوت الكتب: بعضها يذكر من أخرجه فقط، وبعضها يضيف الحكم بلا أسانيد، وبعضها يذكر الأسانيد بلا حكم.</p>
+  </div>
+
+  <table>
+    <thead><tr><th>كتاب التخريج</th><th>مؤلفه</th><th>خرّج أحاديث</th></tr></thead>
+    <tbody>
+      <tr><td>تلخيص الحبير</td><td>ابن حجر</td><td>كتاب فقهي</td></tr>
+      <tr><td>نصب الراية</td><td>الزيلعي</td><td>كتاب «الهداية» في الفقه</td></tr>
+    </tbody>
+  </table>
+
+  <p>وفائدته العملية: أنك تقرأ كتاب الفقه ومعه كتاب التخريج، فتعرف أي الأحاديث التي استدلّ بها المؤلف صحيح وأيها ضعيف — <strong>فكثير من الفقهاء يستدلّ بأحاديث ضعيفة، وأحيانًا شديدة الضعف</strong>.</p>
+
+  <h3>كتابان معاصران أشار إليهما الشيخ</h3>
+
+  <table>
+    <thead><tr><th>الكتاب</th><th>وصفه</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>تحرير علوم الحديث</strong> للجُدَيع</td>
+        <td>مجلدان، من الكتب الثمينة، وهو أقرب إلى المصطلح والتعريف بأبواب الحديث؛ معتمَد في أكاديمية الحديث، وكان معتمدًا في البناء المنهجي (الدفعة الأولى)، ثم ظهر أنه طويل على الدفعات القادمة</td>
+      </tr>
+      <tr>
+        <td><strong>المسند المصنَّف المعلَّل</strong></td>
+        <td>كتاب تطبيقي عملي في التخريج: يجمع لك أسانيد الحديث الواحد من كتب السنة في مكان واحد — «أما البيهقي فهذا إسناده، وأما مالك فهذا إسناده…» — مرتَّبًا بطريقة بديعة تفيد طالب الحديث كثيرًا</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="box add">
+    <span class="lbl">إضافة توضيحية (لم يذكر الشيخ المؤلف)</span>
+    <p>«المسند المصنَّف المعلَّل» صنّفه وحققه الدكتور <strong>بشار عواد معروف</strong> ومعه جماعة من الباحثين، ونشرته دار الغرب الإسلامي في نحو 41 مجلدًا (الأخير فهارس)؛ سُمّي مسندًا لترتيبه على أسماء الصحابة، ومصنَّفًا لترتيب أحاديث كل صحابي على أبواب الفقه، ومعلَّلًا لتضمّنه ما قيل في كل حديث من علل ظاهرة وخفية.</p>
+  </div>
+
+  <h3>إحياء طريقة المتقدمين في زماننا</h3>
+
+  <div class="box key">
+    <span class="lbl">حسنة من حسنات هذا الزمن</span>
+    <p>حرص عددٌ من العلماء المشتغلين بالحديث اليوم على <strong>إحياء طريقة الحفاظ المتقدمين</strong> التي تغيّرت مع الوقت، فأُلّفت كتب واشتغل علماء في التحقيق والدراسات. ومن الكتب الجيدة التي تُعدّ <strong>مدخلًا معاصرًا</strong> لهذه الطريقة: <strong>«شرح لغة المحدّث» للشيخ طارق عوض الله</strong> — وهو معتمد في الدراسة عند الشيخ، ومدخلٌ جيد لفهم طريقة الحفاظ في المصطلحات والأبواب الحديثية.</p>
+  </div>
+
+  <div class="box story">
+    <span class="lbl">مناهج المحدّثين قديمًا</span>
+    <p>وأشار الشيخ إلى كتاب <strong>«ثلاث رسائل في علم المصطلح»</strong> الذي ذكره في المجلس السابق: الأولى رسالة أبي داود إلى أهل مكة، والثانية <strong>شروط الأئمة الستة</strong>، والثالثة <strong>شروط الأئمة الخمسة</strong> — وكلها متقدمة، وهي تبيّن مناهج المحدّثين، وهذا من عناوين الصنعة الحديثية.</p>
+  </div>
+
+  <div class="box add">
+    <span class="lbl">إضافة توضيحية</span>
+    <p>«شروط الأئمة الستة» لابن طاهر المقدسي، و«شروط الأئمة الخمسة» للحازمي — كما هو معروف في طبعات هذه المجموعة.</p>
+  </div>
+
+  <h3>الخاتمة: العينان</h3>
+
+  <p>ختم الشيخ المادة بالتذكير بالقضية التي بدأ بها المجلس: كل هذه الدراسات المتعلقة بالأسانيد والرجال والرواة والعلل <strong>يجب ألّا تُنسينا الغاية</strong>.</p>
+
+  <div class="box key">
+    <span class="lbl">العينان</span>
+    <p><strong>العين الأولى</strong> على: «حدثنا فلان قال حدثنا فلان»… على: فلانٌ ثقة وفلانٌ ضعيف… على: متصل ومنقطع ومرسل.</p>
+    <p><strong>والعين الثانية</strong> على: كيف صلى ﷺ؟ وكيف قام الليل؟ وكيف عبد الله؟ وكيف ذكر ربه؟ وكيف تقلّب في سفره وذهابه — ﴿الذي يراك حين تقوم وتقلّبك في الساجدين﴾ — وكيف عمل؟ وكيف جاهد في سبيل الله؟ وكيف نصر دين الله؟ <strong>تتفقّه في هذه لتعمل.</strong></p>
+    <p>فإذا درستَ علم الحديث وأنت تنظر بهاتين العينين فهنيئًا لك؛ <strong>وتُعزّى بقدر ما يفوتك من النظر بالعين الأخرى</strong>: فإن انغمستَ في الأولى حتى لم تعد تُبصر الغاية وصارت الصنعة هي الغاية، فسيفوتك من الخير بقدر ما فاتك من إدراك تلك الغاية.</p>
+  </div>
+
+  <div class="box warn">
+    <span class="lbl">لماذا الدعوة إلى إضافة مبحث الحجية؟</span>
+    <p>السبب هو النظر إلى الغاية: لأن الغاية حماية السنة وحفظها ومعرفتها والعمل بها؛ ومن المستجدات المعاصرة التي <strong>لا تزال تُفتح لها المراكز التكوينية</strong>: الطعن في السنة والتشكيك فيها. ولأجل ذلك لا ينبغي لطالب الحديث أن يكون مجرد حافظٍ ناقلٍ للأسانيد والمصطلحات، وهو لا يفهم <strong>كيف ولماذا وعلى أي شيء بُنيت هذه القواعد</strong>، وكيف نثبت صحتها، وكيف نردّ على المشككين فيها.</p>
+  </div>
+
+  <div class="box key">
+    <span class="lbl">قاعدة عامة في كل العلوم</span>
+    <p>هذا الاستحضار يجب أن يكون في كل العلوم الإسلامية: <strong>كل علمٍ حاول أن تستحضر غايته وأنت تدرسه</strong>، ولا تكتفِ بدراسة العلم المجرد. فهو من أهم ما يعين على استحضار النية وعلى حياة القلب، وعلى أن تستفيد من العلم فائدةً تغذّي إيمانك — لأنك وإن مررتَ بمعلومة جزئية لا علاقة لها بالإيمان مباشرة، إلا أنها تغذّي إيمانك من حيث استحضارك أنها <strong>خطوة في سبيل تلك الغاية الشريفة</strong>؛ فتربط بين الجزء والكل، وبين الوسيلة والغاية، فتكون ربانيًا عابدًا لله، وتُؤجر على كل صفحة تقرؤها وكل معلومة تستفيدها.</p>
+  </div>
+
+  <div class="takeaway">
+    <h4>خلاصة القسم</h4>
+    <ul>
+      <li>حجية السنة مبحث أصولي في الأساس، وأوائل من اعتنى به الشافعي في «الرسالة»؛ ويدعو الشيخ إلى ضمّه لمباحث علوم الحديث اليوم.</li>
+      <li>المكتبة المعاصرة قامت على الدراسات الأكاديمية: تحقيق، ومناهج محدّثين، وموضوعات جزئية دقيقة.</li>
+      <li>علم التخريج يخدم كتب العلوم الأخرى، ومن أمثلته تلخيص الحبير لابن حجر ونصب الراية للزيلعي.</li>
+      <li>كتابان معاصران: «تحرير علوم الحديث» للجديع (نظري)، و«المسند المصنَّف المعلَّل» (تطبيقي)، و«شرح لغة المحدّث» لطارق عوض الله مدخلًا لطريقة المتقدمين.</li>
+      <li>الخاتمة: عينٌ على الإسناد وعينٌ على الهدي؛ ومن انغمس في الصنعة حتى صارت غايةً فاته من الخير بقدر ما فاته من الغاية.</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<div class="cards-wrap">
+  <div class="cards-head">
+    <h2>بطاقات المراجعة</h2>
+    <p>اضغط على البطاقة لقلبها. استخدم الفلاتر لمراجعة قسمٍ بعينه، أو حمّل الملف لاستيراده في Anki.</p>
+  </div>
+
+  <div class="filters" id="filters"></div>
+
+  <div class="flash" id="flashCard" onclick="flip()">
+    <span class="side-tag" id="sideTag">السؤال</span>
+    <div class="face" id="cardFace"></div>
+  </div>
+
+  <div class="nav-cards">
+    <button onclick="prevCard()">السابق ›</button>
+    <span class="count" id="counter">1 / 1</span>
+    <button onclick="nextCard()">‹ التالي</button>
+  </div>
+</div>
+
+<footer>
+  <p>مدخل إلى علوم الحديث — المجلس الثاني | الشيخ أحمد السيد</p>
+  <p>ملف دراسي شخصي مبني على تفريغ المحاضرة الصوتية</p>
+  <button class="dl-btn" onclick="downloadTSV()">⬇ تحميل بطاقات Anki (TSV)</button>
+</footer>
+
+<script>
+const SECTIONS = [
+  {id:1, name:"غاية ووسيلة", color:"#146356"},
+  {id:2, name:"القرن الرابع", color:"#8A4B1E"},
+  {id:3, name:"طريقة المتقدمين", color:"#2A5FA8"},
+  {id:4, name:"الروافد الجديدة", color:"#96305A"},
+  {id:5, name:"البيهقي والحاكم", color:"#5C5AA0"},
+  {id:6, name:"كتب بلا أسانيد", color:"#A8761C"},
+  {id:7, name:"مدرسة ابن الصلاح", color:"#3C7A2E"},
+  {id:8, name:"الثامن والتاسع", color:"#A03B2A"},
+  {id:9, name:"المعاصرة والغاية", color:"#2C6E7A"}
+];
+
+const CARDS = [
+  {s:1, q:"ما العلاقة بين بابَي علم الحديث من جهة الغاية والوسيلة؟", a:"الباب الأول (المتن) بابٌ غائي، والباب الثاني (الصنعة الحديثية) بابُ وسائل؛ فكل العلل والأسانيد والرجال وسيلة لخدمة المتن."},
+  {s:1, q:"رتّب سلسلة الغايات داخل علم الحديث.", a:"الصنعة الحديثية ← وسيلة لنقل السنة صافية ← وسيلة للتفقه فيها ← وسيلة للعمل بها."},
+  {s:1, q:"ما غاية الباب الثاني بالتحديد؟", a:"تثبيت المنقول عن رسول الله ﷺ وحماية السنة من الدخيل، حتى يكون المرجع صافيًا يمكن التفقه فيه والعمل به."},
+  {s:1, q:"لماذا يعين استحضار المقصد على الإخلاص في طلب علم الحديث؟", a:"لأن في حفظ الأسانيد والرجال فتنةً وزهوًا؛ وقد قال أحد المحدّثين بعد أن ساق إسنادًا: أستغفر الله، لما وجد في نفسه شيئًا من الافتخار."},
+
+  {s:2, q:"ماذا قال أبو حاتم الرازي حين سُئل عمّن بقي يُحسن الصنعة والعلل؟", a:"قال: ما بقي من يُحسن هذا — وقد حصل بالفعل ضمور شديد في الصنعة الحديثية، ولم يبقَ إلا بقايا قليلة."},
+  {s:2, q:"لماذا يُعدّ النسائي من علماء القرن الثالث لا الرابع؟", a:"لأنه توفي سنة 303هـ، أي في بداية الرابع؛ وهو صاحب صنعة حديثية عالية جدًا يُفضَّل على بعض المشاهير."},
+  {s:2, q:"من هم الثلاثة الذين بقوا على طريقة المتقدمين في القرن الرابع؟", a:"ابن عديّ، والعقيلي، والدارقطني."},
+  {s:2, q:"ما كتاب ابن عديّ وما أعظم ميزاته؟", a:"«الكامل في ضعفاء الرجال»؛ وميزته أنه يسوق في ترجمة الراوي الأحاديثَ التي انتُقدت عليه بأعيانها، فينتقل الحكم من مُجمَل إلى مفصَّل — وهو أول من دوّن ذلك."},
+  {s:2, q:"ما كتاب العقيلي، وما موقعه من ابن عديّ؟", a:"«الضعفاء الكبير»، وهو كتاب عظيم لكن كتاب ابن عديّ أعلى منه، وابن عديّ نفسه أعلى منه علمًا."},
+  {s:2, q:"صف كتاب «العلل» للدارقطني.", a:"كتاب كبير (قرابة 14 مجلدًا) على صيغة: وسُئل عن حديث كذا، يحشد أسانيد الحديث كلها ثم يفكّكها ويبيّن الأصح والأرجح والمنقطع."},
+  {s:2, q:"ماذا قال الذهبي عن كتاب علل الدارقطني؟", a:"قال: يُقال إنه كتبه من حفظه، فإن صحّ ذلك فهو أحفظ من في الدنيا."},
+  {s:2, q:"بمن تُختم مدرسة المتقدمين، وما طبيعة هذه المدرسة؟", a:"بالدارقطني؛ وهي مدرسة منهج لا مدرسة زمن فقط."},
+  {s:2, q:"ما معنى قول عبد الرحمن بن مهدي: «علمنا عند من لا يعرفه كالكهانة»؟", a:"أن أحكام النقاد على العلل الخفية تبدو لغير أهل الصنعة بلا دليل ظاهر، لأنهم ينزلون إلى جذور الرواية لا إلى ظاهرها."},
+
+  {s:3, q:"ما المعلم الأول في طريقة الحفاظ المتقدمين؟", a:"عدم الاكتفاء بظواهر الأسانيد، والحرص على التفتيش عن بواطن العلل وخفاياها."},
+  {s:3, q:"ما المعلم الثاني، ولماذا لا يقوم الأول بدونه؟", a:"جمع الطرق والمقارنة بينها وتقديم الأرجح؛ ولا يمكن كشف العلل الخفية إلا به."},
+  {s:3, q:"ما المعلم الثالث؟ ومثاله في زيادة الثقة والتفرد.", a:"العمل بقرائن كل رواية على حِدَة لا بالأحكام النظرية المطلقة؛ فزيادة الثقة قد تُقبل وقد تُردّ، والتفرد قد يُقبل وقد يُردّ بحسب القرائن."},
+  {s:3, q:"ما الفرق بين طريقة الفقهاء وطريقة الحفاظ في التعامل مع الحديث؟", a:"الفقهاء وكثير من المتأخرين يتعاملون مع الظاهر ويقولون: لا شأن لنا بالعلل الخفية؛ والحفاظ يتعاملون مع البواطن أيضًا."},
+  {s:3, q:"هل معنى «بدأ التغيّر» أن كل من بعد القرن الرابع خالف المتقدمين؟", a:"لا؛ التغيّر وقع على تفاوت: مستقلٌّ ومستكثر، فمنهم من ابتعد كثيرًا ومنهم من بقي قريبًا."},
+  {s:3, q:"ما أفضل كتاب متأخر أحيا طريقة المتقدمين في نظر الشيخ؟", a:"«شرح علل الترمذي» لابن رجب؛ وذكر أنه وجد بعد دراسته — لا مجرد قراءته — نقلة كبيرة في علم الحديث."},
+  {s:3, q:"لماذا لا تكفي دراسة المصطلح وحدها؟", a:"لأن حفظ تعريفات الصحيح والحسن والضعيف والشاذ والمتواتر لا يُفهم به حقيقة ما جرى في نقل السنة، ولا يمكّن من الدفاع عنها دفاعًا حقيقيًا."},
+
+  {s:4, q:"ما الروافد الجديدة التي دخلت على علم الحديث؟", a:"الروافد الكلامية والمنطقية، عبر علم أصول الفقه الذي اشتغل فيه المتكلمون، وخاصة مبحث الأدلة."},
+  {s:4, q:"من القطبان اللذان دارت عليهما علوم الحديث المتأخرة؟ ومتى توفيا؟", a:"الخطيب البغدادي (463هـ) وابن الصلاح (643هـ) — والرقمان نفسهما مع التقديم والتأخير."},
+  {s:4, q:"في أي سنة توفي ابن عبد البر؟", a:"سنة 463هـ، أي في نفس سنة وفاة الخطيب البغدادي."},
+  {s:4, q:"ما صورة مسألة زيادة الثقة في الإسناد؟", a:"أن يُرسل راوٍ الحديث ويصله آخر، فيكون الواصل قد زاد رجلًا؛ فهل يُقدَّم من وصل أم من أرسل؟ والمتقدمون يرجّحون بالقرائن."},
+  {s:4, q:"ماذا قال ابن رجب عن الخطيب البغدادي في مسألة زيادة الثقة؟", a:"قال إن الخطيب تناقض؛ فذكر في «الكفاية» مذاهبَ لا تُعرف عن أحد من متقدمي الحفاظ وإنما هي من كتب المتكلمين، ثم اختار قبول زيادة الثقة مطلقًا كما نصره المتكلمون وكثير من الفقهاء."},
+  {s:4, q:"في أي كتاب وافق الخطيب البغدادي طريقة المتقدمين؟", a:"في «تمييز المزيد في متصل الأسانيد»، بخلاف ما اختاره في «الكفاية»."},
+  {s:4, q:"كم نوعًا ذكر ابن الصلاح في «علوم الحديث»؟ وأين وضع المتواتر؟", a:"ذكر 65 نوعًا، ولم يجعل المتواتر نوعًا مستقلًا، بل ذكره ضمن المشهور."},
+  {s:4, q:"ماذا قال ابن الصلاح عن ذكر المتواتر في كلام الخطيب؟", a:"قال: أهل الحديث لا يذكرونه باسمه الخاص، وإن كان الخطيب قد ذكره، ففي كلامه ما يُشعر أنه اتّبع فيه غير أهل الحديث."},
+  {s:4, q:"ما المنهجية في التعامل مع أخطاء عالم كالخطيب البغدادي؟", a:"يُحفظ له فضله ومنزلته — والناس عيال عليه في علم الحديث — ولا يُسلَّم له في كل شيء؛ ولا يسلم أحد من الخطأ."},
+
+  {s:5, q:"ماذا صنع الخطيب البغدادي بعلوم الحديث؟", a:"ألّف في كل مبحث تقريبًا حتى انفجرت المؤلفات الحديثية معه، وأسهم في ترتيب بعض المنثور من كتب الحديث، وأشهر كتبه «الكفاية»."},
+  {s:5, q:"متى توفي البيهقي؟ وما كتابه الأشهر؟", a:"سنة 458هـ، وكتابه «السنن الكبرى» (الكبير)، وهو من آخر من روى الحديث بإسناده."},
+  {s:5, q:"إذا قيل «رواه البيهقي» مطلقًا فأين موضعه؟", a:"في السنن الكبرى؛ وما كان في غيرها يُقيَّد فيقال: رواه البيهقي في شعب الإيمان، أو في دلائل النبوة."},
+  {s:5, q:"أي كتابين يجمعان الأمور الثلاثة: النقل والتفقه والصنعة؟", a:"جامع الترمذي، والسنن الكبير للبيهقي."},
+  {s:5, q:"ما كتابا الحاكم النيسابوري؟ وما تقويم كلٍّ منهما؟", a:"«معرفة علوم الحديث» أبدع فيه ووافق نَفَس المتقدمين، و«المستدرك» لم يوفَّق فيه وانتقده العلماء كثيرًا."},
+  {s:5, q:"بأي عبارة وصف ابن الصلاح تساهل الحاكم؟", a:"قال: وهو واسع الخَطْو في شرط الصحيح."},
+  {s:5, q:"ما قصة حديث «ازهد في الدنيا يحبك الله»؟", a:"حديث سهل بن سعد، تفرّد به خالد بن عمرو عن سفيان الثوري؛ ولما حُدّث به أحمد قال: لا إله إلا الله، من حدّث بهذا؟ قالوا: خالد بن عمرو، قال: وقعنا في خالد بن عمرو. وصححه الحاكم وتعقّبه الذهبي."},
+  {s:5, q:"ما حال المتابعة التي جاءت لخالد بن عمرو؟", a:"جاءت من طريق محمد بن كثير عن الثوري عن أبي حازم عن سهل، وقال أبو حاتم: وهذا أيضًا باطل بهذا الإسناد."},
+  {s:5, q:"ما معنى «السنن» في اصطلاح المحدّثين؟", a:"أن أصل الكتاب أحاديث الأحكام الفقهية، وإن دخل فيها غيرها في الجملة؛ ولذلك كان يشغل البيهقي الناحية الفقهية."},
+  {s:5, q:"ما الفرق بين مقصد البيهقي ومقصد الحاكم؟", a:"البيهقي يجمع أحاديث الأحكام على الأبواب، والحاكم يشغله الاستدراك على الصحيحين فيأتي بأي حديث في أي باب يظنه على شرطهما."},
+
+  {s:6, q:"ما التحوّل الأساسي الذي وقع في باب نقل السنة؟", a:"انتقال التأليف من كتب أصلية تروي الحديث بأسانيد مؤلفيها إلى كتب فرعية منتقاة من الأصول، محذوفة الأسانيد مع العزو لمن أخرجه."},
+  {s:6, q:"لماذا نقول «ذكره النووي في رياض الصالحين» ولا نقول «رواه النووي»؟", a:"لأن رياض الصالحين كتاب فرعي منتقى بلا إسناد؛ والذي أخرج الحديث هو صاحب الكتاب الأصل: البخاري أو مسلم أو أحمد أو أبو داود."},
+  {s:6, q:"اذكر أمثلة على الكتب الفرعية في النقل.", a:"رياض الصالحين والأربعون النووية، والجمع بين الصحيحين للحميدي ولعبد الحق الإشبيلي، ومصابيح السنة ومشكاة المصابيح، والإلمام لابن دقيق العيد، وبلوغ المرام، والمحرر لابن عبد الهادي، وعمدة الأحكام، والمنتقى، والترغيب والترهيب للمنذري."},
+  {s:6, q:"بمَ تميّزت «عمدة الأحكام» لعبد الغني المقدسي؟", a:"بشرطه ألّا يخرّج إلا ما اتفق عليه الشيخان."},
+  {s:6, q:"من مؤلف «منتقى الأخبار»؟ ومن شرحه؟", a:"المجد ابن تيمية جدّ شيخ الإسلام؛ وشرحه الشوكاني في «نيل الأوطار»."},
+  {s:6, q:"ما رأي الشيخ في أفضل شرح لبلوغ المرام؟", a:"«منحة العلّام» للشيخ عبد الله الفوزان في 11 مجلدًا — ونبّه أنه رأي شخصي غير ملزِم."},
+  {s:6, q:"ما كتاب المنذري وما موضوعه؟", a:"«الترغيب والترهيب»، يجمع آلاف الأحاديث التي فيها ترغيب في عمل أو ترهيب منه بذكر الثواب والعقاب."},
+
+  {s:7, q:"ماذا صنع العلماء بكتاب «علوم الحديث» لابن الصلاح؟", a:"تركوا ما سواه وانشغلوا به: نظمًا واختصارًا وشرحًا ونكتًا، حتى صارت كثير من كتب الصنعة تدور في فلكه."},
+  {s:7, q:"ما سلسلة النووي والسيوطي حول كتاب ابن الصلاح؟", a:"النووي اختصره في «التقريب»، وشرح السيوطي المختصر في «تدريب الراوي»، واشتهر حتى صار مقررًا في بعض الجامعات."},
+  {s:7, q:"ما سلسلة ابن كثير وأحمد شاكر؟", a:"ابن كثير اختصر الكتاب في «اختصار علوم الحديث»، وشرحه أحمد شاكر في «الباعث الحثيث»."},
+  {s:7, q:"من نظم كتاب ابن الصلاح؟ ومن شرح النظم؟", a:"العراقي في ألفيته المشهورة، وشرحها السخاوي في «فتح المغيث» المطبوع في خمس مجلدات."},
+  {s:7, q:"ما أصل «الموقظة» للذهبي؟", a:"هي اختصار لكتاب «الاقتراح» لابن دقيق العيد، فصارت كالحفيد لكتاب ابن الصلاح."},
+  {s:7, q:"ما كتاب الدارقطني في نقد الصحيحين؟ ومن ردّ عليه؟", a:"«الإلزامات والتتبع»؛ وردّ عليه النووي في ثنايا شرحه على مسلم، وابن حجر في مقدمة فتح الباري (هدي الساري)."},
+  {s:7, q:"لماذا كان صنيع ابن حجر أعلى من صنيع النووي في الرد على الدارقطني؟", a:"لأن النووي نثر تعقباته داخل الشرح، أما ابن حجر فجمعها في المقدمة وناقشها مناقشة عالية وردّ أكثر ما تعقّبه."},
+  {s:7, q:"هل نقد الدارقطني للصحيحين يعني تضعيف المتن دائمًا؟", a:"لا؛ فقد يكون الحديث واردًا من عدة أسانيد فينتقد إسنادًا واحدًا منها فقط."},
+
+  {s:8, q:"ما موضوع «تهذيب الكمال» للمزّي؟", a:"تراجم رواة الكتب الستة: الاسم والكنية واللقب وتاريخ الوفاة وكلام العلماء جرحًا وتعديلًا، مع بيان روايته عن كل شيخ وفي أي كتاب وردت بالرموز."},
+  {s:8, q:"ما كتاب المزّي في الأطراف؟", a:"«تحفة الأشراف بمعرفة الأطراف»، خدم فيه أحاديث الكتب الستة بذكر طرقها وأسانيدها في كتاب واحد."},
+  {s:8, q:"ما صلة ابن كثير بالمزّي؟ وما كتبه ذات الصنعة الحديثية؟", a:"هو زوج ابنته؛ وله «مسند الفاروق» وفيه تطبيقات وأحكام، وصنعة ظاهرة في «البداية والنهاية» وفي تفسيره بأسانيده وأحكامه."},
+  {s:8, q:"متى توفي ابن حجر واسمه؟", a:"أحمد بن عليّ، توفي سنة 852هـ."},
+  {s:8, q:"اذكر كتب ابن حجر بحسب المجالات.", a:"النقل: بلوغ المرام. التفقه: فتح الباري. الرجال: تهذيب التهذيب وتقريب التهذيب. الأطراف: إتحاف المهرة. المصطلح: نخبة الفكر ونزهة النظر. وخدمة ابن الصلاح: النكت."},
+  {s:8, q:"رتّب سلسلة الاختصار في كتب الرجال.", a:"تهذيب الكمال للمزّي ← تهذيب التهذيب لابن حجر ← تقريب التهذيب لابن حجر."},
+  {s:8, q:"ما ميزة ابن حجر مقارنة بمن يؤلف في كل المجالات؟", a:"أن جودته عالية في كل ما يكتب، بخلاف من تتسع مجالاته فتنخفض جودته."},
+
+  {s:9, q:"ما الفرق بين غاية الصنعة الحديثية ومبحث حجية السنة؟", a:"الصنعة تحمي السنة من جهة صحة نسبة الأحاديث المعيّنة إلى النبي ﷺ، أما حجية السنة في ذاتها فمبحث اعتنى به الأصوليون."},
+  {s:9, q:"من أوائل من اعتنى بمكانة السنة وحجيتها؟", a:"الإمام الشافعي في «الرسالة»؛ فهو وإن كان في أصول الفقه ففيه كلام كثير عن مكانة السنة وعلاقتها بالقرآن."},
+  {s:9, q:"ما أنواع الدراسات الأكاديمية المعاصرة في علوم الحديث؟", a:"التحقيق لكتب السنة، ودراسة مناهج المحدّثين، والموضوعات الجزئية المتخصصة (كرسالة عن الحديث المدرَج أو عن راوٍ واحد)."},
+  {s:9, q:"ما فكرة علم التخريج؟", a:"أن يأتي عالم إلى كتاب ذُكرت فيه أحاديث للاستدلال دون دراسة، فيدرسها حديثًا حديثًا: من أخرجه، وما أسانيده، وما الحكم عليه."},
+  {s:9, q:"اذكر كتابين في تخريج أحاديث الكتب الفقهية.", a:"«تلخيص الحبير» لابن حجر، و«نصب الراية» للزيلعي على أحاديث «الهداية»."},
+  {s:9, q:"ما الفائدة العملية لكتب التخريج على الكتب الفقهية؟", a:"أنك تقرأ كتاب الفقه ومعه التخريج فتعرف الصحيح من الضعيف في أدلته، إذ يستدل كثير من الفقهاء بأحاديث ضعيفة بل شديدة الضعف."},
+  {s:9, q:"ما كتاب «تحرير علوم الحديث» ولمن؟", a:"للجُدَيع، في مجلدين، من الكتب المعاصرة الثمينة، أقرب إلى المصطلح والتعريف بأبواب الحديث، ومعتمد في أكاديمية الحديث."},
+  {s:9, q:"ما كتاب «المسند المصنَّف المعلَّل» وما فائدته؟", a:"كتاب تطبيقي في التخريج يجمع أسانيد الحديث الواحد من كتب السنة في مكان واحد بترتيب بديع؛ صنّفه بشار عواد معروف وجماعة من الباحثين في نحو 41 مجلدًا."},
+  {s:9, q:"ما الكتاب المعاصر الذي يُعدّ مدخلًا لطريقة المتقدمين؟", a:"«شرح لغة المحدّث» للشيخ طارق عوض الله."},
+  {s:9, q:"ما الرسائل الثلاث في كتاب «ثلاث رسائل في علم المصطلح»؟", a:"رسالة أبي داود إلى أهل مكة، وشروط الأئمة الستة، وشروط الأئمة الخمسة — وكلها متقدمة وتبيّن مناهج المحدّثين."},
+  {s:9, q:"ما «العينان» اللتان ختم بهما الشيخ؟", a:"عينٌ على الإسناد: حدثنا فلان، وفلانٌ ثقة أو ضعيف، ومتصل ومنقطع. وعينٌ على الهدي: كيف صلى ﷺ وقام الليل وذكر ربه وجاهد — لتتفقه فتعمل."},
+  {s:9, q:"ماذا يفوت من انغمس في الصنعة حتى صارت هي الغاية؟", a:"يفوته من الخير بقدر ما فاته من إدراك الغاية والحرص عليها؛ فيُعزّى بقدر ما فاته من النظر بالعين الأخرى."},
+  {s:9, q:"لماذا يدعو الشيخ إلى تعليم مبحث حجية السنة اليوم؟", a:"لأن الطعن في السنة والتشكيك فيها من المستجدات التي تُفتح لها المراكز التكوينية، فلا يكفي الطالب أن يكون حافظًا ناقلًا دون أن يعرف كيف بُنيت القواعد وكيف يردّ على المشككين."},
+  {s:9, q:"ما القاعدة العامة التي ختم بها الشيخ في كل العلوم؟", a:"استحضار غاية كل علم أثناء دراسته؛ فذلك يعين على النية وحياة القلب، ويربط الجزء بالكل والوسيلة بالغاية، فيؤجر الطالب على كل صفحة ومعلومة."}
+];
+
+let filtered = CARDS.slice();
+let idx = 0, showBack = false;
+
+function buildFilters(){
+  const box = document.getElementById("filters");
+  let html = '<button class="active" style="--fc:#0F2620" onclick="setFilter(0,this)">الكل (' + CARDS.length + ')</button>';
+  SECTIONS.forEach(function(s){
+    const n = CARDS.filter(function(c){return c.s===s.id}).length;
+    if(n>0){
+      html += '<button style="--fc:' + s.color + '" onclick="setFilter(' + s.id + ',this)">' + s.name + ' (' + n + ')</button>';
+    }
+  });
+  box.innerHTML = html;
+  const chip = document.getElementById("cardCount");
+  if(chip) chip.textContent = CARDS.length + " بطاقة مراجعة";
+}
+
+function setFilter(sid, btn){
+  filtered = sid === 0 ? CARDS.slice() : CARDS.filter(function(c){return c.s===sid});
+  idx = 0; showBack = false;
+  document.querySelectorAll("#filters button").forEach(function(b){b.classList.remove("active")});
+  btn.classList.add("active");
+  render();
+}
+
+function render(){
+  const card = document.getElementById("flashCard");
+  const face = document.getElementById("cardFace");
+  const tag = document.getElementById("sideTag");
+  if(filtered.length === 0){ face.textContent = "لا توجد بطاقات"; return; }
+  const c = filtered[idx];
+  face.textContent = showBack ? c.a : c.q;
+  tag.textContent = showBack ? "الإجابة" : "السؤال";
+  card.classList.toggle("back", showBack);
+  const sec = SECTIONS.find(function(s){return s.id===c.s});
+  card.style.borderRightColor = sec ? sec.color : "#ccc";
+  card.style.borderRightWidth = "5px";
+  document.getElementById("counter").textContent = (idx+1) + " / " + filtered.length;
+}
+
+function flip(){ showBack = !showBack; render(); }
+function nextCard(){ idx = (idx+1) % filtered.length; showBack = false; render(); }
+function prevCard(){ idx = (idx-1+filtered.length) % filtered.length; showBack = false; render(); }
+
+document.addEventListener("keydown", function(e){
+  if(e.key === "ArrowLeft") nextCard();
+  if(e.key === "ArrowRight") prevCard();
+  if(e.key === " "){ e.preventDefault(); flip(); }
+});
+
+function clean(t){ return String(t).replace(/\t/g," ").replace(/\r?\n/g," ").trim(); }
+
+function downloadTSV(){
+  const lines = CARDS.map(function(c){ return clean(c.q) + "\t" + clean(c.a); });
+  const blob = new Blob(["\uFEFF" + lines.join("\n")], {type:"text/tab-separated-values;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "مدخل_إلى_علوم_الحديث_02_بطاقات.tsv";
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+buildFilters();
+render();
+</script>
+
 </body>
 </html>
