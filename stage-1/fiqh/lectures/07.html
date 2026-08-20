@@ -570,6 +570,122 @@
     .toc-box,.intro-text{padding:20px;}
   }
 </style>
+
+<style>
+/* ===== تثبيت الفهم — الأسئلة التفاعلية ===== */
+.quiz-block{
+  margin:32px 0 24px;
+  background:var(--green-deeper, #132920);
+  border-radius:12px;
+  padding:24px;
+  box-shadow:0 6px 24px rgba(31,61,46,.14);
+  position:relative;
+  overflow:hidden;
+  direction:rtl;
+  text-align:right;
+}
+.quiz-block::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:radial-gradient(circle at 90% 10%, rgba(201,164,90,.12) 0, transparent 45%);
+  pointer-events:none;
+}
+.quiz-block-title{
+  display:flex; align-items:center; gap:8px;
+  font-weight:800; font-size:14px;
+  color:var(--gold-pale, #F2E6C4);
+  letter-spacing:.3px;
+  margin-bottom:16px;
+  position:relative;
+}
+.quiz-item{
+  background:rgba(255,254,250,.06);
+  border:1px solid rgba(199,164,90,.25);
+  border-radius:8px;
+  padding:16px;
+  margin-bottom:16px;
+  position:relative;
+}
+.quiz-item:last-child{margin-bottom:0;}
+.quiz-q{
+  font-size:15.5px; font-weight:700;
+  color:#FBF7EE;
+  margin:0 0 16px;
+  line-height:1.7;
+}
+.quiz-options{display:flex; flex-direction:column; gap:8px;}
+.quiz-opt{
+  display:block; width:100%; text-align:right;
+  background:rgba(251,247,238,.08);
+  border:1px solid rgba(251,247,238,.18);
+  color:#FBF7EE;
+  font-family:inherit; font-size:14px; line-height:1.6;
+  border-radius:8px;
+  padding:10px 14px;
+  cursor:pointer;
+  transition:background .15s ease, border-color .15s ease, transform .1s ease;
+}
+.quiz-opt:hover{background:rgba(251,247,238,.15); border-color:rgba(199,164,90,.5);}
+.quiz-opt:active{transform:scale(.99);}
+.quiz-opt.correct{
+  background:rgba(46,84,67,.9);
+  border-color:#8FBF9E;
+  color:#EAF6EE;
+  font-weight:700;
+}
+.quiz-opt.correct::after{content:" \2713"; color:#8FBF9E;}
+.quiz-opt.wrong{
+  background:rgba(140,59,46,.55);
+  border-color:#D89A8C;
+  color:#F7E6E2;
+}
+.quiz-opt.wrong::after{content:" \2715"; color:#F1B3A6;}
+.quiz-opt.disabled{cursor:default; pointer-events:none;}
+.quiz-feedback{
+  margin-top:10px;
+  font-size:13.5px; line-height:1.8;
+  color:var(--gold-pale, #F2E6C4);
+  background:rgba(0,0,0,.15);
+  border-right:3px solid var(--gold, #A9832E);
+  border-radius:6px;
+  padding:9px 12px;
+  display:none;
+}
+.quiz-feedback.show{display:block;}
+.quiz-reflect{
+  border-top:1px dashed rgba(199,164,90,.3);
+  padding-top:16px;
+  margin-top:16px;
+}
+.quiz-item > .quiz-reflect:first-child{border-top:none; padding-top:0; margin-top:0;}
+.quiz-reflect-q{
+  font-size:14.5px; color:var(--gold-pale, #F2E6C4); font-weight:600;
+  margin:0 0 8px;
+}
+.quiz-reveal-btn{
+  background:var(--gold, #A9832E);
+  color:var(--green-deeper, #132920);
+  border:none; border-radius:999px;
+  font-family:inherit;
+  font-weight:700; font-size:13px;
+  padding:8px 18px;
+  cursor:pointer;
+  transition:background .15s ease;
+}
+.quiz-reveal-btn:hover{background:var(--gold-soft, #C7A45A);}
+.quiz-answer{
+  display:none;
+  margin-top:10px;
+  font-size:14px; line-height:1.85;
+  color:#FBF7EE;
+  background:rgba(255,254,250,.08);
+  border-radius:8px;
+  padding:11px 14px;
+}
+.quiz-answer.show{display:block;}
+@media (max-width:640px){ .quiz-block{padding:16px;} }
+</style>
+
 </head>
 <body data-lecture-id="stage1_fiqh_05">
 
@@ -748,7 +864,9 @@
       <p class="quote" style="font-size:17px">رُوي أن رجلًا جاء يسأل الإمام أحمد رحمه الله، فأحاله إلى "حلقة المدنيين" ليسألهم — مع أن الإمام أحمد كان يرى خلاف رأيهم في تلك المسألة.</p>
       <div class="source">مثال على سعة صدر الأئمة في توجيه المستفتي، حتى لغير ما يرجّحونه شخصيًا</div>
     </div>
-  </section>
+  
+      <div class="quiz-block" data-quiz="section1"></div>
+    </section>
 
   <div class="divider" aria-hidden="true">
     <div class="line"></div>
@@ -887,7 +1005,9 @@
         <li>إن مالت نفسك إلى قول عالم معين (كالشافعي مثلًا) فلا بأس أن تقلّده في ذلك. لكن لا يجوز أن تتحول هذه الميول إلى دعوى بأن إمامًا آخر (كأحمد) "خالف النص" في هذه المسألة، أو أن إمامًا معينًا "أسعد الناس بالسنة" فيها — فهذا تنصيب للنفس حكمًا على أئمة الإسلام دون بلوغ رتبة تؤهلك لذلك.</li>
       </ul>
     </div>
-  </section>
+  
+      <div class="quiz-block" data-quiz="section2"></div>
+    </section>
 
   <div class="divider" aria-hidden="true">
     <div class="line"></div>
@@ -953,7 +1073,9 @@
       <div class="label">🔑 القيد الذي يقرّب الاتجاه الثالث من الاتجاه الثاني</div>
       <p style="margin:0">تدقيق النظر في كلام ابن حزم رحمه الله يكشف أنه ذكر شرطًا مهمًا حين قال إن الأخذ بجميع قول إمام معين مخالف للإجماع إنما هو في حق <strong>"من يتمكن من النظر"</strong> — أي من بلغ أهلية الاجتهاد. وهذا شرط مسلَّم به عند الجميع: فمن بلغ رتبة الاجتهاد لا يجوز له أن يقلّد أصلًا، فضلًا عن أن يلزم نفسه بمذهب معين بعينه. بهذا يتبين أن اتجاه المنع عند ابن حزم لا يتعارض جوهريًا مع اتجاه الجواز عند الجمهور، بل الخلاف بينهما جزء منه لفظي، إذ كل اتجاه محكوم بقيوده الخاصة.</p>
     </div>
-  </section>
+  
+      <div class="quiz-block" data-quiz="section3"></div>
+    </section>
 
   <!-- ================= SECTION 4 ================= -->
   <section class="content-section" id="section4">
@@ -980,7 +1102,9 @@
     </div>
 
     <p>خلاصة هذا المبحث: أكثر أهل العلم من بعد استقرار المذاهب الأربعة كانوا منتسبين إليها، وأكثرهم يرى جواز التمذهب — بمعنى لزوم مذهب معين — لا وجوبه المطلق ولا منعه المطلق.</p>
-  </section>
+  
+      <div class="quiz-block" data-quiz="section4"></div>
+    </section>
 
   <!-- ================= SECTION 5 ================= -->
   <section class="content-section" id="section5">
@@ -991,7 +1115,9 @@
       <p style="margin:0">افتراض أن مثل هذا "التصادم" بين المذهب والنص أمرٌ حقيقي وشائع في المذاهب الأربعة هو <strong>افتراض غير دقيق من الأساس</strong>؛ فصياغة السؤال بهذا الشكل — كأن التصادم أمر متحقق وواضح بذاته — هي نفسها موضع الخلل. كثير مما يُظن تصادمًا بين المذهب والنص ليس تصادمًا حقيقيًا عند التحقيق؛ فقد يكون النص الذي يُظن أنه يخالف المذهب غير ثابت أصلًا عند أئمة هذا المذهب (أي ضعيف عندهم بعد الدراسة)، أو يكون له عندهم تأويل واستدلال آخر لم يطّلع عليه من استعجل الحكم بالتصادم.</p>
     </div>
     <p style="margin:0">هذا الموضوع مرتبط ارتباطًا وثيقًا بمبحث <strong>"أسباب اختلاف العلماء"</strong>، الذي سيأتي تفصيله في محاضرة لاحقة إن شاء الله، وهو مبحث ضروري لفهم كثير مما يُظن اليوم تناقضًا بين نصوص الشريعة ومذاهب الفقهاء.</p>
-  </section>
+  
+      <div class="quiz-block" data-quiz="section5"></div>
+    </section>
 
   <!-- ===== Completion checkbox ===== -->
   <div class="completion-box" id="completionBox" onclick="toggleCompletion()">
@@ -1107,5 +1233,244 @@
     URL.revokeObjectURL(url);
   }
 </script>
+
+<script>
+window.quizData = {
+ "section1": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما موقف علماء الإسلام من وجود المذاهب الأربعة؟",
+    "options": [
+     "دعا كثير منهم إلى إلغائها",
+     "متفقون على قبول وجودها، ولم يدعُ أحد من أئمة الدين إلى إلغائها أو حرق كتبها",
+     "اختلفوا فيها اختلافًا كبيرًا"
+    ],
+    "correct": 1,
+    "feedback": "لأن نشأة هذه المذاهب نتيجة طبيعية لاختلاف الاجتهاد المشروع. أما حوادث حرق كتب المذاهب فهي تصرفات فردية معزولة لا تمثل اتجاه أهل العلم."
+   },
+   {
+    "type": "mcq",
+    "q": "إذا بلغ المتمذهب رتبة الاجتهاد ثم خالف مذهب إمامه لرجحان دليل ظهر له، فما الحكم؟",
+    "options": [
+     "يُنكر عليه ويُعد خارجًا عن المذهب",
+     "قد أحسن، ولا يُنكر عليه — وهذا محل اتفاق",
+     "يجوز في العبادات دون المعاملات"
+    ],
+    "correct": 1,
+    "feedback": "والدليل واقعي: فلم يوجد عبر التاريخ من أنكر على أئمة كبار خالفوا أئمتهم — كأبي يوسف ومحمد بن الحسن اللذين خالفا أبا حنيفة في مسائل كثيرة."
+   },
+   {
+    "type": "reflect",
+    "q": "الدعوة إلى حرق كتب المذاهب غالبًا ما تأتي تحت شعار «محاربة التعصب». ما المفارقة هنا؟",
+    "answer": "أنها في حقيقتها تعصب لآراء شخصية، لا دفاع عن الدليل ولا نبذ لمذاهب معتبرة — فهي نفسها ضربٌ من ضروب التعصب المذموم. وقد وثّق د. خالد كبير علال حوادث التعصب المذهبي تاريخيًا، لكنها وقعت «على سبيل الندرة لا على سبيل الشيوع»."
+   }
+  ]
+ },
+ "section2": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما تعريف الاجتهاد اصطلاحًا؟",
+    "options": [
+     "الإتيان بقول جديد لم يقل به أحد من قبل",
+     "استفراغ الفقيه وُسعه في دَرْك حكم شرعي",
+     "الميل إلى قول عالم دون آخر"
+    ],
+    "correct": 1,
+    "feedback": "حتى قال بعض العلماء في وصف غايته: حتى يظن المجتهد أنه لا يمكنه الوقوف على مزيد من النظر في المسألة."
+   },
+   {
+    "type": "mcq",
+    "q": "إذا اختلف من سبق من العلماء على قولين، فهل للمجتهد المتأخر أن يُحدث قولًا ثالثًا؟",
+    "options": [
+     "نعم، هذا هو معنى الاجتهاد",
+     "لا؛ لأن اختلافهم على قولين يعني اتفاقًا ضمنيًا على بطلان ما عداهما",
+     "يجوز في المسائل المعاصرة فقط"
+    ],
+    "correct": 1,
+    "feedback": "فالاجتهاد في المسائل التي تكلم فيها من سبق ينحصر في الترجيح بين أقوالهم، لا في اختراع أقوال جديدة من عدم."
+   },
+   {
+    "type": "reflect",
+    "q": "ما معنى قول ابن هبيرة: «إن المناظرة بين أرباب المذاهب تخرج مخرج الإعادة والدرس»؟ وكيف يُطبَّق على البحوث المعاصرة؟",
+    "answer": "أي أن الغرض من مناظرة طالب لطالب في مسألة فقهية هو التربية والتدريب والتعليم، لا الوصول الفعلي إلى القول الراجح الذي يُتّبع. وعلى نفس المخرج يُحمل الترجيح في البحوث العلمية المعاصرة: فقيمتها في جمعها وتقريبها للمعلومة، لا في كون الباحث مال إلى الرأي «أ» أو «ب» — خاصة أن كثيرًا من هذه البحوث تُقرأ دون معرفة أهلية مؤلفها للاجتهاد أصلًا."
+   }
+  ]
+ },
+ "section3": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما محل الخلاف في مسألة التمذهب؟",
+    "options": [
+     "هل يجوز وجود المذاهب أصلًا؟",
+     "هل يلزم المقلِّد أن يلتزم مذهبًا واحدًا بعينه ولا ينتقل عنه؟",
+     "هل يجوز للمجتهد مخالفة إمامه؟"
+    ],
+    "correct": 1,
+    "feedback": "أي: هل يجب عليه أن يأخذ برخص مذهب واحد وعزائمه معًا، أم يجوز له الانتقال بين المذاهب حسب المسألة؟ ويرتبط بها مصطلحا «التلفيق» و«تتبّع الرخص»."
+   },
+   {
+    "type": "mcq",
+    "q": "ما حكم «تتبّع الرخص» (قصد اختيار الأسهل من كل مذهب)؟",
+    "options": [
+     "جائز باتفاق",
+     "ممنوع باتفاق العلماء",
+     "مختلف فيه كالتمذهب"
+    ],
+    "correct": 1,
+    "feedback": "وهذا بخلاف مجرد سؤال أكثر من عالم بقصد الوصول للحكم الشرعي الصحيح — فالفارق هو القصد."
+   },
+   {
+    "type": "reflect",
+    "q": "ابن حزم منع لزوم مذهب معين. فكيف يقترب موقفه من موقف الجمهور القائل بالجواز؟",
+    "answer": "لأنه قيّد كلامه بقوله إن الأخذ بجميع قول إمام معين مخالف للإجماع إنما هو في حق «من يتمكن من النظر» — أي من بلغ أهلية الاجتهاد. وهذا شرط مسلَّم به عند الجميع: فمن بلغ رتبة الاجتهاد لا يجوز له أن يقلّد أصلًا. فلا تعارض جوهري بين الاتجاهين."
+   }
+  ]
+ },
+ "section4": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "سُئل الإمام أحمد: أيُفتي الرجل وهو يحفظ مئة ألف حديث؟ إلى أي عدد وصل السائل قبل أن يقول أحمد «أرجو»؟",
+    "options": [
+     "مئتي ألف",
+     "ثلاثمئة ألف",
+     "أربعمئة ألف"
+    ],
+    "correct": 2,
+    "feedback": "و«الحديث» عند المتقدمين يشمل كل طريق وإسناد يُروى به الخبر، فهو أوسع من عدّ المتون المستقلة. وقوله «أرجو» أي: إن توفرت له مع ذلك المَلَكة الفقهية اللازمة."
+   },
+   {
+    "type": "mcq",
+    "q": "بالمقارنة مع نقل الإمام أحمد، هل شدّد الأصوليون المتأخرون في شروط الاجتهاد؟",
+    "options": [
+     "نعم، شدّدوا تشديدًا مبالغًا فيه",
+     "بل سهّلوا فيها، والعكس هو الصحيح",
+     "لم يضعوا شروطًا أصلًا"
+    ],
+    "correct": 1,
+    "feedback": "لكن بعض العاجزين عن بلوغ هذه الشروط يريدون فتح باب الاجتهاد على مصراعيه متذرعين بأن الشروط «تعجيزية»."
+   },
+   {
+    "type": "reflect",
+    "q": "ما المقصود الحقيقي بـ«إغلاق باب الاجتهاد»؟",
+    "answer": "ليس المقصود أن الاجتهاد أصبح مستحيلًا في ذاته، ولا نفي إمكان تحققه لمن توفرت شروطه؛ وإنما هو سدٌّ للذريعة خشية أن يدخل من باب دعوى الاجتهاد من ليس أهلًا له. فهو تحذير من توسّع غير المؤهلين، لا حكم بانقطاعه المطلق."
+   }
+  ]
+ },
+ "section5": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "إذا وجدت نصًا يبدو ظاهره مخالفًا لقول المذهب، فما التصحيح المنهجي؟",
+    "options": [
+     "ترك المذهب فورًا لأن التصادم واقع",
+     "افتراض أن التصادم أمر حقيقي وشائع هو نفسه افتراض غير دقيق",
+     "تجاهل النص تمامًا"
+    ],
+    "correct": 1,
+    "feedback": "فكثير مما يُظن تصادمًا ليس تصادمًا حقيقيًا عند التحقيق: فقد يكون النص غير ثابت أصلًا عند أئمة المذهب (ضعيف عندهم بعد الدراسة)، أو له عندهم تأويل واستدلال آخر لم يطّلع عليه من استعجل الحكم."
+   }
+  ]
+ }
+};
+</script>
+
+<script>
+/* ===== تثبيت الفهم: محرك الرندر ===== */
+(function(){
+  function renderQuizBlocks(){
+    document.querySelectorAll('.quiz-block[data-quiz]').forEach(function(container){
+      var key = container.getAttribute('data-quiz');
+      var data = (window.quizData || {})[key];
+      if(!data || container.dataset.rendered) return;
+      container.dataset.rendered = '1';
+
+      var title = document.createElement('div');
+      title.className = 'quiz-block-title';
+      title.textContent = '\uD83E\uDDE0 تثبيت الفهم';
+      container.appendChild(title);
+
+      data.items.forEach(function(item){
+        var itemEl = document.createElement('div');
+        itemEl.className = 'quiz-item';
+
+        if(item.type === 'mcq'){
+          var qEl = document.createElement('p');
+          qEl.className = 'quiz-q';
+          qEl.textContent = item.q;
+          itemEl.appendChild(qEl);
+
+          var optsWrap = document.createElement('div');
+          optsWrap.className = 'quiz-options';
+
+          var feedbackEl = document.createElement('div');
+          feedbackEl.className = 'quiz-feedback';
+          feedbackEl.textContent = item.feedback || '';
+
+          item.options.forEach(function(optText, optIdx){
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'quiz-opt';
+            btn.textContent = optText;
+            btn.addEventListener('click', function(){
+              var allBtns = optsWrap.querySelectorAll('.quiz-opt');
+              allBtns.forEach(function(b){ b.classList.add('disabled'); });
+              if(optIdx === item.correct){
+                btn.classList.add('correct');
+              } else {
+                btn.classList.add('wrong');
+                if(allBtns[item.correct]) allBtns[item.correct].classList.add('correct');
+              }
+              feedbackEl.classList.add('show');
+            });
+            optsWrap.appendChild(btn);
+          });
+
+          itemEl.appendChild(optsWrap);
+          itemEl.appendChild(feedbackEl);
+
+        } else if(item.type === 'reflect'){
+          var wrap = document.createElement('div');
+          wrap.className = 'quiz-reflect';
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-reflect-q';
+          qText.textContent = '\uD83D\uDCAD ' + item.q;
+          wrap.appendChild(qText);
+
+          var revealBtn = document.createElement('button');
+          revealBtn.type = 'button';
+          revealBtn.className = 'quiz-reveal-btn';
+          revealBtn.textContent = 'إظهار الإجابة';
+
+          var answerEl = document.createElement('div');
+          answerEl.className = 'quiz-answer';
+          answerEl.textContent = item.answer;
+
+          revealBtn.addEventListener('click', function(){
+            answerEl.classList.toggle('show');
+            revealBtn.textContent = answerEl.classList.contains('show') ? 'إخفاء الإجابة' : 'إظهار الإجابة';
+          });
+
+          wrap.appendChild(revealBtn);
+          wrap.appendChild(answerEl);
+          itemEl.appendChild(wrap);
+        }
+
+        container.appendChild(itemEl);
+      });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', renderQuizBlocks);
+  } else {
+    renderQuizBlocks();
+  }
+})();
+</script>
+
 </body>
 </html>
