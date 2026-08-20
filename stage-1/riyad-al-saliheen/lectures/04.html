@@ -1,39 +1,1017 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>باب التوبة 1 - شرح رياض الصالحين</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../../style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رياض الصالحين (4) — باب التوبة 2 | أنوار السنة المحمدية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700&family=Reem+Kufi:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#1B2A4A; --night-2:#2B3A52; --ink:#16202F; --body:#2E3A4B; --muted:#66748A;
+  --paper:#F2F3F0; --card:#FFFFFF; --line:#DFE3E0; --dawn:#B07D2B; --dawn-soft:#F6EEDD;
+  --s1:#3E6B7C; --s2:#4A7C59; --s3:#7A6B2F; --s4:#55618F; --s5:#B07D2B;
+  --s6:#7A5C86; --s7:#A0483F; --s8:#2B3A52; --s9:#1F7A5C;
+  --acc:var(--s1); --acc-soft:rgba(62,107,124,.10);
+  --rad:14px; --shadow:0 1px 2px rgba(22,32,47,.06),0 8px 24px rgba(22,32,47,.06);
+  --f-disp:'Amiri',serif; --f-body:'Cairo',sans-serif; --f-lab:'Reem Kufi',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{background:var(--paper);color:var(--body);font-family:var(--f-body);font-size:17.5px;line-height:1.95;-webkit-font-smoothing:antialiased}
+@media (max-width:640px){body{font-size:16.5px;line-height:1.9}}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+p{margin:0 0 1.05em}
+strong{color:var(--ink);font-weight:600}
+h1,h2,h3,h4{font-family:var(--f-disp);color:var(--ink);line-height:1.4;font-weight:700}
+a{color:var(--s1)}
+
+/* ---------- header ---------- */
+.bar{position:sticky;top:0;z-index:60;background:rgba(242,243,240,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:820px;margin:0 auto;padding:11px 20px;display:flex;align-items:center;gap:14px}
+.bar-t{font-family:var(--f-lab);font-size:14px;color:var(--night);font-weight:600;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar-t b{color:var(--dawn)}
+.btn{font-family:var(--f-lab);font-size:13.5px;background:var(--night);color:#fff;border:0;border-radius:99px;padding:7px 16px;cursor:pointer;transition:.2s}
+.btn:hover{background:var(--dawn)}
+.btn:focus-visible,a:focus-visible,button:focus-visible{outline:2.5px solid var(--dawn);outline-offset:3px}
+#prog{position:absolute;bottom:-1px;right:0;height:2px;background:var(--dawn);width:0}
+
+/* ---------- hero ---------- */
+.hero{background:linear-gradient(160deg,#16223B 0%,#1B2A4A 45%,#2B3A52 100%);color:#E8EBF0;padding:64px 0 56px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:
+   radial-gradient(circle at 82% 18%,rgba(176,125,43,.30),transparent 46%),
+   radial-gradient(circle at 12% 88%,rgba(31,122,92,.22),transparent 44%)}
+.hero .wrap{position:relative}
+.eyebrow{font-family:var(--f-lab);font-size:13px;letter-spacing:.06em;color:#C7A15C;margin-bottom:16px}
+.eyebrow span{opacity:.6;margin:0 8px}
+.hero h1{font-size:42px;color:#fff;margin-bottom:14px}
+@media(max-width:640px){.hero h1{font-size:31px}.hero{padding:46px 0 40px}}
+.hero .sub{font-size:17px;color:#B9C3D2;max-width:560px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.chip{font-family:var(--f-lab);font-size:12.5px;padding:6px 14px;border:1px solid rgba(255,255,255,.22);border-radius:99px;color:#D7DEE8}
+
+/* ---------- toc ---------- */
+.toc{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:22px 24px;margin:-30px auto 0;position:relative;box-shadow:var(--shadow);max-width:820px}
+.toc h4{font-family:var(--f-lab);font-size:14px;color:var(--muted);font-weight:600;margin-bottom:14px}
+.toc ol{list-style:none;counter-reset:t}
+.toc li{counter-increment:t;border-bottom:1px dashed var(--line)}
+.toc li:last-child{border:0}
+.toc a{display:flex;gap:12px;align-items:baseline;padding:9px 0;color:var(--body);text-decoration:none;font-size:16px;transition:.18s}
+.toc a:before{content:counter(t,decimal-leading-zero);font-family:var(--f-lab);font-size:12.5px;color:var(--dawn);min-width:22px}
+.toc a:hover{color:var(--night);padding-inline-start:6px}
+
+/* ---------- sections ---------- */
+section{padding:56px 0 10px}
+.sec-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:26px;padding-inline-start:16px;border-inline-start:4px solid var(--acc)}
+.sec-num{font-family:var(--f-lab);font-size:12.5px;color:var(--acc);padding-top:9px}
+.sec-head h2{font-size:29px}
+@media(max-width:640px){.sec-head h2{font-size:24px}}
+.sec-head .lead{color:var(--muted);font-size:15.5px;margin-top:4px;font-family:var(--f-body)}
+
+/* ---------- blocks ---------- */
+.box{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:22px 24px;margin:22px 0;box-shadow:var(--shadow)}
+.box .tag{font-family:var(--f-lab);font-size:12px;letter-spacing:.04em;color:var(--acc);display:block;margin-bottom:10px}
+.box p:last-child{margin-bottom:0}
+.hadith{border-inline-start:5px solid var(--acc);background:linear-gradient(90deg,var(--acc-soft),transparent 60%)}
+.hadith .txt{font-family:var(--f-disp);font-size:21.5px;line-height:2.15;color:var(--ink)}
+@media(max-width:640px){.hadith .txt{font-size:19.5px}}
+.hadith .src{font-family:var(--f-lab);font-size:12.5px;color:var(--muted);margin-top:12px}
+.quran{background:#F7F9F7;border:1px solid #D9E4DC;border-radius:var(--rad);padding:18px 22px;margin:20px 0;text-align:center}
+.quran .txt{font-family:var(--f-disp);font-size:22px;line-height:2.1;color:#1F5A46}
+.quran .ref{font-family:var(--f-lab);font-size:12px;color:#6E8C7E;margin-top:8px}
+.def{border-inline-start:5px solid var(--s1)}
+.def .tag{color:var(--s1)}
+.key{background:var(--dawn-soft);border:1px solid #E8D7B4;border-inline-start:5px solid var(--dawn)}
+.key .tag{color:#8A6118}
+.warn{background:#FDF3F2;border:1px solid #F0D6D2;border-inline-start:5px solid #A0483F}
+.warn .tag{color:#A0483F}
+.fix{background:#F1F4FA;border:1px solid #D6DEEC;border-inline-start:5px solid var(--s4)}
+.fix .tag{color:var(--s4)}
+.fix .row{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:16px;margin-top:6px}
+.fix .row b{font-family:var(--f-lab);font-size:12.5px;color:var(--muted);font-weight:600;padding-top:5px}
+.note{background:#F6F3F8;border:1px solid #E2D9E8;border-inline-start:5px solid var(--s6)}
+.note .tag{color:var(--s6)}
+.story{border-inline-start:5px solid var(--s7);background:#FEFCFB}
+.story .tag{color:var(--s7)}
+.sum{background:linear-gradient(150deg,#1B2A4A,#2B3A52);color:#DDE3EC;border:0;border-radius:var(--rad);padding:24px 26px;margin:30px 0 6px}
+.sum .tag{color:#C7A15C}
+.sum h4{color:#fff;font-size:20px;margin-bottom:12px}
+.sum ul{list-style:none;display:grid;gap:9px}
+.sum li{padding-inline-start:20px;position:relative;font-size:16.5px;line-height:1.85}
+.sum li:before{content:"";position:absolute;inset-inline-start:0;top:13px;width:7px;height:7px;border-radius:50%;background:#C7A15C}
+ul.bul{list-style:none;display:grid;gap:8px;margin:6px 0 18px}
+ul.bul li{padding-inline-start:20px;position:relative}
+ul.bul li:before{content:"";position:absolute;inset-inline-start:2px;top:14px;width:6px;height:6px;border-radius:50%;background:var(--acc)}
+table{width:100%;border-collapse:collapse;margin:20px 0;font-size:16px;background:var(--card);border-radius:var(--rad);overflow:hidden;box-shadow:var(--shadow)}
+th,td{padding:12px 14px;text-align:right;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--acc);color:#fff;font-family:var(--f-lab);font-size:14px;font-weight:600}
+tr:last-child td{border-bottom:0}
+.fawaid{display:grid;gap:14px;margin:22px 0}
+.fw{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:18px 22px;display:grid;grid-template-columns:auto 1fr;gap:16px;box-shadow:var(--shadow)}
+.fw .n{font-family:var(--f-lab);font-size:26px;color:var(--s3);opacity:.5;line-height:1}
+.fw h4{font-size:19px;margin-bottom:7px}
+.fw p:last-child{margin-bottom:0}
+
+/* ---------- signature: 50 nights ---------- */
+.nights{background:linear-gradient(155deg,#101A2E,#1B2A4A);border-radius:var(--rad);padding:26px 24px;margin:26px 0;color:#C3CCDA}
+.nights .tag{font-family:var(--f-lab);font-size:12.5px;color:#C7A15C;display:block;margin-bottom:16px}
+.grid50{display:grid;grid-template-columns:repeat(25,1fr);gap:4px}
+@media(max-width:640px){.grid50{grid-template-columns:repeat(10,1fr);gap:5px}}
+.grid50 i{display:block;aspect-ratio:1;border-radius:3px;background:rgba(255,255,255,.10)}
+.grid50 i.forty{background:rgba(255,255,255,.24)}
+.grid50 i.ten{background:rgba(176,125,43,.65)}
+.grid50 i.last{background:#E8B65A;box-shadow:0 0 12px rgba(232,182,90,.7)}
+.nights .legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:16px;font-family:var(--f-lab);font-size:12px}
+.nights .legend span{display:flex;align-items:center;gap:7px}
+.nights .legend b{width:11px;height:11px;border-radius:3px;display:inline-block}
+
+/* ---------- flashcards ---------- */
+#anki{background:var(--night);color:#DDE3EC;margin-top:60px;padding:56px 0 60px}
+#anki h2{color:#fff;font-size:29px;text-align:center}
+#anki .lead{text-align:center;color:#9FAEC3;font-size:15.5px;margin:8px auto 26px;max-width:520px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:24px}
+.fbtn{font-family:var(--f-lab);font-size:12.5px;padding:6px 14px;border-radius:99px;border:1px solid rgba(255,255,255,.2);background:transparent;color:#C3CCDA;cursor:pointer;transition:.18s}
+.fbtn:hover{border-color:#C7A15C}
+.fbtn.on{background:var(--fc,#C7A15C);border-color:transparent;color:#101A2E;font-weight:600}
+.flip{perspective:1600px;height:320px;margin:0 auto 18px;max-width:640px;cursor:pointer}
+.flip-in{position:relative;width:100%;height:100%;transition:transform .55s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d}
+.flip.on .flip-in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:18px;padding:32px 30px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow-y:auto}
+.face .lab{font-family:var(--f-lab);font-size:11.5px;letter-spacing:.06em;margin-bottom:14px;opacity:.75}
+.front{background:#F2F3F0;color:var(--ink)}
+.front .q{font-family:var(--f-disp);font-size:24px;line-height:1.75}
+.back{background:linear-gradient(150deg,#C7A15C,#B07D2B);color:#17202E;transform:rotateY(180deg)}
+.back .a{font-size:18px;line-height:1.85;font-weight:500}
+@media(max-width:640px){.flip{height:340px}.front .q{font-size:21px}.back .a{font-size:16.5px}}
+.nav{display:flex;align-items:center;justify-content:center;gap:14px}
+.nav button{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:transparent;color:#DDE3EC;font-size:20px;cursor:pointer;transition:.18s}
+.nav button:hover{background:rgba(255,255,255,.1)}
+.count{font-family:var(--f-lab);font-size:13.5px;color:#9FAEC3;min-width:78px;text-align:center}
+.dl{display:block;margin:28px auto 0;font-family:var(--f-lab);font-size:14px;background:#C7A15C;color:#17202E;border:0;border-radius:99px;padding:12px 28px;cursor:pointer;font-weight:600;transition:.2s}
+.dl:hover{background:#fff}
+.hint{text-align:center;font-family:var(--f-lab);font-size:12px;color:#7F8FA6;margin-top:12px}
+
+footer{background:#101A2E;color:#7F8FA6;padding:30px 0;text-align:center;font-family:var(--f-lab);font-size:12.5px;line-height:2}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
 </head>
-<body class="" data-page="lecture" data-lecture-id="stage1_riyad-al-saliheen_04">
-  <div class="page">
-    <nav class="breadcrumbs"><a href="../../../index.html">الرئيسية</a><span class="sep">/</span><a href="../../index.html">المرحلة الأولى</a><span class="sep">/</span><a href="../index.html">شرح رياض الصالحين</a><span class="sep">/</span><span aria-current="page">باب التوبة 1</span></nav>
-    
-      <header class="lecture-header">
-        <h1>باب التوبة 1</h1>
-        <p class="lecture-meta">المادة: شرح رياض الصالحين &nbsp;|&nbsp; الشيخ: غير محدد حاليًا &nbsp;|&nbsp; اليوم 27</p>
-        <label class="checkbox-line lecture-checkbox">
-          <input type="checkbox" data-lecture-id="stage1_riyad-al-saliheen_04">
-          <span>إتمام هذه المحاضرة</span>
-        </label>
-      </header>
+<body>
 
-      <div class="lecture-placeholder">
-        <p>سيتم إضافة المحاضرة هنا لاحقًا</p>
-        <p class="placeholder-hint">(رابط يوتيوب / فيديو / ملف صوتي / PDF / نص المحاضرة / ملاحظاتي)</p>
-      </div>
-
-      <div class="lecture-nav">
-        <a href="../index.html" class="btn btn-outline">الرجوع إلى المادة</a>
-        <a href="../../index.html" class="btn btn-outline">الرجوع إلى المرحلة</a>
-      </div>
-    
+<div class="bar">
+  <div class="bar-in">
+    <div class="bar-t">أنوار السنة المحمدية <b>·</b> رياض الصالحين — المجلس الرابع</div>
+    <button class="btn" onclick="document.getElementById('anki').scrollIntoView()">البطاقات</button>
   </div>
-  <script src="../../../data.js"></script>
-  <script src="../../../script.js"></script>
+  <div id="prog"></div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">أنوار السنة المحمدية <span>◆</span> الاستهداء بالسنة النبوية <span>◆</span> المجلس الرابع</div>
+    <h1>باب التوبة (2)<br>قاتلُ المئة… وخمسون ليلةً من الصدق</h1>
+    <p class="sub">حديثان طويلان يُغلقان باب التوبة في رياض الصالحين: رجلٌ قتل مئة نفس فغُفر له بشِبر، وصحابيٌّ صدَق فنجا بعد خمسين ليلة من الهجر.</p>
+    <div class="hero-meta">
+      <span class="chip">شرح رياض الصالحين</span>
+      <span class="chip">الشيخ أحمد السيد</span>
+      <span class="chip">الباب الثاني: التوبة</span>
+      <span class="chip">48 بطاقة مراجعة</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc wrap" aria-label="محتويات المجلس">
+  <h4>محتويات المجلس</h4>
+  <ol>
+    <li><a href="#s1">زاوية المجالس: الحديث بوصفه سيرة</a></li>
+    <li><a href="#s2">حديث الذي قتل مئة نفس</a></li>
+    <li><a href="#s3">ستُّ فوائد من حديث القاتل التائب</a></li>
+    <li><a href="#s4">بين يدي قصة كعب: بدر وبيعة العقبة</a></li>
+    <li><a href="#s5">كيف تخلَّف كعب؟ التسويف وأسبابه</a></li>
+    <li><a href="#s6">«ما فعل كعب بن مالك؟» — فقه التفقُّد وحسن الظن</a></li>
+    <li><a href="#s7">المواجهة: تبسُّم المغضَب واختيار الصدق</a></li>
+    <li><a href="#s8">خمسون ليلة: حين تنكَّرت الأرض</a></li>
+    <li><a href="#s9">الفرج: خير يومٍ مرَّ عليه</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<!-- ============ 1 ============ -->
+<section id="s1" style="--acc:var(--s1);--acc-soft:rgba(62,107,124,.10)">
+  <div class="sec-head"><span class="sec-num">01</span><div>
+    <h2>زاوية المجالس: الحديث بوصفه سيرة</h2>
+    <p class="lead">لماذا نقرأ رياض الصالحين هنا بطريقة مختلفة؟</p>
+  </div></div>
+
+  <p>افتتح الشيخ المجلس بتأكيد ما سبق تقريره: هذه المجالس ليس الهدف منها الوقوف عند تفاصيل الجمل ودلالات الألفاظ، وإنما <strong>التعرُّف على هدي النبي ﷺ والاستهداء به</strong>، ومحاولة ملاحظة السيرة النبوية التفصيلية من خلال الأحاديث.</p>
+
+  <div class="box def">
+    <span class="tag">الفكرة المؤسِّسة</span>
+    <p>سيرة النبي ﷺ تُعلَم من كتب السيرة، وغالبًا ما تتناول كتب السيرة <strong>الأحداث العامة</strong>. لكن السيرة تُعلَم كذلك من جهة الأحاديث. ومن يتعامل مع الأحاديث على أنها مصدر للأحكام أو الآداب فقط، وليست مصدرًا للسيرة النبوية — <strong>يفوته خير كثير</strong>.</p>
+  </div>
+
+  <p>ولذلك قال الشيخ إن أكثر الأحاديث اتصالًا بفكرة هذه السلسلة هي: الأحاديث التي فيها <strong>حوارٌ بين النبي ﷺ وأصحابه</strong>، أو التي تسلِّط الضوء على شيء من هديه الفعلي العملي، أو التي تحكي <strong>قصة معيَّنة حصلت</strong>. وهذا بعينه هو ما سيتحقق في حديث كعب بن مالك بعد قليل.</p>
+
+  <p>وموقع المجلس في السلسلة: نحن في <strong>الباب الثاني</strong> من أبواب رياض الصالحين وهو باب التوبة، وقد أُخذ القسم الأول منه في المجالس السابقة، وبقي في الباب حديثان طويلان — وهما موضوع اليوم — ثم بعدهما ثلاثة أحاديث قصيرة.</p>
+
+  <div class="sum">
+    <span class="tag">خلاصة</span>
+    <h4>الأصول التي يقوم عليها المجلس</h4>
+    <ul>
+      <li>المقصد الأول: التعرف على هدي النبي ﷺ لا تحليل ألفاظ الحديث.</li>
+      <li>الحديث النبوي مصدر أصيل للسيرة، لا للأحكام والآداب فقط.</li>
+      <li>أقرب الأحاديث لهذه الزاوية: الحوارات، والقصص، والهدي العملي.</li>
+      <li>الموضع: الباب الثاني (التوبة)، وفيه اليوم الحديثان الطويلان الأخيران.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 2 ============ -->
+<section id="s2" style="--acc:var(--s2);--acc-soft:rgba(74,124,89,.10)">
+  <div class="sec-head"><span class="sec-num">02</span><div>
+    <h2>حديث الذي قتل مئة نفس</h2>
+    <p class="lead">نص الحديث كاملًا مع رواياته الواردة في الصحيح</p>
+  </div></div>
+
+  <div class="box hadith">
+    <span class="tag">متفق عليه — عن أبي سعيد الخدري رضي الله عنه</span>
+    <p class="txt">أنَّ نبيَّ الله ﷺ قال: «كان فيمن كان قبلكم رجلٌ قتل تسعةً وتسعين نفسًا، فسأل عن أعلمِ أهل الأرض فدُلَّ على راهبٍ، فأتاه فقال: إنه قتل تسعةً وتسعين نفسًا فهل له من توبة؟ فقال: لا. فقتله فكمَّل به مئة. ثم سأل عن أعلمِ أهل الأرض فدُلَّ على رجلٍ عالمٍ، فقال: إنه قتل مئة نفسٍ فهل له من توبة؟ قال: نعم، ومَن يحول بينه وبين التوبة؟ انطلق إلى أرض كذا وكذا فإنَّ بها أناسًا يعبدون الله تعالى فاعبدِ الله معهم، ولا ترجع إلى أرضك فإنها أرضُ سَوْء. فانطلق حتى إذا نَصَفَ الطريقَ أتاه الموت، فاختصمت فيه ملائكةُ الرحمة وملائكةُ العذاب. فقالت ملائكة الرحمة: جاء تائبًا مُقبلًا بقلبه إلى الله تعالى. وقالت ملائكة العذاب: إنه لم يعمل خيرًا قط. فأتاهم مَلَكٌ في صورة آدميٍّ فجعلوه بينهم — أي حَكَمًا — فقال: قيسوا ما بين الأرضين، فإلى أيَّتِهما كان أدنى فهو له. فقاسوا فوجدوه أدنى إلى الأرض التي أراد، فقبضته ملائكة الرحمة».</p>
+    <p class="src">متفق عليه</p>
+  </div>
+
+  <div class="box">
+    <span class="tag">روايات أخرى في الصحيح</span>
+    <ul class="bul">
+      <li>«فكان إلى القرية الصالحة أقربَ بشِبر، فجُعل من أهلها».</li>
+      <li>«فأوحى الله تعالى إلى هذه أن تباعدي، وإلى هذه أن تقرَّبي، وقال: قيسوا ما بينهما، فوجدوه إلى هذه أقربَ بشِبر، فغُفر له».</li>
+      <li>«فنَأَى بصدره نحوها» — أي مال بصدره ناحية الأرض الصالحة وهو يحتضر.</li>
+    </ul>
+  </div>
+
+  <div class="box key">
+    <span class="tag">لمحة</span>
+    <p>لاحظ التدرُّج في الرواية الثانية: لم تكن المسألة قياسًا مجرَّدًا، بل <strong>تدخُّلٌ إلهي في المسافة نفسها</strong> — أرضٌ أُمرت أن تتباعد وأرضٌ أُمرت أن تقترب — لأجل شِبرٍ واحد يُنجي رجلًا قتل مئة نفس.</p>
+  </div>
+</section>
+
+<!-- ============ 3 ============ -->
+<section id="s3" style="--acc:var(--s3);--acc-soft:rgba(122,107,47,.10)">
+  <div class="sec-head"><span class="sec-num">03</span><div>
+    <h2>ستُّ فوائد من حديث القاتل التائب</h2>
+    <p class="lead">كما رتّبها الشيخ في المجلس</p>
+  </div></div>
+
+  <div class="fawaid">
+
+    <div class="fw"><span class="n">١</span><div>
+      <h4>أهمية القصص في الخطاب والدعوة</h4>
+      <p>كان النبي ﷺ يخاطب أصحابه بالقصص، وكان لها أثر كبير عليهم؛ فالقصة لا تُنسى، تبقى في الذهن مشهدًا متكاملًا — قد تنسى جملة، لكنك لن تنسى القصة بمجموعها.</p>
+      <p>وقد اعتنى الله بذكر القصص في القرآن وبيَّن فائدتها، حتى سُميت سورة باسم «القصص»، وقال سبحانه: <strong>﴿نَحْنُ نَقُصُّ عَلَيْكَ أَحْسَنَ الْقَصَصِ﴾</strong>، وقال: <strong>﴿لَقَدْ كَانَ فِي قَصَصِهِمْ عِبْرَةٌ﴾</strong>. ثم لم يُكتفَ بذلك، بل كان النبي ﷺ يزيد في العناية بأصحابه من هذه الجهة فيقصُّ عليهم كثيرًا من القصص.</p>
+      <p>ومن دقيق ما نبَّه عليه الشيخ: أن <strong>بعض قصص الأمم السابقة لم نعلمها إلا من طريق السنة</strong> — كقصة هذا الرجل الذي قتل مئة نفس، وقصة الغلام والساحر والراهب، وغيرها. بل بعض القصص تكون قرآنية ثم يأتي النبي ﷺ فيذكر تفاصيل لم تُذكر في القرآن، مثل قصة موسى والخضر عليهما السلام: فهي في القرآن مذكورة مجملة، وفيها تفاصيل بلا شك، لكن قدرًا من السعة في التفاصيل لم يُذكر إلا في السنة.</p>
+      <p>والثمرة العملية: على مَن يتبع النبي ﷺ في دعوته أن <strong>يعتني بتنويع أساليب البيان</strong>، فلا يكتفي بالخطاب المباشر، بل يعتني بضرب الأمثال وبذكر القصص، وبخاصة قصص الأنبياء.</p>
+    </div></div>
+
+    <div class="fw"><span class="n">٢</span><div>
+      <h4>فضل العلم ومنزلته، والفرق بين العالم والعابد</h4>
+      <p>في الحديث بيان لاحتياج الناس في مختلف أحوالهم إلى العالم، وأن <strong>وجود العالم أهدى وأكثر خيرًا وبركة على الناس من وجود العابد</strong>؛ ولذلك رُوي أن العالم يستغفر له من في السماوات ومن في الأرض، والحيتان في البحر، والحية في جحرها.</p>
+      <p>وهنا وقع الاختلاف بين العالم والعابد في الجواب عن السؤال نفسه، فكان <strong>جواب العالم أزكى وأرشد وأقرب وأكثر رحمة، وأدَّى إلى الخير</strong>. ومن هنا يُعلم أن غياب العلماء عن الأمة يؤدي إلى شرٍّ كبير، وأن الناس يحتاجون دائمًا إلى العلماء العالمين بأمر الله.</p>
+    </div></div>
+
+    <div class="fw"><span class="n">٣</span><div>
+      <h4>فتح باب الأمل أمام المذنبين</h4>
+      <p>من أهم سُبُل التعامل مع المذنبين والعصاة <strong>فتح باب الأمل</strong>؛ فالعاصي متى ما رأى الأبواب مغلقة أمامه فإنه في الغالب لن يتوب، أو قد يزيد شرًّا.</p>
+      <p>ومن جمال الإسلام أنه فتح الأبواب مُشرَعة أمام العصاة للتوبة، وقد مرَّ في المجلس السابق ذكر الباب المفتوح من جهة المغرب للتوبة، لا يُغلق حتى تطلع الشمس من مغربها. والإنسان من طبعه الوقوع في الزلل والخطأ، فإذا علم أن الباب مفتوح للاستدراك كان أسهل عليه أن يرجع إلى الله، والرجوع إلى الله هو الذي يحبه سبحانه.</p>
+      <p>فالعالم بعلمه فتح بابًا لهذا الرجل ليعود إلى الله، فكان ذلك سببًا لإقلاعه. والعابد أغلق الباب دونه — فماذا كانت النتيجة؟ قتله.</p>
+    </div></div>
+
+    <div class="fw"><span class="n">٤</span><div>
+      <h4>خطورة الفتيا والقول على الله بلا علم</h4>
+      <p>وقف الشيخ عند منطق العابد فقال: قد يكون العابد تعامل <strong>بمنطق الصلاح المجرَّد</strong>؛ كأنه رجل عمره في الصلاة والسجود والقيام، فيأتيه قاتلُ تسعة وتسعين نفسًا فيقول له: «أنا أعبد ستين سنة وأنت جالس قاتلٌ تسعة وتسعين — لا توبة لك!». فأغلق الباب، فماذا سيفعل الرجل؟ قتله.</p>
+      <p>ثم علَّق الشيخ بمنطق دقيق: ما الفرق عند هذا الرجل بين أن يأتي يوم القيامة قاتلَ تسعة وتسعين أو قاتلَ مئة؟ لا شك أن في المئة زيادة شر، لكنه في الأخير <strong>قد قتل وانتهى الأمر عنده</strong> — وهذا هو ما يفعله إغلاق الباب في نفس المذنب.</p>
+      <p>والقاعدة: الإنسان لا يتكلم في الدين بعاطفته، ولو ظن أن كلامه في مصلحة الدين؛ لأن <strong>تقدير المصلحة ليس دائمًا صوابًا بمجرد الاستحسان الشخصي والنفسي</strong>، ولو كنتَ عابدًا، ولو كنتَ غيورًا. فالفتيا في الدين مبنية على ما أنزل الله من الأمر والنهي، لا على ما تتوقعه من الشريعة ولا على ما تستحسنه أنت.</p>
+    </div></div>
+
+    <div class="fw"><span class="n">٥</span><div>
+      <h4>الصحبة الصالحة وهجران البيئة الفاسدة</h4>
+      <p>هذا الحديث من أهم الأحاديث التي تثبت أهمية الصحبة الصالحة، وأهمية هجران المعاصي وأهلها، وأهمية <strong>الانتقال إلى البيئات الحسنة</strong> لاستئناف حياة جديدة في الصلاح.</p>
+      <p>وشرح الشيخ الحالة شرحًا واقعيًّا: إنسان يعيش في بيئة فاسدة، حوله مفسدون كثر، كلما نوى التوبة ورجع إلى تلك البيئة ذُكِّر بالمعصية فعصى، ثم يأتي فيقول: «أنا ما أقدر أتوب». فيُقال له: <strong>المشكلة ليست في ضعف الهمَّة</strong> — أنت صادق في نيتك — وإنما المشكلة الأساسية في كونك <strong>لم تتخذ الأسباب المناسبة للتوبة، ومن أهمها البيئة</strong>.</p>
+      <p>وضرب مثالًا بالواقع اليوم: قد تكون بيئة جامعية فيها اختلاط معيَّن أو فساد معيَّن، والإنسان يرى قلبه يتغير ويتغير، وقد يحصل عنده قدر من الذنوب والمعاصي، ثم يعيش معذَّبًا: لا هو قادر على الاستقامة، ولا هو ذهب مع الذنوب بالكلية — والحمد لله أنه لم يذهب — فبقيت عنده بذرة الخير.</p>
+      <p>وقد يقول قائل: هذه البيئة وجدتُ نفسي فيها بالقوة، صعبٌ أن أغيّر التخصص أو المجال أو الجامعة. فيجيب الشيخ: <strong>كل إنسان يحدد أولوياته بناء على المركزيات التي يعيش لأجلها</strong>؛ فإذا كنت ممن يؤثر الآخرة على الدنيا، وعندك أولوية للقاء الله والجنة، تتغير بعض المعايير — تقدر أن تغيّر البيئة حتى لو أخذتَ خيارًا أدنى، وتبحث لك عن خيارات بديلة. ولا ينبغي أن يبقى الإنسان في دارٍ أو مكانٍ هو سببُ شرِّه.</p>
+      <p>فالحديث يرشدنا إلى أن من أهم الأسباب المعينة على التوبة — بل وعلى القبول عند الله — أن الإنسان إذا كان في مكان شرٍّ وفسادٍ ويريد التوبة، فإن <strong>تغيير المكان أمرٌ مطلوب شرعًا</strong>.</p>
+    </div></div>
+
+    <div class="fw"><span class="n">٦</span><div>
+      <h4>سَعة رحمة الله سبحانه</h4>
+      <p>القتل من أعظم الذنوب ولا شك ولا ريب، ومع ذلك فهذا الرجل تاب الله عليه حين عَلِم صدقه ومبادرته إلى التدارك. ودعا الشيخ: «نسأل الله أن يتغمدنا برحمته، وألا يجعلنا من الأشقياء، اللهم ارحمنا برحمتك يا أرحم الراحمين».</p>
+    </div></div>
+
+  </div>
+
+  <div class="sum">
+    <span class="tag">خلاصة</span>
+    <h4>ما ينبغي أن يبقى معك من هذا الحديث</h4>
+    <ul>
+      <li>القصة أداة بيان نبوية، وبعض أخبار الأمم السابقة لا تُعرف إلا من السنة.</li>
+      <li>العالم أنفع للناس من العابد؛ لأن جوابه مبنيٌّ على شرع لا على استحسان.</li>
+      <li>إغلاق باب الأمل أمام المذنب قد يدفعه إلى زيادة الشر لا إلى الإقلاع.</li>
+      <li>الفتيا بالعاطفة — ولو بنيَّة نصرة الدين — بابٌ من أبواب القول على الله بغير علم.</li>
+      <li>تغيير البيئة الفاسدة سببٌ شرعيٌّ معتبر للتوبة، لا مجرد نصيحة تربوية.</li>
+      <li>لا ذنب يسدُّ باب الرحمة إذا صدق التائب وبادر.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section id="s4" style="--acc:var(--s4);--acc-soft:rgba(85,97,143,.10)">
+  <div class="sec-head"><span class="sec-num">04</span><div>
+    <h2>بين يدي قصة كعب: بدر وبيعة العقبة</h2>
+    <p class="lead">لماذا بدأ كعب قصته بذكر ما لم يشهده؟</p>
+  </div></div>
+
+  <p>قبل الدخول في الحديث، وقف الشيخ وقفة عن مشروع السلسلة نفسه: فهذه المجالس تكميلٌ لفكرة <strong>استخلاص الهدي النبوي</strong> ومعرفة <strong>مركزيات الدين</strong> التي بلَّغها النبي ﷺ واعتنى بها. ورياض الصالحين مشروحٌ كثيرًا، فمن أراد شرح الجمل بالتفصيل سيجد كثيرًا من المراجع، لكن الزاوية هنا مختلفة.</p>
+
+  <div class="box note">
+    <span class="tag">مشاريع ذكرها الشيخ في المجلس</span>
+    <ul class="bul">
+      <li>سبقت سلسلة <strong>السيرة النبوية للمصلحين</strong> من حيث الهدي الشمولي (نحو ثلاثين حلقة).</li>
+      <li>في النية — إن يسَّر الله — <strong>إعادة تقديم السيرة النبوية بصورة تفصيلية جدًّا</strong>، بترتيبها المعروف في الأحداث العامة لكن بتفصيل تام، ولا يظنها الشيخ تقل عن خمسين أو سبعين حلقة أو أكثر.</li>
+      <li>وذكر أن «غيث الساري» كان الوجه الثالث فيه — وهو الأساس — استخراج الهدي النبوي وما يتعلق بالتزكية والتربية والمنهج الإصلاحي.</li>
+    </ul>
+    <p>والغاية التي صرَّح بها: بثُّ المفاهيم الشرعية من جديد بالعناية بأصولها وبهدي الأنبياء والمرسلين، ليكون نورًا وهداية لحملة الدين من الأجيال الجديدة. <strong>فالتغيير والإصلاح لا يكون بمجرد الفعل، وإنما بالفعل المبني على نور</strong>، وهذا النور لا بد أن يكون متصلًا بمرجعية الوحي وبمن بلَّغها وهو النبي ﷺ.</p>
+  </div>
+
+  <div class="box hadith">
+    <span class="tag">مطلع الحديث — عن عبد الله بن كعب بن مالك، وكان قائدَ كعبٍ من بنيه حين عَمِيَ</span>
+    <p class="txt">قال: سمعتُ كعبَ بن مالك رضي الله عنه يحدِّث بحديثه حين تخلَّف عن رسول الله ﷺ في غزوة تبوك، قال كعب: «لم أتخلَّف عن رسول الله ﷺ في غزوةٍ غزاها قط إلا في غزوة تبوك، غير أني قد تخلَّفت في غزوة بدر، ولم يُعاتَب أحدٌ تخلَّف عنه؛ إنما خرج رسول الله ﷺ والمسلمون يريدون عِيرَ قريش حتى جمع الله تعالى بينهم وبين عدوِّهم على غير ميعاد. ولقد شهدتُ مع رسول الله ﷺ ليلةَ العقبة حين تواثَقْنا على الإسلام، وما أحبُّ أنَّ لي بها مشهدَ بدر، وإن كانت بدرٌ أذكرَ في الناس منها».</p>
+    <p class="src">متفق عليه — وهو من أطول الأحاديث في الصحيح</p>
+  </div>
+
+  <div class="box fix">
+    <span class="tag">توضيح</span>
+    <p>ورد في التفريغ وصف حديث كعب بأنه «أطول حديث في الصحيح». والأدق أن يقال: <strong>هو من أطول الأحاديث في الصحيحين</strong>؛ فقد نُوزع في تعيين «الأطول» بينه وبين حديث الإفك وغيره. والمقصود المتفق عليه: طوله وشهرته ومكانته، وهو الذي بناه الشيخ عليه.</p>
+  </div>
+
+  <p><strong>الفائدة الأولى قبل التفاصيل:</strong> هذه قصة أخذت مكانة واسعة في كتب السنة، أخرجها البخاري ومسلم وأصحاب الكتب، وهي في معنى <strong>خطورة التخلُّف عن مقامات نصرة الدين</strong>. وهذا يبيّن أن الإسلام لا يركّز على الجانب الإيجابي فقط، بل يركّز أيضًا على الجانب السلبي وخطورة المواقف التي فيها تأخُّر.</p>
+
+  <p>ثم يشرح الشيخ منطق المقدمة: كعب يقول إنه لم يتخلف عن غزوة إلا بدرًا وتبوك. <strong>أما بدر فلم يحسبها</strong>، لأنه لا يتكلم عن مجرد التخلف، بل عن التخلف الذي فيه إثم — وبدر لم يكن في التخلف عنها إثم، لأن النبي ﷺ لما استأذنه بعض الصحابة أن يذهبوا ليأتوا بمراكبهم البعيدة قال: «لا، إلا مَن كان ظهرُه حاضرًا»؛ فقد خرج ﷺ بسرعة، والفكرة كانت اعتراض العير ولم يكن القتال في البال.</p>
+
+  <div class="box key">
+    <span class="tag">وقفة: لماذا العقبة؟</span>
+    <p>استدرك كعب فقال: وإن كانت بدرٌ قد فاتتني، فقد شهدتُ مشهدًا هو في نفسي أعلى وأوثق وأفضل — مشهد <strong>بيعة العقبة</strong>. ونبَّه الشيخ إلى دقيقة: كعبٌ <strong>لا يفاضل بين المشهدين في ذاتهما</strong>، ولم يقل إن يوم العقبة خير من يوم بدر؛ وإنما يتكلم عن شعوره هو: «لو خُيِّرتُ، فأنا أحبُّ إليَّ أني حضرت العقبة من حضوري بدرًا».</p>
+    <p>ثم قال الشيخ: إن كان من مشهدٍ لأصحاب رسول الله ﷺ ينافس بدرًا أو يغالبها فلا شك أنه <strong>يوم العقبة</strong>، وإن سألتَ عن ثالث فهو <strong>بيعة الرضوان</strong>؛ فهذه المشاهد الثلاثة أعلى ما شهده الصحابة في زمن النبي ﷺ. ولذلك جاءت التزكيات النبوية الواضحة في بيعة الرضوان: «لا يدخل النارَ أحدٌ بايع تحت الشجرة»، وجاء في بدر ما جاء.</p>
+  </div>
+
+  <p>أما بيعة العقبة فالقضية الكبرى فيها أن <strong>الإسلام كله انتقل من حال إلى حال</strong>: كان النبي ﷺ في ضِيق وحصار من كفار مكة وقريش، فانتقل إلى سَعة الأنصار والمدينة والانطلاق الجديد ونشر الدين والجهاد. ومن الذي أدَّى إلى هذه الانتقالة؟ <strong>هؤلاء الذين شهدوا بيعة العقبة</strong>، الذين توافقوا مع رسول الله ﷺ على الإسلام وتواثقوا على النصرة — ولذلك سُمُّوا الأنصار.</p>
+
+  <p>ثم طرح الشيخ سؤالًا يُقاس به الأمر: ما الذي يمكن أن تبذله في حياتك حتى تقدّم للإسلام مشهدًا مثل مشهد بيعة العقبة؟ لو عشتَ حياتك داعيةً — ما قيمة ما تقدّمه في مقابل ما قدّمه الصحابة إذ نقلوا رسول الله ﷺ من ضيق الحصار والشدة إلى سَعة النصرة والمؤازرة والجهاد وتبليغ الدين؟ وهو الذي كان يدور صلوات الله وسلامه عليه على القبائل يقول: «مَن يؤويني حتى أُبلِّغ رسالة ربي؟» — فهؤلاء هم الذين آووا ونصروا.</p>
+
+  <div class="box def">
+    <span class="tag">تفريق مهم</span>
+    <p>ميَّز الشيخ بين <strong>بيعة العقبة الأولى</strong> و<strong>الثانية</strong>: فقبل الأولى كان نفرٌ سمعوا من رسول الله ﷺ ثم رجعوا إلى المدينة وكلّموا بعض الناس، ثم جاءوا فتبايعوا بيعة العقبة الأولى ثم رجعوا. ثم كانت <strong>بيعة العقبة الثانية</strong> — وهي التي يتحدث عنها كعب — وهي التي انتقل بعدها وبسببها رسول الله ﷺ إلى المدينة.</p>
+    <p>ولذلك قال الشيخ: نحن حين نتكلم عن حياة رسول الله ﷺ نقول: حياته في مكة وحياته في المدينة، وحين نتكلم عن نزول القرآن نقول: مكي ومدني. فهما مرحلتان، <strong>والجسر الانتقالي بينهما كان عبر بيعة العقبة</strong>.</p>
+  </div>
+
+  <div class="box key">
+    <span class="tag">مقصود المقدمة</span>
+    <p>فما الذي يريد كعب أن يقوله من كل هذا؟ يريد أن يقول: <strong>أنا حين تخلَّفت عن هذه الغزوة لم أكن منافقًا</strong>، ولم يكن شأني التخلف ولا التأخر عن رسول الله ﷺ؛ فأنا معه من بيعة العقبة ومعه في بقية الغزوات. فحين أحكي لكم هذه القصة لا تظنوا أني أحكي لكم قصة إنسان لا يريد أن يكون مع رسول الله ﷺ، وإنما قصة إنسان كان مع المصطفى ﷺ في كل أحواله وجميع مشاهده، <strong>ولكن غلبته نفسه مرَّة واحدة</strong> — وهي التي سأحكيها لكم.</p>
+  </div>
+
+  <div class="sum">
+    <span class="tag">خلاصة</span>
+    <h4>ما الذي أسَّسته المقدمة؟</h4>
+    <ul>
+      <li>القصة في جوهرها بيانٌ لخطورة التخلف عن مقامات نصرة الدين.</li>
+      <li>تخلُّف كعب عن بدر لا إثم فيه؛ لأن الخروج كان لاعتراض العير لا للقتال.</li>
+      <li>العقبة وبدر وبيعة الرضوان أعلى مشاهد الصحابة، والعقبة هي الجسر بين المرحلة المكية والمدنية.</li>
+      <li>كعب يفاضل بحسب شعوره الشخصي لا بحسب فضل المشهد في ذاته.</li>
+      <li>المقدمة كلها تمهيد لجملة واحدة: لست منافقًا، وإنما غلبتني نفسي مرَّة.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 5 ============ -->
+<section id="s5" style="--acc:var(--s5);--acc-soft:rgba(176,125,43,.10)">
+  <div class="sec-head"><span class="sec-num">05</span><div>
+    <h2>كيف تخلَّف كعب؟ التسويف وأسبابه</h2>
+    <p class="lead">من الصدق التام في وصف الحال، إلى «فيا ليتني فعلت»</p>
+  </div></div>
+
+  <div class="box hadith">
+    <span class="tag">تتمة الحديث</span>
+    <p class="txt">«وكان من خبري حين تخلَّفت عن رسول الله ﷺ في غزوة تبوك: أني لم أكن قطُّ أقوى ولا أيسرَ مني حين تخلَّفت عنه في تلك الغزوة، واللهِ ما جمعتُ قبلها راحلتين قط حتى جمعتُهما في تلك الغزوة. ولم يكن رسول الله ﷺ يريد غزوةً إلا ورَّى بغيرها، حتى كانت تلك الغزوة، فغزاها رسول الله ﷺ في حرٍّ شديدٍ، واستقبل سفرًا بعيدًا ومَفازًا، واستقبل عدوًّا كثيرًا، فجلَّى للمسلمين أمرَهم ليتأهَّبوا أُهبةَ غزوهم، فأخبرهم بوجههم الذي يريد. والمسلمون مع رسول الله ﷺ كثيرٌ ولا يجمعهم كتابٌ حافظ — يريد بذلك الديوان».</p>
+  </div>
+
+  <p>وقف الشيخ عند ثلاث دلالات في هذا المقطع:</p>
+
+  <div class="box def">
+    <span class="tag">الأولى: صدقٌ لا يترك للعذر بابًا</span>
+    <p>«لم أكن قطُّ أقوى ولا أيسر مني» — أي: لا تحاول أن تلتمس لي عذرًا، ما لي عذر أبدًا، كنت في حال جيدة، قويًّا نشيطًا، وأموري تمام.</p>
+    <p>وذكْرُ <strong>الراحلتين</strong> مهم في سياق تبوك بالذات؛ لأن الله قال في شأنها: <strong>﴿وَلَا عَلَى الَّذِينَ إِذَا مَا أَتَوْكَ لِتَحْمِلَهُمْ قُلْتَ لَا أَجِدُ مَا أَحْمِلُكُمْ عَلَيْهِ تَوَلَّوْا وَأَعْيُنُهُمْ تَفِيضُ مِنَ الدَّمْعِ حَزَنًا أَلَّا يَجِدُوا مَا يُنْفِقُونَ﴾</strong> — فكعب يقول: لستُ من أصحاب هذه الآية، كان عندي راحلتان.</p>
+  </div>
+
+  <div class="box key">
+    <span class="tag">الثانية: التورية وحفظ المعلومات</span>
+    <p>«لم يكن يريد غزوة إلا ورَّى بغيرها» — من حرص النبي ﷺ واتخاذه الأسباب في قتال أعداء الله أنه ما كان يصرّح بالاتجاه الذي يريد، حفاظًا على المعلومات.</p>
+    <p>وقال الشيخ: دائمًا حين يكون هناك عملٌ للإسلام ونصرةٌ للدين في بيئة فيها أعداءٌ يمكن أن يصلوا إلى هذه التحركات، فإن من هدي النبي ﷺ <strong>المحافظة على المعلومات وعدم التهاون في إفشائها</strong>، وعدم كثرة الكلام والقيل والقال.</p>
+    <p>ثم نبَّه على واقعٍ قائم: بعض الناس يتهاون في مثل هذه الأزمنة بسبب «منطق الغفلة» الموجود في كثير من البيئات الشرعية — كأنك عايش في عالم جميل نظيف، وأنك حين تتكلم عن إنجازاتك في الدعوة سيستقبلها العالم بالورود! <strong>لا يا حبيبي، هناك متربصون</strong>، وأنت في زمنٍ يُحارَب فيه الإصلاح حقًّا. وبعض الناس — بكثرة الكلام وببعض الاستعراضات الشخصية: «أنا أعرف الشيخ فلان، أنا عندي معلومات عن كذا» — يساعد المتربصين بالإسلام والدعاة والمصلحين من حيث لا يشعر. ثم قال ساخرًا برفق: هذه حدود أمنياتك وأحلامك؟ أن تكون مرافقًا شخصيًّا؟ أكمِل طريق العلم.</p>
+    <p>وأما <strong>صورة التورية</strong> نفسها فقال الشيخ بصراحة: لا أعرف رواية معيَّنة تنص على صيغتها، وإنما أتصور — وهو تصوُّرٌ مني — أن تكون بأن يسأل النبي ﷺ عن أحوال منطقة معيَّنة ويُنشر هذا السؤال، فيظن الناس مع الحشود أنه سيتوجه إليها. وأعاد التأكيد: <strong>لا أعرف نصًّا في ذلك، وقد يكون بغير ذلك</strong>، والفكرة هي حصول التورية لا صيغتها.</p>
+    <p>أما <strong>تبوك تحديدًا فلم يُورِّ فيها</strong>، بل أظهر الوجه صريحًا، والسبب استثنائية هذه السفرة: حرٌّ شديد ومسافة بعيدة ومفاوز؛ فالوضع يحتاج إلى استعداد من نوع خاص — أن تعرف الوجهة لتأخذ زادًا كافيًا وتتجهز. غير ما لو كانت الوجهة إلى مكة أو إلى الساحل، فتلك قريبة.</p>
+  </div>
+
+  <div class="box def">
+    <span class="tag">الثالثة: لا ديوان يجمعهم</span>
+    <p>«ولا يجمعهم كتابٌ حافظ» — أي لا ديوان مسجَّل بالأسماء. والنتيجة كما قال كعب: «فقلَّ رجلٌ يريد أن يتغيَّب إلا ظنَّ أن ذلك سيخفى له ما لم ينزل فيه وحيٌ من الله». فالعدد كبير، ولا كتاب جامع، وبالتالي ثمة فرصة للتخلف دون أن يشعر به النبي ﷺ.</p>
+  </div>
+
+  <div class="box hadith">
+    <span class="tag">تتمة الحديث</span>
+    <p class="txt">«وغزا رسول الله ﷺ تلك الغزوة حين طابت الثمارُ والظِّلال، فأنا إليها أَصْعَر. فتجهَّز رسول الله ﷺ والمسلمون معه، وطفقتُ أغدو لكي أتجهَّز معه فأرجعُ ولم أقضِ شيئًا، وأقول في نفسي: أنا قادرٌ على ذلك إذا أردتُ. فلم يزل يتمادى بي حتى استمرَّ بالناس الجِدُّ، فأصبح رسول الله ﷺ غاديًا والمسلمون معه ولم أقضِ من جَهازي شيئًا. ثم غدوتُ فرجعتُ ولم أقضِ شيئًا، فلم يزل يتمادى بي حتى أسرعوا وتفارطَ الغزو، فهممتُ أن أرتحل فأدركَهم — فيا ليتني فعلتُ — ثم لم يُقدَّر لي ذلك».</p>
+  </div>
+
+  <p>وقف الشيخ عند «حين طابت الثمار والظلال» وقفة أهل المدينة: متى وقت الرُّطَب؟ في عزِّ الصيف. ومن لا يعرف النخل والرطب والمدينة لا يعرف ما معنى وقت خروج الرطب — <strong>وقت النعيم، ووقت الانتظار الذي انتُظر طول السنة</strong>. وحتى بعد تغيُّر الأحوال، ما زال الوضع إلى اليوم قريبًا من ذلك: الواحد ينتظر موسم الرطب، خاصة أهل النخل.</p>
+
+  <p>ثم قال: وأهل المدينة ماذا عندهم غير النخيل؟ ليست المدينة ذات تنوُّع كبير في الثمرات والفواكه؛ <strong>خلاصتها في النخل</strong>. حتى النبي ﷺ حين أراد أن يعرف أرض المدينة كمهاجر كان ذلك عن طريق الرؤيا: <strong>«أرضٌ ذات نخل»</strong> — فهذه سمة مركزية في التعريف بالمدينة، وقد ذهب وهْلُه إلى أنها هَجَر، فإذا هي المدينة. فحين يقول كعب «حين طابت الثمار والظلال» فلا بد أن تعرف أن القضية ليست سهلة أبدًا.</p>
+
+  <div class="box warn">
+    <span class="tag">فقه النفس المسوِّفة</span>
+    <p>هذا مثالٌ على أحوال بعض الناس في مقامات نصرة الدين: «إن شاء الله أحاول… لعله بإذن الله…» والناس تشتغل، الناس تبذل من أوقاتها وأعمارها وفكرها ومالها وأنفسها، <strong>خاصة في أوقات الصعوبة والشدة والإدبار</strong>. وبعض الناس وهبه الله علمًا وعقلًا ومالًا وقدرة، وليس من المنافقين، ولا يريد التخلف عن مقامات نصرة الدين والإصلاح — <strong>وإنما ابتُلي بنفسٍ مسوِّفة</strong> لا تعقد العزم.</p>
+    <p>وأشار الشيخ إلى سببين: أحيانًا يكون ذلك <strong>بسبب ذنوب</strong> عند الإنسان، وأحيانًا يكون <strong>من الشيطان</strong> — فليس بالضرورة أن يكون من أصحاب الذنوب، بل قد يغالبه الشيطان في مثل تلك الأحوال.</p>
+    <p>ولاحظ الدقة في وصف كعب لنفسه: هو لم يكن قد أزمع مبكرًا على التخلف، وإنما لم تكن عنده تلك <strong>العزيمة القوية المنعقدة</strong> في قلبه — فتحوّل التأجيل يومًا بعد يوم إلى فوات لا يُدرَك.</p>
+  </div>
+
+  <div class="sum">
+    <span class="tag">خلاصة</span>
+    <h4>مفاتيح هذا القسم</h4>
+    <ul>
+      <li>كعب يسدُّ على نفسه كل باب للعذر: قوة وسَعة وراحلتان.</li>
+      <li>التورية في الغزوات هديٌ نبوي في حفظ المعلومات، وتبوك استُثنيت لاستثنائية السفر.</li>
+      <li>إفشاء أخبار العمل للدين والاستعراض الشخصي خللٌ عمليٌّ لا مجرد سوء أدب.</li>
+      <li>غياب الديوان الجامع فتح باب الظن بأن التخلف سيخفى.</li>
+      <li>طيبُ الثمار والظلال في المدينة ليس تفصيلًا عابرًا؛ هو حجم الفتنة التي واجهها كعب.</li>
+      <li>المشكلة ليست ضعف النية، بل نفسٌ مسوِّفة لا تنعقد على عزم.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 6 ============ -->
+<section id="s6" style="--acc:var(--s6);--acc-soft:rgba(122,92,134,.10)">
+  <div class="sec-head"><span class="sec-num">06</span><div>
+    <h2>«ما فعل كعب بن مالك؟» — فقه التفقُّد وحسن الظن</h2>
+    <p class="lead">مشهدٌ في تبوك يعيد ترتيب مفاهيم كاملة</p>
+  </div></div>
+
+  <div class="box hadith">
+    <span class="tag">تتمة الحديث</span>
+    <p class="txt">«فطفقتُ إذا خرجتُ في الناس بعد خروج رسول الله ﷺ يحزنني أني لا أرى لي أسوةً إلا رجلًا مغموصًا عليه في النفاق، أو رجلًا ممن عذر الله من الضعفاء».</p>
+  </div>
+
+  <div class="box def">
+    <span class="tag">معنى</span>
+    <p><strong>«مغموصًا عليه في النفاق»</strong>: أي مطعونًا عليه ومتَّهمًا به، معروفًا عند الناس بذلك.</p>
+  </div>
+
+  <p>ومن هذه الجملة استخرج الشيخ ثلاثة معانٍ:</p>
+
+  <p><strong>الأول:</strong> نحن في آخر السيرة النبوية، وأحوال المنافقين في هذه المرحلة غير أحوالهم في البدايات. في البدايات كانوا أقوى، ويبدو أن أعدادهم كانت أكثر — فالذين انصرفوا عن أُحد كانوا قرابة ثلث الجيش — وكان لهم تأثير حتى في الدوائر الصالحة، بدليل قوله تعالى: <strong>﴿إِذْ هَمَّتْ طَائِفَتَانِ مِنكُمْ أَن تَفْشَلَا وَاللَّهُ وَلِيُّهُمَا﴾</strong>، وقد يكون هذا الفشل — كما يذكر بعض العلماء — بسبب انسحاب أولئك المنافقين.</p>
+
+  <p>ثم بدأ الحال ينتظم شيئًا فشيئًا، وصاروا أقلَّ عددًا وصاروا يُسِرُّون. قال تعالى: <strong>﴿لَّئِن لَّمْ يَنتَهِ الْمُنَافِقُونَ وَالَّذِينَ فِي قُلُوبِهِم مَّرَضٌ وَالْمُرْجِفُونَ فِي الْمَدِينَةِ لَنُغْرِيَنَّكَ بِهِمْ ثُمَّ لَا يُجَاوِرُونَكَ فِيهَا إِلَّا قَلِيلًا ۝ مَّلْعُونِينَ ۖ أَيْنَمَا ثُقِفُوا أُخِذُوا وَقُتِّلُوا تَقْتِيلًا﴾</strong>. ويطرح العلماء سؤالًا: لماذا لم يُخرجهم النبي ﷺ ولم يُقتَّلوا؟ فمن الأقوال المشهورة: <strong>أنهم انتهوا</strong> — «لئن لم ينتهِ» — فقد انتهوا عن تصرفاتهم التي نزلت الآية بسببها، فخمدوا وخنسوا.</p>
+
+  <div class="box note">
+    <span class="tag">دعوة إلى تأمل</span>
+    <p>قال الشيخ: طبيعة عمل المنافقين في السيرة تحتاج تأملًا أوسع — هل استمرَّ بنفس الدرجة والوتيرة في كل السنوات أم كان فيه اختلاف؟ وما سمات هذا الاختلاف؟ وهذا في رأيه <strong>مفتاح في فهم الآيات القرآنية</strong>؛ فالآيات تأتي في أوقات، وكل وقت يناسب حالًا، وخاصة في سورة التوبة.</p>
+  </div>
+
+  <p><strong>الثاني:</strong> أن الصحابة كانوا معروفين، وأن المنافقين في الجملة كانوا معروفين — خاصة في آخر الوقت. نعم بقي من لا يُعرف، لكن الأمر آل إلى أن أغلبهم معروفون: دائمًا يتخلفون، ودائمًا عندهم مشاكل، وهذا يأوي إلى شبيهه في الشر.</p>
+
+  <div class="box key">
+    <span class="tag">أثر عقدي</span>
+    <p>وهذا من جملة ما يُستدل به في <strong>الرد على الشبهات المثارة حول الصحابة</strong>؛ إذ يأتي بعض الطاعنين — من الرافضة أو غيرهم — بالآيات التي في المنافقين ليُشعرك أنه لم يكن ثمة صحابة أصلًا! وكلام كعب هنا من وسائل الرد: فهو يقول إنه حين خرج النبي ﷺ بهذا الجيش كان يبحث عن أسوةٍ له فلا يجد <strong>إلا رجلًا مغموصًا عليه في النفاق أو ممن عذر الله من الضعفاء</strong> — فالتمييز بين الفريقين كان قائمًا وواضحًا.</p>
+  </div>
+
+  <p><strong>الثالث:</strong> وسيأتي استثناءٌ باثنين آخرين كانا مثل كعب: لا من المنافقين ولا من الضعفاء.</p>
+
+  <div class="box def">
+    <span class="tag">من استُخلف على المدينة؟</span>
+    <p>سأل الشيخ: مَن استخلف النبي ﷺ على المدينة في تبوك؟ العادة في كثير من الأحيان أن يستخلف عبد الله بن أم مكتوم، <strong>لكن في تبوك استخلف عليَّ بن أبي طالب رضي الله عنه</strong>، وهنا قال له: <strong>«ألا ترضى أن تكون مني بمنزلة هارون من موسى، غير أنه لا نبي بعدي»</strong>.</p>
+  </div>
+
+  <div class="box hadith">
+    <span class="tag">تتمة الحديث — المشهد في تبوك</span>
+    <p class="txt">«ولم يذكرني رسول الله ﷺ حتى بلغ تبوك، فقال وهو جالسٌ في القوم بتبوك: ما فعل كعبُ بن مالك؟ فقال رجلٌ من بني سَلِمة: يا رسول الله، حبسَه بُرداه والنظرُ في عِطفَيه. فقال له معاذُ بن جبل: بئسَ ما قلتَ! والله يا رسول الله ما علمنا عليه إلا خيرًا. فسكت رسول الله ﷺ. فبينما هو على ذلك رأى رجلًا مُبيِّضًا يزول به السراب، فقال رسول الله ﷺ: كن أبا خَيثمة. فإذا هو أبو خيثمة الأنصاري، وهو الذي تصدَّق بصاع التمر حين لمزه المنافقون».</p>
+  </div>
+
+  <div class="box fix">
+    <span class="tag">تنبيه على التفريغ</span>
+    <div class="row">
+      <b>ورد صوتيًّا</b><div>«رجل من بني سُليم» في بعض المواضع.</div>
+      <b>والصواب</b><div><strong>بنو سَلِمة</strong> — وهم قوم كعب بن مالك أنفسهم، ولذلك جاءوا يؤنّبونه بعد ذلك.</div>
+    </div>
+  </div>
+
+  <div class="box fix">
+    <span class="tag">توضيح علمي</span>
+    <p>قول كعب في أبي خيثمة إنه «الذي تصدَّق بصاع التمر حين لمزه المنافقون» جاء في بعض روايات الحديث وشروحه، وعليه سار جماعة من الشرَّاح. وجاء في صحيح البخاري في سبب نزول آية اللمز تسمية <strong>أبي عقيل الأنصاري</strong> بمثل ذلك. والجمع سائغٌ بتعدُّد الواقعة، فلا تعارض. أوردتُ هذا لبيان أن العبارة ليست خطأ من الشيخ بل هي مرويَّة، مع وجود رواية أخرى بتسمية غيره.</p>
+  </div>
+
+  <p>وهنا وقف الشيخ عند ثلاث لفتات:</p>
+
+  <div class="box key">
+    <span class="tag">اللفتة الأولى: تفقُّد النبي ﷺ</span>
+    <p>كعب بن مالك — كما قال الشيخ بصراحة — ليس في منزلة أبي بكر وعمر وعثمان وعلي، ولا في منزلة أبي عبيدة بن الجراح وسعد بن أبي وقاص وطلحة بن عبيد الله والزبير بن العوام، وليس مُكثرًا من رواية الحديث، ولا هو ممن خدم النبي ﷺ كأنس بن مالك. <strong>وأزكى بطاقة تعريفية له أنه ممن بايع في بيعة العقبة.</strong> ومع ذلك تذكَّره النبي ﷺ وسأل عنه باسمه.</p>
+    <p>بل الأدق من ذلك: النبي ﷺ كأنه <strong>استوعب رؤية الوجوه التي معه</strong> — وهم آلاف مؤلَّفة — فمن خلال هذا الاستعراض افتقد كعبًا، فما سأل عنه إلا بعد أن افتقده، وما افتقده إلا بعد أن رأى الجميع تقريبًا.</p>
+    <p>وعلَّق الشيخ: طبيعة تعامل النبي ﷺ مع الصحابة مختلفة كثيرًا عن تعامل كثيرٍ ممن يدرّسون العلوم الشرعية مع الطلاب؛ <strong>يعرفهم، ويعرف أحوالهم، ويتفقدهم، وينتبه إليهم، ويعرف المستويات والخصائص والسمات الشخصية</strong> — وليس المقصود ما يأتيه من الوحي عن فلان وفلان، بل طبيعة التعامل النبوي الذي هو محل الاقتداء.</p>
+    <p>ونظيره حديث جُليبيب حين قال ﷺ: «هل تفقدون من أحد؟» قالوا: نفقد فلانًا وفلانًا، قال: «لكني أفقد جُليبيبًا». حتى قال الشيخ إن «ما فعل كعب بن مالك؟» تصلح أن تكون عنوان درس تربوي مستقل.</p>
+  </div>
+
+  <div class="box key">
+    <span class="tag">اللفتة الثانية: أيهما أقرب للواقع وأيهما أصوب في تصرفه؟</span>
+    <p>سأل الشيخ سؤالًا حادًّا: من حيث حقيقة الواقع، أيهما أقرب للصواب — الرجل الذي قال «حبسه بُرداه» أم معاذ؟ <strong>الأول أقرب للواقع</strong>؛ فكعب نفسه يقول إن أموره كانت تمام وإنما هو التسويف والميل إلى الثمار.</p>
+    <p>لكن السؤال الثاني: أيهما أصوب في <strong>تصرُّفه</strong>؟ <strong>معاذ بن جبل</strong>. وهذا هو المنهج: إحسان الظن.</p>
+    <p>وأنصف الشيخ الرجل القائل فقال: ليس بالضرورة أنه حاسدٌ لكعب أو يريد إسقاطه؛ بل قد يكون الأمر طبيعيًّا في نظره: نحن ذاهبون وهو بخير وعافية وأموره تمام ولا مانع لديه، فلماذا لم يأتِ؟ فأتى بالنتيجة المتوقعة. <strong>ومع ذلك، الموقف الصحيح هو موقف معاذ.</strong></p>
+  </div>
+
+  <div class="box def">
+    <span class="tag">اللفتة الثالثة: متى يكون حسن الظن؟</span>
+    <p>هنا صحَّح الشيخ فهمًا شائعًا: لا تمتنَّ بحسن الظن بإخوانك <strong>في مواطن لا رِيبة فيها أصلًا</strong> — فأنت لم تصنع شيئًا. مثاله: مسألة فيها خلاف علمي، فيأتي جاهلٌ فيجعلها سيئة، ثم يقال: «نحسن الظن به لعله لا يعرف المسألة» — يا حبيبي، <strong>هذا ليس مكان حسن الظن أصلًا</strong>، ولا مكانًا تتبرَّع فيه به.</p>
+    <p><strong>حسن الظن يكون حين تأتي الريبة</strong>، حين يأتي الشيء الذي فيه تهمة وإشكال — هناك تحسن الظن. وقضية كعب من هذا الباب: لم يره أحد مريضًا ولا فقيرًا ولا ذا عذر، ولم يترك خبرًا عند أحد. فهذا مكان تهمة حقًّا، <strong>والتصرف الصحيح فيه هو ما فعله معاذ</strong>، بل أنكر على الرجل: «بئس ما قلت».</p>
+  </div>
+
+  <div class="box key">
+    <span class="tag">القاعدة الكبرى: الحكم بمجموع الحال</span>
+    <p>«ما علمنا عليه إلا خيرًا» — قال الشيخ: هذه أهم قاعدة في إحسان الظن بالمسلمين: <strong>لا تحاكم الإنسان على حادثة واحدة، انظر إلى سجلّه التاريخي، وإلى مجموع حاله.</strong></p>
+    <p>فإذا كان مجموع حاله الدين والعبادة والصلاح ونصرة الدين والعمل للإسلام والتضحية والبذل، ثم جاءت حادثة مشتبهة فيها إشكال — <strong>إياك أن تحملها على محملٍ سيّئ</strong>.</p>
+    <p>وأضاف مرتبة ثانية: فإن زالت الرِّيبة وثبت عليه خطأٌ حقيقي — من غير إصرار ولا استمرار ولا استهتار — فإن <strong>مبدأ الحكم بمجموع الحال مبدأٌ شرعي</strong> هنا أيضًا. ونبَّه بدقة: حديث «وما يدريك، لعل الله اطَّلع على أهل بدر» خاصٌّ بأهل بدر، <strong>لكن أساس المعنى</strong> — وهو عدم نسيان الحسنة العظيمة في مقابل بعض الزلات — معنًى يمكن اعتباره.</p>
+  </div>
+
+  <p>وأما <strong>سكوت النبي ﷺ</strong> فقد علَّق عليه الشيخ: معاذٌ أنكر القولَ المنكر، فسكت رسول الله ﷺ — <strong>ولا يحتاج الأمر تعليقًا؛ فالصواب واضح من الخطأ</strong>.</p>
+
+  <p>ثم جاء المشهد اللطيف: رأى ﷺ رجلًا مبيِّضًا يزول به السراب — بياضٌ في الأفق من بعيد — فقال: <strong>«كن أبا خيثمة»</strong>، تمنيًا أن يكون هو. ومعناه أن النبي ﷺ <strong>افتقد وجوده أيضًا</strong>، فلما جاء من بعيد تمنى أن يكون هو. فإذا هو أبو خيثمة الأنصاري.</p>
+
+  <div class="sum">
+    <span class="tag">خلاصة</span>
+    <h4>خمسة معانٍ من مشهدٍ واحد</h4>
+    <ul>
+      <li>المنافقون في آخر السيرة أقل عددًا وأخفى صوتًا، وكانوا معروفين في الجملة.</li>
+      <li>تمييز كعب بين «المغموص في النفاق» و«من عذر الله» ردٌّ عملي على الطاعنين في الصحابة.</li>
+      <li>تفقُّد النبي ﷺ لأصحابه بالاسم هدي تربوي مقصود، لا مجرد خبر عابر.</li>
+      <li>قد يكون القول أقرب للواقع والتصرُّف مع ذلك خطأ — والصواب ما فعله معاذ.</li>
+      <li>حسن الظن محلُّه مواضع الريبة لا المواضع البريئة، وقاعدته: الحكم بمجموع الحال.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 7 ============ -->
+<section id="s7" style="--acc:var(--s7);--acc-soft:rgba(160,72,63,.10)">
+  <div class="sec-head"><span class="sec-num">07</span><div>
+    <h2>المواجهة: تبسُّم المغضَب واختيار الصدق</h2>
+    <p class="lead">اللحظة التي انقسم عندها مصير كعب ومصير المخلَّفين</p>
+  </div></div>
+
+  <div class="box hadith">
+    <span class="tag">تتمة الحديث</span>
+    <p class="txt">«فلما بلغني أن رسول الله ﷺ قد توجَّه قافلًا من تبوك حضرني بَثِّي، فطفقتُ أتذكَّر الكذبَ وأقول: بمَ أخرج من سخطه غدًا؟ وأستعين على ذلك بكل ذي رأيٍ من أهلي. فلما قيل إن رسول الله ﷺ قد أظلَّ قادمًا، زاح عني الباطلُ حتى عرفتُ أني لن أنجو منه بشيءٍ أبدًا، فأجمعتُ صِدقَه. وأصبح رسول الله ﷺ قادمًا، وكان إذا قدِم من سفرٍ بدأ بالمسجد فركع فيه ركعتين ثم جلس للناس. فلما فعل ذلك جاءه المخلَّفون فطفقوا يعتذرون إليه ويحلفون له، وكانوا بضعًا وثمانين رجلًا، فقبِل منهم علانيتَهم وبايعهم واستغفر لهم ووَكَل سرائرَهم إلى الله».</p>
+  </div>
+
+  <div class="box key">
+    <span class="tag">وقفة مع «بدأ بالمسجد»</span>
+    <p>قال الشيخ: هذه قصة وأمرٌ عجيب. سفر تبوك كان طويلًا — الذهاب مدة والرجوع مدة والبقاء هناك مدة، ويقدّر الشيخ مجموعه بقرابة ثلاثة أشهر أو نحوها. ثم إنه ليس سفر نزهة، بل سفرٌ تخلَّف بسببه من تخلَّف من المؤمنين لشدته، كما قال تعالى: <strong>﴿لَوْ كَانَ عَرَضًا قَرِيبًا وَسَفَرًا قَاصِدًا لَّاتَّبَعُوكَ وَلَٰكِن بَعُدَتْ عَلَيْهِمُ الشُّقَّةُ﴾</strong>.</p>
+    <p>ومع ذلك: يرجع ﷺ فيبدأ بالمسجد فيركع ركعتين ثم يجلس للناس. ونبَّه الشيخ إلى أن كعبًا لا يتكلم عن هذه المرة وحدها بل عن <strong>الهدي الدائم</strong>: «وكان إذا قدم من سفر…». وقد يقول قائل: هذا عمل عادي غير شاق في ذاته — والجواب: الفكرة في <strong>النظر إلى هذا الحدث بعين النبوة</strong>، أي: ما الذي يفعله النبي بمقتضى كونه نبيًّا دائمًا؟ فإذا لاحظت هذا المعنى وجدت أن هذه هي سيرة المصطفى ﷺ.</p>
+  </div>
+
+  <div class="box def">
+    <span class="tag">التعامل مع المخلَّفين المنافقين</span>
+    <p>«فقبل منهم علانيتهم وبايعهم واستغفر لهم ووكل سرائرهم إلى الله» — هذه كانت طريقة النبي ﷺ في التعامل مع المنافقين، حتى لو عرف بعضهم أو أكثرهم — <strong>﴿وَلَتَعْرِفَنَّهُمْ فِي لَحْنِ الْقَوْلِ﴾</strong> — طالما أنهم لم يُظهروا العداء ولم يقوموا بشيءٍ يمكن أن يثبت عليهم شرعًا.</p>
+    <p>وفيه معنى مهم: ليس كل من كان فيه شيء من الشر يُتعامل معه بحزم؛ <strong>قد يُتعامل معه بلين ورفق</strong>، ما لم يفعل ما يستحق به العقوبة شرعًا.</p>
+  </div>
+
+  <div class="box hadith">
+    <span class="tag">تتمة الحديث — المواجهة</span>
+    <p class="txt">«حتى جئتُ، فلما سلَّمت تبسَّم تبسُّمَ المغضَب ثم قال: تعالَ. فجئتُ أمشي حتى جلستُ بين يديه، فقال لي: ما خلَّفك؟ ألم تكن قد ابتعتَ ظهرَك؟ قال: قلتُ: يا رسول الله، إني والله لو جلستُ عند غيرك من أهل الدنيا لرأيتُ أني سأخرج من سخطه بعذر، ولقد أُعطيتُ جَدَلًا، ولكني والله لقد علمتُ لئن حدَّثتُك اليوم حديثَ كذبٍ ترضى به عني ليوشكنَّ الله أن يُسخِطك عليَّ، ولئن حدَّثتُك حديثَ صدقٍ تجدُ عليَّ فيه إني لأرجو فيه عُقبى الله عز وجل. والله ما كان لي عذر، والله ما كنتُ قطُّ أقوى ولا أيسرَ مني حين تخلَّفتُ عنك. قال: فقال رسول الله ﷺ: أما هذا فقد صدق، فقُم حتى يقضيَ الله فيك».</p>
+  </div>
+
+  <div class="box def">
+    <span class="tag">«تبسَّم تبسُّم المغضَب»</span>
+    <p>الابتسامة العادية معروفة: كان ﷺ إذا سُرَّ وابتسم أنار وجهُه. أما هذه فابتسامة العتب. وسأل الشيخ: الشعور الآن غضبٌ أم فرح؟ <strong>غضب</strong> — فالشعور غضب، وإنما كانت ثمة ابتسامة.</p>
+    <p>وقال — والله أعلم —: هذه <strong>رعايةٌ لحق الصحبة الماضي</strong>؛ فكعب شهد المشاهد مع رسول الله ﷺ وبايع في بيعة العقبة، فلا يأتي مثل هذا الموقف إلا وقد ظهرت — فيما بين الغضب والمحبة والعتب — ابتسامة المغضَب.</p>
+  </div>
+
+  <div class="box note">
+    <span class="tag">دلالة السؤال</span>
+    <p>«ألم تكن قد ابتعتَ ظهرك؟» — أي: أما اشتريتَ ما يحملك من الدواب لهذا السفر البعيد؟ وهذا يؤكد أن الوضع كان معروفًا ومتابَعًا؛ فقول الرجل قبلُ «حبسه بُرداه» يشير إلى معلومةٍ شائعة بأن كعبًا كان جاهزًا وقادرًا.</p>
+  </div>
+
+  <div class="box key">
+    <span class="tag">منطق كعب في اختيار الصدق</span>
+    <p>كعبٌ من أكبر شعراء الصحابة — يقول الشيخ: حسان ثم كعب مباشرة، ومن قرأ سيرة ابن هشام وجد قصائد كعب كثيرة — فهو صاحب بيان، ويقول عن نفسه: <strong>«ولقد أُعطيت جدلًا»</strong>: أقدر أن أستعمل الأساليب التي تخرجني، وإذا كان المنافقون الذين سبقوني قالوا أي كلام فمشت أمورهم، فأنا أقدر منهم على ذلك.</p>
+    <p>لكنه وازن: <strong>حديثُ كذبٍ يُرضيك عني اليوم → يوشك الله أن يُسخطك عليَّ. وحديثُ صدقٍ تجد عليَّ فيه → أرجو فيه عُقبى الله.</strong> فاختار الثاني.</p>
+    <p>وقول النبي ﷺ <strong>«أما هذا فقد صدق»</strong> معناه أنه ﷺ يعلم حال من أتوا قبله، أو على الأقل أن في نفسه ﷺ شيئًا تجاه كلامهم. وإذا كان كعب قد عرف أولئك المنافقين، فالنبي ﷺ من باب أولى.</p>
+    <p>وقوله ﷺ <strong>«فقُم حتى يقضي الله فيك»</strong>: القضية كلها عند الله. كعب يقول «أرجو عُقبى الله»، والنبي ﷺ يقول «حتى يقضي الله فيك» — <strong>فالأمر عند الله في أوله ومنتهاه</strong>. ولاحظ العناية الربانية التفصيلية بهذه القضية: ثلاثة أشخاص تخلَّفوا عن غزوة، فأنزل الله فيهم قرآنًا، وأمهلهم في التوبة والانتظار.</p>
+  </div>
+
+  <div class="box hadith">
+    <span class="tag">تتمة الحديث — التأنيب</span>
+    <p class="txt">«فقمتُ، وثار رجالٌ من بني سَلِمة فاتَّبعوني فقالوا لي: والله ما علمناك أذنبتَ ذنبًا قبل هذا، ولقد عجزتَ ألا تكون اعتذرتَ إلى رسول الله ﷺ بما اعتذر إليه المخلَّفون، فقد كان كافيك ذنبَك استغفارُ رسول الله ﷺ لك. قال: فوالله ما زالوا يؤنّبونني حتى أردتُ أن أرجع إلى رسول الله ﷺ فأُكذِّبَ نفسي. ثم قلتُ لهم: هل لقي هذا معي من أحد؟ قالوا: نعم، لقيه معك رجلان قالا مثل ما قلتَ وقيل لهما مثل ما قيل لك. قال: قلتُ: مَن هما؟ قالوا: مُرارةُ بن الربيع العَمْري، وهلالُ بن أمية الواقفي. قال: فذكروا لي رجلين صالحين قد شهدا بدرًا فيهما أسوة، فمضيتُ حين ذكروهما لي».</p>
+  </div>
+
+  <p>وعلَّق الشيخ: هذا موقف بالغ الخطورة — قومُ كعب جاءوه يقولون: تكلَّم بكلمة واحدة يجبرها لك استغفار رسول الله ﷺ. حتى بلغ به التأنيب أن أراد أن يرجع فيكذّب نفسه. ثم نبَّه إلى معنى آخر: <strong>السيرة النبوية وأحداثها كانت تحت الضوء دائمًا</strong>؛ يسأل: هل لقي هذا معي أحد؟ فيُقال له فورًا: نعم، فلان وفلان، وقيل لهما مثل ما قيل لك.</p>
+
+  <div class="box note">
+    <span class="tag">لماذا كان كل شيء «تحت الضوء»؟</span>
+    <p>يبدو للشيخ أن سببه الأساسي <strong>شدة العناية بما يفعله النبي ﷺ</strong> وبما يتعلق به من أحوال. فإذا كان سكوته ﷺ حديثًا — إذ الحديث هو قوله أو فعله أو إقراره، والإقرار بالسكوت — فمن باب أولى أن يتتبع الناس الحديث المباشر ويروا ما جرى.</p>
+  </div>
+
+  <div class="sum">
+    <span class="tag">خلاصة</span>
+    <h4>ملامح لحظة المواجهة</h4>
+    <ul>
+      <li>البدء بالمسجد وركعتين بعد السفر هديٌ دائم لا حادثة مفردة.</li>
+      <li>قبول علانية المنافقين ووكل سرائرهم إلى الله منهجٌ في التعامل بالرفق ما لم يثبت ما يوجب الحزم.</li>
+      <li>تبسُّم المغضَب: غضبٌ في الشعور، ورعايةٌ لحق الصحبة في الظاهر.</li>
+      <li>كعب صاحب بيان وقدرة على الجدل، فاختار الصدق عن وعي بالموازنة لا عن عجز.</li>
+      <li>أشد ما واجهه ليس غضب النبي ﷺ بل تأنيب قومه له أن يكذّب نفسه.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 8 ============ -->
+<section id="s8" style="--acc:var(--s8);--acc-soft:rgba(43,58,82,.10)">
+  <div class="sec-head"><span class="sec-num">08</span><div>
+    <h2>خمسون ليلة: حين تنكَّرت الأرض</h2>
+    <p class="lead">عقوبةٌ لا على زنًا ولا سرقة ولا خمر — بل على التخلف</p>
+  </div></div>
+
+  <div class="box hadith">
+    <span class="tag">تتمة الحديث</span>
+    <p class="txt">«ونهى رسول الله ﷺ عن كلامنا أيها الثلاثةُ من بين من تخلَّف عنه، فاجتنبَنا الناس — وقال: تغيَّروا لنا — حتى تنكَّرت لي في نفسي الأرضُ، فما هي بالأرض التي أعرف. فلبِثنا على ذلك خمسين ليلة. فأما صاحباي فاستكانا وقعدا في بيوتهما يبكيان، وأما أنا فكنتُ أشبَّ القوم وأجلدَهم، فكنتُ أخرج فأشهد الصلاة مع المسلمين وأطوف في الأسواق ولا يكلّمني أحد، وآتي رسول الله ﷺ فأسلّم عليه وهو في مجلسه بعد الصلاة، فأقول في نفسي: هل حرَّك شفتيه بردِّ السلام أم لا؟ ثم أصلّي قريبًا منه وأُسارقه النظر، فإذا أقبلتُ على صلاتي نظر إليَّ، وإذا التفتُّ نحوه أعرض عني».</p>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">إعادة تعريف ثقل الذنوب</span>
+    <p>وقف الشيخ وقفة قوية: صدر قرارٌ نبوي بهجر هؤلاء الثلاثة من بين البِضع والثمانين الذين تخلَّفوا. <strong>فعلى أي شيء هُجروا؟</strong> لم يزنوا، ولم يشربوا الخمر، ولم يسرقوا، ولم ينظروا إلى حرام، ولم ينافقوا — <strong>بل صَدَقوا!</strong></p>
+    <p>فهنا يُعاد — من خلال السيرة والوحي — <strong>تعريف ثقل الذنوب</strong>: نعم لم يزنوا ولم يسرقوا، ولكنهم تخلَّفوا عن نصرة الإسلام مع رسول الله ﷺ، وكفى بذلك ذنبًا.</p>
+    <p>ثم أسقط الشيخ المعنى على الواقع: نحتاج اليوم إلى إعادة تعريف ثقل الذنوب؛ فقد صار أحيانًا وجود الإنسان في مجالٍ شرعيٍّ كأنه تزكية وختمٌ له، فما دام لا يشرب خمرًا ولا يزني فالأمور تمام — <strong>خذل الإسلام والمسلمين أو لم يخذلهم</strong>، كان مع المنافقين والمجرمين الذين يعادون الإسلام أو يعادون الدعاة والمصلحين أو لم يكن — «عادي، اختلافات سياسية، وجهات نظر، اختلافات مواقف»!</p>
+  </div>
+
+  <div class="box note">
+    <span class="tag">إنصافٌ في التنزيل</span>
+    <p>وأنصف الشيخ فقال: لا شك أن <strong>مقدار وضوح الحق في زمن النبي ﷺ لا يُقارَن بغيره</strong> — هذه مسلَّمة. لكن تبقى للأشياء <strong>نِسَبٌ</strong>؛ حتى بعض النصوص التي نزلت في رسول الله ﷺ بعينه يقول فيها بعض العلماء إن فيها نسبةً لمن التزم بخصلتها — كما علَّق ابن القيم على قوله تعالى <strong>﴿إِذْ يَقُولُ لِصَاحِبِهِ لَا تَحْزَنْ إِنَّ اللَّهَ مَعَنَا﴾</strong> بأن هذه المعية لأتباع رسول الله ﷺ إذا قاموا بمثل ذلك.</p>
+    <p>فالحاصل: من تخلَّف عن رسول الله ﷺ في نصرة الإسلام ليس كمن يتخلف عن نصرة الإسلام بعده ﷺ — لا نقاش في هذا — <strong>لكن ليس معنى ذلك ألا يبقى أصلٌ للذم أو نسبةٌ منه</strong> فيما حصل لهؤلاء الصحابة بسبب هذا الفعل.</p>
+  </div>
+
+  <p>وعن معنى «تنكَّرت لي في نفسي الأرض»: قال الشيخ إن معناه أنهم <strong>لم يكن لهم معنًى يعيشون لأجله إلا أنهم مع رسول الله ﷺ ومع الصحابة</strong>؛ فلما أُمر بهجرهم لم يبقَ شيء، انتهى كل شيء. وهذا غير حال إنسانٍ يعيش لمعانٍ دنيوية كثيرة وعنده بقية من خير — فبينهما فرق. <strong>ولو كانت العقوبة يومًا واحدًا لكانت عقوبة، فكيف وقد امتدت خمسين ليلة؟</strong></p>
+
+  <div class="nights">
+    <span class="tag">خمسون ليلة — كما مرَّت على كعب</span>
+    <div class="grid50" aria-hidden="true">
+      <i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i>
+      <i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i>
+      <i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i>
+      <i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i><i class="forty"></i>
+      <i class="ten"></i><i class="ten"></i><i class="ten"></i><i class="ten"></i><i class="ten"></i><i class="ten"></i><i class="ten"></i><i class="ten"></i><i class="ten"></i><i class="last"></i>
+    </div>
+    <div class="legend">
+      <span><b style="background:rgba(255,255,255,.24)"></b> أربعون ليلة من الهجر</span>
+      <span><b style="background:rgba(176,125,43,.65)"></b> عشرٌ بعد اعتزال النساء</span>
+      <span><b style="background:#E8B65A"></b> صباح الخمسين: البشارة</span>
+    </div>
+  </div>
+
+  <div class="box story">
+    <span class="tag">مشهد أبي قتادة</span>
+    <p class="txt" style="font-family:var(--f-disp);font-size:20px;line-height:2.1;color:var(--ink)">«حتى إذا طال ذلك عليَّ من جَفوة المسلمين مشيتُ حتى تسوَّرتُ جدارَ حائطِ أبي قتادة — وهو ابن عمي وأحبُّ الناس إليَّ — فسلَّمتُ عليه، فوالله ما ردَّ عليَّ السلام. فقلتُ: يا أبا قتادة، أنشُدك بالله هل تعلمني أحبُّ الله ورسولَه؟ فسكت. فعدتُ فناشدتُه فسكت. فعدتُ فناشدتُه فقال: الله ورسولُه أعلم. ففاضت عيناي وتولَّيتُ حتى تسوَّرتُ الجدار».</p>
+  </div>
+
+  <p>قال الشيخ: إذا نظرتَ إليها من زاوية كعب رأيتَ الشدة والصعوبة. وإذا نظرت إليها <strong>من زاوية أبي قتادة</strong> رجعتَ مرة أخرى إلى ما تربى عليه أصحاب رسول الله ﷺ من <strong>حقيقة الامتثال</strong> — وهذه أصعب من كثير من العبادات؛ لأن بينكما رابطة دم، وهو ابن عمك، وأحبُّ الناس إليك، وكل المقتضيات النفسية والشعورية قائمة، خاصة في وقت الشدة.</p>
+
+  <p>وقد يفكر أحدٌ فيقول: أمَرَ ﷺ بهجرانهم، فلا نجالسهم ولا نتحدث معهم — <strong>لكن على الأقل أقول له كلمة: اصبر واحتسب الفرج من عند الله</strong>. حتى هذه لم تكن! حتى حين يناشده بالله أن يشهد أنه يحب الله ورسوله يسكت، ويعيد فيسكت، وآخر ما استطاع أن يقوله: «الله ورسوله أعلم».</p>
+
+  <div class="box story">
+    <span class="tag">كتاب ملك غسان</span>
+    <p class="txt" style="font-family:var(--f-disp);font-size:20px;line-height:2.1;color:var(--ink)">«فبينا أنا أمشي في سوق المدينة إذا نَبَطيٌّ من نَبَطِ أهل الشام ممن قدِم بالطعام يبيعه بالمدينة يقول: مَن يدلُّ على كعب بن مالك؟ فطفِق الناس يشيرون له إليَّ حتى جاءني فدفع إليَّ كتابًا من مَلِكِ غسّان، وكنتُ كاتبًا، فقرأتُه فإذا فيه: أما بعد، فإنه قد بلغنا أن صاحبك قد جفاك، ولم يجعلك الله بدار هوانٍ ولا مَضيعة، فالحَقْ بنا نُواسِك. فقلتُ حين قرأتُها: وهذه أيضًا من البلاء. فتيمَّمتُ بها التنّور فسجَرتُها».</p>
+  </div>
+
+  <div class="box key">
+    <span class="tag">فائدتان من الرسالة</span>
+    <ul class="bul">
+      <li><strong>مقدار تربُّص الأعداء</strong> بالمدينة وبالنبي ﷺ وبالصحابة؛ فالخبر وصل سريعًا وجاء ردُّ الفعل سريعًا. وهذا يؤكد ما سبق في التورية: الموضوع معلومات قد تصل، وفي المدينة منافقون، ويهود قريبون، والحالة النبوية تحت الضوء.</li>
+      <li><strong>الابتلاء في الإيمان:</strong> هل يغلب الجانب النفسي وردَّات الفعل، أم يتخذ قراره بناءً على إيمانه وحقيقة ما في قلبه؟ ولم يكتفِ كعبٌ بالرفض، بل <strong>أحرقها في التنور</strong> — لا يُبقيها محفوظة في مكانٍ يأتي الشيطان فيوسوس بها.</li>
+    </ul>
+  </div>
+
+  <div class="box hadith">
+    <span class="tag">تتمة الحديث — اعتزال النساء</span>
+    <p class="txt">«حتى إذا مضت أربعون ليلةً من الخمسين واستلبثَ الوحيُ، إذا رسولُ رسولِ الله ﷺ يأتيني فقال: إن رسول الله ﷺ يأمرك أن تعتزل امرأتك. فقلتُ: أُطلّقها أم ماذا أفعل؟ قال: لا، بل اعتزلها ولا تقربنَّها. وأرسل إلى صاحبيَّ بمثل ذلك. فقلتُ لامرأتي: الحقي بأهلك فكوني عندهم حتى يقضيَ الله في هذا الأمر».</p>
+  </div>
+
+  <p>وقف الشيخ عند لحظة الطَّرْق: أربعون يومًا كاملة ولا أحد يكلمه، ثم يأتي رجل يطرق الباب: «أنا رسولٌ أتيتك من عند رسول الله ﷺ» — والنفسية المتوقعة أن تستقبلها بشرًا وأملًا! فإذا الأمر: اعتزل امرأتك.</p>
+
+  <p>ثم سأل: <strong>لو قال له «طلّقها» ماذا كان سيفعل؟ طلَّق.</strong> قال له «اعتزلها» فاعتزل. وعلَّق: نحن نتكلم عن تربية النبي ﷺ لهذا الجيل الأول، الجيل العظيم — <strong>لا نتكلم عن أيِّ أحد</strong>. رجلٌ داخل بيته، بعد كل هذه المسيرة من الهجران وبعد هذا البلاء، يُؤمَر أن يعتزل امرأته فيعتزل، ولو قيل له طلِّق لطلَّق. والله في غاية العجب.</p>
+
+  <div class="box story">
+    <span class="tag">امرأة هلال بن أمية</span>
+    <p class="txt" style="font-family:var(--f-disp);font-size:20px;line-height:2.1;color:var(--ink)">«فجاءت امرأةُ هلال بن أمية رسولَ الله ﷺ فقالت: يا رسول الله، إن هلال بن أمية شيخٌ ضائعٌ ليس له خادم، فهل تكره أن أخدُمَه؟ قال: لا، ولكن لا يقربنَّكِ. قالت: إنه واللهِ ما به حركةٌ إلى شيء، واللهِ ما زال يبكي منذ كان من أمره ما كان إلى يومه هذا».</p>
+  </div>
+
+  <p>«ما زال يبكي منذ كان من أمره ما كان» — أي أربعون يومًا يبكي. قال الشيخ: <strong>أربعون يومًا يبكي! لا إله إلا الله</strong>؛ لأنه فقد كل شيء، ما بقي شيء، انتهى — ولم يبقَ إلا الأمل في أن يقضي الله في هذا الأمر بالتوبة.</p>
+
+  <div class="box hadith">
+    <span class="tag">تتمة الحديث</span>
+    <p class="txt">«فقال لي بعض أهلي: لو استأذنتَ رسول الله ﷺ في امرأتك، فقد أذِن لامرأة هلال بن أمية أن تخدمه. فقلتُ: والله لا أستأذن فيها رسولَ الله ﷺ، وما يدريني ماذا يقول رسول الله ﷺ إذا استأذنتُه فيها وأنا رجلٌ شاب».</p>
+  </div>
+
+  <p>وعلَّق الشيخ: وهذا يرجع مرة ثانية إلى أن كل شيء كان تحت الضوء؛ أي أحدٍ يحاور النبي ﷺ أو يجري معه موقف يصل الخبر إلى الجميع.</p>
+
+  <div class="sum">
+    <span class="tag">خلاصة</span>
+    <h4>ما الذي تكشفه الخمسون ليلة؟</h4>
+    <ul>
+      <li>العقوبة كانت على التخلف عن نصرة الدين لا على كبيرة من كبائر الشهوات — وهذا إعادة ضبطٍ لموازين الذنوب.</li>
+      <li>امتثال الصحابة لأمر الهجر — حتى من ابن العم وأحبِّ الناس — أصعب من كثير من العبادات.</li>
+      <li>«تنكَّرت لي الأرض» لأن كل معنى كان يعيش له قد انقطع.</li>
+      <li>عرض ملك غسان بلاءٌ ثانٍ، وحرق الكتاب سدٌّ لباب الوسوسة لا مجرد رفض.</li>
+      <li>الأمر باعتزال النساء جاء بعد أربعين ليلة، وامتثاله فوري بلا مراجعة.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 9 ============ -->
+<section id="s9" style="--acc:var(--s9);--acc-soft:rgba(31,122,92,.10)">
+  <div class="sec-head"><span class="sec-num">09</span><div>
+    <h2>الفرج: خير يومٍ مرَّ عليه</h2>
+    <p class="lead">صباح الليلة الخمسين، وثمرة الصدق التي بقيت عمرًا</p>
+  </div></div>
+
+  <div class="box hadith">
+    <span class="tag">تتمة الحديث</span>
+    <p class="txt">«فلبثتُ بذلك عشرَ ليالٍ فكمَل لنا خمسون ليلةً من حين نُهي عن كلامنا. ثم صليتُ صلاة الفجر صباحَ خمسين ليلةً على ظهر بيتٍ من بيوتنا، فبينا أنا جالسٌ على الحال التي ذكر الله عز وجل منّا — قد ضاقت عليَّ نفسي وضاقت عليَّ الأرضُ بما رحُبت — سمعتُ صوتَ صارخٍ أوفى على جبل سَلْع بأعلى صوته: يا كعبَ بن مالك، أبشِر! قال: فخررتُ ساجدًا، وعرفتُ أن قد جاء فرج».</p>
+  </div>
+
+  <div class="box def">
+    <span class="tag">أين سَلْع؟</span>
+    <p>شرح الشيخ الموقع: سَلْع هو الجبل القريب من المسجد النبوي من جهته الغربية، وهو الجبل الذي كان في ظهر النبي ﷺ والصحابة يوم الخندق، والمدينة خلفهم. فمن صعد عليه والتفت إلى الجهة الداخلية — لا جهة الخندق — كان مطلًّا على المدينة كلها، لأنه <strong>محتضنٌ للمنطقة</strong> وقريبٌ من المسجد.</p>
+    <p>وأضاف تفصيلًا يحيي المشهد: هذا بعد الفجر، والدنيا هادئة، والناس لم تنطلق بعد إلى أسواقها — <strong>فصوتٌ واحد من فوق سَلْع يصل إلى جهة المسجد النبوي</strong>.</p>
+    <p>ولاحظ لفظ البشارة: <strong>«أبشِر» فقط</strong> — لم يقل «لقد نزل الوحي بتوبتك»، بل أبشر. فخرَّ كعب ساجدًا.</p>
+  </div>
+
+  <div class="box hadith">
+    <span class="tag">تتمة الحديث — البشارة</span>
+    <p class="txt">«وآذَنَ رسولُ الله ﷺ الناسَ بتوبة الله علينا حين صلى صلاة الفجر، فذهب الناس يبشّروننا، وذهب قِبَلَ صاحبيَّ مُبشّرون، ورَكَض رجلٌ إليَّ فرسًا، وسعى ساعٍ من أسلمَ فأوفى على الجبل، وكان الصوتُ أسرعَ من الفرس. فلما جاءني الذي سمعتُ صوتَه يبشّرني نزعتُ له ثوبيَّ فكسوتُهما إياه ببشارته — واللهِ ما أملك غيرهما يومئذٍ — واستعرتُ ثوبين فلبستُهما».</p>
+  </div>
+
+  <div class="box key">
+    <span class="tag">دلالة «فذهب الناس يبشّروننا»</span>
+    <p>قال الشيخ: معناه أن الناس <strong>ما كانت متشفّية</strong>. ليس كبعض البيئات — نسأل الله العافية — التي كأن فيها تشفّيًا، يفرح أحدهم أن يُمسَك على أحدٍ غلط! بل ما إن جاء الفرج <strong>حتى انطلق الناس يبشّرون</strong>.</p>
+    <p>وتأمل الصورة: رجلٌ يركب فرسًا يركض ليبشّر كعبًا، وآخر يصعد الجبل فينادي — فكان الصوت أسرع من الفرس.</p>
+  </div>
+
+  <div class="box def">
+    <span class="tag">ما معنى «ثوبيَّ»؟</span>
+    <p>نبَّه الشيخ على معنى قد يُشكِل: الثوب في عرف ذلك الوقت ليس هو المفصَّل الذي نلبسه اليوم، وإنما هو <strong>قطعة قماش</strong> — كالإزار والرداء في الإحرام: الذي تحت ثوب والذي فوق ثوب. ولذلك كُفِّن النبي ﷺ في <strong>ثلاثة أثواب يمانية بيض سَحُولية ليس فيهن قميصٌ ولا عمامة</strong>.</p>
+    <p>و<strong>القميص</strong> هو المفصَّل الذي له أكمام — أي شِبه ثيابنا اليوم — وإذا كان له طاقية من الخلف سُمّي <strong>بُرنُسًا</strong>، كثياب المغاربة. فكعب كان يملك ثوبين فقط، فخلعهما وأعطاهما للمبشِّر، واستعار ثوبين ليلبسهما.</p>
+  </div>
+
+  <div class="box hadith">
+    <span class="tag">تتمة الحديث — عند رسول الله ﷺ</span>
+    <p class="txt">«وانطلقتُ أتأمَّمُ رسولَ الله ﷺ، يتلقّاني الناس فوجًا فوجًا يهنّئونني بالتوبة ويقولون: لتَهنِك توبةُ الله عليك، حتى دخلتُ المسجد فإذا رسول الله ﷺ جالسٌ حوله الناس، فقام إليَّ طلحةُ بن عبيد الله يُهروِل حتى صافحني وهنَّأني — واللهِ ما قام رجلٌ من المهاجرين غيرُه. قال: فكان كعبٌ لا ينساها لطلحة».</p>
+  </div>
+
+  <div class="box key">
+    <span class="tag">وقفتان</span>
+    <p><strong>الأولى — الناس حول النبي ﷺ:</strong> لما رجع من السفر صلى ركعتين وجلس للناس، ولما كان في تبوك كان الناس معه، حتى قالت عائشة رضي الله عنها في موضع آخر: «فلما حطَمه الناس صار يصلي جالسًا» — من كثرة مخالطتهم وطلباتهم واحتياجاتهم والعناية بهم. <strong>فرسول الله ﷺ لم يكن معتزلًا؛ كان دائمًا معه الناس</strong>: يوجّه هذا، ويعلّم هذا، ويربّي هذا، ويصلح أحوال هذا.</p>
+    <p><strong>الثانية — طلحة:</strong> «فكان كعبٌ لا ينساها لطلحة». قال الشيخ: <strong>هذه اللحظات لا تُنسى، ولا يُنسى من أحسن إليك فيها</strong>؛ لحظات الأزمات والابتلاءات النفسية الصعبة، الإنسان لا ينسى من وقف معه فيها ولو كان شيئًا بسيطًا.</p>
+  </div>
+
+  <div class="box hadith">
+    <span class="tag">تتمة الحديث</span>
+    <p class="txt">«قال كعب: فلما سلَّمتُ على رسول الله ﷺ قال — وهو يبرُق وجهُه من السرور —: أبشِر بخير يومٍ مرَّ عليك منذ ولدتْك أمُّك. قال: قلتُ: أمِن عندك يا رسول الله أم من عند الله؟ قال: لا، بل من عند الله. وكان رسول الله ﷺ إذا سُرَّ استنار وجهُه حتى كأنَّ وجهه قطعةُ قمر، وكنا نعرف ذلك منه».</p>
+  </div>
+
+  <div class="box note">
+    <span class="tag">المشاعر على وجه النبي ﷺ</span>
+    <p>ذكّر الشيخ بمجلس سابق له — قبل ثلاث أو أربع سنوات — كان بعنوان: <strong>تأثير المشاعر على وجه النبي ﷺ</strong>. وقال: نحن لم يُحفظ لنا كلامه ﷺ وصلاته وحجه وعدد غزواته فقط، بل حُفظت لنا <strong>طبيعة المشاعر وآثارها على وجهه الشريف</strong>.</p>
+    <p>فأبو سعيد الخدري يقول في الحديث الصحيح: <strong>«كان رسول الله ﷺ أشدَّ حياءً من العذراء في خِدرها، وكان إذا كره شيئًا عُرف في وجهه»</strong>. فالصحابة عندهم خبرة بتأثير المشاعر على وجهه ﷺ، حتى إنه أحيانًا لا يحتاج أن يتكلم.</p>
+    <p>ولاحظ التدرُّج في نص كعب: أولًا <strong>«يبرُق وجهه من السرور»</strong>، ثم بعد ذلك <strong>«استنار وجهه حتى كأنَّ وجهه قطعة قمر»</strong>.</p>
+  </div>
+
+  <div class="box key">
+    <span class="tag">«خيرُ يومٍ مرَّ عليك»</span>
+    <p>مع أنه بايع وجاهد وصبر وثبت ونصر — <strong>إلا أن خير يوم مرَّ عليه منذ ولدته أمه هو اليوم الذي تاب الله عليه فيه</strong>. ولأجل ذلك أورد الإمام النووي رحمه الله هذا الحديث في باب التوبة: فضلُ التوبة ومنزلتها وقيمتها؛ من حيث كونها <strong>فعلًا من العبد</strong>، ومن حيث كونها <strong>قبولًا من الله لهذا الفعل</strong> — من الجهتين.</p>
+    <p>وسؤال كعب «أمِن عندك يا رسول الله أم من عند الله؟» فرحٌ لا يصدّق، فيجيبه ﷺ: <strong>«لا، بل من عند الله»</strong>.</p>
+  </div>
+
+  <div class="box hadith">
+    <span class="tag">تتمة الحديث — الصدقة والصدق</span>
+    <p class="txt">«فلما جلستُ بين يديه قلتُ: يا رسول الله، إن من توبتي أن أنخلع من مالي صدقةً إلى الله وإلى رسوله. فقال رسول الله ﷺ: أمسِك عليك بعضَ مالك فهو خيرٌ لك. قلتُ: فإني أمسك سهمي الذي بخيبر. وقلتُ: يا رسول الله، إن الله تعالى إنما أنجاني بالصدق، وإن من توبتي ألا أُحدِّث إلا صدقًا ما بقيت. فواللهِ ما علمتُ أحدًا من المسلمين أبلاه الله في صدق الحديث منذ ذكرتُ ذلك لرسول الله ﷺ أحسنَ مما أبلاني، واللهِ ما تعمَّدتُ كذبةً منذ قلتُ ذلك لرسول الله ﷺ إلى يومي هذا، وإني لأرجو أن يحفظني الله فيما بقي».</p>
+  </div>
+
+  <p>وسأل الشيخ: ما المال الذي كان عند كعب؟ قد يكون الراحلتين، وقد يكون بعض النخل — فالأنصار أصحاب أراضٍ ونخيل. أما ما يُمسك باليد ويكون في المتناول فلم يكن عنده إلا الثوبان.</p>
+
+  <div class="box key">
+    <span class="tag">فقه الصدق عند من ذاقه</span>
+    <p>طرح الشيخ سؤالًا: هل تتوقع أن تكون قيمة الصدق عندك كقيمته عند كعب بن مالك؟ <strong>صعب</strong> — وإن كنتَ تؤمن بهذه المنزلة والفضل — أن تكون كمنزلة من عاش وذاق ورأى وجرَّب <strong>أثر الصدق</strong>. فخلاصة قصة كعب: <strong>صَدَق فنجا</strong>.</p>
+    <p>ثم عمَّم القاعدة: ما رأيتَه في الصدق قُلْ مثله في بقية الخلال والخصال. ما قيمة الصبر عندك؟ إن كنتَ ممن ابتُلي وجرَّب وصبر وثبت وعانى وكابد ثم رأى معيَّة الله للصابرين وعونه ومدده، <strong>فما إن تسمع كلمة الصبر أو تمرَّ عليك آية فيه حتى تتعامل معها تعاملًا مختلفًا</strong> — تكون فقيهًا خبيرًا بالصبر. وهكذا في بقية الأعمال.</p>
+    <p>وربط ذلك بمعنى ذكره في مقطع سابق: من أعظم ثمرات من يعيش مقتديًا بأحوال الأنبياء — في الدعوة وتبليغ الدين والتضحية ونصرة الدين والتحمُّل — أن يكون <strong>للآيات القرآنية عليه وقعٌ أكثر</strong> ممن لم يجرّب هذه الأحوال؛ <strong>لأن القرآن فسيحٌ في معانيه، فإذا لم تكن حياتك فسيحة بقدر هذه المعاني ظلَّت مساحاتٌ من معاني القرآن لا تتماسُّ معك.</strong></p>
+  </div>
+
+  <div class="quran">
+    <p class="txt">﴿لَقَد تَّابَ اللَّهُ عَلَى النَّبِيِّ وَالْمُهَاجِرِينَ وَالْأَنصَارِ الَّذِينَ اتَّبَعُوهُ فِي سَاعَةِ الْعُسْرَةِ… إِنَّهُ بِهِمْ رَءُوفٌ رَّحِيمٌ ۝ وَعَلَى الثَّلَاثَةِ الَّذِينَ خُلِّفُوا حَتَّىٰ إِذَا ضَاقَتْ عَلَيْهِمُ الْأَرْضُ بِمَا رَحُبَتْ… يَا أَيُّهَا الَّذِينَ آمَنُوا اتَّقُوا اللَّهَ وَكُونُوا مَعَ الصَّادِقِينَ﴾</p>
+    <p class="ref">التوبة: 117 – 119</p>
+  </div>
+
+  <div class="box hadith">
+    <span class="tag">تتمة الحديث</span>
+    <p class="txt">«قال كعب: واللهِ ما أنعم الله عليَّ من نعمةٍ قطُّ بعد إذ هداني للإسلام أعظمَ في نفسي من صِدْقي رسولَ الله ﷺ ألا أكون كذبتُه فأهلِكَ كما هلك الذين كذبوا؛ فإن الله تعالى قال للذين كذبوا حين أنزل الوحيَ شرَّ ما قال لأحد، فقال الله تعالى: ﴿سَيَحْلِفُونَ بِاللَّهِ لَكُمْ إِذَا انقَلَبْتُمْ إِلَيْهِمْ لِتُعْرِضُوا عَنْهُمْ ۖ فَأَعْرِضُوا عَنْهُمْ ۖ إِنَّهُمْ رِجْسٌ ۖ وَمَأْوَاهُمْ جَهَنَّمُ جَزَاءً بِمَا كَانُوا يَكْسِبُونَ ۝ يَحْلِفُونَ لَكُمْ لِتَرْضَوْا عَنْهُمْ ۖ فَإِن تَرْضَوْا عَنْهُمْ فَإِنَّ اللَّهَ لَا يَرْضَىٰ عَنِ الْقَوْمِ الْفَاسِقِينَ﴾».</p>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">تخيَّل الاحتمال الآخر</span>
+    <p>قال الشيخ: لو أن كعبًا لم يصدق في ذلك المقام، أو استجاب لمحاولات بعض أقاربه أن يعود فيكذّب نفسه… ثم تنزل هذه الآيات ويسمعها: <strong>﴿يَحْلِفُونَ لَكُمْ لِتَرْضَوْا عَنْهُمْ فَإِن تَرْضَوْا عَنْهُمْ فَإِنَّ اللَّهَ لَا يَرْضَىٰ عَنِ الْقَوْمِ الْفَاسِقِينَ﴾</strong> — فكيف يعيش بقية حياته؟! <strong>فصدَق فنجَّاه الله.</strong></p>
+  </div>
+
+  <div class="box def">
+    <span class="tag">معنى «خُلِّفوا» — تصحيح فهمٍ شائع</span>
+    <p>قال كعب: «كنّا خُلِّفنا أيها الثلاثةُ عن أمر أولئك الذين قَبِل منهم رسولُ الله ﷺ حين حلفوا له فبايعهم واستغفر لهم، وأرجأنا حتى قضى الله فيه بذلك. قال الله تعالى: ﴿وَعَلَى الثَّلَاثَةِ الَّذِينَ خُلِّفُوا﴾ — <strong>وليس الذي ذكر الله مما خُلِّفنا تخلُّفَنا عن الغزو، وإنما هو تخليفُه إيانا وإرجاؤه أمرَنا</strong> عمن حلف له واعتذر إليه فقَبِل منه».</p>
+  </div>
+
+  <div class="box">
+    <span class="tag">روايتان في آخر الحديث</span>
+    <ul class="bul">
+      <li>«أن النبي ﷺ خرج في غزوة تبوك <strong>يوم الخميس</strong>، وكان يحب أن يخرج يوم الخميس».</li>
+      <li>«وكان لا يقدَم من سفرٍ إلا <strong>نهارًا في الضحى</strong>، فإذا قدِم بدأ بالمسجد فصلى فيه ركعتين ثم جلس فيه».</li>
+    </ul>
+  </div>
+
+  <div class="sum">
+    <span class="tag">خلاصة</span>
+    <h4>ثمرات الفرج</h4>
+    <ul>
+      <li>البشارة جاءت من فوق سَلْع بكلمة واحدة: «أبشر» — فسجد كعب شكرًا.</li>
+      <li>فرح الناس بالتوبة وسباقهم إلى البشارة دليل على سلامة صدور المجتمع النبوي.</li>
+      <li>خير يومٍ في عمر كعب هو يوم قبول التوبة، لا يوم بيعةٍ ولا يوم جهاد.</li>
+      <li>النبي ﷺ ردَّه عن الانخلاع من كل ماله: «أمسك عليك بعض مالك فهو خير لك».</li>
+      <li>الصدق عند من جرَّبه معرفةٌ مذوقة لا تصديقٌ نظري — وكذلك الصبر وسائر الخصال.</li>
+      <li>«خُلِّفوا» بمعنى: أُرجئ أمرهم، لا بمعنى تخلُّفهم عن الغزو.</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ ANKI ============ -->
+<section id="anki">
+  <div class="wrap">
+    <h2>بطاقات المراجعة</h2>
+    <p class="lead">48 بطاقة تغطي الحديثين وفوائدهما. اضغط البطاقة لقلبها، أو حمّل ملف TSV لاستيراده في Anki مباشرة.</p>
+
+    <div class="filters" id="filters"></div>
+
+    <div class="flip" id="flip" tabindex="0" role="button" aria-label="اقلب البطاقة">
+      <div class="flip-in">
+        <div class="face front"><span class="lab" id="fsec">—</span><div class="q" id="q"></div></div>
+        <div class="face back"><span class="lab">الجواب</span><div class="a" id="a"></div></div>
+      </div>
+    </div>
+
+    <div class="nav">
+      <button id="prev" aria-label="السابق">›</button>
+      <span class="count" id="count">1 / 48</span>
+      <button id="next" aria-label="التالي">‹</button>
+    </div>
+    <p class="hint">مسافة = قلب &nbsp;·&nbsp; ← → = تنقّل</p>
+
+    <button class="dl" id="dl">تحميل بطاقات Anki (TSV)</button>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    أنوار السنة المحمدية — الاستهداء بالسنة النبوية · شرح رياض الصالحين<br>
+    المجلس الرابع: باب التوبة (2) — الشيخ أحمد السيد
+  </div>
+</footer>
+
+<script>
+const SECS=[
+ {id:1,n:"زاوية المجالس",c:"#3E6B7C"},
+ {id:2,n:"حديث قاتل المئة",c:"#4A7C59"},
+ {id:3,n:"فوائد الحديث",c:"#7A6B2F"},
+ {id:4,n:"بدر والعقبة",c:"#55618F"},
+ {id:5,n:"التسويف",c:"#B07D2B"},
+ {id:6,n:"التفقُّد وحسن الظن",c:"#7A5C86"},
+ {id:7,n:"المواجهة والصدق",c:"#A0483F"},
+ {id:8,n:"خمسون ليلة",c:"#5C6B85"},
+ {id:9,n:"الفرج",c:"#1F7A5C"}
+];
+
+const CARDS=[
+ {s:1,q:"ما الزاوية التي تُقرأ بها الأحاديث في مجالس «الاستهداء بالسنة»؟",a:"التعرُّف على هدي النبي ﷺ والاستهداء به، وملاحظة السيرة النبوية التفصيلية من خلال الأحاديث — لا الوقوف عند دلالات الألفاظ."},
+ {s:1,q:"ما الخطأ المنهجي الذي حذّر منه الشيخ في التعامل مع الأحاديث؟",a:"أن تُعامَل على أنها مصدر للأحكام والآداب فقط وليست مصدرًا للسيرة النبوية — فمن فعل ذلك فاته خير كثير."},
+ {s:1,q:"ما ترتيب باب التوبة في رياض الصالحين، وماذا بقي منه في هذا المجلس؟",a:"هو الباب الثاني، وبقي فيه حديثان طويلان (قاتل المئة، وكعب بن مالك) ثم ثلاثة أحاديث قصيرة."},
+ {s:2,q:"من راوي حديث الذي قتل مئة نفس، وما درجته؟",a:"أبو سعيد الخدري رضي الله عنه، والحديث متفق عليه."},
+ {s:2,q:"بم أجاب الراهبُ الرجلَ الذي قتل تسعة وتسعين نفسًا؟ وماذا كانت النتيجة؟",a:"قال: لا توبة لك، فقتله فكمَّل به مئة."},
+ {s:2,q:"ماذا قال العالم للرجل بعد أن قتل مئة نفس؟",a:"«نعم، ومن يحول بينه وبين التوبة؟» وأمره أن ينتقل إلى أرض فيها أناس يعبدون الله، ولا يرجع إلى أرضه فإنها أرض سوء."},
+ {s:2,q:"كيف حُسم النزاع بين ملائكة الرحمة وملائكة العذاب؟",a:"أتاهم ملك في صورة آدمي فجعلوه حكمًا، فقال: قيسوا ما بين الأرضين، فإلى أيتهما كان أدنى فهو له — فوُجد أدنى إلى الأرض الصالحة."},
+ {s:2,q:"ماذا زادت الروايات الأخرى في الصحيح على أصل القصة؟",a:"أنه كان أقرب بشِبر فجُعل من أهل القرية الصالحة، وأن الله أوحى إلى الأرضين: هذه أن تباعدي وهذه أن تقرَّبي، وأنه «نأى بصدره نحوها»."},
+ {s:3,q:"ما الفائدة الأولى التي استخرجها الشيخ من حديث قاتل المئة؟",a:"أهمية القصص في الخطاب والدعوة؛ فالقصة لا تُنسى، وقد كان النبي ﷺ يقصُّ على أصحابه كثيرًا."},
+ {s:3,q:"اذكر مثالين لقصصٍ لم تُعرف إلا من طريق السنة أو زادت السنة تفاصيلها.",a:"قصة الذي قتل مئة نفس، وقصة الغلام والساحر والراهب؛ وقصة موسى والخضر جاءت في القرآن مجملة وفصَّلتها السنة."},
+ {s:3,q:"لماذا كان وجود العالم أنفع للناس من وجود العابد بحسب الحديث؟",a:"لأن جواب العالم كان أزكى وأرشد وأقرب وأكثر رحمة وأدَّى إلى الخير، بينما جواب العابد أدى إلى قتله."},
+ {s:3,q:"لماذا يُعدُّ فتح باب الأمل أصلًا في التعامل مع المذنبين؟",a:"لأن المذنب متى رأى الأبواب مغلقة أمامه لن يتوب في الغالب أو قد يزيد شرًّا، وقد فتح الإسلام باب التوبة حتى تطلع الشمس من مغربها."},
+ {s:3,q:"ما الخطأ الجوهري في فتوى العابد؟",a:"أنه أفتى بعاطفته وبمنطق الصلاح المجرد واستحسانه الشخصي؛ والفتيا مبنية على ما أنزل الله من الأمر والنهي لا على ما تستحسنه أنت."},
+ {s:3,q:"ما الجواب الشرعي لمن يقول: «أنا صادق في التوبة لكني لا أستطيع»؟",a:"أن المشكلة ليست ضعف النية، بل عدم اتخاذ الأسباب المناسبة، ومن أهمها تغيير البيئة الفاسدة — وهو أمر مطلوب شرعًا."},
+ {s:4,q:"لماذا لم يَعُدَّ كعب بن مالك تخلُّفه عن بدر تخلُّفًا يُعاب؟",a:"لأن الخروج كان لاعتراض عير قريش لا للقتال، ولم يُعاتَب أحد تخلَّف عنها، وقال ﷺ: «لا، إلا من كان ظهره حاضرًا»."},
+ {s:4,q:"ما المشاهد الثلاثة التي عدَّها الشيخ أعلى ما شهده الصحابة في زمن النبي ﷺ؟",a:"بيعة العقبة، وبدر، وبيعة الرضوان."},
+ {s:4,q:"لماذا كانت بيعة العقبة الثانية «الجسر الانتقالي» في السيرة؟",a:"لأن الإسلام انتقل بها من ضيق الحصار في مكة إلى سَعة النصرة والمدينة، وبها وبسببها هاجر النبي ﷺ — فانقسمت السيرة والقرآن إلى مكي ومدني."},
+ {s:4,q:"هل فضَّل كعب بيعة العقبة على بدر في ذاتها؟",a:"لا؛ إنما تكلَّم عن شعوره هو: لو خُيِّر لأحبَّ أن يكون له مشهد العقبة دون بدر، مع إقراره بأن بدرًا أذكر في الناس."},
+ {s:4,q:"ما مقصود كعب من مقدمته الطويلة قبل حكاية القصة؟",a:"أن يبيّن أنه لم يكن منافقًا ولا شأنه التخلف، بل كان مع النبي ﷺ في مشاهده كلها، وإنما غلبته نفسه مرة واحدة."},
+ {s:5,q:"بم سدَّ كعب على نفسه باب الأعذار؟",a:"بقوله: «ما كنتُ قط أقوى ولا أيسر مني حين تخلفت عنه»، وأنه ما جمع راحلتين قط إلا في تلك الغزوة."},
+ {s:5,q:"لماذا كان ذكر الراحلتين مهمًّا في سياق غزوة تبوك؟",a:"لأن الله عذر في تبوك الذين لم يجدوا ما يُحملون عليه: ﴿قلت لا أجد ما أحملكم عليه﴾ — فكعب يبيّن أنه ليس منهم."},
+ {s:5,q:"ما التورية في الغزوات، ولماذا لم يُورِّ النبي ﷺ في تبوك؟",a:"أن يُظهر ﷺ قصد جهة غير التي يريد حفاظًا على المعلومات؛ ولم يُورِّ في تبوك لاستثنائيتها: حرٌّ شديد وسفر بعيد ومفاوز تحتاج استعدادًا خاصًّا."},
+ {s:5,q:"ما معنى «لا يجمعهم كتاب حافظ»، وما أثره؟",a:"أي لا ديوان مسجَّل بالأسماء؛ فظنَّ من أراد التغيُّب أن تخلُّفه سيخفى ما لم ينزل فيه وحي."},
+ {s:5,q:"ما دلالة قول كعب: «حين طابت الثمار والظلال»؟",a:"أنها كانت في وقت الرُّطَب في عزِّ الصيف، وهو وقت النعيم المنتظر طول السنة عند أهل المدينة الذين خلاصة ثمارهم النخل — فبيان لشدة الفتنة."},
+ {s:5,q:"كيف شخَّص الشيخ حال كعب في تأخُّره؟",a:"أنه ابتُلي بنفس مسوِّفة لا تنعقد على عزم — لا نفاق ولا إرادة تخلف — وسببها أحيانًا الذنوب وأحيانًا مغالبة الشيطان."},
+ {s:6,q:"ما معنى «رجل مغموص عليه في النفاق»؟",a:"مطعون عليه ومتَّهم بالنفاق، معروف بذلك عند الناس."},
+ {s:6,q:"كيف يُستدل بكلام كعب في الرد على الطاعنين في الصحابة؟",a:"لأنه فرَّق حين بحث عن أسوة بين «المغموص عليه في النفاق» و«من عذر الله من الضعفاء» — فالتمييز بين الفريقين كان معروفًا قائمًا."},
+ {s:6,q:"من استخلف النبي ﷺ على المدينة في غزوة تبوك؟ وماذا قال له؟",a:"عليّ بن أبي طالب رضي الله عنه، وقال له: «ألا ترضى أن تكون مني بمنزلة هارون من موسى، غير أنه لا نبي بعدي»."},
+ {s:6,q:"ماذا قال الرجل من بني سَلِمة عن كعب؟ وبم ردَّ معاذ بن جبل؟",a:"قال: «حبسه بُرداه والنظر في عِطفَيه»، فقال معاذ: «بئس ما قلت، والله يا رسول الله ما علمنا عليه إلا خيرًا»، فسكت النبي ﷺ."},
+ {s:6,q:"أيهما كان أقرب إلى الواقع وأيهما أصوب في تصرفه: القائل أم معاذ؟",a:"القائل كان أقرب إلى واقع كعب فعلًا، لكن معاذًا هو الأصوب في تصرفه — وهو منهج إحسان الظن."},
+ {s:6,q:"متى يكون حسن الظن مطلوبًا بحسب تقرير الشيخ؟",a:"حين تأتي الرِّيبة والتهمة والإشكال؛ أما في المواضع التي لا رِيبة فيها أصلًا فليست موضع تبرُّع بحسن الظن."},
+ {s:6,q:"ما القاعدة المستفادة من «ما علمنا عليه إلا خيرًا»؟",a:"الحكم بمجموع الحال: لا تحاكم الإنسان على حادثة واحدة، بل انظر إلى سجلّه ومجموع حاله."},
+ {s:7,q:"ما تفسير «تبسَّم تبسُّم المغضَب»؟",a:"أن الشعور غضب، وإنما ظهرت ابتسامة رعايةً لحق الصحبة الماضي؛ فكعب شهد المشاهد وبايع في العقبة."},
+ {s:7,q:"كيف وازن كعب بين الصدق والكذب في تلك اللحظة؟",a:"قال: إن حدَّثتك حديث كذب ترضى به عني يوشك الله أن يُسخطك عليَّ، وإن حدَّثتك حديث صدق تجد عليَّ فيه فإني أرجو فيه عُقبى الله."},
+ {s:7,q:"كيف عامل النبي ﷺ المخلَّفين المنافقين وكم كانوا؟",a:"كانوا بضعًا وثمانين رجلًا، فقبل منهم علانيتهم وبايعهم واستغفر لهم ووكل سرائرهم إلى الله."},
+ {s:7,q:"من الرجلان اللذان لقيا مثل ما لقي كعب؟",a:"مُرارة بن الربيع العَمْري، وهلال بن أمية الواقفي — وهما رجلان صالحان قد شهدا بدرًا."},
+ {s:8,q:"على أي شيء هُجر الثلاثة، وما الدرس المستفاد؟",a:"لا على زنًا ولا سرقة ولا خمر، بل على التخلف عن نصرة الإسلام مع رسول الله ﷺ — وهو إعادة تعريف لثقل الذنوب."},
+ {s:8,q:"ماذا فعل أبو قتادة حين ناشده كعب بالله؟ ومن هو منه؟",a:"سكت مرتين ثم قال: «الله ورسوله أعلم»، وهو ابن عمه وأحبُّ الناس إليه."},
+ {s:8,q:"ماذا جاء في كتاب ملك غسان إلى كعب، وماذا صنع به؟",a:"دعاه إليه قائلًا: «قد بلغنا أن صاحبك قد جفاك… فالحق بنا نواسك»، فقال: «وهذه أيضًا من البلاء»، وأحرقها في التنور."},
+ {s:8,q:"متى جاء الأمر باعتزال النساء، وبم أجاب كعب؟",a:"بعد مضي أربعين ليلة من الخمسين، فقال: «أطلقها أم ماذا أفعل؟» فقيل: بل اعتزلها، فأرسل امرأته إلى أهلها."},
+ {s:8,q:"بم اعتذرت امرأة هلال بن أمية عن خدمتها له؟ وبم أجابها النبي ﷺ؟",a:"قالت إنه شيخ ضائع ليس له خادم، وإنه ما زال يبكي منذ كان من أمره ما كان؛ فقال ﷺ: «لا، ولكن لا يقربنَّكِ»."},
+ {s:9,q:"أين جبل سَلْع، وما علاقته بيوم الخندق؟",a:"قريب من المسجد النبوي من جهته الغربية، وهو الجبل الذي كان في ظهر النبي ﷺ والصحابة يوم الخندق."},
+ {s:9,q:"بم بشَّر الصارخُ كعبًا، وماذا صنع كعب؟",a:"نادى بأعلى صوته: «يا كعب بن مالك، أبشِر» فقط، فخرَّ كعب ساجدًا وعرف أن قد جاء فرج."},
+ {s:9,q:"ماذا أعطى كعب للمبشِّر، وما معنى «الثوب» في ذلك العرف؟",a:"نزع ثوبيه فكساهما إياه، وهما كل ما يملك؛ والثوب حينها قطعة قماش كالإزار والرداء، والمفصَّل ذو الأكمام يسمى قميصًا."},
+ {s:9,q:"من الوحيد من المهاجرين الذي قام يهرول ليهنّئ كعبًا؟",a:"طلحة بن عبيد الله رضي الله عنه — وكان كعب لا ينساها له."},
+ {s:9,q:"بم بشَّر النبي ﷺ كعبًا حين سلَّم عليه؟",a:"قال وهو يبرق وجهه من السرور: «أبشِر بخير يوم مرَّ عليك منذ ولدتك أمك»، وقال إنها من عند الله لا من عنده."},
+ {s:9,q:"بم أجاب النبي ﷺ كعبًا حين أراد أن ينخلع من كل ماله صدقة؟",a:"قال: «أمسك عليك بعض مالك فهو خير لك»، فأمسك كعب سهمه الذي بخيبر."},
+ {s:9,q:"ما معنى ﴿وعلى الثلاثة الذين خُلِّفوا﴾ كما بيّنه كعب نفسه؟",a:"ليس المراد تخلُّفهم عن الغزو، وإنما تخليف النبي ﷺ إياهم وإرجاء أمرهم عمن حلف واعتذر فقُبل منه."}
+];
+
+let cur=0, filt=0, view=CARDS.map((c,i)=>i);
+const $=id=>document.getElementById(id);
+
+function buildFilters(){
+  const f=$('filters');
+  const all=document.createElement('button');
+  all.className='fbtn on'; all.textContent='الكل ('+CARDS.length+')';
+  all.style.setProperty('--fc','#C7A15C');
+  all.onclick=()=>setFilter(0,all);
+  f.appendChild(all);
+  SECS.forEach(s=>{
+    const n=CARDS.filter(c=>c.s===s.id).length;
+    const b=document.createElement('button');
+    b.className='fbtn'; b.textContent=s.n+' ('+n+')';
+    b.style.setProperty('--fc',s.c);
+    b.onclick=()=>setFilter(s.id,b);
+    f.appendChild(b);
+  });
+}
+function setFilter(id,btn){
+  filt=id;
+  document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('on'));
+  btn.classList.add('on');
+  view=CARDS.map((c,i)=>i).filter(i=>filt===0||CARDS[i].s===filt);
+  cur=0; render();
+}
+function render(){
+  if(!view.length)return;
+  const c=CARDS[view[cur]];
+  const s=SECS.find(x=>x.id===c.s);
+  $('flip').classList.remove('on');
+  $('q').textContent=c.q; $('a').textContent=c.a;
+  $('fsec').textContent=s.n;
+  $('fsec').style.color=s.c;
+  $('count').textContent=(cur+1)+' / '+view.length;
+}
+$('flip').onclick=()=>$('flip').classList.toggle('on');
+$('flip').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();$('flip').classList.toggle('on');}};
+$('next').onclick=()=>{cur=(cur+1)%view.length;render();};
+$('prev').onclick=()=>{cur=(cur-1+view.length)%view.length;render();};
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowLeft'){cur=(cur+1)%view.length;render();}
+  if(e.key==='ArrowRight'){cur=(cur-1+view.length)%view.length;render();}
+});
+$('dl').onclick=()=>{
+  const tsv=CARDS.map(c=>c.q.replace(/\t/g,' ')+'\t'+c.a.replace(/\t/g,' ')).join('\n');
+  const blob=new Blob(['\uFEFF'+tsv],{type:'text/tab-separated-values;charset=utf-8'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='رياض_الصالحين_04_باب_التوبة_2.tsv';
+  a.click(); URL.revokeObjectURL(a.href);
+};
+document.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  $('prog').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+});
+buildFilters(); render();
+</script>
 </body>
 </html>
