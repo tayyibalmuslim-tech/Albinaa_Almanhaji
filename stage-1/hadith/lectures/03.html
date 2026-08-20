@@ -215,6 +215,122 @@ footer .dl-btn{margin-top:16px}
   .isnad{font-size:17px}
 }
 </style>
+
+<style>
+/* ===== تثبيت الفهم — الأسئلة التفاعلية ===== */
+.quiz-block{
+  margin:32px 0 24px;
+  background:var(--green-deeper, #132920);
+  border-radius:12px;
+  padding:24px;
+  box-shadow:0 6px 24px rgba(31,61,46,.14);
+  position:relative;
+  overflow:hidden;
+  direction:rtl;
+  text-align:right;
+}
+.quiz-block::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:radial-gradient(circle at 90% 10%, rgba(201,164,90,.12) 0, transparent 45%);
+  pointer-events:none;
+}
+.quiz-block-title{
+  display:flex; align-items:center; gap:8px;
+  font-weight:800; font-size:14px;
+  color:var(--gold-pale, #F2E6C4);
+  letter-spacing:.3px;
+  margin-bottom:16px;
+  position:relative;
+}
+.quiz-item{
+  background:rgba(255,254,250,.06);
+  border:1px solid rgba(199,164,90,.25);
+  border-radius:8px;
+  padding:16px;
+  margin-bottom:16px;
+  position:relative;
+}
+.quiz-item:last-child{margin-bottom:0;}
+.quiz-q{
+  font-size:15.5px; font-weight:700;
+  color:#FBF7EE;
+  margin:0 0 16px;
+  line-height:1.7;
+}
+.quiz-options{display:flex; flex-direction:column; gap:8px;}
+.quiz-opt{
+  display:block; width:100%; text-align:right;
+  background:rgba(251,247,238,.08);
+  border:1px solid rgba(251,247,238,.18);
+  color:#FBF7EE;
+  font-family:inherit; font-size:14px; line-height:1.6;
+  border-radius:8px;
+  padding:10px 14px;
+  cursor:pointer;
+  transition:background .15s ease, border-color .15s ease, transform .1s ease;
+}
+.quiz-opt:hover{background:rgba(251,247,238,.15); border-color:rgba(199,164,90,.5);}
+.quiz-opt:active{transform:scale(.99);}
+.quiz-opt.correct{
+  background:rgba(46,84,67,.9);
+  border-color:#8FBF9E;
+  color:#EAF6EE;
+  font-weight:700;
+}
+.quiz-opt.correct::after{content:" \2713"; color:#8FBF9E;}
+.quiz-opt.wrong{
+  background:rgba(140,59,46,.55);
+  border-color:#D89A8C;
+  color:#F7E6E2;
+}
+.quiz-opt.wrong::after{content:" \2715"; color:#F1B3A6;}
+.quiz-opt.disabled{cursor:default; pointer-events:none;}
+.quiz-feedback{
+  margin-top:10px;
+  font-size:13.5px; line-height:1.8;
+  color:var(--gold-pale, #F2E6C4);
+  background:rgba(0,0,0,.15);
+  border-right:3px solid var(--gold, #A9832E);
+  border-radius:6px;
+  padding:9px 12px;
+  display:none;
+}
+.quiz-feedback.show{display:block;}
+.quiz-reflect{
+  border-top:1px dashed rgba(199,164,90,.3);
+  padding-top:16px;
+  margin-top:16px;
+}
+.quiz-item > .quiz-reflect:first-child{border-top:none; padding-top:0; margin-top:0;}
+.quiz-reflect-q{
+  font-size:14.5px; color:var(--gold-pale, #F2E6C4); font-weight:600;
+  margin:0 0 8px;
+}
+.quiz-reveal-btn{
+  background:var(--gold, #A9832E);
+  color:var(--green-deeper, #132920);
+  border:none; border-radius:999px;
+  font-family:inherit;
+  font-weight:700; font-size:13px;
+  padding:8px 18px;
+  cursor:pointer;
+  transition:background .15s ease;
+}
+.quiz-reveal-btn:hover{background:var(--gold-soft, #C7A45A);}
+.quiz-answer{
+  display:none;
+  margin-top:10px;
+  font-size:14px; line-height:1.85;
+  color:#FBF7EE;
+  background:rgba(255,254,250,.08);
+  border-radius:8px;
+  padding:11px 14px;
+}
+.quiz-answer.show{display:block;}
+@media (max-width:640px){ .quiz-block{padding:16px;} }
+</style>
+
 </head>
 <body>
 
@@ -301,7 +417,9 @@ footer .dl-btn{margin-top:16px}
       <li>ضخامة المكتبة الحديثية لا تُضبط إلا بمفتاح يردّ الفروع إلى أصولها.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s1"></div>
+    </section>
 
 <!-- ============ 2 ============ -->
 <section id="s2" class="sec" style="--accent:var(--s2)">
@@ -394,7 +512,9 @@ footer .dl-btn{margin-top:16px}
       <li>قواعد النقل تُبحث <em>قبل</em> الحكم على الحديث بالصحة، لا بعده.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s2"></div>
+    </section>
 
 <!-- ============ 3 ============ -->
 <section id="s3" class="sec" style="--accent:var(--s3)">
@@ -470,7 +590,9 @@ footer .dl-btn{margin-top:16px}
       <li>أساس الدين التلقّي؛ ولذلك كان التشهد يُلقَّن كما تُلقَّن السورة.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s3"></div>
+    </section>
 
 <!-- ============ 4 ============ -->
 <section id="s4" class="sec" style="--accent:var(--s4)">
@@ -580,7 +702,9 @@ footer .dl-btn{margin-top:16px}
       <li>الصلاح وشهرة الاسم لا يكفيان في الرواية؛ العبرة بدخول الراوي في نظام الرواية ومعرفته فيه (مثال: العلاء بن بشير).</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s4"></div>
+    </section>
 
 <!-- ============ 5 ============ -->
 <section id="s5" class="sec" style="--accent:var(--s5)">
@@ -688,7 +812,9 @@ footer .dl-btn{margin-top:16px}
       <li>القاعدة: كلما كثرت مداخل الإشكال في الرواية ازداد الاحتياج إلى التدقيق فيها.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s5"></div>
+    </section>
 
 <!-- ============ 6 ============ -->
 <section id="s6" class="sec" style="--accent:var(--s6)">
@@ -787,7 +913,9 @@ footer .dl-btn{margin-top:16px}
       <li>الطبقات نوعان: زمنية، وباعتبار الضبط والعلم بالشيخ (كصنيع النسائي في طبقات الرواة عن الصحابي).</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s6"></div>
+    </section>
 
 <!-- ============ 7 ============ -->
 <section id="s7" class="sec" style="--accent:var(--s7)">
@@ -966,7 +1094,9 @@ footer .dl-btn{margin-top:16px}
       <li>ترتيب ابن حبان الأصولي العجيب مثالٌ آخر على احتياج الأصل إلى فرعٍ يخدمه.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s7"></div>
+    </section>
 
 <!-- ============ 8 ============ -->
 <section id="s8" class="sec" style="--accent:var(--s8)">
@@ -1127,7 +1257,9 @@ footer .dl-btn{margin-top:16px}
       <li>بدأ التدوين في الباب الثاني أواخر القرن الثاني: مسائل تلاميذ أحمد، وروايات تلاميذ ابن معين، ثم علل ابن المديني وعلل الترمذي الكبير ورسالة أبي داود.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s8"></div>
+    </section>
 
 <!-- ============ 9 ============ -->
 <section id="s9" class="sec" style="--accent:var(--s9)">
@@ -1368,7 +1500,9 @@ footer .dl-btn{margin-top:16px}
       <li>القرنان الثاني والثالث هما زمن النشأة والتأسيس وبلوغ الذروة في علوم الحديث.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s9"></div>
+    </section>
 
 </main>
 
@@ -1553,6 +1687,336 @@ function downloadTSV(){
 
 buildFilters();
 render();
+</script>
+
+
+<script>
+window.quizData = {
+ "s1": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما «المفتاح» الذي تنقسم به علوم الحديث والسنة؟",
+    "options": [
+     "بابان: ما يتعلق بالمتن النبوي، وما يتعلق بطريقة نقله",
+     "بابان: الصحيح والضعيف",
+     "ثلاثة أبواب: المرفوع والموقوف والمقطوع"
+    ],
+    "correct": 0,
+    "feedback": "الباب الأول (المتن) ينقسم بدوره إلى قسمين: نقل المتن مجردًا، والتفقه فيه. فصار المجموع ثلاثة أقسام تُصنَّف بها كل كتب السنة."
+   },
+   {
+    "type": "reflect",
+    "q": "لماذا احتاج الشيخ إلى وضع «مفتاح» قبل الدخول في تفاصيل علوم الحديث؟",
+    "answer": "لأن علوم الحديث بحر لا نهاية له؛ فالمكتبة الإسلامية المتعلقة به لا يحصيها باحث، حتى الكتب المؤلفة لحصر المؤلفات في السنة يصعب الإحاطة بها. فضخامة المكتبة الحديثية لا تُضبط إلا بمفتاح يردّ الفروع إلى أصولها."
+   }
+  ]
+ },
+ "s2": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "حديث «نضَّر الله امرأً سمع منا حديثًا فحفظه حتى يبلّغه...» — أي الأقسام جمع؟",
+    "options": [
+     "القسم الثالث فقط (ضبط النقل)",
+     "القسمين الأول والثاني من الباب الأول: نقل المتن والتفقه فيه",
+     "لا علاقة له بالتقسيم"
+    ],
+    "correct": 1,
+    "feedback": "«فحفظه حتى يبلّغه» ← نقل المتن. و«ربَّ حامل فقه إلى من هو أفقه منه» ← التفقه في المتن. و«ربَّ حامل فقه ليس بفقيه» ← الناقل المجرد غير الفقيه."
+   },
+   {
+    "type": "mcq",
+    "q": "بماذا افتتح الإمام مسلم مقدمة صحيحه؟",
+    "options": [
+     "بأحاديث فضل الصلاة",
+     "بأحاديث متعلقة بضبط النقل والتثبت، كحديث «من كذب عليّ متعمدًا فليتبوّأ مقعده من النار»",
+     "بتراجم الرواة"
+    ],
+    "correct": 1,
+    "feedback": "وذكر أيضًا: «كفى بالمرء كذبًا أن يحدّث بكل ما سمع»، و«سيكون في آخر أمتي ناسٌ يحدّثونكم ما لم تسمعوا أنتم ولا آباؤكم، فإياكم وإياهم»."
+   }
+  ]
+ },
+ "s3": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "لما سأل أبو هريرة النبي ﷺ: من أسعد الناس بشفاعتك؟ بم بدأ النبي ﷺ قبل أن يجيبه؟",
+    "options": [
+     "بتوبيخه على كثرة السؤال",
+     "بقوله: «لقد ظننتُ يا أبا هريرة ألا يسألني عن هذا الحديث أحدٌ أولَ منك، لما رأيتُ من حِرصك على الحديث»",
+     "بالسكوت"
+    ],
+    "correct": 1,
+    "feedback": "وهذا تشجيع كبير من النبي ﷺ لأبي هريرة أن يزداد حرصًا على الحديث. وكذلك قال لعبد الله بن عمرو: «اكتب، فوالذي نفسي بيده ما خرج منه إلا حق»."
+   },
+   {
+    "type": "reflect",
+    "q": "تنقسم السنة إلى مبيّنة للقرآن وزائدة عليه. اضرب مثالًا على النوع الأول.",
+    "answer": "كل ما ورد عن النبي ﷺ في صفة الصلاة؛ لأن الله قال: ﴿أَقِيمُوا الصَّلَاةَ﴾ — فكيف نقيمها؟ وكيف نسجد ونركع؟ وكم عدد الركعات؟ وما الأوقات؟ هذا كله بيان نبوي للمجمل القرآني، وقد بيّنه ﷺ بفعله في عشرات بل مئات الأحاديث."
+   }
+  ]
+ },
+ "s4": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "من الصحابي الذي عُرف بنقل الحديث (القسم الأول) أكثر من غيره؟",
+    "options": [
+     "عمر بن الخطاب",
+     "أبو هريرة رضي الله عنه",
+     "زيد بن ثابت"
+    ],
+    "correct": 1,
+    "feedback": "لا يعني هذا أنه لم يُنقل عنه فقه، لكن أكثر ما نُقل عنه هو نفس المتن. أما من عُرف بالفقه والفتوى فعمر وعليّ وزيد بن ثابت، ثم ابن عباس وابن عمر وابن مسعود وعائشة."
+   },
+   {
+    "type": "reflect",
+    "q": "التفقه في الحديث عند الصحابة — هل كان على هيئة دروس عنوانها «شرح الحديث» كما نصنع اليوم؟",
+    "answer": "لا؛ السنة ما كانت مجموعة بهذه الطريقة أصلًا. وإنما كان كثيرٌ من هذا التفقه عبارة عن تطبيق عملي من الصحابة لما فقهوه من سنة رسول الله ﷺ."
+   }
+  ]
+ },
+ "s5": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ماذا يعني وصف «صغار التابعين»؟",
+    "options": [
+     "أنهم صغار في العلم والمكانة",
+     "أنهم صغار من حيث السنّ، أي لم يدركوا كبار الصحابة",
+     "أنهم قليلو الرواية"
+    ],
+    "correct": 1,
+    "feedback": "ومنهم الزهري وقتادة بن دِعامة السدوسي — وهم من أجلّ الأئمة علمًا ومكانة رغم وصفهم بـ«الصغار»."
+   },
+   {
+    "type": "mcq",
+    "q": "من أول من فتّش في الأسانيد وتتبّعها؟",
+    "options": [
+     "شعبة بن الحجاج",
+     "محمد بن سيرين",
+     "يحيى بن معين"
+    ],
+    "correct": 1,
+    "feedback": "صاحب الكلمة المشهورة التي ذكرها مسلم في مقدمة صحيحه: «إن هذا العلم دين فانظروا عمّن تأخذون دينكم». وقد نشأت عنه في البصرة مدرسة حديثية للتوثّق والتثبّت."
+   },
+   {
+    "type": "reflect",
+    "q": "ما القاعدة العامة التي تفسّر ازدهار النقد الحديثي في زمن معيّن دون غيره؟",
+    "answer": "كلما كثرت التحديات ومداخل الإشكال في الرواية، ازداد الاحتياج إلى التدقيق فيها. فكلما تأخر الزمن ودخل في الرواية من ليس من أهلها أو من ليس متقنًا، صارت هناك حاجة إلى فرز الرواة: ثقة وغير ثقة، ضعيف وغير ضعيف."
+   }
+  ]
+ },
+ "s6": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "هل كانت السنة في زمن التابعين تُكتب أم تُنقل شفهيًا؟",
+    "options": [
+     "شفهيًا فقط",
+     "كتابةً فقط",
+     "الاثنان معًا، لكن الأصل هو النقل الشفهي"
+    ],
+    "correct": 2,
+    "feedback": "بل كان بعض التابعين يحاربون الكتابة ويتبنّون الحفظ؛ فكان الشعبي يفتخر ويقول: «ما كتبتُ سوداء في بيضاء»، وقال قائلهم: «ما استودعتُ قلبي شيئًا فخانني»."
+   },
+   {
+    "type": "mcq",
+    "q": "ما معنى أن صحف التابعين كانت «غير مصنَّفة»؟",
+    "options": [
+     "أنها كانت ضعيفة الإسناد",
+     "أنها لم تكن مبوَّبة على الأبواب والموضوعات، بل أحاديث مجموعة كما سُمعت",
+     "أنها لم تُنسب إلى أصحابها"
+    ],
+    "correct": 1,
+    "feedback": "المصنَّف هو المبوَّب المقسّم على الأبواب. أما هذه الصحف فتحضر عند الشيخ فتكتب عنه الحديث كما سمعته دون ترتيب موضوعي."
+   },
+   {
+    "type": "reflect",
+    "q": "ما «صحيفة همام بن منبه»؟ وما التنبيه المهم المتعلق بها؟",
+    "answer": "هي صحيفة عن أبي هريرة رضي الله عنه، رواها عن همام معمرٌ، وعن معمر عبدُ الرزاق، وأوردها الإمام أحمد في مسنده كاملة، وهي نحو 140 حديثًا، وتُعدّ من أقدم ما دُوّن في الحديث النبوي. والتنبيه: أنها لهمّام لا لأخيه وهب بن منبه — والالتباس طبيعي لأنهما أخوان، ووهبٌ هو صاحب القصص."
+   }
+  ]
+ },
+ "s7": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما أبرز ما تميّزت به طبقة أتباع التابعين في باب النقل؟",
+    "options": [
+     "ظهور التصنيف، أي ترتيب الأحاديث على الأبواب والموضوعات",
+     "ترك الكتابة والاعتماد على الحفظ",
+     "الاقتصار على المرفوع دون الموقوف"
+    ],
+    "correct": 0,
+    "feedback": "فصار عندنا كتب مصنَّفة: تفتح الكتاب فتجد كتاب الطهارة، كتاب الصلاة، كتاب الحج... وأبرزها الموطأ للإمام مالك (ت 179هـ)."
+   },
+   {
+    "type": "mcq",
+    "q": "أين موقع «الموطأ» من المفتاح (الأقسام الثلاثة)؟",
+    "options": [
+     "في الباب الثاني (ضبط النقل) فقط",
+     "في الباب الأول وفي القسمين معًا: النقل المجرد والتفقه فيه",
+     "في القسم الأول فقط (النقل المجرد)"
+    ],
+    "correct": 1,
+    "feedback": "لأن الإمام مالك ينقل الأحاديث ثم يعلّق عليها بنفسه ويفتي تفريعًا على الأثر — فالنقل من القسم الأول، والتعليق من القسم الثاني."
+   },
+   {
+    "type": "reflect",
+    "q": "في إسناد الموطأ: «حدثني يحيى، عن مالك، عن نافع، عن ابن عمر» — من هو «يحيى»؟ ومن أين يبدأ الإسناد؟",
+    "answer": "«يحيى» ليس الإمام مالك، وإنما هو راوي الكتاب: يحيى بن يحيى. فالراوي عن يحيى هو الذي يروي الإسناد، والإسناد نفسه يبدأ من عند نافع."
+   }
+  ]
+ },
+ "s8": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "من أهم شخصية أسست المنهج النقدي في زمن أتباع التابعين؟",
+    "options": [
+     "يحيى بن معين",
+     "شعبة بن الحجاج",
+     "عليّ بن المديني"
+    ],
+    "correct": 1,
+    "feedback": "قال عنه ابن رجب: هو أول من وسّع الكلام في العلل ونحوها. وسلسلة النسب العلمي في النقد: شعبة ← يحيى بن سعيد القطان ← أحمد بن حنبل ويحيى بن معين وعليّ بن المديني."
+   },
+   {
+    "type": "reflect",
+    "q": "أشهر ثلاثة في نقد الحديث والرواة هم أحمد وابن معين وابن المديني. من شيخهم في الصنعة؟ ومن شيخه؟",
+    "answer": "شيخهم في الصنعة الحديثية هو يحيى بن سعيد القطان، وشيخُ القطان هو شعبة بن الحجاج (ت 160/161هـ) — وهذه السلسلة تبيّن قيمة شعبة وقيمة توسيع النقد في زمن أتباع التابعين."
+   }
+  ]
+ },
+ "s9": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما الفرق بين «مسند الإمام أحمد» و«مصنف ابن أبي شيبة» من جهة المضمون؟",
+    "options": [
+     "المسند للمرفوع فقط، والمصنف يجمع المرفوع وكلام الصحابة والتابعين",
+     "كلاهما للمرفوع فقط",
+     "المسند مرتب على الأبواب والمصنف على المسانيد"
+    ],
+    "correct": 0,
+    "feedback": "مسند أحمد قرابة 27000 حديث مصنَّف على مسانيد الصحابة لا الأبواب. ومصنف ابن أبي شيبة قرابة 38000 حديث وأثر، مرتب على أبواب الفقه، وأكثره غير مرفوع."
+   },
+   {
+    "type": "mcq",
+    "q": "فائدة عملية: إذا أردت فقه الصحابة، فإلى أي الكتب ترجع؟",
+    "options": [
+     "مسند الإمام أحمد",
+     "مصنَّف عبد الرزاق ومصنَّف ابن أبي شيبة، وباختصار: الموطأ",
+     "صحيح البخاري ومسلم"
+    ],
+    "correct": 1,
+    "feedback": "على أن الموطأ خاصٌّ وليس في هدي الصحابة عمومًا، فهو أخصر لكنه أضيق."
+   },
+   {
+    "type": "reflect",
+    "q": "لماذا كان عبد الله بن المبارك يعطي المحدّثين في بلدان أخرى بدل فقراء بلده؟ وما التعليق المعاصر على ذلك؟",
+    "answer": "كان يقول: «هؤلاء يحفظون الدين» — فهم يشتغلون بشيء يشغلهم عن طلب الرزق. وعلّق الشيخ بأن هذه فكرة ضرورية في زماننا: أن يكون للأمة صناديق أو دعم لطلاب العلم المتفرغين الذين يكونون من المصلحين. ونبّه أيضًا ألا نقرأ سير العلماء من زاوية واحدة، فلهم سيرٌ شاملة في العبادة والجهاد والإنفاق."
+   }
+  ]
+ }
+};
+</script>
+
+<script>
+/* ===== تثبيت الفهم: محرك الرندر ===== */
+(function(){
+  function renderQuizBlocks(){
+    document.querySelectorAll('.quiz-block[data-quiz]').forEach(function(container){
+      var key = container.getAttribute('data-quiz');
+      var data = (window.quizData || {})[key];
+      if(!data || container.dataset.rendered) return;
+      container.dataset.rendered = '1';
+
+      var title = document.createElement('div');
+      title.className = 'quiz-block-title';
+      title.textContent = '\uD83E\uDDE0 تثبيت الفهم';
+      container.appendChild(title);
+
+      data.items.forEach(function(item){
+        var itemEl = document.createElement('div');
+        itemEl.className = 'quiz-item';
+
+        if(item.type === 'mcq'){
+          var qEl = document.createElement('p');
+          qEl.className = 'quiz-q';
+          qEl.textContent = item.q;
+          itemEl.appendChild(qEl);
+
+          var optsWrap = document.createElement('div');
+          optsWrap.className = 'quiz-options';
+
+          var feedbackEl = document.createElement('div');
+          feedbackEl.className = 'quiz-feedback';
+          feedbackEl.textContent = item.feedback || '';
+
+          item.options.forEach(function(optText, optIdx){
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'quiz-opt';
+            btn.textContent = optText;
+            btn.addEventListener('click', function(){
+              var allBtns = optsWrap.querySelectorAll('.quiz-opt');
+              allBtns.forEach(function(b){ b.classList.add('disabled'); });
+              if(optIdx === item.correct){
+                btn.classList.add('correct');
+              } else {
+                btn.classList.add('wrong');
+                if(allBtns[item.correct]) allBtns[item.correct].classList.add('correct');
+              }
+              feedbackEl.classList.add('show');
+            });
+            optsWrap.appendChild(btn);
+          });
+
+          itemEl.appendChild(optsWrap);
+          itemEl.appendChild(feedbackEl);
+
+        } else if(item.type === 'reflect'){
+          var wrap = document.createElement('div');
+          wrap.className = 'quiz-reflect';
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-reflect-q';
+          qText.textContent = '\uD83D\uDCAD ' + item.q;
+          wrap.appendChild(qText);
+
+          var revealBtn = document.createElement('button');
+          revealBtn.type = 'button';
+          revealBtn.className = 'quiz-reveal-btn';
+          revealBtn.textContent = 'إظهار الإجابة';
+
+          var answerEl = document.createElement('div');
+          answerEl.className = 'quiz-answer';
+          answerEl.textContent = item.answer;
+
+          revealBtn.addEventListener('click', function(){
+            answerEl.classList.toggle('show');
+            revealBtn.textContent = answerEl.classList.contains('show') ? 'إخفاء الإجابة' : 'إظهار الإجابة';
+          });
+
+          wrap.appendChild(revealBtn);
+          wrap.appendChild(answerEl);
+          itemEl.appendChild(wrap);
+        }
+
+        container.appendChild(itemEl);
+      });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', renderQuizBlocks);
+  } else {
+    renderQuizBlocks();
+  }
+})();
 </script>
 
 </body>
