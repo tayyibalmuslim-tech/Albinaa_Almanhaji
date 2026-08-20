@@ -133,6 +133,122 @@
     .fq-footer p{margin:6px 0;}
     .fq-footer .du3a{font-family:'Amiri',serif;font-size:1.15rem;color:var(--fq-gold-soft);}
   </style>
+
+<style>
+/* ===== تثبيت الفهم — الأسئلة التفاعلية ===== */
+.quiz-block{
+  margin:32px 0 24px;
+  background:var(--green-deeper, #132920);
+  border-radius:12px;
+  padding:24px;
+  box-shadow:0 6px 24px rgba(31,61,46,.14);
+  position:relative;
+  overflow:hidden;
+  direction:rtl;
+  text-align:right;
+}
+.quiz-block::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:radial-gradient(circle at 90% 10%, rgba(201,164,90,.12) 0, transparent 45%);
+  pointer-events:none;
+}
+.quiz-block-title{
+  display:flex; align-items:center; gap:8px;
+  font-weight:800; font-size:14px;
+  color:var(--gold-pale, #F2E6C4);
+  letter-spacing:.3px;
+  margin-bottom:16px;
+  position:relative;
+}
+.quiz-item{
+  background:rgba(255,254,250,.06);
+  border:1px solid rgba(199,164,90,.25);
+  border-radius:8px;
+  padding:16px;
+  margin-bottom:16px;
+  position:relative;
+}
+.quiz-item:last-child{margin-bottom:0;}
+.quiz-q{
+  font-size:15.5px; font-weight:700;
+  color:#FBF7EE;
+  margin:0 0 16px;
+  line-height:1.7;
+}
+.quiz-options{display:flex; flex-direction:column; gap:8px;}
+.quiz-opt{
+  display:block; width:100%; text-align:right;
+  background:rgba(251,247,238,.08);
+  border:1px solid rgba(251,247,238,.18);
+  color:#FBF7EE;
+  font-family:inherit; font-size:14px; line-height:1.6;
+  border-radius:8px;
+  padding:10px 14px;
+  cursor:pointer;
+  transition:background .15s ease, border-color .15s ease, transform .1s ease;
+}
+.quiz-opt:hover{background:rgba(251,247,238,.15); border-color:rgba(199,164,90,.5);}
+.quiz-opt:active{transform:scale(.99);}
+.quiz-opt.correct{
+  background:rgba(46,84,67,.9);
+  border-color:#8FBF9E;
+  color:#EAF6EE;
+  font-weight:700;
+}
+.quiz-opt.correct::after{content:" \2713"; color:#8FBF9E;}
+.quiz-opt.wrong{
+  background:rgba(140,59,46,.55);
+  border-color:#D89A8C;
+  color:#F7E6E2;
+}
+.quiz-opt.wrong::after{content:" \2715"; color:#F1B3A6;}
+.quiz-opt.disabled{cursor:default; pointer-events:none;}
+.quiz-feedback{
+  margin-top:10px;
+  font-size:13.5px; line-height:1.8;
+  color:var(--gold-pale, #F2E6C4);
+  background:rgba(0,0,0,.15);
+  border-right:3px solid var(--gold, #A9832E);
+  border-radius:6px;
+  padding:9px 12px;
+  display:none;
+}
+.quiz-feedback.show{display:block;}
+.quiz-reflect{
+  border-top:1px dashed rgba(199,164,90,.3);
+  padding-top:16px;
+  margin-top:16px;
+}
+.quiz-item > .quiz-reflect:first-child{border-top:none; padding-top:0; margin-top:0;}
+.quiz-reflect-q{
+  font-size:14.5px; color:var(--gold-pale, #F2E6C4); font-weight:600;
+  margin:0 0 8px;
+}
+.quiz-reveal-btn{
+  background:var(--gold, #A9832E);
+  color:var(--green-deeper, #132920);
+  border:none; border-radius:999px;
+  font-family:inherit;
+  font-weight:700; font-size:13px;
+  padding:8px 18px;
+  cursor:pointer;
+  transition:background .15s ease;
+}
+.quiz-reveal-btn:hover{background:var(--gold-soft, #C7A45A);}
+.quiz-answer{
+  display:none;
+  margin-top:10px;
+  font-size:14px; line-height:1.85;
+  color:#FBF7EE;
+  background:rgba(255,254,250,.08);
+  border-radius:8px;
+  padding:11px 14px;
+}
+.quiz-answer.show{display:block;}
+@media (max-width:640px){ .quiz-block{padding:16px;} }
+</style>
+
 </head>
 <body class="" data-page="lecture" data-lecture-id="stage1_fiqh_01">
   <div class="page">
@@ -291,7 +407,9 @@
             <tr><td>مثال</td><td>فهم مسألة رياضية</td><td>حضور درس في صفة الجنة والنار</td><td>معرفة أحكام الصلاة والزكاة</td></tr>
           </tbody>
         </table>
-      </section>
+      
+      <div class="quiz-block" data-quiz="definition"></div>
+    </section>
 
       <!-- ============ 4. موضوع علم الفقه ============ -->
       <section class="fq-section" id="subject">
@@ -306,7 +424,9 @@
           اصطلاحية اجتهد فيها بعض العلماء، وليست المعنى الشرعي الوارد على لسان الشرع في مثل قوله ﷺ "من يرد الله به خيرًا
           يفقّهه في الدين".
         </p>
-      </section>
+      
+      <div class="quiz-block" data-quiz="subject"></div>
+    </section>
 
       <!-- ============ 5. فضل علم الفقه ============ -->
       <section class="fq-section" id="virtue">
@@ -338,7 +458,9 @@
           مع هذه الأهمية العظيمة، لاحظ الشيخ أن كثيرًا من طلبة العلم — حتى في كليات الشريعة — يحفظون متونًا كاملة في النحو
           ومصطلح الحديث وأصول الفقه، بينما يتوقفون في الفقه عند أبواب محدودة (كالجنائز أو الزكاة) ولا يكملون أبوابه كاملة.
         </div>
-      </section>
+      
+      <div class="quiz-block" data-quiz="virtue"></div>
+    </section>
 
       <!-- ============ 6. حكم تعلم الفقه ============ -->
       <section class="fq-section" id="ruling">
@@ -361,7 +483,9 @@
             </p>
           </div>
         </div>
-      </section>
+      
+      <div class="quiz-block" data-quiz="ruling"></div>
+    </section>
 
       <!-- ============ 7. مراحل الفقه ============ -->
       <section class="fq-section" id="stages">
@@ -393,7 +517,9 @@
           لماذا التواريخ تقريبية إلا في مرحلة التشريع؟ لأن نشأة المذاهب واستقرارها حدث تدريجيًا عبر الزمن، بخلاف الأحداث
           السياسية التي يمكن تأريخها بيوم محدد (كتولّي خليفة معيّن)، فلا يمكن تحديد "يوم" تشكّلت فيه المذاهب الفقهية.
         </div>
-      </section>
+      
+      <div class="quiz-block" data-quiz="stages"></div>
+    </section>
 
       <!-- ============ 8. مرحلة التشريع ============ -->
       <section class="fq-section" id="tashree3">
@@ -420,7 +546,9 @@
           الفقه الإسلامي" للحجوي (الثعالبي)؛ فهو جيد من ناحية الرصد والجمع، وإن كان فيه بعض المآخذ في تحليل بعض الأحداث
           لا تخفى على طالب العلم المتمرّس.
         </div>
-      </section>
+      
+      <div class="quiz-block" data-quiz="tashree3"></div>
+    </section>
 
       <!-- ============ 9. مصادر التشريع ============ -->
       <section class="fq-section" id="sources">
@@ -439,7 +567,9 @@
           لم يكن النبي ﷺ يقيس؛ فاجتهاده صلى الله عليه وسلم — على القولين المشهورين عند الأصوليين في المسألة (هل كان يجتهد،
           أم لا يحكم إلا بتوقيف ووحي) — راجع على كلا القولين إلى دليل السنة النبوية.
         </div>
-      </section>
+      
+      <div class="quiz-block" data-quiz="sources"></div>
+    </section>
 
       <!-- ============ 10. معالم عصر التشريع ============ -->
       <section class="fq-section" id="features">
@@ -511,7 +641,9 @@
           الصحابة بلغ أربعة عشر صحابيًا. وقد جاء في حديث العسيف "فسألتُ أهل العلم"، وفي صحيح مسلم ذِكر "فقهاء الأنصار"، مما
           يدل على وجود من عُرف بالفقه حتى في حياة النبي ﷺ.
         </p>
-      </section>
+      
+      <div class="quiz-block" data-quiz="features"></div>
+    </section>
 
       <!-- ============ 11. فقهاء الصحابة ============ -->
       <section class="fq-section" id="sahaba">
@@ -540,7 +672,9 @@
           ولغتهم العربية سليقة صحيحة. أما من رُويت عنه الفتوى فعلًا وتصدّى للقضاء والإفتاء (الاجتهاد بالفعل)، فليس جميع
           الصحابة كذلك، بل تفاوتوا في ذلك تفاوتًا كبيرًا؛ فبعضهم أكثر رواية وفتوى من بعض.
         </p>
-      </section>
+      
+      <div class="quiz-block" data-quiz="sahaba"></div>
+    </section>
 
       <!-- ============ 12. أسئلة ختامية ============ -->
       <section class="fq-section" id="quiz">
@@ -640,5 +774,319 @@
 
   <script src="../../../data.js"></script>
   <script src="../../../script.js"></script>
+
+<script>
+window.quizData = {
+ "definition": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما الفقه لغةً؟",
+    "options": [
+     "العلم بالأحكام الشرعية العملية فقط",
+     "الفَهْم عمومًا، سواء في مسألة شرعية أو غير شرعية",
+     "العلم بمسائل الدين دون غيرها"
+    ],
+    "correct": 1,
+    "feedback": "الفقه لغةً هو الفَهْم عمومًا، فيصح أن تقول عن مسألة رياضية «فقهتُ هذه المسألة» أي فهمتُها — وهذه أوسع الدوائر الثلاث."
+   },
+   {
+    "type": "mcq",
+    "q": "أي الدوائر الثلاث هي الأضيق؟",
+    "options": [
+     "التعريف اللغوي",
+     "التعريف الشرعي",
+     "التعريف الاصطلاحي الخاص"
+    ],
+    "correct": 2,
+    "feedback": "الاصطلاحي الخاص هو الأضيق: العلم بالأحكام الشرعية الفرعية (العملية) المتعلقة بأفعال المكلفين، دون مسائل الاعتقاد وأمور الآخرة."
+   },
+   {
+    "type": "reflect",
+    "q": "حضور موعظة عن الجنة والنار — هل يدخل في «التفقّه في الدين»؟ فكّر قبل الكشف.",
+    "answer": "نعم، يدخل في الفقه بالمعنى الشرعي، وقد يكون أعظم وأولى من بعض مسائل الفقه الفرعية. والخلط الشائع أن يظن طالب العلم أن هذا ليس من طلب العلم الشرعي، والصواب أنه منه؛ ولذلك ورد في السياق نفسه: «قل هل يستوي الذين يعلمون والذين لا يعلمون» عقب ذكر القانت الخاشع."
+   }
+  ]
+ },
+ "subject": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما موضوع علم الفقه؟",
+    "options": [
+     "بدن الإنسان",
+     "أفعال العباد من حيث تعلّق الأحكام الشرعية بها",
+     "الكَلِمة وأحوالها"
+    ],
+    "correct": 1,
+    "feedback": "كما أن موضوع الطب بدن الإنسان، وموضوع النحو الكَلِمة، فموضوع الفقه أفعال العباد من حيث تعلّق الأحكام الشرعية بها."
+   },
+   {
+    "type": "reflect",
+    "q": "بعض العلماء سمّى علم العقيدة «الفقه الأكبر». هل يعني هذا أنه يدخل في الفقه الاصطلاحي؟",
+    "answer": "لا، فهذه تسمية اصطلاحية اجتهد فيها بعض العلماء، وليست المعنى الشرعي الوارد على لسان الشرع. فعلم العقيدة لا يدخل في الفقه بالمعنى الاصطلاحي الخاص."
+   }
+  ]
+ },
+ "virtue": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "حديث «من يرد الله به خيرًا يفقّهه في الدين» — يدخل في أي نوع من الفضل؟",
+    "options": [
+     "الفضل الخاص بعلم الفقه الاصطلاحي",
+     "الفضل العام للعلم الشرعي",
+     "لا يدل على فضل أصلًا"
+    ],
+    "correct": 1,
+    "feedback": "لأن لفظ «الفقه» في الحديث لا يُراد به خصوص علم الفقه الاصطلاحي، بل التفقّه في الدين بالمعنى الشرعي الواسع."
+   },
+   {
+    "type": "mcq",
+    "q": "بأي منهج استدل ابن الجوزي رحمه الله على أن الفقه أفضل العلوم؟",
+    "options": [
+     "بكثرة عدد كتبه ومصنفاته",
+     "بالنظر إلى ثمرته",
+     "بقدم نشأته التاريخية"
+    ],
+    "correct": 1,
+    "feedback": "قال: «أعظم دليل على فضيلة الشيء النظر إلى ثمرته، ومن تأمّل ثمرة الفقه علم أنه أفضل العلوم» — إذ نحو 99% من أسئلة الناس تدور حول مسائله."
+   },
+   {
+    "type": "reflect",
+    "q": "هل يعني هذا أن الفقه أعظم احتياجات الناس مطلقًا؟",
+    "answer": "لا. أعظم ما يحتاجه الناس هو تصحيح العقيدة وإخلاص التوحيد لله. لكن من جهة «الكثرة» فإن أكثر أسئلة الناس تتعلق بالفقه، حتى إن القاضي إنما يقضي بين الناس بعلم الفقه لا بعلم الحديث أو النحو."
+   }
+  ]
+ },
+ "ruling": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "معرفة صفة الصلاة وصفة الوضوء — ما حكم تعلّمها؟",
+    "options": [
+     "فرض كفاية",
+     "فرض عين على كل مسلم",
+     "مستحب فقط"
+    ],
+    "correct": 1,
+    "feedback": "فرض عين يأثم الإنسان إن لم يتعلمه، بخلاف المسائل المتخصصة كزكاة الأسهم فهي فرض كفاية."
+   },
+   {
+    "type": "reflect",
+    "q": "متى تتحوّل مسألة فقهية من فرض كفاية إلى فرض عين؟",
+    "answer": "حين يحتاج إليها الإنسان بعينه؛ فيجب عليه حينئذ أن يتعلمها — تقليدًا إن كان من أهل التقليد، أو اجتهادًا إن كان من أهل الاجتهاد. مثالها: زكاة الأسهم لمن يملك أسهمًا."
+   }
+  ]
+ },
+ "stages": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "أي مرحلة من مراحل الفقه لها تاريخ محدد بدقة دون تقريب؟",
+    "options": [
+     "مرحلة التشريع (زمن النبوة)",
+     "مرحلة المذاهب الفقهية",
+     "مرحلة العصر الحاضر"
+    ],
+    "correct": 0,
+    "feedback": "مرحلة التشريع وحدها محددة بدقة: من البعثة إلى وفاة النبي ﷺ. أما بقية المراحل فتواريخها تقريبية لأن نشأة المذاهب واستقرارها حدث تدريجيًا."
+   },
+   {
+    "type": "reflect",
+    "q": "لماذا اختار الشيخ تقسيمًا تاريخيًا وصفيًا بدل التقسيم الذي يصف كل مرحلة بـ«جمود» أو «نهضة»؟",
+    "answer": "لأنه اختار الوصف التاريخي دون إصدار حكم على كل مرحلة، بخلاف من قسّمها بحسب العصور السياسية أو شبّهها بمراحل عمر الإنسان (طفولة، شباب، كهولة، شيخوخة)."
+   }
+  ]
+ },
+ "tashree3": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما أبرز الفرق بين العهد المكي والمدني في التشريع؟",
+    "options": [
+     "المكي اقتصر على أصول الدين تمامًا دون أي حكم عملي",
+     "المكي تركّز على أصول الدين مع قلة الأحكام العملية، والمدني كثرت فيه التشريعات التفصيلية",
+     "لا فرق بينهما"
+    ],
+    "correct": 1,
+    "feedback": "لاحظ الدقة: المكي «تركّز» على أصول الدين ولم «يقتصر» عليها — فقد نزل فيه شيء من الأحكام العملية لكنه قليل، كفرض الصلاة عند بعض العلماء."
+   },
+   {
+    "type": "reflect",
+    "q": "ما الكتاب الذي أحال إليه الشيخ لمن أراد التفصيل التاريخي الدقيق؟ وما ملاحظته عليه؟",
+    "answer": "كتاب «الفكر السامي في تاريخ الفقه الإسلامي» للحجوي (الثعالبي)؛ وهو جيد من ناحية الرصد والجمع، وإن كان فيه بعض المآخذ في تحليل بعض الأحداث لا تخفى على طالب العلم المتمرّس."
+   }
+  ]
+ },
+ "sources": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "الإجماع الذي قد يُتصوّر حصوله في زمن النبي ﷺ — ما حقيقته؟",
+    "options": [
+     "إجماع مستقل بذاته",
+     "هو في حقيقته «سنة»، اكتسب حجيته من إقرار النبي ﷺ",
+     "لا اعتبار له مطلقًا"
+    ],
+    "correct": 1,
+    "feedback": "ولهذا عرّف الأصوليون الإجماع بأنه «اتفاق علماء العصر بعد النبي ﷺ على حكم شرعي» — أي بعد وفاته لا في حياته."
+   },
+   {
+    "type": "mcq",
+    "q": "هل كان النبي ﷺ يقيس؟",
+    "options": [
+     "نعم، القياس أحد مصادر تشريعه",
+     "لا، واجتهاده على القولين المشهورين راجع إلى دليل السنة",
+     "كان يقيس أحيانًا ويترك أحيانًا"
+    ],
+    "correct": 1,
+    "feedback": "لم يكن النبي ﷺ يقيس؛ فاجتهاده — على القولين المشهورين عند الأصوليين — راجع على كلا القولين إلى دليل السنة النبوية."
+   }
+  ]
+ },
+ "features": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما الفرق بين ما يصدر عن النبي ﷺ وما يصدر عن الصحابة بعد وفاته؟",
+    "options": [
+     "كلاهما يسمّى تشريعًا",
+     "ما يصدر عن الصحابة اجتهاد يسمّى «فقهًا» لا «تشريعًا»",
+     "ما يصدر عن الصحابة لا قيمة له"
+    ],
+    "correct": 1,
+    "feedback": "التشريع بمعنى إنشاء الأحكام مختص بزمن النبوة فقط. وقول الصحابي حجة عند الجمهور لأنه أفهم للكتاب والسنة، لا لأنه «يشرّع»."
+   },
+   {
+    "type": "mcq",
+    "q": "في حادثة «لا يُصلِّيَنَّ أحدُكم العصرَ إلا في بني قريظة»، ماذا فعل النبي ﷺ مع الفريقين المختلفين؟",
+    "options": [
+     "عنّف من أخّر الصلاة",
+     "عنّف من صلّى في الطريق",
+     "لم يُعنِّف أيًّا من الفريقين"
+    ],
+    "correct": 2,
+    "feedback": "فريق أخذ بظاهر اللفظ فأخّر، وفريق فهم أن المقصود الإسراع فصلّى في الطريق — ولم يُعنِّف النبي ﷺ أحدًا منهما."
+   },
+   {
+    "type": "reflect",
+    "q": "هل يجوز اليوم «التدرّج مع الناس» في تطبيق الأحكام الثابتة، كأن يُقال لحديث العهد بالإسلام: صلِّ صلاة واحدة الآن ثم نزيدها لاحقًا؟",
+    "answer": "لا يجوز؛ لأن الشريعة اكتملت («اليوم أكملتُ لكم دينكم») ولا يملك أحد اليوم حق الزيادة فيها أو النقص منها. أما التدرّج الجائز فهو في تبليغ الأحكام وتربية الناس عليها، لا في تغيير الحكم نفسه."
+   }
+  ]
+ },
+ "sahaba": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما الفرق بين «الاجتهاد بالقوة» و«الاجتهاد بالفعل» عند الصحابة؟",
+    "options": [
+     "لا فرق، كل الصحابة مجتهدون بالفعل",
+     "بالقوة: القدرة على الاجتهاد وهي عند الصحابة جميعًا عند بعض العلماء. بالفعل: من تصدّى للفتوى فعلًا، وهم متفاوتون",
+     "بالقوة تعني الاجتهاد بالرأي، وبالفعل تعني الاجتهاد بالنص"
+    ],
+    "correct": 1,
+    "feedback": "ذهب بعض العلماء إلى أن الصحابة جميعًا أهل للاجتهاد بالقوة؛ لأنهم شهدوا التنزيل ولغتهم سليقة صحيحة. أما من رُويت عنه الفتوى فعلًا فليس جميعهم، بل تفاوتوا تفاوتًا كبيرًا."
+   }
+  ]
+ }
+};
+</script>
+
+<script>
+/* ===== تثبيت الفهم: محرك الرندر ===== */
+(function(){
+  function renderQuizBlocks(){
+    document.querySelectorAll('.quiz-block[data-quiz]').forEach(function(container){
+      var key = container.getAttribute('data-quiz');
+      var data = (window.quizData || {})[key];
+      if(!data || container.dataset.rendered) return;
+      container.dataset.rendered = '1';
+
+      var title = document.createElement('div');
+      title.className = 'quiz-block-title';
+      title.textContent = '\uD83E\uDDE0 تثبيت الفهم';
+      container.appendChild(title);
+
+      data.items.forEach(function(item){
+        var itemEl = document.createElement('div');
+        itemEl.className = 'quiz-item';
+
+        if(item.type === 'mcq'){
+          var qEl = document.createElement('p');
+          qEl.className = 'quiz-q';
+          qEl.textContent = item.q;
+          itemEl.appendChild(qEl);
+
+          var optsWrap = document.createElement('div');
+          optsWrap.className = 'quiz-options';
+
+          var feedbackEl = document.createElement('div');
+          feedbackEl.className = 'quiz-feedback';
+          feedbackEl.textContent = item.feedback || '';
+
+          item.options.forEach(function(optText, optIdx){
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'quiz-opt';
+            btn.textContent = optText;
+            btn.addEventListener('click', function(){
+              var allBtns = optsWrap.querySelectorAll('.quiz-opt');
+              allBtns.forEach(function(b){ b.classList.add('disabled'); });
+              if(optIdx === item.correct){
+                btn.classList.add('correct');
+              } else {
+                btn.classList.add('wrong');
+                if(allBtns[item.correct]) allBtns[item.correct].classList.add('correct');
+              }
+              feedbackEl.classList.add('show');
+            });
+            optsWrap.appendChild(btn);
+          });
+
+          itemEl.appendChild(optsWrap);
+          itemEl.appendChild(feedbackEl);
+
+        } else if(item.type === 'reflect'){
+          var wrap = document.createElement('div');
+          wrap.className = 'quiz-reflect';
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-reflect-q';
+          qText.textContent = '\uD83D\uDCAD ' + item.q;
+          wrap.appendChild(qText);
+
+          var revealBtn = document.createElement('button');
+          revealBtn.type = 'button';
+          revealBtn.className = 'quiz-reveal-btn';
+          revealBtn.textContent = 'إظهار الإجابة';
+
+          var answerEl = document.createElement('div');
+          answerEl.className = 'quiz-answer';
+          answerEl.textContent = item.answer;
+
+          revealBtn.addEventListener('click', function(){
+            answerEl.classList.toggle('show');
+            revealBtn.textContent = answerEl.classList.contains('show') ? 'إخفاء الإجابة' : 'إظهار الإجابة';
+          });
+
+          wrap.appendChild(revealBtn);
+          wrap.appendChild(answerEl);
+          itemEl.appendChild(wrap);
+        }
+
+        container.appendChild(itemEl);
+      });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', renderQuizBlocks);
+  } else {
+    renderQuizBlocks();
+  }
+})();
+</script>
+
 </body>
 </html>
