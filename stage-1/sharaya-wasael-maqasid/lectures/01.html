@@ -239,6 +239,122 @@ footer .fname{font-weight:600; color:var(--ink-soft);}
   .fc-face .fc-text{font-size:17px;}
 }
 </style>
+
+<style>
+/* ===== تثبيت الفهم — الأسئلة التفاعلية ===== */
+.quiz-block{
+  margin:32px 0 24px;
+  background:var(--green-deeper, #132920);
+  border-radius:12px;
+  padding:24px;
+  box-shadow:0 6px 24px rgba(31,61,46,.14);
+  position:relative;
+  overflow:hidden;
+  direction:rtl;
+  text-align:right;
+}
+.quiz-block::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:radial-gradient(circle at 90% 10%, rgba(201,164,90,.12) 0, transparent 45%);
+  pointer-events:none;
+}
+.quiz-block-title{
+  display:flex; align-items:center; gap:8px;
+  font-weight:800; font-size:14px;
+  color:var(--gold-pale, #F2E6C4);
+  letter-spacing:.3px;
+  margin-bottom:16px;
+  position:relative;
+}
+.quiz-item{
+  background:rgba(255,254,250,.06);
+  border:1px solid rgba(199,164,90,.25);
+  border-radius:8px;
+  padding:16px;
+  margin-bottom:16px;
+  position:relative;
+}
+.quiz-item:last-child{margin-bottom:0;}
+.quiz-q{
+  font-size:15.5px; font-weight:700;
+  color:#FBF7EE;
+  margin:0 0 16px;
+  line-height:1.7;
+}
+.quiz-options{display:flex; flex-direction:column; gap:8px;}
+.quiz-opt{
+  display:block; width:100%; text-align:right;
+  background:rgba(251,247,238,.08);
+  border:1px solid rgba(251,247,238,.18);
+  color:#FBF7EE;
+  font-family:inherit; font-size:14px; line-height:1.6;
+  border-radius:8px;
+  padding:10px 14px;
+  cursor:pointer;
+  transition:background .15s ease, border-color .15s ease, transform .1s ease;
+}
+.quiz-opt:hover{background:rgba(251,247,238,.15); border-color:rgba(199,164,90,.5);}
+.quiz-opt:active{transform:scale(.99);}
+.quiz-opt.correct{
+  background:rgba(46,84,67,.9);
+  border-color:#8FBF9E;
+  color:#EAF6EE;
+  font-weight:700;
+}
+.quiz-opt.correct::after{content:" \2713"; color:#8FBF9E;}
+.quiz-opt.wrong{
+  background:rgba(140,59,46,.55);
+  border-color:#D89A8C;
+  color:#F7E6E2;
+}
+.quiz-opt.wrong::after{content:" \2715"; color:#F1B3A6;}
+.quiz-opt.disabled{cursor:default; pointer-events:none;}
+.quiz-feedback{
+  margin-top:10px;
+  font-size:13.5px; line-height:1.8;
+  color:var(--gold-pale, #F2E6C4);
+  background:rgba(0,0,0,.15);
+  border-right:3px solid var(--gold, #A9832E);
+  border-radius:6px;
+  padding:9px 12px;
+  display:none;
+}
+.quiz-feedback.show{display:block;}
+.quiz-reflect{
+  border-top:1px dashed rgba(199,164,90,.3);
+  padding-top:16px;
+  margin-top:16px;
+}
+.quiz-item > .quiz-reflect:first-child{border-top:none; padding-top:0; margin-top:0;}
+.quiz-reflect-q{
+  font-size:14.5px; color:var(--gold-pale, #F2E6C4); font-weight:600;
+  margin:0 0 8px;
+}
+.quiz-reveal-btn{
+  background:var(--gold, #A9832E);
+  color:var(--green-deeper, #132920);
+  border:none; border-radius:999px;
+  font-family:inherit;
+  font-weight:700; font-size:13px;
+  padding:8px 18px;
+  cursor:pointer;
+  transition:background .15s ease;
+}
+.quiz-reveal-btn:hover{background:var(--gold-soft, #C7A45A);}
+.quiz-answer{
+  display:none;
+  margin-top:10px;
+  font-size:14px; line-height:1.85;
+  color:#FBF7EE;
+  background:rgba(255,254,250,.08);
+  border-radius:8px;
+  padding:11px 14px;
+}
+.quiz-answer.show{display:block;}
+@media (max-width:640px){ .quiz-block{padding:16px;} }
+</style>
+
 </head>
 <body>
 
@@ -320,7 +436,9 @@ footer .fname{font-weight:600; color:var(--ink-soft);}
       <li>من أراد أن يبني نفسه في سلك العلم الممدوح، فعليه أن يراعي ما جاء في سياق الوحي نفسه من لوازم هذا العلم.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s0"></div>
+    </section>
 
 <hr class="sep wrap">
 
@@ -368,7 +486,9 @@ footer .fname{font-weight:600; color:var(--ink-soft);}
       <li>التفريق بين الحكم على القول والحكم على قائله ضروري لتفادي التشدد غير المنضبط.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s1"></div>
+    </section>
 
 <hr class="sep wrap">
 
@@ -427,7 +547,9 @@ footer .fname{font-weight:600; color:var(--ink-soft);}
       <li>طالب العلم بين ثلاثة مقامات: القائم بأثر العلم، أو المقصّر فيه، أو المناقض له.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s2"></div>
+    </section>
 
 <!-- ===================== BAB 1 ===================== -->
 <section class="content-section bab-section" id="bab1" style="--accent:var(--bab1); --accent-pale:var(--bab1-pale);">
@@ -474,7 +596,9 @@ footer .fname{font-weight:600; color:var(--ink-soft);}
       </ul>
     </div>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="bab1"></div>
+    </section>
 
 <!-- ===================== BAB 2 ===================== -->
 <section class="content-section bab-section" id="bab2" style="--accent:var(--bab2); --accent-pale:var(--bab2-pale);">
@@ -503,7 +627,9 @@ footer .fname{font-weight:600; color:var(--ink-soft);}
       </ul>
     </div>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="bab2"></div>
+    </section>
 
 <hr class="sep wrap">
 
@@ -566,7 +692,9 @@ footer .fname{font-weight:600; color:var(--ink-soft);}
       <li>الانشغال بالجزئيات وحده ليس تحقيقًا للعلم؛ التحقيق الحقيقي يبدأ من الرجوع إلى مقاصد العلم وتاريخ مؤسسيه.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s3"></div>
+    </section>
 
 <hr class="sep wrap">
 
@@ -604,7 +732,9 @@ footer .fname{font-weight:600; color:var(--ink-soft);}
       <li>غاية طلب العلم الهداية والاهتداء، وهذا يقوّي التحقيق العلمي لا يضعفه.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s4"></div>
+    </section>
 
 </main>
 
@@ -731,5 +861,289 @@ document.getElementById('downloadBtn').addEventListener('click', () => {
   URL.revokeObjectURL(url);
 });
 </script>
+
+<script>
+window.quizData = {
+ "s0": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "كيف ذكر الله «العلم» في كتابه غالبًا؟",
+    "options": [
+     "بصيغة المعلومات النظرية المجردة",
+     "مقترنًا بما يستلزمه من اتباع وسير واستغناء وعمل بمقتضاه",
+     "بصيغة الحفظ والاستنباط الدقيق"
+    ],
+    "correct": 1,
+    "feedback": "واللافت أن آية الزمر ﴿قُلْ هَلْ يَسْتَوِي الَّذِينَ يَعْلَمُونَ...﴾ جاءت في سياق الحديث عن قيام الليل وخشية الآخرة، لا في سياق الحفظ — فجعل الله هذا الخشوع والقيام من أثر العلم."
+   },
+   {
+    "type": "reflect",
+    "q": "بمَ شبّه الله من أوتي شيئًا من العلم ولم يعمل به؟",
+    "answer": "شبّه من حمل العلم ولم يدرِ ما يحمل بالحمير التي تحمل أسفارًا (مثل سورة الجمعة)، وشبّه من أوتي آياته ولم يعمل بها بالكلب (مثل سورة الأعراف). فقضية العلم ليست متأخرة عن التاريخ، بل متصلة بالوحي في أساسه."
+   }
+  ]
+ },
+ "s1": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما مثال «حين يصبح السلف حاجزًا لا جسرًا»؟",
+    "options": [
+     "الاعتناء بعلم السلف وما كانوا عليه",
+     "أن يرى الباحث نصًّا لأحد علماء القرن الثاني أولى من نص أتى في سنة رسول الله ﷺ",
+     "الرجوع إلى كتب المتقدمين عند الإشكال"
+    ],
+    "correct": 1,
+    "feedback": "فيبدأ البحث من مرحلة أهل العلم مهما كانوا، ويقطع الصلة بين الإنسان ومرجعية الوحي مباشرة. وهذا وإن كان صحيحًا من حيث المستمدات العلمية، ففيه نقص."
+   },
+   {
+    "type": "mcq",
+    "q": "ما الفرق بين اختلاف التنوع واختلاف التضاد؟",
+    "options": [
+     "التنوع يقبل الاشتراك دون ترجيح حتمي، والتضاد فيه صواب وخطأ لا يجتمعان",
+     "التنوع في العقيدة والتضاد في الفقه",
+     "لا فرق جوهري بينهما"
+    ],
+    "correct": 0,
+    "feedback": "فمن أمثلة التنوع: أغلب الخلافات الفقهية الاجتهادية، واختيار المراجع، وهل يحفظ الطالب منظومات أم لا. ومن أمثلة التضاد: الموقف من نصوص الصفات — والصواب فيه يُحدَّد بموافقة ما كان عليه الصحابة والقرون المفضلة."
+   },
+   {
+    "type": "reflect",
+    "q": "ما الخلط الذي يقع فيه البعض بين «الحكم على القول» و«الحكم على القائل»؟",
+    "answer": "يظنون أن وجود الخطأ في مسألة عقدية يعني وجوب التعامل مع كل من أخطأ فيها تعاملًا صارمًا حديًا لا يقبل معه الاستفادة منه في باب آخر، بل قد يصل الأمر إلى التكفير. والصواب التفريق بين تحديد الموقف الصحيح في المسألة — وهو ما وافق ما كان عليه الصحابة ومن تبعهم بإحسان — وبين الحكم على أعيان من أخطأ فيها."
+   }
+  ]
+ },
+ "s2": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما «المشكلة الكبرى الموجودة اليوم في السياق العلمي» بحسب الشيخ؟",
+    "options": [
+     "قلة الكتب المحققة",
+     "التفريق بين وسائل العلم ومقاصده",
+     "كثرة المدارس العلمية"
+    ],
+    "correct": 1,
+    "feedback": "ولها أكثر من صورة، أولاها التفريق بين الوسائل والمقاصد العامة الغائية للعلم."
+   },
+   {
+    "type": "mcq",
+    "q": "ما ترتيب الأمور الثلاثة فيما يتعلق بالأوامر والنواهي؟",
+    "options": [
+     "عمل ← تعظيم ← تصديق",
+     "تصديق ← تعظيم ← عمل",
+     "تعظيم ← عمل ← تصديق"
+    ],
+    "correct": 1,
+    "feedback": "فأعظم غايات العلم هو العمل، ويسبقه تعظيمٌ للأمر، ويسبق التعظيمَ تصديقٌ به. أما الأخبار فالمقصد الأعظم فيها التصديق وما يترتب عليه من العظة والاعتبار والاقتداء والمعرفة بالله."
+   },
+   {
+    "type": "reflect",
+    "q": "ما المقامات الثلاثة لطالب العلم؟",
+    "answer": "الأول: القائم بأثر العلم ومقتضاه. الثاني: المقصّر في تحقيق أثر العلم، لا يعتني به ولا يربط علمه بعمله. الثالث: من يصدر منه ما يناقض المقصد الشرعي — وحينها يصير النقص مضاعفًا ومركبًا."
+   }
+  ]
+ },
+ "bab1": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما الصورة الأولى للسبب العلمي في تخلف العمل عن العلم؟",
+    "options": [
+     "كثرة الحفظ",
+     "استبعاد علوم القلب والتزكية وهدي النبي ﷺ من دائرة «العلم المحترم»",
+     "قلة المراجع"
+    ],
+    "correct": 1,
+    "feedback": "فلسان حال البعض: «مالها ومال العلم؟ هذه أمور رقائق» — بينما هي من صميم العلم في الإسلام. فإن تخلّفت هذه الموضوعات عن دائرة الاهتمام العلمي، تخلّفت آثارها العملية تبعًا لذلك."
+   },
+   {
+    "type": "mcq",
+    "q": "ما موقف الشيخ من «علوم الآلة» التي لم يرد لها ذكر في الوحي؟",
+    "options": [
+     "وجوب اجتنابها",
+     "وجوب الحفاوة بها والاعتناء بها، مع استحضار أنها وسيلة وجزء من الخارطة لا كلها",
+     "أنها بدعة محدثة"
+    ],
+    "correct": 1,
+    "feedback": "فلها أصول عامة تدل على اعتبارها، لكن الفصل بين الموضوعات الكبرى التي أتى بها الإسلام وعزلها عن سياق تكوين طالب العلم من أعظم أسباب تخلف العمل."
+   },
+   {
+    "type": "reflect",
+    "q": "كيف يدل صنيع ابن الصلاح في مقدمته على شمولية المتقدمين؟",
+    "answer": "نجد في مقدمته نوعين مستقلين من أنواع علوم الحديث: النوع السابع والعشرون «معرفة آداب المحدث»، والنوع الثامن والعشرون «معرفة آداب طالب الحديث». وهذا يدل على أن الجانب السلوكي والأخلاقي كان يُعدّ عند المتقدمين جزءًا لا ينفصل عن التكوين المعرفي — وهو تحقيق فاق في شموليته واقعنا المعاصر."
+   }
+  ]
+ },
+ "bab2": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما الباب الثاني من أسباب تخلف العمل عن العلم؟",
+    "options": [
+     "نقص المراجع العلمية",
+     "الموانع القلبية والسلوكية: موانع استقامة القلوب ومثبطات الهمم والعزائم",
+     "ضيق الوقت"
+    ],
+    "correct": 1,
+    "feedback": "والبابان مترابطان؛ فأحيانًا يحصل الإشكال في الباب الثاني لأن العلوم التي درسها الإنسان في الباب الأول ليست ذات الشأن الذي يبعث على وقدة الروح وصلاح القلب."
+   },
+   {
+    "type": "reflect",
+    "q": "لماذا لا يكفي مجرد العلم ولا مجرد الإرادة لتحقيق العمل؟",
+    "answer": "لأن صلاح القلب هو البوابة الأساسية؛ فليس كل من علم فسيعمل، وليس كل من أراد أن يعمل فسيعمل — وإنما يجب أن توافق هذه الإرادة قلبًا صادقًا صالحًا، فيه من الصدق والإخلاص والتوكل والاستعانة ما يعينه بإذن الله على تحقيق هذه الإرادة."
+   }
+  ]
+ },
+ "s3": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما الخطورة الكبرى في غياب «المقاصد الخاصة» بكل علم؟",
+    "options": [
+     "صعوبة الحفظ",
+     "أن يصير العلم قاصرًا عن مواجهة التحديات الجديدة التي ينبغي أن تُواجَه به",
+     "قلة عدد الدارسين"
+    ],
+    "correct": 1,
+    "feedback": "فطالب الحديث الذي همّه تحقيق الألفاظ الدقيقة للمصطلحات دون ربط ذلك بمقصد الدفاع عن الرواية، لا يكون مؤهلًا للرد حين يُقال له: «عندي مشكلة في السنة ذاتها وفي طريقة نقلها»."
+   },
+   {
+    "type": "mcq",
+    "q": "لماذا استشكل الشاطبي بعض المباحث الكلامية في أصول الفقه؟",
+    "options": [
+     "لصعوبتها",
+     "لأنه كان ينظر إلى مقصد العلم: أن هذه الأصول أُضيفت لتكون نافعة في الفقه، فما لا علاقة له بالعمل والفقه ذكره على وجه الإشكال",
+     "لأنها حديثة النشأة"
+    ],
+    "correct": 1,
+    "feedback": "بخلاف بعض المعاصرين الذين يرون أن فهم أصول الفقه لا يتم إلا بدراسة خلفياتها الكلامية — فالفرق بينهما في معنى «التحقيق»: أهو عودة إلى المقصد، أم استيعاب أكبر قدر من التفاصيل النظرية؟"
+   },
+   {
+    "type": "reflect",
+    "q": "ما التنبيه المهم في التمييز بين «الشاطبيَّين»؟",
+    "answer": "الإمام الشاطبي صاحب «الموافقات» هو أبو إسحاق إبراهيم بن موسى اللخمي الغرناطي الأندلسي (ت 790هـ). أما الشاطبي الآخر فهو القاسم بن فيرّه الرعيني (ت 590هـ) صاحب منظومة «حرز الأماني» الشهيرة بـ«الشاطبية» في القراءات السبع. وهما عالمان مختلفان يفصل بينهما نحو قرنين، والمقصود هنا صاحب الموافقات حصرًا."
+   }
+  ]
+ },
+ "s4": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "هل يعود طلب العلم بقصد الهداية على التحقيق العلمي النظري بالإبطال؟",
+    "options": [
+     "نعم، فهو يُضعف الاهتمام بالتفاصيل",
+     "بالعكس، يجعل المرء حريصًا جاهدًا على تتبع النواحي النظرية المثمرة، فيتعب ويحتسب كل لحظة لله",
+     "لا علاقة بينهما"
+    ],
+    "correct": 1,
+    "feedback": "والترتيب الأقرب إلى مقاصد الشريعة: الإرادة والهمة الصادقة، ثم التحقيق المعرفي النظري، ثم الوصول إلى الصواب العملي الغائي."
+   },
+   {
+    "type": "reflect",
+    "q": "السؤال الذي تركه الشيخ للتأمل قبل اللقاء القادم: ما مقصد العلم الذي تتخصص فيه أو تدرسه الآن؟ وهل ما زلت تستحضره وأنت تنشغل بتفاصيله؟",
+    "answer": "هذا سؤال شخصي للتأمل لا جواب واحد له. والمعيار الذي ذكره الشيخ: أن غاية طلب العلم هي الهداية والاهتداء به، لا مجرد تتبع تفصيلاته وجزئياته. فمقصد كل علم يُدرك بالرجوع إلى تاريخه ومؤسسيه، لا بجمع الجزئيات فحسب — كعلم الحديث الذي نشأ مرتبطًا بالدفاع عن الرواية."
+   }
+  ]
+ }
+};
+</script>
+
+<script>
+/* ===== تثبيت الفهم: محرك الرندر ===== */
+(function(){
+  function renderQuizBlocks(){
+    document.querySelectorAll('.quiz-block[data-quiz]').forEach(function(container){
+      var key = container.getAttribute('data-quiz');
+      var data = (window.quizData || {})[key];
+      if(!data || container.dataset.rendered) return;
+      container.dataset.rendered = '1';
+
+      var title = document.createElement('div');
+      title.className = 'quiz-block-title';
+      title.textContent = '\uD83E\uDDE0 تثبيت الفهم';
+      container.appendChild(title);
+
+      data.items.forEach(function(item){
+        var itemEl = document.createElement('div');
+        itemEl.className = 'quiz-item';
+
+        if(item.type === 'mcq'){
+          var qEl = document.createElement('p');
+          qEl.className = 'quiz-q';
+          qEl.textContent = item.q;
+          itemEl.appendChild(qEl);
+
+          var optsWrap = document.createElement('div');
+          optsWrap.className = 'quiz-options';
+
+          var feedbackEl = document.createElement('div');
+          feedbackEl.className = 'quiz-feedback';
+          feedbackEl.textContent = item.feedback || '';
+
+          item.options.forEach(function(optText, optIdx){
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'quiz-opt';
+            btn.textContent = optText;
+            btn.addEventListener('click', function(){
+              var allBtns = optsWrap.querySelectorAll('.quiz-opt');
+              allBtns.forEach(function(b){ b.classList.add('disabled'); });
+              if(optIdx === item.correct){
+                btn.classList.add('correct');
+              } else {
+                btn.classList.add('wrong');
+                if(allBtns[item.correct]) allBtns[item.correct].classList.add('correct');
+              }
+              feedbackEl.classList.add('show');
+            });
+            optsWrap.appendChild(btn);
+          });
+
+          itemEl.appendChild(optsWrap);
+          itemEl.appendChild(feedbackEl);
+
+        } else if(item.type === 'reflect'){
+          var wrap = document.createElement('div');
+          wrap.className = 'quiz-reflect';
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-reflect-q';
+          qText.textContent = '\uD83D\uDCAD ' + item.q;
+          wrap.appendChild(qText);
+
+          var revealBtn = document.createElement('button');
+          revealBtn.type = 'button';
+          revealBtn.className = 'quiz-reveal-btn';
+          revealBtn.textContent = 'إظهار الإجابة';
+
+          var answerEl = document.createElement('div');
+          answerEl.className = 'quiz-answer';
+          answerEl.textContent = item.answer;
+
+          revealBtn.addEventListener('click', function(){
+            answerEl.classList.toggle('show');
+            revealBtn.textContent = answerEl.classList.contains('show') ? 'إخفاء الإجابة' : 'إظهار الإجابة';
+          });
+
+          wrap.appendChild(revealBtn);
+          wrap.appendChild(answerEl);
+          itemEl.appendChild(wrap);
+        }
+
+        container.appendChild(itemEl);
+      });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', renderQuizBlocks);
+  } else {
+    renderQuizBlocks();
+  }
+})();
+</script>
+
 </body>
 </html>
