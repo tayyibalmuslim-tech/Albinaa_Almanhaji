@@ -324,6 +324,122 @@
     *{transition:none !important;}
   }
 </style>
+
+<style>
+/* ===== تثبيت الفهم — الأسئلة التفاعلية ===== */
+.quiz-block{
+  margin:32px 0 24px;
+  background:var(--green-deeper, #132920);
+  border-radius:12px;
+  padding:24px;
+  box-shadow:0 6px 24px rgba(31,61,46,.14);
+  position:relative;
+  overflow:hidden;
+  direction:rtl;
+  text-align:right;
+}
+.quiz-block::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:radial-gradient(circle at 90% 10%, rgba(201,164,90,.12) 0, transparent 45%);
+  pointer-events:none;
+}
+.quiz-block-title{
+  display:flex; align-items:center; gap:8px;
+  font-weight:800; font-size:14px;
+  color:var(--gold-pale, #F2E6C4);
+  letter-spacing:.3px;
+  margin-bottom:16px;
+  position:relative;
+}
+.quiz-item{
+  background:rgba(255,254,250,.06);
+  border:1px solid rgba(199,164,90,.25);
+  border-radius:8px;
+  padding:16px;
+  margin-bottom:16px;
+  position:relative;
+}
+.quiz-item:last-child{margin-bottom:0;}
+.quiz-q{
+  font-size:15.5px; font-weight:700;
+  color:#FBF7EE;
+  margin:0 0 16px;
+  line-height:1.7;
+}
+.quiz-options{display:flex; flex-direction:column; gap:8px;}
+.quiz-opt{
+  display:block; width:100%; text-align:right;
+  background:rgba(251,247,238,.08);
+  border:1px solid rgba(251,247,238,.18);
+  color:#FBF7EE;
+  font-family:inherit; font-size:14px; line-height:1.6;
+  border-radius:8px;
+  padding:10px 14px;
+  cursor:pointer;
+  transition:background .15s ease, border-color .15s ease, transform .1s ease;
+}
+.quiz-opt:hover{background:rgba(251,247,238,.15); border-color:rgba(199,164,90,.5);}
+.quiz-opt:active{transform:scale(.99);}
+.quiz-opt.correct{
+  background:rgba(46,84,67,.9);
+  border-color:#8FBF9E;
+  color:#EAF6EE;
+  font-weight:700;
+}
+.quiz-opt.correct::after{content:" \2713"; color:#8FBF9E;}
+.quiz-opt.wrong{
+  background:rgba(140,59,46,.55);
+  border-color:#D89A8C;
+  color:#F7E6E2;
+}
+.quiz-opt.wrong::after{content:" \2715"; color:#F1B3A6;}
+.quiz-opt.disabled{cursor:default; pointer-events:none;}
+.quiz-feedback{
+  margin-top:10px;
+  font-size:13.5px; line-height:1.8;
+  color:var(--gold-pale, #F2E6C4);
+  background:rgba(0,0,0,.15);
+  border-right:3px solid var(--gold, #A9832E);
+  border-radius:6px;
+  padding:9px 12px;
+  display:none;
+}
+.quiz-feedback.show{display:block;}
+.quiz-reflect{
+  border-top:1px dashed rgba(199,164,90,.3);
+  padding-top:16px;
+  margin-top:16px;
+}
+.quiz-item > .quiz-reflect:first-child{border-top:none; padding-top:0; margin-top:0;}
+.quiz-reflect-q{
+  font-size:14.5px; color:var(--gold-pale, #F2E6C4); font-weight:600;
+  margin:0 0 8px;
+}
+.quiz-reveal-btn{
+  background:var(--gold, #A9832E);
+  color:var(--green-deeper, #132920);
+  border:none; border-radius:999px;
+  font-family:inherit;
+  font-weight:700; font-size:13px;
+  padding:8px 18px;
+  cursor:pointer;
+  transition:background .15s ease;
+}
+.quiz-reveal-btn:hover{background:var(--gold-soft, #C7A45A);}
+.quiz-answer{
+  display:none;
+  margin-top:10px;
+  font-size:14px; line-height:1.85;
+  color:#FBF7EE;
+  background:rgba(255,254,250,.08);
+  border-radius:8px;
+  padding:11px 14px;
+}
+.quiz-answer.show{display:block;}
+@media (max-width:640px){ .quiz-block{padding:16px;} }
+</style>
+
 </head>
 <body>
 
@@ -643,6 +759,8 @@
           <tr><td>مراجع إضافية في الأدلة</td><td>التنقيح والتحقيق لأحاديث التعليق (ابن الجوزي)، التعليقة (القاضي أبو يعلى)، الانتصار (أبو الخطاب الكلوذاني)</td></tr>
         </tbody>
       </table>
+    
+      <div class="quiz-block" data-quiz="sec1"></div>
     </section>
 
     <!-- ============ SECTION 2 ============ -->
@@ -714,6 +832,8 @@
       <div class="note-box">
         ℹ️ ينتهي المتوفر من هذا الدرس هنا؛ إذ يشير المحاضر إلى أنه سيتحدث عن "صور التعصب ضد المذاهب" في "الفقرة الثانية"، لكن التسجيل المتاح ينقطع دون استكمال هذا التفصيل.
       </div>
+    
+      <div class="quiz-block" data-quiz="sec2"></div>
     </section>
 
     <section class="block" id="khatima">
@@ -725,6 +845,8 @@
         </div>
       </div>
       <p>يتضح من مسيرة المذهب الحنبلي عبر مراحله الأربع (التأسيس، فالتقعيد، فالتحرير والتنقيح، فالاستقرار) أن كل جيل من علمائه كان يبني على ما قبله بمنهجية علمية دقيقة: جمعٌ، فاختصارٌ، فترجيحٌ، فاستقرارٌ. وهذا بعينه هو معنى أن يكون المذهب الفقهي <b>فقهًا للدليل</b> لا مجرد "آراء رجال" — وهو ما يؤكده الدرس الثاني حين يُقرّر أن الانتساب لمذهب معيّن، بلا تعصب، هو أخذ بثمرة قرون من التحرير والتدقيق، لا هروب من الكتاب والسنة.</p>
+    
+      <div class="quiz-block" data-quiz="khatima"></div>
     </section>
 
   </main>
@@ -809,6 +931,199 @@ function downloadAnkiDeck() {
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
 }
+</script>
+
+
+<script>
+window.quizData = {
+ "sec1": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما المراحل الأربع التي مرّ بها المذهب الحنبلي بالترتيب؟",
+    "options": [
+     "التقعيد، ثم التأسيس، ثم الاستقرار، ثم التحرير",
+     "التأسيس، ثم التقعيد، ثم التحرير والتنقيح، ثم الاستقرار",
+     "الجمع، ثم الشرح، ثم الاختصار، ثم النقد"
+    ],
+    "correct": 1,
+    "feedback": "كل مرحلة أنتجت طبقة من العلماء والكتب التي بُني عليها ما بعدها: تأسيس بالإمام أحمد ونقل تلاميذه، ثم اختصار في متون، ثم تحرير الراجح، ثم استقرار."
+   },
+   {
+    "type": "mcq",
+    "q": "من جمع «كتب المسائل» المتفرقة عن الإمام أحمد في كتاب واحد؟",
+    "options": [
+     "الخرقي في مختصره",
+     "الخلّال في «الجامع لعلوم الإمام أحمد»",
+     "ابن قدامة في المغني"
+    ],
+    "correct": 1,
+    "feedback": "والكتاب اليوم مفقود في أغلبه، ولم يُطبع منه إلا أجزاء يسيرة كـ«الترجّل» و«الوقوف». وقد قام الأستاذ خالد الرباط مع باحثين بإعادة جمع تراث الإمام أحمد في عمل معاصر بالاسم نفسه."
+   },
+   {
+    "type": "mcq",
+    "q": "فائدة اصطلاحية: إذا ورد في كتب الحنابلة «قال القاضي» فمن المراد؟",
+    "options": [
+     "القاضي أبو يوسف",
+     "القاضي أبو يعلى",
+     "القاضي عياض"
+    ],
+    "correct": 1,
+    "feedback": "القاضي أبو يعلى رحمه الله، صاحب «الروايتين والوجهين» و«العدة في أصول الفقه»، وهو من بدأت على يديه مرحلة التحرير والتنقيح."
+   },
+   {
+    "type": "reflect",
+    "q": "لابن قدامة أربعة كتب فقهية متدرجة. ما هي بالترتيب من الأسهل إلى الأوسع؟ وما ميزة كل منها؟",
+    "answer": "١) عمدة الفقه: للمبتدئين، سهل مختصر على قول واحد بلا ذكر خلاف. ٢) المقنع: فوق المبتدئين، يذكر روايتين غالبًا داخل المذهب. ٣) الكافي: مرحلة أعلى، يذكر الأدلة ويتوسّع في الروايات. ٤) المغني: في الفقه المقارن، يذكر أقوال المذاهب الأخرى. وله في الأصول «روضة الناظر وجنة المناظر»."
+   }
+  ]
+ },
+ "sec2": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما التعصب المذموم المتفق على ذمّه؟",
+    "options": [
+     "أن يقول الإنسان: أنا حنبلي أو شافعي",
+     "أن يتخذ المذهب معيارًا للولاء والبراء، فلا يزوّج ولا يجالس ولا يصلي خلف من خالف مذهبه",
+     "أن يدرس مذهبًا واحدًا فقط"
+    ],
+    "correct": 1,
+    "feedback": "أما مجرد الانتساب اللفظي («أنا حنبلي») فجائز ولا يكاد يوجد فيه خلاف، ما دام لا يترتب عليه تعصب."
+   },
+   {
+    "type": "mcq",
+    "q": "بعض الناس يقول: «أنا على الكتاب والسنة فقط» تورّعًا عن الانتساب لمذهب. ما تقويم هذا؟",
+    "options": [
+     "موقف صحيح ومحمود",
+     "تصوّر خاطئ؛ فليس هناك مسار اسمه الكتاب والسنة يقابله مسار مباين اسمه المذاهب",
+     "لا حكم فيه"
+    ],
+    "correct": 1,
+    "feedback": "المذاهب الأربعة كلّها بلا استثناء فقهٌ للدليل، والتفقّه عليها بمعرفة مسائلها وأدلتها هو بعينه تفقّه في الكتاب والسنة."
+   },
+   {
+    "type": "mcq",
+    "q": "سؤال شائع: «أيهما أفضل، أن أدرس فقه الدليل أم فقه المذاهب؟» — ما الحكم على هذا السؤال؟",
+    "options": [
+     "سؤال وجيه له جواب مفصّل",
+     "سؤال فاسد الصياغة من أصله؛ لأنه مبني على مقدّمة خاطئة أن المذاهب ليست من فقه الدليل",
+     "سؤال يجاب عنه بأن فقه الدليل أفضل"
+    ],
+    "correct": 1,
+    "feedback": "فالمقدّمة نفسها باطلة — المذاهب هي فقه للدليل، فلا معنى للمقابلة بينهما أصلًا."
+   },
+   {
+    "type": "reflect",
+    "q": "ما «التعصب ضد المذاهب»؟ ولماذا وُصف بأنه لا يقل ذمًّا عن التعصب للمذهب؟",
+    "answer": "هو ظاهرة معاصرة لها صورتان: اعتبار الانتساب للمذاهب ضلالًا وأنها مجرد «آراء رجال»، واستنكار اتباع شخص لمذهب بحجة «هل ينزل عليك وحي؟» — بينما يدّعي المستنكر نفسه أنه يأخذ بـ«الراجح» عند مشايخ معاصرين بأعيانهم. والمفارقة أن هذا في حقيقته تقليد أيضًا، لكنه تقليد أفراد معاصرين بدل تقليد مذهب مُجمَع على جواز تقليده."
+   }
+  ]
+ },
+ "khatima": {
+  "items": [
+   {
+    "type": "reflect",
+    "q": "كيف تربط مسيرة المذهب الحنبلي عبر مراحله الأربع بمسألة حكم التمذهب؟",
+    "answer": "كل جيل من علماء المذهب كان يبني على ما قبله بمنهجية دقيقة: جمعٌ، فاختصارٌ، فترجيحٌ، فاستقرارٌ. وهذا بعينه معنى أن يكون المذهب فقهًا للدليل لا مجرد «آراء رجال» — فالانتساب لمذهب معيّن، بلا تعصب، هو أخذ بثمرة قرون من التحرير والتدقيق، لا هروب من الكتاب والسنة."
+   }
+  ]
+ }
+};
+</script>
+
+<script>
+/* ===== تثبيت الفهم: محرك الرندر ===== */
+(function(){
+  function renderQuizBlocks(){
+    document.querySelectorAll('.quiz-block[data-quiz]').forEach(function(container){
+      var key = container.getAttribute('data-quiz');
+      var data = (window.quizData || {})[key];
+      if(!data || container.dataset.rendered) return;
+      container.dataset.rendered = '1';
+
+      var title = document.createElement('div');
+      title.className = 'quiz-block-title';
+      title.textContent = '\uD83E\uDDE0 تثبيت الفهم';
+      container.appendChild(title);
+
+      data.items.forEach(function(item){
+        var itemEl = document.createElement('div');
+        itemEl.className = 'quiz-item';
+
+        if(item.type === 'mcq'){
+          var qEl = document.createElement('p');
+          qEl.className = 'quiz-q';
+          qEl.textContent = item.q;
+          itemEl.appendChild(qEl);
+
+          var optsWrap = document.createElement('div');
+          optsWrap.className = 'quiz-options';
+
+          var feedbackEl = document.createElement('div');
+          feedbackEl.className = 'quiz-feedback';
+          feedbackEl.textContent = item.feedback || '';
+
+          item.options.forEach(function(optText, optIdx){
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'quiz-opt';
+            btn.textContent = optText;
+            btn.addEventListener('click', function(){
+              var allBtns = optsWrap.querySelectorAll('.quiz-opt');
+              allBtns.forEach(function(b){ b.classList.add('disabled'); });
+              if(optIdx === item.correct){
+                btn.classList.add('correct');
+              } else {
+                btn.classList.add('wrong');
+                if(allBtns[item.correct]) allBtns[item.correct].classList.add('correct');
+              }
+              feedbackEl.classList.add('show');
+            });
+            optsWrap.appendChild(btn);
+          });
+
+          itemEl.appendChild(optsWrap);
+          itemEl.appendChild(feedbackEl);
+
+        } else if(item.type === 'reflect'){
+          var wrap = document.createElement('div');
+          wrap.className = 'quiz-reflect';
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-reflect-q';
+          qText.textContent = '\uD83D\uDCAD ' + item.q;
+          wrap.appendChild(qText);
+
+          var revealBtn = document.createElement('button');
+          revealBtn.type = 'button';
+          revealBtn.className = 'quiz-reveal-btn';
+          revealBtn.textContent = 'إظهار الإجابة';
+
+          var answerEl = document.createElement('div');
+          answerEl.className = 'quiz-answer';
+          answerEl.textContent = item.answer;
+
+          revealBtn.addEventListener('click', function(){
+            answerEl.classList.toggle('show');
+            revealBtn.textContent = answerEl.classList.contains('show') ? 'إخفاء الإجابة' : 'إظهار الإجابة';
+          });
+
+          wrap.appendChild(revealBtn);
+          wrap.appendChild(answerEl);
+          itemEl.appendChild(wrap);
+        }
+
+        container.appendChild(itemEl);
+      });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', renderQuizBlocks);
+  } else {
+    renderQuizBlocks();
+  }
+})();
 </script>
 
 </body>
