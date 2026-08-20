@@ -155,6 +155,122 @@ tr:last-child td{border-bottom:0}
 footer{background:#101A2E;color:#7F8FA6;padding:30px 0;text-align:center;font-family:var(--f-lab);font-size:12.5px;line-height:2}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
+
+<style>
+/* ===== تثبيت الفهم — الأسئلة التفاعلية ===== */
+.quiz-block{
+  margin:32px 0 24px;
+  background:var(--green-deeper, #132920);
+  border-radius:12px;
+  padding:24px;
+  box-shadow:0 6px 24px rgba(31,61,46,.14);
+  position:relative;
+  overflow:hidden;
+  direction:rtl;
+  text-align:right;
+}
+.quiz-block::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:radial-gradient(circle at 90% 10%, rgba(201,164,90,.12) 0, transparent 45%);
+  pointer-events:none;
+}
+.quiz-block-title{
+  display:flex; align-items:center; gap:8px;
+  font-weight:800; font-size:14px;
+  color:var(--gold-pale, #F2E6C4);
+  letter-spacing:.3px;
+  margin-bottom:16px;
+  position:relative;
+}
+.quiz-item{
+  background:rgba(255,254,250,.06);
+  border:1px solid rgba(199,164,90,.25);
+  border-radius:8px;
+  padding:16px;
+  margin-bottom:16px;
+  position:relative;
+}
+.quiz-item:last-child{margin-bottom:0;}
+.quiz-q{
+  font-size:15.5px; font-weight:700;
+  color:#FBF7EE;
+  margin:0 0 16px;
+  line-height:1.7;
+}
+.quiz-options{display:flex; flex-direction:column; gap:8px;}
+.quiz-opt{
+  display:block; width:100%; text-align:right;
+  background:rgba(251,247,238,.08);
+  border:1px solid rgba(251,247,238,.18);
+  color:#FBF7EE;
+  font-family:inherit; font-size:14px; line-height:1.6;
+  border-radius:8px;
+  padding:10px 14px;
+  cursor:pointer;
+  transition:background .15s ease, border-color .15s ease, transform .1s ease;
+}
+.quiz-opt:hover{background:rgba(251,247,238,.15); border-color:rgba(199,164,90,.5);}
+.quiz-opt:active{transform:scale(.99);}
+.quiz-opt.correct{
+  background:rgba(46,84,67,.9);
+  border-color:#8FBF9E;
+  color:#EAF6EE;
+  font-weight:700;
+}
+.quiz-opt.correct::after{content:" \2713"; color:#8FBF9E;}
+.quiz-opt.wrong{
+  background:rgba(140,59,46,.55);
+  border-color:#D89A8C;
+  color:#F7E6E2;
+}
+.quiz-opt.wrong::after{content:" \2715"; color:#F1B3A6;}
+.quiz-opt.disabled{cursor:default; pointer-events:none;}
+.quiz-feedback{
+  margin-top:10px;
+  font-size:13.5px; line-height:1.8;
+  color:var(--gold-pale, #F2E6C4);
+  background:rgba(0,0,0,.15);
+  border-right:3px solid var(--gold, #A9832E);
+  border-radius:6px;
+  padding:9px 12px;
+  display:none;
+}
+.quiz-feedback.show{display:block;}
+.quiz-reflect{
+  border-top:1px dashed rgba(199,164,90,.3);
+  padding-top:16px;
+  margin-top:16px;
+}
+.quiz-item > .quiz-reflect:first-child{border-top:none; padding-top:0; margin-top:0;}
+.quiz-reflect-q{
+  font-size:14.5px; color:var(--gold-pale, #F2E6C4); font-weight:600;
+  margin:0 0 8px;
+}
+.quiz-reveal-btn{
+  background:var(--gold, #A9832E);
+  color:var(--green-deeper, #132920);
+  border:none; border-radius:999px;
+  font-family:inherit;
+  font-weight:700; font-size:13px;
+  padding:8px 18px;
+  cursor:pointer;
+  transition:background .15s ease;
+}
+.quiz-reveal-btn:hover{background:var(--gold-soft, #C7A45A);}
+.quiz-answer{
+  display:none;
+  margin-top:10px;
+  font-size:14px; line-height:1.85;
+  color:#FBF7EE;
+  background:rgba(255,254,250,.08);
+  border-radius:8px;
+  padding:11px 14px;
+}
+.quiz-answer.show{display:block;}
+@media (max-width:640px){ .quiz-block{padding:16px;} }
+</style>
+
 </head>
 <body>
 
@@ -225,7 +341,9 @@ footer{background:#101A2E;color:#7F8FA6;padding:30px 0;text-align:center;font-fa
       <li>الموضع: الباب الثاني (التوبة)، وفيه اليوم الحديثان الطويلان الأخيران.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s1"></div>
+    </section>
 
 <!-- ============ 2 ============ -->
 <section id="s2" style="--acc:var(--s2);--acc-soft:rgba(74,124,89,.10)">
@@ -253,7 +371,9 @@ footer{background:#101A2E;color:#7F8FA6;padding:30px 0;text-align:center;font-fa
     <span class="tag">لمحة</span>
     <p>لاحظ التدرُّج في الرواية الثانية: لم تكن المسألة قياسًا مجرَّدًا، بل <strong>تدخُّلٌ إلهي في المسافة نفسها</strong> — أرضٌ أُمرت أن تتباعد وأرضٌ أُمرت أن تقترب — لأجل شِبرٍ واحد يُنجي رجلًا قتل مئة نفس.</p>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s2"></div>
+    </section>
 
 <!-- ============ 3 ============ -->
 <section id="s3" style="--acc:var(--s3);--acc-soft:rgba(122,107,47,.10)">
@@ -320,7 +440,9 @@ footer{background:#101A2E;color:#7F8FA6;padding:30px 0;text-align:center;font-fa
       <li>لا ذنب يسدُّ باب الرحمة إذا صدق التائب وبادر.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s3"></div>
+    </section>
 
 <!-- ============ 4 ============ -->
 <section id="s4" style="--acc:var(--s4);--acc-soft:rgba(85,97,143,.10)">
@@ -388,7 +510,9 @@ footer{background:#101A2E;color:#7F8FA6;padding:30px 0;text-align:center;font-fa
       <li>المقدمة كلها تمهيد لجملة واحدة: لست منافقًا، وإنما غلبتني نفسي مرَّة.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s4"></div>
+    </section>
 
 <!-- ============ 5 ============ -->
 <section id="s5" style="--acc:var(--s5);--acc-soft:rgba(176,125,43,.10)">
@@ -452,7 +576,9 @@ footer{background:#101A2E;color:#7F8FA6;padding:30px 0;text-align:center;font-fa
       <li>المشكلة ليست ضعف النية، بل نفسٌ مسوِّفة لا تنعقد على عزم.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s5"></div>
+    </section>
 
 <!-- ============ 6 ============ -->
 <section id="s6" style="--acc:var(--s6);--acc-soft:rgba(122,92,134,.10)">
@@ -559,7 +685,9 @@ footer{background:#101A2E;color:#7F8FA6;padding:30px 0;text-align:center;font-fa
       <li>حسن الظن محلُّه مواضع الريبة لا المواضع البريئة، وقاعدته: الحكم بمجموع الحال.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s6"></div>
+    </section>
 
 <!-- ============ 7 ============ -->
 <section id="s7" style="--acc:var(--s7);--acc-soft:rgba(160,72,63,.10)">
@@ -632,7 +760,9 @@ footer{background:#101A2E;color:#7F8FA6;padding:30px 0;text-align:center;font-fa
       <li>أشد ما واجهه ليس غضب النبي ﷺ بل تأنيب قومه له أن يكذّب نفسه.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s7"></div>
+    </section>
 
 <!-- ============ 8 ============ -->
 <section id="s8" style="--acc:var(--s8);--acc-soft:rgba(43,58,82,.10)">
@@ -733,7 +863,9 @@ footer{background:#101A2E;color:#7F8FA6;padding:30px 0;text-align:center;font-fa
       <li>الأمر باعتزال النساء جاء بعد أربعين ليلة، وامتثاله فوري بلا مراجعة.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s8"></div>
+    </section>
 
 <!-- ============ 9 ============ -->
 <section id="s9" style="--acc:var(--s9);--acc-soft:rgba(31,122,92,.10)">
@@ -854,7 +986,9 @@ footer{background:#101A2E;color:#7F8FA6;padding:30px 0;text-align:center;font-fa
       <li>«خُلِّفوا» بمعنى: أُرجئ أمرهم، لا بمعنى تخلُّفهم عن الغزو.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s9"></div>
+    </section>
 
 </main>
 
@@ -1013,5 +1147,362 @@ document.addEventListener('scroll',()=>{
 });
 buildFilters(); render();
 </script>
+
+<script>
+window.quizData = {
+ "s1": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما الفكرة المؤسِّسة لزاوية هذه المجالس في قراءة رياض الصالحين؟",
+    "options": [
+     "أن الحديث مصدر للأحكام والآداب فقط",
+     "أن الحديث النبوي مصدر أصيل للسيرة النبوية، لا للأحكام والآداب فقط",
+     "أن السيرة تُعلم من كتب السيرة وحدها"
+    ],
+    "correct": 1,
+    "feedback": "فكتب السيرة تتناول غالبًا الأحداث العامة، لكن السيرة تُعلَم كذلك من جهة الأحاديث — ومن يتعامل معها كمصدر أحكام فقط يفوته خير كثير."
+   },
+   {
+    "type": "reflect",
+    "q": "ما أقرب أنواع الأحاديث اتصالًا بفكرة هذه السلسلة؟",
+    "answer": "الأحاديث التي فيها حوارٌ بين النبي ﷺ وأصحابه، أو التي تسلِّط الضوء على شيء من هديه الفعلي العملي، أو التي تحكي قصة معيَّنة حصلت — وهذا بعينه ما يتحقق في حديث كعب بن مالك."
+   }
+  ]
+ },
+ "s2": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "في حديث قاتل المئة، بم حكم الملَك الذي جاء في صورة آدمي؟",
+    "options": [
+     "أن يُترك أمره إلى يوم القيامة",
+     "أن يُقاس ما بين الأرضين، فإلى أيّتهما كان أدنى فهو له",
+     "أن تقبضه ملائكة العذاب لأنه لم يعمل خيرًا قط"
+    ],
+    "correct": 1,
+    "feedback": "فقاسوا فوجدوه أدنى إلى الأرض التي أراد بشِبر، فقبضته ملائكة الرحمة. وفي رواية: أوحى الله للأرض الصالحة أن تقرَّبي وللأخرى أن تباعدي."
+   },
+   {
+    "type": "reflect",
+    "q": "ما الذي تضيفه رواية «فأوحى الله تعالى إلى هذه أن تباعدي وإلى هذه أن تقرَّبي» على أصل القصة؟",
+    "answer": "أنها لم تكن قياسًا مجرَّدًا، بل تدخُّلٌ إلهي في المسافة نفسها — أرضٌ أُمرت أن تتباعد وأرضٌ أُمرت أن تقترب — لأجل شِبرٍ واحد يُنجي رجلًا قتل مئة نفس. وفي رواية ثالثة: «فنَأَى بصدره نحوها» أي مال بصدره ناحية الأرض الصالحة وهو يحتضر."
+   }
+  ]
+ },
+ "s3": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما الفرق بين جواب العالم وجواب العابد في الحديث؟",
+    "options": [
+     "العابد فتح باب الأمل والعالم أغلقه",
+     "العالم فتح باب الأمل فكان سببًا لإقلاعه، والعابد أغلقه فكانت النتيجة أن قتله",
+     "لا فرق يُذكر بينهما"
+    ],
+    "correct": 1,
+    "feedback": "فجواب العالم كان أزكى وأرشد وأقرب وأكثر رحمة، وأدَّى إلى الخير. ومن هنا يُعلم أن غياب العلماء عن الأمة يؤدي إلى شرٍّ كبير."
+   },
+   {
+    "type": "mcq",
+    "q": "ما الثمرة العملية من فائدة «أهمية القصص في الخطاب والدعوة»؟",
+    "options": [
+     "الاكتفاء بالخطاب المباشر",
+     "أن يعتني الداعية بتنويع أساليب البيان: ضرب الأمثال وذكر القصص، وبخاصة قصص الأنبياء",
+     "الاقتصار على القصص دون غيرها"
+    ],
+    "correct": 1,
+    "feedback": "فالقصة لا تُنسى، تبقى في الذهن مشهدًا متكاملًا. وقد اعتنى الله بالقصص في القرآن حتى سُميت سورة باسم «القصص»، وبعض قصص الأمم السابقة لم نعلمها إلا من طريق السنة."
+   },
+   {
+    "type": "reflect",
+    "q": "بأي منطق تعامل العابد مع السائل؟ وما وجه الخطأ فيه؟",
+    "answer": "تعامل بمنطق «الصلاح المجرَّد»؛ كأنه رجل أفنى عمره في الصلاة والسجود، فيأتيه قاتل تسعة وتسعين فيقول: أنا أعبد ستين سنة وأنت قاتل — لا توبة لك! فأغلق الباب. ووجه الخطأ أنه قال على الله بلا علم، فكانت النتيجة أن قتله الرجل فكمّل به مئة."
+   }
+  ]
+ },
+ "s4": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "لماذا لم يحسب كعب تخلّفه عن بدر تخلّفًا يُعاتب عليه؟",
+    "options": [
+     "لأنه كان مريضًا",
+     "لأن التخلف عن بدر لم يكن فيه إثم؛ فقد خرج ﷺ بسرعة لاعتراض العير ولم يكن القتال في البال",
+     "لأنه نسي أمرها"
+    ],
+    "correct": 1,
+    "feedback": "فقد قال ﷺ لمن استأذنه أن يأتي بمركبه البعيد: «لا، إلا مَن كان ظهرُه حاضرًا». فكعب لا يتكلم عن مجرد التخلف، بل عن التخلف الذي فيه إثم."
+   },
+   {
+    "type": "mcq",
+    "q": "ما التوضيح الدقيق حول وصف حديث كعب بأنه «أطول حديث في الصحيح»؟",
+    "options": [
+     "الوصف دقيق ولا إشكال فيه",
+     "الأدق أن يقال: هو من أطول الأحاديث في الصحيحين، فقد نُوزع في تعيين الأطول بينه وبين حديث الإفك",
+     "هو أقصر مما ذُكر"
+    ],
+    "correct": 1,
+    "feedback": "والمقصود المتفق عليه: طوله وشهرته ومكانته، وهو الذي بناه الشيخ عليه."
+   },
+   {
+    "type": "reflect",
+    "q": "ما الغاية التي صرّح بها الشيخ من مشاريعه في السيرة والهدي النبوي؟",
+    "answer": "بثُّ المفاهيم الشرعية من جديد بالعناية بأصولها وبهدي الأنبياء والمرسلين، لتكون نورًا وهداية لحملة الدين من الأجيال الجديدة. فالتغيير والإصلاح لا يكون بمجرد الفعل، وإنما بالفعل المبني على نور، وهذا النور لا بد أن يكون متصلًا بمرجعية الوحي وبمن بلَّغها وهو النبي ﷺ."
+   }
+  ]
+ },
+ "s5": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "لماذا حرص كعب على قوله: «ما كنتُ قطُّ أقوى ولا أيسرَ مني حين تخلَّفت»؟",
+    "options": [
+     "ليفتخر بقوته",
+     "ليقطع على السامع أن يلتمس له عذرًا؛ فهو صدقٌ لا يترك للعذر بابًا",
+     "ليبين أنه كان مشغولًا بتجارته"
+    ],
+    "correct": 1,
+    "feedback": "وذِكرُه للراحلتين مهم في سياق تبوك بالذات، لأن الله قال في المعذورين: ﴿تَوَلَّوْا وَأَعْيُنُهُمْ تَفِيضُ مِنَ الدَّمْعِ حَزَنًا أَلَّا يَجِدُوا مَا يُنْفِقُونَ﴾ — فكعب يقول: لستُ من أصحاب هذه الآية."
+   },
+   {
+    "type": "mcq",
+    "q": "لماذا لم يُورِّ النبي ﷺ في غزوة تبوك خلافًا لعادته؟",
+    "options": [
+     "لأنه لم يعد يخشى الأعداء",
+     "لاستثنائية السفرة: حرٌّ شديد ومسافة بعيدة ومفاوز، فالوضع يحتاج استعدادًا خاصًا",
+     "لأن الوجهة كانت قريبة"
+    ],
+    "correct": 1,
+    "feedback": "فجلَّى للمسلمين أمرهم ليتأهَّبوا أُهبة غزوهم، وأخبرهم بوجههم الذي يريد — ليأخذوا زادًا كافيًا ويتجهزوا."
+   },
+   {
+    "type": "reflect",
+    "q": "ما الإسقاط المعاصر الذي ذكره الشيخ على هدي «التورية» وحفظ المعلومات؟",
+    "answer": "أن من هدي النبي ﷺ المحافظة على المعلومات وعدم التهاون في إفشائها حين يكون هناك عمل للإسلام في بيئة فيها أعداء. ونبّه على «منطق الغفلة» في بعض البيئات الشرعية — كأنك تعيش في عالم نظيف يستقبل إنجازاتك بالورود! بينما هناك متربصون، وبعض الناس بكثرة الكلام والاستعراضات الشخصية يساعد المتربصين من حيث لا يشعر."
+   }
+  ]
+ },
+ "s6": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما معنى «مغموصًا عليه في النفاق»؟",
+    "options": [
+     "مشهورًا بالصلاح",
+     "مطعونًا عليه ومتَّهمًا بالنفاق، معروفًا عند الناس بذلك",
+     "ضعيفًا معذورًا"
+    ],
+    "correct": 1,
+    "feedback": "وقد استخرج الشيخ من هذه الجملة أن الصحابة كانوا معروفين وأن المنافقين في الجملة كانوا معروفين — خاصة في آخر الوقت."
+   },
+   {
+    "type": "mcq",
+    "q": "من استخلف النبي ﷺ على المدينة في غزوة تبوك؟",
+    "options": [
+     "عبد الله بن أم مكتوم كالعادة",
+     "علي بن أبي طالب رضي الله عنه",
+     "أبو بكر الصديق رضي الله عنه"
+    ],
+    "correct": 1,
+    "feedback": "وقال له حينها: «ألا ترضى أن تكون مني بمنزلة هارون من موسى، غير أنه لا نبي بعدي»."
+   },
+   {
+    "type": "reflect",
+    "q": "كيف يُستدل بكلام كعب في الرد على الطاعنين في الصحابة؟",
+    "answer": "لأن بعض الطاعنين يأتون بالآيات التي في المنافقين ليُشعروك أنه لم يكن ثمة صحابة أصلًا! وكلام كعب يردّ ذلك: فهو حين خرج النبي ﷺ بالجيش كان يبحث عن أسوةٍ له فلا يجد إلا رجلًا مغموصًا عليه في النفاق أو ممن عذر الله من الضعفاء — فالتمييز بين الفريقين كان قائمًا وواضحًا."
+   }
+  ]
+ },
+ "s7": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما الذي حسم اختيار كعب للصدق قبل لقاء النبي ﷺ؟",
+    "options": [
+     "أنه لم يكن يُحسن الجدل",
+     "علمه أنه لو حدّثه بكذب يرضى به عنه، ليوشكنّ الله أن يُسخطه عليه",
+     "أن أهله نصحوه بالصدق"
+    ],
+    "correct": 1,
+    "feedback": "مع أنه قال: «ولقد أُعطيتُ جَدَلًا» — أي كان قادرًا على المخارجة. فلما قدِم ﷺ «زاح عني الباطل حتى عرفتُ أني لن أنجو منه بشيءٍ أبدًا، فأجمعتُ صِدقَه»."
+   },
+   {
+    "type": "mcq",
+    "q": "كيف تعامل النبي ﷺ مع المخلَّفين المنافقين (البضع والثمانين)؟",
+    "options": [
+     "أقام عليهم الحد",
+     "قبِل منهم علانيتهم وبايعهم واستغفر لهم ووَكَل سرائرهم إلى الله",
+     "طردهم من المدينة"
+    ],
+    "correct": 1,
+    "feedback": "وفيه معنى مهم: ليس كل من كان فيه شيء من الشر يُتعامل معه بحزم؛ قد يُتعامل معه بلين ورفق ما لم يفعل ما يستحق به العقوبة شرعًا."
+   },
+   {
+    "type": "reflect",
+    "q": "ما وجه العجب في قوله: «وكان إذا قدِم من سفرٍ بدأ بالمسجد فركع فيه ركعتين ثم جلس للناس»؟",
+    "answer": "أن سفر تبوك كان طويلًا — يقدّره الشيخ بقرابة ثلاثة أشهر — وليس سفر نزهة بل سفر شاق تخلّف بسببه من تخلّف، كما قال تعالى: ﴿وَلَٰكِن بَعُدَتْ عَلَيْهِمُ الشُّقَّةُ﴾. ومع ذلك يرجع فيبدأ بالمسجد. وكعب لا يتكلم عن هذه المرة وحدها بل عن الهدي الدائم: «وكان إذا قدم من سفر...». والفكرة في النظر إلى الحدث بعين النبوة: ما الذي يفعله النبي بمقتضى كونه نبيًّا دائمًا؟"
+   }
+  ]
+ },
+ "s8": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "على أي ذنب هُجر الثلاثة خمسين ليلة؟",
+    "options": [
+     "على الزنا أو السرقة أو شرب الخمر",
+     "على التخلف عن نصرة الإسلام مع رسول الله ﷺ",
+     "على النفاق والكذب"
+    ],
+    "correct": 1,
+    "feedback": "فهم لم يزنوا ولم يسرقوا ولم يشربوا الخمر ولم ينافقوا — بل صَدَقوا! وهنا يُعاد من خلال السيرة والوحي تعريف ثقل الذنوب."
+   },
+   {
+    "type": "mcq",
+    "q": "ما معنى «تنكَّرت لي في نفسي الأرض» بحسب شرح الشيخ؟",
+    "options": [
+     "أنه خرج من المدينة",
+     "أنه لم يكن له معنًى يعيش لأجله إلا أنه مع رسول الله ﷺ ومع الصحابة، فلما أُمر بهجرهم لم يبقَ شيء",
+     "أن الأرض أجدبت في ذلك العام"
+    ],
+    "correct": 1,
+    "feedback": "وهذا غير حال إنسانٍ يعيش لمعانٍ دنيوية كثيرة وعنده بقية من خير — فبينهما فرق. ولو كانت العقوبة يومًا واحدًا لكانت عقوبة، فكيف وقد امتدت خمسين ليلة؟"
+   },
+   {
+    "type": "reflect",
+    "q": "ما الإسقاط المعاصر لإعادة تعريف ثقل الذنوب؟ وكيف أنصف الشيخ في التنزيل؟",
+    "answer": "الإسقاط: صار أحيانًا وجود الإنسان في مجال شرعي كأنه تزكية له، فما دام لا يشرب خمرًا ولا يزني فالأمور تمام — خذل الإسلام والمسلمين أو لم يخذلهم، كان مع من يعادون الدعاة والمصلحين أو لم يكن — «عادي، وجهات نظر»! والإنصاف: أن وضوح الحق في زمن النبي ﷺ لا يُقارَن بغيره، فمن تخلّف عنه ﷺ ليس كمن يتخلف بعده — لكن تبقى للأشياء نِسَب، فلا يُنفى أصل الذم أو نسبة منه."
+   }
+  ]
+ },
+ "s9": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "أين يقع جبل سَلْع الذي أوفى عليه المبشِّر؟",
+    "options": [
+     "شرق المسجد النبوي",
+     "قريب من المسجد النبوي من جهته الغربية، وهو الجبل الذي كان في ظهر النبي ﷺ يوم الخندق",
+     "خارج المدينة بمسافة يوم"
+    ],
+    "correct": 1,
+    "feedback": "فمن صعد عليه والتفت إلى الجهة الداخلية كان مطلًّا على المدينة كلها. وكان ذلك بعد الفجر والدنيا هادئة، فصوتٌ واحد من فوقه يصل إلى جهة المسجد النبوي."
+   },
+   {
+    "type": "mcq",
+    "q": "ما دلالة قوله: «فذهب الناس يبشّروننا»؟",
+    "options": [
+     "أن الناس كانوا متشفّين",
+     "أن الناس ما كانت متشفّية، فما إن جاء الفرج حتى انطلقوا يبشّرون",
+     "أن الناس لم يعلموا بالخبر"
+    ],
+    "correct": 1,
+    "feedback": "ليس كبعض البيئات التي كأن فيها تشفّيًا، يفرح أحدهم أن يُمسَك على أحدٍ غلط! وتأمل الصورة: رجل يركض بفرسه ليبشّر، وآخر يصعد الجبل فينادي — فكان الصوت أسرع من الفرس."
+   },
+   {
+    "type": "reflect",
+    "q": "ما معنى «الثوب» في عرف ذلك الزمان؟ وما الفرق بينه وبين القميص والبُرنُس؟",
+    "answer": "الثوب قطعة قماش — كالإزار والرداء في الإحرام: الذي تحت ثوب والذي فوق ثوب؛ ولذلك كُفِّن النبي ﷺ في ثلاثة أثواب يمانية بيض سَحُولية ليس فيهن قميص ولا عمامة. أما القميص فهو المفصَّل الذي له أكمام (شِبه ثيابنا اليوم)، وإذا كان له طاقية من الخلف سُمّي بُرنُسًا. فكعب كان يملك ثوبين فقط فخلعهما للمبشِّر واستعار ثوبين."
+   }
+  ]
+ }
+};
+</script>
+
+<script>
+/* ===== تثبيت الفهم: محرك الرندر ===== */
+(function(){
+  function renderQuizBlocks(){
+    document.querySelectorAll('.quiz-block[data-quiz]').forEach(function(container){
+      var key = container.getAttribute('data-quiz');
+      var data = (window.quizData || {})[key];
+      if(!data || container.dataset.rendered) return;
+      container.dataset.rendered = '1';
+
+      var title = document.createElement('div');
+      title.className = 'quiz-block-title';
+      title.textContent = '\uD83E\uDDE0 تثبيت الفهم';
+      container.appendChild(title);
+
+      data.items.forEach(function(item){
+        var itemEl = document.createElement('div');
+        itemEl.className = 'quiz-item';
+
+        if(item.type === 'mcq'){
+          var qEl = document.createElement('p');
+          qEl.className = 'quiz-q';
+          qEl.textContent = item.q;
+          itemEl.appendChild(qEl);
+
+          var optsWrap = document.createElement('div');
+          optsWrap.className = 'quiz-options';
+
+          var feedbackEl = document.createElement('div');
+          feedbackEl.className = 'quiz-feedback';
+          feedbackEl.textContent = item.feedback || '';
+
+          item.options.forEach(function(optText, optIdx){
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'quiz-opt';
+            btn.textContent = optText;
+            btn.addEventListener('click', function(){
+              var allBtns = optsWrap.querySelectorAll('.quiz-opt');
+              allBtns.forEach(function(b){ b.classList.add('disabled'); });
+              if(optIdx === item.correct){
+                btn.classList.add('correct');
+              } else {
+                btn.classList.add('wrong');
+                if(allBtns[item.correct]) allBtns[item.correct].classList.add('correct');
+              }
+              feedbackEl.classList.add('show');
+            });
+            optsWrap.appendChild(btn);
+          });
+
+          itemEl.appendChild(optsWrap);
+          itemEl.appendChild(feedbackEl);
+
+        } else if(item.type === 'reflect'){
+          var wrap = document.createElement('div');
+          wrap.className = 'quiz-reflect';
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-reflect-q';
+          qText.textContent = '\uD83D\uDCAD ' + item.q;
+          wrap.appendChild(qText);
+
+          var revealBtn = document.createElement('button');
+          revealBtn.type = 'button';
+          revealBtn.className = 'quiz-reveal-btn';
+          revealBtn.textContent = 'إظهار الإجابة';
+
+          var answerEl = document.createElement('div');
+          answerEl.className = 'quiz-answer';
+          answerEl.textContent = item.answer;
+
+          revealBtn.addEventListener('click', function(){
+            answerEl.classList.toggle('show');
+            revealBtn.textContent = answerEl.classList.contains('show') ? 'إخفاء الإجابة' : 'إظهار الإجابة';
+          });
+
+          wrap.appendChild(revealBtn);
+          wrap.appendChild(answerEl);
+          itemEl.appendChild(wrap);
+        }
+
+        container.appendChild(itemEl);
+      });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', renderQuizBlocks);
+  } else {
+    renderQuizBlocks();
+  }
+})();
+</script>
+
 </body>
 </html>
