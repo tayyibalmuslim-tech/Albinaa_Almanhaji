@@ -216,6 +216,122 @@ footer b{color:#f0c08a}
   td:first-child{white-space:normal}
 }
 </style>
+
+<style>
+/* ===== تثبيت الفهم — الأسئلة التفاعلية ===== */
+.quiz-block{
+  margin:32px 0 24px;
+  background:var(--green-deeper, #132920);
+  border-radius:12px;
+  padding:24px;
+  box-shadow:0 6px 24px rgba(31,61,46,.14);
+  position:relative;
+  overflow:hidden;
+  direction:rtl;
+  text-align:right;
+}
+.quiz-block::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:radial-gradient(circle at 90% 10%, rgba(201,164,90,.12) 0, transparent 45%);
+  pointer-events:none;
+}
+.quiz-block-title{
+  display:flex; align-items:center; gap:8px;
+  font-weight:800; font-size:14px;
+  color:var(--gold-pale, #F2E6C4);
+  letter-spacing:.3px;
+  margin-bottom:16px;
+  position:relative;
+}
+.quiz-item{
+  background:rgba(255,254,250,.06);
+  border:1px solid rgba(199,164,90,.25);
+  border-radius:8px;
+  padding:16px;
+  margin-bottom:16px;
+  position:relative;
+}
+.quiz-item:last-child{margin-bottom:0;}
+.quiz-q{
+  font-size:15.5px; font-weight:700;
+  color:#FBF7EE;
+  margin:0 0 16px;
+  line-height:1.7;
+}
+.quiz-options{display:flex; flex-direction:column; gap:8px;}
+.quiz-opt{
+  display:block; width:100%; text-align:right;
+  background:rgba(251,247,238,.08);
+  border:1px solid rgba(251,247,238,.18);
+  color:#FBF7EE;
+  font-family:inherit; font-size:14px; line-height:1.6;
+  border-radius:8px;
+  padding:10px 14px;
+  cursor:pointer;
+  transition:background .15s ease, border-color .15s ease, transform .1s ease;
+}
+.quiz-opt:hover{background:rgba(251,247,238,.15); border-color:rgba(199,164,90,.5);}
+.quiz-opt:active{transform:scale(.99);}
+.quiz-opt.correct{
+  background:rgba(46,84,67,.9);
+  border-color:#8FBF9E;
+  color:#EAF6EE;
+  font-weight:700;
+}
+.quiz-opt.correct::after{content:" \2713"; color:#8FBF9E;}
+.quiz-opt.wrong{
+  background:rgba(140,59,46,.55);
+  border-color:#D89A8C;
+  color:#F7E6E2;
+}
+.quiz-opt.wrong::after{content:" \2715"; color:#F1B3A6;}
+.quiz-opt.disabled{cursor:default; pointer-events:none;}
+.quiz-feedback{
+  margin-top:10px;
+  font-size:13.5px; line-height:1.8;
+  color:var(--gold-pale, #F2E6C4);
+  background:rgba(0,0,0,.15);
+  border-right:3px solid var(--gold, #A9832E);
+  border-radius:6px;
+  padding:9px 12px;
+  display:none;
+}
+.quiz-feedback.show{display:block;}
+.quiz-reflect{
+  border-top:1px dashed rgba(199,164,90,.3);
+  padding-top:16px;
+  margin-top:16px;
+}
+.quiz-item > .quiz-reflect:first-child{border-top:none; padding-top:0; margin-top:0;}
+.quiz-reflect-q{
+  font-size:14.5px; color:var(--gold-pale, #F2E6C4); font-weight:600;
+  margin:0 0 8px;
+}
+.quiz-reveal-btn{
+  background:var(--gold, #A9832E);
+  color:var(--green-deeper, #132920);
+  border:none; border-radius:999px;
+  font-family:inherit;
+  font-weight:700; font-size:13px;
+  padding:8px 18px;
+  cursor:pointer;
+  transition:background .15s ease;
+}
+.quiz-reveal-btn:hover{background:var(--gold-soft, #C7A45A);}
+.quiz-answer{
+  display:none;
+  margin-top:10px;
+  font-size:14px; line-height:1.85;
+  color:#FBF7EE;
+  background:rgba(255,254,250,.08);
+  border-radius:8px;
+  padding:11px 14px;
+}
+.quiz-answer.show{display:block;}
+@media (max-width:640px){ .quiz-block{padding:16px;} }
+</style>
+
 </head>
 <body>
 <div id="bar"></div>
@@ -392,7 +508,9 @@ footer b{color:#f0c08a}
         <li>المدرسة العقلية وريثة المعتزلة: إهمال الآحاد، وتقديم العقل والمصلحة على النص، والقول بتاريخية النص — وهي خارج الاجتهاد المعتبر.</li>
       </ol>
     </div>
-  </section>
+  
+      <div class="quiz-block" data-quiz="s1"></div>
+    </section>
 
   <!-- ================= SECTION 2 ================= -->
   <section id="s2" class="t2">
@@ -581,7 +699,9 @@ footer b{color:#f0c08a}
         <li>ترْك العالم للحديث لا يعني إعراضه عنه؛ فقد يكون <strong>تأوّله</strong> كما فعل مالك في حديث البيّعان بالخيار.</li>
       </ol>
     </div>
-  </section>
+  
+      <div class="quiz-block" data-quiz="s2"></div>
+    </section>
 
   <!-- ================= SECTION 3 ================= -->
   <section id="s3" class="t3">
@@ -666,7 +786,9 @@ footer b{color:#f0c08a}
         <li>الإجماع دليل، <strong>والخلاف ليس دليلاً</strong>؛ ومن جعله دليلاً على الإباحة فقد خالف أصول الاستدلال.</li>
       </ol>
     </div>
-  </section>
+  
+      <div class="quiz-block" data-quiz="s3"></div>
+    </section>
 
   <!-- ================= SECTION 4 ================= -->
   <section id="s4" class="t4">
@@ -765,7 +887,9 @@ footer b{color:#f0c08a}
         <li>التطبيق ثلاث درجات: العمل بما تعلّمت، ثم التدريب على الفتوى، ثم التدريس — <strong>بعد</strong> الإتقان لا قبله.</li>
       </ol>
     </div>
-  </section>
+  
+      <div class="quiz-block" data-quiz="s4"></div>
+    </section>
 </div>
 
 <!-- ================= ANKI ================= -->
@@ -942,5 +1066,234 @@ window.addEventListener('scroll', ()=>{
   document.getElementById('bar').style.width = p + "%";
 });
 </script>
+
+<script>
+window.quizData = {
+ "s1": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما القاعدة التي لا خلاف عليها بين مدرستَي أهل الرأي وأهل الحديث؟",
+    "options": [
+     "أن أهل الرأي لا يحتجون بالحديث",
+     "أن جميع فقهاء الإسلام بلا استثناء يجعلون الحديث النبوي مصدرًا أساسيًا للتشريع",
+     "أن القياس مقدّم على النص عند أهل الرأي"
+    ],
+    "correct": 1,
+    "feedback": "الذي يتفاوت هو نصيب العلماء من حفظ السنة، لا الخلاف في أصل حجيتها — وهذا التفاوت هو منشأ الاتجاهات الفقهية."
+   },
+   {
+    "type": "mcq",
+    "q": "لماذا ظهر إعمال الرأي والقياس في مدرسة الكوفة أكثر من المدينة؟",
+    "options": [
+     "لأن أهل الكوفة لم يعتبروا السنة حجة",
+     "لقلة الحديث عندهم مقارنة بالمدينة، مع وفرة الصحابة وجودة الأسانيد في الحجاز",
+     "لأنهم أذكى من أهل المدينة"
+    ],
+    "correct": 1,
+    "feedback": "سببان: وفرة الصحابة في الحجاز، وجودة الأسانيد حتى قيل «أصحّ الأسانيد أسانيد أهل المدينة» — فلم يحتاجوا للقياس بقدر ما احتاجه الكوفيون."
+   },
+   {
+    "type": "reflect",
+    "q": "كيف زالت المنافسة بين المدرستين؟",
+    "answer": "لمّا حصل الالتقاء بين رجال المدرستين: كلقاء محمد بن الحسن الشيباني (تلميذ أبي حنيفة) بالإمام مالك إمام دار الهجرة، وكذلك القاضي أبو يوسف وغيره ممن جمع بين المدرستين — فتلاقح الفقهان وزال التوتر."
+   }
+  ]
+ },
+ "s2": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "متى بدأ الخلاف الفقهي؟",
+    "options": [
+     "بعد وفاة النبي ﷺ بقرن",
+     "في زمن النبوة نفسه، والنبي ﷺ بين أظهر الصحابة",
+     "بعد نشأة المذاهب الأربعة"
+    ],
+    "correct": 1,
+    "feedback": "كما في قصة صلاة العصر في بني قريظة — فالحديث بلغ الجميع، والجميع مسلِّم بثبوته، ومع ذلك اختلفوا في فهمه، ولم يعنّف النبي ﷺ أيًّا من الطائفتين."
+   },
+   {
+    "type": "mcq",
+    "q": "في قصة بني قريظة، هل كان اختلاف الصحابة بسبب تصحيح الحديث وتضعيفه؟",
+    "options": [
+     "نعم، بعضهم ضعّف الحديث",
+     "لا، الجميع مسلِّم بثبوته — والخلاف كان في فهم دلالته",
+     "بعضهم لم يبلغه الحديث أصلًا"
+    ],
+    "correct": 1,
+    "feedback": "طائفة فهمت أن المراد الاستعجال فصلّت في الطريق، وطائفة أخذت بظاهر اللفظ فصلّت في بني قريظة — والمصيب واحد، والمخطئ معذور باجتهاده بين الأجر والأجرين."
+   },
+   {
+    "type": "reflect",
+    "q": "ضرب الشيخ مثالًا بقوله: «بكرة ما أحد يصلي العصر إلا في مسجد الملك سعود». ما الفرق الجوهري بين هذا الكلام وكلام النبي ﷺ؟",
+    "answer": "أن كلام الشيخ لا يُخصَّص به النصوص الشرعية، فستصلي العصر في وقتها حتمًا. أما نص النبي ﷺ فصادر من المعصوم المشرِّع، فيمكن أن يخصِّص النصوص الدالة على انتهاء وقت العصر وعلى أداء الصلاة في أول وقتها — وهنا موضع الاجتهاد."
+   }
+  ]
+ },
+ "s3": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "هل يُقال «كل مجتهد مصيب»؟",
+    "options": [
+     "نعم، الحق نسبي ومتعدد",
+     "لا؛ المجتهد مأجور لكنه قد يصيب وقد يخطئ، والحق في المسألة واحد",
+     "نعم، لأن الله لا يكلف نفسًا إلا وسعها"
+    ],
+    "correct": 1,
+    "feedback": "لحديث: إذا اجتهد الحاكم فأصاب فله أجران، وإذا اجتهد فأخطأ فله أجر واحد — فصوّبه تارةً وخطّأه أخرى. والخطأ لا يتعلق به ذمّ ولا إثم، لكن الحق واحد لا متعدد."
+   },
+   {
+    "type": "mcq",
+    "q": "بعض الناس يستدل بوجود الخلاف على الجواز. ما الحكم على هذا؟",
+    "options": [
+     "استدلال صحيح؛ الخلاف رحمة",
+     "خطأ كبير؛ الإجماع دليل، أما الخلاف فليس دليلًا",
+     "يصح في المعاملات دون العبادات"
+    ],
+    "correct": 1,
+    "feedback": "لا يستقيم على أي أصل من أصول الاستدلال أن تجعل الخلاف دليلًا على الإباحة — فإذا اختلفوا فقال بعضهم حلال وبعضهم حرام، لا يُقال: إذًا هي حلال."
+   },
+   {
+    "type": "reflect",
+    "q": "مثال «النكاح المركَّب» يوضّح خطورة تتبّع الرخص. اشرح كيف يجتمع فيه الشرّ كله.",
+    "answer": "يأخذ من أبي حنيفة صحة النكاح بلا وليّ، فإذا قيل له: وأين الشهود؟ أخذ من مالك أن الشهود ليسوا شرطًا، فإذا قيل: لكن مالكًا يشترط الإعلان، أخذ من أحمد عدم اشتراط الإعلان — فيخرج بنكاح لا يُقرّه أي إمام من هؤلاء الأئمة أصلًا، إذ لكل إمام منظومة شروط متكاملة."
+   },
+   {
+    "type": "reflect",
+    "q": "ما الفرق بين «مسائل الاجتهاد» و«مسائل الخلاف التي فيها نص» من جهة عذر المخالف؟",
+    "answer": "في مسائل الاجتهاد يُعذر المخالف وهو بين الأجر والأجرين. أما إذا كان في المسألة نص واضح لم يبلغ العالم ثم بلغه بعد ذلك، فحينئذ يجب الأخذ بالنص والرجوع إليه — ولهذا كان أهل العلم يتراجعون في الفتوى إذا بلغهم النص."
+   }
+  ]
+ },
+ "s4": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما الخلل في تفكير من يسأل: «ما أفضل كتاب أدرسه لأضبط الفقه؟»",
+    "options": [
+     "لا خلل، هذا هو السؤال الصحيح",
+     "أن الأهم هو أفضل طريقة لا أفضل كتاب؛ فلن تكون فقيهًا بأفضل كتاب إذا لم تدرسه بأفضل طريقة",
+     "أن الفقه لا يُدرس من الكتب أصلًا"
+    ],
+    "correct": 1,
+    "feedback": "والكتب كلها متقاربة: دليل الطالب، وزاد المستقنع، وعمدة الطالب — هذا أفضل من وجه وهذا من وجه. والأصل أن تترك اختيار الكتاب لشيخك بحسب حالك."
+   },
+   {
+    "type": "mcq",
+    "q": "في خطوات ضبط الفقه: ما الضروري وما التكميلي في مسألة حفظ المتون؟",
+    "options": [
+     "الضروري تعيين متن بعينه، والتكميلي أصل الحفظ",
+     "الضروري وجود متن تحفظه، والتكميلي تعيين أي متن",
+     "كلاهما تكميلي"
+    ],
+    "correct": 1,
+    "feedback": "فالأساس أن يكون لك متن فقهي محفوظ؛ أما كونه زاد المستقنع أو أخصر المختصرات أو دليل الطالب فأمر تحسيني تكميلي."
+   },
+   {
+    "type": "reflect",
+    "q": "لماذا جعل الشيخ «القناعة بالعلم» أول خطوات ضبط الفقه؟",
+    "answer": "لأنك إن دخلت على علم الفقه وأنت غير مقتنع به، تقول: «هذا أقوال رجال ومبنية على خلاف الدليل» — فلن تضبطه أبدًا، لأنك لست مقتنعًا به من أصله. فالقناعة شرط سابق على أي جهد في التحصيل."
+   }
+  ]
+ }
+};
+</script>
+
+<script>
+/* ===== تثبيت الفهم: محرك الرندر ===== */
+(function(){
+  function renderQuizBlocks(){
+    document.querySelectorAll('.quiz-block[data-quiz]').forEach(function(container){
+      var key = container.getAttribute('data-quiz');
+      var data = (window.quizData || {})[key];
+      if(!data || container.dataset.rendered) return;
+      container.dataset.rendered = '1';
+
+      var title = document.createElement('div');
+      title.className = 'quiz-block-title';
+      title.textContent = '\uD83E\uDDE0 تثبيت الفهم';
+      container.appendChild(title);
+
+      data.items.forEach(function(item){
+        var itemEl = document.createElement('div');
+        itemEl.className = 'quiz-item';
+
+        if(item.type === 'mcq'){
+          var qEl = document.createElement('p');
+          qEl.className = 'quiz-q';
+          qEl.textContent = item.q;
+          itemEl.appendChild(qEl);
+
+          var optsWrap = document.createElement('div');
+          optsWrap.className = 'quiz-options';
+
+          var feedbackEl = document.createElement('div');
+          feedbackEl.className = 'quiz-feedback';
+          feedbackEl.textContent = item.feedback || '';
+
+          item.options.forEach(function(optText, optIdx){
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'quiz-opt';
+            btn.textContent = optText;
+            btn.addEventListener('click', function(){
+              var allBtns = optsWrap.querySelectorAll('.quiz-opt');
+              allBtns.forEach(function(b){ b.classList.add('disabled'); });
+              if(optIdx === item.correct){
+                btn.classList.add('correct');
+              } else {
+                btn.classList.add('wrong');
+                if(allBtns[item.correct]) allBtns[item.correct].classList.add('correct');
+              }
+              feedbackEl.classList.add('show');
+            });
+            optsWrap.appendChild(btn);
+          });
+
+          itemEl.appendChild(optsWrap);
+          itemEl.appendChild(feedbackEl);
+
+        } else if(item.type === 'reflect'){
+          var wrap = document.createElement('div');
+          wrap.className = 'quiz-reflect';
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-reflect-q';
+          qText.textContent = '\uD83D\uDCAD ' + item.q;
+          wrap.appendChild(qText);
+
+          var revealBtn = document.createElement('button');
+          revealBtn.type = 'button';
+          revealBtn.className = 'quiz-reveal-btn';
+          revealBtn.textContent = 'إظهار الإجابة';
+
+          var answerEl = document.createElement('div');
+          answerEl.className = 'quiz-answer';
+          answerEl.textContent = item.answer;
+
+          revealBtn.addEventListener('click', function(){
+            answerEl.classList.toggle('show');
+            revealBtn.textContent = answerEl.classList.contains('show') ? 'إخفاء الإجابة' : 'إظهار الإجابة';
+          });
+
+          wrap.appendChild(revealBtn);
+          wrap.appendChild(answerEl);
+          itemEl.appendChild(wrap);
+        }
+
+        container.appendChild(itemEl);
+      });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', renderQuizBlocks);
+  } else {
+    renderQuizBlocks();
+  }
+})();
+</script>
+
 </body>
 </html>
