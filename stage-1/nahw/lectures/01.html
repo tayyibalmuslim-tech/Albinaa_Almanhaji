@@ -428,6 +428,122 @@
   }
   .btn-outline:hover{background:var(--deep-green); color:var(--cream);}
 </style>
+
+<style>
+/* ===== تثبيت الفهم — الأسئلة التفاعلية ===== */
+.quiz-block{
+  margin:32px 0 24px;
+  background:var(--green-deeper, #132920);
+  border-radius:12px;
+  padding:24px;
+  box-shadow:0 6px 24px rgba(31,61,46,.14);
+  position:relative;
+  overflow:hidden;
+  direction:rtl;
+  text-align:right;
+}
+.quiz-block::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:radial-gradient(circle at 90% 10%, rgba(201,164,90,.12) 0, transparent 45%);
+  pointer-events:none;
+}
+.quiz-block-title{
+  display:flex; align-items:center; gap:8px;
+  font-weight:800; font-size:14px;
+  color:var(--gold-pale, #F2E6C4);
+  letter-spacing:.3px;
+  margin-bottom:16px;
+  position:relative;
+}
+.quiz-item{
+  background:rgba(255,254,250,.06);
+  border:1px solid rgba(199,164,90,.25);
+  border-radius:8px;
+  padding:16px;
+  margin-bottom:16px;
+  position:relative;
+}
+.quiz-item:last-child{margin-bottom:0;}
+.quiz-q{
+  font-size:15.5px; font-weight:700;
+  color:#FBF7EE;
+  margin:0 0 16px;
+  line-height:1.7;
+}
+.quiz-options{display:flex; flex-direction:column; gap:8px;}
+.quiz-opt{
+  display:block; width:100%; text-align:right;
+  background:rgba(251,247,238,.08);
+  border:1px solid rgba(251,247,238,.18);
+  color:#FBF7EE;
+  font-family:inherit; font-size:14px; line-height:1.6;
+  border-radius:8px;
+  padding:10px 14px;
+  cursor:pointer;
+  transition:background .15s ease, border-color .15s ease, transform .1s ease;
+}
+.quiz-opt:hover{background:rgba(251,247,238,.15); border-color:rgba(199,164,90,.5);}
+.quiz-opt:active{transform:scale(.99);}
+.quiz-opt.correct{
+  background:rgba(46,84,67,.9);
+  border-color:#8FBF9E;
+  color:#EAF6EE;
+  font-weight:700;
+}
+.quiz-opt.correct::after{content:" \2713"; color:#8FBF9E;}
+.quiz-opt.wrong{
+  background:rgba(140,59,46,.55);
+  border-color:#D89A8C;
+  color:#F7E6E2;
+}
+.quiz-opt.wrong::after{content:" \2715"; color:#F1B3A6;}
+.quiz-opt.disabled{cursor:default; pointer-events:none;}
+.quiz-feedback{
+  margin-top:10px;
+  font-size:13.5px; line-height:1.8;
+  color:var(--gold-pale, #F2E6C4);
+  background:rgba(0,0,0,.15);
+  border-right:3px solid var(--gold, #A9832E);
+  border-radius:6px;
+  padding:9px 12px;
+  display:none;
+}
+.quiz-feedback.show{display:block;}
+.quiz-reflect{
+  border-top:1px dashed rgba(199,164,90,.3);
+  padding-top:16px;
+  margin-top:16px;
+}
+.quiz-item > .quiz-reflect:first-child{border-top:none; padding-top:0; margin-top:0;}
+.quiz-reflect-q{
+  font-size:14.5px; color:var(--gold-pale, #F2E6C4); font-weight:600;
+  margin:0 0 8px;
+}
+.quiz-reveal-btn{
+  background:var(--gold, #A9832E);
+  color:var(--green-deeper, #132920);
+  border:none; border-radius:999px;
+  font-family:inherit;
+  font-weight:700; font-size:13px;
+  padding:8px 18px;
+  cursor:pointer;
+  transition:background .15s ease;
+}
+.quiz-reveal-btn:hover{background:var(--gold-soft, #C7A45A);}
+.quiz-answer{
+  display:none;
+  margin-top:10px;
+  font-size:14px; line-height:1.85;
+  color:#FBF7EE;
+  background:rgba(255,254,250,.08);
+  border-radius:8px;
+  padding:11px 14px;
+}
+.quiz-answer.show{display:block;}
+@media (max-width:640px){ .quiz-block{padding:16px;} }
+</style>
+
 </head>
 <body data-page="lecture" data-lecture-id="stage1_nahw_01">
 
@@ -493,7 +609,9 @@
     <span class="tag">🔑 لماذا يُشترط الإتقان لا مجرد الدراسة؟</span>
     لأن النحو أداة فهم، لا مادة معلومات تُحفظ وتُنسى. من درس النحو دراسة سطحية دون إتقان، سيظل عاجزًا عن ضبط كلامه وفهم النصوص الشرعية فهمًا دقيقًا، مهما بلغت معرفته النظرية بالقواعد.
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="sec1"></div>
+    </section>
 
 <section class="block" id="sec2">
   <div class="sec-head"><div class="sec-icon">🗂️</div><h2>علوم اللغة العربية الاثنا عشر</h2></div>
@@ -507,7 +625,9 @@
   <div class="key-point"><span class="ic">💡</span><div>هذه العلوم الأربعة ستكون موضوع أربعة مداخل متتالية: مدخل النحو (هذا المجلس)، ثم مدخل الصرف، ثم مدخل البلاغة، ثم مدخل الأدب.</div></div>
   <h3 class="sub">وماذا عن العلوم الثمانية الباقية؟</h3>
   <p>ليست غير مهمة، لكنها أقل حاجةً لطالب العلم مقارنة بالأربعة السابقة. مثال ذلك <strong>علم متن اللغة</strong> (مفردات اللغة العربية)، وهو علم مهم جدًا في حقيقته، لكن ضعف همم كثير من طلاب العلم اليوم يجعلهم يعرضون عنه، رغم أن جزءًا منه يتخلل دراسة النحو والصرف والبلاغة والأدب تلقائيًا.</p>
-</section>
+
+      <div class="quiz-block" data-quiz="sec2"></div>
+    </section>
 
 <section class="block" id="sec3">
   <div class="sec-head"><div class="sec-icon">⚖️</div><h2>لا علم شريعة بلا نحو</h2></div>
@@ -567,7 +687,9 @@
     <span class="tag">السيوطي</span>
     اتُّفق على أن النحو يُحتاج إليه في كل فن من فنون العلم، لا سيما التفسير والحديث؛ فلا يجوز لأحد أن يتكلم في كتاب الله حتى يكون غنيًّا بالعربية.
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="sec3"></div>
+    </section>
 
 <section class="block" id="sec4">
   <div class="sec-head"><div class="sec-icon">🌍</div><h2>اللغة العربية بين انحطاط الواقع وشهادة المنصفين</h2></div>
@@ -604,7 +726,9 @@
     <span class="tag">إرنست رينان، مستشرق فرنسي</span>
     استغرب كيف نشأت هذه اللغة القومية ووصلت إلى درجات الكمال وسط الصحاري عند أمة من الرحّل، متفوقة بكثرة مفرداتها ودقة معانيها وحسن نظام مبانيها، دون أن يُعرف لها طفولة أو شيخوخة كسائر اللغات.
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="sec4"></div>
+    </section>
 
 <section class="block" id="sec5">
   <div class="sec-head"><div class="sec-icon">🌿</div><h2>لغة لا تشيخ ولا تموت</h2></div>
@@ -624,7 +748,9 @@
   </div>
 
   <div class="key-point"><span class="ic">✨</span><div>القرآن الكريم نزل قبل أكثر من 1400 سنة، وما زال يُقرأ ويُتلذذ به وكأنه أُنزل اليوم — ولا تشارك أي لغة أخرى اللغة العربية في هذه الميزة.</div></div>
-</section>
+
+      <div class="quiz-block" data-quiz="sec5"></div>
+    </section>
 
 <section class="block" id="sec6">
   <div class="sec-head"><div class="sec-icon">📝</div><h2>مسألة اللحن: ما هو، ومتى بدأ؟</h2></div>
@@ -664,7 +790,9 @@
     <span class="tag">ابن تيمية</span>
     تعلّم العربية وتعليمها فرض على الكفاية، وقد كان السلف يؤدّبون أولادهم على اجتناب اللحن، فنحن مأمورون بأن نحفظ قوانين اللغة العربية ونصلح الألسنة المائلة عنها، لأن ذلك يحفظ لنا طريق فهم الكتاب والسنة والاقتداء بعرف خطابها.
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="sec6"></div>
+    </section>
 
 <section class="block" id="sec7">
   <div class="sec-head"><div class="sec-icon">🔤</div><h2>معنى كلمة "نحو" لغةً</h2></div>
@@ -679,7 +807,9 @@
     </table>
   </div>
   <div class="key-point"><span class="ic">📎</span><div>لكلمة "نحو" في اللغة العربية نحو سبعة معانٍ إجمالًا، اقتُصر هنا على أبرزها.</div></div>
-</section>
+
+      <div class="quiz-block" data-quiz="sec7"></div>
+    </section>
 
 <section class="block" id="sec8">
   <div class="sec-head"><div class="sec-icon">🏛️</div><h2>المبادئ العشرة لعلم النحو</h2></div>
@@ -734,7 +864,9 @@
     <span class="tag">١٠ — المسائل</span>
     مسائل هذا العلم كثيرة، منها: الجملة الاسمية والجملة الفعلية، المبتدأ والخبر، الفعل والفاعل، باب "كان وأخواتها"، باب "إنّ وأخواتها"، حروف الجر، وغيرها مما يُدرس في كتبه المتخصصة.
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="sec8"></div>
+    </section>
 
 <section class="block" id="sec9">
   <div class="sec-head"><div class="sec-icon">📜</div><h2>قصة تأسيس علم النحو</h2></div>
@@ -743,7 +875,9 @@
     يُروى أن أبا الأسود الدؤلي رحمه الله كان عند ابنته فتكلمت فلحنت، فصُدم لذلك، ثم ذهب إلى علي بن أبي طالب رضي الله عنه يشكو له انتشار اللحن بين الناس. فأمره علي رضي الله عنه — فيما يُروى — أن يأتي بكتاب ويكتب: "الكلمة إما اسم، وإما فعل، وإما حرف"، ثم قال له: "انحُ على هذا النحو"، فسُمّي العلم بعد ذلك بـ"علم النحو" — والله أعلم بصحة تفاصيل الرواية.
   </div>
   <div class="key-point"><span class="ic">🔗</span><div>هذه القصة تربط منطقيًا بين سبب نشأة العلم (خوف انتشار اللحن وتحريف المعنى، كما في قصة القارئ زمن عمر) ونتيجته (تدوين قواعد ضابطة لأواخر الكلمات).</div></div>
-</section>
+
+      <div class="quiz-block" data-quiz="sec9"></div>
+    </section>
 
 <section class="block" id="sec10">
   <div class="sec-head"><div class="sec-icon">⚖️</div><h2>حكم تعلّم النحو</h2></div>
@@ -754,7 +888,9 @@
       <tr><td>طالب العلم الذي يريد تفسير القرآن أو شرح الحديث</td><td>فرض عين — لا يجوز له الخوض في ذلك دون إتقان النحو</td></tr>
     </table>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="sec10"></div>
+    </section>
 
 <section class="block" id="sec11">
   <div class="sec-head"><div class="sec-icon">🌱</div><h2>هل النحو صعب؟ وكيف تتقنه؟</h2></div>
@@ -783,7 +919,9 @@
     ينبغي مع هذا التدرج: تخليص النية، الدعاء، واختيار معلم موفّق لا يُشغل الطالب بالخلافيات ولا يُصعّب عليه الموضوع.
   </div>
   <div class="key-point"><span class="ic">📚</span><div>لمن أراد التفصيل في مسألة صعوبة النحو وطريقة تعلّمه، أشار الشيخ إلى كتابه "مدارج النحو" الذي يشرح فيه تجربته الشخصية في تعلّم هذا العلم.</div></div>
-</section>
+
+      <div class="quiz-block" data-quiz="sec11"></div>
+    </section>
 
 </main>
 
@@ -871,6 +1009,328 @@ function downloadAnkiDeck() {
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
 }
+</script>
+
+
+<script>
+window.quizData = {
+ "sec1": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "لماذا يُشترط في النحو «الإتقان» لا مجرد الدراسة؟",
+    "options": [
+     "لأنه علم صعب يحتاج وقتًا طويلًا",
+     "لأنه أداة فهم لا مادة معلومات تُحفظ وتُنسى",
+     "لأن الامتحانات فيه دقيقة"
+    ],
+    "correct": 1,
+    "feedback": "فمن درسه دراسة سطحية سيظل عاجزًا عن ضبط كلامه وفهم النصوص الشرعية فهمًا دقيقًا، مهما بلغت معرفته النظرية بالقواعد."
+   }
+  ]
+ },
+ "sec2": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما الترتيب المقترح لأهم علوم اللغة الأربعة لطالب العلم؟",
+    "options": [
+     "البلاغة، ثم الأدب، ثم النحو، ثم الصرف",
+     "النحو، ثم الصرف، ثم البلاغة، ثم الأدب",
+     "الأدب، ثم النحو، ثم الصرف، ثم البلاغة"
+    ],
+    "correct": 1,
+    "feedback": "يبدأ بالأساس (النحو: ضبط أواخر الكلمات) وينتهي بالثمرة الأدبية. وعلوم اللغة اثنا عشر علمًا، لكن الطالب لا يحتاج إتقانها جميعًا."
+   },
+   {
+    "type": "reflect",
+    "q": "هل العلوم الثمانية الباقية غير مهمة؟ وما مثال ذلك؟",
+    "answer": "ليست غير مهمة، لكنها أقل حاجةً لطالب العلم مقارنة بالأربعة. ومثاله علم متن اللغة (مفردات اللغة العربية)، وهو مهم جدًا في حقيقته، لكن ضعف الهمم يجعل كثيرين يعرضون عنه — رغم أن جزءًا منه يتخلل دراسة النحو والصرف والبلاغة والأدب تلقائيًا."
+   }
+  ]
+ },
+ "sec3": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما الذي قرره الشاطبي في «الموافقات» عن العلاقة بين العربية والشريعة؟",
+    "options": [
+     "أن العربية لا علاقة لها بدرجة الفهم الشرعي",
+     "أن الضعيف في العربية ضعيف في الشريعة، والمتوسط متوسط، والمجتهد فيها مجتهد في الشريعة",
+     "أن العربية تكفي فيها المعرفة العامة"
+    ],
+    "correct": 1,
+    "feedback": "فهو يربط مباشرة بين درجة التمكن من العربية ودرجة التمكن من الفهم الشرعي. ونقل ابن الأنباري إجماع السلف والخلف على أن إتقان النحو شرط في رتبة الاجتهاد."
+   },
+   {
+    "type": "reflect",
+    "q": "الأئمة الأربعة كانوا أئمة في اللغة قبل الفقه. اذكر مثالًا عمليًا على ذلك.",
+    "answer": "يُذكر أن الشافعي أقام في بادية هذيل ما يزيد على عشر سنين ليتشرّب اللغة العربية الفصيحة من أهلها مباشرة. وكذلك كان أحمد ومالك وأبو حنيفة وأمثالهم كالثوري."
+   }
+  ]
+ },
+ "sec4": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما قول الرافعي في «وحي القلم» عن ذلّ اللغة؟",
+    "options": [
+     "أن اللغة تتبع الأقوياء دائمًا",
+     "ما ذلّت لغة قوم إلا ذلّوا، ولا حطّت إلا كان أمرهم في ذهابٍ وإدبار",
+     "أن اللغة لا علاقة لها بحال الأمة"
+    ],
+    "correct": 1,
+    "feedback": "والهوية ثلاثية: الدين واللغة والتاريخ. فحين ضاعت اللغة ضاع الثلث الأول، فتبعه ضياع التاريخ ثم ضياع الدين — والحاصل ضياع الهوية بكاملها."
+   },
+   {
+    "type": "reflect",
+    "q": "لماذا يُحب المؤمن اللغة العربية؟ وما تعليل الثعالبي لذلك؟",
+    "answer": "ليس لذاتها، بل لأنها لغة القرآن ولغة النبي ﷺ ولغة الصحابة ولغة هذا الدين الذي وصفه الشاطبي بأنه «شريعة عربية». وقال الثعالبي: من أحب الله أحب النبي ﷺ، ومن أحب النبي العربي أحب العرب، ومن أحب العرب أحب اللغة العربية، ومن أحب العربية عُني بها وثابر عليها."
+   }
+  ]
+ },
+ "sec5": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما الخاصية التي تنفرد بها العربية عن سائر اللغات؟",
+    "options": [
+     "أنها أكثر اللغات انتشارًا",
+     "أنها لا تخضع لدورة النشأة والشيخوخة والموت، فيُقرأ شعر امرئ القيس ويُفهم بعد 1500 عام",
+     "أنها أسهل اللغات نطقًا"
+    ],
+    "correct": 1,
+    "feedback": "بخلاف الإنجليزية مثلًا، فالإنجليزي المعاصر يعاني في فهم لغة شكسبير قبل نحو 500 عام فقط. والقرآن نزل قبل أكثر من 1400 سنة وما زال يُقرأ ويُتلذذ به وكأنه أُنزل اليوم."
+   }
+  ]
+ },
+ "sec6": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما تعريف «اللحن»؟",
+    "options": [
+     "الخطأ في نطق الحروف",
+     "الخطأ في الإعراب، كقول: «رأيت المسلمونَ»",
+     "الخطأ في المعنى فقط"
+    ],
+    "correct": 1,
+    "feedback": "وكان السلف يتجنبونه كما يتجنب أحدهم المعصية، وبعضهم إذا لحن استغفر الله. والهدف من دراسة النحو ليس بلوغ عدم الخطأ مطلقًا، بل أن يكون غالب الكلام مستقيمًا."
+   },
+   {
+    "type": "mcq",
+    "q": "في قصة القارئ زمن عمر رضي الله عنه، ما الذي ترتب على خطأ حركة إعرابية واحدة؟",
+    "options": [
+     "تغيّر إيقاع الآية فقط",
+     "انقلب المعنى إلى أن الله بريء من رسوله كما هو بريء من المشركين",
+     "لم يتغير المعنى"
+    ],
+    "correct": 1,
+    "feedback": "قرأ: «ورسولِه» بالجرّ عطفًا على المشركين، والصواب «ورسولُه» بالرفع. فأصدر عمر أمرًا ألّا يُقرئ القرآن إلا عالم بالعربية — وهذا جوهر كون النحو ضرورة شرعية لا ترفًا لغويًا."
+   },
+   {
+    "type": "reflect",
+    "q": "أيهما أخطر: اللحن في الكتابة أم في الكلام المرتجل؟ ولماذا؟",
+    "answer": "اللحن في الكتابة أخطر وأولى بالتحرز منه؛ لأن الكتابة تحتمل التدقيق والمراجعة، بخلاف الإلقاء المباشر. وقال عبد الملك بن مروان: «اللحن في الكلام أقبح من التفتيق في الثوب»، ولما قيل له إنه أسرع إليه الشيب قال: «شيّبتني المنابر واجتناب اللحن»."
+   }
+  ]
+ },
+ "sec7": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "أي المعاني التالية ليس من معاني كلمة «نحو» لغةً؟",
+    "options": [
+     "الجهة والقصد",
+     "الشِّبه والنوع",
+     "الإعراب والبناء"
+    ],
+    "correct": 2,
+    "feedback": "من معانيها لغةً: الجهة («ذهبت نحو فلان»)، والقصد («نحوتُ معروف الأمير»)، والشِّبه («هذا نحو هذا»)، والنوع («على خمسة أنحاء»). ولها نحو سبعة معانٍ إجمالًا."
+   }
+  ]
+ },
+ "sec8": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما الحدّ (التعريف الاصطلاحي) لعلم النحو؟",
+    "options": [
+     "علم يُعرف به بنية الكلمة وتصريفها",
+     "علم بقواعد يُعرف بها أحكام أواخر الكلمات العربية حال تركيبها في الجملة",
+     "علم يبحث في مفردات اللغة ومعانيها"
+    ],
+    "correct": 1,
+    "feedback": "أي كيف تُضبط حركة آخر الكلمة رفعًا ونصبًا وجرًّا وجزمًا — لا أولها ولا وسطها (فذاك علم الصرف)."
+   },
+   {
+    "type": "mcq",
+    "q": "ما ثمرة علم النحو؟",
+    "options": [
+     "فهم القرآن والسنة فهمًا صحيحًا، وصون اللسان والقلم والقلب عن الخطأ",
+     "حفظ الشعر الجاهلي",
+     "معرفة أسماء النحاة وطبقاتهم"
+    ],
+    "correct": 0,
+    "feedback": "فأهم ثمرة هي الفهم الدقيق للنص الشرعي، ثم صون اللسان عن الخطأ في النطق، والقلم عن الخطأ في الكتابة، والقلب عن الخطأ في الفهم."
+   },
+   {
+    "type": "reflect",
+    "q": "من واضع علم النحو؟ ولماذا قيل إنه «جمع» قواعده ولم «يخترعها»؟",
+    "answer": "هو أبو الأسود الدؤلي رحمه الله، التابعي تلميذ علي بن أبي طالب رضي الله عنه. وقيل «جمع» لأن هذه القواعد موجودة أصلًا في سليقة العرب، وإنما دُوّنت وضُبطت لما بدأ اللحن ينتشر. ويُستمد هذا العلم من القرآن وكلام العرب الأوائل وشعر الجاهلية وكلام النبي ﷺ والصحابة."
+   }
+  ]
+ },
+ "sec9": {
+  "items": [
+   {
+    "type": "reflect",
+    "q": "كيف سُمّي علم النحو بهذا الاسم بحسب القصة المروية؟",
+    "answer": "لما لحنت ابنة أبي الأسود الدؤلي فصُدم، ذهب يشكو لعلي بن أبي طالب رضي الله عنه انتشار اللحن، فأمره أن يكتب: «الكلمة إما اسم، وإما فعل، وإما حرف»، ثم قال له: «انحُ على هذا النحو» — فسُمّي العلم بذلك. والله أعلم بصحة تفاصيل الرواية."
+   }
+  ]
+ },
+ "sec10": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "متى يتحوّل تعلّم النحو من فرض كفاية إلى فرض عين؟",
+    "options": [
+     "على كل مسلم بلا استثناء",
+     "على طالب العلم الذي يريد تفسير القرآن أو شرح الحديث",
+     "لا يكون فرض عين أبدًا"
+    ],
+    "correct": 1,
+    "feedback": "فالأصل أنه فرض كفاية على عموم المسلمين، لكنه يتعيّن على من يخوض في تفسير القرآن أو شرح الحديث؛ إذ لا يجوز له ذلك دون إتقان النحو."
+   }
+  ]
+ },
+ "sec11": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما الدليل الذي ساقه الشيخ على يُسر النحو؟",
+    "options": [
+     "أن كتبه صغيرة الحجم",
+     "أن العربية لغة القرآن، وقد قال تعالى: «ولقد يسّرنا القرآن للذكر» — ومن أوجه تيسيره يُسر لغته",
+     "أن العرب يتكلمونه بالسليقة"
+    ],
+    "correct": 1,
+    "feedback": "فلو كان النحو مستحيل الصعوبة لما اختاره الله لغةً لآخر كتبه. والشاهد الواقعي: إخوة من شتى الجنسيات تعلموه حتى صاروا يتكلمون ويكتبون بالفصحى."
+   },
+   {
+    "type": "mcq",
+    "q": "ما خطة التدرّج الموصى بها لدراسة النحو؟",
+    "options": [
+     "ألفية ابن مالك، ثم قطر الندى، ثم الآجرومية",
+     "الآجرومية، ثم قطر الندى، ثم ألفية ابن مالك",
+     "البدء بالألفية مباشرة"
+    ],
+    "correct": 1,
+    "feedback": "تُتقن الآجرومية أولًا، ثم قطر الندى، ثم تُحفظ من الألفية القدر المستطاع لا كاملة بالضرورة — مع تخليص النية، والدعاء، واختيار معلم موفّق لا يُشغل الطالب بالخلافيات."
+   },
+   {
+    "type": "reflect",
+    "q": "ما النصائح العملية الثلاث لإتقان النحو؟",
+    "answer": "أولًا: احفظ ما يُحفظ — فجزء منه (كحروف الجر والجزم ونواصب المضارع) يجب حفظه كما هو بلا مجال للاستنتاج. ثانيًا: طبّق كثيرًا — فمعظم النحو فهم وتطبيق، وكل قاعدة تُدرس تُطبَّق فورًا في الاستماع والكتابة ولو تكرر الخطأ. ثالثًا: لا تستعجل الثمرة — وإن لم تشعر بتقدّم فابحث عن سبب الخلل: ضعف حفظ، أو غياب تطبيق، أو طريقة دراسة، أو كتاب ومعلم غير موفّق."
+   }
+  ]
+ }
+};
+</script>
+
+<script>
+/* ===== تثبيت الفهم: محرك الرندر ===== */
+(function(){
+  function renderQuizBlocks(){
+    document.querySelectorAll('.quiz-block[data-quiz]').forEach(function(container){
+      var key = container.getAttribute('data-quiz');
+      var data = (window.quizData || {})[key];
+      if(!data || container.dataset.rendered) return;
+      container.dataset.rendered = '1';
+
+      var title = document.createElement('div');
+      title.className = 'quiz-block-title';
+      title.textContent = '\uD83E\uDDE0 تثبيت الفهم';
+      container.appendChild(title);
+
+      data.items.forEach(function(item){
+        var itemEl = document.createElement('div');
+        itemEl.className = 'quiz-item';
+
+        if(item.type === 'mcq'){
+          var qEl = document.createElement('p');
+          qEl.className = 'quiz-q';
+          qEl.textContent = item.q;
+          itemEl.appendChild(qEl);
+
+          var optsWrap = document.createElement('div');
+          optsWrap.className = 'quiz-options';
+
+          var feedbackEl = document.createElement('div');
+          feedbackEl.className = 'quiz-feedback';
+          feedbackEl.textContent = item.feedback || '';
+
+          item.options.forEach(function(optText, optIdx){
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'quiz-opt';
+            btn.textContent = optText;
+            btn.addEventListener('click', function(){
+              var allBtns = optsWrap.querySelectorAll('.quiz-opt');
+              allBtns.forEach(function(b){ b.classList.add('disabled'); });
+              if(optIdx === item.correct){
+                btn.classList.add('correct');
+              } else {
+                btn.classList.add('wrong');
+                if(allBtns[item.correct]) allBtns[item.correct].classList.add('correct');
+              }
+              feedbackEl.classList.add('show');
+            });
+            optsWrap.appendChild(btn);
+          });
+
+          itemEl.appendChild(optsWrap);
+          itemEl.appendChild(feedbackEl);
+
+        } else if(item.type === 'reflect'){
+          var wrap = document.createElement('div');
+          wrap.className = 'quiz-reflect';
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-reflect-q';
+          qText.textContent = '\uD83D\uDCAD ' + item.q;
+          wrap.appendChild(qText);
+
+          var revealBtn = document.createElement('button');
+          revealBtn.type = 'button';
+          revealBtn.className = 'quiz-reveal-btn';
+          revealBtn.textContent = 'إظهار الإجابة';
+
+          var answerEl = document.createElement('div');
+          answerEl.className = 'quiz-answer';
+          answerEl.textContent = item.answer;
+
+          revealBtn.addEventListener('click', function(){
+            answerEl.classList.toggle('show');
+            revealBtn.textContent = answerEl.classList.contains('show') ? 'إخفاء الإجابة' : 'إظهار الإجابة';
+          });
+
+          wrap.appendChild(revealBtn);
+          wrap.appendChild(answerEl);
+          itemEl.appendChild(wrap);
+        }
+
+        container.appendChild(itemEl);
+      });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', renderQuizBlocks);
+  } else {
+    renderQuizBlocks();
+  }
+})();
 </script>
 
 </body>
