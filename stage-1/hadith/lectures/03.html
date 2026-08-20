@@ -1,39 +1,1559 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>المحاضرة الأولى 3/3 - مدخل إلى علم الحديث</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../../style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مدخل إلى علوم الحديث (1) — الشيخ أحمد السيد</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16202E;
+  --ink-soft:#3B4A5E;
+  --paper:#F6F2E9;
+  --paper-2:#FFFDF8;
+  --line:#DED5C4;
+  --gold:#B0873C;
+  --gold-soft:#E8DCC0;
+  --navy:#101B2C;
+
+  --s1:#1E6F6B;
+  --s2:#5A4A9E;
+  --s3:#1D6BA8;
+  --s4:#A97A22;
+  --s5:#A0453A;
+  --s6:#4A7530;
+  --s7:#8A5A28;
+  --s8:#7A2E5B;
+  --s9:#B85416;
+
+  --accent:var(--s1);
+  --radius:14px;
+  --shadow:0 2px 10px rgba(16,27,44,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:'Cairo',system-ui,'Segoe UI',sans-serif;
+  font-size:17.5px; line-height:1.95;
+}
+img{max-width:100%}
+
+/* ===== الترويسة ===== */
+.hero{
+  background:
+    radial-gradient(1200px 400px at 80% -10%, rgba(176,135,60,.28), transparent 60%),
+    linear-gradient(160deg,#0D1727 0%, #16263D 55%, #1B3247 100%);
+  color:#F3EEE2; padding:56px 20px 46px; position:relative; overflow:hidden;
+}
+.hero::after{
+  content:""; position:absolute; inset:0; opacity:.10;
+  background-image:repeating-linear-gradient(90deg,transparent 0 38px,#E8DCC0 38px 39px);
+  mask-image:linear-gradient(to bottom,transparent,#000 40%,transparent);
+}
+.hero-in{max-width:860px; margin:0 auto; position:relative; z-index:2}
+.kicker{
+  display:inline-block; font-size:13.5px; letter-spacing:1px; padding:5px 14px;
+  border:1px solid rgba(232,220,192,.45); border-radius:100px; color:#E8DCC0; margin-bottom:18px;
+}
+.hero h1{
+  font-family:'Amiri',serif; font-size:42px; line-height:1.4; margin:0 0 10px; font-weight:700;
+}
+.hero .sub{font-size:18px; color:#CBD5E1; margin:0 0 24px}
+.hero-meta{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px}
+.chip{
+  background:rgba(255,255,255,.07); border:1px solid rgba(232,220,192,.22);
+  padding:6px 14px; border-radius:100px; font-size:14px; color:#EDE6D7;
+}
+.dl-btn{
+  display:inline-flex; align-items:center; gap:8px; margin-top:22px;
+  background:var(--gold); color:#14202F; font-weight:700; font-size:15.5px;
+  border:none; padding:12px 22px; border-radius:100px; cursor:pointer;
+  box-shadow:0 6px 18px rgba(176,135,60,.3); font-family:'Cairo',sans-serif;
+}
+.dl-btn:hover{filter:brightness(1.07)}
+
+/* ===== الفهرس ===== */
+.toc{max-width:820px; margin:34px auto 0; padding:0 20px}
+.toc-box{
+  background:var(--paper-2); border:1px solid var(--line); border-radius:var(--radius);
+  padding:22px 24px; box-shadow:var(--shadow);
+}
+.toc-box h2{font-family:'Amiri',serif; font-size:24px; margin:0 0 14px; color:var(--navy)}
+.toc-list{list-style:none; margin:0; padding:0; display:grid; gap:8px}
+.toc-list a{
+  display:flex; gap:12px; align-items:flex-start; text-decoration:none; color:var(--ink);
+  padding:8px 12px; border-radius:10px; border-right:4px solid var(--c);
+  background:#FBF8F1; font-size:16px;
+}
+.toc-list a:hover{background:#F2ECDF}
+.toc-list .n{font-weight:700; color:var(--c); font-family:'Amiri',serif; font-size:19px}
+
+/* ===== الأقسام ===== */
+main{max-width:820px; margin:0 auto; padding:10px 20px 60px}
+section{padding-top:46px}
+.sec-head{border-bottom:2px solid var(--accent); padding-bottom:10px; margin-bottom:22px}
+.sec-num{
+  display:inline-block; background:var(--accent); color:#fff; font-weight:700;
+  font-size:13px; padding:3px 12px; border-radius:100px; margin-bottom:10px;
+}
+h2.sec-title{font-family:'Amiri',serif; font-size:30px; margin:0; color:var(--navy); line-height:1.5}
+h3{font-family:'Amiri',serif; font-size:23px; color:var(--accent); margin:30px 0 10px}
+h4{font-size:19px; margin:22px 0 8px; color:var(--ink)}
+p{margin:0 0 14px}
+strong{color:var(--navy)}
+.lead{font-size:18.5px; color:var(--ink-soft)}
+
+/* ===== البلوكات ===== */
+.box{
+  background:var(--paper-2); border:1px solid var(--line); border-right:5px solid var(--accent);
+  border-radius:var(--radius); padding:16px 20px; margin:18px 0; box-shadow:var(--shadow);
+}
+.box .lbl{
+  display:inline-block; font-size:12.5px; font-weight:700; letter-spacing:.5px;
+  color:var(--accent); margin-bottom:6px;
+}
+.box p:last-child{margin-bottom:0}
+.def{background:#FBFAF5}
+.evid{background:#F6FAF7; border-right-color:#2E7D5B}
+.evid .lbl{color:#2E7D5B}
+.key{background:#FFFBEF; border-right-color:var(--gold)}
+.key .lbl{color:#8A6820}
+.warn{background:#FFF6F2; border-right-color:#C2571F}
+.warn .lbl{color:#C2571F}
+.fix{background:#FDF1F4; border-right-color:#A6194B}
+.fix .lbl{color:#A6194B}
+.add{background:#F3F7FC; border-right-color:#2C6DA8; border-style:dashed}
+.add .lbl{color:#2C6DA8}
+.story{background:#FBF7F0; border-right-color:#8A5A28}
+.story .lbl{color:#8A5A28}
+
+.quote{
+  font-family:'Amiri',serif; font-size:21px; line-height:2.1; color:#123024;
+  background:#F1F7F2; border:1px solid #CFE3D4; border-radius:var(--radius);
+  padding:18px 22px; margin:18px 0; position:relative;
+}
+.quote .src{display:block; font-family:'Cairo',sans-serif; font-size:13.5px; color:#4C6B58; margin-top:8px}
+.isnad{
+  font-family:'Amiri',serif; font-size:19px; line-height:2; background:#F8F5EC;
+  border:1px dashed var(--line); border-radius:12px; padding:14px 18px; margin:14px 0; color:#3A3527;
+}
+
+.takeaway{
+  background:linear-gradient(160deg,#12202F,#1C3348); color:#EFE8DA;
+  border-radius:16px; padding:20px 24px; margin:26px 0 10px; box-shadow:0 8px 22px rgba(16,27,44,.16);
+}
+.takeaway h4{color:#E8DCC0; margin:0 0 12px; font-family:'Amiri',serif; font-size:22px}
+.takeaway ul{margin:0; padding:0 18px 0 0}
+.takeaway li{margin-bottom:8px}
+.takeaway li::marker{color:var(--gold)}
+
+ul.plain{padding:0 20px 0 0; margin:0 0 14px}
+ul.plain li{margin-bottom:7px}
+
+table{
+  width:100%; border-collapse:collapse; margin:18px 0; background:var(--paper-2);
+  border-radius:12px; overflow:hidden; box-shadow:var(--shadow); font-size:16px;
+}
+th,td{padding:11px 14px; text-align:right; border-bottom:1px solid var(--line)}
+th{background:var(--accent); color:#fff; font-weight:600; font-size:15px}
+tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even){background:#FBF8F1}
+
+.tl{position:relative; padding-right:24px; margin:20px 0}
+.tl::before{content:""; position:absolute; right:6px; top:6px; bottom:6px; width:2px; background:var(--line)}
+.tl-item{position:relative; margin-bottom:18px}
+.tl-item::before{
+  content:""; position:absolute; right:-24px; top:9px; width:12px; height:12px;
+  background:var(--accent); border-radius:50%; border:3px solid var(--paper);
+}
+.tl-item .yr{font-weight:700; color:var(--accent); font-family:'Amiri',serif; font-size:19px}
+
+/* ===== البطاقات ===== */
+.cards-wrap{max-width:820px; margin:0 auto; padding:40px 20px 70px}
+.cards-head{text-align:center; margin-bottom:22px}
+.cards-head h2{font-family:'Amiri',serif; font-size:30px; color:var(--navy); margin:0 0 6px}
+.cards-head p{color:var(--ink-soft); font-size:16px}
+.filters{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-bottom:20px}
+.filters button{
+  font-family:'Cairo',sans-serif; font-size:13.5px; padding:6px 14px; border-radius:100px;
+  border:1.5px solid var(--fc,#999); background:transparent; color:var(--fc,#333); cursor:pointer;
+}
+.filters button.active{background:var(--fc,#333); color:#fff}
+.flash{
+  background:var(--paper-2); border:1px solid var(--line); border-radius:18px;
+  min-height:210px; display:flex; align-items:center; justify-content:center; text-align:center;
+  padding:28px 26px; cursor:pointer; box-shadow:0 6px 20px rgba(16,27,44,.08);
+  position:relative; user-select:none;
+}
+.flash .face{font-size:19px; line-height:1.9}
+.flash .side-tag{
+  position:absolute; top:12px; right:16px; font-size:12px; color:#98917F; letter-spacing:.5px;
+}
+.flash.back{background:#12202F; color:#F0E9DB; border-color:#12202F}
+.nav-cards{display:flex; align-items:center; justify-content:center; gap:14px; margin-top:16px}
+.nav-cards button{
+  font-family:'Cairo',sans-serif; background:var(--navy); color:#F0E9DB; border:none;
+  padding:9px 20px; border-radius:100px; cursor:pointer; font-size:15px;
+}
+.nav-cards .count{font-size:15px; color:var(--ink-soft); min-width:90px; text-align:center}
+
+footer{
+  background:var(--navy); color:#CBD5E1; text-align:center; padding:34px 20px 40px;
+}
+footer p{margin:6px 0; font-size:14.5px}
+footer .dl-btn{margin-top:16px}
+
+@media (max-width:640px){
+  body{font-size:16.5px}
+  .hero h1{font-size:30px}
+  h2.sec-title{font-size:24px}
+  h3{font-size:20px}
+  .quote{font-size:19px}
+  .isnad{font-size:17px}
+}
+</style>
 </head>
-<body class="" data-page="lecture" data-lecture-id="stage1_hadith_03">
-  <div class="page">
-    <nav class="breadcrumbs"><a href="../../../index.html">الرئيسية</a><span class="sep">/</span><a href="../../index.html">المرحلة الأولى</a><span class="sep">/</span><a href="../index.html">مدخل إلى علم الحديث</a><span class="sep">/</span><span aria-current="page">المحاضرة الأولى 3/3</span></nav>
-    
-      <header class="lecture-header">
-        <h1>المحاضرة الأولى 3/3</h1>
-        <p class="lecture-meta">المادة: مدخل إلى علم الحديث &nbsp;|&nbsp; الشيخ: أحمد السيد &nbsp;|&nbsp; اليوم 33</p>
-        <label class="checkbox-line lecture-checkbox">
-          <input type="checkbox" data-lecture-id="stage1_hadith_03">
-          <span>إتمام هذه المحاضرة</span>
-        </label>
-      </header>
+<body>
 
-      <div class="lecture-placeholder">
-        <p>سيتم إضافة المحاضرة هنا لاحقًا</p>
-        <p class="placeholder-hint">(رابط يوتيوب / فيديو / ملف صوتي / PDF / نص المحاضرة / ملاحظاتي)</p>
-      </div>
-
-      <div class="lecture-nav">
-        <a href="../index.html" class="btn btn-outline">الرجوع إلى المادة</a>
-        <a href="../../index.html" class="btn btn-outline">الرجوع إلى المرحلة</a>
-      </div>
-    
+<header class="hero">
+  <div class="hero-in">
+    <span class="kicker">سلسلة مدخل إلى علوم الحديث — المجلس الأول</span>
+    <h1>المفتاح الكبير: بابان في السنة، وثلاثة أقسام تُبنى عليهما</h1>
+    <p class="sub">من عهد النبي ﷺ إلى نهاية القرن الثالث الهجري: نشأة علوم الحديث، وطبقات الرواة، وأوائل المصنفات.</p>
+    <div class="hero-meta">
+      <span class="chip">المحاضر: الشيخ أحمد السيد</span>
+      <span class="chip">9 أقسام</span>
+      <span class="chip">67 بطاقة مراجعة</span>
+    </div>
+    <button class="dl-btn" onclick="downloadTSV()">⬇ تحميل بطاقات Anki (TSV)</button>
   </div>
-  <script src="../../../data.js"></script>
-  <script src="../../../script.js"></script>
+</header>
+
+<nav class="toc">
+  <div class="toc-box">
+    <h2>محتوى المجلس</h2>
+    <ul class="toc-list">
+      <li><a href="#s1" style="--c:var(--s1)"><span class="n">1</span><span>المفتاح: بابان وثلاثة أقسام</span></a></li>
+      <li><a href="#s2" style="--c:var(--s2)"><span class="n">2</span><span>التأصيل النبوي للأقسام الثلاثة ومقدمة صحيح مسلم</span></a></li>
+      <li><a href="#s3" style="--c:var(--s3)"><span class="n">3</span><span>عناية النبي ﷺ بسنته وأنواع ما بلّغه</span></a></li>
+      <li><a href="#s4" style="--c:var(--s4)"><span class="n">4</span><span>عصر الصحابة: سهولة الضبط وتشديد عمر</span></a></li>
+      <li><a href="#s5" style="--c:var(--s5)"><span class="n">5</span><span>عصر التابعين: الطبقات ونشأة التفتيش</span></a></li>
+      <li><a href="#s6" style="--c:var(--s6)"><span class="n">6</span><span>الحفظ والكتابة وشبهة النسخ الخطية</span></a></li>
+      <li><a href="#s7" style="--c:var(--s7)"><span class="n">7</span><span>أتباع التابعين: التصنيف والموطأ</span></a></li>
+      <li><a href="#s8" style="--c:var(--s8)"><span class="n">8</span><span>الباب الثاني: نشأة النقد وبداية التدوين</span></a></li>
+      <li><a href="#s9" style="--c:var(--s9)"><span class="n">9</span><span>كتب النقل والكتب الستة</span></a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+<!-- ============ 1 ============ -->
+<section id="s1" class="sec" style="--accent:var(--s1)">
+  <div class="sec-head">
+    <span class="sec-num">القسم الأول</span>
+    <h2 class="sec-title">المفتاح: بابان في علوم الحديث، وثلاثة أقسام تتفرع عنهما</h2>
+  </div>
+
+  <p class="lead">افتتح الشيخ المجلس بالتنبيه على أن الحديث عن علوم الحديث والسنة حديثٌ عن <strong>بحر لا نهاية له</strong>؛ فالمكتبة الإسلامية المتعلقة بهذا العلم لا يحصيها باحث، حتى الكتب التي أُلّفت خصيصًا لحصر المؤلفات في السنة النبوية يصعب الإحاطة بها، لأن المؤلفات في هذا الفن كثيرة جدًا وفروعها لا تنتهي.</p>
+
+  <p>ولذلك كان الهدف من هذا المجلس أن يكون <strong>مدخلًا</strong>: يعرّفنا ما هو هذا العلم، وما فروعه المتصلة به، وأهم الكتب المؤلفة في كل فرع، وكيف نتعامل معها، وما القضايا المهمة التي ينبغي مراعاتها. والطريق إلى ضبط هذا كله مفتاحٌ واحد يسير عليه المجلس من أوله إلى آخره.</p>
+
+  <div class="box key">
+    <span class="lbl">المفتاح</span>
+    <p>علوم الحديث والسنة تنقسم إلى <strong>بابين كبيرين</strong>:</p>
+    <ul class="plain">
+      <li><strong>الباب الأول:</strong> ما يتعلق بالمتن النبوي — أي بنفس كلام النبي ﷺ أو فعله.</li>
+      <li><strong>الباب الثاني:</strong> ما يتعلق بطريقة نقله — أي الوسائل التوثيقية التي استُعملت حتى يصلنا المتن صحيحًا كما قاله النبي ﷺ.</li>
+    </ul>
+  </div>
+
+  <p>ثم إن <strong>الباب الأول</strong> ينقسم بدوره إلى قسمين:</p>
+
+  <div class="box def">
+    <span class="lbl">تقسيم الباب الأول</span>
+    <p><strong>القسم الأول:</strong> نقل المتن نفسه — أي العناية بأن يصل المتن كما هو، وهو النقل المجرد.</p>
+    <p><strong>القسم الثاني:</strong> التفقه في المتن — ما معنى هذا الحديث؟ كيف نفهمه؟ ما الأحكام المستنبطة منه؟</p>
+  </div>
+
+  <p>فصار عندنا في المجموع <strong>ثلاثة أقسام</strong>: نقل المتن، والتفقه في المتن، وضبط النقل. وهذه الأقسام الثلاثة هي التي سيسير عليها المجلس كله، وينظر كيف سار العلماء عليها بالتأليف والعناية والاهتمام عبر القرون.</p>
+
+  <table>
+    <thead>
+      <tr><th>الباب</th><th>القسم</th><th>مضمونه</th></tr>
+    </thead>
+    <tbody>
+      <tr><td rowspan="2">الأول: المتن النبوي</td><td>الأول</td><td>نقل المتن مجردًا كما قاله النبي ﷺ</td></tr>
+      <tr><td>الثاني</td><td>التفقه في المتن والاستنباط منه</td></tr>
+      <tr><td>الثاني: آلية النقل</td><td>—</td><td>ضبط طريقة النقل والتثبت من الرواة والأسانيد</td></tr>
+    </tbody>
+  </table>
+
+  <div class="takeaway">
+    <h4>خلاصة القسم</h4>
+    <ul>
+      <li>علوم الحديث كلها ترجع إلى بابين: باب المتن، وباب طريقة نقل المتن.</li>
+      <li>باب المتن ينقسم إلى: نقل مجرد، وتفقه واستنباط.</li>
+      <li>مجموع الأقسام ثلاثة، وهي المفتاح الذي تُصنَّف به كل كتب السنة وكل جهود العلماء.</li>
+      <li>ضخامة المكتبة الحديثية لا تُضبط إلا بمفتاح يردّ الفروع إلى أصولها.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 2 ============ -->
+<section id="s2" class="sec" style="--accent:var(--s2)">
+  <div class="sec-head">
+    <span class="sec-num">القسم الثاني</span>
+    <h2 class="sec-title">التأصيل النبوي للأقسام الثلاثة، وما قدّم به مسلمٌ لصحيحه</h2>
+  </div>
+
+  <p>السؤال الذي طرحه الشيخ: هل تكلم النبي ﷺ عن هذه الأقسام؟ ليس عن التقسيم الاصطلاحي بطبيعة الحال، ولكن عن <strong>معانيها</strong>: نقل الحديث، والتفقه فيه، وضبط النقل. والجواب: نعم، تكلم عنها كلها.</p>
+
+  <h3>أولًا: حديث واحد جمع القسمين الأول والثاني</h3>
+
+  <div class="quote">
+    «نضَّر الله امرأً سمع منا حديثًا فحفظه حتى يبلّغه، فربَّ حاملِ فقهٍ إلى من هو أفقه منه، وربَّ حاملِ فقهٍ ليس بفقيه»
+    <span class="src">حديث صحيح عن النبي ﷺ</span>
+  </div>
+
+  <ul class="plain">
+    <li><strong>«فحفظه حتى يبلّغه»</strong> ← القسم الأول من الباب الأول (نقل المتن).</li>
+    <li><strong>«ربَّ حامل فقه إلى من هو أفقه منه»</strong> ← القسم الثاني من الباب الأول (التفقه في المتن).</li>
+    <li><strong>«وربَّ حامل فقه ليس بفقيه»</strong> ← القسم الأول مرة أخرى (ناقلٌ مجرد غير فقيه).</li>
+  </ul>
+
+  <p>فالنبي ﷺ يحثّ أصحابه وهذه الأمة على حفظ أحاديثه وتبليغها، ثم يخبر أن ممن يبلّغ هذه الأحاديث <strong>من هو فقيه فيها</strong>، ومنهم <strong>من هو مجرد ناقل لها</strong>.</p>
+
+  <div class="box fix">
+    <span class="lbl">تصحيح تفريغ</span>
+    <p>ورد في التفريغ الصوتي: «نَضَل الله امرأً». والصواب: <strong>«نَضَّرَ الله امرأً»</strong> أي: حسَّنه ونعّمه ونضّر وجهه. وهذا خطأ سماعي محض لا يتعلق بكلام الشيخ.</p>
+  </div>
+
+  <h3>ثانيًا: الباب الثاني (ضبط النقل)</h3>
+
+  <p>ومن أصحّ وأثبت ما قاله النبي ﷺ في هذا الباب:</p>
+
+  <div class="quote">
+    «من كذب عليّ متعمدًا فليتبوّأ مقعده من النار»
+  </div>
+
+  <p>وقد جمع <strong>الإمام مسلم</strong> رحمه الله في <strong>مقدمة صحيحه</strong> أحاديث متعلقة بهذا الباب الثاني، أي بباب ضبط النقل. وحرص الشيخ على القراءة من الكتب الأصلية مباشرة، فقرأ من المقدمة:</p>
+
+  <div class="isnad">
+    حدثنا محمد بن عبد الله بن نمير، قال: حدثنا أبي، قال: حدثنا سعيد بن عبيد، قال: حدثنا عليّ بن ربيعة، قال: أتيتُ المسجد والمغيرة أمير الكوفة، قال: فقال المغيرة: سمعت رسول الله ﷺ يقول: <strong>«إن كذبًا عليّ ليس ككذبٍ على أحد، فمن كذب عليّ متعمدًا فليتبوّأ مقعده من النار»</strong>.
+  </div>
+
+  <p>وذكر مسلم عدة أحاديث في نفس المعنى، ثم قال:</p>
+
+  <div class="isnad">
+    حدثنا عبيد الله بن معاذ العنبري، قال: حدثنا أبي. وحدثنا محمد بن المثنى، قال: حدثنا عبد الرحمن بن مهدي، قال: حدثنا شعبة، عن خُبيب بن عبد الرحمن، عن حفص بن عاصم، قال: قال رسول الله ﷺ: <strong>«كفى بالمرء كذبًا أن يحدّث بكل ما سمع»</strong>.
+  </div>
+
+  <p>ثم ذكره مسلمٌ مسندًا عن حفص بن عاصم عن أبي هريرة عن النبي ﷺ. ثم ذكر حديثًا من طريق أبي هريرة أيضًا — ولاحظ كيف يؤسّس النبي ﷺ لقضية التثبت في النقل:</p>
+
+  <div class="quote">
+    «سيكون في آخر أمتي ناسٌ يحدّثونكم ما لم تسمعوا أنتم ولا آباؤكم، فإياكم وإياهم»
+  </div>
+
+  <p>وفي رواية أخرى في المقدمة أيضًا:</p>
+
+  <div class="quote">
+    «يكون في آخر الزمان دجّالون كذّابون، يأتونكم من الأحاديث بما لم تسمعوا أنتم ولا آباؤكم، فإياكم وإياهم، لا يُضلّونكم ولا يفتنونكم»
+  </div>
+
+  <h3>ثالثًا: أثر ابن سيرين — الإسناد الذهبي</h3>
+
+  <p>ثم ذكر مسلم آثارًا عن أئمة خير القرون في قضية التثبت، ومن أهمها وأصحها وأشهرها ما أسنده عن ابن سيرين. ووصف الشيخُ هذا الإسنادَ بأنه <strong>«إسناد مثل السُّكَّر، مثل الذهب، من أصحّ الأسانيد»</strong>:</p>
+
+  <div class="isnad">
+    حدثنا الحسن بن الربيع، قال: حدثنا حماد بن زيد، عن أيوب وهشام، عن محمد [بن سيرين]. وحدثنا فُضيل عن هشام. وحدثنا مخلد بن حسين عن هشام، عن ابن سيرين — وكل هذه الأسانيد تنتهي إلى ابن سيرين — قال:
+  </div>
+
+  <div class="quote">
+    «إن هذا العلم دِين، فانظروا عمّن تأخذون دِينكم»
+    <span class="src">محمد بن سيرين — أسنده مسلم في مقدمة صحيحه</span>
+  </div>
+
+  <p>ولاحظ لماذا قدّم مسلم لصحيحه بهذه المقدمات: <strong>ليقول لك إن التثبت في نقل الأحاديث أمرٌ مهم، وإن هناك قواعد للنقل</strong>. ثم أخذ الإمام مسلم يفصّل في بعض هذه القواعد التي ينبغي العناية بها <em>قبل</em> الحكم على الحديث بالصحة، بكلامٍ معروف مشهور في مقدمة صحيحه.</p>
+
+  <div class="box key">
+    <span class="lbl">الخلاصة إلى الآن</span>
+    <p>النبي ﷺ تحدّث عن الأقسام الثلاثة كلها: نقل المتن بلا تفقّه، والتفقه في المتن، وضبط النقل والتحذير من الكذب، والإخبار بأنه سيأتي في آخر الزمان من يكذب. وهذه الأقسام الثلاثة تُجمَل في البابين: باب المتن، وباب آلية نقله.</p>
+  </div>
+
+  <div class="takeaway">
+    <h4>خلاصة القسم</h4>
+    <ul>
+      <li>حديث «نضّر الله امرأً…» جمع قسمَي الباب الأول: النقل والتفقه.</li>
+      <li>حديث «من كذب عليّ متعمدًا…» أصل الباب الثاني: ضبط النقل.</li>
+      <li>مقدمة صحيح مسلم بنيت على أحاديث التثبت وآثار السلف فيه، لا على الأحاديث المسندة فحسب.</li>
+      <li>كلمة ابن سيرين «إن هذا العلم دين…» هي شعار المنهج النقدي كله.</li>
+      <li>قواعد النقل تُبحث <em>قبل</em> الحكم على الحديث بالصحة، لا بعده.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 3 ============ -->
+<section id="s3" class="sec" style="--accent:var(--s3)">
+  <div class="sec-head">
+    <span class="sec-num">القسم الثالث</span>
+    <h2 class="sec-title">عناية النبي ﷺ بسنته، وأنواع ما بلّغه</h2>
+  </div>
+
+  <p>كان النبي ﷺ حريصًا على سنته، حريصًا على أن تعتني أمته بها. والأدلة على ذلك كثيرة:</p>
+
+  <ul class="plain">
+    <li>قوله ﷺ: <strong>«عليكم بسنتي»</strong>.</li>
+    <li>قوله في حجة الوداع: <strong>«ليبلّغ الشاهد منكم الغائب»</strong> — ومعناه: انقلوا حديثي، انقلوا كلامي، انقلوا خطبتي، انقلوا ما رأيتم.</li>
+    <li>قوله في صحيح مسلم: <strong>«إن أحسن الحديث كتاب الله، وإن خير الهدي هدي محمد ﷺ»</strong> — وهدي محمد ﷺ هو سنته.</li>
+    <li>وثبت في صحيح مسلم: <strong>«يؤمّ القوم أقرؤهم لكتاب الله، فإن كانوا في القراءة سواءً فأعلمهم بالسنة»</strong>.</li>
+    <li>وقال ﷺ: <strong>«نزلت الأمانة في جَذْر قلوب الرجال، فعَلِموا من القرآن ثم عَلِموا من السنة»</strong> — وهذا في صحيح البخاري من حديث حذيفة رضي الله عنه.</li>
+  </ul>
+
+  <h3>تشجيع أبي هريرة وعبد الله بن عمرو</h3>
+
+  <div class="box story">
+    <span class="lbl">موقف</span>
+    <p>لما رأى النبي ﷺ عناية أبي هريرة رضي الله عنه بالحديث شجّعه وحفّزه على مزيد من العناية به. فقد سأله أبو هريرة — كما في صحيح البخاري —: يا رسول الله، من أسعد الناس بشفاعتك يوم القيامة؟ فقال ﷺ <em>قبل أن يجيبه عن سؤاله</em>: <strong>«لقد ظننتُ يا أبا هريرة ألا يسألني عن هذا الحديث أحدٌ أولَ منك، لما رأيتُ من حِرصك على الحديث»</strong>. وهذا تشجيعٌ كبير أن يزداد حرصًا على الحديث.</p>
+  </div>
+
+  <div class="box story">
+    <span class="lbl">موقف</span>
+    <p>ولما جاءه عبد الله بن عمرو بن العاص وقد نهاه قومٌ عن أن يكتب عن النبي ﷺ كل شيء، قال له النبي ﷺ: <strong>«اكتب، فوالذي نفسي بيده ما خرج منه إلا حق»</strong>. وهذا في سنن أبي داود ومسند الإمام أحمد.</p>
+  </div>
+
+  <p>فالشاهد أن النبي ﷺ كان يعلّم أصحابه <strong>الكتاب والحكمة</strong>؛ فأما الكتاب فهو القرآن، وأما الحكمة فهي سنته ﷺ: ﴿وَأَنزَلَ اللَّهُ عَلَيْكَ الْكِتَابَ وَالْحِكْمَةَ﴾. والأحاديث التي قالها في ذلك كثيرة، وهي تنقسم في الأساس إلى قسمين: <strong>أحاديث قولية</strong> و<strong>أحاديث فعلية</strong>؛ وإن كان <em>التقرير</em> يدخل في ذلك، إلا أنه يُعتبر من جملة الفعل.</p>
+
+  <h3>موضوعات ما بلّغه النبي ﷺ</h3>
+
+  <p>توفي المصطفى ﷺ وقد بلّغ الدين وأدّى الأمانة ونصح الأمة وتركها على المحجة البيضاء، ولم يدع شيئًا مما أمره الله أن يبلغه ويحتاجه المسلمون إلا بلّغه. وقد تنوّعت موضوعات ما بلّغه:</p>
+
+  <table>
+    <thead><tr><th>الباب</th><th>مثاله</th></tr></thead>
+    <tbody>
+      <tr><td>الأحكام والأمر والنهي</td><td>وهو أوسعها، وينقسم إلى بيانٍ للقرآن وزائدٍ عليه</td></tr>
+      <tr><td>المواعظ</td><td>ما يرقّق القلوب ويحرّك الإيمان</td></tr>
+      <tr><td>الآداب</td><td>آداب الطعام والمجلس والاستئذان ونحوها</td></tr>
+      <tr><td>الأخبار المستقبلية</td><td>أحاديث الفتن وأشراط الساعة</td></tr>
+      <tr><td>الأخبار الماضية</td><td>أخبار الأمم السابقة والأنبياء</td></tr>
+    </tbody>
+  </table>
+
+  <p>وأبواب الدين التي بلّغها رسول الله ﷺ كثيرة جدًا، وسيأتي ذكر شيء منها.</p>
+
+  <h3>السنة المبيّنة للقرآن، والسنة الزائدة عليه</h3>
+
+  <div class="box def">
+    <span class="lbl">النوع الأول: بيان وشرح للقرآن</span>
+    <p>مثاله: <strong>كل ما ورد عن النبي ﷺ في صفة الصلاة</strong>. لأن الله سبحانه قال: ﴿أَقِيمُوا الصَّلَاةَ﴾ — فكيف نقيمها؟ أمرتنا بالسجود، فكيف نسجد؟ وما الهيئة التي تحبها؟ وماذا نقول في السجود؟ وأمرتنا بالركوع، وما الأوقات؟ وكم عدد الركعات؟ وماذا نفعل فيها؟ هذا كله من هدي المصطفى ﷺ.</p>
+  </div>
+
+  <p>وكان النبي ﷺ يبيّن الصلاة بفعله، فنجد عشرات — إن لم يكن مئات — الأحاديث التي تتحدث عن صلاته ﷺ: عن سجوده، وركوعه، وخشوعه، وذكره، وتشهده. وكان ﷺ كما قال ابن مسعود في البخاري: <strong>«كان رسول الله ﷺ يعلّمنا التشهد كما يعلّمنا السورة من القرآن»</strong>.</p>
+
+  <p>فلاحِظ: كما كان يعلمهم سور القرآن، كان يعلمهم أشياء <em>لم ترد في القرآن</em> — مثل التشهد — يلقّنهم إياه تلقينًا: يجلس مع الصحابي فيقول له: قل: التحيات لله والصلوات والطيبات، السلام عليك أيها النبي… <strong>هذا الدين أساسه كله بالتلقّي</strong>، ثم بعد ذلك مجال الفقه واسع.</p>
+
+  <div class="box def">
+    <span class="lbl">النوع الثاني: زائد على النص القرآني</span>
+    <p>مثاله: <strong>نهي النبي ﷺ أن يجمع الرجل في الزواج بين المرأة وعمتها، وبين المرأة وخالتها</strong> — وهذا ليس منصوصًا في القرآن، وإنما جاء عن النبي ﷺ.</p>
+  </div>
+
+  <div class="takeaway">
+    <h4>خلاصة القسم</h4>
+    <ul>
+      <li>عناية النبي ﷺ بسنته ثابتة بنصوص متعددة: أمرٌ بالتمسك، وأمرٌ بالتبليغ، وترغيبٌ في العلم بها.</li>
+      <li>شجّع النبي ﷺ أبا هريرة على حرصه، وأذن لعبد الله بن عمرو بالكتابة صراحة.</li>
+      <li>ما بلّغه ﷺ أبواب متنوعة: أحكام، مواعظ، آداب، أخبار مستقبلية، أخبار ماضية.</li>
+      <li>سنة الأحكام نوعان: مبيّنة للقرآن (كصفة الصلاة)، وزائدة عليه (كالنهي عن الجمع بين المرأة وعمتها).</li>
+      <li>أساس الدين التلقّي؛ ولذلك كان التشهد يُلقَّن كما تُلقَّن السورة.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section id="s4" class="sec" style="--accent:var(--s4)">
+  <div class="sec-head">
+    <span class="sec-num">القسم الرابع</span>
+    <h2 class="sec-title">عصر الصحابة: سهولة الضبط، وتشديد عمر، وتقسيم العناية</h2>
+  </div>
+
+  <p>ثم جاء أصحاب النبي ﷺ فاعتنوا بتبليغ الدين بهذه الأقسام الثلاثة وبالبابين؛ فمنهم من اعتنى بإيصال <strong>المتون</strong> إلى من بعدهم من التابعين، ومنهم من اعتنى <strong>بتفقيههم</strong> فيها.</p>
+
+  <div class="box add">
+    <span class="lbl">تنبيه مهم من الشيخ</span>
+    <p>التفقه في الحديث وشرحه ليس معناه بالضرورة أن يكون عنوان الدرس «شرح الحديث» كما نصنع اليوم (شرح رياض الصالحين: الحديث الأول، الحديث الثاني…). السنة ما كانت مجموعة بهذه الطريقة، وإنما كان كثيرٌ من هذا التفقه عبارة عن <strong>تطبيق عملي</strong> من الصحابة لما فقهوه من سنة رسول الله ﷺ.</p>
+  </div>
+
+  <h3>صحابة عُرفوا بالنقل، وصحابة عُرفوا بالفقه</h3>
+
+  <table>
+    <thead><tr><th>النوع</th><th>الأعلام</th><th>ملاحظة</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>عُرف بنقل الحديث (القسم الأول)</td>
+        <td>أبو هريرة رضي الله عنه</td>
+        <td>لا يعني أنه لم يُنقل عنه فقه، لكن أكثر ما نُقل عنه هو نفس المتن</td>
+      </tr>
+      <tr>
+        <td>عُرف بالفقه والفتوى (القسم الثاني)</td>
+        <td>عمر بن الخطاب، وعليّ بن أبي طالب، وزيد بن ثابت، ثم ابن عباس، وعبد الله بن عمر، وعبد الله بن مسعود، وعائشة رضي الله عنهم</td>
+        <td>وكلهم بلّغوا من النوع الأول كذلك، لكن عُرف عنهم النوع الثاني أكثر</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="box add">
+    <span class="lbl">ترتيب الشيخ</span>
+    <p>قدّم الشيخ في هذا السياق <strong>عمر بن الخطاب وعليّ بن أبي طالب وزيد بن ثابت</strong> على ابن عباس، ونبّه أن عمر وعليًّا أقدم وأهم في هذا الباب من ابن عباس رضي الله عنهم أجمعين.</p>
+  </div>
+
+  <h3>لماذا كان الضبط سهلًا في زمن الصحابة؟</h3>
+
+  <p>في البداية ما كان عند الصحابة مشكلة في قضية ضبط الحديث، لسببين:</p>
+
+  <div class="box def">
+    <span class="lbl">السبب الأول: قِصَر المسافة الزمنية</span>
+    <p>كلهم كانوا مع المصطفى ﷺ؛ فإذا قال أبو هريرة: «قال رسول الله ﷺ» فالأصل أنه ليس بينه وبين النبي ﷺ أحد، وأحيانًا يكون بينه واسطة صحابيٌّ آخر. فالضبط هنا سهل، إذ لا مسافة زمنية.</p>
+  </div>
+
+  <div class="box def">
+    <span class="lbl">السبب الثاني: عدالة الصحابة</span>
+    <p>الصحابة كلهم عدول ومعروفون؛ فلا يوجد تعبٌ ولا تتبّع لمعرفة «من هذا الذي يقول: قال رسول الله ﷺ؟» — كما عبّر الشيخ على لسانهم: كنا مع بعضنا في بدر وفي أُحد وفي الخندق، ونعرف بعضنا، وحججنا مع الرسول ﷺ واعتمرنا معه وصلينا معه. فأنت عدلٌ معروف بالعدالة، فلم تكن القضية متعبة في التثبت من الخبر.</p>
+  </div>
+
+  <h3>ومع ذلك… تشديد عمر رضي الله عنه</h3>
+
+  <div class="box story">
+    <span class="lbl">قصة/سُنّة عملية</span>
+    <p>مع قِصَر المسافة، ومع كون الصحابة معروفين بينهم بالعدالة والضبط، كان هناك <strong>تشديد في الرواية خاصة في زمن عمر بن الخطاب</strong> رضي الله عنه. فكان عمر يشدّد في قضية الرواية، وأحيانًا يأتي الصحابي بحديث فيقول له: <strong>«من يشهد معك؟»</strong> — وأحيانًا لا يقول ذلك، بحسب الحال.</p>
+    <p>ولماذا؟ حتى تُضبط قضية الرواية وتُضبط قضية الدين، <strong>لأن الزيادة في الدين كالنقص منه</strong>. فالقضية ليست: من يجمع أكبر قدر من الأحاديث، وإنما: ماذا قال رسول الله ﷺ.</p>
+  </div>
+
+  <div class="box key">
+    <span class="lbl">فقه النقل</span>
+    <p>ثم القضية ليست مجرد أن تبلّغ أي شيء سمعته، وإنما أن تبلّغه <strong>في وقته المناسب، وفي مكانه المناسب، وفي سياقه المناسب</strong>. وهذا متعلق بما يسمى «فقه النقل».</p>
+  </div>
+
+  <h3>زمن الصحابة ليس مستويًا</h3>
+
+  <p>امتدّ زمن الصحابة بعد النبي ﷺ طويلًا: قرابة التسعين إلى المئة سنة. وهذا الزمن <strong>ليس متساويًا</strong> من حيث الاحتياج إلى ضبط آلية النقل؛ فلما صرنا في العام 80 و90 صار الاحتياج إلى التثبت أكبر، لأن كبار الصحابة ماتوا ولم يبقَ إلا الصغار، ودخل في الرواية <strong>التابعون</strong>.</p>
+
+  <p>ويمكن — من باب التقريب لا الحدّ الاصطلاحي — تقسيم زمن الصحابة إلى مرحلتين:</p>
+
+  <div class="tl">
+    <div class="tl-item"><span class="yr">المرحلة الأولى: زمن الخلفاء الراشدين</span>
+      <p>الأمر مقارب وسهل، المسافة الزمنية من النبي ﷺ قريبة، وعامّة الذين يروون هم الصحابة.</p>
+    </div>
+    <div class="tl-item"><span class="yr">المرحلة الثانية: ما بعد الخلفاء الراشدين</span>
+      <p>امتدت المسافة قليلًا، وصار الرواة طبقاتٍ مختلفة، ودخل التابعون في الرواية وهم على درجات: منهم المعروف ومنهم غير المعروف، منهم العالم ومنهم مجرد ناقل. فصار عندنا زخمٌ وعددٌ كبير يدخلون في الرواية.</p>
+    </div>
+  </div>
+
+  <h3>لماذا لا يكفي أن يكون الراوي صالحًا معروف الاسم؟</h3>
+
+  <p>هؤلاء التلاميذ الذين تلقّوا عن كبار الصحابة يتفاوتون: منهم الثقات العدول تمامًا، ومنهم من كانوا من الصالحين لكنهم ليسوا من أهل الضبط والإتقان، ومنهم من في عدالته شيء — خاصة من ناحية <strong>الجهالة</strong>.</p>
+
+  <div class="box story">
+    <span class="lbl">مثال تطبيقي</span>
+    <p>تخيّل أنك تصلي في مسجد الكوفة، فيقول لك إمام المسجد بعد الصلاة: حدّثني سعد بن أبي وقاص كذا وكذا. طيب، من أنت يا إمام المسجد؟ اسمه معروف، لكنه <strong>داخل نطاق الرواية الحديثية غير معروف</strong>. لا يكفي أنه إمام مسجد، ولا يكفي أنه صالح؛ لا يكفي عند المحدّثين. لا بد أن يكون قد دخل في نظام الرواية، وأن يُعرف تعريفًا خاصًا داخله.</p>
+  </div>
+
+  <div class="box story">
+    <span class="lbl">مثال من كتب الرجال</span>
+    <p>ذكر الشيخ اسمًا خطر بباله مباشرة: <strong>العلاء بن بشير</strong>، وهو موجود في رواية في سنن أبي داود، قال عنه الراوي عنه — وهو <strong>المعلّى بن زياد</strong> —: <strong>«وكان شجاعًا عند القتال في سبيل الله، بكّاءً عند الذكر»</strong>. ثم قال الشيخ: ابحث عنه في <em>تهذيب التهذيب</em>، تجد أن <strong>ابن المديني قال: مجهول</strong>. شجاعٌ عند القتال، بكّاءٌ عند الذكر، الله يجزيه خيرًا — لكنه في نظام الرواية <strong>مجهول</strong>؛ اسمه معروف، وهو مجهول.</p>
+  </div>
+
+  <div class="box key">
+    <span class="lbl">القاعدة المستفادة</span>
+    <p>في رواية الحديث عندنا <strong>نظام تثبّت احتياطي</strong>: لا يكفي أن تكون معروفًا باسمك ونسبك فقط، بل لا بد أن تكون معروفًا <strong>داخل نظام رواية الحديث</strong>، بأن تُجرَّب روايتك فيُتأكَّد من صحتها.</p>
+  </div>
+
+  <div class="takeaway">
+    <h4>خلاصة القسم</h4>
+    <ul>
+      <li>الصحابة اقتسموا العناية: أبو هريرة نموذج النقل، وعمر وعليّ وزيد وابن عباس وابن عمر وابن مسعود وعائشة نماذج الفقه.</li>
+      <li>سهولة الضبط في عصرهم سببها: قِصَر المسافة الزمنية، وعدالتهم المعلومة.</li>
+      <li>مع ذلك شدّد عمر في الرواية وطلب الشاهد أحيانًا، لأن الزيادة في الدين كالنقص منه.</li>
+      <li>زمن الصحابة مرحلتان: زمن الخلفاء الراشدين، وما بعده حيث دخل التابعون واتسع الزخم.</li>
+      <li>الصلاح وشهرة الاسم لا يكفيان في الرواية؛ العبرة بدخول الراوي في نظام الرواية ومعرفته فيه (مثال: العلاء بن بشير).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 5 ============ -->
+<section id="s5" class="sec" style="--accent:var(--s5)">
+  <div class="sec-head">
+    <span class="sec-num">القسم الخامس</span>
+    <h2 class="sec-title">عصر التابعين: الطبقات، والستة الذين تدور عليهم الأسانيد، ومدرسة ابن سيرين</h2>
+  </div>
+
+  <p>التابعون ليسوا على طبقة واحدة، ويمكن تقسيمهم — <strong>من باب التقريب والتسهيل لا من باب الحدّ الاصطلاحي الدقيق</strong> كما نبّه الشيخ — إلى ثلاث طبقات:</p>
+
+  <table>
+    <thead><tr><th>الطبقة</th><th>ضابطها</th><th>أمثلتها</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>كبار التابعين</td>
+        <td>من روى عن أبي بكر أو عمر أو عثمان، أي أدرك بدايات المرحلة الأولى</td>
+        <td>الصُّنابحي، وقيس بن أبي حازم، وسعيد بن المسيب (وذكر أيضًا أبا وائل وأبا عثمان النهدي)</td>
+      </tr>
+      <tr>
+        <td>أواسط التابعين</td>
+        <td>من أدرك أواخر زمن الخلفاء الراشدين وبدايات ما بعدهم</td>
+        <td>أبو إسحاق السَّبيعي (عمرو بن عبد الله)</td>
+      </tr>
+      <tr>
+        <td>صغار التابعين</td>
+        <td>من لم يدرك إلا أواخر زمن الصحابة</td>
+        <td>الزهري، وقتادة بن دِعامة السدوسي، والحسن البصري (أقرب إليهم)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="box warn">
+    <span class="lbl">تنبيه على المصطلح</span>
+    <p>«صغار التابعين» ليس معناه أنهم صغار في العلم ولا في المكانة، وإنما هم صغار <strong>من حيث السنّ</strong>، أي لم يدركوا كبار الصحابة.</p>
+  </div>
+
+  <h3>الستة الذين تدور عليهم أسانيد الحديث</h3>
+
+  <p>ذكر الشيخ في أثناء الكلام على الطبقات <strong>الستة الذين تدور عليهم أسانيد الحديث</strong>، وهم الذين ذكرهم <strong>عليّ بن المديني</strong>:</p>
+
+  <div class="box evid">
+    <span class="lbl">الستة</span>
+    <p>الزهري — وعمرو بن دينار — والأعمش — وأبو إسحاق السَّبيعي — ويحيى بن أبي كثير — وقتادة.</p>
+    <p>وقد مرّ منهم في كلام الشيخ ثلاثة عند الكلام على الطبقات: <strong>أبو إسحاق السبيعي</strong> (من أواسط التابعين)، و<strong>الزهري</strong> و<strong>قتادة</strong> (من صغارهم).</p>
+  </div>
+
+  <h3>طبقات ابن حجر الاثنتا عشرة</h3>
+
+  <p>وللطبقات تقسيمات كثيرة، ومن أشهرها تقسيم <strong>الإمام ابن حجر</strong> رحمه الله، فقد قسّم الرواة إلى <strong>اثنتي عشرة طبقة</strong>، وتجدها في كتابه <strong>تقريب التهذيب</strong>. وهذا الكتاب فيه أسماء أكثر من <strong>ثمانية آلاف راوٍ</strong>، كل راوٍ تجد أمامه: «من السادسة»، «من السابعة»، «من العاشرة»، «من الثانية»… فصنّف هذه الآلاف كلها بحسب نظام الطبقات — تصنيف دقيق جدًا ومتميز، لمن أراد الضبط الدقيق. أما ما سبق فتقسيمٌ تقريبي.</p>
+
+  <h3>ازدهار التفتيش في الأسانيد: محمد بن سيرين</h3>
+
+  <p>بدأ القسم الثالث (ضبط النقل) يزدهر في زمن التابعين، وصار من التابعين من له عناية خاصة به، فعُرف بالتفتيش في الأسانيد والرواة والتدقيق فيها. ومن أهمهم على الإطلاق:</p>
+
+  <div class="box key">
+    <span class="lbl">الإمام الفذّ</span>
+    <p><strong>محمد بن سيرين</strong> — صاحب الكلمة التي ذكرها مسلم في مقدمة صحيحه: «إن هذا العلم دين فانظروا عمّن تأخذون دينكم» — وهو <strong>أول من فتّش في الأسانيد وتتبّعها</strong>، وهو من التابعين، ومن الرواة عن أبي هريرة وعن أنس بن مالك رضي الله عنهم.</p>
+  </div>
+
+  <h3>لماذا ازدهر النقد في هذا الزمن؟ القاعدة العامة</h3>
+
+  <div class="box def">
+    <span class="lbl">قاعدة مهمة</span>
+    <p><strong>كلما كثرت التحديات ومداخل الإشكال في الرواية، ازداد الاحتياج إلى التدقيق فيها.</strong> وبالتالي كلما تأخر الزمن ودخل في الرواية من ليس من أهلها أو من ليس متقنًا فيها، صارت هناك حاجة إلى فرز الرواة: ثقة وغير ثقة، ضعيف وغير ضعيف… إلخ.</p>
+  </div>
+
+  <h3>مدرسة البصرة الحديثية</h3>
+
+  <p>واستطرد الشيخ استطرادًا سريعًا: محمد بن سيرين كانت مدينته <strong>البصرة</strong>، ونشأت عنه فيها <strong>مدرسة حديثية</strong> للتوثّق والتثبّت في الرواية. وصار من أهم الرواة على الإطلاق ومن أهم النقاد على الإطلاق: هم الذين اتصلوا بمحمد بن سيرين أو بمدرسته.</p>
+
+  <div class="isnad">
+    محمد بن سيرين ← تلميذاه: <strong>أيوب السَّختياني</strong> و<strong>عبد الله بن عون</strong> ← ثم أخذ عن أيوبَ: <strong>حماد بن زيد</strong> (وهو الذي مرّ في الإسناد «مثل الذهب» في مقدمة صحيح مسلم).
+  </div>
+
+  <div class="box add">
+    <span class="lbl">وصية الشيخ</span>
+    <p>نبّه الشيخ على <strong>عبد الله بن عون</strong> وقال إن أكثر الحاضرين لا يعرفونه، وأوصى بتسجيل اسمه وقراءة سيرته في كتب السير — كسير أعلام النبلاء وغيرها — فستجد رجلًا من الصالحين ومن العلماء ومن الكبار العظماء.</p>
+  </div>
+
+  <p>وهذه مدرسة في البصرة عُرفت بالتوقّي والتثبت والتحوّط في الرواية.</p>
+
+  <h3>التفقه في الدين عند التابعين</h3>
+
+  <p>وأما قسم التفقه في الدين، فقد ازدهر أيضًا في طبقة التابعين، وصار عندنا علماء يتخصصون في السنة النبوية: <strong>يبلّغون ويفقّهون</strong> في وقت واحد، ومن أبرزهم: <strong>الزهري، والحسن البصري، ومحمد بن سيرين، وقتادة</strong> وغيرهم. وصار من التابعين فقهاء كبار أخذوا الفتوى والعلم عن الصحابة، منهم <strong>الفقهاء السبعة</strong> في المدينة المنورة وغيرهم.</p>
+
+  <h3>الزهري: ركن من أركان نقل السنة</h3>
+
+  <div class="box story">
+    <span class="lbl">ترجمة مختصرة</span>
+    <p><strong>الزهري</strong>: محمد بن مسلم بن عبيد الله بن شهاب الزهري، من علماء المدينة الكبار، وهو <strong>شيخ إمام دار الهجرة الإمام مالك</strong>. يروي عن <strong>أنس بن مالك</strong> رضي الله عنه، وعن فقهاء المدينة من التابعين: سالم بن عبد الله بن عمر، وأبي بكر بن عبد الرحمن، وعبيد الله بن عبد الله بن عتبة وغيرهم. وهو الذي كلّفه الخليفة الراشد <strong>عمر بن عبد العزيز</strong> بجمع السنة النبوية. قال الشيخ: لا نتصور نقل السنة النبوية بدون ركن من أركانها هو الزهري.</p>
+  </div>
+
+  <div class="box fix">
+    <span class="lbl">تصحيح تفريغ</span>
+    <p>ورد في التفريغ «سان بن عبد الله بن عمر»، والصواب <strong>سالم بن عبد الله بن عمر</strong> — وهو أحد فقهاء المدينة من التابعين وأحد شيوخ الزهري.</p>
+  </div>
+
+  <div class="takeaway">
+    <h4>خلاصة القسم</h4>
+    <ul>
+      <li>التابعون ثلاث طبقات تقريبية: كبار (قيس بن أبي حازم، الصنابحي، سعيد بن المسيب)، أواسط (أبو إسحاق السبيعي)، صغار (الزهري، قتادة).</li>
+      <li>الستة الذين تدور عليهم الأسانيد عند عليّ بن المديني: الزهري، عمرو بن دينار، الأعمش، أبو إسحاق السبيعي، يحيى بن أبي كثير، قتادة.</li>
+      <li>ابن حجر قسّم الرواة في «تقريب التهذيب» إلى 12 طبقة، وفيه أكثر من 8000 راوٍ.</li>
+      <li>محمد بن سيرين أول من فتّش في الأسانيد، وعنه نشأت مدرسة البصرة: أيوب السختياني وابن عون، ثم حماد بن زيد.</li>
+      <li>القاعدة: كلما كثرت مداخل الإشكال في الرواية ازداد الاحتياج إلى التدقيق فيها.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 6 ============ -->
+<section id="s6" class="sec" style="--accent:var(--s6)">
+  <div class="sec-head">
+    <span class="sec-num">القسم السادس</span>
+    <h2 class="sec-title">الحفظ والكتابة في زمن التابعين، وشبهة النسخ الخطية</h2>
+  </div>
+
+  <p>سؤال الشيخ للحاضرين: هل كانت السنة في زمن التابعين تُكتب أم تُنقل شفهيًا؟ والجواب: <strong>الاثنان معًا</strong> — لكن <strong>الأصل هو النقل الشفهي</strong>.</p>
+
+  <div class="box story">
+    <span class="lbl">موقف التابعين من الكتابة</span>
+    <p>بل إن بعض التابعين كانوا <strong>يحاربون قضية الكتابة</strong> ويتبنّون خيار الحفظ فقط، ويرون أن الأعزّ والأشرف والأضبط والأكثر عناية بالسنة هو أن تضبطها حفظًا. ولذلك كان <strong>الشعبي</strong> يفتخر ويقول: <strong>«ما كتبتُ سوداء في بيضاء»</strong>. وقال قائلهم: <strong>«ما استودعتُ قلبي شيئًا فخانني»</strong>. وكانوا يعتنون بالحفظ جدًا.</p>
+  </div>
+
+  <p>ومن العلماء من كان يتبنّى خيار <strong>الكتابة</strong> مبكرًا؛ ولذلك كان في زمن التابعين بعض الكتب و<strong>الصُّحُف</strong> التي يكتبها الرواة لأنفسهم:</p>
+
+  <ul class="plain">
+    <li>راوٍ معروف عن <strong>جابر بن عبد الله</strong> رضي الله عنه — وهو <strong>أبو سفيان</strong> — كانت له صحيفة يكتبها عن جابر.</li>
+    <li>وصحيفة معروفة عن <strong>أبي هريرة</strong> رضي الله عنه.</li>
+  </ul>
+
+  <div class="box fix">
+    <span class="lbl">تصحيح / تنبيه على التباس الأسماء</span>
+    <p>ورد في المجلس أن الصحيفة المعروفة عن أبي هريرة هي لـ<strong>وهب بن منبه</strong>، والصواب المشهور أنها <strong>صحيفة همام بن منبه</strong> — وهو أخو وهب — رواها عنه معمر، وعن معمر عبدُ الرزاق، وأوردها الإمام أحمد في مسنده كاملة، وهي نحو 140 حديثًا، وتُعدّ من أقدم ما دُوّن في الحديث النبوي. والالتباس طبيعي: <strong>همام</strong> و<strong>وهب</strong> أخوان، ووهبٌ هو صاحب القصص.</p>
+  </div>
+
+  <div class="box add">
+    <span class="lbl">إضافة توضيحية (ليست من كلام الشيخ)</span>
+    <p>أما صحيفة جابر رضي الله عنه فأشهر ما يذكره أهل العلم فيها <strong>صحيفة سليمان بن قيس اليشكري</strong> التي كتبها عن جابر، وبقيت عند امرأته بعد وفاته؛ قال أبو حاتم: روى أبو الزبير وأبو سفيان والشعبي عن جابر وأكثره من الصحيفة، وكذلك قتادة. فذِكر <strong>أبي سفيان</strong> (طلحة بن نافع) مع الصحيفة عن جابر له أصل عند أهل الفن.</p>
+  </div>
+
+  <h3>ما معنى «مصنَّفة»؟</h3>
+
+  <div class="box def">
+    <span class="lbl">تعريف</span>
+    <p><strong>المصنَّف:</strong> المبوَّب المقسّم على الأبواب والموضوعات. وصحف التابعين هذه <strong>ليست مصنّفة</strong>، وإنما هي أحاديث مجموعة كما سُمعت: تحضر عند الشيخ — صحابيٍّ أو تابعيٍّ آخر — فتكتب عنه الحديث كما سمعته. فالكتابة للحديث النبوي في زمن التابعين كانت <strong>كتابة غير مصنَّفة</strong>.</p>
+  </div>
+
+  <div class="box evid">
+    <span class="lbl">مرجع لمن أراد التوسع</span>
+    <p>تتبّع أحد العلماء المعاصرين هذه الصحف التي كُتبت في زمن التابعين وسمّى أصحابها بأسمائهم، وهو <strong>الدكتور محمد مصطفى الأعظمي</strong> في كتابه الثمين النفيس <strong>«دراسات في الحديث النبوي وتاريخ تدوينه»</strong> — وهو في مجلدين، جمع فيه الصحف التي كتبها الصحابة والتابعون ومن بعدهم.</p>
+  </div>
+
+  <h3>لماذا كان النقل الشفهي هو الأوثق عندهم؟</h3>
+
+  <p>لو ذهبتَ إلى ذلك الوقت وسألت التابعين وأئمة المسلمين: ما أوثق طريقة عندكم للنقل؟ لقالوا: <strong>النقل الشفهي</strong>؛ هذه أعلى طريقة، وهي الموثوقة تمامًا، والتي كانوا يتفرغون لها.</p>
+
+  <div class="box story">
+    <span class="lbl">مثال تقريبي ضربه الشيخ</span>
+    <p>لما يأتيك واحد متخصص في مجال عملي معيّن يستدعي الحفظ — كالطب أو الصيدلة — تجده يحفظ أسماء الأدوية وتصنيفاتها الكيميائية وعوائلها وانتماءاتها وتفرعاتها. تخيّل رجلًا له خمسون سنة في الصيدلة؛ إذا جاء علاج جديد سهُل عليه أن يصنّفه ويحفظه، لأن هذا مجاله. وقد يعجب غيره ويقول: كيف يحفظ هذا كله؟! أنت حين تذهب إلى الصيدلي وتذكر له اسم العلاج فقط، يذهب مباشرة إلى مكانه فيجيء به.</p>
+    <p>كذلك كان أهل الحديث: <strong>رجلٌ ليس عنده في الحياة شيء آخر، عمره كله في الحديث</strong> — فكانوا يحفظونه حفظًا جيدًا.</p>
+  </div>
+
+  <h3>لماذا ركّز الشيخ على هذه المعلومة؟ — الرد على شبهة المخطوطات</h3>
+
+  <p>ركّز الشيخ على مسألة أولوية النقل الشفهي لأن <strong>الميزان اختلّ</strong> في موضوع الدراسات الغربية والاستشراقية، فصاروا يركّزون على قضية المخطوطات والوثائق التاريخية المكتوبة، فيقول لك: أنتم تعتزّون بصحيح البخاري؟ أعطوني النسخة الخطية لصحيح البخاري. عندكم سيرة ابن إسحاق؟ أعطوني نسختها الخطية.</p>
+
+  <div class="box key">
+    <span class="lbl">الجواب</span>
+    <p>النسخة الخطية بالنسبة لنا <strong>تحصيل حاصل</strong>؛ القضية ليست في النسخة الخطية أصلًا. <strong>العقل الحديثي الذي تأسس لم يتأسس على فكرة أهمية النسخة الخطية، وإنما تأسس على أهمية الرواية والنقل والإسناد.</strong> فصحيح البخاري سمعه من البخاري آلافٌ مؤلَّفة من الناس، لا على نسخة خطية كتبها.</p>
+  </div>
+
+  <h3>المعجم المفهرس لابن حجر — شاهدٌ على نظام الإسناد</h3>
+
+  <div class="box story">
+    <span class="lbl">مثال حيّ</span>
+    <p>عندنا كتاب <strong>«المعجم المفهرس»</strong> لابن حجر رحمه الله: أيّ كتابٍ يخطر ببالك من كتب المتقدمين، يذكر لك ابن حجر <strong>إسناده الموصل إليه</strong>، إسنادًا تلقّاه هو إلى صاحب الكتاب — بغضّ النظر عن وجود نسخة خطية أو لا. ومن الكتب التي فيه ما لا تتخيله ولا تعرفه أصلًا، فضلًا عن صحيح البخاري وصحيح مسلم؛ مثل: كتاب الحذر والشفقة، وكتاب التوبة، وكتاب محاسبة النفس، وكتاب اليقين، وكتاب حسن الظن، وكتاب الخمول والتواضع، وكتاب المطر — كلها <strong>لابن أبي الدنيا</strong> — وكتاب التفسير ليحيى بن سلّام، وكتاب شفاء الصدر في التفسير لأبي بكر النقّاش، ومسند أنس للحُنَيني، وجزء الدَّرّاج، وفضائل الإسكندرية لأبي عليّ بن الصبّاغ.</p>
+    <p>وصيغة الإسناد عنده مثل: «قرأته على الشيخ أبي الفرج عبد الرحمن بن أحمد المبارك، بسماعه له عن أبي عليّ يونس بن إبراهيم… عن أبي الحسن بن دينار وعليّ بن زيد… إلى صاحب الكتاب».</p>
+    <p>وعدد الكتب التي أسندها ابن حجر في هذا المعجم: <strong>1960 كتابًا</strong>. وذكر الشيخ أنه أخذ إجازة مسندة إلى هذا الكتاب من الشيخ يوسف الجنفوري رحمه الله من علماء الهند، فصارت عنده أسانيد ابن حجر كلها بالإسناد المتصل إلى كل هذه الكتب.</p>
+  </div>
+
+  <div class="box warn">
+    <span class="lbl">مآل الشبهة</span>
+    <p>فلو فُتح مركزٌ كبير تُنفق عليه الملايين باسم «التنوير» والتدقيق في الثوابت الإسلامية، ثم كان أهم ما يخرج به: «هل السيرة النبوية صحيحة؟» وخلاصته أنه <strong>لا توجد نسخة خطية لابن إسحاق</strong> — فهذا في الحقيقة لا شيء؛ لأن فكرة النسخ الخطية كانت <strong>رقم اثنين</strong> عند المحدثين، والأساس هو النقل والاتصال والإسناد.</p>
+  </div>
+
+  <h3>الطبقات ليست نوعًا واحدًا</h3>
+
+  <p>وإلى هذه المرحلة لسنا أمام الكتب الحديثية المشهورة الموجودة اليوم؛ فليس شيء من الكتب الحديثية المشهورة محفوظًا من زمن التابعين، وإنما المحفوظ من زمنهم هو <strong>سلسلة الأسانيد</strong>. وهذه ليست شيئًا هيّنًا، بل لها أنظمة:</p>
+
+  <div class="box def">
+    <span class="lbl">نوعان من الطبقات</span>
+    <p><strong>طبقات زمنية</strong> (كتقسيم كبار/أواسط/صغار، وتقسيم ابن حجر الاثني عشر).</p>
+    <p><strong>طبقات باعتبار الضبط والإتقان والعلم بالشيخ</strong>: فللنسائي كتاب في طبقات الرواة، يأتي إلى الصحابي — كابن عمر مثلًا — فيقسّم الرواة عنه طبقات، لا باعتبار الزمن، بل <strong>باعتبار الثقة ومقدار العلم بابن عمر</strong>. فليس كل الثقات الذين رووا عن ابن عمر في درجة واحدة، بل هم على درجات متفاوتة.</p>
+  </div>
+
+  <div class="takeaway">
+    <h4>خلاصة القسم</h4>
+    <ul>
+      <li>الكتابة والنقل الشفهي كانا موجودين معًا في زمن التابعين، والأصل عندهم النقل الشفهي.</li>
+      <li>بعض التابعين تبنّى الحفظ وحده وافتخر به (الشعبي: «ما كتبتُ سوداء في بيضاء»).</li>
+      <li>صحف ذلك الزمن غير مصنَّفة، أي غير مبوّبة على الموضوعات؛ وجمعها الأعظمي في «دراسات في الحديث النبوي وتاريخ تدوينه».</li>
+      <li>شبهة «أين النسخ الخطية؟» تسقط لأن نظام حفظ السنة قام على الإسناد والرواية لا على المخطوط.</li>
+      <li>«المعجم المفهرس» لابن حجر يسند 1960 كتابًا، شاهدٌ عملي على استمرار نظام الإسناد.</li>
+      <li>الطبقات نوعان: زمنية، وباعتبار الضبط والعلم بالشيخ (كصنيع النسائي في طبقات الرواة عن الصحابي).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 7 ============ -->
+<section id="s7" class="sec" style="--accent:var(--s7)">
+  <div class="sec-head">
+    <span class="sec-num">القسم السابع</span>
+    <h2 class="sec-title">أتباع التابعين: ميلاد «التصنيف»، والموطأ وخدمته</h2>
+  </div>
+
+  <p>ثم جاءت طبقة <strong>أتباع التابعين</strong>. وفي أيّ زمن نحن الآن؟ بعد المئة، أي في <strong>منتصف القرن الثاني الهجري تقريبًا</strong>: 140، 150، 160، 170 وما بعد ذلك.</p>
+
+  <p>وأول ما تميّزت به هذه الطبقة في الباب الأول (باب النقل)، من حيث القسم الأول (التبليغ): ظهور <strong>التصنيف</strong>.</p>
+
+  <div class="box def">
+    <span class="lbl">تعريف التصنيف</span>
+    <p><strong>التصنيف:</strong> ترتيب الأحاديث المكتوبة لتكون بحسب الأبواب والموضوعات. فصار عندنا كتب مصنَّفة، أي مؤلَّفة على الأبواب: تفتح الكتاب فتجد كتاب الطهارة، كتاب الصلاة، كتاب الحج، كتاب النكاح، كتاب الحدود، كتاب الجهاد… إلخ.</p>
+  </div>
+
+  <h3>الموطأ للإمام مالك بن أنس</h3>
+
+  <p>ومن أبرز وأهم الكتب المؤلفة في ذلك الزمن: <strong>الموطأ</strong> للإمام مالك بن أنس، وهو من أتباع التابعين (توفي سنة <strong>179هـ</strong>). وأسانيده تُبيّن موقعه من الطبقات:</p>
+
+  <div class="isnad">
+    مالك عن <strong>الزهري</strong> (تابعي) عن <strong>أنس بن مالك</strong> (صحابي).<br>
+    مالك عن <strong>نافع</strong> (تابعي) عن <strong>ابن عمر</strong> (صحابي).<br>
+    مالك عن <strong>إسحاق بن عبد الله بن أبي طلحة</strong> (تابعي) عن <strong>أنس</strong>.<br>
+    مالك عن <strong>حميد الطويل</strong> عن <strong>أنس</strong>.
+  </div>
+
+  <p>وهذا الكتاب من <strong>أقدم الكتب الموجودة المحفوظة عندنا في السنة النبوية</strong>، وهو كتاب مصنَّف مرتَّب.</p>
+
+  <div class="box key">
+    <span class="lbl">أين موقع الموطأ من المفتاح؟</span>
+    <p>هو في <strong>الباب الأول</strong> (باب المتن)، وفي <strong>القسمين معًا</strong>: النقل المجرد <em>و</em> التفقه فيه. لأن الإمام مالك ينقل لك الأحاديث ثم يعلّق عليها بنفسه؛ فنقل الأحاديث من القسم الأول، وتعليقه عليها من القسم الثاني.</p>
+  </div>
+
+  <div class="box story">
+    <span class="lbl">مثال ضربه الشيخ</span>
+    <p>الأثر رقم <strong>1533</strong>، باب جامع القضاء وكراهيته: نقل مالك عن <strong>سلمان الفارسي</strong> رضي الله عنه أثرًا، ثم قال من عنده كلامًا؛ فهو يتكلم ويقرّر ويُفتي، وتكون هذه الفتوى <strong>تفريعًا غالبًا على الأثر الذي ذكره</strong>.</p>
+  </div>
+
+  <div class="box add">
+    <span class="lbl">سؤال مهم أثاره الشيخ</span>
+    <p>هل الباب المتعلق بالمتن خاصٌّ بكلام النبي ﷺ؟ <strong>الجواب: لا.</strong> يدخل في علوم الحديث حتى كلام الصحابة وكلام التابعين؛ ولذلك الموطأ ليس فيه كلام النبي ﷺ فقط، بل فيه كلام الصحابة وفتاواهم كذلك.</p>
+  </div>
+
+  <h3>قراءة من الموطأ: باب فضل صلاة الجماعة على صلاة الفذّ</h3>
+
+  <p>قرأ الشيخ صفحة واحدة من كتاب صلاة الجماعة، لنرى بأعيننا كيف يبدو الكتاب:</p>
+
+  <div class="isnad">
+    حدثني يحيى، عن مالك، عن <strong>نافع</strong>، عن <strong>عبد الله بن عمر</strong>: أن رسول الله ﷺ قال: «صلاةُ الجماعة تفضُل صلاةَ الفذّ بسبعٍ وعشرين درجة».
+  </div>
+
+  <div class="box add">
+    <span class="lbl">تنبيه على الإسناد</span>
+    <p>قوله «حدثني يحيى» ليس هو الإمام مالك، وإنما هو <strong>راوي الكتاب: يحيى بن يحيى</strong>؛ فالراوي عن يحيى هو الذي يروي الإسناد، والإسناد يبدأ من عند نافع.</p>
+  </div>
+
+  <div class="isnad">
+    وحدثني عن مالك، عن <strong>ابن شهاب</strong> [الزهري]، عن <strong>سعيد بن المسيب</strong>، عن <strong>أبي هريرة</strong>: أن رسول الله ﷺ قال: «صلاةُ الجماعة أفضلُ من صلاة أحدكم وحده بخمسةٍ وعشرين جزءًا».
+  </div>
+
+  <div class="isnad">
+    وحدثني عن مالك، عن <strong>أبي الزناد</strong>، عن <strong>الأعرج</strong>، عن <strong>أبي هريرة</strong>: أن رسول الله ﷺ قال: «والذي نفسي بيده، لقد هممتُ أن آمر بحطبٍ فيُحطَب، ثم آمر بالصلاة فيُؤذَّن لها، ثم آمر رجلًا فيؤمّ الناس، ثم أخالف إلى رجالٍ يتخلفون عن الصلاة فأحرّق عليهم بيوتهم. والذي نفسي بيده، لو يعلم أحدهم أنه يجد عظمًا سمينًا أو مِرْماتين حسنتين لشهد العشاء».
+  </div>
+
+  <div class="isnad">
+    وحدثني يحيى، عن مالك، عن <strong>أبي النضر مولى عمر بن عبيد الله</strong>، عن <strong>بُسر بن سعيد</strong>: أن <strong>زيد بن ثابت</strong> قال: «أفضلُ صلاتكم في بيوتكم إلا الصلاة المكتوبة».
+  </div>
+
+  <div class="box def">
+    <span class="lbl">مصطلح</span>
+    <p>الأثر الأخير من كلام الصحابي، ويسمى في علم المصطلح: <strong>موقوفًا</strong>.</p>
+  </div>
+
+  <p>وعلّق الشيخ على هذه الأسانيد بقوله: <strong>«ذهبٌ مصفّى»</strong> — مالك عن نافع عن ابن عمر، ومالك عن الزهري عن سعيد عن أبي هريرة، ومالك عن أبي الزناد عن الأعرج عن أبي هريرة. ولاحِظ أن مالكًا يروي عن التابعي مباشرة أحيانًا، وأحيانًا يروي عن اثنين قبل الصحابي (كأبي الزناد عن الأعرج).</p>
+
+  <h3>ما علاقة الموطأ بالباب الثاني (ضبط النقل)؟</h3>
+
+  <div class="box key">
+    <span class="lbl">تفريق دقيق</span>
+    <p><strong>على المستوى النظري:</strong> لا شيء في الكتاب؛ فالإمام مالك لا يقول لك: هذا الحديث صحيح أو ضعيف أو في إسناده كذا.</p>
+    <p><strong>على المستوى العملي:</strong> طبّق الإمام مالك <strong>أفضل معايير التثبت والتتبع</strong> في كتابه، وكان نفسه متثبتًا متحرّيًا في الرواية إلى أبعد مدى.</p>
+  </div>
+
+  <div class="box def">
+    <span class="lbl">قاعدة في الموطأ</span>
+    <p><strong>إذا أسند مالكٌ الحديث</strong> — أي رواه بإسناده متصلًا — <strong>فاعلم أن الحديث صحيح</strong>، هذا الأصل.</p>
+    <p><strong>وإذا أرسله</strong> — أي لم يروه بإسناده، وإنما قال: «بلغني أن رسول الله ﷺ فعل كذا» أو «بلغني أن عمر بن الخطاب فعل كذا» (وهو لم يدرك عمر) — فهذا يسمى <strong>مرسلًا</strong>، ويسمّونها في الموطأ <strong>«البلاغات»</strong>، لأن مالكًا يستعمل في المراسيل لفظ البلاغ: «بلغني».</p>
+  </div>
+
+  <div class="box evid">
+    <span class="lbl">فرعٌ على الفرع</span>
+    <p>وقد أُلّفت رسالة خاصة في <strong>وصل بلاغات الموطأ</strong>. قال الشيخ: ما من أحدٍ في علم الحديث يتفرّع ولو خطًّا صغيرًا إلا وتجد فيه مؤلفات؛ ولو أردنا عدّ المؤلفات المتعلقة بهذا الكتاب وحده ما انتهينا.</p>
+  </div>
+
+  <h3>مالك ناقدًا: شهادة عملية</h3>
+
+  <div class="box story">
+    <span class="lbl">من مقدمة صحيح مسلم</span>
+    <p>أخرج مسلم في مقدمة الصحيح من طريق <strong>بشر بن عمر الزهراني</strong> أنه سأل الإمام مالك عن رجل، فقال مالك: <strong>«هل وجدتَه في كتبي؟ إن وجدتَه في كتبي فهو ثقة»</strong>.</p>
+  </div>
+
+  <div class="box story">
+    <span class="lbl">مثال من تهذيب التهذيب</span>
+    <p>ولذلك يأتيك راوٍ مختلَف فيه فيقول الناقد: ويكفي أن الإمام مالكًا روى عنه، خاصة إذا كان من أهل المدينة. ومثاله في المجلد الثاني من <em>تهذيب التهذيب</em>: <strong>سهيل بن أبي صالح</strong> — وهو راوٍ ضعّفه بعض العلماء — قال <strong>الحاكم</strong>: «سهيل أحد أركان الحديث، وقد أكثر مسلمٌ الرواية عنه في الأصول والشواهد، إلا أن غالبها في الشواهد، وقد روى عنه مالك، <strong>وهو الحَكَم في شيوخ أهل المدينة، الناقد لهم</strong>». وذكر ابن عديّ أيضًا أنه قد روى عنه الأئمة، ومن أهمّ من يدخل في ذلك مالك.</p>
+    <p>ولاحظ أن هذا الكلام ورد عند الحاكم في <strong>«باب من عِيب على مسلم من إخراج حديثه»</strong> — قال الشيخ: ما من شيء إلا وفيه باب خاص!</p>
+  </div>
+
+  <div class="box key">
+    <span class="lbl">قيمة الموطأ</span>
+    <p>عامّة الأحاديث <strong>المسندة</strong> في الموطأ أخرجها البخاري ومسلم في صحيحيهما — شبه جميع ما أخرجه مالك مسندًا؛ ليس الكل ولكن الغالب.</p>
+  </div>
+
+  <h3>خدمة الموطأ: أصلٌ تتفرع عنه الفروع</h3>
+
+  <p>صار الموطأ <strong>أصلًا</strong>، ثم جاءت مصنفات تخدم الأصل (فروع)، ثم مصنفات تخدم الفروع، ثم مصنفات تخدم فروع الفروع، حتى صارت عندنا موسوعة لا حصر لها.</p>
+
+  <table>
+    <thead><tr><th>الكتاب</th><th>مؤلفه</th><th>مميزاته</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>التمهيد</td>
+        <td>ابن عبد البر (أبو عمر، من علماء المالكية الكبار وعلماء الأندلس)</td>
+        <td>موسوعة ضخمة، مرتَّبة على <strong>أسماء شيوخ مالك بحسب حروف المعجم</strong> لا على أبواب الموطأ؛ عناية شديدة بالصنعة الحديثية، ولم يشرح فيه الموقوفات وإنما اعتنى بالمرفوعات</td>
+      </tr>
+      <tr>
+        <td>الاستذكار</td>
+        <td>ابن عبد البر أيضًا</td>
+        <td>مرتَّب على <strong>نفس ترتيب الموطأ</strong>، وعنايته بالصنعة الفقهية ومذاهب العلماء، وشرح فيه كامل الموطأ بما فيه الموقوفات</td>
+      </tr>
+      <tr>
+        <td>المسالك والقَبَس</td>
+        <td>ابن العربي المالكي</td>
+        <td>شرحان: المسالك واسع، والقَبَس مختصر</td>
+      </tr>
+      <tr>
+        <td>المنتقى</td>
+        <td>أبو الوليد الباجي</td>
+        <td>من الشروح المهمة جدًا على الموطأ</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="box story">
+    <span class="lbl">وقفة تربوية من الشيخ</span>
+    <p>هل تعرفون أن ابن عبد البر رحمه الله أخذ في تأليف <strong>التمهيد ثلاثين سنة</strong>؟ ثلاثون سنة يكتب في الموطأ ويشرحه، ثم بعد ذلك كتب الاستذكار. ومجموع الشرحين ربما خمسون مجلدًا، وليسا مكررين: هذا شرحٌ وهذا شرحٌ لنفس المؤلف.</p>
+    <p>ثم علّق الشيخ: العلم مراتب ومراحل، وفي الناس من يبدأ من الشِّبر الأول فيقول: فلانٌ مبتدع، فلانٌ ضال، فلانٌ مخطئ… ويقول: «نحن لا نجامل في دين الله». <strong>أيّ أحدٍ تراه بهذه المثابة وهو مبتدئ فاعلم أنه لا يعرف العلم</strong>؛ ليس هذا منطق العلم ولا منطق العلماء ولا طريقهم، ولا هذه هي البدايات أبدًا.</p>
+  </div>
+
+  <p>وقد بلغت الشروح على موطأ الإمام مالك <strong>قرابة 130 شرحًا</strong>! وهذا ليس كل ما خُدم به الموطأ، بل هذه الشروح فقط؛ أما ما خُدمت به الشروح نفسها فأكثر من ذلك. وهناك من اعتنى برجال الموطأ وحدهم.</p>
+
+  <h3>مثال آخر على الأصل والفرع: ترتيب ابن حبان العجيب</h3>
+
+  <p>وصحيح <strong>ابن حبان</strong> أصلٌ أيضًا كالموطأ — بمعنى أنه أسند الحديث بإسناده إلى النبي ﷺ — لكنه رتّب كتابه ترتيبًا عجيبًا؛ فلم يرتّبه على أبواب الفقه، وإنما رتّبه ترتيبًا <strong>أقرب إلى علم أصول الفقه</strong>، مبنيًّا على صيغة الخبر: هل هو أمر أو نهي؟ أمرٌ مشدَّد أو غير مشدَّد؟ بغض النظر عن موضوعه: صلاة أو زكاة أو صيام أو حج.</p>
+
+  <div class="box story">
+    <span class="lbl">أمثلة من عناوينه</span>
+    <ul class="plain">
+      <li><strong>النوع الثالث:</strong> «الأوامر التي وردت مرادها التهديد والزجر عن ضد الأمر الذي أُمر به» — وأورد تحته حديث: <strong>«إن مما أدرك الناس من كلام النبوة الأولى: إذا لم تستحِ فاصنع ما شئت»</strong>؛ فالأمر هنا «اصنع»، والمراد به ضدُّه: التهديد والزجر.</li>
+      <li><strong>النوع الرابع والعشرون:</strong> «الأمر بالشيء عند فعلٍ ماضٍ مراده جواز استعمال ذلك الفعل المسؤول عنه مع استعماله مرة أخرى».</li>
+      <li><strong>النوع الخامس:</strong> «الأمر باستعمال شيء قُصد به الزجر عن استعمال شيء ثانٍ، والمراد منهما معًا علة مضمرة في نفس الخطاب، لا أن استعمال ذلك الفعل محرّم وإن زُجر عن ارتكابه».</li>
+      <li><strong>النوع السادس:</strong> «الأمر بالشيء الذي مراده التعليم حيث جهل المأمورُ به كيفيةَ استعمال ذلك الفعل، لا أنه أمرٌ على سبيل الحتم والإيجاب».</li>
+    </ul>
+    <p>ولأجل ذلك كانت الاستفادة من هذا الكتاب <strong>عسِرة</strong>، فجاء أحد العلماء ورتّب كتاب ابن حبان على الأبواب — «فرعٌ يخدم أصلًا» — وليس مشروعًا في التأليف وإنما مجرد ترتيب.</p>
+  </div>
+
+  <div class="takeaway">
+    <h4>خلاصة القسم</h4>
+    <ul>
+      <li>في زمن أتباع التابعين (منتصف القرن الثاني) وُلد «التصنيف» أي الترتيب على الأبواب والموضوعات.</li>
+      <li>الموطأ (ت 179هـ) في الباب الأول بقسميه: نقلٌ وتفقّه، وفيه المرفوع والموقوف معًا.</li>
+      <li>مالك لا يتكلم في التصحيح والتضعيف نظريًا، لكنه طبّق أعلى معايير التثبت عمليًا حتى صار روايته عن الراوي توثيقًا.</li>
+      <li>ما أسنده مالك فالأصل صحته، وما قال فيه «بلغني» فهو من «بلاغات الموطأ» أي المراسيل.</li>
+      <li>خدمة الموطأ نموذج لتوالد العلوم: التمهيد (على شيوخ مالك) والاستذكار (على ترتيب الموطأ) لابن عبد البر، والمسالك والقبس لابن العربي، والمنتقى للباجي، وقرابة 130 شرحًا.</li>
+      <li>ترتيب ابن حبان الأصولي العجيب مثالٌ آخر على احتياج الأصل إلى فرعٍ يخدمه.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 8 ============ -->
+<section id="s8" class="sec" style="--accent:var(--s8)">
+  <div class="sec-head">
+    <span class="sec-num">القسم الثامن</span>
+    <h2 class="sec-title">الباب الثاني: تأسيس المنهج النقدي، والجهات الأربع، وبداية التدوين</h2>
+  </div>
+
+  <p>في زمن أتباع التابعين توسّع الباب الثاني توسّعًا كبيرًا، حتى إن هذا التوسع من شدّته وكونه انطلاقة جديدة، <strong>لنا أن نقول: هناك تأسّس علم الحديث</strong>. وأهم شخصية على الإطلاق في هذه المرحلة اعتنت بالباب الثاني هي:</p>
+
+  <div class="box key">
+    <span class="lbl">أحد الأمناء على السنة</span>
+    <p><strong>شعبة بن الحجاج بن الوَرْد، أبو بِسطام العَتَكي الأزدي</strong> رحمه الله — قال عنه ابن رجب: هو أول من وسّع الكلام في العلل ونحوها. أخذ يدقّق في الرواية والحديث وفي الرواة، ويسعى ويرحل ويذهب يمينًا وشمالًا حتى يرعى سنة المصطفى ﷺ. وإذا قرأتَ سيرته قلتَ عنه هذا الوصف باطمئنان: <strong>كان شعبة أحدَ الأمناء على سنة رسول الله ﷺ</strong>. وكان له دور أساسي في تأسيس المنهج النقدي.</p>
+  </div>
+
+  <h3>سلسلة النسب العلمي في النقد</h3>
+
+  <div class="isnad">
+    <strong>شعبة بن الحجاج</strong> (ت 160/161هـ) ← <strong>يحيى بن سعيد القطان</strong> ← <strong>أحمد بن حنبل</strong> و<strong>يحيى بن معين</strong> و<strong>عليّ بن المديني</strong>.
+  </div>
+
+  <p>فأشهر ثلاثة أسماء في نقد الحديث والرواة — أحمد بن حنبل، وعليّ بن المديني، ويحيى بن معين — شيخهم في الصنعة الحديثية هو يحيى بن سعيد القطان، وشيخُ القطان هو شعبة. وهذه من القضايا التي تبيّن قيمة شعبة وقيمة توسيع النقد في زمن أتباع التابعين.</p>
+
+  <h3>الجهابذة في مواجهة الزنادقة والأوهام</h3>
+
+  <p>مع تضخّم الروايات واتساعها وكثرتها، ودخول الضعفاء والكذّابين فيها — بل دخل بعض الناس بغرضٍ فاسد لتحريف شيء من السنة، وهم <strong>الزنادقة</strong>، قومٌ كانوا يطعنون في الدين وبعضهم يفتري ويكذب ويخترع أحاديث — بقي الجهابذة من العلماء الكبار <strong>ينقّحون الأحاديث ويطهّرونها</strong> من هذه المدخلات الفاسدة.</p>
+
+  <div class="box evid">
+    <span class="lbl">أبرز من مارس هذا الدور</span>
+    <p>شعبة بن الحجاج، ويحيى بن سعيد القطان، وعبد الرحمن بن مهدي، وعبد الله بن المبارك، وسفيان بن عيينة، ثم أحمد بن حنبل، ويحيى بن معين، وعليّ بن المديني، ثم الإمام البخاري، وأبو حاتم الرازي، وأبو زرعة الرازي، ويعقوب بن شيبة السدوسي، وعمرو بن عليّ الفلّاس، وأبو داود سليمان بن الأشعث السجستاني، والإمام الترمذي.</p>
+  </div>
+
+  <div class="tl">
+    <div class="tl-item"><span class="yr">القرن الثاني</span><p>شعبة بن الحجاج (ت 160 أو 161هـ)، وعبد الله بن المبارك (قبل الطبقة التالية ببضع عشرة سنة).</p></div>
+    <div class="tl-item"><span class="yr">أواخر القرن الثاني</span><p>يحيى القطان وسفيان بن عيينة وعبد الرحمن بن مهدي — توفوا قريبًا من بعضهم، في «التسعينات» من القرن الثاني.</p></div>
+    <div class="tl-item"><span class="yr">النصف الأول من القرن الثالث</span><p>عليّ بن المديني (ت 234هـ)، ويحيى بن معين، وأحمد بن حنبل.</p></div>
+  </div>
+
+  <h3>لماذا كثرت الأسانيد؟</h3>
+
+  <p>الأحاديث النبوية نفسها ليست كثيرة، ولكن <strong>الطرق الموصِلة إليها كثيرة جدًا</strong> — مئات الآلاف من الأسانيد. والسبب أشبه بـ«المضاعفة الأُسّية»: يكون عندنا في البداية خمسة أو ستة، ثم يروي عن كل واحد عشرة، ثم عن كل واحدٍ من العشرة عشرة… وهكذا؛ فكلما اتّسع الزمن صارت الأعداد مضاعَفة بشكل كبير.</p>
+
+  <div class="box story">
+    <span class="lbl">مثال: حديث «إنما الأعمال بالنيات»</span>
+    <p>رواه <strong>عمر بن الخطاب</strong>، وعن عمر رواه واحد: <strong>علقمة بن وقّاص الليثي</strong>، وعن علقمة رواه واحد: <strong>محمد بن إبراهيم التيمي</strong>، وعن محمد بن إبراهيم رواه واحد: <strong>يحيى بن سعيد الأنصاري</strong>، وعن يحيى بن سعيد الأنصاري رواه <strong>المئات</strong>! لماذا؟ لأنه جلس في مجلس كبير وكان الناس يسمعون منه، فحدّث بهذا الحديث وجلس الناس إليه. بينما بعض المحدثين لا يجلس الناس إليه، إنما يروي الحديث والحديثين والثلاثة.</p>
+  </div>
+
+  <div class="box fix">
+    <span class="lbl">تصحيح تفريغ</span>
+    <p>ورد الاسم في التفريغ الصوتي «علق بن القاص الليثي»، والصواب: <strong>علقمة بن وقّاص الليثي</strong>. وكذلك «واثر بن الأسق» صوابها <strong>واثلة بن الأسقع</strong>، و«أبي مرثد غنوي» صوابها <strong>أبو مرثد الغَنَوي</strong>.</p>
+  </div>
+
+  <p>ثم انتشر الناس في البلدان: خراسان ومرو، وبلاد تركمانستان وأوزبكستان وأفغانستان وباكستان وإيران اليوم — كلها كانت مليئة بالمحدّثين، وكانت من بلاد السنة، وإيران كانت معقلًا من معاقل السنة مليئًا بالمحدثين. وهؤلاء سمعوا من مشايخهم؛ بعضهم في بلدانهم، وبعض الطلاب أخذوا عنهم في بلاد الحجاز والشام بسبب <strong>الرحلة</strong>. والإمام البخاري مثالٌ على ذلك: رحل إلى بلاد الحجاز من بلاد ما وراء النهر (أوزبكستان اليوم) وعمره <strong>16 سنة</strong>، وبقي في الحجاز، ثم رحل إلى بغداد، ورحل ورحل.</p>
+
+  <h3>الجهات الأربع التي يتوجه إليها النقد</h3>
+
+  <p>أنت أمام تحدٍّ كبير: كيف تحفظ السنة النبوية فتصل إلى ما قاله النبي ﷺ وتنقّيه مما اختلط به — سواء اختلط عمدًا من الكذّابين والزنادقة، أو خطأً وسهوًا بسبب <strong>وهم الحفظ</strong> (فمن يروي خمسة آلاف حديث طبيعيٌّ أن يغلط في عشرين أو ثلاثين). فبدأ العلماء يتتبعون هذه الأخطاء في أربع جهات:</p>
+
+  <div class="box def">
+    <span class="lbl">الجهة الأولى: الاتصال والانقطاع</span>
+    <p>قبل أن أنظر: هل فلانٌ ثقة أو لا، أريد أن أتأكد: <strong>هل سمع فلانٌ من فلان أم لم يسمع؟</strong> وهذه القضية أشغلت المحدثين إشغالًا كبيرًا، حتى صارت عندهم قصة طويلة اسمها: «من سمع من فلان ومن لم يسمع».</p>
+    <p><strong>كيف يُعرف ذلك؟</strong> إذا قال الراوي: «سمعتُ فلانًا» انتهى الأمر — بشرط أن يكون ثقةً؛ لأن غير الثقة كما يكذب في الحديث قد يكذب في قوله «سمعت». وبطبيعة الحال يُحتاج إلى التأكد من التاريخ في مواطن الإشكال.</p>
+  </div>
+
+  <div class="box evid">
+    <span class="lbl">كتب هذه الجهة</span>
+    <p>كما كان الطلاب يسألون المحدثين: فلانٌ ثقة أو غير ثقة؟ كانوا يسألونهم: فلانٌ سمع من فلان أم لم يسمع؟ حتى أفرد بعضهم فيها كتابًا:</p>
+    <ul class="plain">
+      <li><strong>المراسيل لابن أبي حاتم</strong>: بمعنى <strong>المنقطعات</strong> — سمع أو لم يسمع — وهو عبارة عن أسئلة موجّهة لأبي حاتم الرازي وأبي زرعة الرازي أو من كلامهما.</li>
+      <li><strong>المراسيل لأبي داود</strong>: بمعنى <strong>المرفوعات</strong> — أي ما رفعه التابعي إلى النبي ﷺ أو ما قارب ذلك.</li>
+    </ul>
+  </div>
+
+  <div class="box def">
+    <span class="lbl">الجهة الثانية: تمييز الرواة</span>
+    <p>وهذه في الحقيقة <strong>المفروض أن تكون رقم واحد</strong>. عندك خمسة عشر رجلًا اسمهم «عبد الله بن محمد»، وخمسة عشر اسمهم «الحسين بن عليّ»، وعشرون اسمهم «محمد بن عبد الرحمن»؛ فيقول الراوي: «حدثنا محمد بن عبد الرحمن» — فمن هو؟ ويقول: «حدثنا حماد» — <strong>حماد بن سلمة أم حماد بن زيد؟</strong> ويقول: «حدثنا سفيان» — <strong>سفيان بن عيينة أم سفيان الثوري؟</strong></p>
+    <p>والتمييز نوعان: <strong>تمييز نسبي</strong> (الراويان متمايزان في ذاتيهما، لكن لا نعرف المقصود في هذه الرواية بعينها)، و<strong>تمييز أصلي</strong> (يحتاج الرواة أن يُميَّزوا في ذواتهم)، وهنا يأتي دور المعلومات المفصلة عن الراوي، ومنه المؤلفات في <strong>«الأسماء والكنى»</strong> التي تضبط أسماء الرواة وكناهم.</p>
+  </div>
+
+  <div class="box def">
+    <span class="lbl">الجهة الثالثة: التوثيق والتضعيف</span>
+    <p>هل الراوي ثقة أم ضعيف؟ وهذه تُعرف <strong>بقصة طويلة عريضة فيها اختبارات ومقارنات</strong>: يأخذون الحديث فيدرسونه ويقارنون، حتى يصلوا إلى نتيجة عملية. وقد يُستغرب: أيدرسون من مئات الآلاف من الروايات حديثًا واحدًا هذه الدراسة؟ نعم، يفعلون ذلك — لأن الرجل منهم نذر عمره كله لخدمة سنة المصطفى ﷺ، ليس عنده تخصص آخر ولا مجال آخر.</p>
+  </div>
+
+  <div class="box def">
+    <span class="lbl">الجهة الرابعة: العلل والأخطاء الباطنة</span>
+    <p>الجهات الثلاث السابقة في الأساس <strong>ظاهرة</strong>، أي متعلقة بظاهر الإسناد. لكن هناك روايات ظاهرها الصحة، فإذا سلّطتَ الضوء من الأسفل وجدتَ خللًا: يكون الرواة كلهم ثقات، وكلهم مميّزون، وكلٌّ قال «حدثني» فالاتصال حاصل… فماذا بقي؟ <strong>بقي احتمال خطأ الثقة</strong>. فالضعيف نردّ روايته لضعفه، وأما الثقة فالأصل قبولها — <strong>لكن الثقة قد يخطئ</strong>. وهنا يأتي دور <strong>علم العلل</strong> ليميّز لك أخطاء الثقات؛ وفيه قسمٌ كبيرٌ هو في الأساس لأخطاء الثقات، وهي قصة طويلة عريضة واسعة الأرجاء.</p>
+  </div>
+
+  <h3>من هذه الجهات نشأ «مصطلح الحديث»</h3>
+
+  <p>حين ينقد الناقد هذه الأمور الأربعة، يعبّر بألفاظ تدلّ على أنواع الخطأ ودرجاته: إن كان تام الضبط قال: <strong>ثقة</strong>؛ فإن نزل عنه وارتفع عن الضعيف قال: <strong>لا بأس به</strong> (أي تُقبل روايته لكن عنده بعض الأخطاء)؛ فإن نزل قال: <strong>ليس بالقوي</strong> (أي ليس تامّ القوة)؛ ثم <strong>ليس بقويّ</strong>؛ ثم <strong>ضعيف</strong>؛ ثم <strong>ضعيف جدًا</strong>؛ ثم <strong>متروك</strong>؛ ثم <strong>كذّاب</strong>. ولماذا يغيّر هذه العبارات؟ <strong>بقدر ما في الواقع</strong>.</p>
+
+  <div class="box key">
+    <span class="lbl">تعريف مصطلح الحديث</span>
+    <p><strong>مصطلح الحديث</strong> هو: العبارات والألفاظ التي اصطلح النقاد على استعمالها للتعبير بها عن <strong>أحوال الرواية والرواة</strong>.</p>
+    <p>ونقطة مهمة: لم يأتِ أحدٌ فأسّس علم مصطلح الحديث تأسيسًا نظريًا ابتداءً؛ بل هي في الأصل <strong>تطبيقات عملية</strong> قام بها النقاد، ثم كُتبت، ثم نُظّمت في علمٍ كامل.</p>
+  </div>
+
+  <h3>بداية تدوين الباب الثاني</h3>
+
+  <p>في نهاية القرن الثاني وبداية القرن الثالث نضج علم الحديث نضجًا كبيرًا؛ بمعنى أن <strong>عامّة الرواة الذين رووا شيئًا من الحديث النبوي دخلوا في نظام التقييم عند النقاد</strong>: توثيق الأسماء، وتوثيق الكنى، وتوثيق تواريخ الوفيات، وقضية «ثقة أو غير ثقة».</p>
+
+  <p>فكيف تُداولت هذه المعلومات؟ <strong>شفهيًا أولًا</strong>: صار عندنا مشايخ متخصصون في <strong>الجرح والتعديل</strong> ونقد الرواة، فيأتي التلاميذ ويسألونهم: يا شيخ، ما قولك في رواية فلان عن فلان؟ فيقول: فلانٌ عن فلان مرسل، لم يسمع من شيخه. ويسألون: ما رأيك في رواية فلان؟ فيقول: ضعيف الحديث. وهكذا.</p>
+
+  <p>ثم أخذ الطلاب <strong>يدوّنون هذه الأسئلة</strong> بشكل متفرق، فصارت عندنا كتبٌ صغيرة متفرقة تدوّن آراء العلماء الكبار المتقدمين في الرجال والعلل والأسانيد:</p>
+
+  <ul class="plain">
+    <li><strong>عبد الله بن الإمام أحمد</strong>، و<strong>صالح بن الإمام أحمد</strong>، و<strong>المرّوذي</strong>، و<strong>أبو داود</strong> — كلهم لهم «مسائل» يروونها عن الإمام أحمد.</li>
+    <li><strong>يحيى بن معين</strong>: لا يكاد يوجد راوٍ في الحديث إلا وله فيه كلام؛ تكلم عن آلاف الرواة، ولا تكاد تجد راويًا إلا وقد تكلم عنه <strong>أكثر من مرة</strong>، من رواياتٍ متعددة لتلاميذه عنه.</li>
+  </ul>
+
+  <div class="box add">
+    <span class="lbl">فائدة تفسّر اختلاف الأقوال</span>
+    <p>لذلك تجد في الكتب التي جمعت الأقوال في الراوي الواحد: «قال ابن معين في رواية ابن الجُنيد: ثقة»، و«قال ابن معين في رواية الدارِمي: لا بأس به». لماذا؟ لأن كل واحد من التلاميذ سأل ابن معين عن هذا الراوي في وقتٍ ودوّن ما سمعه.</p>
+  </div>
+
+  <p>فبدأ التدوين للباب الثاني تقريبًا في <strong>النصف الثاني من القرن الثاني للهجرة</strong>، ومع نهاياته وبداية القرن الثالث صارت هذه الكتب موجودة.</p>
+
+  <h3>نماذج من أوائل كتب الباب الثاني</h3>
+
+  <div class="box story">
+    <span class="lbl">الكتاب الأول: علل الحديث لعليّ بن المديني (ت 234هـ)</span>
+    <p>مؤلفه إمامٌ فذّ، من أبرز وأعظم وأتقن وأرسخ العلماء في هذا الباب. وماذا تجد فيه؟ تجد <strong>أدلّ دلالة</strong> على أن هذه الكتب القديمة <strong>متنوعة المواضيع</strong>، مليئة بالأشياء المتعلقة بواقع الرواية — ليست مثل المؤلفات المتأخرة التي استقرّ فيها تقسيم الأمور.</p>
+    <p>فأنت حين تقرأ <em>نخبة الفكر</em> ككتاب متأخر تجد الدنيا مرتّبة: الخبر إما أن يرد بطريق واحد أو بطرق متعددة، فإن كان بطرقٍ بلا حصر أو بحصرٍ بواحد أو اثنين… ثم: فأما الأول فالغريب، والثاني فالعزيز، والثالث فالمشهور، والرابع فالمتواتر — كل شيء مرتّب وشامل. أما الكتب القديمة فلا؛ اقرأ فيها أي موضع تجد:</p>
+    <ul class="plain">
+      <li>«قال عليّ: <strong>قيس بن أبي حازم</strong> سمع من أبي بكر وعمر وعثمان وعليّ وسعد بن أبي وقاص والزبير وطلحة بن عبيد الله وأبي شهم وجرير بن عبد الله البجلي وأبي مسعود الأنصاري وخبّاب بن الأرتّ والمغيرة…» ← هذا في <strong>الاتصال والانقطاع</strong>.</li>
+      <li>«قال عليّ: حديث <strong>سلمة بن المحبَّق</strong>: قضى النبي ﷺ في رجل وطئ جارية امرأته… فقال: حديث بصري، رواه الحسن عن قبيصة بن حريث عن سلمة بن المحبق، فرواه قتادة…» وذكر أسانيد الحديث ورواياته ← هذا في <strong>العلل</strong>.</li>
+      <li>«قال عليّ: <strong>حِطّان بن عبد الله الرقاشي</strong> روى عنه الحسن ويونس بن جبير وأبو مِجلز وأبو هارون الغنوي، ثبت» ← هذا في <strong>التوثيق والتضعيف</strong>.</li>
+    </ul>
+  </div>
+
+  <div class="box story">
+    <span class="lbl">الكتاب الثاني: العلل الكبير للترمذي (ت 279هـ)</span>
+    <p>وهو عبارة عن <strong>أسئلة يسألها الترمذي لشيخه الإمام البخاري</strong> عن علل الأحاديث، فهو في الجهة الرابعة، لكن في أحاديث معينة. وهذا الكتاب مرتَّب، وليس الترمذي هو الذي رتّبه. مثاله: «باب ما جاء في كراهية المشي على القبور»:</p>
+    <div class="isnad">
+      قال الترمذي: حدثنا هنّاد، قال: حدثنا ابن المبارك، عن عبد الرحمن بن يزيد بن جابر، قال: حدثني بُسر بن عبيد الله، عن أبي إدريس الخولاني، عن <strong>واثلة بن الأسقع</strong>، عن <strong>أبي مرثد الغَنَوي</strong>، قال: قال رسول الله ﷺ: «لا تجلسوا على القبور ولا تصلّوا إليها». <br>
+      قال: <strong>سألتُ محمدًا</strong> [أي البخاري] عن هذا الحديث فقال: <strong>حديث الوليد بن مسلم أصحّ</strong>، وهكذا روى غير واحد عن عبد الرحمن بن يزيد بن جابر، عن بسر بن عبيد الله، عن… واثلة بن الأسقع.
+    </div>
+    <p>ولاحظ عدد الرجال في الإسناد: سبعة. وهكذا يأتي بالإسناد فيقول: هذا الإسناد وإن كان كذا، لكن هذا <strong>أصحّ</strong>، وهذا <strong>أرجح</strong>، وهذا <strong>منقطع</strong>.</p>
+  </div>
+
+  <div class="box story">
+    <span class="lbl">الكتاب الثالث: رسالة أبي داود إلى أهل مكة</span>
+    <p>وهي ضمن كتاب معاصر اسمه <strong>«ثلاث رسائل في علم مصطلح الحديث»</strong>، والرسالة الأولى منها هي <strong>«رسالة الإمام أبي داود إلى أهل مكة في وصف سننه»</strong> (وذكر الشيخ أن له شرحًا مختصرًا لهذه الرسالة منشورًا على يوتيوب).</p>
+    <p>وسبب أهميتها: العلماء سابقًا — ببساطتهم — أغلبهم <strong>ما كانوا يضعون مقدمات لكتبهم</strong>. فصحيح البخاري: كيف عرفنا شروط البخاري؟ <strong>بالاستقراء</strong>؛ فالبخاري نفسه ما كتب شيئًا، إنما كتب: «بسم الله الرحمن الرحيم، كتاب بدء الوحي، حدثنا الحميدي عبد الله بن الزبير قال: حدثنا سفيان… عن يحيى بن سعيد الأنصاري، عن محمد بن إبراهيم التيمي، عن علقمة بن وقاص الليثي، عن عمر بن الخطاب، قال: قال رسول الله ﷺ: إنما الأعمال بالنيات». فقط! ولم يقل: «مَن أنا، وما فكرة الكتاب، وقد اجتهدتُ في كتابته واشترطتُ فيه…» — هذه كلها <strong>أنت تستخرجها</strong>؛ والبخاري يودعها في كتابه وأنت تستنبطها، ومنه فقه البخاري في تراجم الأبواب.</p>
+    <p>أما أبو داود فكتب رسالة مستقلة — ليست في نفس السنن — ذكر فيها <strong>منهجه في الكتاب</strong> وبعض الأمور المتعلقة بالعلل والمصطلح. وهذه الكتابات التي دُوّنت في القرن الثاني والثالث والرابع <strong>أثمن من أي شيء كُتب متأخرًا</strong>.</p>
+  </div>
+
+  <div class="takeaway">
+    <h4>خلاصة القسم</h4>
+    <ul>
+      <li>شعبة بن الحجاج أعظم من وسّع النقد في زمن أتباع التابعين، وسلسلته: شعبة ← يحيى القطان ← أحمد وابن معين وابن المديني.</li>
+      <li>كثرة الأسانيد سببها تضاعف الرواة طبقةً بعد طبقة، ومثاله حديث «إنما الأعمال بالنيات» الذي رواه عن يحيى بن سعيد الأنصاري المئات.</li>
+      <li>النقد يتوجه إلى أربع جهات: الاتصال والانقطاع، وتمييز الرواة، والتوثيق والتضعيف، والعلل الباطنة.</li>
+      <li>علم العلل في أساسه لأخطاء <em>الثقات</em>، لا للضعفاء.</li>
+      <li>مصطلح الحديث نشأ من ألفاظ النقاد العملية (ثقة، لا بأس به، ليس بالقوي، ضعيف، متروك، كذاب) ثم نُظّم لاحقًا.</li>
+      <li>بدأ التدوين في الباب الثاني أواخر القرن الثاني: مسائل تلاميذ أحمد، وروايات تلاميذ ابن معين، ثم علل ابن المديني وعلل الترمذي الكبير ورسالة أبي داود.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 9 ============ -->
+<section id="s9" class="sec" style="--accent:var(--s9)">
+  <div class="sec-head">
+    <span class="sec-num">القسم التاسع</span>
+    <h2 class="sec-title">كتب النقل الكبرى، والكتب الستة والتسعة</h2>
+  </div>
+
+  <p>نرجع إلى الباب الأول، القسم الأول (النقل). بعد الإمام مالك صار عندنا عدة كتب اعتنت بنقل الحديث والسنة، وبنقل كلام العلماء المتقدمين — خاصة كلام الصحابة وكبار التابعين. ومؤلفاتهم على قسمين:</p>
+
+  <table>
+    <thead><tr><th>القسم</th><th>مضمونه</th><th>أمثلته</th></tr></thead>
+    <tbody>
+      <tr><td>الأول</td><td>لم ينقلوا فيه إلا كلام النبي ﷺ، وإن نقلوا كلام غيره فعلى سبيل التبع لا الأصل</td><td>مسند الإمام أحمد</td></tr>
+      <tr><td>الثاني</td><td>اعتنوا بنقل كلام النبي ﷺ وكلام غيره من الصحابة والتابعين</td><td>الموطأ، مصنف عبد الرزاق، مصنف ابن أبي شيبة</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box add">
+    <span class="lbl">استطراد مهم من الشيخ</span>
+    <p>نحن نتناول هؤلاء الأئمة من <strong>زاوية واحدة</strong>: كونهم متخصصين في علوم الحديث. لكن لهم سيرٌ شاملة في الصلاح والزكاء والعبادة والجهاد في سبيل الله ونصرة الدين والتضحية والأدب وتنوّع العلوم. فلا ينبغي حين نقرأ سير العلماء ألا نأخذ منهم إلا جانبًا واحدًا.</p>
+    <p>و<strong>عبد الله بن المبارك</strong> نموذج: إمامٌ شهدت له الأمة بالخير وحسن العمل والاستقامة والإمامة، وكان إمامًا في مختلف الأبواب، ومن المجاهدين في سبيل الله، ومن الأغنياء الذين ينفقون، وممن <strong>يكفل المحدّثين</strong>. وكان يُنتقد أحيانًا: لماذا لا تعطي بعض فقراء أهل بلدك وتعطي المحدثين في بلدان أخرى؟ فيقول: <strong>«هؤلاء يحفظون الدين»</strong>، وهؤلاء يشتغلون بشيء يشغلهم عن طلب الرزق.</p>
+    <p>وعلّق الشيخ: وهذه فكرة مهمة وضرورية في زماننا — أن يكون للأمة صناديق أو دعمٌ لطلاب العلم المتفرغين الذين يكونون من المصلحين.</p>
+  </div>
+
+  <h3>أولًا: كتب القرن الثاني وبداية الثالث</h3>
+
+  <table>
+    <thead><tr><th>الكتاب</th><th>مؤلفه</th><th>وصفه</th></tr></thead>
+    <tbody>
+      <tr><td>الموطأ</td><td>مالك بن أنس (ت 179هـ)</td><td>مصنَّف على الأبواب، مرفوع وموقوف</td></tr>
+      <tr><td>الزهد (وله كتاب الجهاد أيضًا)</td><td>عبد الله بن المبارك</td><td>يجمع المرفوع والموقوف: كلام النبي ﷺ وكلام الصحابة وربما التابعين في الزهد، كله بالأسانيد</td></tr>
+      <tr><td>المصنَّف</td><td>عبد الرزاق بن همّام الصنعاني</td><td>أحاديث وآثار، مرتَّب على أبواب الفقه؛ وعبد الرزاق من شيوخ الإمام أحمد</td></tr>
+      <tr><td>المصنَّف</td><td>أبو بكر بن أبي شيبة</td><td>قرابة <strong>38000</strong> حديث وأثر، من أكبر كتب السنة، وأكثره غير مرفوع؛ وابن أبي شيبة من طبقة شيوخ البخاري</td></tr>
+      <tr><td>المسند</td><td>الإمام أحمد بن حنبل</td><td>قرابة <strong>27000</strong> حديث، مصنَّف على <strong>مسانيد الصحابة</strong> لا على الأبواب، وهو للمرفوع فقط</td></tr>
+      <tr><td>السنن (ويسمى المسند)</td><td>الدارمي</td><td>مرتَّب على أبواب الفقه لا على أسماء الصحابة، من الكتب التسعة</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box key">
+    <span class="lbl">فائدة عملية</span>
+    <p>إذا أردتَ <strong>فقه الصحابة</strong> فارجع إلى مصنَّف عبد الرزاق ومصنَّف ابن أبي شيبة، وإذا أردته باختصار فارجع إلى موطأ الإمام مالك — على أن الموطأ خاصٌّ وليس في هدي الصحابة عمومًا.</p>
+  </div>
+
+  <div class="box story">
+    <span class="lbl">مقدمة سنن الدارمي</span>
+    <p>مقدمة كتاب الدارمي جميلة جدًا؛ فقد بدأ بـ<strong>كتاب علامات النبوة</strong>، ثم <strong>كتاب السنة</strong>، ثم <strong>كتاب العلم</strong>، ثم كتاب الطهارة. وهذا يذكّرنا بصنيع البخاري حين بدأ بكتاب بدء الوحي، ثم كتاب الإيمان، ثم كتاب العلم، ثم أبواب الفقه. و«كتاب العلم» في مقدمة الدارمي كتابٌ ثمين جدًا، ذكر فيه كثيرًا من الآثار لا الأحاديث المرفوعة فقط — وإن كان أغلب كتاب الدارمي في الجملة في الأحاديث المرفوعة.</p>
+  </div>
+
+  <h3>ثانيًا: الكتب الستة والكتب التسعة</h3>
+
+  <div class="box def">
+    <span class="lbl">تعريف</span>
+    <p><strong>الكتب الستة:</strong> صحيح البخاري، صحيح مسلم، سنن أبي داود، جامع الترمذي، سنن النسائي، سنن ابن ماجه — على ما استقرّ عليه الحال؛ وهناك من جعل <strong>الموطأ</strong> من الستة، فعلى هذا القول يكون الموطأ أولها من حيث الزمن.</p>
+    <p><strong>الكتب التسعة:</strong> الستة + الموطأ + مسند الإمام أحمد + سنن الدارمي.</p>
+  </div>
+
+  <h3>صحيح البخاري: الكتاب الذي جاءنا مدرسةً</h3>
+
+  <div class="box warn">
+    <span class="lbl">شبهة وردّها</span>
+    <p>بعض أصحاب الشبهات يظنون أن السنة بدأت مع البخاري، لأنهم يسمعون عبارة «أول من جمع الصحيح البخاري»، فيتصورون أن ما بين النبي ﷺ والبخاري كان الناس نائمين ثم استيقظ فجأةً واحدٌ اسمه البخاري! ويقولون: لو كانت الأحاديث صحيحة فأين كانت 200 سنة قبل البخاري؟ ولماذا لم تجمع الأمة الأحاديث قبله؟</p>
+    <p>والجواب هو هذا المجلس كله: ساعتان من الكلام في جمع الأحاديث والسنة والرواية والعناية والاهتمام — <strong>ولم نصل إلى البخاري بعد</strong>.</p>
+  </div>
+
+  <div class="box evid">
+    <span class="lbl">مراجع معاصرة في هذا الباب</span>
+    <ul class="plain">
+      <li><strong>«من النبي ﷺ إلى البخاري»</strong> — فيه رصد جيد وبحث جيد لهذا الجمع.</li>
+      <li><strong>«السنة قبل التدوين»</strong>.</li>
+      <li><strong>«دراسات في الحديث النبوي وتاريخ تدوينه»</strong> للدكتور محمد مصطفى الأعظمي — مجلدان، يتتبع الصحف التي كُتبت في زمن الصحابة والتابعين وأتباعهم.</li>
+    </ul>
+  </div>
+
+  <p>ولم يجمع البخاري صحيحه إلا وقد أصبح إمامًا، وقد استوفى موجبات العلم بالحديث النبوي؛ فقد ألّف في <strong>الباب الثاني</strong> كتابًا كبيرًا هو <strong>«التاريخ الكبير»</strong>، وهو في <strong>عامّة رواة الحديث النبوي</strong> لا رواة الصحيح فقط. قال الشيخ: افتح أي مسند أو سنن، وخذ أي إسناد عشوائيًا، واختر أي راوٍ — ثم اذهب إلى التاريخ الكبير، تجده غالبًا. أي أن البخاري قبل أن يجمع الصحيح <strong>درس كل الرواة</strong>.</p>
+
+  <div class="box warn">
+    <span class="lbl">شبهة الحساب: «600 ألف حديث في 16 سنة»</span>
+    <p>يأتيك من لا يعرف شيئًا — لا في علم الحديث ولا في السنة ولا في واقع الرواية ولا في التاريخ — فيقول: البخاري جمع الصحيح في 16 سنة من 600 ألف حديث، ثم يقسم 600000 على 16 ويخرج لك كم ساعة في اليوم، ومتى كان يأكل ويشرب وينام، ويقول: <strong>لا يمكن</strong>! ثم يفترض أنه لو أعطينا كل حديث ربع ساعة…</p>
+    <p>والجواب: هذا قياسٌ فاسد. أنت تقيسه على من يدرس أربع سنوات جامعة وهو مشغول، ثم سنتين ماجستير، ثم ثلاث سنوات دكتوراه. لا؛ البخاري خلص من كثير من هذا العلم وعمره 16 سنة، وذهب مهاجرًا في سبيله، <strong>وألّف التاريخ الكبير وعمره 18 سنة</strong>، وألّفه عدة مرات: يؤلفه ثم يرجع فيؤلفه ثانية ثم ثالثة بتعديلاته. وبعد أن انتهى من هذا كله وعرف الرواة جميعًا، كتب الصحيح.</p>
+  </div>
+
+  <div class="box key">
+    <span class="lbl">فكرة مهمة: الصحيح ليس اختراعًا بل مُحصِّلة</span>
+    <p>كتاب الصحيح ليس تأليفًا مبتدأً، وإنما هو <strong>تحصيل محصّلة</strong>: كل «حدثنا» فيه تساوي مجلسًا جلسه في بغداد أو غيرها عند شيخ فسمع منه مئة حديث مثلًا، فيودع منها ما هو على شرطه في الصحيح؛ وما ليس على شرطه فرصيده موجود عنده بأسانيده، وقد يودعه في كتاب آخر مثل <strong>«الأدب المفرد»</strong> الذي ليس على شرط الصحيح.</p>
+  </div>
+
+  <h3>خدمة صحيح البخاري: فتح الباري ومقدمته</h3>
+
+  <p>اعتنى العلماء بصحيح البخاري عناية كبيرة جدًا: شروح لا تُحصى — منها ما اعتنى بالفقه، ومنها ما اعتنى بضبط أسماء الرواة، ومنها شروح شمولية اعتنت بكل شيء. ومع كثرتها ظلّ الصحيح <strong>بلا شرحٍ جامعٍ شامل تام</strong>، حتى قال <strong>ابن خلدون</strong>: <strong>«إن على الأمة للبخاري دَينًا لم تسدّده»</strong>. فلما جاء <strong>ابن حجر</strong> بـ<strong>فتح الباري</strong> قالوا: <strong>الآن قضت الأمة دَينها تجاه البخاري</strong>.</p>
+
+  <p>ألّف ابن حجر فتح الباري في <strong>25 سنة</strong> — ربع قرن — وشرح آخر حديث كما شرح أول حديث: بنفس النَّفَس، وبنفس الهمّة، وبنفس التفصيل، وبنفس الآلية والطريقة.</p>
+
+  <div class="box story">
+    <span class="lbl">مقدمة فتح الباري = «حفل افتتاح» ضخم</span>
+    <p>قدّم ابن حجر لشرحه بمقدمة مستقلة (مجلد كامل)، وصفها الشيخ بأنها كحفل افتتاح ضخم لمناسبة كبيرة، جمع فيها كل شيء عن البخاري. وهذه عناوين فصولها:</p>
+    <ul class="plain">
+      <li><strong>الفصل الأول:</strong> في بيان السبب الباعث لأبي عبد الله البخاري على تصنيف جامعه الصحيح.</li>
+      <li><strong>الفصل الثاني:</strong> في بيان موضوع صحيح البخاري والكشف عن مغزاه فيه، وتسمية المؤلف لكتابه: «الجامع الصحيح المسند من حديث رسول الله ﷺ وسننه وأيامه».</li>
+      <li><strong>الفصل الثالث:</strong> في بيان تقطيعه للحديث واختصاره، وفائدة إعادته له في الأبواب وتكراره.</li>
+      <li><strong>الفصل الرابع:</strong> في بيان السبب في إيراده للأحاديث المعلَّقة مرفوعة وموقوفة وشرح أحكام ذلك. (ثم بدأ يذكر كتب البخاري كتابًا كتابًا: بدء الوحي، الإيمان، العلم…)</li>
+      <li><strong>الفصل الخامس:</strong> في سياق الألفاظ الغريبة الواردة في صحيح البخاري مشروحةً على ترتيب حروف المعجم — كل كلمة غريبة في أي حديث في الصحيح شرحها هنا: حرف الألف، الباء، التاء…</li>
+      <li><strong>الفصل السادس:</strong> في بيان المؤتلف والمختلف من الأسماء والكنى والألقاب والأنساب مما وقع في الصحيح على ترتيب الحروف، وضبط الأسماء المفردة فيه.</li>
+      <li><strong>الفصل السابع:</strong> في تبيين الأسماء المهملة التي يكثر اشتراكها، وفصلٌ فيمن ذُكر مجردًا عن النسب، وفصلٌ فيمن ذُكر منسوبًا لكنه لم يتميز عمّن يشترك معه.</li>
+      <li><strong>الفصل الثامن:</strong> في سياق الأحاديث التي انتقدها عليه أبو الحسن الدارقطني وغيره من النقاد، وإيرادها حديثًا حديثًا على سياق الكتاب — يأتي بكل حديث انتُقد على البخاري ويناقشه مناقشة تفصيلية.</li>
+      <li><strong>الفصل التاسع:</strong> في سياق أسماء من طُعن فيه من رجال هذا الكتاب مرتّبًا على حروف المعجم، والجواب عن الاعتراضات موضعًا موضعًا، وتمييز من أخرج له منهم في الأصول أو في المتابعات والشواهد.</li>
+      <li><strong>الفصل العاشر:</strong> في عدّ أحاديث الجامع.</li>
+    </ul>
+  </div>
+
+  <div class="box story">
+    <span class="lbl">فتح الباري الآخر</span>
+    <p>وقبل فتح الباري لابن حجر كان هناك <strong>فتح الباري لابن رجب</strong>، وهو كتاب عظيم جدًا، <strong>لو اكتمل لكان ربما أتمّ من فتح الباري لابن حجر</strong>، ولكنه لم يكتمل — ولم يتم منه إلا مقدار الخمس أو نحوه، وهو مطبوع في سبع مجلدات تقريبًا.</p>
+  </div>
+
+  <div class="box def">
+    <span class="lbl">المستخرجات</span>
+    <p>ومن أنواع خدمة الصحيحين: <strong>المستخرجات</strong> — مثل <strong>مستخرج الإسماعيلي</strong>. وصورتها: يأتي صاحب المستخرج إلى أحاديث البخاري فيرويها <strong>بأسانيده هو</strong> لا بأسانيد البخاري، ويلتقي مع البخاري في شيخه أو شيخ شيخه.</p>
+    <p><strong>الفائدة:</strong> أن نعلم أنه <strong>لا يوجد في صحيح البخاري حديثٌ واحد تفرّد به</strong>؛ فكل أحاديث البخاري رواها غيره أيضًا — بل إن مسند الإمام أحمد يحتوي على أكثر أحاديث البخاري.</p>
+  </div>
+
+  <h3>بقية الكتب الستة</h3>
+
+  <h4>سنن أبي داود</h4>
+  <p>فيه زوائد كثيرة على البخاري ومسلم، وهو من أهم الكتب التي فيها زيادات أحاديث عليهما، وخاصة في <strong>أحاديث الأحكام</strong>؛ فمن يدرس سنن أبي داود دراسة فقهية يكون قد درس أغلب أحاديث المصطفى ﷺ في باب الأحكام. ولذلك اعتنى به العلماء عناية كبيرة: شرحوه وهذّبوه واختصروه وشرحوا المختصر.</p>
+
+  <table>
+    <thead><tr><th>الكتاب</th><th>المؤلف</th><th>ملاحظة</th></tr></thead>
+    <tbody>
+      <tr><td>تهذيب سنن أبي داود</td><td>ابن القيم</td><td>شرحٌ لمختصر سنن أبي داود</td></tr>
+      <tr><td>معالم السنن</td><td>الخطّابي</td><td>شرح نفيس؛ لا يتكلم كثيرًا، بل تعليقات مركّزة مفيدة مهمة</td></tr>
+      <tr><td>أعلام الحديث</td><td>الخطّابي</td><td>شرحه على البخاري (أربع مجلدات)، لم يشرح كل الكتاب وإنما انتقى منه</td></tr>
+      <tr><td>عون المعبود</td><td>العظيم آبادي</td><td>شرح كامل، ليس من أفضل الشروح ويعتمد كثيرًا على ابن حجر والنووي، لكنه من الشروح الوافية المعروفة</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box add">
+    <span class="lbl">توصية الشيخ</span>
+    <p>إذا أخذتَ <strong>«أعلام الحديث»</strong> و<strong>«معالم السنن»</strong> للخطابي، تكون قد أخذتَ شرحًا لكثير من أحاديث السنة في غاية النفاسة.</p>
+  </div>
+
+  <h4>جامع الترمذي (ت 279هـ)</h4>
+  <p>وللترمذي طريقة مختلفة: يأتي بالحديث فيسنده ويرتّبه على أبواب الفقه مثل أبي داود، ولكنه يزيد بعد الحديث أمورًا لا توجد في بقية الكتب الستة:</p>
+
+  <ul class="plain">
+    <li><strong>ذكر مذاهب العلماء</strong> باختصار شديد: «وبهذا الحديث أخذ الإمام أحمد والشافعي، وأما مالك فقال كذا».</li>
+    <li><strong>الحكم على الحديث</strong> صحةً وضعفًا وحُسنًا.</li>
+    <li><strong>ذكر شواهد الحديث بدون المتون</strong>: «وفي الباب عن فلان وفلان…».</li>
+    <li><strong>وما عليه العمل</strong> عند أهل العلم.</li>
+  </ul>
+
+  <div class="box story">
+    <span class="lbl">نموذج كامل: باب الوضوء من النوم</span>
+    <div class="isnad">
+      قال الترمذي: حدثنا إسماعيل بن موسى وهنّاد ومحمد بن عبيد المحاربي — المعنى واحد — قالوا: حدثنا عبد السلام بن حرب، عن أبي خالد الدالاني، عن قتادة، عن أبي العالية، عن ابن عباس رضي الله عنهما: أنه رأى النبي ﷺ نام وهو ساجد حتى غطّ أو نفخ، ثم قام يصلي، فقلت: يا رسول الله، إنك قد نمتَ! قال: <strong>«إن الوضوء لا يجب إلا على من نام مضطجعًا، فإنه إذا اضطجع استرخت مفاصله»</strong>. وأبو خالد اسمه يزيد بن عبد الرحمن. <strong>وفي الباب عن عائشة وابن مسعود وأبي هريرة.</strong>
+    </div>
+    <p>ولاحظ أنه لم يحكم على هذا الحديث بعدُ. ثم قال:</p>
+    <div class="isnad">
+      حدثنا محمد بن بشّار، قال: حدثنا يحيى بن سعيد، عن شعبة، عن قتادة، عن أنس بن مالك رضي الله عنه قال: كان أصحاب رسول الله ﷺ ينامون ثم يقومون فيصلّون ولا يتوضؤون. <strong>هذا حديث حسن صحيح.</strong>
+    </div>
+    <p>ثم قال: «وسمعتُ صالح بن عبد الله يقول: سألتُ عبد الله بن المبارك عمّن نام قاعدًا معتمدًا، قال: لا وضوء عليه» ← <strong>مذاهب العلماء</strong>.</p>
+    <p>ثم قال: «وقد روى حديثَ ابن عباس سعيدُ بن أبي عروبة عن قتادة عن ابن عباس <strong>قولَه</strong>، ولم يذكر فيه أبا العالية، ولم يرفعه» ← <strong>تعليلٌ للحديث الأول</strong>.</p>
+    <p>ثم قال: «واختلف العلماء في الوضوء من النوم، فرأى أكثرهم ألا يجب عليه الوضوء إذا نام قاعدًا أو قائمًا حتى ينام مضطجعًا، وبه يقول الثوري وابن المبارك وأحمد. وقال بعضهم: إذا نام حتى غلب على عقله وجب عليه الوضوء، وبه يقول إسحاق. وقال الشافعي: من نام قاعدًا فرأى رؤيا أو زالت مقعدته عن الأرض فعليه الوضوء».</p>
+  </div>
+
+  <div class="box key">
+    <span class="lbl">موقع الترمذي من المفتاح</span>
+    <p>سنن الترمذي فيها <strong>الأمور الثلاثة</strong> معًا: النقل، والتفقه، والصنعة الحديثية (الباب الثاني) — وهذا ما يميّزها.</p>
+  </div>
+
+  <div class="box story">
+    <span class="lbl">العلل الصغير وشرح ابن رجب</span>
+    <p>في آخر السنن تكلّم الترمذي عن كتابه نفسه: قال: وإذا قلت «حديث حسن» فقصدي فيه كذا وكذا، وعرّف الحديث الحسن، ثم تكلم عن الغريب والمنكر، وقال في الحسن: «لا يكون شاذًا»، وذكر أشياء من مصطلح الحديث. وسمّى العلماء هذه الرسالة الصغيرة الملحقة في آخر السنن: <strong>«العلل الصغير»</strong> — مقابل «العلل الكبير» الذي مرّ ذكره.</p>
+    <p>وذكر فيها أيضًا فائدة إسنادية: قال إن ما رواه عن الشافعي من مذهبه فهو مما سمعه من فلانٍ عن الشافعي — لأنه لم يسمع من الشافعي مباشرةً. فحتى الفقه عندهم بالأسانيد، وحتى التفسير عندهم بالأسانيد!</p>
+    <p>ثم جاء <strong>الإمام ابن رجب الحنبلي</strong> — مجدّد السنة ومحيي طريقة المتقدمين والحفاظ — فشرح سنن الترمذي كاملًا بآلاف أحاديثه، ثم شرح هذه الوريقات الصغيرة في آخره في <strong>مجلدين</strong> هما كتاب <strong>«شرح علل الترمذي»</strong>. وقد <strong>فُقد الشرح كاملًا إلا هذين المجلدين</strong> ووريقات من وسط الشرح لا تُذكر (10 أو 15 صفحة). وهذا الكتاب من أهم ما ألّفه العلماء في علوم الحديث على الإطلاق، وهو في <strong>الباب الثاني</strong>؛ إذ جمع لك كلام الحفاظ المتقدمين في الصنعة الحديثية.</p>
+  </div>
+
+  <h4>سنن النسائي</h4>
+
+  <div class="box def">
+    <span class="lbl">الكبرى والمجتبى</span>
+    <p><strong>السنن الكبرى</strong> للنسائي: آخر حديث فيها برقم <strong>11949</strong>، أي قرابة 12 ألف حديث — لكنها <strong>ليست</strong> من الكتب الستة. والذي من الكتب الستة هو <strong>«المجتبى من السنن الكبرى»</strong>، وفيه <strong>5758</strong> حديثًا. واختلف العلماء: هل النسائي هو الذي اجتبى المجتبى، أم تلميذه <strong>ابن السنّي</strong>؟</p>
+  </div>
+
+  <p>والسنن الكبرى مليئة بالأسانيد المتعددة للحديث الواحد؛ فهي وإن كانت كتاب رواية ونقل إلا أنه اعتنى فيها <strong>بالصنعة الحديثية والعلل</strong> إلى درجة أنه يبوّب أبوابًا للعلل! ومن عناوينه:</p>
+
+  <ul class="plain">
+    <li>«ذكر اختلاف عبد الرزاق وابن المبارك عن معمر في هذا الحديث».</li>
+    <li>«ذكر الاختلاف على يحيى بن سعيد في هذا الحديث».</li>
+    <li>«ذكر اختلاف أبي بكر بن محمد وابنه عبد الله بن أبي بكر على عمرة فيه».</li>
+    <li>«رواه عليّ بن صالح فقال: عن مجاهد وعطاء».</li>
+    <li>«تابعه شريك عن عطاء على عطاء ومجاهد ولم يذكر الحكم».</li>
+    <li>«ذكروا الاختلاف على ابن إسحاق في هذا الحديث».</li>
+  </ul>
+
+  <p>قال الشيخ: كتابٌ مُعلَّلٌ وصعب، ولا يفهمه إلا ذو الفهم.</p>
+
+  <h4>سنن ابن ماجه</h4>
+
+  <div class="box warn">
+    <span class="lbl">تقويم صريح</span>
+    <p>من أهم أسباب إدخاله في الكتب الستة أن فيه <strong>زوائد كثيرة</strong>. لكنه بلا شك ولا ريب — من حيث المستوى في الصحة — <strong>أضعف كتاب من الكتب الستة، بل من الكتب التسعة</strong>، بل أضعف من بعض الكتب التي جاءت بعدها مثل صحيح ابن حبان وصحيح ابن خزيمة. وفيه أحاديث ضعيفة، بل شديدة الضعف، بل ومتروكة، بل قد يصنّفها بعضهم بأنها موضوعة.</p>
+    <p>ولذلك أخرجه بعض العلماء من الكتب الستة وأدخله آخرون، والأشهر أنه داخلٌ فيها. ومثال من أخرجه: <strong>ابن الأثير</strong> — أخو صاحب «الكامل» في التاريخ — في كتابه <strong>«جامع الأصول»</strong> الذي جمع فيه الكتب الستة في كتاب واحد، فلم يجعل فيه ابن ماجه.</p>
+  </div>
+
+  <h3>ابن جرير الطبري وتهذيب الآثار</h3>
+
+  <div class="box story">
+    <span class="lbl">إمام المفسرين محدِّثًا</span>
+    <p><strong>ابن جرير الطبري</strong> (أبو جعفر): كتابه في التفسير مليء بالأسانيد؛ فهو بعد أن يذكر القول في تفسير الآية يقول: حدثنا فلان… ويذكر الأسانيد عن قتادة ومجاهد وسعيد بن جبير وابن عباس. وله في الحديث باعٌ أيضًا، فقد كتب كتابًا يقول عنه الذهبي: <strong>لو كَمُل لجاء في مئة مجلد</strong> — في شرح السنة النبوية. والمطبوع منه اليوم سبع أو عشر مجلدات فقط، وهي ليست بشيء أمام ما كان يريد أن يعمله.</p>
+    <p>وهو شرحٌ لأحاديث السنة <strong>بترتيب ابن جرير نفسه</strong>، ليس شرحًا لكتاب سابق؛ جمع الأحاديث وشرحها وتوسّع في الشرح وفي الأسانيد والكلام عليها، ورتّبه على <strong>المسانيد</strong> (مثل: مسند عمر بن الخطاب كاملًا). ومن عناوينه: «القول في علل هذا الخبر»، ثم يذكر من روى هذا الحديث عن سِماك فجعله عن النعمان عن رسول الله ﷺ ولم يُدخل بينه وبين رسول الله ﷺ أحدًا. وقد توفي ابن جرير في بداية القرن الرابع الهجري.</p>
+  </div>
+
+  <div class="box key">
+    <span class="lbl">الخلاصة الكبرى للمجلس</span>
+    <p><strong>القرنان الثاني والثالث هما أهم القرون في سلسلة علوم الحديث على الإطلاق.</strong> في هذين القرنين نشأ هذا العلم وتأسس وبلغ الذروة، ووصلت فيه العلوم إلى الغاية؛ بحيث إن ما جاء بعد ذلك — وخاصة بعد القرن الرابع — إنما يدور في فلك ما أُلّف في القرنين الثاني والثالث.</p>
+  </div>
+
+  <div class="box add">
+    <span class="lbl">أمنية ذكرها الشيخ</span>
+    <p>ذكر الشيخ أمنية قديمة تكلم عنها من قبل: أن يُفرد سلسلةً خاصة عن <strong>الإمام البخاري</strong>: سيرته أولًا كاملة — مدخله ومخرجه ورحلاته ومشايخه وتلاميذه — ثم كتاب الصحيح من أوله إلى آخره: متى أُلّف وكيف، ونماذج منه، وفقه البخاري، وطريقة ترتيبه، وشروحه، ومن خدمه، والكتب المؤلفة فيه. وقال إن ذلك يحتاج على أقل تقدير إلى عشر محاضرات مطوّلة.</p>
+  </div>
+
+  <div class="box warn">
+    <span class="lbl">ملاحظة على نهاية المجلس</span>
+    <p>ختم الشيخ بقوله إنه يكتفي بهذا القدر، وإن <strong>ما بقي من الحديث طويل</strong> — ربما بقدر ما مضى من الساعتين أو الثلاث — وأنه يخشى أن يختصر فيُخلّ. فالمجلس <strong>مقدمة تاريخية</strong> لم تصل بعدُ إلى المؤلفات المشهورة المتأخرة، والحديث فيها موعود به في مجالس لاحقة.</p>
+  </div>
+
+  <div class="takeaway">
+    <h4>خلاصة القسم</h4>
+    <ul>
+      <li>كتب النقل نوعان: ما اقتصر على المرفوع (مسند أحمد)، وما جمع المرفوع والموقوف (الموطأ، المصنفان).</li>
+      <li>مصنف ابن أبي شيبة ~38000 أثر ومعظمه غير مرفوع، ومسند أحمد ~27000 مرتَّب على مسانيد الصحابة.</li>
+      <li>الكتب الستة: البخاري، مسلم، أبو داود، الترمذي، النسائي (المجتبى)، ابن ماجه؛ والتسعة تزيد: الموطأ ومسند أحمد وسنن الدارمي.</li>
+      <li>البخاري ألّف «التاريخ الكبير» في عامة الرواة قبل الصحيح، فالصحيح محصّلة لا اختراع؛ وشبهة «600 ألف في 16 سنة» مبنية على قياس فاسد.</li>
+      <li>فتح الباري لابن حجر (25 سنة) قضى دَين الأمة للبخاري، ومقدمته عشرة فصول جامعة؛ وفتح ابن رجب لم يكتمل.</li>
+      <li>الترمذي جمع الأمور الثلاثة، وابن ماجه أضعف الكتب الستة، والنسائي في الكبرى بوّب للعلل.</li>
+      <li>القرنان الثاني والثالث هما زمن النشأة والتأسيس وبلوغ الذروة في علوم الحديث.</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<div class="cards-wrap">
+  <div class="cards-head">
+    <h2>بطاقات المراجعة</h2>
+    <p>اضغط على البطاقة لقلبها. استخدم الفلاتر لمراجعة قسمٍ بعينه، أو حمّل الملف لاستيراده في Anki.</p>
+  </div>
+
+  <div class="filters" id="filters"></div>
+
+  <div class="flash" id="flashCard" onclick="flip()">
+    <span class="side-tag" id="sideTag">السؤال</span>
+    <div class="face" id="cardFace"></div>
+  </div>
+
+  <div class="nav-cards">
+    <button onclick="prevCard()">السابق ›</button>
+    <span class="count" id="counter">1 / 1</span>
+    <button onclick="nextCard()">‹ التالي</button>
+  </div>
+</div>
+
+<footer>
+  <p>مدخل إلى علوم الحديث — المجلس الأول | الشيخ أحمد السيد</p>
+  <p>ملف دراسي شخصي مبني على تفريغ المحاضرة الصوتية</p>
+  <button class="dl-btn" onclick="downloadTSV()">⬇ تحميل بطاقات Anki (TSV)</button>
+</footer>
+
+<script>
+const SECTIONS = [
+  {id:1, name:"المفتاح والأقسام", color:"#1E6F6B"},
+  {id:2, name:"التأصيل النبوي", color:"#5A4A9E"},
+  {id:3, name:"عناية النبي ﷺ", color:"#1D6BA8"},
+  {id:4, name:"عصر الصحابة", color:"#A97A22"},
+  {id:5, name:"عصر التابعين", color:"#A0453A"},
+  {id:6, name:"الحفظ والكتابة", color:"#4A7530"},
+  {id:7, name:"الموطأ والتصنيف", color:"#8A5A28"},
+  {id:8, name:"نشأة النقد", color:"#7A2E5B"},
+  {id:9, name:"الكتب الستة", color:"#B85416"}
+];
+
+const CARDS = [
+  {s:1, q:"إلى كم بابٍ تنقسم علوم الحديث والسنة؟", a:"إلى بابين: باب متعلق بالمتن النبوي (كلام النبي ﷺ وفعله)، وباب متعلق بطريقة نقل هذا المتن."},
+  {s:1, q:"إلى كم قسم ينقسم الباب الأول (باب المتن)؟", a:"إلى قسمين: نقل المتن مجردًا، والتفقه في المتن واستنباط الأحكام منه."},
+  {s:1, q:"ما مضمون الباب الثاني في تقسيم الشيخ؟", a:"ضبط آلية النقل: الوسائل التوثيقية والتثبت من الرواة والأسانيد حتى يصل المتن صحيحًا."},
+  {s:1, q:"كم قسمًا في المجموع تتفرع عن البابين؟", a:"ثلاثة أقسام: نقل المتن، والتفقه في المتن، وضبط النقل."},
+
+  {s:2, q:"أي حديثٍ جمع قسمَي الباب الأول: النقل والتفقه؟", a:"«نضّر الله امرأً سمع منا حديثًا فحفظه حتى يبلّغه، فربّ حامل فقهٍ إلى من هو أفقه منه، وربّ حامل فقهٍ ليس بفقيه»."},
+  {s:2, q:"أي حديثٍ يُعدّ أصلًا في الباب الثاني (ضبط النقل)؟", a:"«من كذب عليّ متعمدًا فليتبوّأ مقعده من النار» — ومن ألفاظه عند مسلم: «إن كذبًا عليّ ليس ككذبٍ على أحد»."},
+  {s:2, q:"بمَ قدّم الإمام مسلم لصحيحه في مقدمته؟", a:"بأحاديث التثبت في النقل والتحذير من الكذب، وآثار السلف فيه، ثم بقواعد ينبغي مراعاتها قبل الحكم على الحديث بالصحة."},
+  {s:2, q:"من قائل: «إن هذا العلم دِين، فانظروا عمّن تأخذون دينكم»؟", a:"محمد بن سيرين، أسنده مسلم في مقدمة صحيحه بإسنادٍ من أصح الأسانيد (حماد بن زيد عن أيوب وهشام عن ابن سيرين)."},
+  {s:2, q:"ما الحديث الذي أورده مسلم بلفظ «كفى بالمرء كذبًا…»؟", a:"«كفى بالمرء كذبًا أن يحدّث بكل ما سمع» — من طريق شعبة عن خُبيب بن عبد الرحمن عن حفص بن عاصم."},
+
+  {s:3, q:"«ليبلّغ الشاهدُ منكم الغائب» — أين قالها ﷺ وما دلالتها؟", a:"قالها في حجة الوداع، ودلالتها الأمر بنقل حديثه وخطبته وما رآه الصحابة منه."},
+  {s:3, q:"ماذا قال ﷺ لأبي هريرة لما سأله عن أسعد الناس بشفاعته؟", a:"«لقد ظننتُ يا أبا هريرة ألا يسألني عن هذا الحديث أحدٌ أولَ منك، لما رأيتُ من حرصك على الحديث» — رواه البخاري."},
+  {s:3, q:"ماذا قال ﷺ لعبد الله بن عمرو بن العاص لما نُهي عن الكتابة؟", a:"«اكتب، فوالذي نفسي بيده ما خرج منه إلا حق» — في سنن أبي داود ومسند أحمد."},
+  {s:3, q:"مثال السنة المبيّنة للقرآن، ومثال السنة الزائدة عليه؟", a:"المبيّنة: كل ما ورد في صفة الصلاة بيانًا لقوله تعالى ﴿أقيموا الصلاة﴾. والزائدة: النهي عن الجمع في الزواج بين المرأة وعمتها أو خالتها."},
+  {s:3, q:"ما أبواب موضوعات ما بلّغه النبي ﷺ كما ذكرها الشيخ؟", a:"الأحكام (أمرًا ونهيًا)، والمواعظ، والآداب، والأخبار المستقبلية، والأخبار الماضية."},
+
+  {s:4, q:"لماذا كان ضبط الرواية سهلًا في زمن الصحابة؟", a:"لسببين: قِصَر المسافة الزمنية عن النبي ﷺ، وكون الصحابة عدولًا معروفين بينهم."},
+  {s:4, q:"ما مظهر تشديد عمر بن الخطاب في الرواية؟", a:"كان أحيانًا يقول لمن جاء بالحديث: «من يشهد معك؟» — ضبطًا لقضية الرواية، لأن الزيادة في الدين كالنقص منه."},
+  {s:4, q:"أي الصحابة عُرف بنقل المتن أكثر من الفقه؟", a:"أبو هريرة رضي الله عنه؛ ولا يعني ذلك أنه لم يُنقل عنه فقه."},
+  {s:4, q:"من الصحابة الذين عُرفوا بالفقه والفتوى أكثر؟", a:"عمر بن الخطاب، وعليّ بن أبي طالب، وزيد بن ثابت، ثم ابن عباس، وعبد الله بن عمر، وعبد الله بن مسعود، وعائشة رضي الله عنهم."},
+  {s:4, q:"من العلاء بن بشير، وما وجه ذكره في المجلس؟", a:"راوٍ وُصف بأنه شجاعٌ عند القتال بكّاءٌ عند الذكر، ومع ذلك قال عنه ابن المديني: مجهول — دليلٌ على أن الصلاح وشهرة الاسم لا يكفيان في نظام الرواية."},
+  {s:4, q:"ما المقصود بـ«فقه النقل»؟", a:"أن التبليغ ليس مجرد نقل كل ما سمعتَه، بل نقله في وقته المناسب ومكانه المناسب وسياقه المناسب."},
+
+  {s:5, q:"ما طبقات التابعين الثلاث وأمثلتها؟", a:"كبار: قيس بن أبي حازم والصُّنابحي وسعيد بن المسيب. أواسط: أبو إسحاق السَّبيعي. صغار: الزهري وقتادة (والحسن البصري أقرب إليهم)."},
+  {s:5, q:"من الستة الذين تدور عليهم أسانيد الحديث، ومن ذكرهم؟", a:"ذكرهم عليّ بن المديني، وهم: الزهري، وعمرو بن دينار، والأعمش، وأبو إسحاق السبيعي، ويحيى بن أبي كثير، وقتادة."},
+  {s:5, q:"كم طبقةً قسّم ابن حجر الرواة إليها، وفي أي كتاب؟", a:"إلى اثنتي عشرة طبقة، في «تقريب التهذيب»، وفيه أكثر من ثمانية آلاف راوٍ."},
+  {s:5, q:"من أول من فتّش في الأسانيد وتتبعها؟", a:"محمد بن سيرين، وهو من التابعين، ومن الرواة عن أبي هريرة وأنس بن مالك."},
+  {s:5, q:"ما سلسلة مدرسة البصرة الحديثية بعد ابن سيرين؟", a:"ابن سيرين ← تلميذاه أيوب السَّختياني وعبد الله بن عون ← ثم حماد بن زيد (عن أيوب)."},
+  {s:5, q:"من الزهري؟ وما علاقته بمالك وبعمر بن عبد العزيز؟", a:"محمد بن مسلم بن عبيد الله بن شهاب الزهري، من صغار التابعين، شيخ الإمام مالك، وهو الذي كلّفه عمر بن عبد العزيز بجمع السنة النبوية."},
+  {s:5, q:"ما القاعدة التي فسّر بها الشيخ ازدهار النقد؟", a:"كلما كثرت التحديات ومداخل الإشكال في الرواية، ازداد الاحتياج إلى التدقيق فيها."},
+
+  {s:6, q:"هل كانت السنة في زمن التابعين تُكتب أم تُنقل شفهيًا؟", a:"الاثنان معًا، لكن الأصل عندهم النقل الشفهي، وهو الطريقة الأوثق في نظرهم."},
+  {s:6, q:"ما مقولة الشعبي في الاعتزاز بالحفظ؟", a:"«ما كتبتُ سوداء في بيضاء». وقال قائلهم: «ما استودعتُ قلبي شيئًا فخانني»."},
+  {s:6, q:"ما معنى أن صحف التابعين «غير مصنَّفة»؟", a:"أنها غير مبوّبة على الموضوعات، وإنما أحاديث مجموعة كما سُمعت من الشيخ."},
+  {s:6, q:"لمن الصحيفة المشهورة عن أبي هريرة، وما الالتباس الوارد فيها؟", a:"هي صحيفة همّام بن منبه لا أخيه وهب؛ رواها عنه معمر، وأوردها الإمام أحمد في مسنده كاملة، وهي نحو 140 حديثًا."},
+  {s:6, q:"كيف يُجاب على شبهة «أين النسخ الخطية لصحيح البخاري وسيرة ابن إسحاق»؟", a:"نظام حفظ السنة قام على الرواية والإسناد لا على المخطوط؛ فالنسخة الخطية تحصيل حاصل، وصحيح البخاري سمعه منه الآلاف."},
+  {s:6, q:"ما «المعجم المفهرس» لابن حجر، وكم كتابًا فيه؟", a:"كتاب يذكر فيه ابن حجر إسناده المتصل إلى كتب المتقدمين، وعدد الكتب فيه 1960 كتابًا."},
+  {s:6, q:"من مؤلف «دراسات في الحديث النبوي وتاريخ تدوينه»، وما موضوعه؟", a:"الدكتور محمد مصطفى الأعظمي، في مجلدين، تتبّع فيه الصحف التي كتبها الصحابة والتابعون وأتباعهم."},
+
+  {s:7, q:"ما «التصنيف»، ومتى ظهر؟", a:"ترتيب الأحاديث المكتوبة بحسب الأبواب والموضوعات، وظهر في زمن أتباع التابعين، أي منتصف القرن الثاني الهجري تقريبًا."},
+  {s:7, q:"متى توفي الإمام مالك، وما موقع الموطأ من التقسيم؟", a:"توفي سنة 179هـ، والموطأ في الباب الأول بقسميه معًا: النقل المجرد والتفقه، لأنه ينقل ثم يعلّق ويفتي."},
+  {s:7, q:"ما «بلاغات الموطأ»؟ وما حكم ما أسنده مالك؟", a:"البلاغات: ما رواه مالك بصيغة «بلغني» وهي المراسيل. وما أسنده مالك متصلًا فالأصل أنه صحيح."},
+  {s:7, q:"ما شهادة الإمام مالك على من يروي عنه؟", a:"قال لبِشر بن عمر الزهراني: «هل وجدتَه في كتبي؟ إن وجدتَه في كتبي فهو ثقة» — أخرجه مسلم في مقدمة صحيحه."},
+  {s:7, q:"ما الفروق بين «التمهيد» و«الاستذكار» لابن عبد البر؟", a:"التمهيد: مرتَّب على أسماء شيوخ مالك بحروف المعجم، عنايته بالصنعة الحديثية، ولم يشرح الموقوفات، واستغرق 30 سنة. الاستذكار: على ترتيب الموطأ، عنايته بالصنعة الفقهية ومذاهب العلماء، وشرح الموطأ كاملًا."},
+  {s:7, q:"كم بلغت الشروح على الموطأ؟ ومن أشهر شارحيه غير ابن عبد البر؟", a:"قرابة 130 شرحًا؛ ومنهم ابن العربي المالكي (المسالك والقَبَس) وأبو الوليد الباجي (المنتقى)."},
+  {s:7, q:"بمَ تميّز ترتيب صحيح ابن حبان؟", a:"رتّبه على صيغة الخبر (أمر، نهي، تهديد…) ترتيبًا أقرب إلى أصول الفقه لا على أبواب الفقه؛ ولصعوبته رتّبه بعضهم لاحقًا على الأبواب."},
+  {s:7, q:"من راوي الموطأ الذي يُذكر في أوله بقوله «حدثني يحيى»؟", a:"يحيى بن يحيى، وهو راوي الكتاب عن مالك، وليس الإمام مالك نفسه؛ والإسناد يبدأ بعده."},
+
+  {s:8, q:"من أهم شخصية في تأسيس المنهج النقدي زمن أتباع التابعين؟", a:"شعبة بن الحجاج بن الوَرْد، أبو بِسطام العَتَكي الأزدي (ت 160 أو 161هـ)، قال ابن رجب: هو أول من وسّع الكلام في العلل."},
+  {s:8, q:"ما سلسلة النسب العلمي لكبار نقاد الحديث؟", a:"شعبة بن الحجاج ← يحيى بن سعيد القطان ← أحمد بن حنبل ويحيى بن معين وعليّ بن المديني."},
+  {s:8, q:"ما الجهات الأربع التي يتوجه إليها نقد المحدّثين؟", a:"الاتصال والانقطاع، وتمييز الرواة، والتوثيق والتضعيف، والعلل والأخطاء الباطنة."},
+  {s:8, q:"ما وظيفة علم العلل بالتحديد؟", a:"تمييز أخطاء الثقات؛ فالضعيف تُردّ روايته لضعفه، أما الثقة فالأصل قبوله لكنه قد يخطئ."},
+  {s:8, q:"ما تعريف «مصطلح الحديث»؟", a:"العبارات والألفاظ التي اصطلح النقاد على استعمالها للتعبير عن أحوال الرواية والرواة؛ نشأ من تطبيقاتهم العملية ثم دُوّن ونُظّم."},
+  {s:8, q:"رتّب ألفاظ النقاد من الأعلى إلى الأدنى.", a:"ثقة ← لا بأس به ← ليس بالقوي ← ليس بقويّ ← ضعيف ← ضعيف جدًا ← متروك ← كذّاب."},
+  {s:8, q:"ما الفرق بين «المراسيل» لابن أبي حاتم و«المراسيل» لأبي داود؟", a:"مراسيل ابن أبي حاتم في المنقطعات (سمع أو لم يسمع)، وهي أسئلة لأبي حاتم وأبي زرعة الرازيَّين. ومراسيل أبي داود في المرفوعات، أي ما رفعه التابعي إلى النبي ﷺ."},
+  {s:8, q:"ما «علل الحديث» لعليّ بن المديني، ومتى توفي؟", a:"توفي سنة 234هـ، وكتابه متنوع الموضوعات: فيه الاتصال والانقطاع والعلل والتوثيق معًا، بخلاف ترتيب المتأخرين المنظّم."},
+  {s:8, q:"ما «العلل الكبير» للترمذي؟", a:"أسئلة سألها الترمذي لشيخه الإمام البخاري عن علل أحاديث معينة، والكتاب مرتَّب وليس الترمذي هو من رتّبه."},
+  {s:8, q:"لماذا لم يكتب البخاري مقدمة لصحيحه، وكيف عُرفت شروطه؟", a:"لأن أغلب المتقدمين لم يضعوا مقدمات لكتبهم؛ وشروط البخاري عُرفت بالاستقراء واستنباط فقهه من تراجم الأبواب. وخالفهم أبو داود فكتب رسالته إلى أهل مكة في وصف سننه."},
+
+  {s:9, q:"ما الفرق بين مسند أحمد ومصنَّف ابن أبي شيبة من حيث المضمون؟", a:"مسند أحمد للمرفوع فقط ومرتّب على مسانيد الصحابة (~27000 حديث)، ومصنّف ابن أبي شيبة يجمع الأحاديث والآثار وأكثره غير مرفوع (~38000) ومرتَّب على الأبواب."},
+  {s:9, q:"ما الكتب الستة وما الكتب التسعة؟", a:"الستة: البخاري، مسلم، أبو داود، الترمذي، النسائي، ابن ماجه. والتسعة تزيد عليها: الموطأ، ومسند أحمد، وسنن الدارمي."},
+  {s:9, q:"إلى أي الكتب نرجع لمعرفة فقه الصحابة؟", a:"إلى مصنّف عبد الرزاق ومصنّف ابن أبي شيبة توسعًا، وإلى موطأ مالك اختصارًا."},
+  {s:9, q:"ما «التاريخ الكبير» للبخاري، ومتى ألّفه؟", a:"كتاب في عامة رواة الحديث النبوي لا رواة الصحيح فقط، ألّفه وعمره 18 سنة، وأعاد تأليفه عدة مرات."},
+  {s:9, q:"كيف يُردّ على شبهة «600 ألف حديث في 16 سنة»؟", a:"بأنها قياس فاسد على طالب متأخر مشغول؛ فالبخاري نذر عمره للعلم من الصغر، وألّف التاريخ الكبير وعمره 18 سنة، والصحيح محصّلة لمجالس سماعه لا تأليف مبتدأ."},
+  {s:9, q:"ماذا قال ابن خلدون عن البخاري، ومن قضى هذا الدَّين؟", a:"قال: «على الأمة للبخاري دَينٌ لم تسدّده»؛ وقضاه ابن حجر بـ«فتح الباري» الذي ألّفه في 25 سنة."},
+  {s:9, q:"ما «فتح الباري» لابن رجب؟", a:"شرح عظيم على البخاري سابق لشرح ابن حجر، لم يكتمل؛ لم يتم منه إلا نحو الخُمس، وهو مطبوع في سبع مجلدات تقريبًا."},
+  {s:9, q:"ما «المستخرجات» وما أهم فوائدها؟", a:"أن يروي المصنّف أحاديث الصحيح بأسانيده هو ملتقيًا مع صاحبه في شيخه أو شيخ شيخه (كمستخرج الإسماعيلي)؛ وفائدتها بيان أن البخاري لم يتفرد بحديث واحد."},
+  {s:9, q:"بمَ تميّز جامع الترمذي عن بقية الكتب الستة؟", a:"بذكر مذاهب العلماء، والحكم على الحديث، وذكر شواهد الباب بلا متون («وفي الباب عن…»)، وذكر ما عليه العمل؛ ففيه الأقسام الثلاثة معًا."},
+  {s:9, q:"ما «العلل الصغير»، ومن شرحه؟", a:"وريقات في آخر سنن الترمذي تكلم فيها عن منهجه ومصطلحاته (الحسن، الغريب، المنكر)، وشرحها ابن رجب في مجلدين، وهو كل ما بقي من شرحه على الترمذي."},
+  {s:9, q:"ما الفرق بين السنن الكبرى والمجتبى للنسائي؟", a:"الكبرى فيها قرابة 11949 حديثًا وليست من الكتب الستة وفيها تبويب للعلل، والمجتبى (5758 حديثًا) هو الذي عُدّ من الكتب الستة، واختُلف هل اجتباه النسائي أم تلميذه ابن السنّي."},
+  {s:9, q:"لماذا يُعدّ سنن ابن ماجه أضعف الكتب الستة؟ ومن أخرجه منها؟", a:"لكثرة الضعيف وشديد الضعف والمتروك فيه، بل ما يصنّفه بعضهم بالموضوع؛ وأخرجه ابن الأثير من كتابه «جامع الأصول»."},
+  {s:9, q:"ما كتاب ابن جرير الطبري في الحديث؟", a:"كتاب في شرح السنة مرتَّب على المسانيد، قال عنه الذهبي: لو كَمُل لجاء في مئة مجلد؛ ولم يُطبع منه إلا القليل."},
+  {s:9, q:"أي القرون أهمّ في نشأة علوم الحديث؟", a:"القرنان الثاني والثالث الهجريان؛ فيهما نشأ العلم وتأسس وبلغ الذروة، وما بعدهما يدور في فلكهما."},
+  {s:9, q:"من أشهر شارحي سنن أبي داود، وما مميزات الخطّابي؟", a:"ابن القيم في «تهذيب سنن أبي داود»، والعظيم آبادي في «عون المعبود»، والخطّابي في «معالم السنن» — وله على البخاري «أعلام الحديث»؛ ويمتاز بتعليقات مركّزة مفيدة."}
+];
+
+let filtered = CARDS.slice();
+let idx = 0, showBack = false, activeFilter = 0;
+
+function buildFilters(){
+  const box = document.getElementById("filters");
+  let html = '<button class="active" style="--fc:#16202E" onclick="setFilter(0,this)">الكل (' + CARDS.length + ')</button>';
+  SECTIONS.forEach(function(s){
+    const n = CARDS.filter(function(c){return c.s===s.id}).length;
+    if(n>0){
+      html += '<button style="--fc:' + s.color + '" onclick="setFilter(' + s.id + ',this)">' + s.name + ' (' + n + ')</button>';
+    }
+  });
+  box.innerHTML = html;
+}
+
+function setFilter(sid, btn){
+  activeFilter = sid;
+  filtered = sid === 0 ? CARDS.slice() : CARDS.filter(function(c){return c.s===sid});
+  idx = 0; showBack = false;
+  document.querySelectorAll("#filters button").forEach(function(b){b.classList.remove("active")});
+  btn.classList.add("active");
+  render();
+}
+
+function render(){
+  const card = document.getElementById("flashCard");
+  const face = document.getElementById("cardFace");
+  const tag = document.getElementById("sideTag");
+  if(filtered.length === 0){ face.textContent = "لا توجد بطاقات"; return; }
+  const c = filtered[idx];
+  face.textContent = showBack ? c.a : c.q;
+  tag.textContent = showBack ? "الإجابة" : "السؤال";
+  card.classList.toggle("back", showBack);
+  const sec = SECTIONS.find(function(s){return s.id===c.s});
+  card.style.borderRightColor = sec ? sec.color : "#ccc";
+  card.style.borderRightWidth = "5px";
+  document.getElementById("counter").textContent = (idx+1) + " / " + filtered.length;
+}
+
+function flip(){ showBack = !showBack; render(); }
+function nextCard(){ idx = (idx+1) % filtered.length; showBack = false; render(); }
+function prevCard(){ idx = (idx-1+filtered.length) % filtered.length; showBack = false; render(); }
+
+document.addEventListener("keydown", function(e){
+  if(e.key === "ArrowLeft") nextCard();
+  if(e.key === "ArrowRight") prevCard();
+  if(e.key === " "){ e.preventDefault(); flip(); }
+});
+
+function clean(t){ return String(t).replace(/\t/g," ").replace(/\r?\n/g," ").trim(); }
+
+function downloadTSV(){
+  const lines = CARDS.map(function(c){ return clean(c.q) + "\t" + clean(c.a); });
+  const blob = new Blob(["\uFEFF" + lines.join("\n")], {type:"text/tab-separated-values;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "مدخل_إلى_علوم_الحديث_01_بطاقات.tsv";
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+buildFilters();
+render();
+</script>
+
 </body>
 </html>
