@@ -353,6 +353,122 @@ footer p.dua{
 }
 @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
 </style>
+
+<style>
+/* ===== تثبيت الفهم — الأسئلة التفاعلية ===== */
+.quiz-block{
+  margin:32px 0 24px;
+  background:var(--green-deeper, #132920);
+  border-radius:12px;
+  padding:24px;
+  box-shadow:0 6px 24px rgba(31,61,46,.14);
+  position:relative;
+  overflow:hidden;
+  direction:rtl;
+  text-align:right;
+}
+.quiz-block::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:radial-gradient(circle at 90% 10%, rgba(201,164,90,.12) 0, transparent 45%);
+  pointer-events:none;
+}
+.quiz-block-title{
+  display:flex; align-items:center; gap:8px;
+  font-weight:800; font-size:14px;
+  color:var(--gold-pale, #F2E6C4);
+  letter-spacing:.3px;
+  margin-bottom:16px;
+  position:relative;
+}
+.quiz-item{
+  background:rgba(255,254,250,.06);
+  border:1px solid rgba(199,164,90,.25);
+  border-radius:8px;
+  padding:16px;
+  margin-bottom:16px;
+  position:relative;
+}
+.quiz-item:last-child{margin-bottom:0;}
+.quiz-q{
+  font-size:15.5px; font-weight:700;
+  color:#FBF7EE;
+  margin:0 0 16px;
+  line-height:1.7;
+}
+.quiz-options{display:flex; flex-direction:column; gap:8px;}
+.quiz-opt{
+  display:block; width:100%; text-align:right;
+  background:rgba(251,247,238,.08);
+  border:1px solid rgba(251,247,238,.18);
+  color:#FBF7EE;
+  font-family:inherit; font-size:14px; line-height:1.6;
+  border-radius:8px;
+  padding:10px 14px;
+  cursor:pointer;
+  transition:background .15s ease, border-color .15s ease, transform .1s ease;
+}
+.quiz-opt:hover{background:rgba(251,247,238,.15); border-color:rgba(199,164,90,.5);}
+.quiz-opt:active{transform:scale(.99);}
+.quiz-opt.correct{
+  background:rgba(46,84,67,.9);
+  border-color:#8FBF9E;
+  color:#EAF6EE;
+  font-weight:700;
+}
+.quiz-opt.correct::after{content:" \2713"; color:#8FBF9E;}
+.quiz-opt.wrong{
+  background:rgba(140,59,46,.55);
+  border-color:#D89A8C;
+  color:#F7E6E2;
+}
+.quiz-opt.wrong::after{content:" \2715"; color:#F1B3A6;}
+.quiz-opt.disabled{cursor:default; pointer-events:none;}
+.quiz-feedback{
+  margin-top:10px;
+  font-size:13.5px; line-height:1.8;
+  color:var(--gold-pale, #F2E6C4);
+  background:rgba(0,0,0,.15);
+  border-right:3px solid var(--gold, #A9832E);
+  border-radius:6px;
+  padding:9px 12px;
+  display:none;
+}
+.quiz-feedback.show{display:block;}
+.quiz-reflect{
+  border-top:1px dashed rgba(199,164,90,.3);
+  padding-top:16px;
+  margin-top:16px;
+}
+.quiz-item > .quiz-reflect:first-child{border-top:none; padding-top:0; margin-top:0;}
+.quiz-reflect-q{
+  font-size:14.5px; color:var(--gold-pale, #F2E6C4); font-weight:600;
+  margin:0 0 8px;
+}
+.quiz-reveal-btn{
+  background:var(--gold, #A9832E);
+  color:var(--green-deeper, #132920);
+  border:none; border-radius:999px;
+  font-family:inherit;
+  font-weight:700; font-size:13px;
+  padding:8px 18px;
+  cursor:pointer;
+  transition:background .15s ease;
+}
+.quiz-reveal-btn:hover{background:var(--gold-soft, #C7A45A);}
+.quiz-answer{
+  display:none;
+  margin-top:10px;
+  font-size:14px; line-height:1.85;
+  color:#FBF7EE;
+  background:rgba(255,254,250,.08);
+  border-radius:8px;
+  padding:11px 14px;
+}
+.quiz-answer.show{display:block;}
+@media (max-width:640px){ .quiz-block{padding:16px;} }
+</style>
+
 </head>
 <body>
 <div class="page">
@@ -440,6 +556,8 @@ footer p.dua{
           النفس.
         </div>
       </div>
+    
+      <div class="quiz-block" data-quiz="manhaj"></div>
     </section>
 
     <!-- ===== 1. الآيات ===== -->
@@ -477,6 +595,8 @@ footer p.dua{
           النووي في رياض الصالحين.
         </div>
       </div>
+    
+      <div class="quiz-block" data-quiz="ayat"></div>
     </section>
 
     <!-- ===== 2. حديث إنما الأعمال بالنيات ===== -->
@@ -535,6 +655,8 @@ footer p.dua{
         عليه الحديث: أن الإنسان مهما تعِب وبذل وسعى، ولو عرّض نفسه للخطر فيما ظاهره جهاد أو هجرة، فلن ينتفع بذلك
         ما لم يبتغِ به وجه الله.
       </p>
+    
+      <div class="quiz-block" data-quiz="hadith1"></div>
     </section>
 
     <!-- ===== 3. حديث الجيش الذي يُخسف به ===== -->
@@ -586,6 +708,8 @@ footer p.dua{
           فكل إنسان يُبعث على نيته، وقد يعفو الله عمّن قصّر تقصيرًا يسيرًا ولديه من الحسنات ما يرجّح كفته.
         </div>
       </div>
+    
+      <div class="quiz-block" data-quiz="hadith2"></div>
     </section>
 
     <!-- ===== 4. لا هجرة بعد الفتح ===== -->
@@ -651,6 +775,8 @@ footer p.dua{
         وتبلغ من الأجر ما يبلغه العمل نفسه. فمن طوى قلبه على أعلى النيات الصالحة، لم يضرّه ألا يشهد ثمرة عمله في
         الدنيا؛ لأنه لقي الله بنية هي عنده سبحانه تبلغ ما يبلغ العمل.
       </div>
+    
+      <div class="quiz-block" data-quiz="hadith3"></div>
     </section>
 
     <!-- ===== 5. أهل الأعذار في تبوك ===== -->
@@ -693,6 +819,8 @@ footer p.dua{
           مسيرًا ولا قطعتم واديًا"، أي تُكتب له نفس الخطوات والمسيرة.
         </div>
       </div>
+    
+      <div class="quiz-block" data-quiz="hadith4"></div>
     </section>
 
     <!-- ===== 6. قصة معن بن يزيد ===== -->
@@ -728,6 +856,8 @@ footer p.dua{
           لا يدخل في معنى "لك ما نويت" إلا إذا كان يجهل حقيقة أمرهم فعلاً.
         </div>
       </div>
+    
+      <div class="quiz-block" data-quiz="hadith5"></div>
     </section>
 
     <!-- ===== 7. قصة سعد بن أبي وقاص ===== -->
@@ -816,6 +946,8 @@ footer p.dua{
           السلسلة.
         </div>
       </div>
+    
+      <div class="quiz-block" data-quiz="hadith6"></div>
     </section>
 
     <!-- ===== الخاتمة ===== -->
@@ -839,6 +971,8 @@ footer p.dua{
         من أعظم ما ينبغي أن يحرص عليه الإنسان، ويراجعه في نفسه يوميًّا، هو <strong>باب النية</strong>: أن يسأل نفسه
         قبل كل عمل — عبادةً كان أو عادة — لمن يعمل هذا العمل؟ وهل يبتغي به وجه الله؟
       </div>
+    
+      <div class="quiz-block" data-quiz="khatimah"></div>
     </section>
 
   </main>
@@ -908,5 +1042,291 @@ function downloadAnkiDeck() {
   URL.revokeObjectURL(url);
 }
 </script>
+
+<script>
+window.quizData = {
+ "manhaj": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما الزاوية التي يدخل منها الشيخ إلى شرح رياض الصالحين؟",
+    "options": [
+     "الوقوف التفصيلي على كل جملة وشرح المفردات شمولًا",
+     "ملاحظة هدي النبي ﷺ نفسه: فعله وأخلاقه وتوصياته ومنهجه",
+     "تخريج الأحاديث والحكم على أسانيدها"
+    ],
+    "correct": 1,
+    "feedback": "فالقصد الأعظم: على ماذا كان النبي ﷺ، وإلى ماذا دعا، وبم اهتمّ، وكيف بلّغ — والوقوف مع مجمل الفوائد لا التفاصيل اللفظية."
+   },
+   {
+    "type": "reflect",
+    "q": "ما التنبيه المهم الذي ذكره الشيخ عمّن اقتصر في تفقّهه على أحاديث الأحكام؟",
+    "answer": "أن تفقّهه ناقص، وتصوّره لطريقة النبي ﷺ ناقص. ومن العجب أن يُفني طالب العلم عمره في تطلّب بعض أبواب الدين دون أن يحرص على المرور بأهم الأبواب المتعلقة بالدار الآخرة والتعبد وتزكية النفس. وميزة رياض الصالحين أن النووي اعتنى فيه بقصد السائر إلى طريق الآخرة."
+   }
+  ]
+ },
+ "ayat": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "لماذا يجمع مؤلفو كتب الحديث بين القرآن والحديث في أبوابهم؟",
+    "options": [
+     "لزيادة حجم الكتاب",
+     "لبناء تصوّر متكامل عن الباب يجمع بين الكتاب والسنة",
+     "لأن الأحاديث وحدها لا تكفي للحجية"
+    ],
+    "correct": 1,
+    "feedback": "وهذا منهج شريف ومهم؛ وهي طريقة الإمام البخاري في صحيحه رغم أنه كتاب حديث، وكذلك طريقة النووي في رياض الصالحين — فقد افتتح باب الإخلاص بثلاث آيات قبل الأحاديث."
+   }
+  ]
+ },
+ "hadith1": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "قال الأئمة إن حديث «إنما الأعمال بالنيات» ثلث الدين. من أين جاء هذا التقدير؟",
+    "options": [
+     "من نص شرعي صريح ينص على مرتبته",
+     "عبر الاستنباط المبني على ما له أصل في الشريعة",
+     "من إجماع منقول"
+    ],
+    "correct": 1,
+    "feedback": "بخلاف باب مثل «أعظم آية في كتاب الله» الذي بيّنه النبي ﷺ نفسه لأُبيّ بقوله: «ليهنك العلم أبا المنذر». فباب معرفة مراتب الدين لا يزال الاستنباط فيه مفتوحًا."
+   },
+   {
+    "type": "mcq",
+    "q": "ما الذي جعل العلماء يدركون عِظَم هذا الحديث؟",
+    "options": [
+     "أن راويه عمر بن الخطاب",
+     "أن صيغته العامة جعلته متعلقًا بسائر ما يعمله الإنسان: أعمال القلوب وأعمال الجوارح",
+     "أنه أول حديث في صحيح البخاري"
+    ],
+    "correct": 1,
+    "feedback": "فمن يستطيع أن يستنبط عِظَم الحديث؟ هو من يعلم تفاوت مراتب الدين، ويدرك أن الدين ليس على مرتبة واحدة."
+   },
+   {
+    "type": "reflect",
+    "q": "كيف كان السلف يعظّمون الحديث الواحد؟ اذكر مثالين.",
+    "answer": "قال الشعبي عن حديث معيّن: «أُعطيناها بغير شيء، وقد كان يُركب فيما دونها إلى المدينة» — أي أن طلبه وحده كان يستحق الرحلة إلى المدينة. وسافر جابر بن عبد الله رضي الله عنه مسيرة شهر كامل لأجل سماع حديث واحد."
+   }
+  ]
+ },
+ "hadith2": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما موضع الشاهد في حديث الجيش الذي يُخسف به، من باب الإخلاص؟",
+    "options": [
+     "قوله: «يغزو جيشٌ الكعبةَ»",
+     "قوله: «ثم يُبعثون على نياتهم»",
+     "قوله: «يُخسف بأولهم وآخرهم»"
+    ],
+    "correct": 1,
+    "feedback": "فسؤال عائشة رضي الله عنها نشأ من عموم اللفظ الذي يشمل أصحاب الأسواق ومن ليس من الجيش — والجواب أن الخسف يعمّهم في الدنيا، لكن البعث يوم القيامة يكون على النيات."
+   },
+   {
+    "type": "reflect",
+    "q": "لماذا وُصف إيراد النووي لهذا الحديث في باب الإخلاص بأنه «استنباط لطيف»؟",
+    "answer": "لأن وجه ذكره في الباب ليس ظاهرًا للوهلة الأولى. ومثل هذا الإتيان يكون غالبًا مبنيًّا على الحفظ: فمن رُزق حال الاستنباط مع سعة الحفظ يجد العلم في غير مضانّه، أي يهتدي إلى نصوص تخدم موضوعًا رغم أنها ليست في بابه المباشر — والبخاري كان إمام هذه القضية."
+   }
+  ]
+ },
+ "hadith3": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "«لا هجرة بعد الفتح» — ما التفسير الذي رجّحه الإمام النووي؟",
+    "options": [
+     "لا هجرة من مكة، لأنها صارت دار إسلام",
+     "لا هجرة إلى النبي ﷺ في المدينة",
+     "انتهت الهجرة بالكلية إلى يوم القيامة"
+    ],
+    "correct": 0,
+    "feedback": "وفيه تبشير بأن مكة ستظل دار إسلام إلى يوم القيامة. واللفظ وإن كان عامًّا إلا أن المراد به الخصوص."
+   },
+   {
+    "type": "reflect",
+    "q": "لاحظ أين وُضعت النية في الحديث: «ولكن جهاد ونية». ما دلالة ذلك على طالب العلم؟",
+    "answer": "كأن النبي ﷺ يقول: ذهبت فضيلة الهجرة بمعناها الأول، لكن بقي ما هو في فلكها: الجهاد، وأعظم من ذلك النية. فمن نوى بطلبه للعلم إحياء الإسلام وإعلاء كلمة الله، فهذه النية بمجردها — ولو لم يتحقق المراد في حياته — من أعظم ما يُلقى الله به، وتبلغ من الأجر ما يبلغه العمل نفسه."
+   }
+  ]
+ },
+ "hadith4": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "من حبسه العذر عن الغزو مع صدق نيته — كيف يُكتب له الأجر بحسب الحديث؟",
+    "options": [
+     "أجر مجمل فقط",
+     "أجر مفصَّل، تُكتب له نفس الخطوات والمسيرة",
+     "لا أجر له لعدم العمل"
+    ],
+    "correct": 1,
+    "feedback": "لأن الحديث نصّ على «ما سرتم مسيرًا ولا قطعتم واديًا إلا كانوا معكم». وقد نزلت في هؤلاء آية التوبة: ﴿تَوَلَّوْا وَأَعْيُنُهُمْ تَفِيضُ مِنَ الدَّمْعِ﴾."
+   },
+   {
+    "type": "reflect",
+    "q": "ما الهدي النبوي العظيم الذي يظهر في تذكّر النبي ﷺ لمن تخلّفوا بعذر؟",
+    "answer": "أن الناس المتفاوتين في القدرة على نصرة الدين، إذا صدقت نيّتهم، يُجبَرون ولا يُنسَون. فقد تذكّرهم النبي ﷺ وهو في الغزو ولم ينسهم، رغم أنهم لم يجدوا النفقة للخروج معه."
+   }
+  ]
+ },
+ "hadith5": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "في قصة معن بن يزيد، لماذا قال النبي ﷺ لأبيه: «لك ما نويت»؟",
+    "options": [
+     "لأن المال وصل إلى من قصدهم بالضبط",
+     "لأن مدار الأجر على النية، فبلغ أجره وإن لم يصل المال لمن قصدهم تحديدًا",
+     "لأنه استرد المال"
+    ],
+    "correct": 1,
+    "feedback": "وقال لابنه: «ولك ما أخذت يا معن» — لأنه أخذ المال وهو لا يعلم أنه للصدقة."
+   },
+   {
+    "type": "reflect",
+    "q": "ما التنبيه المهم في الفهم الصحيح لـ«لك ما نويت»؟",
+    "answer": "أنها بشارة مشروطة بألا يُقصِّر المتصدّق في موضع صدقته. فمن تحرّى ووضعها في موضع مؤتمن ثم تبيّن لاحقًا أن الجهة لم تكن أمينة، فله أجر نيته ولم يُفرّط. أما من يضع ماله عند من هم معروفون بالخيانة أو محاربة الدين وهو يعلم حالهم ثم يعتذر بأنه «لم يدرِ»، فلا يدخل في هذا المعنى."
+   }
+  ]
+ },
+ "hadith6": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما موضع الشاهد الأعظم في حديث سعد بن أبي وقاص؟",
+    "options": [
+     "قوله: «الثلث، والثلث كثير»",
+     "قوله: «لن تنفق نفقة تبتغي بها وجه الله إلا أُجرت عليها، حتى ما تجعل في امرأتك»",
+     "قوله: «لكن البائس سعد بن خَوْلة»"
+    ],
+    "correct": 1,
+    "feedback": "فالنص ينصرف أول الأمر إلى الصدقة على المحتاجين، لكن النبي ﷺ وسّع دائرة النية لتشمل حتى ما هو من قبيل العادات ورغبات النفس، كالنفقة على الزوجة والأهل."
+   },
+   {
+    "type": "mcq",
+    "q": "ما تعريف «الحديث النبوي»؟",
+    "options": [
+     "قول النبي ﷺ فقط",
+     "قوله أو فعله أو تقريره (سكوته وعدم إنكاره لأمر وقع أمامه)",
+     "قوله وفعله دون التقرير"
+    ],
+    "correct": 1,
+    "feedback": "والتقرير حجة لأنه ﷺ لا يسكت عمّا ينبغي بيانه. وقال الشاطبي: المنتصب للناس في بيان الدين منتصبٌ لهم بقوله وفعله، فإنه وارث النبي، والنبي كان مبيّنًا بقوله وفعله."
+   },
+   {
+    "type": "reflect",
+    "q": "لماذا سأل سعد رضي الله عنه: «أُخلَّف بعد أصحابي؟»",
+    "answer": "لأنه كان مريضًا بمكة، وكان يخشى أن يموت فيها بعدما ترك دياره وأهله وماله هجرة إلى المدينة — فخشي أن يتأخر أجله بعد أصحابه الذين سيعودون إلى المدينة، فيموت في الأرض التي هاجر منها."
+   }
+  ]
+ },
+ "khatimah": {
+  "items": [
+   {
+    "type": "reflect",
+    "q": "كيف تدور أحاديث المجلس الستة كلها حول محور واحد؟ لخّص الرابط بينها.",
+    "answer": "المحور: أن النية هي مدار قبول الأعمال وتفاضلها. فهي التي تُقبل بها الأعمال الظاهرة (١)، ويُبعث عليها الناس لا على ظاهر انضمامهم (٢)، وتبلغ منزلة العمل نفسه إذا صدقت في نصرة الدين (٣)، وتُكتب بها أجور من حبسهم العذر (٤)، ويُحاسَب عليها المرء دون النظر لوصول أثر عمله (٥)، وتتجاوز حدود العبادة المحضة لتشمل العادات اليومية (٦)."
+   }
+  ]
+ }
+};
+</script>
+
+<script>
+/* ===== تثبيت الفهم: محرك الرندر ===== */
+(function(){
+  function renderQuizBlocks(){
+    document.querySelectorAll('.quiz-block[data-quiz]').forEach(function(container){
+      var key = container.getAttribute('data-quiz');
+      var data = (window.quizData || {})[key];
+      if(!data || container.dataset.rendered) return;
+      container.dataset.rendered = '1';
+
+      var title = document.createElement('div');
+      title.className = 'quiz-block-title';
+      title.textContent = '\uD83E\uDDE0 تثبيت الفهم';
+      container.appendChild(title);
+
+      data.items.forEach(function(item){
+        var itemEl = document.createElement('div');
+        itemEl.className = 'quiz-item';
+
+        if(item.type === 'mcq'){
+          var qEl = document.createElement('p');
+          qEl.className = 'quiz-q';
+          qEl.textContent = item.q;
+          itemEl.appendChild(qEl);
+
+          var optsWrap = document.createElement('div');
+          optsWrap.className = 'quiz-options';
+
+          var feedbackEl = document.createElement('div');
+          feedbackEl.className = 'quiz-feedback';
+          feedbackEl.textContent = item.feedback || '';
+
+          item.options.forEach(function(optText, optIdx){
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'quiz-opt';
+            btn.textContent = optText;
+            btn.addEventListener('click', function(){
+              var allBtns = optsWrap.querySelectorAll('.quiz-opt');
+              allBtns.forEach(function(b){ b.classList.add('disabled'); });
+              if(optIdx === item.correct){
+                btn.classList.add('correct');
+              } else {
+                btn.classList.add('wrong');
+                if(allBtns[item.correct]) allBtns[item.correct].classList.add('correct');
+              }
+              feedbackEl.classList.add('show');
+            });
+            optsWrap.appendChild(btn);
+          });
+
+          itemEl.appendChild(optsWrap);
+          itemEl.appendChild(feedbackEl);
+
+        } else if(item.type === 'reflect'){
+          var wrap = document.createElement('div');
+          wrap.className = 'quiz-reflect';
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-reflect-q';
+          qText.textContent = '\uD83D\uDCAD ' + item.q;
+          wrap.appendChild(qText);
+
+          var revealBtn = document.createElement('button');
+          revealBtn.type = 'button';
+          revealBtn.className = 'quiz-reveal-btn';
+          revealBtn.textContent = 'إظهار الإجابة';
+
+          var answerEl = document.createElement('div');
+          answerEl.className = 'quiz-answer';
+          answerEl.textContent = item.answer;
+
+          revealBtn.addEventListener('click', function(){
+            answerEl.classList.toggle('show');
+            revealBtn.textContent = answerEl.classList.contains('show') ? 'إخفاء الإجابة' : 'إظهار الإجابة';
+          });
+
+          wrap.appendChild(revealBtn);
+          wrap.appendChild(answerEl);
+          itemEl.appendChild(wrap);
+        }
+
+        container.appendChild(itemEl);
+      });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', renderQuizBlocks);
+  } else {
+    renderQuizBlocks();
+  }
+})();
+</script>
+
 </body>
 </html>
