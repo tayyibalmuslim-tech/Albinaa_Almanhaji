@@ -1,39 +1,1124 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>من 95 إلى نهاية الكتاب - أنوار الأنبياء</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../../style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أنوار الأنبياء — الجزء 4 — موسى عليه السلام — المقاطع ١١–١٦</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#f7f2e8; --paper:#fffdf7; --ink:#221d16; --ink2:#5d5446; --ink3:#8a8072;
+  --line:#e7ddc9; --line2:#d6c9ae;
+  --gold:#b8863b;
+  --accent:#2f4c86; --accent-d:#1a2d5c;
+  --n-doc:#2f6c8c; --n-term:#75519f; --n-alam:#1c7a5c; --n-exp:#a3701f;
+  --n-link:#3d7042; --n-fix:#b03a34; --n-ctx:#4a6383;
+  --fs:18px; --maxw:790px; --notew:290px; --gap:34px;
+  --sh:0 1px 2px rgba(60,45,20,.05),0 6px 18px rgba(60,45,20,.05);
+}
+html[data-theme="night"]{
+  --bg:#14161a; --paper:#1b1e24; --ink:#e8e3d8; --ink2:#b3ac9e; --ink3:#8b8478;
+  --line:#2c313a; --line2:#3b414c; --paper2:#20242b;
+  --n-doc:#7fb6d4; --n-term:#b795e0; --n-alam:#6cc4a4; 
+}
+html[data-theme="night"]{--n-exp:#d6a94f;--n-link:#7fbf85;--n-fix:#e8837c;--n-ctx:#8fa9c9;--gold:#d6a94f}
+html{font-size:var(--fs);scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:'Cairo',system-ui,'Segoe UI',sans-serif;
+  line-height:1.95;direction:rtl;text-align:right;
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%}
+a{color:var(--accent-d)}
+
+/* ---------- progress + toolbar ---------- */
+#progress{position:fixed;top:0;right:0;height:4px;width:0;background:linear-gradient(90deg,var(--accent),var(--gold));z-index:90;transition:width .1s linear}
+.toolbar{
+  position:fixed;bottom:18px;left:18px;z-index:80;display:flex;gap:8px;
+  background:var(--paper);border:1px solid var(--line2);border-radius:999px;
+  padding:6px;box-shadow:var(--sh)
+}
+.toolbar button{
+  width:40px;height:40px;border:0;border-radius:999px;background:transparent;color:var(--ink2);
+  font-size:.95rem;font-family:inherit;cursor:pointer;line-height:1;display:grid;place-items:center
+}
+.toolbar button:hover{background:var(--bg);color:var(--accent-d)}
+
+/* ---------- TOC drawer ---------- */
+#tocBtn{position:fixed;top:14px;left:18px;z-index:81;border:1px solid var(--line2);background:var(--paper);
+  color:var(--ink2);border-radius:12px;padding:9px 14px;font-family:inherit;font-size:.8rem;cursor:pointer;box-shadow:var(--sh)}
+#toc{
+  position:fixed;top:0;right:-340px;width:330px;max-width:88vw;height:100%;z-index:95;
+  background:var(--paper);border-left:1px solid var(--line);box-shadow:-8px 0 30px rgba(0,0,0,.12);
+  overflow-y:auto;padding:26px 20px 60px;transition:right .28s ease
+}
+#toc.open{right:0}
+#toc h3{margin:0 0 6px;font-size:1rem;color:var(--accent-d)}
+#toc .toc-sub{font-size:.72rem;color:var(--ink3);margin:0 0 18px}
+#toc ol{list-style:none;margin:0;padding:0}
+#toc>ol>li{margin-bottom:6px;border-bottom:1px dashed var(--line);padding-bottom:6px}
+#toc a{display:block;text-decoration:none;color:var(--ink);font-size:.82rem;padding:5px 6px;border-radius:8px}
+#toc a:hover{background:var(--bg);color:var(--accent-d)}
+#toc .lvl2{padding-inline-start:12px;border-inline-start:2px solid var(--line);margin:4px 0 6px}
+#toc .lvl2 a{font-size:.73rem;color:var(--ink2);padding:2px 8px;line-height:1.7}
+#tocOverlay{position:fixed;inset:0;background:rgba(20,15,5,.35);z-index:94;display:none}
+#tocOverlay.open{display:block}
+
+/* ---------- header ---------- */
+.hero{
+  background:linear-gradient(160deg,var(--accent) 0%,var(--accent-d) 100%);
+  color:#fff;padding:66px 20px 46px;text-align:center;position:relative;overflow:hidden
+}
+.hero::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 20% 15%,rgba(255,255,255,.16),transparent 45%),
+             radial-gradient(circle at 82% 78%,rgba(255,255,255,.12),transparent 42%)}
+.hero>*{position:relative;z-index:2}
+.hero .kicker{font-size:.74rem;letter-spacing:.22em;opacity:.85;margin:0 0 14px}
+.hero h1{font-family:'Amiri',serif;font-size:2.5rem;margin:0 0 8px;line-height:1.35;font-weight:700}
+.hero .part{display:inline-block;margin-top:14px;background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:6px 20px;font-size:.8rem}
+.hero .author{font-size:.9rem;opacity:.92;margin:6px 0 0}
+
+/* ---------- file nav ---------- */
+.filenav{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;
+  background:var(--paper);border-bottom:1px solid var(--line);padding:12px}
+.filenav a,.filenav span{font-size:.78rem;text-decoration:none;padding:7px 15px;border-radius:9px;
+  border:1px solid var(--line2);color:var(--ink2);background:var(--bg)}
+.filenav a:hover{border-color:var(--accent);color:var(--accent-d)}
+.filenav span{opacity:.4}
+
+/* ---------- layout ---------- */
+.wrap{max-width:calc(var(--maxw) + var(--notew) + var(--gap) + 40px);margin:0 auto;padding:0 20px}
+.col{max-width:var(--maxw);margin-inline-start:calc(var(--notew) + var(--gap));position:relative}
+@media(max-width:1180px){.col{margin-inline-start:0;margin-inline-end:0}}
+
+/* ---------- cards ---------- */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px 24px;box-shadow:var(--sh)}
+.src-card{margin:26px 0 10px;border-inline-start:5px solid var(--gold)}
+.src-card h3{margin:0 0 8px;font-size:.95rem;color:var(--gold)}
+.src-card p{margin:0;font-size:.82rem;color:var(--ink2);line-height:1.85}
+.legend{margin:14px 0 34px;background:var(--paper);border:1px dashed var(--line2);border-radius:14px;
+  padding:14px 18px;font-size:.8rem;color:var(--ink2);line-height:1.85}
+.legend b{color:var(--accent-d)}
+
+/* ---------- section ---------- */
+.divider{margin:56px 0 10px;text-align:center}
+.divider h2{font-family:'Amiri',serif;font-size:1.9rem;margin:0;color:var(--accent-d)}
+.divider p{margin:6px 0 0;font-size:.82rem;color:var(--ink3)}
+.divider .orn{color:var(--gold);letter-spacing:.4em;font-size:1.1rem;margin-bottom:8px}
+
+.maqta{margin:44px 0 0;--sc:var(--accent)}
+.maqta-head{border-inline-start:6px solid var(--sc);background:var(--paper);
+  border:1px solid var(--line);border-inline-start-width:6px;border-radius:14px;padding:18px 22px;box-shadow:var(--sh)}
+.maqta-head .num{display:inline-block;background:var(--sc);color:#fff;border-radius:999px;
+  padding:3px 14px;font-size:.72rem;margin-bottom:8px}
+.maqta-head h3{margin:0;font-family:'Amiri',serif;font-size:1.55rem;color:var(--ink);line-height:1.5}
+.maqta-head .surah{margin:6px 0 0;font-size:.82rem;color:var(--ink3)}
+
+/* ---------- quran ---------- */
+.ayat{
+  margin:24px 0;padding:26px 28px;border-radius:16px;
+  background:linear-gradient(180deg,var(--paper) 0%,var(--bg) 100%);
+  border:1px solid var(--line2);border-top:3px solid var(--sc);
+  font-family:'Amiri',serif;font-size:1.42rem;line-height:2.5;text-align:justify;color:var(--ink)
+}
+.ayat .bsm{display:block;text-align:center;font-size:1.15rem;color:var(--sc);margin-bottom:14px}
+.ayat .n{color:var(--gold);font-size:.9em}
+
+/* ---------- fawaid ---------- */
+.fawaid{list-style:none;margin:22px 0 0;padding:0;counter-reset:fd}
+.faida{position:relative;margin:0 0 20px;padding:2px 0 2px 0;text-align:justify}
+.faida .fnum{display:inline-block;font-weight:700;color:var(--sc);font-size:.95em;margin-inline-end:6px}
+.faida p{margin:0 0 10px}
+.prose p{margin:0 0 14px;text-align:justify}
+.subpoints{margin:8px 0 8px;padding-inline-start:20px}
+.subpoints li{margin-bottom:6px}
+.inq{font-family:'Amiri',serif;font-size:1.12em;color:var(--accent-d);line-height:2.1}
+html[data-theme="night"] .inq{color:var(--gold)}
+.qsay{display:block;margin:10px 0;padding:10px 16px;border-inline-start:3px solid var(--line2);
+  background:var(--paper);border-radius:0 10px 10px 0;font-size:.95em;color:var(--ink2)}
+
+/* ---------- notes ---------- */
+.nmark{
+  cursor:pointer;font-size:.62em;vertical-align:super;font-weight:700;color:#fff;
+  background:var(--sc);border-radius:6px;padding:1px 6px;margin:0 3px;line-height:1.4;
+  display:inline-block;transform:translateY(-2px);user-select:none
+}
+.nmark:hover{filter:brightness(1.15)}
+.note{
+  position:absolute;width:var(--notew);inset-inline-start:calc(-1 * (var(--notew) + var(--gap)));
+  font-size:.76rem;line-height:1.8;color:var(--ink2);background:var(--paper);
+  border:1px solid var(--line);border-radius:12px;padding:11px 14px;
+  border-inline-start:4px solid var(--nc,var(--ink3));font-family:'Cairo',sans-serif;text-align:start;
+  transition:box-shadow .2s,transform .2s
+}
+.note.flash{box-shadow:0 0 0 3px color-mix(in srgb,var(--nc) 30%,transparent);transform:translateY(-2px)}
+.note .nt{display:block;font-size:.63rem;font-weight:700;color:var(--nc);margin-bottom:3px;letter-spacing:.02em}
+.note .nt::before{content:attr(data-i) " ";font-family:'Amiri',serif}
+.note--doc{--nc:var(--n-doc)} .note--term{--nc:var(--n-term)} .note--alam{--nc:var(--n-alam)}
+.note--exp{--nc:var(--n-exp)} .note--link{--nc:var(--n-link)} .note--fix{--nc:var(--n-fix)} .note--ctx{--nc:var(--n-ctx)}
+.note em{font-style:normal;color:var(--ink);font-weight:600}
+
+/* ---------- blocks ---------- */
+.summary{margin:26px 0 10px;background:var(--paper);border:1px solid var(--line);
+  border-radius:16px;padding:20px 24px;border-top:4px solid var(--sc);box-shadow:var(--sh)}
+.summary h4{margin:0 0 4px;font-size:1rem;color:var(--sc)}
+.summary .tag{font-size:.66rem;color:var(--ink3);display:block;margin-bottom:10px}
+.summary ul{margin:0;padding-inline-start:20px}
+.summary li{margin-bottom:8px;font-size:.92rem}
+.fixbox{margin:22px 0;background:color-mix(in srgb,var(--n-fix) 8%,var(--paper));
+  border:1px solid color-mix(in srgb,var(--n-fix) 32%,var(--line));border-inline-start:5px solid var(--n-fix);
+  border-radius:14px;padding:16px 20px;font-size:.86rem;line-height:1.9}
+.fixbox h4{margin:0 0 8px;color:var(--n-fix);font-size:.92rem}
+.fixbox .row{margin-bottom:5px}
+.fixbox b{color:var(--ink)}
+.notebox{margin:22px 0;background:var(--paper);border:1px dashed var(--line2);
+  border-radius:14px;padding:16px 20px;font-size:.85rem;color:var(--ink2);line-height:1.9}
+.notebox h4{margin:0 0 6px;color:var(--accent-d);font-size:.92rem}
+
+/* ---------- quiz ---------- */
+.quiz{margin:28px 0 12px;background:var(--paper);border:1px solid var(--line);
+  border-radius:16px;padding:20px 22px;border-inline-end:5px solid var(--sc);box-shadow:var(--sh)}
+.quiz .qhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:10px;flex-wrap:wrap}
+.quiz .qhead b{font-size:.9rem;color:var(--sc)}
+.quiz .score{font-size:.72rem;color:var(--ink3);background:var(--bg);border-radius:999px;padding:3px 12px}
+.qitem{margin-bottom:18px}
+.qitem:last-child{margin-bottom:0}
+.qitem .qq{font-size:.93rem;font-weight:600;margin:0 0 10px;line-height:1.8}
+.qopts{display:grid;gap:8px}
+.qopt{min-height:44px;display:flex;align-items:center;gap:10px;width:100%;text-align:start;
+  background:var(--bg);border:1px solid var(--line2);border-radius:10px;padding:8px 14px;
+  font-family:inherit;font-size:.86rem;color:var(--ink);cursor:pointer;line-height:1.6}
+.qopt:hover{border-color:var(--sc)}
+.qopt.ok{background:color-mix(in srgb,#2e8b57 14%,var(--paper));border-color:#2e8b57;color:var(--ink)}
+.qopt.bad{background:color-mix(in srgb,#c0392b 12%,var(--paper));border-color:#c0392b}
+.qexp{margin-top:10px;font-size:.8rem;line-height:1.85;color:var(--ink2);
+  background:var(--bg);border-radius:10px;padding:10px 14px;display:none}
+.qexp.show{display:block}
+
+/* ---------- flashcards ---------- */
+.deck{margin:60px 0 40px;background:var(--paper);border:1px solid var(--line);
+  border-radius:20px;padding:26px 24px;box-shadow:var(--sh)}
+.deck h3{margin:0 0 4px;font-family:'Amiri',serif;font-size:1.5rem;color:var(--accent-d)}
+.deck .dsub{margin:0 0 18px;font-size:.8rem;color:var(--ink3)}
+.filters{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
+.filters button{font-family:inherit;font-size:.74rem;padding:6px 13px;border-radius:999px;cursor:pointer;
+  border:1px solid var(--line2);background:var(--bg);color:var(--ink2)}
+.filters button.on{background:var(--fc,var(--accent));border-color:var(--fc,var(--accent));color:#fff}
+.flip{perspective:1400px;margin-bottom:14px}
+.flip-in{position:relative;min-height:190px;transition:transform .55s;transform-style:preserve-3d;cursor:pointer}
+.flip.on .flip-in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:16px;padding:24px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  border:1px solid var(--line2);background:var(--bg);line-height:1.9}
+.face .lbl{font-size:.64rem;letter-spacing:.14em;color:var(--ink3);margin-bottom:10px}
+.face .txt{font-size:1rem}
+.back{transform:rotateY(180deg);background:linear-gradient(160deg,var(--accent),var(--accent-d));color:#fff;border:0}
+.back .lbl{color:rgba(255,255,255,.75)}
+.deck-nav{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.deck-nav button{font-family:inherit;font-size:.8rem;padding:9px 18px;border-radius:10px;cursor:pointer;
+  border:1px solid var(--line2);background:var(--bg);color:var(--ink2)}
+.deck-nav button:hover{border-color:var(--accent);color:var(--accent-d)}
+.counter{font-size:.78rem;color:var(--ink3)}
+.dl{display:block;width:100%;margin-top:16px;padding:13px;border:0;border-radius:12px;cursor:pointer;
+  font-family:inherit;font-size:.88rem;color:#fff;background:linear-gradient(90deg,var(--accent),var(--accent-d))}
+
+footer{padding:36px 20px 120px;text-align:center;font-size:.76rem;color:var(--ink3);line-height:2}
+footer .sep{color:var(--gold);letter-spacing:.4em;display:block;margin-bottom:10px}
+
+/* ---------- mobile ---------- */
+@media(max-width:1180px){
+  .note{position:static;width:auto;inset-inline-start:auto;display:none;margin:10px 0 14px}
+  .note.open{display:block}
+  .nmark::after{content:" ▾";font-size:.8em}
+}
+@media(max-width:640px){
+  :root{--fs:17px}
+  .hero h1{font-size:1.85rem}
+  .hero{padding:52px 16px 36px}
+  .ayat{font-size:1.24rem;padding:20px 16px;line-height:2.35}
+  .card,.summary,.quiz,.deck{padding:18px 16px}
+  .wrap{padding:0 14px}
+  .divider h2{font-size:1.5rem}
+  .maqta-head h3{font-size:1.25rem}
+  .toolbar{bottom:12px;left:12px}
+}
+
+@media print{
+  #progress,#toc,#tocBtn,#tocOverlay,.toolbar,.filenav,.deck,.quiz{display:none!important}
+  body{background:#fff;color:#000}
+  .col{margin:0}
+  .note{position:static;width:auto;display:block;font-size:.7rem;margin:8px 0;break-inside:avoid}
+  .maqta{break-inside:avoid-page}
+  .hero{background:none;color:#000;border-bottom:2px solid #000}
+}
+</style>
 </head>
-<body class="" data-page="lecture" data-lecture-id="stage1_anwar-al-anbiya_02">
-  <div class="page">
-    <nav class="breadcrumbs"><a href="../../../index.html">الرئيسية</a><span class="sep">/</span><a href="../../index.html">المرحلة الأولى</a><span class="sep">/</span><a href="../index.html">أنوار الأنبياء</a><span class="sep">/</span><span aria-current="page">من 95 إلى نهاية الكتاب</span></nav>
-    
-      <header class="lecture-header">
-        <h1>من 95 إلى نهاية الكتاب</h1>
-        <p class="lecture-meta">المادة: أنوار الأنبياء &nbsp;|&nbsp; الشيخ: أحمد السيد &nbsp;|&nbsp; اليوم 12</p>
-        <label class="checkbox-line lecture-checkbox">
-          <input type="checkbox" data-lecture-id="stage1_anwar-al-anbiya_02">
-          <span>إتمام هذه المحاضرة</span>
-        </label>
-      </header>
+<body>
+<div id="progress"></div>
+<button id="tocBtn">☰ الفهرس</button>
+<div id="tocOverlay"></div>
+<nav id="toc"><h3>أنوار الأنبياء</h3><p class="toc-sub">الصفحة 4 من ٤ — من انفلاق البحر إلى خاتمة الكتاب</p></nav>
 
-      <div class="lecture-placeholder">
-        <p>سيتم إضافة المحاضرة هنا لاحقًا</p>
-        <p class="placeholder-hint">(رابط يوتيوب / فيديو / ملف صوتي / PDF / نص المحاضرة / ملاحظاتي)</p>
-      </div>
+<header class="hero">
+  <p class="kicker">أنوار الأنبياء — الجزء الأول</p>
+  <h1>موسى عليه السلام — المقاطع ١١–١٦</h1>
+  <p class="author">الشيخ أحمد السيد — حفظه الله</p>
+  <div class="part">الصفحة 4 من ٤ — من انفلاق البحر إلى خاتمة الكتاب</div>
+</header>
 
-      <div class="lecture-nav">
-        <a href="../index.html" class="btn btn-outline">الرجوع إلى المادة</a>
-        <a href="../../index.html" class="btn btn-outline">الرجوع إلى المرحلة</a>
-      </div>
-    
+<nav class="filenav"><a href="index.html">الفهرس</a><a href="%D8%A3%D9%86%D9%88%D8%A7%D8%B1%20%D8%A7%D9%84%D8%A3%D9%86%D8%A8%D9%8A%D8%A7%D8%A1%20-%201%20-%20%D8%A5%D8%A8%D8%B1%D8%A7%D9%87%D9%8A%D9%85%20%D8%B9%D9%84%D9%8A%D9%87%20%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%28%D8%A7%D9%84%D9%85%D9%82%D8%A7%D8%B7%D8%B9%201-4%29.html">الجزء 1</a><a href="%D8%A3%D9%86%D9%88%D8%A7%D8%B1%20%D8%A7%D9%84%D8%A3%D9%86%D8%A8%D9%8A%D8%A7%D8%A1%20-%202%20-%20%D8%A5%D8%A8%D8%B1%D8%A7%D9%87%D9%8A%D9%85%20%285%29%20%D9%88%D9%85%D9%88%D8%B3%D9%89%20%281-5%29.html">الجزء 2</a><a href="%D8%A3%D9%86%D9%88%D8%A7%D8%B1%20%D8%A7%D9%84%D8%A3%D9%86%D8%A8%D9%8A%D8%A7%D8%A1%20-%203%20-%20%D9%85%D9%88%D8%B3%D9%89%20%D8%B9%D9%84%D9%8A%D9%87%20%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%28%D8%A7%D9%84%D9%85%D9%82%D8%A7%D8%B7%D8%B9%206-10%29.html">الجزء 3</a><span>الجزء 4 ●</span></nav>
+
+<div class="wrap"><div class="col">
+
+<div class="card src-card">
+<h3>عن المصدر</h3>
+<p>هذا النص من كتاب <b>«أنوار الأنبياء»</b> للشيخ <b>أحمد السيد</b> حفظه الله — الجزء الأول، مأخوذ من تفريغ تسجيله الصوتي في <b>بودكاست «المفرِدون»</b> بقراءة <b>عمر</b>. هذه <b>الصفحة الرابعة والأخيرة</b>: من المقطع الحادي عشر إلى المقطع السادس عشر، ثم خاتمة الكتاب.</p>
+</div>
+
+<div class="legend">
+<b>كيف تقرأ هذه الصفحة:</b> النص الأساسي في العمود هو <b>كلام المؤلف كاملًا بلا حذف ولا اختصار</b>، وما في الهامش الجانبي (وعلى الهاتف: البطاقات التي تُفتح بالنقر على الرقم الملوَّن) <b>إضافة توضيحية ليست من الكتاب</b>. وكذلك صناديق «الخلاصة» والأسئلة التفاعلية.
+</div>
+
+<article class="maqta" id="n11" style="--sc:#2f4c86" data-toc="المقطع ١١ — الشعراء">
+<div class="maqta-head"><span class="num">المقطع الحادي عشر</span><h3>من أنوار قصة موسى عليه السلام</h3><p class="surah">آيات من سورة الشعراء</p></div>
+
+<div class="ayat">
+<span class="bsm">أعوذ بالله من الشيطان الرجيم — بسم الله الرحمن الرحيم</span>
+﴿وَأَوْحَيْنَا إِلَىٰ مُوسَىٰ أَنْ أَسْرِ بِعِبَادِي إِنَّكُم مُّتَّبَعُونَ <span class="n">﴿٥٢﴾</span> فَأَرْسَلَ فِرْعَوْنُ فِي الْمَدَائِنِ حَاشِرِينَ <span class="n">﴿٥٣﴾</span> إِنَّ هَٰؤُلَاءِ لَشِرْذِمَةٌ قَلِيلُونَ <span class="n">﴿٥٤﴾</span> وَإِنَّهُمْ لَنَا لَغَائِظُونَ <span class="n">﴿٥٥﴾</span> وَإِنَّا لَجَمِيعٌ حَاذِرُونَ <span class="n">﴿٥٦﴾</span> فَأَخْرَجْنَاهُم مِّن جَنَّاتٍ وَعُيُونٍ <span class="n">﴿٥٧﴾</span> وَكُنُوزٍ وَمَقَامٍ كَرِيمٍ <span class="n">﴿٥٨﴾</span> كَذَٰلِكَ وَأَوْرَثْنَاهَا بَنِي إِسْرَائِيلَ <span class="n">﴿٥٩﴾</span> فَأَتْبَعُوهُم مُّشْرِقِينَ <span class="n">﴿٦٠﴾</span> فَلَمَّا تَرَاءَى الْجَمْعَانِ قَالَ أَصْحَابُ مُوسَىٰ إِنَّا لَمُدْرَكُونَ <span class="n">﴿٦١﴾</span> قَالَ كَلَّا ۖ إِنَّ مَعِيَ رَبِّي سَيَهْدِينِ <span class="n">﴿٦٢﴾</span> فَأَوْحَيْنَا إِلَىٰ مُوسَىٰ أَنِ اضْرِب بِّعَصَاكَ الْبَحْرَ ۖ فَانفَلَقَ فَكَانَ كُلُّ فِرْقٍ كَالطَّوْدِ الْعَظِيمِ <span class="n">﴿٦٣﴾</span> وَأَزْلَفْنَا ثَمَّ الْآخَرِينَ <span class="n">﴿٦٤﴾</span> وَأَنجَيْنَا مُوسَىٰ وَمَن مَّعَهُ أَجْمَعِينَ <span class="n">﴿٦٥﴾</span> ثُمَّ أَغْرَقْنَا الْآخَرِينَ <span class="n">﴿٦٦﴾</span> إِنَّ فِي ذَٰلِكَ لَآيَةً ۖ وَمَا كَانَ أَكْثَرُهُم مُّؤْمِنِينَ <span class="n">﴿٦٧﴾</span>﴾<sup class="nmark" data-note="nn11-1">١</sup>
+</div>
+<aside class="note note--doc" id="nn11-1"><span class="nt" data-i="١">توثيق</span> سورة الشعراء، الآيات ٥٢–٦٧.</aside>
+
+<h4 style="color:var(--sc);margin:26px 0 0;font-size:1.05rem">الفوائد</h4>
+<ol class="fawaid">
+
+<li class="faida" id="fn11-1" data-sub="١ — آلة الطاغية: التنفيذية والإعلامية">
+<span class="fnum">الفائدة الأولى:</span> المتتبّع للآيات المتعلقة بفرعون يدرك أنه بلغ في التمكّن في مملكته أمرًا عظيمًا، وأنه كان يمتلك من الأدوات التنفيذية من الجنود الشيءَ الكثير؛ فهنا استطاع فرعون أن يحشد بسرعة جميع المقاتلين من كل المدائن في مملكته حتى أدرك موسى عليه السلام في زمن يسير. ومن الواضح كذلك أن الآلة الإعلامية للحكومة الفرعونية تعمل بنشاط وفي جميع الحالات، فالسعي الدائم لتشويه موسى عليه السلام ومن معه واضح في القصة، كما في تكرار فرعون اتهامَ موسى بأنه يريد إخراجهم من الأرض، وكذلك سعيه في استنفار قومه وجنوده وذلك بوصف موسى عليه السلام ومن معه بأنهم <span class="inq">﴿شِرْذِمَةٌ قَلِيلُونَ﴾</span>، وكذلك ببيان أن خطرهم ينال الجميع وليس خاصًّا بالحكومة، فقال <span class="inq">﴿وَإِنَّا لَجَمِيعٌ حَاذِرُونَ﴾</span>. كما قال ابن سعدي: <span class="inq">﴿وَإِنَّا لَجَمِيعٌ حَاذِرُونَ﴾</span> أي الحذر على الجميع منهم، وهم أعداء للجميع، والمصلحة مشتركة. وهذه سنة مستمرة في الظالمين والمجرمين، يستعملون نفس الأسلوب، وما أشبه الليلةَ بالبارحة.<sup class="nmark" data-note="nn11-2">٢</sup>
+<aside class="note note--term" id="nn11-2"><span class="nt" data-i="٢">تعريف مصطلح</span> <em>الشِّرْذِمة:</em> الطائفة القليلة المتفرقة الحقيرة في نظر قائلها؛ فالوصف تحقيرٌ إعلامي لا تقريرُ عدد.</aside>
+</li>
+
+<li class="faida" id="fn11-2" data-sub="٢ — التفكر في مصارع الظالمين">
+<span class="fnum">الفائدة الثانية:</span> إهلاك الظالمين أمر عظيم يحب الله تعالى منا أن نتفكر فيه ونقف عنده ونتأمله ونعتبر به، ولذلك كرّر علينا ذكرى مصارع الكافرين والظالمين في كتابه العزيز، وخاصة ما ورد في فرعون، فهو أكثر طاغية جرى ذكره في القرآن العزيز. وإذا كان هذا في التاريخ، فإن سنة الله لا تزال جارية، فليعتبر المؤمن بمصارع الظالمين وما يجريه الله من تقليب أحوالهم، نسأله سبحانه أن يسلّط عليهم جندَه وأن يُلحقهم بأسلافهم وأشكالهم، إنه عزيز رحيم.
+</li>
+
+<li class="faida" id="fn11-3" data-sub="٣ — معيّة الله ليست خاصة بالأنبياء">
+<span class="fnum">الفائدة الثالثة:</span> من أعظم ما يحتاجه قادة المصلحين المتّبعين للأنبياء الثقةُ بالله والتوكل عليه والإيمان بمعيّته، كما قال موسى عليه السلام في هذه الآيات <span class="inq">﴿إِنَّ مَعِيَ رَبِّي سَيَهْدِينِ﴾</span>، وكما قال محمد صلى الله عليه وسلم <span class="inq">﴿لَا تَحْزَنْ إِنَّ اللَّهَ مَعَنَا﴾</span><sup class="nmark" data-note="nn11-3">٣</sup>.
+<p>فإن قيل: ولكن الأنبياء عندهم وعد معيّن من الله تعالى، وأما المصلحون بعدهم فليس عندهم هذا الوعد؟ فالجواب من وجهين:</p>
+<ol class="subpoints">
+<li><b>أولًا:</b> أنه وإن انقطع الوحي، إلا أن سنن الله ماضية لا تتبدل ولا تتغير، وجميل أفعاله وعوائد إحسانه بالصالحين من عباده مستمرة لا تنقطع، ومنها نصر المؤمنين الصابرين المتقين المتوكلين عليه سبحانه؛ فعلى المصلحين الممتلئين بهذه الصفات أن يثقوا بالله ويحسنوا الظن به سبحانه وتعالى.</li>
+<li><b>ثانيًا:</b> أن معيّة الله تعالى ليست خاصة بالأنبياء، فقد ذكر الله في كتابه معيّته للصابرين فقال سبحانه <span class="inq">﴿إِنَّ اللَّهَ مَعَ الصَّابِرِينَ﴾</span>، وللمتقين فقال <span class="inq">﴿وَاعْلَمُوا أَنَّ اللَّهَ مَعَ الْمُتَّقِينَ﴾</span><sup class="nmark" data-note="nn11-4">٤</sup>؛ فالمعيّة لا تخص الأنبياء وحدهم.</li>
+</ol>
+<aside class="note note--doc" id="nn11-3"><span class="nt" data-i="٣">توثيق</span> سورة التوبة، الآية ٤٠.</aside>
+<aside class="note note--doc" id="nn11-4"><span class="nt" data-i="٤">توثيق</span> الأنفال ٤٦، والبقرة ١٩٤.</aside>
+</li>
+
+<li class="faida" id="fn11-4" data-sub="٤ — البذل مع الاستهداء عند انغلاق الأبواب">
+<span class="fnum">الفائدة الرابعة:</span> المصلح ليس مطالبًا بأن يعرف كل الخطوات والمراحل الإصلاحية التي سيسلكها، وإنما عليه أن يبذل ما عليه ويفعل ما يمكن؛ فإذا أُغلقت الأبواب في وجهه — كما أغلق البحر الطريق على موسى عليه السلام — فإنه مطالب بالاستهداء والتوكل؛ إذ إن موسى عليه السلام لم يكن يعلم المخرج من هذا الإغلاق حتى أوحى الله إليه بأن يضرب بعصاه البحر <span class="inq">﴿فَانفَلَقَ فَكَانَ كُلُّ فِرْقٍ كَالطَّوْدِ الْعَظِيمِ﴾</span>.
+</li>
+</ol>
+
+<div class="quiz" data-section="n11"></div>
+
+<div class="summary"><h4>خلاصة المقطع الحادي عشر</h4><span class="tag">هذه الخلاصة إضافة تنظيمية من إعداد الملف، وليست من نص الكتاب.</span><ul><li>لفرعون آلتان: تنفيذية (حشد سريع من كل المدائن) وإعلامية (تحقير ﴿شِرْذِمَةٌ قَلِيلُونَ﴾ وتعميم الخطر ﴿لَجَمِيعٌ حَاذِرُونَ﴾).</li><li>مصارع الظالمين موضوع يتكرر في القرآن ليُتفكَّر فيه، وفرعون أكثر طاغية ذُكر فيه.</li><li>شبهة «الوعد الخاص بالأنبياء» يُجاب عنها بوجهين: بقاء السنن بعد انقطاع الوحي، وعموم المعيّة للصابرين والمتقين.</li><li>المصلح غير مكلَّف بمعرفة كل الخطوات؛ عند انغلاق الأبواب يبذل ويستهدي، والانفلاق يأتي بالوحي لا بالحساب.</li></ul></div>
+
+</article>
+
+<article class="maqta" id="n12" style="--sc:#2b5f7a" data-toc="المقطع ١٢ — الأعراف">
+<div class="maqta-head"><span class="num">المقطع الثاني عشر</span><h3>من أنوار قصة موسى عليه السلام</h3><p class="surah">آيات من سورة الأعراف</p></div>
+
+<div class="ayat">
+<span class="bsm">أعوذ بالله من الشيطان الرجيم — بسم الله الرحمن الرحيم</span>
+﴿فَانتَقَمْنَا مِنْهُمْ فَأَغْرَقْنَاهُمْ فِي الْيَمِّ بِأَنَّهُمْ كَذَّبُوا بِآيَاتِنَا وَكَانُوا عَنْهَا غَافِلِينَ <span class="n">﴿١٣٦﴾</span> وَأَوْرَثْنَا الْقَوْمَ الَّذِينَ كَانُوا يُسْتَضْعَفُونَ مَشَارِقَ الْأَرْضِ وَمَغَارِبَهَا الَّتِي بَارَكْنَا فِيهَا ۖ وَتَمَّتْ كَلِمَتُ رَبِّكَ الْحُسْنَىٰ عَلَىٰ بَنِي إِسْرَائِيلَ بِمَا صَبَرُوا ۖ وَدَمَّرْنَا مَا كَانَ يَصْنَعُ فِرْعَوْنُ وَقَوْمُهُ وَمَا كَانُوا يَعْرِشُونَ <span class="n">﴿١٣٧﴾</span>﴾<sup class="nmark" data-note="nn12-1">١</sup>
+</div>
+<aside class="note note--doc" id="nn12-1"><span class="nt" data-i="١">توثيق</span> سورة الأعراف، الآيتان ١٣٦–١٣٧.</aside>
+
+<h4 style="color:var(--sc);margin:26px 0 0;font-size:1.05rem">الفوائد</h4>
+<ol class="fawaid">
+
+<li class="faida" id="fn12-1" data-sub="١ — سنة وراثة الأرض">
+<span class="fnum">الفائدة الأولى:</span> أن مما يحبه الله ويقدّره سبحانه وراثةَ المؤمنين أرضَ الكافرين، ووراثةَ المستضعفين أرضَ الظالمين، كما قال سبحانه للأنبياء <span class="inq">﴿وَلَنُسْكِنَنَّكُمُ الْأَرْضَ مِن بَعْدِهِمْ﴾</span>، وقال سبحانه <span class="inq">﴿وَلَقَدْ كَتَبْنَا فِي الزَّبُورِ مِن بَعْدِ الذِّكْرِ أَنَّ الْأَرْضَ يَرِثُهَا عِبَادِيَ الصَّالِحُونَ﴾</span><sup class="nmark" data-note="nn12-2">٢</sup>، وقال عن بني إسرائيل <span class="inq">﴿وَنَجْعَلَهُمْ أَئِمَّةً وَنَجْعَلَهُمُ الْوَارِثِينَ﴾</span>. وها قد تحقق وعد الله لهم وظهرت آياته ومضت سنته، فأهلك آل فرعون وأورث المستضعفين الأرض. وموضوع وراثة الأرض مهم جدًّا في فهم سنن الله تعالى، وقد ذكره الله في كتابه كثيرًا، فليتأمله المصلحون وليتفكروا في مواضعه من الكتاب العزيز، وكذلك في سنة أخرى مقاربة لوراثة الأرض وهي <b>سنة الاستبدال</b><sup class="nmark" data-note="nn12-3">٣</sup>.
+<aside class="note note--doc" id="nn12-2"><span class="nt" data-i="٢">توثيق</span> إبراهيم ١٤، والأنبياء ١٠٥.</aside>
+<aside class="note note--term" id="nn12-3"><span class="nt" data-i="٣">تعريف مصطلح</span> <em>سنة الاستبدال:</em> أن يستبدل الله بالقاعدين المقصّرين قومًا آخرين يقومون بالأمر، كما في ﴿وَإِن تَتَوَلَّوْا يَسْتَبْدِلْ قَوْمًا غَيْرَكُمْ﴾ (محمد ٣٨).</aside>
+</li>
+
+<li class="faida" id="fn12-2" data-sub="٢ — صفات الوارثين وصفات المستبدَلين">
+<span class="fnum">الفائدة الثانية:</span> إذا عَلِم المؤمنون سنة الله في توريث الأرض عبادَه الصالحين، فإن عليهم أن يتحلّوا بالصفات التي يذكرها الله عن الوارثين وعمّن يأتي بهم خلفًا عن المستبدَلين، كي تجري عليهم هذه السنة؛ ومن أهمها: <b>التوكل على الله، الصبر، التقوى، العلم، الاستمساك بالوحي، محبة الله تعالى، الذلة للمؤمنين، العزة على الكافرين، الجهاد في سبيل الله، عدم الخوف من الخلق في ذات الله، والصلاح</b>. وكذلك عليهم أن يجتنبوا الصفات التي ذكرها الله في المستبدَلين، ومن أهمها: <b>ترك نصرة الإسلام، والقعود عن الجهاد في سبيل الله حال وجوبه، والبخل وترك الإنفاق في سبيل الله، وموالاة الكفار والمسارعة فيهم</b>.
+<p>ومن ثمرات الإيمان بهذه السنن أن يعلم المصلحون الثابتون أن معهم من الله سلطانًا نصيرًا، فليبذلوا الأسباب وليصدقوا مع الله تعالى، فإن الشأن كل الشأن في القدر والسنن. وتأمّل معي ما ذكره ابن عاشور<sup class="nmark" data-note="nn12-4">٤</sup> في تفسير قوله سبحانه <span class="inq">﴿وَعَدَ اللَّهُ الَّذِينَ آمَنُوا مِنكُمْ وَعَمِلُوا الصَّالِحَاتِ لَيَسْتَخْلِفَنَّهُمْ فِي الْأَرْضِ كَمَا اسْتَخْلَفَ الَّذِينَ مِن قَبْلِهِمْ﴾</span><sup class="nmark" data-note="nn12-5">٥</sup>، قال رحمه الله:</p>
+<span class="qsay">«ففي الوعد بالاستخلاف والتمكين وتبديل الخوف أمنًا إيماءٌ إلى التهيؤ لتحصيل أسبابه، مع ضمان التوفيق لهم والنجاح إن هم أخذوا في ذلك، وأن مِلاك ذلك هو طاعة الله والرسول عليه الصلاة والسلام».</span>
+<p>وهذا كلام شريف لمن يتأمله.</p>
+<aside class="note note--alam" id="nn12-4"><span class="nt" data-i="٤">ترجمة عَلَم</span> <em>محمد الطاهر ابن عاشور</em> (ت ١٣٩٣هـ): عالم تونسي، صاحب تفسير «التحرير والتنوير» وكتاب «مقاصد الشريعة الإسلامية».</aside>
+<aside class="note note--doc" id="nn12-5"><span class="nt" data-i="٥">توثيق</span> سورة النور، الآية ٥٥.</aside>
+</li>
+
+<li class="faida" id="fn12-3" data-sub="٣ — الصبر سبب التوريث">
+<span class="fnum">الفائدة الثالثة:</span> أن الصفة المركزية التي جعلها الله سببًا لتوريث بني إسرائيل الأرضَ هي <b>الصبر</b>، فقال <span class="inq">﴿وَتَمَّتْ كَلِمَتُ رَبِّكَ الْحُسْنَىٰ عَلَىٰ بَنِي إِسْرَائِيلَ بِمَا صَبَرُوا﴾</span>.
+</li>
+</ol>
+
+<div class="quiz" data-section="n12"></div>
+
+<div class="summary"><h4>خلاصة المقطع الثاني عشر</h4><span class="tag">هذه الخلاصة إضافة تنظيمية من إعداد الملف، وليست من نص الكتاب.</span><ul><li>وراثة الأرض سنة إلهية مذكورة في مواضع كثيرة، وإلى جوارها سنة الاستبدال.</li><li>صفات الوارثين: التوكل والصبر والتقوى والعلم والاستمساك بالوحي والمحبة والجهاد وعدم خشية الخلق.</li><li>صفات المستبدَلين: ترك النصرة، والقعود عن الجهاد حال وجوبه، والبخل، وموالاة الكفار.</li><li>ابن عاشور: الوعد بالاستخلاف إيماءٌ إلى التهيؤ لأسبابه، ومِلاكه طاعة الله ورسوله.</li><li>الصفة المركزية التي علّق الله عليها التوريث هي الصبر ﴿بِمَا صَبَرُوا﴾.</li></ul></div>
+
+</article>
+
+<article class="maqta" id="n13" style="--sc:#43458f" data-toc="المقطع ١٣ — المائدة">
+<div class="maqta-head"><span class="num">المقطع الثالث عشر</span><h3>من أنوار قصة موسى عليه السلام</h3><p class="surah">آيات من سورة المائدة</p></div>
+
+<div class="ayat">
+<span class="bsm">أعوذ بالله من الشيطان الرجيم — بسم الله الرحمن الرحيم</span>
+﴿وَإِذْ قَالَ مُوسَىٰ لِقَوْمِهِ يَا قَوْمِ اذْكُرُوا نِعْمَةَ اللَّهِ عَلَيْكُمْ إِذْ جَعَلَ فِيكُمْ أَنبِيَاءَ وَجَعَلَكُم مُّلُوكًا وَآتَاكُم مَّا لَمْ يُؤْتِ أَحَدًا مِّنَ الْعَالَمِينَ <span class="n">﴿٢٠﴾</span> يَا قَوْمِ ادْخُلُوا الْأَرْضَ الْمُقَدَّسَةَ الَّتِي كَتَبَ اللَّهُ لَكُمْ وَلَا تَرْتَدُّوا عَلَىٰ أَدْبَارِكُمْ فَتَنقَلِبُوا خَاسِرِينَ <span class="n">﴿٢١﴾</span> قَالُوا يَا مُوسَىٰ إِنَّ فِيهَا قَوْمًا جَبَّارِينَ وَإِنَّا لَن نَّدْخُلَهَا حَتَّىٰ يَخْرُجُوا مِنْهَا فَإِن يَخْرُجُوا مِنْهَا فَإِنَّا دَاخِلُونَ <span class="n">﴿٢٢﴾</span> قَالَ رَجُلَانِ مِنَ الَّذِينَ يَخَافُونَ أَنْعَمَ اللَّهُ عَلَيْهِمَا ادْخُلُوا عَلَيْهِمُ الْبَابَ فَإِذَا دَخَلْتُمُوهُ فَإِنَّكُمْ غَالِبُونَ ۚ وَعَلَى اللَّهِ فَتَوَكَّلُوا إِن كُنتُم مُّؤْمِنِينَ <span class="n">﴿٢٣﴾</span> قَالُوا يَا مُوسَىٰ إِنَّا لَن نَّدْخُلَهَا أَبَدًا مَّا دَامُوا فِيهَا ۖ فَاذْهَبْ أَنتَ وَرَبُّكَ فَقَاتِلَا إِنَّا هَاهُنَا قَاعِدُونَ <span class="n">﴿٢٤﴾</span> قَالَ رَبِّ إِنِّي لَا أَمْلِكُ إِلَّا نَفْسِي وَأَخِي ۖ فَافْرُقْ بَيْنَنَا وَبَيْنَ الْقَوْمِ الْفَاسِقِينَ <span class="n">﴿٢٥﴾</span>﴾<sup class="nmark" data-note="nn13-1">١</sup>
+</div>
+<aside class="note note--doc" id="nn13-1"><span class="nt" data-i="١">توثيق</span> سورة المائدة، الآيات ٢٠–٢٥.</aside>
+
+<h4 style="color:var(--sc);margin:26px 0 0;font-size:1.05rem">الفوائد</h4>
+<ol class="fawaid">
+
+<li class="faida" id="fn13-1" data-sub="١ — التذكير بالنعمة يورث الشكر والتواضع">
+<span class="fnum">الفائدة الأولى:</span> تكرر في قصة موسى عليه السلام تذكيرُه قومَه بنعمة الله عليهم، وخاصة نعمة النجاة من فرعون، وقال الله له <span class="inq">﴿وَذَكِّرْهُم بِأَيَّامِ اللَّهِ﴾</span><sup class="nmark" data-note="nn13-2">٢</sup>. وهذا المعنى مهم للمصلح في مسيرته، لأنها تجعله دائم الشكر دائم التواضع؛ وذلك أن النصر والفتح والغنيمة قد تؤدي إلى البطر والغرور، فإذا تذكّر المؤمن أيام الفقر والذل والقلة، وأن الله سبحانه إنما هو الذي كثّرهم وقوّاهم، عاد إليه رشده وخضع وتواضع.
+<p>ومما ورد في ذلك في غير قصة موسى عليه السلام ما جاء في سورة الأنفال، إذ ذكّر الله المؤمنين بعد أن انتصروا في بدر بحالهم السابق، فقال لهم سبحانه <span class="inq">﴿وَاذْكُرُوا إِذْ أَنتُمْ قَلِيلٌ مُّسْتَضْعَفُونَ فِي الْأَرْضِ تَخَافُونَ أَن يَتَخَطَّفَكُمُ النَّاسُ فَآوَاكُمْ وَأَيَّدَكُم بِنَصْرِهِ وَرَزَقَكُم مِّنَ الطَّيِّبَاتِ لَعَلَّكُمْ تَشْكُرُونَ﴾</span><sup class="nmark" data-note="nn13-3">٣</sup>.</p>
+<aside class="note note--doc" id="nn13-2"><span class="nt" data-i="٢">توثيق</span> سورة إبراهيم، الآية ٥.</aside>
+<aside class="note note--doc" id="nn13-3"><span class="nt" data-i="٣">توثيق</span> سورة الأنفال، الآية ٢٦.</aside>
+</li>
+
+<li class="faida" id="fn13-2" data-sub="٢ — شكر النعمة بالعمل للدين">
+<span class="fnum">الفائدة الثانية:</span> أن من صور شكر الله على نعمه العملَ لدينه والجهادَ في سبيله؛ وذلك أن الأمر بدخول الأرض المقدسة إنما جاء بعد التذكير بالنعمة، كما قال ابن عاشور رحمه الله في تفسير الآية:
+<span class="qsay">«قدّم موسى عليه السلام أمرَه لبني إسرائيل بحرب الكنعانيين بتذكيرهم بنعمة الله عليهم، ليهيّئ نفوسهم إلى قبول هذا الأمر العظيم عليهم، وليوثّقهم بالنصر إن قاتلوا أعداءهم».</span>
+</li>
+
+<li class="faida" id="fn13-3" data-sub="٣ — الوعد الإلهي لا يُغني عن بذل السبب">
+<span class="fnum">الفائدة الثالثة:</span> أن الله سبحانه وإن كان قد كتب النصر للمسلمين في معركة أو مرحلة، فإن سنته تقتضي أن يبذل المؤمنون الأسباب في تحقيق هذا النصر، ولا يُنتظر الوعد الإلهي دون عمل؛ فهنا قال موسى عليه السلام لقومه <span class="inq">﴿ادْخُلُوا الْأَرْضَ الْمُقَدَّسَةَ الَّتِي كَتَبَ اللَّهُ لَكُمْ﴾</span>، فأخبرهم أنها مكتوبة لهم، ولكن لا بد أن يبذلوا السبب ليتحقق الوعد. ولكنهم لفسادهم ولجبنهم وخَوَرهم أرادوا أن يتحقق الوعد دون بذل وعمل، فقالوا <span class="inq">﴿فَإِن يَخْرُجُوا مِنْهَا فَإِنَّا دَاخِلُونَ﴾</span>، وسنة الله تقتضي أنهم لن يَخرجوا منها هكذا دون سبب وبذل، والله المستعان.
+</li>
+
+<li class="faida" id="fn13-4" data-sub="٤ — خوف الله أصل الثبات">
+<span class="fnum">الفائدة الرابعة:</span> في قوله سبحانه <span class="inq">﴿قَالَ رَجُلَانِ مِنَ الَّذِينَ يَخَافُونَ أَنْعَمَ اللَّهُ عَلَيْهِمَا﴾</span> فائدة، وهي أن الخوف من الله تعالى من أعظم أسباب الثبات وقت الشدائد والأزمات؛ فمن أراد تربية الشباب على الثبات عند الأزمات فليغرس فيهم مخافة الله تعالى، فالخائف من الله يصغر عنده معنى الخوف من غيره، كما قال سبحانه <span class="inq">﴿فَلَا تَخَافُوهُمْ وَخَافُونِ إِن كُنتُم مُّؤْمِنِينَ﴾</span><sup class="nmark" data-note="nn13-4">٤</sup>. وبعكس ذلك، كلما قلّ في القلب الخوف من الله زاد الخوف من غيره.
+<aside class="note note--doc" id="nn13-4"><span class="nt" data-i="٤">توثيق</span> سورة آل عمران، الآية ١٧٥.</aside>
+</li>
+
+<li class="faida" id="fn13-5" data-sub="٥ — مسؤولية النصيحة مع وجود الكبير">
+<span class="fnum">الفائدة الخامسة:</span> أهمية تحمّل مسؤولية النصيحة وتحريض المؤمنين؛ فهذان الرجلان الداعيان قومَهما قاما بذلك مع وجود نبي الله موسى عليه السلام. وهذا كفعل بعض الصحابة في زمن النبي صلى الله عليه وسلم، مثل مبادرة أبي بكر بدعوة عثمان وعبد الرحمن بن عوف وغيرهما إلى الإسلام في بداية النبوة فاستجابوا له.
+</li>
+
+<li class="faida" id="fn13-6" data-sub="٦ — التوكل عند مواجهة الأعداء">
+<span class="fnum">الفائدة السادسة:</span> في قوله سبحانه <span class="inq">﴿وَعَلَى اللَّهِ فَتَوَكَّلُوا إِن كُنتُم مُّؤْمِنِينَ﴾</span> فائدة، وهي أن التوكل على الله من أعظم الأعمال التي ينبغي استحضارها عند مواجهة الأعداء، فإن للتوكل عليه سبحانه مقاماتٍ متنوعة، من أعظمها التوكل عليه في جهاد أعدائه ورفع كلمته.
+</li>
+
+<li class="faida" id="fn13-7" data-sub="٧ — التهاون يؤخّر النصر أزمنة مديدة">
+<span class="fnum">الفائدة السابعة:</span> في قوله تعالى <span class="inq">﴿فَإِنَّهَا مُحَرَّمَةٌ عَلَيْهِمْ ۛ أَرْبَعِينَ سَنَةً﴾</span><sup class="nmark" data-note="nn13-5">٥</sup> فائدة، وهي أنه حين يكون النصر على الأعداء ممكنًا وسببُ تحقيقه سهلًا، وحين يكون طريقه واضحًا، ثم يحصل التهاون والتأخّر من المؤمنين في السعي إليه، فقد تكون عقوبتهم تأخيرَ النصر أزمنةً مديدة، فيَبعُد ما كان قريبًا، ويُؤجَّل ما كان حاضرًا.
+<p>ولذلك فليتنبه العاملون في مختلف الميادين الإصلاحية ممن يُلهيهم الشقاق والنزاع والخصومات، مع كون طريق الإصلاح واضحًا والحاجةِ إلى التركيز عليه مُلِحّة، ولكنهم ينشغلون ببعضهم لا بالأعداء، فليتنبهوا وليخشوا أن يصيبهم ما أصاب بني إسرائيل حين منعهم الله من الوصول إلى الثمرة وقد كانت في متناول أيديهم، فصارت أعسر شيء عليهم وأبعده، وصاروا يتيهون في الأرض على غير هدى بعد أن كانوا على وشك دخول الباب، والله المستعان.</p>
+<p>ومما يتعلق بذلك من الفوائد أن النصر قد يتأخر ولو وُجد الصادقون والناصحون، إذا كانت هناك حالة عامة من الانحراف والفساد بين العاملين؛ إذ إن وجود الناصحَين ووجودَ موسى عليه السلام معهم لم يتم به النصر، بل عاقب الله قومَهم لتأخرهم وتراجعهم وفسقهم.</p>
+<aside class="note note--doc" id="nn13-5"><span class="nt" data-i="٥">توثيق</span> سورة المائدة، الآية ٢٦ — وهي الآية التالية مباشرةً للمقطع المتلوّ، وقد استشهد بها المؤلف لبيان عاقبة تخلّفهم.</aside>
+</li>
+</ol>
+
+<div class="quiz" data-section="n13"></div>
+
+<div class="summary"><h4>خلاصة المقطع الثالث عشر</h4><span class="tag">هذه الخلاصة إضافة تنظيمية من إعداد الملف، وليست من نص الكتاب.</span><ul><li>التذكير بالنعمة يعصم من البطر بعد النصر — ونظيره تذكير المؤمنين بعد بدر في سورة الأنفال.</li><li>شكر النعمة يكون بالعمل للدين؛ ولذلك سبق التذكيرُ بالنعمة الأمرَ بدخول الأرض المقدسة (ابن عاشور).</li><li>«كتب الله لكم» لا تعني تعطيل السبب؛ وطلبُهم تحقّق الوعد بلا بذل هو عين خذلانهم.</li><li>خوف الله أصل الثبات: من خافه صغُر عنده الخوف من غيره.</li><li>النصيحة مسؤولية لا تسقط بوجود الأكبر — كما بادر الرجلان مع وجود موسى، وكما بادر أبو بكر بالدعوة.</li><li>التهاون عند سهولة النصر قد يُعاقب بتأخيره أزمنة مديدة؛ والانشغال بالخصومات الداخلية هو الخطر عينه.</li></ul></div>
+
+</article>
+
+<article class="maqta" id="n14" style="--sc:#26557f" data-toc="المقطع ١٤ — الأعراف">
+<div class="maqta-head"><span class="num">المقطع الرابع عشر</span><h3>من أنوار قصة موسى عليه السلام</h3><p class="surah">آيات من سورة الأعراف</p></div>
+
+<div class="ayat">
+<span class="bsm">أعوذ بالله من الشيطان الرجيم — بسم الله الرحمن الرحيم</span>
+﴿وَوَاعَدْنَا مُوسَىٰ ثَلَاثِينَ لَيْلَةً وَأَتْمَمْنَاهَا بِعَشْرٍ فَتَمَّ مِيقَاتُ رَبِّهِ أَرْبَعِينَ لَيْلَةً ۚ وَقَالَ مُوسَىٰ لِأَخِيهِ هَارُونَ اخْلُفْنِي فِي قَوْمِي وَأَصْلِحْ وَلَا تَتَّبِعْ سَبِيلَ الْمُفْسِدِينَ <span class="n">﴿١٤٢﴾</span> وَلَمَّا جَاءَ مُوسَىٰ لِمِيقَاتِنَا وَكَلَّمَهُ رَبُّهُ قَالَ رَبِّ أَرِنِي أَنظُرْ إِلَيْكَ ۚ قَالَ لَن تَرَانِي وَلَٰكِنِ انظُرْ إِلَى الْجَبَلِ فَإِنِ اسْتَقَرَّ مَكَانَهُ فَسَوْفَ تَرَانِي ۚ فَلَمَّا تَجَلَّىٰ رَبُّهُ لِلْجَبَلِ جَعَلَهُ دَكًّا وَخَرَّ مُوسَىٰ صَعِقًا ۚ فَلَمَّا أَفَاقَ قَالَ سُبْحَانَكَ تُبْتُ إِلَيْكَ وَأَنَا أَوَّلُ الْمُؤْمِنِينَ <span class="n">﴿١٤٣﴾</span> قَالَ يَا مُوسَىٰ إِنِّي اصْطَفَيْتُكَ عَلَى النَّاسِ بِرِسَالَاتِي وَبِكَلَامِي فَخُذْ مَا آتَيْتُكَ وَكُن مِّنَ الشَّاكِرِينَ <span class="n">﴿١٤٤﴾</span>﴾<sup class="nmark" data-note="nn14-1">١</sup>
+</div>
+<aside class="note note--doc" id="nn14-1"><span class="nt" data-i="١">توثيق</span> سورة الأعراف، الآيات ١٤٢–١٤٤. وقد ورد رقم هذا المقطع في التسجيل مبتورًا («المقطع الـ١٤بع عشر»)، والصواب: المقطع الرابع عشر.</aside>
+
+<h4 style="color:var(--sc);margin:26px 0 0;font-size:1.05rem">الفوائد</h4>
+<ol class="fawaid">
+
+<li class="faida" id="fn14-1" data-sub="١ — الأربعون ليلة تهيئة للمناجاة">
+<span class="fnum">الفائدة الأولى:</span> الموعد العظيم بين الله تعالى وبين موسى عليه السلام كان لا بد له من مقدمات وتهيئة، فواعده الله تبارك وتعالى أربعين ليلة كان يتهيأ فيها بالتعبد والصيام استعدادًا لمناجاة الله تعالى. وقيل إن المناجاة كانت في العشر الزائدة على الثلاثين، وقيل بل بعد الأربعين، وقيل غير ذلك. قال الشيخ ابن سعدي في تفسير الآية: فواعد موسى ثلاثين ليلة وأتمّها بعشر فصارت أربعين ليلة، ليستعدّ موسى ويتهيّأ<sup class="nmark" data-note="nn14-2">٢</sup>.
+<aside class="note note--fix" id="nn14-2"><span class="nt" data-i="٢">تصحيح تفريغ</span> انقطع نقلُ كلام السعدي في التسجيل بعد «ويتهيّأ» بكلمات غير واضحة، فأُثبت إلى آخر ما وُضح منه ولم يُكمَل بما لم يُسمع.</aside>
+</li>
+
+<li class="faida" id="fn14-2" data-sub="٢ — فترات الانقطاع للتعبد">
+<span class="fnum">الفائدة الثانية:</span> المصلح يحتاج إلى فترات انقطاع للتعبد يتزود فيها ويتفكر ويتأمل، وهذه من الأمور المهمة جدًّا، ولذلك كان النبي صلى الله عليه وسلم يعتزل كل عام في العشر الأواخر من رمضان بالاعتكاف وحده لينقطع للعبادة.
+</li>
+
+<li class="faida" id="fn14-3" data-sub="٣ — استخلاف من يقوم بشأن الأتباع">
+<span class="fnum">الفائدة الثالثة:</span> لا ينبغي للمصلح إذا أراد أن يتفرغ لبعض الأعمال التعبدية أو العلمية أن يُضيّع من وراءه من الطلاب والمدعوين، وإنما يولّي عليهم من يقوم بشأنهم؛ فهذا موسى عليه السلام يستخلف هارون عليه السلام ويوصيه على قومه أن يستمر في طريق الإصلاح <span class="inq">﴿اخْلُفْنِي فِي قَوْمِي وَأَصْلِحْ﴾</span> صلى الله عليهما وسلم. وهذا يدل في الوقت ذاته على حرص موسى الشديد على قومه، وهكذا ينبغي أن يكون المصلح.
+</li>
+
+<li class="faida" id="fn14-4" data-sub="٤ — الاستفادة ممن هو أعلم">
+<span class="fnum">الفائدة الرابعة:</span> أن المصلح وإن بلغ من العلم ما بلغ فإنه يحتاج إلى الاستفادة ممن هو أعلم منه، وهذا من موقف هارون عليه السلام مع أخيه موسى عليه السلام.
+</li>
+
+<li class="faida" id="fn14-5" data-sub="٥ — الازدياد من معرفة الله">
+<span class="fnum">الفائدة الخامسة:</span> أهمية الازدياد من التعرف على الله والعلم به، وأهمية ذلك للمؤمن وإن كان قد بلغ ما بلغ من العلم والمعرفة والدعوة والإصلاح، فهذا الموضوع هو المبتدأ والمنتهى. وقد سلكه قبل ذلك إبراهيم عليه السلام حين قال <span class="inq">﴿رَبِّ أَرِنِي كَيْفَ تُحْيِي الْمَوْتَىٰ﴾</span><sup class="nmark" data-note="nn14-3">٣</sup>، وكذلك في هذه الآيات مع موسى عليه السلام حين رأى ما رأى ازداد إيمانًا وقال <span class="inq">﴿سُبْحَانَكَ تُبْتُ إِلَيْكَ وَأَنَا أَوَّلُ الْمُؤْمِنِينَ﴾</span>.
+<aside class="note note--doc" id="nn14-3"><span class="nt" data-i="٣">توثيق</span> سورة البقرة، الآية ٢٦٠.</aside>
+</li>
+
+<li class="faida" id="fn14-6" data-sub="٦ — المفاضلة بمصدر الإرشاد الإلهي">
+<span class="fnum">الفائدة السادسة:</span> في قوله سبحانه وتعالى <span class="inq">﴿إِنِّي اصْطَفَيْتُكَ عَلَى النَّاسِ بِرِسَالَاتِي وَبِكَلَامِي﴾</span> بيانٌ بأن من أعظم ما ينبغي أن يُفاضَل به الخلق هو مدى امتلاكهم لمصدر الإرشاد الإلهي ومدى العلم به؛ فالله فضّل موسى عليه السلام واصطفاه بكونه كلّمه وعلّمه وأرسله. ومن هنا ينبغي أن يكون الشرف لأتباع الأنبياء بقدر اتّباعهم للأنبياء في العبادة — «إن أحدكم إذا صلى يناجي ربه»<sup class="nmark" data-note="nn14-4">٤</sup> — وفي الرسالة — «العلماء ورثة الأنبياء»<sup class="nmark" data-note="nn14-5">٥</sup>.
+<aside class="note note--doc" id="nn14-4"><span class="nt" data-i="٤">تخريج</span> حديث «إن أحدكم إذا كان في الصلاة فإنه يناجي ربه»: أخرجه البخاري ومسلم من حديث أنس رضي الله عنه.</aside>
+<aside class="note note--doc" id="nn14-5"><span class="nt" data-i="٥">تخريج</span> «إن العلماء ورثة الأنبياء»: جزء من حديث أبي الدرداء رضي الله عنه، أخرجه أبو داود والترمذي وابن ماجه.</aside>
+</li>
+
+<li class="faida" id="fn14-7" data-sub="٧ — أعظم النعم نعمة الهداية والعلم">
+<span class="fnum">الفائدة السابعة:</span> في قوله سبحانه <span class="inq">﴿فَخُذْ مَا آتَيْتُكَ وَكُن مِّنَ الشَّاكِرِينَ﴾</span> بيانٌ بأن النعم لا تنحصر في الأشياء المادية، بل إن من أعظم النعم التي تستوجب الشكر نعمةَ الهداية ونعمةَ العلم بالله وبشريعته.
+</li>
+</ol>
+
+<div class="quiz" data-section="n14"></div>
+
+<div class="summary"><h4>خلاصة المقطع الرابع عشر</h4><span class="tag">هذه الخلاصة إضافة تنظيمية من إعداد الملف، وليست من نص الكتاب.</span><ul><li>الأربعون ليلة كانت تهيئة بالتعبد والصيام لمقام المناجاة.</li><li>الانقطاع الدوري للتعبد سنة نبوية — والاعتكاف في العشر الأواخر نموذجه.</li><li>التفرغ لا يعني تضييع الأتباع، بل استخلاف من يقوم بشأنهم ﴿اخْلُفْنِي فِي قَوْمِي وَأَصْلِحْ﴾.</li><li>طلب الازدياد من معرفة الله لا ينتهي، وقد سبق إليه إبراهيم ﴿رَبِّ أَرِنِي كَيْفَ تُحْيِي الْمَوْتَىٰ﴾.</li><li>المفاضلة الحقيقية بمصدر الإرشاد الإلهي والعلم به، ونعمة الهداية من أعظم ما يُشكر.</li></ul></div>
+
+</article>
+
+<article class="maqta" id="n15" style="--sc:#3a4f96" data-toc="المقطع ١٥ — الكهف">
+<div class="maqta-head"><span class="num">المقطع الخامس عشر</span><h3>من أنوار قصة موسى عليه السلام</h3><p class="surah">آيات من سورة الكهف</p></div>
+
+<div class="ayat">
+<span class="bsm">أعوذ بالله من الشيطان الرجيم — بسم الله الرحمن الرحيم</span>
+﴿وَإِذْ قَالَ مُوسَىٰ لِفَتَاهُ لَا أَبْرَحُ حَتَّىٰ أَبْلُغَ مَجْمَعَ الْبَحْرَيْنِ أَوْ أَمْضِيَ حُقُبًا <span class="n">﴿٦٠﴾</span> فَلَمَّا بَلَغَا مَجْمَعَ بَيْنِهِمَا نَسِيَا حُوتَهُمَا فَاتَّخَذَ سَبِيلَهُ فِي الْبَحْرِ سَرَبًا <span class="n">﴿٦١﴾</span> فَلَمَّا جَاوَزَا قَالَ لِفَتَاهُ آتِنَا غَدَاءَنَا لَقَدْ لَقِينَا مِن سَفَرِنَا هَٰذَا نَصَبًا <span class="n">﴿٦٢﴾</span> قَالَ أَرَأَيْتَ إِذْ أَوَيْنَا إِلَى الصَّخْرَةِ فَإِنِّي نَسِيتُ الْحُوتَ وَمَا أَنسَانِيهُ إِلَّا الشَّيْطَانُ أَنْ أَذْكُرَهُ ۚ وَاتَّخَذَ سَبِيلَهُ فِي الْبَحْرِ عَجَبًا <span class="n">﴿٦٣﴾</span> قَالَ ذَٰلِكَ مَا كُنَّا نَبْغِ ۚ فَارْتَدَّا عَلَىٰ آثَارِهِمَا قَصَصًا <span class="n">﴿٦٤﴾</span> فَوَجَدَا عَبْدًا مِّنْ عِبَادِنَا آتَيْنَاهُ رَحْمَةً مِّنْ عِندِنَا وَعَلَّمْنَاهُ مِن لَّدُنَّا عِلْمًا <span class="n">﴿٦٥﴾</span> قَالَ لَهُ مُوسَىٰ هَلْ أَتَّبِعُكَ عَلَىٰ أَن تُعَلِّمَنِ مِمَّا عُلِّمْتَ رُشْدًا <span class="n">﴿٦٦﴾</span> قَالَ إِنَّكَ لَن تَسْتَطِيعَ مَعِيَ صَبْرًا <span class="n">﴿٦٧﴾</span> وَكَيْفَ تَصْبِرُ عَلَىٰ مَا لَمْ تُحِطْ بِهِ خُبْرًا <span class="n">﴿٦٨﴾</span> قَالَ سَتَجِدُنِي إِن شَاءَ اللَّهُ صَابِرًا وَلَا أَعْصِي لَكَ أَمْرًا <span class="n">﴿٦٩﴾</span> قَالَ فَإِنِ اتَّبَعْتَنِي فَلَا تَسْأَلْنِي عَن شَيْءٍ حَتَّىٰ أُحْدِثَ لَكَ مِنْهُ ذِكْرًا <span class="n">﴿٧٠﴾</span>﴾<sup class="nmark" data-note="nn15-1">١</sup>
+</div>
+<aside class="note note--doc" id="nn15-1"><span class="nt" data-i="١">توثيق</span> سورة الكهف، الآيات ٦٠–٧٠.</aside>
+
+<h4 style="color:var(--sc);margin:26px 0 0;font-size:1.05rem">الفوائد</h4>
+<ol class="fawaid">
+
+<li class="faida" id="fn15-1" data-sub="١ — طلب الازدياد من العلم">
+<span class="fnum">الفائدة الأولى:</span> مهما بلغ الإنسان من العلم فهو يحتاج إلى الازدياد، ويجب أن يظل متطلبًا للازدياد؛ وذلك أن موسى عليه السلام قد رحل — وهو كليم الله — إلى مجمع البحرين لا لغاية إلا ليتعلم من الخضر<sup class="nmark" data-note="nn15-2">٢</sup>، وقال له <span class="inq">﴿هَلْ أَتَّبِعُكَ عَلَىٰ أَن تُعَلِّمَنِ﴾</span>.
+<aside class="note note--alam" id="nn15-2"><span class="nt" data-i="٢">ترجمة عَلَم</span> <em>الخضر:</em> العبد الصالح الذي لقيه موسى، ولم يُسمَّ في القرآن وإنما ورد اسمه في الصحيحين. وقد آتاه الله علمًا خاصًّا من لدنه غير علم الشريعة الذي عند موسى.</aside>
+</li>
+
+<li class="faida" id="fn15-2" data-sub="٢ — تواضع الأفضل للمفضول">
+<span class="fnum">الفائدة الثانية:</span> أهمية محافظة المصلح على خُلق التواضع؛ وذلك أن موسى عليه السلام أفضل من الخضر، فهو من أولي العزم من الرسل، وكلّمه الله تكليمًا، ولديه من العلم بالتوراة وما أنزل الله فيها ما ليس عند الخضر، ومع ذلك فإنه تواضع كل هذا التواضع، ورحل وتعب ونصب ليلقى الخضر على سبيل التعلم منه، وقَبِل بشرطه عليه السلام واتبعه. وهذا في غاية العجب وغاية الكمال، وهذا ما ينبغي أن يتذكره المصلح كلما عظُمت نفسه ولاحت بوادر العجب لديه.
+</li>
+
+<li class="faida" id="fn15-3" data-sub="٣ — عمل الشيطان في الدوائر القريبة">
+<span class="fnum">الفائدة الثالثة:</span> الشيطان له عمل خاص في إفشال خطوات المصلحين، وأحيانًا يكون ذلك بالعمل على الدوائر القريبة منهم؛ وذلك أنه أنسى فتى موسى أن ينبهه على فقدان الحوت، مع أن ذلك الحدث لا يُتصور نسيانه في العادة، فإنه هو العلامة الموقّتة لهما أنه إذا فُقد الحوت فإن مطلوبهما ثَمَّ، خاصة وأن كيفية فقدان الحوت كانت عجيبة جدًّا كما في القصة الواردة في الصحيحين<sup class="nmark" data-note="nn15-3">٣</sup>. ومع كل ذلك فقد نسي الفتى أن ينبه موسى عليه السلام، وما ذاك إلا من الشيطان ليعطّل مطلب موسى عليه السلام <span class="inq">﴿وَمَا أَنسَانِيهُ إِلَّا الشَّيْطَانُ أَنْ أَذْكُرَهُ﴾</span>.
+<p>وهذا يذكّرنا بما فعله الشيطان مع الفتى الذي نجا من السجن والذي أوصاه يوسف عليه السلام بأن يذكره عند الملك <span class="inq">﴿فَأَنسَاهُ الشَّيْطَانُ ذِكْرَ رَبِّهِ﴾</span><sup class="nmark" data-note="nn15-4">٤</sup>، وذلك من كيد الشيطان ليبقى يوسف في السجن.</p>
+<aside class="note note--doc" id="nn15-3"><span class="nt" data-i="٣">تخريج</span> قصة موسى والخضر مطوّلة عن ابن عباس عن أُبيّ بن كعب رضي الله عنهم: متفق عليها.</aside>
+<aside class="note note--doc" id="nn15-4"><span class="nt" data-i="٤">توثيق</span> سورة يوسف، الآية ٤٢.</aside>
+</li>
+
+<li class="faida" id="fn15-4" data-sub="٤ — عدم الالتفات للعوائق الجزئية">
+<span class="fnum">الفائدة الرابعة:</span> أن طالب الغايات العظيمة لا ينبغي أن يلتفت إلى المشتتات والعوائق الجزئية؛ فموسى عليه السلام لم يقف عند نسيان فتاه، ولا على ما تسبب به من فوات ما فات من الوقت، ولا على الجهد الزائد، بل التفت مباشرة إلى الغاية وقال <span class="inq">﴿ذَٰلِكَ مَا كُنَّا نَبْغِ﴾</span>.
+</li>
+
+<li class="faida" id="fn15-5" data-sub="٥ — شرف العلم وفضل الرحلة فيه">
+<span class="fnum">الفائدة الخامسة:</span> شرف العلم وفضل الرحلة فيه؛ فإن ما فعله موسى عليه السلام يمكن أن يوصف بأنه رحلة في طلب العلم، ولذلك فقد أخرج الإمام البخاري قصة موسى والخضر في كتاب العلم في ثلاثة مواضع منه، وبوّب على أحدها بقوله: «باب الخروج في طلب العلم».
+</li>
+
+<li class="faida" id="fn15-6" data-sub="٦ — بقاء الهمة والعزيمة عالية">
+<span class="fnum">الفائدة السادسة:</span> أهمية محافظة المصلح على روح العزيمة، وأن تبقى همته عالية، وألّا تُثقله الأحداث والسنون فتهدّ عزمته وهمته. وهذا مستفاد من همة موسى عليه السلام في قوله لفتاه <span class="inq">﴿لَا أَبْرَحُ حَتَّىٰ أَبْلُغَ مَجْمَعَ الْبَحْرَيْنِ أَوْ أَمْضِيَ حُقُبًا﴾</span>. قال ابن سعدي رحمه الله:
+<span class="qsay">«أي: لا أزال مسافرًا وإن طالت عليّ الشُّقّة ولحقتني المشقة، حتى أصل إلى مجمع البحرين، وهو المكان الذي أُوحي إليه أنك ستجد فيه عبدًا من عباد الله العالمين عنده من العلم ما ليس عندك. ﴿أَوْ أَمْضِيَ حُقُبًا﴾ أي: مسافة طويلة. والمعنى أن الشوق والرغبة حمل موسى أن قال لفتاه هذه المقالة، وهذا عزمٌ منه جازم، فلذلك أمضاه».</span>
+</li>
+</ol>
+
+<div class="quiz" data-section="n15"></div>
+
+<div class="summary"><h4>خلاصة المقطع الخامس عشر</h4><span class="tag">هذه الخلاصة إضافة تنظيمية من إعداد الملف، وليست من نص الكتاب.</span><ul><li>كليم الله يرحل ليتعلم — فطلب الازدياد لا يسقط عن أحد.</li><li>تواضع الأفضل للمفضول في مقام التعلم غاية الكمال، وعلاجٌ لبوادر العُجب.</li><li>للشيطان عمل في تعطيل خطوات المصلحين، وقد يكون عبر أقرب الناس إليهم — ونظيره ما جرى لصاحب يوسف.</li><li>طالب الغاية العظيمة لا يقف عند العوائق الجزئية ﴿ذَٰلِكَ مَا كُنَّا نَبْغِ﴾.</li><li>شرف الرحلة في طلب العلم: بوّب البخاري على القصة «باب الخروج في طلب العلم».</li><li>العزيمة الجازمة ﴿أَوْ أَمْضِيَ حُقُبًا﴾ هي التي تُمضي المشاريع الكبرى.</li></ul></div>
+
+</article>
+
+<article class="maqta" id="n16" style="--sc:#2f5a6e" data-toc="المقطع ١٦ — القصص">
+<div class="maqta-head"><span class="num">المقطع السادس عشر</span><h3>من أنوار قصة موسى عليه السلام</h3><p class="surah">آيات من سورة القصص</p></div>
+
+<div class="ayat">
+<span class="bsm">أعوذ بالله من الشيطان الرجيم — بسم الله الرحمن الرحيم</span>
+﴿إِنَّ قَارُونَ كَانَ مِن قَوْمِ مُوسَىٰ فَبَغَىٰ عَلَيْهِمْ ۖ وَآتَيْنَاهُ مِنَ الْكُنُوزِ مَا إِنَّ مَفَاتِحَهُ لَتَنُوءُ بِالْعُصْبَةِ أُولِي الْقُوَّةِ إِذْ قَالَ لَهُ قَوْمُهُ لَا تَفْرَحْ ۖ إِنَّ اللَّهَ لَا يُحِبُّ الْفَرِحِينَ <span class="n">﴿٧٦﴾</span> وَابْتَغِ فِيمَا آتَاكَ اللَّهُ الدَّارَ الْآخِرَةَ ۖ وَلَا تَنسَ نَصِيبَكَ مِنَ الدُّنْيَا ۖ وَأَحْسِن كَمَا أَحْسَنَ اللَّهُ إِلَيْكَ ۖ وَلَا تَبْغِ الْفَسَادَ فِي الْأَرْضِ ۖ إِنَّ اللَّهَ لَا يُحِبُّ الْمُفْسِدِينَ <span class="n">﴿٧٧﴾</span> قَالَ إِنَّمَا أُوتِيتُهُ عَلَىٰ عِلْمٍ عِندِي ۚ أَوَلَمْ يَعْلَمْ أَنَّ اللَّهَ قَدْ أَهْلَكَ مِن قَبْلِهِ مِنَ الْقُرُونِ مَنْ هُوَ أَشَدُّ مِنْهُ قُوَّةً وَأَكْثَرُ جَمْعًا ۚ وَلَا يُسْأَلُ عَن ذُنُوبِهِمُ الْمُجْرِمُونَ <span class="n">﴿٧٨﴾</span> فَخَرَجَ عَلَىٰ قَوْمِهِ فِي زِينَتِهِ ۖ قَالَ الَّذِينَ يُرِيدُونَ الْحَيَاةَ الدُّنْيَا يَا لَيْتَ لَنَا مِثْلَ مَا أُوتِيَ قَارُونُ إِنَّهُ لَذُو حَظٍّ عَظِيمٍ <span class="n">﴿٧٩﴾</span> وَقَالَ الَّذِينَ أُوتُوا الْعِلْمَ وَيْلَكُمْ ثَوَابُ اللَّهِ خَيْرٌ لِّمَنْ آمَنَ وَعَمِلَ صَالِحًا وَلَا يُلَقَّاهَا إِلَّا الصَّابِرُونَ <span class="n">﴿٨٠﴾</span>﴾<sup class="nmark" data-note="nn16-1">١</sup>
+</div>
+<aside class="note note--doc" id="nn16-1"><span class="nt" data-i="١">توثيق</span> سورة القصص، الآيات ٧٦–٨٠.</aside>
+
+<h4 style="color:var(--sc);margin:26px 0 0;font-size:1.05rem">الفوائد</h4>
+<ol class="fawaid">
+
+<li class="faida" id="fn16-1" data-sub="١ — ثمرة تربية موسى لأتباعه">
+<span class="fnum">الفائدة الأولى:</span> في قوله تعالى <span class="inq">﴿وَقَالَ الَّذِينَ أُوتُوا الْعِلْمَ﴾</span> دلالةٌ على ظهور آثار دعوة موسى عليه السلام في أناس من أتباعه، وصفهم الله تعالى بأنهم أهل علم وإصلاح يأمرون بالمعروف وينهون عن المنكر، وهذا لا يكون إلا بطريقٍ من التعلم والتربية على الإيمان، وهذا من وظائف الأنبياء الأساسية: تربيةُ المؤمنين الذين استجابوا لهم وتعليمُهم.
+</li>
+
+<li class="faida" id="fn16-2" data-sub="٢ — وظائف أهل العلم عند فتنة الرموز">
+<span class="fnum">الفائدة الثانية:</span> من أهم وظائف أهل العلم إصلاحُ الفساد والأمرُ بالمعروف والنهيُ عن المنكر، وخاصة إذا كان المنكر من الرموز البارزة في المجتمع والتي من شأنها أن تؤثر على الناس. كما أن من أهم وظائفهم تصحيحَ المعايير وتثبيتَ المؤمنين في الفتن، وذلك في قولهم <span class="inq">﴿ثَوَابُ اللَّهِ خَيْرٌ لِّمَنْ آمَنَ وَعَمِلَ صَالِحًا﴾</span>.
+</li>
+
+<li class="faida" id="fn16-3" data-sub="٣ — العلم وحده لا يكفي بلا صبر">
+<span class="fnum">الفائدة الثالثة:</span> أن العلم وحده لا يكفي ليكون صاحبه ثابتًا أمام الفتن الدنيوية وبريقها، بل لا بد أن يكون صاحب العلم متصفًا بالصبر حتى يقاوم هذه الفتن <span class="inq">﴿وَلَا يُلَقَّاهَا إِلَّا الصَّابِرُونَ﴾</span>، أي: لا يُلقّى هذه الكلمة — <span class="inq">﴿ثَوَابُ اللَّهِ خَيْرٌ لِّمَنْ آمَنَ وَعَمِلَ صَالِحًا﴾</span> — إلا أهلُ الصبر.
+</li>
+</ol>
+
+<div class="quiz" data-section="n16"></div>
+
+<div class="summary"><h4>خلاصة المقطع السادس عشر</h4><span class="tag">هذه الخلاصة إضافة تنظيمية من إعداد الملف، وليست من نص الكتاب.</span><ul><li>﴿الَّذِينَ أُوتُوا الْعِلْمَ﴾ ثمرةُ تربية موسى لأتباعه — والتربية وظيفة نبوية أساسية.</li><li>من وظائف أهل العلم إنكار المنكر خصوصًا إذا صدر عن رمز مؤثر في المجتمع.</li><li>تصحيح المعايير وتثبيت الناس في الفتن وظيفة علمية لا ترف.</li><li>العلم بلا صبر لا يثبت أمام بريق الدنيا ﴿وَلَا يُلَقَّاهَا إِلَّا الصَّابِرُونَ﴾.</li></ul></div>
+
+</article>
+
+<article class="maqta" id="kh" style="--sc:#1a2d5c" data-toc="الخاتمة">
+<div class="maqta-head"><span class="num">ختام الجزء الأول</span><h3>الخاتمة</h3><p class="surah">بقلم المؤلف</p></div>
+<div class="prose" style="margin-top:22px">
+<p id="kh-p1" data-sub="حمد الله على تمام الجزء">الحمد لله على تمام هذا الجزء من «أنوار الأنبياء»، والفضل فيه لله سبحانه الذي فتح وبارك، والذي هدى إلى الاهتمام بموضوع الأنبياء في القرآن، والذي وجدتُ فيه البركة والعلم والنور والخير والهدى. فالحمد لله أولًا وآخرًا، وسلامٌ على المرسلين، وصلاةٌ على خاتمهم محمد صلى الله عليه وسلم.</p>
+<p id="kh-p2" data-sub="تاريخ الفراغ ومكانه" style="text-align:center;font-family:'Amiri',serif;font-size:1.15rem;color:var(--sc)">الثاني من شوال، للعام ١٤٤٤ للهجرة — إسطنبول<sup class="nmark" data-note="nkh-1">١</sup></p>
+<aside class="note note--ctx" id="nkh-1"><span class="nt" data-i="١">سياق تاريخي</span> ٢ شوال ١٤٤٤هـ يوافق أواخر أبريل ٢٠٢٣م تقريبًا. وذكر التاريخ والمكان في الخاتمة من علامات كون المادة كتابًا مؤلَّفًا لا محاضرة مفرَّغة.</aside>
+<p style="text-align:center;color:var(--ink3);font-size:.9rem;margin-top:20px">سبحانك اللهم وبحمدك، نشهد أن لا إله إلا أنت، نستغفرك ونتوب إليك.</p>
+</div>
+
+<div class="quiz" data-section="kh"></div>
+
+<div class="summary"><h4>خلاصة الخاتمة</h4><span class="tag">هذه الخلاصة إضافة تنظيمية من إعداد الملف، وليست من نص الكتاب.</span><ul><li>ختم المؤلف بنسبة الفضل كله لله في الفتح والبركة والهداية إلى الموضوع.</li><li>صرّح بأن هذا جزءٌ من سلسلة، وأن ما بعده متعلق ببقية الأنبياء.</li><li>تاريخ الفراغ: ٢ شوال ١٤٤٤هـ، ومكانه: إسطنبول.</li></ul></div>
+
+</article>
+
+<div class="notebox">
+<h4>تمّ الجزء الأول من «أنوار الأنبياء»</h4>
+انتهى بهذه الصفحة الجزءُ الأول من الكتاب، وهو المتعلق بإبراهيم وموسى عليهما السلام. وقد صرّح المؤلف في التوطئة بأن أجزاءً أخرى ستتبعه بإذن الله في بقية الأنبياء.
+</div>
+
+
+<section class="deck">
+  <h3>بطاقات المراجعة</h3>
+  <p class="dsub">اضغط على البطاقة لقلبها. الزر السفلي يُنزّل ملف TSV جاهزًا للاستيراد المباشر في Anki.</p>
+  <div class="filters"><button data-f="all" style="--fc:#2f4c86" class="on">الكل</button><button data-f="n11" style="--fc:#2f4c86">١١</button><button data-f="n12" style="--fc:#2b5f7a">١٢</button><button data-f="n13" style="--fc:#43458f">١٣</button><button data-f="n14" style="--fc:#26557f">١٤</button><button data-f="n15" style="--fc:#3a4f96">١٥</button><button data-f="n16" style="--fc:#2f5a6e">١٦</button><button data-f="kh" style="--fc:#1a2d5c">الخاتمة</button></div>
+  <div class="flip" id="flip"><div class="flip-in">
+    <div class="face"><span class="lbl">السؤال</span><span class="txt" id="cFront"></span></div>
+    <div class="face back"><span class="lbl">الإجابة</span><span class="txt" id="cBack"></span></div>
+  </div></div>
+  <div class="deck-nav">
+    <button id="prev">السابقة ›</button>
+    <span class="counter" id="counter"></span>
+    <button id="next">‹ التالية</button>
   </div>
-  <script src="../../../data.js"></script>
-  <script src="../../../script.js"></script>
+  <button class="dl" id="dl">⬇ تحميل بطاقات هذا الجزء (TSV)</button>
+</section>
+</div></div>
+
+<div class="toolbar">
+  <button id="fsUp" title="تكبير الخط">أ+</button>
+  <button id="fsDown" title="تصغير الخط">أ−</button>
+  <button id="night" title="وضع القراءة الليلي">☾</button>
+</div>
+
+<footer>
+  <span class="sep">❖ ❖ ❖</span>
+  كتاب «أنوار الأنبياء» — الجزء الأول — الشيخ أحمد السيد<br>
+  النص المفرَّغ من تسجيل بودكاست «المفرِدون» (قراءة: عمر)<br>
+  هذا الجزء: 7 أقسام · 25 هامشًا · 13 سؤالًا تفاعليًّا · 36 بطاقة مراجعة
+</footer>
+
+<script>
+const QUIZ_DATA = [
+{
+"id": "qn11-1",
+"sectionId": "n11",
+"question": "لماذا وصف فرعون بني إسرائيل بأنهم ﴿شِرْذِمَةٌ قَلِيلُونَ﴾ ثم قال ﴿وَإِنَّا لَجَمِيعٌ حَاذِرُونَ﴾؟",
+"options": [
+"لتناقضٍ في كلامه لا معنى له",
+"لأن الوصفين لطائفتين مختلفتين من بني إسرائيل",
+"لتحقيرهم إعلاميًّا من جهة، وتعميم الخطر على الجميع لاستنفارهم من جهة أخرى",
+"لأنه كان يخاف من كثرتهم ويخفي ذلك"
+],
+"correctIndex": 2,
+"explanation": "بيّن المؤلف أن الآلة الإعلامية الفرعونية تجمع بين التحقير والتخويف، ونقل عن السعدي أن المصلحة صُوّرت مشتركة ليتحرك الجميع."
+},
+{
+"id": "qn11-2",
+"sectionId": "n11",
+"question": "كيف أجاب المؤلف عن شبهة «معيّة الله وعدٌ خاص بالأنبياء»؟",
+"options": [
+"بأن الوحي لم ينقطع حقيقةً",
+"بوجهين: بقاء السنن الإلهية بعد انقطاع الوحي، وعموم المعيّة للصابرين والمتقين",
+"بأن المصلحين ورثةٌ للأنبياء فلهم حكمهم في كل شيء",
+"بأن المعيّة مجاز لا حقيقة له"
+],
+"correctIndex": 1,
+"explanation": "استدل بـ﴿إِنَّ اللَّهَ مَعَ الصَّابِرِينَ﴾ و﴿أَنَّ اللَّهَ مَعَ الْمُتَّقِينَ﴾ على أن المعيّة ليست خاصة بالأنبياء."
+},
+{
+"id": "qn12-1",
+"sectionId": "n12",
+"question": "ما الصفة التي علّق الله عليها توريث بني إسرائيل الأرض؟",
+"options": [
+"العلم",
+"الجهاد",
+"الصبر",
+"كثرة العدد"
+],
+"correctIndex": 2,
+"explanation": "﴿وَتَمَّتْ كَلِمَتُ رَبِّكَ الْحُسْنَىٰ عَلَىٰ بَنِي إِسْرَائِيلَ بِمَا صَبَرُوا﴾ — وسمّاها المؤلف الصفة المركزية."
+},
+{
+"id": "qn12-2",
+"sectionId": "n12",
+"question": "ما خلاصة كلام ابن عاشور على آية الاستخلاف في سورة النور؟",
+"options": [
+"أن الوعد نافذ بلا عمل لأنه وعدٌ إلهي",
+"أن الوعد إيماءٌ إلى التهيؤ لتحصيل أسبابه، ومِلاكه طاعة الله ورسوله",
+"أن الاستخلاف خاص بالصحابة دون غيرهم",
+"أن التمكين لا يقع إلا بعد ظهور المهدي"
+],
+"correctIndex": 1,
+"explanation": "هذا نص ما نقله المؤلف عنه، وعلّق عليه بأنه «كلام شريف لمن يتأمله»."
+},
+{
+"id": "qn13-1",
+"sectionId": "n13",
+"question": "ما الخطأ الذي وقع فيه بنو إسرائيل في قولهم ﴿فَإِن يَخْرُجُوا مِنْهَا فَإِنَّا دَاخِلُونَ﴾؟",
+"options": [
+"أنهم شكّوا في صدق موسى",
+"أنهم أرادوا تحقّق الوعد الإلهي دون بذل السبب",
+"أنهم طلبوا آية جديدة قبل الدخول",
+"أنهم اشترطوا مشاركة موسى في القتال"
+],
+"correctIndex": 1,
+"explanation": "﴿كَتَبَ اللَّهُ لَكُمْ﴾ لا تعطّل السبب؛ وسنة الله ألّا يخرج الجبارون هكذا دون بذل وعمل."
+},
+{
+"id": "qn13-2",
+"sectionId": "n13",
+"question": "ما التحذير العملي الذي وجّهه المؤلف للعاملين في الميادين الإصلاحية من قصة الأربعين سنة؟",
+"options": [
+"ألّا يدخلوا معارك لم يُؤمَروا بها",
+"ألّا يشتغلوا بالخصومات والشقاق فيما بينهم فيتأخر عنهم ما كان قريبًا",
+"ألّا يستعينوا بغير المؤمنين",
+"ألّا يهاجروا من بلدانهم"
+],
+"correctIndex": 1,
+"explanation": "نبّه إلى أن التهاون عند وضوح الطريق قد يُعاقَب بتأخير النصر أزمنة مديدة، وأن الانشغال بالنزاع الداخلي نظير تخلّف بني إسرائيل."
+},
+{
+"id": "qn14-1",
+"sectionId": "n14",
+"question": "لماذا استخلف موسى هارونَ عليهما السلام قبل ذهابه للميقات؟",
+"options": [
+"لأن هارون كان أفصح لسانًا فيتولى الخطابة",
+"لئلا يُضيّع من وراءه من قومه حال تفرّغه للتعبد",
+"لأن الله أمره بذلك نصًّا في الآية",
+"ليختبر طاعة قومه له"
+],
+"correctIndex": 1,
+"explanation": "الفائدة أن المصلح إذا تفرّغ لعمل تعبدي أو علمي لا يضيّع طلابه ومدعويه، بل يولّي عليهم من يقوم بشأنهم."
+},
+{
+"id": "qn14-2",
+"sectionId": "n14",
+"question": "ما المعيار الذي جعله المؤلف أعظم ما يُفاضَل به الخلق؟",
+"options": [
+"السبق الزمني في الإيمان",
+"النسب والشرف",
+"مدى امتلاك مصدر الإرشاد الإلهي ومدى العلم به",
+"كثرة الأتباع والأنصار"
+],
+"correctIndex": 2,
+"explanation": "أخذه من ﴿إِنِّي اصْطَفَيْتُكَ عَلَى النَّاسِ بِرِسَالَاتِي وَبِكَلَامِي﴾، فالشرف لأتباع الأنبياء بقدر اتّباعهم لهم."
+},
+{
+"id": "qn15-1",
+"sectionId": "n15",
+"question": "ما وجه العجب في رحلة موسى إلى الخضر كما قرّره المؤلف؟",
+"options": [
+"أن موسى أفضل منه ومع ذلك تواضع ورحل وتعب ليتعلم منه",
+"أن الخضر رفض تعليمه ابتداءً",
+"أن الرحلة كانت بغير إذن من الله",
+"أن موسى لم يكن يعلم شيئًا من التوراة"
+],
+"correctIndex": 0,
+"explanation": "موسى من أولي العزم وكليم الله ولديه علم التوراة، ومع ذلك رحل وقَبِل الشرط — وهذا ما ينبغي تذكّره عند بوادر العُجب."
+},
+{
+"id": "qn15-2",
+"sectionId": "n15",
+"question": "بأي نظير قرآني ذكّر المؤلفُ عند حديثه عن إنساء الشيطان لفتى موسى؟",
+"options": [
+"إنساء الشيطان لآدم عهدَ ربه",
+"إنساء الشيطان لصاحب يوسف أن يذكره عند الملك",
+"إنساء الشيطان لأصحاب الكهف مدة لبثهم",
+"إنساء الشيطان لبني إسرائيل ميثاقهم"
+],
+"correctIndex": 1,
+"explanation": "﴿فَأَنسَاهُ الشَّيْطَانُ ذِكْرَ رَبِّهِ﴾ (يوسف ٤٢) — من كيده ليبقى يوسف في السجن، كما عطّل مطلب موسى."
+},
+{
+"id": "qn16-1",
+"sectionId": "n16",
+"question": "ما الذي يميّز ﴿الَّذِينَ أُوتُوا الْعِلْمَ﴾ في قصة قارون عن ﴿الَّذِينَ يُرِيدُونَ الْحَيَاةَ الدُّنْيَا﴾؟",
+"options": [
+"أنهم كانوا أغنى منه فلم يبهرهم ماله",
+"أنهم صحّحوا المعيار وثبّتوا الناس في الفتنة ﴿ثَوَابُ اللَّهِ خَيْرٌ﴾",
+"أنهم سكتوا حتى لا يُفتنوا",
+"أنهم طلبوا منه المال ليوزعوه"
+],
+"correctIndex": 1,
+"explanation": "دلّ ذلك على ثمرة تربية موسى لأتباعه، وعلى أن من وظائف أهل العلم تصحيح المعايير وتثبيت المؤمنين في الفتن."
+},
+{
+"id": "qn16-2",
+"sectionId": "n16",
+"question": "لماذا لا يكفي العلم وحده أمام فتنة الدنيا؟",
+"options": [
+"لأن العلم قد يكون خطأً",
+"لأن الثبات يحتاج مع العلم صبرًا ﴿وَلَا يُلَقَّاهَا إِلَّا الصَّابِرُونَ﴾",
+"لأن الفتن أقوى من كل شيء",
+"لأن العلم لا يُنال إلا بعد الغنى"
+],
+"correctIndex": 1,
+"explanation": "قرّر المؤلف أن صاحب العلم لا يثبت أمام بريق الدنيا حتى يتصف بالصبر، وهو معنى ﴿وَلَا يُلَقَّاهَا إِلَّا الصَّابِرُونَ﴾."
+},
+{
+"id": "qkh-1",
+"sectionId": "kh",
+"question": "بمَ أرّخ المؤلف خاتمة هذا الجزء وأين؟",
+"options": [
+"٢ شوال ١٤٤٤هـ في إسطنبول",
+"١ رمضان ١٤٤٠هـ في مكة",
+"٢ ذي الحجة ١٤٤٤هـ في الرياض",
+"١٥ محرم ١٤٤٥هـ في إسطنبول"
+],
+"correctIndex": 0,
+"explanation": "ختم بقوله: «الثاني من شوال للعام ١٤٤٤ للهجرة — إسطنبول»، وذكرُ التاريخ والمكان من علامات المادة المؤلَّفة كتابًا."
+}
+];
+const CARDS_DATA = [
+{
+"sectionId": "n11",
+"front": "ما موضع آيات المقطع الحادي عشر من قصة موسى؟",
+"back": "سورة الشعراء، الآيات ٥٢–٦٧."
+},
+{
+"sectionId": "n11",
+"front": "ما معنى «الشِّرْذِمة»، ولماذا استعملها فرعون؟",
+"back": "الطائفة القليلة المتفرقة الحقيرة — استعملها للتحقير الإعلامي واستنفار قومه، لا لتقرير عدد."
+},
+{
+"sectionId": "n11",
+"front": "بمَ فسّر ابن سعدي ﴿وَإِنَّا لَجَمِيعٌ حَاذِرُونَ﴾؟",
+"back": "أي الحذر على الجميع منهم، وهم أعداء للجميع، والمصلحة مشتركة — أي تعميم الخطر ليتحرك الكل."
+},
+{
+"sectionId": "n11",
+"front": "ما الوجهان في الجواب عن دعوى أن الوعد الإلهي خاص بالأنبياء؟",
+"back": "١) سنن الله ماضية لا تتبدل وإن انقطع الوحي. ٢) المعيّة ليست خاصة بالأنبياء ﴿إِنَّ اللَّهَ مَعَ الصَّابِرِينَ﴾ ﴿مَعَ الْمُتَّقِينَ﴾."
+},
+{
+"sectionId": "n11",
+"front": "ما المستفاد من انفلاق البحر في حق المصلح؟",
+"back": "أنه غير مطالب بمعرفة كل الخطوات؛ يبذل ما يمكن، فإذا انغلقت الأبواب لزمه الاستهداء والتوكل، والمخرج يأتي من حيث لا يحتسب."
+},
+{
+"sectionId": "n12",
+"front": "ما موضع آيات المقطع الثاني عشر؟",
+"back": "سورة الأعراف، الآيتان ١٣٦–١٣٧."
+},
+{
+"sectionId": "n12",
+"front": "اذكر ثلاثة مواضع قرآنية في سنة وراثة الأرض.",
+"back": "﴿وَلَنُسْكِنَنَّكُمُ الْأَرْضَ مِن بَعْدِهِمْ﴾ (إبراهيم ١٤) — ﴿أَنَّ الْأَرْضَ يَرِثُهَا عِبَادِيَ الصَّالِحُونَ﴾ (الأنبياء ١٠٥) — ﴿وَنَجْعَلَهُمُ الْوَارِثِينَ﴾ (القصص ٥)."
+},
+{
+"sectionId": "n12",
+"front": "ما صفات الوارثين التي ذكرها المؤلف؟",
+"back": "التوكل، الصبر، التقوى، العلم، الاستمساك بالوحي، محبة الله، الذلة للمؤمنين، العزة على الكافرين، الجهاد، عدم الخوف من الخلق في ذات الله، والصلاح."
+},
+{
+"sectionId": "n12",
+"front": "ما صفات المستبدَلين التي يجب اجتنابها؟",
+"back": "ترك نصرة الإسلام، والقعود عن الجهاد حال وجوبه، والبخل وترك الإنفاق، وموالاة الكفار والمسارعة فيهم."
+},
+{
+"sectionId": "n12",
+"front": "ما تعليق ابن عاشور على ﴿لَيَسْتَخْلِفَنَّهُمْ فِي الْأَرْضِ﴾؟",
+"back": "أن في الوعد إيماءً إلى التهيؤ لتحصيل أسبابه مع ضمان التوفيق إن أخذوا فيه، وأن مِلاك ذلك طاعة الله ورسوله ﷺ."
+},
+{
+"sectionId": "n13",
+"front": "ما موضع آيات المقطع الثالث عشر؟",
+"back": "سورة المائدة، الآيات ٢٠–٢٥."
+},
+{
+"sectionId": "n13",
+"front": "لماذا يُذكّر المصلح نفسه وأتباعه بالنعمة وأيام الله؟",
+"back": "لأن النصر والفتح والغنيمة قد تؤدي إلى البطر والغرور، فتذكّر أيام الفقر والقلة يعيد الرشد ويورث الشكر والتواضع."
+},
+{
+"sectionId": "n13",
+"front": "ما وجه ترتيب ابن عاشور بين التذكير بالنعمة والأمر بالقتال؟",
+"back": "أن موسى قدّم التذكير بالنعمة ليهيئ نفوسهم لقبول الأمر العظيم وليوثّقهم بالنصر إن قاتلوا."
+},
+{
+"sectionId": "n13",
+"front": "ما القاعدة المستفادة من ﴿الْأَرْضَ الْمُقَدَّسَةَ الَّتِي كَتَبَ اللَّهُ لَكُمْ﴾؟",
+"back": "أن الوعد المكتوب لا يُغني عن بذل السبب؛ فمن انتظر الوعد بلا عمل حُرم الثمرة كما حُرموا."
+},
+{
+"sectionId": "n13",
+"front": "ما دلالة ﴿رَجُلَانِ مِنَ الَّذِينَ يَخَافُونَ﴾ في التربية؟",
+"back": "أن خوف الله أعظم أسباب الثبات في الشدائد؛ فمن غُرست فيه مخافة الله صغُر عنده الخوف من غيره."
+},
+{
+"sectionId": "n13",
+"front": "ما عقوبة تخلّف بني إسرائيل عن دخول الأرض المقدسة، وما العبرة؟",
+"back": "﴿فَإِنَّهَا مُحَرَّمَةٌ عَلَيْهِمْ أَرْبَعِينَ سَنَةً﴾ — والعبرة أن التهاون عند سهولة النصر قد يُعاقَب بتأخيره أزمنة مديدة."
+},
+{
+"sectionId": "n14",
+"front": "ما موضع آيات المقطع الرابع عشر؟",
+"back": "سورة الأعراف، الآيات ١٤٢–١٤٤."
+},
+{
+"sectionId": "n14",
+"front": "كم كان ميقات موسى، وما الحكمة منه؟",
+"back": "ثلاثون ليلة أُتمّت بعشر فصارت أربعين، وكانت تهيئةً بالتعبد والصيام استعدادًا لمناجاة الله."
+},
+{
+"sectionId": "n14",
+"front": "ما نظير «فترات الانقطاع للتعبد» في السنة النبوية؟",
+"back": "اعتكاف النبي ﷺ في العشر الأواخر من رمضان كل عام، ينقطع فيه للعبادة وحده."
+},
+{
+"sectionId": "n14",
+"front": "ما وصية موسى لهارون عند استخلافه؟",
+"back": "﴿اخْلُفْنِي فِي قَوْمِي وَأَصْلِحْ وَلَا تَتَّبِعْ سَبِيلَ الْمُفْسِدِينَ﴾ — أي استمر في طريق الإصلاح ولا تضيّع القوم."
+},
+{
+"sectionId": "n14",
+"front": "ما نظير طلب موسى ﴿رَبِّ أَرِنِي أَنظُرْ إِلَيْكَ﴾ في طلب الازدياد من معرفة الله؟",
+"back": "قول إبراهيم عليه السلام ﴿رَبِّ أَرِنِي كَيْفَ تُحْيِي الْمَوْتَىٰ﴾ (البقرة ٢٦٠)."
+},
+{
+"sectionId": "n14",
+"front": "ما الحديثان اللذان استُشهد بهما على شرف أتباع الأنبياء في العبادة والرسالة؟",
+"back": "«إن أحدكم إذا كان في الصلاة فإنه يناجي ربه» (متفق عليه)، و«إن العلماء ورثة الأنبياء» (أبو داود والترمذي وابن ماجه)."
+},
+{
+"sectionId": "n15",
+"front": "ما موضع آيات المقطع الخامس عشر؟",
+"back": "سورة الكهف، الآيات ٦٠–٧٠."
+},
+{
+"sectionId": "n15",
+"front": "لماذا كان تواضع موسى للخضر في غاية الكمال؟",
+"back": "لأن موسى من أولي العزم، وكلّمه الله تكليمًا، وعنده علم التوراة — ومع ذلك رحل ونصب وقَبِل شرط الخضر ليتعلم منه."
+},
+{
+"sectionId": "n15",
+"front": "ما العلامة التي اتُّفق عليها لمعرفة موضع الخضر؟",
+"back": "فقدان الحوت؛ فإذا فُقد فمطلوبهما هناك — ولذلك كان إنساء الشيطان للفتى تعطيلًا لمطلب موسى."
+},
+{
+"sectionId": "n15",
+"front": "ما النظير القرآني لكيد الشيطان بالإنساء؟",
+"back": "﴿فَأَنسَاهُ الشَّيْطَانُ ذِكْرَ رَبِّهِ﴾ (يوسف ٤٢) في شأن الفتى الذي نجا من السجن، ليبقى يوسف فيه."
+},
+{
+"sectionId": "n15",
+"front": "ما دليل شرف الرحلة في طلب العلم من صنيع البخاري؟",
+"back": "أخرج قصة موسى والخضر في كتاب العلم في ثلاثة مواضع، وبوّب على أحدها: «باب الخروج في طلب العلم»."
+},
+{
+"sectionId": "n15",
+"front": "بمَ فسّر ابن سعدي ﴿لَا أَبْرَحُ حَتَّىٰ أَبْلُغَ مَجْمَعَ الْبَحْرَيْنِ أَوْ أَمْضِيَ حُقُبًا﴾؟",
+"back": "لا أزال مسافرًا وإن طالت الشُّقّة ولحقتني المشقة حتى أصل، و«حُقُبًا» أي مسافة طويلة — وهو عزمٌ جازم أمضاه الشوق والرغبة."
+},
+{
+"sectionId": "n16",
+"front": "ما موضع آيات المقطع السادس عشر (قصة قارون)؟",
+"back": "سورة القصص، الآيات ٧٦–٨٠."
+},
+{
+"sectionId": "n16",
+"front": "ما الذي دلّ عليه وجود ﴿الَّذِينَ أُوتُوا الْعِلْمَ﴾ في قوم موسى؟",
+"back": "ظهور آثار دعوته في أتباعه، وأن تربية المؤمنين وتعليمهم من وظائف الأنبياء الأساسية."
+},
+{
+"sectionId": "n16",
+"front": "ما وظيفتا أهل العلم عند بروز فتنة رمزٍ مؤثر؟",
+"back": "الأمر بالمعروف والنهي عن المنكر وإصلاح الفساد، وتصحيح المعايير وتثبيت المؤمنين في الفتن."
+},
+{
+"sectionId": "n16",
+"front": "لماذا لا يكفي العلم للثبات أمام فتنة الدنيا؟",
+"back": "لأن الثبات يحتاج مع العلم إلى الصبر ﴿وَلَا يُلَقَّاهَا إِلَّا الصَّابِرُونَ﴾ — أي لا يُلقّى هذه الكلمة إلا أهل الصبر."
+},
+{
+"sectionId": "kh",
+"front": "بمَ ختم المؤلف الجزء الأول، وبأي تاريخ ومكان؟",
+"back": "بحمد الله ونسبة الفضل إليه في الفتح والبركة والهداية للموضوع — وأرّخه في الثاني من شوال ١٤٤٤هـ بإسطنبول."
+},
+{
+"sectionId": "kh",
+"front": "ما المقاطع التي تضمنها الجزء الأول من الكتاب إجمالًا؟",
+"back": "خمسة مقاطع من قصة إبراهيم عليه السلام، وستة عشر مقطعًا من قصة موسى عليه السلام."
+},
+{
+"sectionId": "kh",
+"front": "ما النبيّان اللذان خُصّ بهما الجزء الأول، ولماذا لم يُستوعب غيرهما؟",
+"back": "إبراهيم وموسى عليهما السلام؛ لأن الكتاب سلسلة، وصرّح المؤلف بأن أجزاءً أخرى ستتبعه في بقية الأنبياء."
+},
+{
+"sectionId": "kh",
+"front": "ما العلامات التي تدل على أن هذه المادة كتابٌ مؤلَّف لا محاضرة مفرَّغة؟",
+"back": "وجود توطئة، وتقسيم معلن للمقاطع، وترقيم متسلسل للفوائد، وخاتمة مؤرَّخة بمكانٍ وتاريخ."
+}
+];
+
+(function(){
+"use strict";
+var KEY="anwar_alanbiya_p4";
+
+/* ---------- theme + font ---------- */
+function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v);}catch(e){return null;}}
+var root=document.documentElement;
+var savedTheme=ls("anwar_theme"); if(savedTheme) root.setAttribute("data-theme",savedTheme);
+var savedFs=parseInt(ls("anwar_fs")||"0",10); if(savedFs>=15&&savedFs<=24) root.style.setProperty("--fs",savedFs+"px");
+function curFs(){return parseInt(getComputedStyle(root).getPropertyValue("--fs"),10)||18;}
+document.getElementById("fsUp").onclick=function(){var v=Math.min(24,curFs()+1);root.style.setProperty("--fs",v+"px");ls("anwar_fs",v);layoutNotes();};
+document.getElementById("fsDown").onclick=function(){var v=Math.max(15,curFs()-1);root.style.setProperty("--fs",v+"px");ls("anwar_fs",v);layoutNotes();};
+document.getElementById("night").onclick=function(){
+  var n=root.getAttribute("data-theme")==="night"?"day":"night";
+  root.setAttribute("data-theme",n);ls("anwar_theme",n);
+};
+
+/* ---------- progress ---------- */
+var bar=document.getElementById("progress");
+function prog(){
+  var h=document.documentElement.scrollHeight-window.innerHeight;
+  var p=h>0?(window.scrollY/h)*100:0;
+  bar.style.width=Math.min(100,Math.max(0,p))+"%";
+  ls(KEY,String(window.scrollY));
+}
+
+/* ---------- TOC ---------- */
+var toc=document.getElementById("toc"),ov=document.getElementById("tocOverlay");
+function tocToggle(on){toc.classList.toggle("open",on);ov.classList.toggle("open",on);}
+document.getElementById("tocBtn").onclick=function(){tocToggle(!toc.classList.contains("open"));};
+ov.onclick=function(){tocToggle(false);};
+(function buildToc(){
+  var ol=document.createElement("ol");
+  document.querySelectorAll("[data-toc]").forEach(function(sec){
+    var li=document.createElement("li");
+    var a=document.createElement("a");
+    a.href="#"+sec.id; a.textContent=sec.getAttribute("data-toc");
+    li.appendChild(a);
+    var subs=sec.querySelectorAll("[data-sub]");
+    if(subs.length){
+      var o2=document.createElement("ol");o2.className="lvl2";
+      subs.forEach(function(s){
+        var l2=document.createElement("li"),a2=document.createElement("a");
+        a2.href="#"+s.id; a2.textContent=s.getAttribute("data-sub");
+        l2.appendChild(a2);o2.appendChild(l2);
+      });
+      li.appendChild(o2);
+    }
+    ol.appendChild(li);
+  });
+  toc.appendChild(ol);
+  toc.addEventListener("click",function(e){ if(e.target.tagName==="A") tocToggle(false); });
+})();
+
+/* ---------- notes ---------- */
+function layoutNotes(){
+  var wide=window.matchMedia("(min-width:1181px)").matches;
+  var notes=Array.prototype.slice.call(document.querySelectorAll(".note"));
+  if(!wide){ notes.forEach(function(n){n.style.top="";}); return; }
+  var col=document.querySelector(".col"); if(!col) return;
+  var colTop=col.getBoundingClientRect().top+window.scrollY;
+  var prevBottom=-1e9;
+  notes.forEach(function(n){
+    n.style.top="0px";
+    var host=n.parentElement;
+    var want=host.getBoundingClientRect().top+window.scrollY-colTop;
+    var hostOff=host.offsetTop;
+    var top=Math.max(want, prevBottom+14);
+    n.style.top=(top-hostOff)+"px";
+    prevBottom=top+n.offsetHeight;
+  });
+}
+document.addEventListener("click",function(e){
+  var m=e.target.closest(".nmark"); if(!m) return;
+  var n=document.getElementById(m.getAttribute("data-note")); if(!n) return;
+  if(window.matchMedia("(max-width:1180px)").matches){ n.classList.toggle("open"); }
+  else { n.classList.add("flash"); setTimeout(function(){n.classList.remove("flash");},1400); }
+});
+
+/* ---------- quiz ---------- */
+var scores={};
+function renderQuiz(){
+  document.querySelectorAll(".quiz").forEach(function(box){
+    var sid=box.getAttribute("data-section");
+    var items=QUIZ_DATA.filter(function(q){return q.sectionId===sid;});
+    if(!items.length){box.remove();return;}
+    scores[sid]={done:0,ok:0,total:items.length};
+    var h='<div class="qhead"><b>تحقّق من فهمك</b><span class="score" id="sc-'+sid+'">0 / '+items.length+'</span></div>';
+    items.forEach(function(q){
+      h+='<div class="qitem" data-q="'+q.id+'"><p class="qq">'+q.question+'</p><div class="qopts">';
+      q.options.forEach(function(o,i){ h+='<button class="qopt" data-i="'+i+'">'+o+'</button>'; });
+      h+='</div><div class="qexp" id="ex-'+q.id+'"></div></div>';
+    });
+    box.innerHTML=h;
+  });
+}
+document.addEventListener("click",function(e){
+  var btn=e.target.closest(".qopt"); if(!btn) return;
+  var item=btn.closest(".qitem"), box=btn.closest(".quiz");
+  var sid=box.getAttribute("data-section"), qid=item.getAttribute("data-q");
+  var q=QUIZ_DATA.filter(function(x){return x.id===qid;})[0]; if(!q) return;
+  var i=parseInt(btn.getAttribute("data-i"),10);
+  var ok=(i===q.correctIndex);
+  var first=!item.hasAttribute("data-answered");
+  item.querySelectorAll(".qopt").forEach(function(b){b.classList.remove("bad");});
+  if(ok){
+    item.querySelectorAll(".qopt").forEach(function(b,j){ if(j===q.correctIndex) b.classList.add("ok"); });
+    if(first){item.setAttribute("data-answered","1");scores[sid].done++;scores[sid].ok++;}
+  }else{
+    btn.classList.add("bad");
+    if(first){item.setAttribute("data-answered","1");scores[sid].done++;}
+  }
+  var ex=document.getElementById("ex-"+qid);
+  ex.innerHTML='<b>'+(ok?"إجابة صحيحة.":"ليست الإجابة المقصودة.")+'</b> '+q.explanation;
+  ex.classList.add("show");
+  var s=document.getElementById("sc-"+sid);
+  if(s) s.textContent=scores[sid].ok+" / "+scores[sid].total;
+});
+
+/* ---------- flashcards ---------- */
+var filter="all", idx=0;
+function pool(){ return filter==="all"?CARDS_DATA:CARDS_DATA.filter(function(c){return c.sectionId===filter;}); }
+var flip=document.getElementById("flip"),fFront=document.getElementById("cFront"),
+    fBack=document.getElementById("cBack"),counter=document.getElementById("counter");
+function show(){
+  var p=pool();
+  if(!p.length){fFront.textContent="—";fBack.textContent="—";counter.textContent="0 / 0";return;}
+  if(idx>=p.length) idx=0; if(idx<0) idx=p.length-1;
+  flip.classList.remove("on");
+  fFront.innerHTML=p[idx].front; fBack.innerHTML=p[idx].back;
+  counter.textContent=(idx+1)+" / "+p.length;
+}
+flip.onclick=function(){flip.classList.toggle("on");};
+document.getElementById("next").onclick=function(){idx++;show();};
+document.getElementById("prev").onclick=function(){idx--;show();};
+document.querySelectorAll(".filters button").forEach(function(b){
+  b.onclick=function(){
+    document.querySelectorAll(".filters button").forEach(function(x){x.classList.remove("on");});
+    b.classList.add("on"); filter=b.getAttribute("data-f"); idx=0; show();
+  };
+});
+function strip(s){var d=document.createElement("div");d.innerHTML=s;return (d.textContent||"").replace(/\t/g," ").replace(/\s+/g," ").trim();}
+document.getElementById("dl").onclick=function(){
+  var lines=CARDS_DATA.map(function(c){return strip(c.front)+"\t"+strip(c.back);});
+  var blob=new Blob(["\ufeff"+lines.join("\n")],{type:"text/tab-separated-values;charset=utf-8"});
+  var a=document.createElement("a");
+  a.href=URL.createObjectURL(blob); a.download="أنوار الأنبياء - موسى 11-16.tsv"; document.body.appendChild(a); a.click();
+  setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},500);
+};
+
+/* ---------- init ---------- */
+renderQuiz(); show();
+window.addEventListener("scroll",prog,{passive:true});
+window.addEventListener("resize",function(){layoutNotes();prog();});
+window.addEventListener("load",function(){
+  layoutNotes();
+  var y=parseInt(ls(KEY)||"0",10);
+  if(y>200 && !location.hash){ window.scrollTo(0,y); }
+  setTimeout(layoutNotes,400); prog();
+});
+layoutNotes(); prog();
+})();
+
+</script>
 </body>
 </html>
