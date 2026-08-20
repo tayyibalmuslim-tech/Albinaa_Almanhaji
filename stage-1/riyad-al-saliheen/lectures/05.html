@@ -146,6 +146,122 @@ tr:last-child td{border-bottom:0}
 footer{background:#162026;color:#7C8C8F;padding:30px 0;text-align:center;font-family:var(--f-lab);font-size:12.5px;line-height:2}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
+
+<style>
+/* ===== تثبيت الفهم — الأسئلة التفاعلية ===== */
+.quiz-block{
+  margin:32px 0 24px;
+  background:var(--green-deeper, #132920);
+  border-radius:12px;
+  padding:24px;
+  box-shadow:0 6px 24px rgba(31,61,46,.14);
+  position:relative;
+  overflow:hidden;
+  direction:rtl;
+  text-align:right;
+}
+.quiz-block::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:radial-gradient(circle at 90% 10%, rgba(201,164,90,.12) 0, transparent 45%);
+  pointer-events:none;
+}
+.quiz-block-title{
+  display:flex; align-items:center; gap:8px;
+  font-weight:800; font-size:14px;
+  color:var(--gold-pale, #F2E6C4);
+  letter-spacing:.3px;
+  margin-bottom:16px;
+  position:relative;
+}
+.quiz-item{
+  background:rgba(255,254,250,.06);
+  border:1px solid rgba(199,164,90,.25);
+  border-radius:8px;
+  padding:16px;
+  margin-bottom:16px;
+  position:relative;
+}
+.quiz-item:last-child{margin-bottom:0;}
+.quiz-q{
+  font-size:15.5px; font-weight:700;
+  color:#FBF7EE;
+  margin:0 0 16px;
+  line-height:1.7;
+}
+.quiz-options{display:flex; flex-direction:column; gap:8px;}
+.quiz-opt{
+  display:block; width:100%; text-align:right;
+  background:rgba(251,247,238,.08);
+  border:1px solid rgba(251,247,238,.18);
+  color:#FBF7EE;
+  font-family:inherit; font-size:14px; line-height:1.6;
+  border-radius:8px;
+  padding:10px 14px;
+  cursor:pointer;
+  transition:background .15s ease, border-color .15s ease, transform .1s ease;
+}
+.quiz-opt:hover{background:rgba(251,247,238,.15); border-color:rgba(199,164,90,.5);}
+.quiz-opt:active{transform:scale(.99);}
+.quiz-opt.correct{
+  background:rgba(46,84,67,.9);
+  border-color:#8FBF9E;
+  color:#EAF6EE;
+  font-weight:700;
+}
+.quiz-opt.correct::after{content:" \2713"; color:#8FBF9E;}
+.quiz-opt.wrong{
+  background:rgba(140,59,46,.55);
+  border-color:#D89A8C;
+  color:#F7E6E2;
+}
+.quiz-opt.wrong::after{content:" \2715"; color:#F1B3A6;}
+.quiz-opt.disabled{cursor:default; pointer-events:none;}
+.quiz-feedback{
+  margin-top:10px;
+  font-size:13.5px; line-height:1.8;
+  color:var(--gold-pale, #F2E6C4);
+  background:rgba(0,0,0,.15);
+  border-right:3px solid var(--gold, #A9832E);
+  border-radius:6px;
+  padding:9px 12px;
+  display:none;
+}
+.quiz-feedback.show{display:block;}
+.quiz-reflect{
+  border-top:1px dashed rgba(199,164,90,.3);
+  padding-top:16px;
+  margin-top:16px;
+}
+.quiz-item > .quiz-reflect:first-child{border-top:none; padding-top:0; margin-top:0;}
+.quiz-reflect-q{
+  font-size:14.5px; color:var(--gold-pale, #F2E6C4); font-weight:600;
+  margin:0 0 8px;
+}
+.quiz-reveal-btn{
+  background:var(--gold, #A9832E);
+  color:var(--green-deeper, #132920);
+  border:none; border-radius:999px;
+  font-family:inherit;
+  font-weight:700; font-size:13px;
+  padding:8px 18px;
+  cursor:pointer;
+  transition:background .15s ease;
+}
+.quiz-reveal-btn:hover{background:var(--gold-soft, #C7A45A);}
+.quiz-answer{
+  display:none;
+  margin-top:10px;
+  font-size:14px; line-height:1.85;
+  color:#FBF7EE;
+  background:rgba(255,254,250,.08);
+  border-radius:8px;
+  padding:11px 14px;
+}
+.quiz-answer.show{display:block;}
+@media (max-width:640px){ .quiz-block{padding:16px;} }
+</style>
+
 </head>
 <body>
 
@@ -212,7 +328,9 @@ footer{background:#162026;color:#7C8C8F;padding:30px 0;text-align:center;font-fa
     <span class="tag">ملاحظة على انتهاء المجلس</span>
     <p>صرَّح الشيخ في أول المجلس وفي آخره أن النية كانت أن يأخذ كذلك <strong>أول باب الصبر</strong>، لكنه قال: «يبدو أن الطاقة محدودة»، ثم ختم بـ«يسَّر الله ما يسَّر». <strong>فباب الصبر لم يُتناول في هذا المجلس</strong>، ولم يُضَف هنا شيء لتعويض ذلك.</p>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s1"></div>
+    </section>
 
 <!-- 2 -->
 <section id="s2" style="--acc:var(--s2);--acc-soft:rgba(140,90,74,.10)">
@@ -243,7 +361,9 @@ footer{background:#162026;color:#7C8C8F;padding:30px 0;text-align:center;font-fa
   </div>
 
   <p>وقال الشيخ إن هذا الحديث من الأحاديث المهمة؛ لأن السيرة النبوية فيها الجوانب المتعلقة <strong>بمعالي الأمور</strong>: الأعمال الصالحة، وإنجازات الصحابة، واتباعهم للرسول ﷺ، وبذلهم أنفسهم أمامه فداءً له ولدينه. <strong>وفيها كذلك الجوانب الأخرى</strong>: أخطاء وقع فيها بعض الصحابة، وكيف كان النبي ﷺ يتعامل مع الأمرين. وبهذا تتبيَّن لنا طبيعة المجتمع المسلم: أنه <strong>لا يخلو من الأخطاء</strong>، وأنّ ثمة فقهًا في التعامل معها.</p>
-</section>
+
+      <div class="quiz-block" data-quiz="s2"></div>
+    </section>
 
 <!-- 3 -->
 <section id="s3" style="--acc:var(--s3);--acc-soft:rgba(95,107,140,.10)">
@@ -309,7 +429,9 @@ footer{background:#162026;color:#7C8C8F;padding:30px 0;text-align:center;font-fa
       <li>التعامل يتفاوت بحسب: الشخص، وطبيعة الذنب، والمرحلة الزمنية.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s3"></div>
+    </section>
 
 <!-- 4 -->
 <section id="s4" style="--acc:var(--s4);--acc-soft:rgba(122,107,47,.10)">
@@ -400,7 +522,9 @@ footer{background:#162026;color:#7C8C8F;padding:30px 0;text-align:center;font-fa
       <li>حين يبلغ الندم الداخلي ذروته قد لا تحتاج العقوبة الظاهرة أصلًا.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s4"></div>
+    </section>
 
 <!-- 5 -->
 <section id="s5" style="--acc:var(--s5);--acc-soft:rgba(46,106,90,.10)">
@@ -425,7 +549,9 @@ footer{background:#162026;color:#7C8C8F;padding:30px 0;text-align:center;font-fa
     <span class="tag">لماذا يزداد الاحتياج اليوم؟</span>
     <p>قال الشيخ: لما نأتي في زمن مثل زمننا يزداد الاحتياج إلى فقه التعامل مع الخطأ؛ لأن الأزمنة تؤثر في طبيعة التعامل. وفي زمن <strong>يكثر فيه الفساد والشر، ويقلُّ فيه الصواب والإصلاح</strong>، تتسع مساحة الخطأ. فالسؤال يصير: <strong>من الذي يقوّم الناس؟ وكيف يقوّمهم؟</strong> وقد كان النبي ﷺ حريصًا جدًّا على ألا يُنفَّر الناس عن الدين.</p>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s5"></div>
+    </section>
 
 <!-- 6 -->
 <section id="s6" style="--acc:var(--s6);--acc-soft:rgba(154,106,43,.10)">
@@ -472,7 +598,9 @@ footer{background:#162026;color:#7C8C8F;padding:30px 0;text-align:center;font-fa
       <li>بذل النفس للحد طوعًا اعتُبر جودًا بالنفس لله، كمن يقاتل فيُقتل.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s6"></div>
+    </section>
 
 <!-- 7 -->
 <section id="s7" style="--acc:var(--s7);--acc-soft:rgba(107,90,140,.10)">
@@ -556,7 +684,9 @@ footer{background:#162026;color:#7C8C8F;padding:30px 0;text-align:center;font-fa
       <li>موضع الشاهد عند النووي هو الجملة الأخيرة: «ويتوب الله على من تاب».</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s7"></div>
+    </section>
 
 <!-- 8 -->
 <section id="s8" style="--acc:var(--s8);--acc-soft:rgba(47,122,99,.10)">
@@ -613,7 +743,9 @@ footer{background:#162026;color:#7C8C8F;padding:30px 0;text-align:center;font-fa
       <li>الباب كله — من قاتل المئة إلى هذا الحديث — يدور على معنى واحد: لا ذنب يغلق باب الرجوع.</li>
     </ul>
   </div>
-</section>
+
+      <div class="quiz-block" data-quiz="s8"></div>
+    </section>
 
 </main>
 
@@ -753,5 +885,309 @@ document.addEventListener('scroll',()=>{
 });
 buildFilters(); render();
 </script>
+
+<script>
+window.quizData = {
+ "s1": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما ترتيب الأبواب الثلاثة الأولى في رياض الصالحين؟",
+    "options": [
+     "الصبر، ثم الإخلاص، ثم التوبة",
+     "الإخلاص، ثم التوبة، ثم الصبر",
+     "التوبة، ثم الصبر، ثم الإخلاص"
+    ],
+    "correct": 1,
+    "feedback": "وهذا المجلس في خاتمة باب التوبة، بعد أن كان المجلس الماضي في حديث كعب بن مالك، وبقي في الباب ثلاثة أحاديث."
+   }
+  ]
+ },
+ "s2": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "لماذا أورد النووي حديث المرأة الجهنية في باب التوبة؟",
+    "options": [
+     "لبيان تفاصيل أحكام الحدود",
+     "لأن محلَّ الشاهد قوله ﷺ: «لقد تابت توبةً لو قُسمت بين سبعين من أهل المدينة لوسِعتهم»",
+     "لبيان أحكام الحمل والوضع"
+    ],
+    "correct": 1,
+    "feedback": "فهو في بيان عِظَم التوبة ومنزلتها، لا في أحكام الحدود. وقد قال ﷺ أيضًا: «وهل وجدتَ أفضلَ من أن جادت بنفسها لله عز وجل؟»"
+   },
+   {
+    "type": "reflect",
+    "q": "ما الذي تبيّنه هذه الحادثة عن طبيعة المجتمع المسلم؟",
+    "answer": "أن السيرة النبوية فيها الجوانب المتعلقة بمعالي الأمور — الأعمال الصالحة وإنجازات الصحابة وبذلهم أنفسهم — وفيها كذلك الجوانب الأخرى: أخطاء وقع فيها بعض الصحابة، وكيف كان النبي ﷺ يتعامل مع الأمرين. فالمجتمع المسلم لا يخلو من الأخطاء، وثمة فقهٌ في التعامل معها."
+   }
+  ]
+ },
+ "s3": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما المشكلة الأساسية في عدم الفقه بالتعامل مع الخطأ؟",
+    "options": [
+     "أنها قضية ثانوية لا تؤثر كثيرًا",
+     "أن سوء التعامل مع الخطأ قد يكون سببًا في نقض كل الصواب",
+     "أنها تؤخر بناء المنهج فقط"
+    ],
+    "correct": 1,
+    "feedback": "فقد يترك الإنسان طريق الخير كله لأنه تم التعامل معه عند خطئه بطريقة غير صحيحة — فيخسر الدنيا والآخرة."
+   },
+   {
+    "type": "mcq",
+    "q": "ما المستويان اللذان فرّق بينهما الشيخ في التعامل مع الخطأ؟",
+    "options": [
+     "مستوى الوسيلة (كيف ننصح؟) ومستوى المبدأ (هل الأصل التشديد أم التيسير؟)",
+     "مستوى الفرد ومستوى الجماعة",
+     "مستوى الدنيا ومستوى الآخرة"
+    ],
+    "correct": 0,
+    "feedback": "وضرب مثالين متقابلين: رجل قال «أصبتُ حدًّا» فقال ﷺ: «أصلَّيتَ معنا؟ فإن الله قد غفر لك ذنبك»، وامرأة قالت «أصبتُ حدًّا» فكان ما كان من إقامة الحد."
+   },
+   {
+    "type": "reflect",
+    "q": "ما القاعدة التي قررها الشيخ في اكتمال المناهج؟ ومن أحوج الناس إليها؟",
+    "answer": "القاعدة: لا يكتمل منهجٌ إلا إذا أحسن القائمون عليه التعامل مع الأخطاء كما يحسنون التعامل مع الصواب وبناءه. وأحوج الناس إليها: القائمون على التربية، وكل من له سياسة للناس — سلطوية كانت أو تربوية تأديبية."
+   }
+  ]
+ },
+ "s4": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "أيهما أشدُّ في ذات الذنب: الفرار يوم أُحد أم التخلف عن تبوك؟",
+    "options": [
+     "التخلف عن تبوك",
+     "الفرار يوم أُحد",
+     "متساويان"
+    ],
+    "correct": 1,
+    "feedback": "لأربعة أسباب: أن الفرار من الزحف من السبع الموبقات، وأن فيه وعيدًا قرآنيًا صريحًا، وأنه أدى إلى قتل كثير من الصحابة، وأنه أدى إلى إصابة النبي ﷺ في وجهه وأسنانه."
+   },
+   {
+    "type": "mcq",
+    "q": "كيف كان التعامل مع خطأ يوم أُحد رغم شدته؟",
+    "options": [
+     "بالهجر خمسين ليلة",
+     "بالعفو كله، وعتاب قرآني حانٍ متكرر: «ولقد عفا الله عنهم»",
+     "بإقامة الحدود"
+    ],
+    "correct": 1,
+    "feedback": "حتى إنك تجد في ثنايا هذه الآيات: ﴿فَبِمَا رَحْمَةٍ مِّنَ اللَّهِ لِنتَ لَهُمْ... فَاعْفُ عَنْهُمْ وَاسْتَغْفِرْ لَهُمْ وَشَاوِرْهُمْ فِي الْأَمْرِ﴾."
+   },
+   {
+    "type": "reflect",
+    "q": "ما العوامل التي يتفاوت بها التعامل مع الخطأ؟ ولماذا وصف الشيخ ما وراءها بأنه «إجابات للتفكُّر»؟",
+    "answer": "العوامل: الشخص (مقام من وقع في الخطأ)، وطبيعة الذنب، وسياق المرحلة. فتخلّف الثلاثة يوم تبوك لم يكن له أثر عسكري إطلاقًا، وليسوا من القادة، ولم تقع معركة ولا هزيمة، وكانت مرحلة استوى فيها كل شيء واستقر. وسمّاها «إجابات للتفكُّر» لأنها تعليلات اجتهادية لا أحكام يُجزم بها."
+   }
+  ]
+ },
+ "s5": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما حكم طلب إقامة الحد قبل بلوغ الأمر إلى الإمام؟",
+    "options": [
+     "واجب على من وقع في الذنب",
+     "لا يجب؛ فـ«تعافَوا الحدودَ فيما بينكم»، لكن له أن يطلبه تطهيرًا إن أراد",
+     "محرّم مطلقًا"
+    ],
+    "correct": 1,
+    "feedback": "أما بعد بلوغ الإمام أو القضاة الشرعيين فينتقل الأمر من الاختيار إلى الوجوب والإلزام؛ وشاهده قوله ﷺ: «فهلّا كان ذلك قبل أن تأتيني به»، وإنكاره على من شفع في المخزومية."
+   },
+   {
+    "type": "reflect",
+    "q": "لماذا يزداد الاحتياج إلى فقه التعامل مع الخطأ في زمننا؟",
+    "answer": "لأن الأزمنة تؤثر في طبيعة التعامل؛ ففي زمن يكثر فيه الفساد والشر ويقلُّ فيه الصواب والإصلاح، تتسع مساحة الخطأ. فيصير السؤال: من الذي يقوّم الناس؟ وكيف يقوّمهم؟ وقد كان النبي ﷺ حريصًا جدًّا على ألا يُنفَّر الناس عن الدين."
+   }
+  ]
+ },
+ "s6": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما الخلل في المشاعر الذي نبّه عليه الشيخ عند بعض الغيورين على الدين؟",
+    "options": [
+     "الحرص على تطبيق الشريعة",
+     "أن يودَّ بعضهم وقوع ذنبٍ يوجب حدًّا حتى يُقام الحد وتُطبَّق الشريعة",
+     "الدعاء بعودة الحدود"
+    ],
+    "correct": 1,
+    "feedback": "فإقامة الحدود من أهم صور تطبيق الشريعة لكنها ليست كل شيء، ويجب أن يُفهم معناها في الإسلام — والشاهد أن هذه الزانية وُصفت في كلامه ﷺ بأنها «جادت بنفسها لله»."
+   },
+   {
+    "type": "mcq",
+    "q": "لما قال قائل عن شارب الخمر: «لعنه الله، ما أكثر ما يُؤتى به!» بم ردّ النبي ﷺ؟",
+    "options": [
+     "أقرّه على قوله",
+     "«لا تلعنه... ما علمتُ أنه يحب الله ورسوله»",
+     "أمر بزيادة عقوبته"
+    ],
+    "correct": 1,
+    "feedback": "فهو يُقام عليه الحد، وفي الوقت نفسه لم يُنزع عنه هذا الوصف؛ ولم يُنظر إليه ككائن مشؤوم يُجلد تشفّيًا. فمعنى إقامة الحدود ليس بهذه السطحية."
+   },
+   {
+    "type": "reflect",
+    "q": "ما المقصد الأكبر من الحدود؟ وكيف يُفهم وصف المرأة بأنها «جادت بنفسها لله»؟",
+    "answer": "المقصد: التطهير من الذنب والتكفير، وشاهده حديث عبادة في البيعة: «فمن أصاب من ذلك شيئًا فعوقب به فهو كفارةٌ له». وأما المرأة فكانت تعلم أن الحد هو الرجم وتعلم ما هو، وليست ملزمة أصلًا بأن تأتي، فأتت لتطهّر نفسها وفيه إزهاق لروحها — فاعتُبر ذلك بميزان النبي ﷺ كمن تقدّم فقاتل في سبيل الله فزهقت روحه."
+   }
+  ]
+ },
+ "s7": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "لماذا كان حديث «لو أنَّ لابن آدمَ واديًا من ذهب» مهمًّا بخصوصه؟",
+    "options": [
+     "لأنه أطول أحاديث الباب",
+     "لأنه ورد في أكثر من حديث أنه كان مما يُتلى من القرآن ثم نُسخ",
+     "لأنه في الصحيحين فقط"
+    ],
+    "correct": 1,
+    "feedback": "وهو من جملة ما نُسخت تلاوته وإن لم يُنسخ حكمه. وأنواع النسخ: نسخ التلاوة والحكم معًا، ونسخ الحكم مع بقاء التلاوة، ونسخ التلاوة مع بقاء الحكم."
+   },
+   {
+    "type": "mcq",
+    "q": "ما الفرق الجوهري بين المناهج الغربية الإنسانية ومنهج الوحي في التعامل مع طباع النفس؟",
+    "options": [
+     "لا فرق بينهما",
+     "تلك تقول: «عادي، هذا طبيعي، بل عزِّز ذاتك»، والوحي يقرر أنك خُلقت ووُجدت لك الرسالة لتخرج من هذه المشكلة",
+     "الوحي يتجاهل هذه الطباع"
+    ],
+    "correct": 1,
+    "feedback": "فالرسالة الإلهية جاءت لتجعل الإنسان يستعلي على هذه الطباع التي هي أهواء — كما في ﴿إِنَّ الْإِنسَانَ خُلِقَ هَلُوعًا... إِلَّا الْمُصَلِّينَ﴾، فيأتي الاستثناء بالصفات التي تُخرج الإنسان من هذه الحالة."
+   },
+   {
+    "type": "reflect",
+    "q": "ما «نافذة الفقه بالنفس البشرية»؟ وما الذي يفتقده علم النفس الحديث فيها؟",
+    "answer": "هي من الموضوعات الكبرى من موضوعات الوحي: الآيات التي تتحدث عن الإنسان إذا مسّته الضراء أو الخير أو الشر، وما في السنة من بيان حقائق النفس. ويفتقدها علم النفس الحديث لأنه لا يتعامل مع النفس باعتبارها نفسًا مخلوقة لله، فيها من الأهواء والأدواء المتعلقة بالروح، ولها نظامٌ في التزكية والتصفية. والفائدة العملية: معرفة هذا الطبع تعينك على فهم الناس والواقع فلا تتفاجأ من انهماكهم في الدنيا."
+   }
+  ]
+ },
+ "s8": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما دقة النص في قوله ﷺ: «ثم يتوب الله على القاتل فيُسلِم فيُستشهَد»؟",
+    "options": [
+     "أنه اكتفى بـ«فيسلم»",
+     "أنه لم يكتفِ بـ«فيسلم» بل زاد «فيُستشهَد»، فكأن المحورية في الشهادة باعتبارها من أهم أسباب دخول الجنة",
+     "أن الشهادة ليست شرطًا"
+    ],
+    "correct": 1,
+    "feedback": "فكأنها النتيجة التي هي الأصل — لأن من استُشهد فإنه يدخل الجنة، إلا من ورد فيه الاستثناء."
+   },
+   {
+    "type": "reflect",
+    "q": "ما التطبيق الحيّ الذي تعجّب منه الشيخ على معنى «الإسلام يجُبُّ ما قبله»؟",
+    "answer": "خالد بن الوليد وعكرمة بن أبي جهل، خاصة يوم أُحد — فيوم أحد هو يوم المصيبة والدماء والأحزان، ولو أُخرج خالد من معادلته لربما لم تحصل المصيبة من حيث الأسباب العسكرية، فهو الذي عمل الالتفاف. ثم بعد سنوات يسيرة يقول النبي ﷺ على المنبر: «ثم أخذ الرايةَ سيفٌ من سيوف الله» — فصار لقبه سيف الله وصار قائدًا من قادة المسلمين."
+   },
+   {
+    "type": "reflect",
+    "q": "كيف يجمع باب التوبة كله — من حديث قاتل المئة إلى هذا الحديث — على معنى واحد؟",
+    "answer": "المعنى: لا ذنب يغلق باب الرجوع. فالله لا يعاجل بالعقوبة ولو كان الذنب قتل وليٍّ من أوليائه، ولا يكتفي بقبول التوبة بل يرفع صاحبها حتى يجعله شهيدًا — ومن هنا كان إخراج النووي لهذا الحديث في باب التوبة إخراجًا جميلًا."
+   }
+  ]
+ }
+};
+</script>
+
+<script>
+/* ===== تثبيت الفهم: محرك الرندر ===== */
+(function(){
+  function renderQuizBlocks(){
+    document.querySelectorAll('.quiz-block[data-quiz]').forEach(function(container){
+      var key = container.getAttribute('data-quiz');
+      var data = (window.quizData || {})[key];
+      if(!data || container.dataset.rendered) return;
+      container.dataset.rendered = '1';
+
+      var title = document.createElement('div');
+      title.className = 'quiz-block-title';
+      title.textContent = '\uD83E\uDDE0 تثبيت الفهم';
+      container.appendChild(title);
+
+      data.items.forEach(function(item){
+        var itemEl = document.createElement('div');
+        itemEl.className = 'quiz-item';
+
+        if(item.type === 'mcq'){
+          var qEl = document.createElement('p');
+          qEl.className = 'quiz-q';
+          qEl.textContent = item.q;
+          itemEl.appendChild(qEl);
+
+          var optsWrap = document.createElement('div');
+          optsWrap.className = 'quiz-options';
+
+          var feedbackEl = document.createElement('div');
+          feedbackEl.className = 'quiz-feedback';
+          feedbackEl.textContent = item.feedback || '';
+
+          item.options.forEach(function(optText, optIdx){
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'quiz-opt';
+            btn.textContent = optText;
+            btn.addEventListener('click', function(){
+              var allBtns = optsWrap.querySelectorAll('.quiz-opt');
+              allBtns.forEach(function(b){ b.classList.add('disabled'); });
+              if(optIdx === item.correct){
+                btn.classList.add('correct');
+              } else {
+                btn.classList.add('wrong');
+                if(allBtns[item.correct]) allBtns[item.correct].classList.add('correct');
+              }
+              feedbackEl.classList.add('show');
+            });
+            optsWrap.appendChild(btn);
+          });
+
+          itemEl.appendChild(optsWrap);
+          itemEl.appendChild(feedbackEl);
+
+        } else if(item.type === 'reflect'){
+          var wrap = document.createElement('div');
+          wrap.className = 'quiz-reflect';
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-reflect-q';
+          qText.textContent = '\uD83D\uDCAD ' + item.q;
+          wrap.appendChild(qText);
+
+          var revealBtn = document.createElement('button');
+          revealBtn.type = 'button';
+          revealBtn.className = 'quiz-reveal-btn';
+          revealBtn.textContent = 'إظهار الإجابة';
+
+          var answerEl = document.createElement('div');
+          answerEl.className = 'quiz-answer';
+          answerEl.textContent = item.answer;
+
+          revealBtn.addEventListener('click', function(){
+            answerEl.classList.toggle('show');
+            revealBtn.textContent = answerEl.classList.contains('show') ? 'إخفاء الإجابة' : 'إظهار الإجابة';
+          });
+
+          wrap.appendChild(revealBtn);
+          wrap.appendChild(answerEl);
+          itemEl.appendChild(wrap);
+        }
+
+        container.appendChild(itemEl);
+      });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', renderQuizBlocks);
+  } else {
+    renderQuizBlocks();
+  }
+})();
+</script>
+
 </body>
 </html>
