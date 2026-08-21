@@ -687,7 +687,7 @@
 </style>
 
 </head>
-<body data-lecture-id="stage1_fiqh_05">
+<body data-lecture-id="stage1_fiqh_07">
 
 <!-- ===== Breadcrumb ===== -->
 <nav class="breadcrumb" aria-label="مسار التصفح">
@@ -1471,9 +1471,57 @@ window.quizData = {
   }
 })();
 </script>
+
+<style>
+  #ilm-custom-nav{
+    max-width:700px; margin:36px auto 24px; padding:20px 22px;
+    background:#fbfaf4; border:1px solid #d3d8ca; border-radius:14px;
+    font-family:'Tajawal','IBM Plex Sans Arabic','Segoe UI',Tahoma,sans-serif;
+    direction:rtl; color:#2b2a24;
+  }
+  #ilm-custom-nav .icn-row{
+    display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:14px;
+  }
+  #ilm-custom-nav .icn-link{
+    flex:1 1 auto; min-width:150px; text-align:center; text-decoration:none;
+    padding:10px 14px; border:1.5px solid #1f4a3d; border-radius:999px;
+    color:#1f4a3d; font-size:13.5px; font-weight:600; transition:background .15s,color .15s;
+  }
+  #ilm-custom-nav .icn-link:hover{ background:#1f4a3d; color:#fff; }
+  #ilm-custom-nav .icn-link.icn-disabled{
+    opacity:.4; pointer-events:none; border-color:#b3ac9e; color:#6a6a5b;
+  }
+  #ilm-custom-nav .icn-jump label{
+    display:block; font-size:12.5px; color:#6a6a5b; margin-bottom:6px;
+  }
+  #ilm-custom-nav select{
+    width:100%; padding:10px 12px; border:1px solid #d3d8ca; border-radius:8px;
+    background:#fff; color:#2b2a24; font-family:inherit; font-size:14px; cursor:pointer;
+  }
+</style>
+
+<div id="ilm-custom-nav">
+  <div class="icn-row">
+    <a class="icn-link" href="06.html">→ المحاضرة 4</a>
+    <a class="icn-link" href="08.html">المحاضرة 6 ←</a>
+  </div>
+  <div class="icn-jump">
+    <label for="ilm-custom-jump">الانتقال إلى محاضرة أخرى من «مدخل إلى علم الفقه»:</label>
+    <select id="ilm-custom-jump" onchange="if(this.value) window.location.href=this.value;">
+      <option value="01.html">1. المحاضرة 1</option>
+<option value="02.html">2. المحاضرة 2</option>
+<option value="05.html">3. المحاضرة 3</option>
+<option value="06.html">4. المحاضرة 4</option>
+<option value="07.html" selected>5. المحاضرة 5</option>
+<option value="08.html">6. المحاضرة 6</option>
+<option value="09.html">7. المحاضرة 7</option>
+    </select>
+  </div>
+</div>
+
 <script type="module" src="../../../firebase-sync-manhaj.js"></script>
 <script src="../../../ilm-track.js"></script>
 
-<script src="../../../ilm-highlight.js" data-lecture-id="stage1_fiqh_05"></script>
+<script src="../../../ilm-highlight.js" data-lecture-id="stage1_fiqh_07"></script>
 </body>
 </html>
