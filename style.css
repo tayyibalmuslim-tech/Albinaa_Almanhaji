@@ -669,3 +669,7 @@ a.day-title:hover, a.lecture-title:hover{ color: var(--green); }
   body{ background: #fff; }
   .card, .stage-card, .day-item, .lecture-item{ box-shadow: none; }
 }
+
+/* شريط التنقّل العلوي بين الأيام */
+[data-lecture-nav-top]{ margin: 18px 0 6px; }
+.lecture-nav-day{ font-size:11.5px; opacity:.75; font-weight:500; }
