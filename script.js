@@ -289,67 +289,130 @@ function continueCardHtml(stageId, compact) {
 /* =========================================================
    صفحة الرئيسية (home)
    ========================================================= */
-function renderHome() {
-  // إحصائيات عامة
-  const gp = globalProgress();
-  let totalSubjects = 0;
-  Object.values(SITE_DATA.stages).forEach(st => totalSubjects += st.subjects.length);
-  const streak = computeStreak();
 
-  const statsEl = document.getElementById('global-stats');
-  if (statsEl) {
-    // عدد المواد التي أُتمّت بالكامل
-    let doneSubjects = 0;
+const STATS_SCOPE_KEY = STORAGE_PREFIX + 'stats_scope';
+
+// المرحلة التي يقف عندها الطالب: أول مرحلة فيها محتوى ولم تكتمل بعد،
+// وإن اكتمل كل شيء فآخر مرحلة فيها محتوى.
+function currentStageId() {
+  const ids = Object.keys(SITE_DATA.stages);
+  let lastWithContent = null;
+  for (const sid of ids) {
+    const p = stageProgress(sid);
+    if (p.total === 0) continue;
+    lastWithContent = sid;
+    if (p.done < p.total) return sid;
+  }
+  return lastWithContent;
+}
+
+function getStatsScope() {
+  const saved = localStorage.getItem(STATS_SCOPE_KEY);
+  if (saved === 'all') return 'all';
+  if (saved && SITE_DATA.stages[saved]) return saved;
+  return currentStageId() || 'all';
+}
+
+// يحسب الأرقام حسب النطاق المختار: مرحلة واحدة أو المنهج كله
+function statsForScope(scope) {
+  if (scope === 'all') {
+    const gp = globalProgress();
+    let totalSubjects = 0, doneSubjects = 0;
     Object.entries(SITE_DATA.stages).forEach(([sid, st]) => {
+      totalSubjects += st.subjects.length;
       st.subjects.forEach(s => {
         const p = subjectProgress(sid, s.key);
         if (p.total > 0 && p.done === p.total) doneSubjects++;
       });
     });
-
-    statsEl.innerHTML = `
-      <div class="stat-box highlight">
-        <div class="stat-value">${streak}<span class="unit">${streak === 1 ? 'يوم' : 'أيام'}</span></div>
-        <div class="stat-label">تدرس بلا انقطاع</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-value">${gp.done}<span class="unit">من ${gp.total}</span></div>
-        <div class="stat-label">محاضرة أنهيتها</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-value">${doneSubjects}<span class="unit">من ${totalSubjects}</span></div>
-        <div class="stat-label">مادة مكتملة</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-value">${pct(gp.done, gp.total)}<span class="unit">%</span></div>
-        <div class="stat-label">من المنهج كاملًا</div>
-      </div>
-    `;
+    return {
+      done: gp.done, total: gp.total,
+      doneSubjects, totalSubjects,
+      label: 'من المنهج كاملًا'
+    };
   }
+  const stage = SITE_DATA.stages[scope];
+  const sp = stageProgress(scope);
+  let doneSubjects = 0;
+  stage.subjects.forEach(s => {
+    const p = subjectProgress(scope, s.key);
+    if (p.total > 0 && p.done === p.total) doneSubjects++;
+  });
+  return {
+    done: sp.done, total: sp.total,
+    doneSubjects, totalSubjects: stage.subjects.length,
+    label: 'من ' + stage.name
+  };
+}
+
+function renderStats() {
+  const statsEl = document.getElementById('global-stats');
+  if (!statsEl) return;
+
+  const scope = getStatsScope();
+  const s = statsForScope(scope);
+  const streak = computeStreak();
+
+  // مبدّل النطاق — يوضع قبل شريط الأرقام
+  let switcher = document.querySelector('.stats-scope');
+  if (!switcher) {
+    switcher = document.createElement('div');
+    switcher.className = 'stats-scope';
+    statsEl.parentNode.insertBefore(switcher, statsEl);
+  }
+  const stagesWithContent = Object.entries(SITE_DATA.stages)
+    .filter(([sid, st]) => st.subjects.length > 0);
+
+  switcher.innerHTML =
+    '<span class="scope-label">تقدّمي في</span>' +
+    '<div class="scope-btns">' +
+    stagesWithContent.map(([sid, st]) =>
+      `<button type="button" class="scope-btn${scope === sid ? ' active' : ''}" data-scope="${sid}">${escapeHtml(st.name)}</button>`
+    ).join('') +
+    `<button type="button" class="scope-btn${scope === 'all' ? ' active' : ''}" data-scope="all">المنهج كله</button>` +
+    '</div>';
+
+  switcher.querySelectorAll('.scope-btn').forEach(b => {
+    b.addEventListener('click', () => {
+      localStorage.setItem(STATS_SCOPE_KEY, b.dataset.scope);
+      renderStats();
+    });
+  });
+
+  statsEl.innerHTML = `
+    <div class="stat-box highlight">
+      <div class="stat-value">${streak}<span class="unit">${streak === 1 ? 'يوم' : 'أيام'}</span></div>
+      <div class="stat-label">تدرس بلا انقطاع</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">${s.done}<span class="unit">من ${s.total}</span></div>
+      <div class="stat-label">محاضرة أنهيتها</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">${s.doneSubjects}<span class="unit">من ${s.totalSubjects}</span></div>
+      <div class="stat-label">مادة مكتملة</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">${pct(s.done, s.total)}<span class="unit">%</span></div>
+      <div class="stat-label">${escapeHtml(s.label)}</div>
+    </div>
+  `;
+}
+
+function renderHome() {
+  renderStats();
+
+  const activeStage = currentStageId();
 
   const continueEl = document.getElementById('continue-card');
   if (continueEl) {
-    if (SITE_DATA.stages['stage1']) {
-      continueEl.innerHTML = continueCardHtml('stage1', false);
-    } else {
-      continueEl.innerHTML = '';
-    }
+    continueEl.innerHTML = activeStage ? continueCardHtml(activeStage, false) : '';
   }
 
   // بطاقات المراحل
   const grid = document.getElementById('stages-grid');
   if (grid) {
-    const allStageNums = [1, 2, 3, 4];
     const stageNames = { 1: 'المرحلة الأولى', 2: 'المرحلة الثانية', 3: 'المرحلة الثالثة', 4: 'المرحلة الرابعة' };
-    // المرحلة "الحالية" = أول مرحلة فيها محتوى ولم تكتمل بعد
-    let currentStageId = null;
-    ['stage0', 'stage1', 'stage2', 'stage3', 'stage4'].forEach(sid => {
-      if (currentStageId) return;
-      const st = SITE_DATA.stages[sid];
-      if (!st) return;
-      const p = stageProgress(sid);
-      if (p.total > 0 && p.done < p.total) currentStageId = sid;
-    });
 
     const allStages = ['stage0', 'stage1', 'stage2', 'stage3', 'stage4']
       .filter(sid => SITE_DATA.stages[sid] || /^stage[1-4]$/.test(sid));
@@ -378,7 +441,7 @@ function renderHome() {
       }).length;
 
       const isComplete = sp.total > 0 && sp.done === sp.total;
-      const isCurrent = stageId === currentStageId;
+      const isCurrent = stageId === activeStage;
       const cls = isComplete ? 'is-complete' : (isCurrent ? 'is-current' : '');
 
       let stateWord = 'جاهزة للبدء';
