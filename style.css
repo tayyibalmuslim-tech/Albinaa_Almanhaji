@@ -581,6 +581,60 @@ a{ color: inherit; text-decoration: none; }
 .placeholder-hint{ font-size: 0.82rem; margin-top: 4px; }
 .lecture-nav{ display:flex; gap: 10px; flex-wrap: wrap; }
 
+/* ---------- التنقل الإضافي بين المحاضرات (سابق/تالي + قائمة منسدلة) ---------- */
+.lecture-nav-extra{
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.lecture-nav-adjacent-row{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.lecture-nav-adjacent{
+  flex: 1 1 auto;
+  min-width: 160px;
+  text-align: center;
+  font-size: 13.5px;
+}
+.lecture-nav-adjacent.is-disabled{
+  opacity: .45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.lecture-nav-jump{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.lecture-nav-jump label{
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+.lecture-jump-select{
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--paper-raised);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 14px;
+  cursor: pointer;
+}
+.lecture-jump-select:focus{
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+@media (max-width: 480px){
+  .lecture-nav-adjacent-row{ flex-direction: column; }
+}
+
 .empty-state{
   background: var(--paper-raised);
   border: 1px solid var(--line);
