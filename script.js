@@ -186,6 +186,52 @@ function findNextLecture(stageId) {
   return next || null;
 }
 
+/* ---------------- اسم مجلد المرحلة من معرّفها ---------------- */
+// stage0 -> stage-0 ، stage1 -> stage-1 ...
+function stageFolder(stageId) {
+  return String(stageId).replace(/^stage(\d+)$/, 'stage-$1');
+}
+
+/* ---------------- أيقونات موحّدة (بدل الإيموجي) ---------------- */
+const ICONS = {
+  book: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H10a2 2 0 0 1 2 2v14a1.6 1.6 0 0 0-1.6-1.6H5.5A1.5 1.5 0 0 1 4 18.9z"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H14a2 2 0 0 0-2 2v14a1.6 1.6 0 0 1 1.6-1.6h4.9a1.5 1.5 0 0 0 1.5-1.5z"/></svg>',
+  check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>',
+  arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>'
+};
+function icon(name, size) {
+  const s = size || 20;
+  return `<span class="icn" style="width:${s}px;height:${s}px;display:inline-flex">${ICONS[name] || ''}</span>`;
+}
+
+/* ---------------- الشريط العلوي الثابت ----------------
+   يُحقن من هنا كي تبقى ملفات HTML كما هي دون تعديل. */
+function injectTopbar() {
+  if (document.querySelector('.topbar')) return;
+  const pageEl = document.querySelector('.page');
+  if (!pageEl) return;
+
+  // عمق الصفحة الحالية لضبط الروابط النسبية
+  const page = document.body.dataset.page;
+  const up = page === 'subject' ? '../../' : (page === 'stage' ? '../' : '');
+
+  const gp = globalProgress();
+  const bar = document.createElement('header');
+  bar.className = 'topbar';
+  bar.innerHTML = `
+    <div class="topbar-inner">
+      <a class="wordmark" href="${up}index.html">
+        <span class="wordmark-glyph">ب</span>
+        <span class="wordmark-text">البناء المنهجي</span>
+      </a>
+      <span class="topbar-spacer"></span>
+      <div class="top-progress" title="نسبة ما أنجزته من المنهج كاملًا">
+        <span class="tp-num">${pct(gp.done, gp.total)}%</span>
+        <span class="tp-label">من المنهج</span>
+      </div>
+    </div>`;
+  document.body.insertBefore(bar, pageEl);
+}
+
 /* ---------------- شريط تنبيه عائم (تعزيز إيجابي) ---------------- */
 function showToast(message) {
   let holder = document.getElementById('toast-holder');
@@ -206,7 +252,7 @@ function showToast(message) {
   }, 2400);
 }
 
-const ENCOURAGEMENTS = ['أحسنت! 🌿', 'واصل، أنت تتقدّم 💪', 'خطوة أخرى نحو الهدف ✨', 'بارك الله فيك 🌙', 'استمر، النور قريب ✦'];
+const ENCOURAGEMENTS = ['سُجِّلت. أحسنت', 'خطوة أخرى في الطريق', 'واصل، أنت تتقدّم', 'بارك الله فيك', 'تمّت. استمر'];
 function randomEncouragement() {
   return ENCOURAGEMENTS[Math.floor(Math.random() * ENCOURAGEMENTS.length)];
 }
@@ -219,23 +265,24 @@ function continueCardHtml(stageId, compact) {
     if (!stage) return '';
     return `
       <div class="continue-card done">
-        <div class="continue-icon">🌟</div>
+        <div class="continue-icon">${icon('check', 22)}</div>
         <div class="continue-body">
-          <div class="continue-eyebrow">تهانينا</div>
-          <div class="continue-title">أتممت جميع محاضرات ${escapeHtml(stage.name)}!</div>
+          <div class="continue-eyebrow">اكتملت</div>
+          <div class="continue-title">أتممت جميع محاضرات ${escapeHtml(stage.name)}</div>
+          <div class="continue-sub">انتقل إلى المرحلة التالية متى شئت</div>
         </div>
       </div>`;
   }
-  const href = compact ? next.link : `stage-1/${next.link}`;
+  const href = compact ? next.link : `${stageFolder(stageId)}/${next.link}`;
   return `
     <div class="continue-card">
-      <div class="continue-icon">📖</div>
+      <div class="continue-icon">${icon('book', 22)}</div>
       <div class="continue-body">
-        <div class="continue-eyebrow">أكمل من هنا — اليوم ${next.day}</div>
+        <div class="continue-eyebrow">تُكمل الآن — اليوم ${next.day}</div>
         <div class="continue-title">${escapeHtml(next.title)}</div>
         <div class="continue-sub">${escapeHtml(next.subjectName)}</div>
       </div>
-      <a class="btn continue-btn" href="${href}">ابدأ الآن</a>
+      <a class="btn continue-btn" href="${href}">افتح المحاضرة ${icon('arrow', 15)}</a>
     </div>`;
 }
 
@@ -251,11 +298,32 @@ function renderHome() {
 
   const statsEl = document.getElementById('global-stats');
   if (statsEl) {
+    // عدد المواد التي أُتمّت بالكامل
+    let doneSubjects = 0;
+    Object.entries(SITE_DATA.stages).forEach(([sid, st]) => {
+      st.subjects.forEach(s => {
+        const p = subjectProgress(sid, s.key);
+        if (p.total > 0 && p.done === p.total) doneSubjects++;
+      });
+    });
+
     statsEl.innerHTML = `
-      <div class="stat-box highlight"><div class="stat-value">${streak} 🔥</div><div class="stat-label">أيام متتالية</div></div>
-      <div class="stat-box"><div class="stat-value">${totalSubjects}</div><div class="stat-label">إجمالي المواد</div></div>
-      <div class="stat-box"><div class="stat-value">${gp.done} / ${gp.total}</div><div class="stat-label">محاضرات مكتملة</div></div>
-      <div class="stat-box"><div class="stat-value">${pct(gp.done, gp.total)}%</div><div class="stat-label">نسبة الإنجاز الكلية</div></div>
+      <div class="stat-box highlight">
+        <div class="stat-value">${streak}<span class="unit">${streak === 1 ? 'يوم' : 'أيام'}</span></div>
+        <div class="stat-label">تدرس بلا انقطاع</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value">${gp.done}<span class="unit">من ${gp.total}</span></div>
+        <div class="stat-label">محاضرة أنهيتها</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value">${doneSubjects}<span class="unit">من ${totalSubjects}</span></div>
+        <div class="stat-label">مادة مكتملة</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value">${pct(gp.done, gp.total)}<span class="unit">%</span></div>
+        <div class="stat-label">من المنهج كاملًا</div>
+      </div>
     `;
   }
 
@@ -273,31 +341,71 @@ function renderHome() {
   if (grid) {
     const allStageNums = [1, 2, 3, 4];
     const stageNames = { 1: 'المرحلة الأولى', 2: 'المرحلة الثانية', 3: 'المرحلة الثالثة', 4: 'المرحلة الرابعة' };
-    grid.innerHTML = allStageNums.map(num => {
-      const stageId = 'stage' + num;
+    // المرحلة "الحالية" = أول مرحلة فيها محتوى ولم تكتمل بعد
+    let currentStageId = null;
+    ['stage0', 'stage1', 'stage2', 'stage3', 'stage4'].forEach(sid => {
+      if (currentStageId) return;
+      const st = SITE_DATA.stages[sid];
+      if (!st) return;
+      const p = stageProgress(sid);
+      if (p.total > 0 && p.done < p.total) currentStageId = sid;
+    });
+
+    const allStages = ['stage0', 'stage1', 'stage2', 'stage3', 'stage4']
+      .filter(sid => SITE_DATA.stages[sid] || /^stage[1-4]$/.test(sid));
+
+    grid.innerHTML = allStages.map(stageId => {
+      const num = stageId.replace('stage', '');
+      const folder = stageFolder(stageId);
       const stage = SITE_DATA.stages[stageId];
-      if (!stage) {
+
+      if (!stage || !stage.subjects.length) {
+        const fallbackName = stageNames[num] || `المرحلة ${num}`;
         return `
           <div class="card stage-card disabled">
-            <h3>${stageNames[num]}</h3>
-            <p class="stage-meta">قريبًا 🚧 — لم تتم إضافة المحتوى بعد</p>
+            <h3>${escapeHtml(stage ? stage.name : fallbackName)}</h3>
+            <span class="stage-meta">لم تُضف موادها بعد</span>
             <div class="card-footer">
-              <a class="btn btn-outline btn-sm" href="stage-${num}/index.html">عرض الصفحة</a>
+              <a class="btn btn-outline btn-sm" href="${folder}/index.html">افتح الصفحة</a>
             </div>
           </div>`;
       }
+
       const sp = stageProgress(stageId);
       const completedSubjects = stage.subjects.filter(s => {
         const p = subjectProgress(stageId, s.key);
         return p.total > 0 && p.done === p.total;
       }).length;
+
+      const isComplete = sp.total > 0 && sp.done === sp.total;
+      const isCurrent = stageId === currentStageId;
+      const cls = isComplete ? 'is-complete' : (isCurrent ? 'is-current' : '');
+
+      let stateWord = 'جاهزة للبدء';
+      if (isComplete) stateWord = 'اكتملت';
+      else if (isCurrent) stateWord = 'أنت هنا';
+
+      const chips = stage.subjects.map(s => {
+        const p = subjectProgress(stageId, s.key);
+        const sDone = p.total > 0 && p.done === p.total;
+        return `<a class="chip${sDone ? ' done' : ''}" href="${folder}/${s.key}/index.html">${escapeHtml(s.name)} <span class="cn">${p.done}/${p.total}</span></a>`;
+      }).join('');
+
+      const action = isComplete ? 'راجع المرحلة' : (sp.done > 0 ? 'تابع المرحلة' : 'ابدأ المرحلة');
+
       return `
-        <div class="card stage-card">
-          <h3>${stage.name}</h3>
-          <div class="stage-meta">المواد المكتملة: ${completedSubjects} / ${stage.subjects.length}</div>
-          ${progressBarHtml(sp.done, sp.total, 'إنجاز المرحلة')}
+        <div class="card stage-card ${cls}">
+          <div class="stage-top">
+            <div>
+              <h3>${escapeHtml(stage.name)}</h3>
+              <div class="stage-meta">${stage.subjects.length} مواد · ${sp.total} محاضرة · ${stateWord}</div>
+            </div>
+            <div class="stage-frac">${sp.done}<span class="of"> / ${sp.total}</span></div>
+          </div>
+          ${progressBarHtml(sp.done, sp.total, `${completedSubjects} من ${stage.subjects.length} مواد مكتملة`)}
+          <div class="chips">${chips}</div>
           <div class="card-footer">
-            <a class="btn btn-sm" href="stage-${num}/index.html">دخول المرحلة</a>
+            <a class="stage-link" href="${folder}/index.html">${action} ${icon('arrow', 15)}</a>
           </div>
         </div>`;
     }).join('');
@@ -314,21 +422,22 @@ function setupSearch() {
   // فهرسة قابلة للبحث
   const index = [];
   Object.entries(SITE_DATA.stages).forEach(([stageId, stage]) => {
+    const folder = stageFolder(stageId);
     stage.subjects.forEach(subject => {
       index.push({
         type: 'subject',
         text: [subject.name, subject.sheikh, ...(subject.tags || [])].join(' '),
         title: subject.name,
-        meta: `مادة — ${stage.name} — الشيخ ${subject.sheikh}`,
-        href: `stage-1/${subject.key}/index.html`
+        meta: `مادة في ${stage.name} — الشيخ ${subject.sheikh}`,
+        href: `${folder}/${subject.key}/index.html`
       });
       subject.lectures.forEach(lec => {
         index.push({
           type: 'lecture',
           text: [lec.title, subject.name, subject.sheikh, ...(subject.tags || [])].join(' '),
           title: lec.title,
-          meta: `محاضرة — ${subject.name} — اليوم ${lec.day}`,
-          href: `stage-1/${subject.key}/${lec.file}`
+          meta: `محاضرة في ${subject.name} — اليوم ${lec.day}`,
+          href: `${folder}/${subject.key}/${lec.file}`
         });
       });
     });
@@ -631,6 +740,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   // ننتظر تسجيل الدخول ثم نزامن بيانات هذا الجهاز مع السحابة قبل أول عرض
   // (لو الوحدة السحابية غير مضافة لهذه الصفحة، تنتهي فورًا بلا أثر)
   await syncFromCloudOnce();
+
+  // الشريط العلوي على كل صفحات القشرة (لا يُحقن في صفحات المحاضرات)
+  if (page === 'home' || page === 'stage' || page === 'subject') injectTopbar();
 
   if (page === 'home') renderHome();
   else if (page === 'stage') renderStagePage();
