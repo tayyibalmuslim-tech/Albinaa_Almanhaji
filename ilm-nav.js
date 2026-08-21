@@ -76,9 +76,15 @@
     }
     var arrowR = dir === 'prev' ? '→ ' : '';
     var arrowL = dir === 'next' ? ' ←' : '';
+    // تمييز الانتقال إلى مادة أخرى
+    var otherSubject = ctx.subject && d.subjectKey !== ctx.subject.key;
+    var subjLine = d.subjectName
+      ? '<span class="inv-subj' + (otherSubject ? ' inv-subj-other' : '') + '">' +
+        (otherSubject ? '⇄ ' : '') + esc(d.subjectName) + '</span>'
+      : '';
     return '<a class="inv-link" href="' + esc(TO_STAGE + d.link) + '">' +
-      arrowR + '<span class="inv-day">اليوم ' + d.day + '</span>' +
-      '<span class="inv-ttl">' + esc(d.title) + '</span>' + arrowL + '</a>';
+      '<span class="inv-day">' + arrowR + 'اليوم ' + d.day + arrowL + '</span>' +
+      '<span class="inv-ttl">' + esc(d.title) + '</span>' + subjLine + '</a>';
   }
 
   var jumpHtml = '';
@@ -117,6 +123,9 @@
     '.ilm-nav-bar .inv-link:hover{background:#1f4a3d;color:#fff;}' +
     '.ilm-nav-bar .inv-day{font-size:11.5px;opacity:.75;font-weight:500;}' +
     '.ilm-nav-bar .inv-ttl{font-size:13.5px;}' +
+    '.ilm-nav-bar .inv-subj{font-size:11px;opacity:.7;font-weight:500;}' +
+    '.ilm-nav-bar .inv-subj-other{opacity:.95;color:#8a6a1f;font-weight:600;}' +
+    '.ilm-nav-bar .inv-link:hover .inv-subj-other{color:#f0dfae;}' +
     '.ilm-nav-bar .inv-disabled{flex:1 1 0;min-width:150px;text-align:center;padding:10px 14px;' +
     'border:1.5px solid #b3ac9e;border-radius:999px;color:#6a6a5b;opacity:.45;' +
     'font-size:13.5px;font-weight:600;}' +
