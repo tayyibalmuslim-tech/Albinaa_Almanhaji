@@ -2068,40 +2068,80 @@ window.quizData = {
 </style>
 
 <div id="ilm-custom-nav">
-  <div class="icn-row">
-    <span class="icn-link icn-disabled">→ لا توجد محاضرة سابقة</span>
-    <a class="icn-link" href="02.html">المحاضرة الأولى 2/3 ←</a>
-  </div>
+  <div class="icn-row"><span class="icn-link icn-disabled">→ لا يوجد مجلس سابق</span><a class="icn-link" href="02.html">المجلس الثاني ←</a></div>
   <div class="icn-jump">
-    <label for="ilm-custom-jump">الانتقال إلى محاضرة أخرى من «مدخل إلى علم الحديث»:</label>
-    <select id="ilm-custom-jump" onchange="if(this.value) window.location.href=this.value;">
-      <option value="01.html" selected>1. المحاضرة الأولى 1/3</option>
-<option value="02.html">2. المحاضرة الأولى 2/3</option>
-<option value="03.html">3. المحاضرة الأولى 3/3</option>
-<option value="04.html">4. المحاضرة الثانية 1/2</option>
-<option value="05.html">5. المحاضرة الثانية 2/2</option>
-    </select>
+    <label for="ilm-custom-jump">الانتقال إلى مجلس آخر من «مدخل إلى علم الحديث»:</label>
+    <select id="ilm-custom-jump" onchange="if(this.value) window.location.href=this.value;"><option value="01.html" selected>1. المجلس الأول</option><option value="02.html">2. المجلس الثاني</option></select>
   </div>
 </div>
+
+<style>
+  #ilm-parts{
+    max-width:700px; margin:26px auto 0; padding:16px 18px;
+    background:#fbfaf4; border:1px solid #d3d8ca; border-radius:14px;
+    font-family:'Tajawal','IBM Plex Sans Arabic','Segoe UI',Tahoma,sans-serif;
+    direction:rtl; color:#2b2a24;
+  }
+  #ilm-parts .ip-title{ font-size:12.5px; color:#6a6a5b; margin-bottom:10px; }
+  #ilm-parts .ip-row{ display:flex; gap:8px; flex-wrap:wrap; }
+  #ilm-parts .ip-btn{
+    flex:1 1 auto; min-width:120px; text-align:center; text-decoration:none;
+    padding:9px 12px; border:1.5px solid #d3d8ca; border-radius:999px;
+    color:#6a6a5b; font-size:13px; font-weight:600; background:#fff;
+    transition:all .15s;
+  }
+  #ilm-parts .ip-btn:hover{ border-color:#1f4a3d; color:#1f4a3d; }
+  #ilm-parts .ip-btn.ip-current{ border-color:#1f4a3d; background:#1f4a3d; color:#fff; }
+  #ilm-parts .ip-btn.ip-done::after{ content:" ✓"; }
+  #ilm-parts .ip-btn.ip-current.ip-done::after{ content:" ✓"; }
+</style>
+<div id="ilm-parts">
+  <div class="ip-title">هذه المحاضرة موزّعة على 3 أيام في الجدول — المحتوى واحد كامل، وعلامة الإنجاز مستقلة لكل يوم:</div>
+  <div class="ip-row"><a class="ip-btn" data-pid="stage1_hadith_01" href="01.html?p=stage1_hadith_01">الجزء 1/3 — اليوم 29</a><a class="ip-btn" data-pid="stage1_hadith_02" href="01.html?p=stage1_hadith_02">الجزء 2/3 — اليوم 32</a><a class="ip-btn" data-pid="stage1_hadith_03" href="01.html?p=stage1_hadith_03">الجزء 3/3 — اليوم 33</a></div>
+</div>
+
 
 <script type="module" src="../../../firebase-sync-manhaj.js"></script>
 <script src="../../../ilm-track.js"></script>
 <script>
+window.ILM_PARTS = [{"id": "stage1_hadith_01", "day": 29, "part": "1/3"}, {"id": "stage1_hadith_02", "day": 32, "part": "2/3"}, {"id": "stage1_hadith_03", "day": 33, "part": "3/3"}];
 (function(){
   var box = document.getElementById('ilm-completion-box');
-  var cb = box ? box.querySelector('input[data-lecture-id]') : null;
+  var cb  = box ? box.querySelector('input[data-lecture-id]') : null;
   if(!cb) return;
-  var lid = cb.getAttribute('data-lecture-id');
+  var PARTS = window.ILM_PARTS || [];
+  var qp = null;
+  try { qp = new URLSearchParams(location.search).get('p'); } catch(e){}
+  var cur = null;
+  for(var i=0;i<PARTS.length;i++){ if(PARTS[i].id === qp){ cur = PARTS[i]; break; } }
+  if(!cur) cur = PARTS[0] || null;
+  var lid = cur ? cur.id : cb.getAttribute('data-lecture-id');
+  var label = box.querySelector('span');
+
+  if(cur && PARTS.length > 1 && label){
+    label.textContent = 'تحديد الجزء ' + cur.part + ' (اليوم ' + cur.day + ') كمكتمل';
+  }
   function render(done){
     cb.checked = done;
     box.classList.toggle('done', done);
   }
+  function paintParts(){
+    var btns = document.querySelectorAll('#ilm-parts .ip-btn');
+    for(var i=0;i<btns.length;i++){
+      var pid = btns[i].getAttribute('data-pid');
+      btns[i].classList.toggle('ip-current', cur && pid === cur.id);
+      if(window.IlmTrack) btns[i].classList.toggle('ip-done', window.IlmTrack.isDone(pid));
+    }
+  }
   if(window.IlmTrack){
-    window.IlmTrack.ready.then(function(){ render(window.IlmTrack.isDone(lid)); });
+    window.IlmTrack.ready.then(function(){ render(window.IlmTrack.isDone(lid)); paintParts(); });
+  } else {
+    paintParts();
   }
   cb.addEventListener('change', function(){
     if(window.IlmTrack) window.IlmTrack.setDone(lid, cb.checked);
     render(cb.checked);
+    paintParts();
   });
 })();
 </script>
