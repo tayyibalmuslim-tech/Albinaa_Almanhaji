@@ -6,54 +6,103 @@ const SITE_DATA = {
       name: "المرحلة التمهيدية",
       subjects: [
         { key: "muqaddimat", name: "مقدمات تمهيدية", sheikh: "أحمد السيد", tags: ["مقدمات_تمهيدية"], lectures: [
-          { id: "stage0_muqaddimat_01", n: 1, day: 1, title: "فتعلمنا الإيمان", file: "lectures/01.html" },
-          { id: "stage0_muqaddimat_02", n: 2, day: 2, title: "القلب المنيب", file: "lectures/02.html" }
+          { id: "stage0_muqaddimat_01", n: 1, day: 1, title: "فتعلمنا الإيمان", file: "lectures/01.html", video: "kAilDgzTOiI" },
+          { id: "stage0_muqaddimat_02", n: 2, day: 2, title: "القلب المنيب", file: "lectures/02.html", video: "qyyaKtVeW9w" }
         ]},
-        { key: "madkhal-manhaj", name: "المدخل إلى المنهاج", sheikh: "أحمد السيد ومحمد شميس (القبس الوهاج) واللجنة العلمية", tags: ["مداخل_العلوم", "المنهاج"], lectures: [
-          { id: "stage0_madkhal-manhaj_01", n: 1, day: 3, title: "المدخل إلى المنهاج", file: "lectures/01.html" },
-          { id: "stage0_madkhal-manhaj_02", n: 2, day: 4, title: "القبس الوهاج (مختصر شرح المنهاج) — من ص 7 إلى 27", file: "lectures/02.html" },
-          { id: "stage0_madkhal-manhaj_03", n: 3, day: 5, title: "القبس الوهاج (مختصر شرح المنهاج) — من ص 28 إلى 45", file: "lectures/03.html" },
-          { id: "stage0_madkhal-manhaj_04", n: 4, day: 6, title: "تعليق على ما أُخذ من أحاديث المنهاج", file: "lectures/04.html" },
-          { id: "stage0_madkhal-manhaj_05", n: 5, day: 7, title: "القبس الوهاج (مختصر شرح المنهاج) — من ص 46 إلى 67", file: "lectures/05.html" },
-          { id: "stage0_madkhal-manhaj_06", n: 6, day: 8, title: "القبس الوهاج (مختصر شرح المنهاج) — من ص 68 إلى 92", file: "lectures/06.html" },
-          { id: "stage0_madkhal-manhaj_07", n: 7, day: 9, title: "تعليق على ما أُخذ من أحاديث المنهاج", file: "lectures/07.html" },
-          { id: "stage0_madkhal-manhaj_08", n: 8, day: 10, title: "القبس الوهاج (مختصر شرح المنهاج) — من ص 93 إلى 111", file: "lectures/08.html" },
-          { id: "stage0_madkhal-manhaj_09", n: 9, day: 11, title: "القبس الوهاج (مختصر شرح المنهاج) — من ص 112 إلى 136", file: "lectures/09.html" },
-          { id: "stage0_madkhal-manhaj_10", n: 10, day: 12, title: "تعليق على ما أُخذ من أحاديث المنهاج", file: "lectures/10.html" },
-          { id: "stage0_madkhal-manhaj_11", n: 11, day: 13, title: "القبس الوهاج (مختصر شرح المنهاج) — من ص 137 إلى 161", file: "lectures/11.html" },
-          { id: "stage0_madkhal-manhaj_12", n: 12, day: 14, title: "القبس الوهاج (مختصر شرح المنهاج) — من ص 162 إلى 181", file: "lectures/12.html" },
-          { id: "stage0_madkhal-manhaj_13", n: 13, day: 15, title: "تعليق على ما أُخذ من أحاديث المنهاج", file: "lectures/13.html" },
-          { id: "stage0_madkhal-manhaj_14", n: 14, day: 16, title: "القبس الوهاج (مختصر شرح المنهاج) — من ص 182 إلى 204", file: "lectures/14.html" },
-          { id: "stage0_madkhal-manhaj_15", n: 15, day: 17, title: "القبس الوهاج (مختصر شرح المنهاج) — من ص 205 إلى 224", file: "lectures/15.html" },
-          { id: "stage0_madkhal-manhaj_16", n: 16, day: 18, title: "تعليق على ما أُخذ من أحاديث المنهاج", file: "lectures/16.html" },
-          { id: "stage0_madkhal-manhaj_17", n: 17, day: 19, title: "القبس الوهاج (مختصر شرح المنهاج) — من ص 225 إلى نهاية الكتاب", file: "lectures/17.html" },
-          { id: "stage0_madkhal-manhaj_18", n: 18, day: 20, title: "تعليق على ما أُخذ من أحاديث المنهاج", file: "lectures/18.html" }
+        { key: "madkhal-manhaj", name: "المدخل إلى المنهاج", sheikh: "أحمد السيد", tags: ["المنهاج"], lectures: [
+          { id: "stage0_madkhal-manhaj_01", n: 1, day: 3, title: "المدخل إلى المنهاج", file: "lectures/01.html", video: "TwcAyIFb3Bg" }
+        ]},
+        { key: "qabas-wahhaj", name: "القبس الوهاج (مختصر شرح المنهاج)", sheikh: "محمد شميس", tags: ["المنهاج"], lectures: [
+          { id: "stage0_qabas-wahhaj_01", n: 1, day: 4, title: "القبس الوهاج — من ص 7 إلى 27", file: "lectures/01.html" },
+          { id: "stage0_qabas-wahhaj_02", n: 2, day: 5, title: "القبس الوهاج — من ص 28 إلى 45", file: "lectures/02.html" },
+          { id: "stage0_qabas-wahhaj_03", n: 3, day: 8, title: "القبس الوهاج — من ص 46 إلى 67", file: "lectures/03.html" },
+          { id: "stage0_qabas-wahhaj_04", n: 4, day: 9, title: "القبس الوهاج — من ص 68 إلى 92", file: "lectures/04.html" },
+          { id: "stage0_qabas-wahhaj_05", n: 5, day: 11, title: "القبس الوهاج — من ص 93 إلى 111", file: "lectures/05.html" },
+          { id: "stage0_qabas-wahhaj_06", n: 6, day: 12, title: "القبس الوهاج — من ص 112 إلى 136", file: "lectures/06.html" },
+          { id: "stage0_qabas-wahhaj_07", n: 7, day: 15, title: "القبس الوهاج — من ص 137 إلى 161", file: "lectures/07.html" },
+          { id: "stage0_qabas-wahhaj_08", n: 8, day: 16, title: "القبس الوهاج — من ص 162 إلى 181", file: "lectures/08.html" },
+          { id: "stage0_qabas-wahhaj_09", n: 9, day: 18, title: "القبس الوهاج — من ص 182 إلى 204", file: "lectures/09.html" },
+          { id: "stage0_qabas-wahhaj_10", n: 10, day: 19, title: "القبس الوهاج — من ص 205 إلى 224", file: "lectures/10.html" },
+          { id: "stage0_qabas-wahhaj_11", n: 11, day: 22, title: "القبس الوهاج — من ص 225 إلى نهاية الكتاب", file: "lectures/11.html" }
+        ]},
+        { key: "midarasat", name: "لقاءات مدارسة المنهاج", sheikh: "ميراث النبوة", tags: ["المنهاج", "مدارسة"], lectures: [
+          { id: "stage0_midarasat_01", n: 1, day: 6, title: "لقاء مدارسة المنهاج (1)", file: "lectures/01.html", video: "P5h1hsf63u8" },
+          { id: "stage0_midarasat_02", n: 2, day: 10, title: "لقاء مدارسة المنهاج (2)", file: "lectures/02.html", video: "3RoGN85lPSw" },
+          { id: "stage0_midarasat_03", n: 3, day: 13, title: "لقاء مدارسة المنهاج (3)", file: "lectures/03.html", video: "V546SfV4NmM" },
+          { id: "stage0_midarasat_04", n: 4, day: 17, title: "لقاء مدارسة المنهاج (4)", file: "lectures/04.html", video: "sosqs_mnOjE" },
+          { id: "stage0_midarasat_05", n: 5, day: 20, title: "لقاء مدارسة المنهاج (5)", file: "lectures/05.html" },
+          { id: "stage0_midarasat_06", n: 6, day: 23, title: "لقاء مدارسة المنهاج (6)", file: "lectures/06.html", video: "mZMkyXX45UM" }
+        ]},
+        { key: "manhajiyyah", name: "العلم بين المنهجية والفوضوية", sheikh: "أحمد السيد", tags: ["منهجية_الطلب"], lectures: [
+          { id: "stage0_manhajiyyah_01", n: 1, day: 28, title: "العلم بين المنهجية والفوضوية — النصف الأول", file: "lectures/01.html" },
+          { id: "stage0_manhajiyyah_02", n: 2, day: 29, title: "العلم بين المنهجية والفوضوية — النصف الثاني", file: "lectures/02.html" }
+        ]},
+        { key: "ilm-billah", name: "العلم بالله", sheikh: "أحمد السيد", tags: ["عقيدة"], lectures: [
+          { id: "stage0_ilm-billah_01", n: 1, day: 30, title: "العلم بالله — النصف الأول", file: "lectures/01.html" },
+          { id: "stage0_ilm-billah_02", n: 2, day: 31, title: "العلم بالله — النصف الثاني", file: "lectures/02.html" }
+        ]},
+        { key: "tawhid", name: "لا إله إلا الله", sheikh: "أحمد السيد", tags: ["عقيدة"], lectures: [
+          { id: "stage0_tawhid_01", n: 1, day: 33, title: "لا إله إلا الله — المحاضرة كاملة", file: "lectures/01.html" }
+        ]},
+        { key: "bina-aqadi", name: "البناء العقدي", sheikh: "أحمد السيد", tags: ["عقيدة"], lectures: [
+          { id: "stage0_bina-aqadi_01", n: 1, day: 34, title: "البناء العقدي — من ص 27 إلى 51", file: "lectures/01.html" },
+          { id: "stage0_bina-aqadi_02", n: 2, day: 35, title: "البناء العقدي — من ص 51 إلى 73", file: "lectures/02.html" },
+          { id: "stage0_bina-aqadi_03", n: 3, day: 36, title: "البناء العقدي — من ص 75 إلى 96", file: "lectures/03.html" },
+          { id: "stage0_bina-aqadi_04", n: 4, day: 37, title: "البناء العقدي — من ص 97 إلى 119", file: "lectures/04.html" },
+          { id: "stage0_bina-aqadi_05", n: 5, day: 38, title: "البناء العقدي — من ص 120 إلى 139", file: "lectures/05.html" },
+          { id: "stage0_bina-aqadi_06", n: 6, day: 39, title: "البناء العقدي — من ص 139 إلى نهاية الكتاب", file: "lectures/06.html" }
         ]}
       ],
       days: [
         { day: 1, kind: "lecture", lectureId: "stage0_muqaddimat_01", subjectKey: "muqaddimat", subjectName: "مقدمات تمهيدية", title: "فتعلمنا الإيمان", link: "muqaddimat/lectures/01.html" },
         { day: 2, kind: "lecture", lectureId: "stage0_muqaddimat_02", subjectKey: "muqaddimat", subjectName: "مقدمات تمهيدية", title: "القلب المنيب", link: "muqaddimat/lectures/02.html" },
         { day: 3, kind: "lecture", lectureId: "stage0_madkhal-manhaj_01", subjectKey: "madkhal-manhaj", subjectName: "المدخل إلى المنهاج", title: "المدخل إلى المنهاج", link: "madkhal-manhaj/lectures/01.html" },
-        { day: 4, kind: "lecture", lectureId: "stage0_madkhal-manhaj_02", subjectKey: "madkhal-manhaj", subjectName: "المدخل إلى المنهاج", title: "القبس الوهاج (مختصر شرح المنهاج) — من ص 7 إلى 27", link: "madkhal-manhaj/lectures/02.html" },
-        { day: 5, kind: "lecture", lectureId: "stage0_madkhal-manhaj_03", subjectKey: "madkhal-manhaj", subjectName: "المدخل إلى المنهاج", title: "القبس الوهاج (مختصر شرح المنهاج) — من ص 28 إلى 45", link: "madkhal-manhaj/lectures/03.html" },
-        { day: 6, kind: "lecture", lectureId: "stage0_madkhal-manhaj_04", subjectKey: "madkhal-manhaj", subjectName: "المدخل إلى المنهاج", title: "تعليق على ما أُخذ من أحاديث المنهاج", link: "madkhal-manhaj/lectures/04.html" },
-        { day: 7, kind: "lecture", lectureId: "stage0_madkhal-manhaj_05", subjectKey: "madkhal-manhaj", subjectName: "المدخل إلى المنهاج", title: "القبس الوهاج (مختصر شرح المنهاج) — من ص 46 إلى 67", link: "madkhal-manhaj/lectures/05.html" },
-        { day: 8, kind: "lecture", lectureId: "stage0_madkhal-manhaj_06", subjectKey: "madkhal-manhaj", subjectName: "المدخل إلى المنهاج", title: "القبس الوهاج (مختصر شرح المنهاج) — من ص 68 إلى 92", link: "madkhal-manhaj/lectures/06.html" },
-        { day: 9, kind: "lecture", lectureId: "stage0_madkhal-manhaj_07", subjectKey: "madkhal-manhaj", subjectName: "المدخل إلى المنهاج", title: "تعليق على ما أُخذ من أحاديث المنهاج", link: "madkhal-manhaj/lectures/07.html" },
-        { day: 10, kind: "lecture", lectureId: "stage0_madkhal-manhaj_08", subjectKey: "madkhal-manhaj", subjectName: "المدخل إلى المنهاج", title: "القبس الوهاج (مختصر شرح المنهاج) — من ص 93 إلى 111", link: "madkhal-manhaj/lectures/08.html" },
-        { day: 11, kind: "lecture", lectureId: "stage0_madkhal-manhaj_09", subjectKey: "madkhal-manhaj", subjectName: "المدخل إلى المنهاج", title: "القبس الوهاج (مختصر شرح المنهاج) — من ص 112 إلى 136", link: "madkhal-manhaj/lectures/09.html" },
-        { day: 12, kind: "lecture", lectureId: "stage0_madkhal-manhaj_10", subjectKey: "madkhal-manhaj", subjectName: "المدخل إلى المنهاج", title: "تعليق على ما أُخذ من أحاديث المنهاج", link: "madkhal-manhaj/lectures/10.html" },
-        { day: 13, kind: "lecture", lectureId: "stage0_madkhal-manhaj_11", subjectKey: "madkhal-manhaj", subjectName: "المدخل إلى المنهاج", title: "القبس الوهاج (مختصر شرح المنهاج) — من ص 137 إلى 161", link: "madkhal-manhaj/lectures/11.html" },
-        { day: 14, kind: "lecture", lectureId: "stage0_madkhal-manhaj_12", subjectKey: "madkhal-manhaj", subjectName: "المدخل إلى المنهاج", title: "القبس الوهاج (مختصر شرح المنهاج) — من ص 162 إلى 181", link: "madkhal-manhaj/lectures/12.html" },
-        { day: 15, kind: "lecture", lectureId: "stage0_madkhal-manhaj_13", subjectKey: "madkhal-manhaj", subjectName: "المدخل إلى المنهاج", title: "تعليق على ما أُخذ من أحاديث المنهاج", link: "madkhal-manhaj/lectures/13.html" },
-        { day: 16, kind: "lecture", lectureId: "stage0_madkhal-manhaj_14", subjectKey: "madkhal-manhaj", subjectName: "المدخل إلى المنهاج", title: "القبس الوهاج (مختصر شرح المنهاج) — من ص 182 إلى 204", link: "madkhal-manhaj/lectures/14.html" },
-        { day: 17, kind: "lecture", lectureId: "stage0_madkhal-manhaj_15", subjectKey: "madkhal-manhaj", subjectName: "المدخل إلى المنهاج", title: "القبس الوهاج (مختصر شرح المنهاج) — من ص 205 إلى 224", link: "madkhal-manhaj/lectures/15.html" },
-        { day: 18, kind: "lecture", lectureId: "stage0_madkhal-manhaj_16", subjectKey: "madkhal-manhaj", subjectName: "المدخل إلى المنهاج", title: "تعليق على ما أُخذ من أحاديث المنهاج", link: "madkhal-manhaj/lectures/16.html" },
-        { day: 19, kind: "lecture", lectureId: "stage0_madkhal-manhaj_17", subjectKey: "madkhal-manhaj", subjectName: "المدخل إلى المنهاج", title: "القبس الوهاج (مختصر شرح المنهاج) — من ص 225 إلى نهاية الكتاب", link: "madkhal-manhaj/lectures/17.html" },
-        { day: 20, kind: "lecture", lectureId: "stage0_madkhal-manhaj_18", subjectKey: "madkhal-manhaj", subjectName: "المدخل إلى المنهاج", title: "تعليق على ما أُخذ من أحاديث المنهاج", link: "madkhal-manhaj/lectures/18.html" }
+        { day: 4, kind: "lecture", lectureId: "stage0_qabas-wahhaj_01", subjectKey: "qabas-wahhaj", subjectName: "القبس الوهاج (مختصر شرح المنهاج)", title: "القبس الوهاج — من ص 7 إلى 27", link: "qabas-wahhaj/lectures/01.html" },
+        { day: 5, kind: "lecture", lectureId: "stage0_qabas-wahhaj_02", subjectKey: "qabas-wahhaj", subjectName: "القبس الوهاج (مختصر شرح المنهاج)", title: "القبس الوهاج — من ص 28 إلى 45", link: "qabas-wahhaj/lectures/02.html" },
+        { day: 6, kind: "lecture", lectureId: "stage0_midarasat_01", subjectKey: "midarasat", subjectName: "لقاءات مدارسة المنهاج", title: "لقاء مدارسة المنهاج (1)", link: "midarasat/lectures/01.html" },
+        { day: 7, kind: "rest", id: "stage0_rest_07", title: "استدراك وراحة" },
+        { day: 8, kind: "lecture", lectureId: "stage0_qabas-wahhaj_03", subjectKey: "qabas-wahhaj", subjectName: "القبس الوهاج (مختصر شرح المنهاج)", title: "القبس الوهاج — من ص 46 إلى 67", link: "qabas-wahhaj/lectures/03.html" },
+        { day: 9, kind: "lecture", lectureId: "stage0_qabas-wahhaj_04", subjectKey: "qabas-wahhaj", subjectName: "القبس الوهاج (مختصر شرح المنهاج)", title: "القبس الوهاج — من ص 68 إلى 92", link: "qabas-wahhaj/lectures/04.html" },
+        { day: 10, kind: "lecture", lectureId: "stage0_midarasat_02", subjectKey: "midarasat", subjectName: "لقاءات مدارسة المنهاج", title: "لقاء مدارسة المنهاج (2)", link: "midarasat/lectures/02.html" },
+        { day: 11, kind: "lecture", lectureId: "stage0_qabas-wahhaj_05", subjectKey: "qabas-wahhaj", subjectName: "القبس الوهاج (مختصر شرح المنهاج)", title: "القبس الوهاج — من ص 93 إلى 111", link: "qabas-wahhaj/lectures/05.html" },
+        { day: 12, kind: "lecture", lectureId: "stage0_qabas-wahhaj_06", subjectKey: "qabas-wahhaj", subjectName: "القبس الوهاج (مختصر شرح المنهاج)", title: "القبس الوهاج — من ص 112 إلى 136", link: "qabas-wahhaj/lectures/06.html" },
+        { day: 13, kind: "lecture", lectureId: "stage0_midarasat_03", subjectKey: "midarasat", subjectName: "لقاءات مدارسة المنهاج", title: "لقاء مدارسة المنهاج (3)", link: "midarasat/lectures/03.html" },
+        { day: 14, kind: "rest", id: "stage0_rest_14", title: "استدراك وراحة" },
+        { day: 15, kind: "lecture", lectureId: "stage0_qabas-wahhaj_07", subjectKey: "qabas-wahhaj", subjectName: "القبس الوهاج (مختصر شرح المنهاج)", title: "القبس الوهاج — من ص 137 إلى 161", link: "qabas-wahhaj/lectures/07.html" },
+        { day: 16, kind: "lecture", lectureId: "stage0_qabas-wahhaj_08", subjectKey: "qabas-wahhaj", subjectName: "القبس الوهاج (مختصر شرح المنهاج)", title: "القبس الوهاج — من ص 162 إلى 181", link: "qabas-wahhaj/lectures/08.html" },
+        { day: 17, kind: "lecture", lectureId: "stage0_midarasat_04", subjectKey: "midarasat", subjectName: "لقاءات مدارسة المنهاج", title: "لقاء مدارسة المنهاج (4)", link: "midarasat/lectures/04.html" },
+        { day: 18, kind: "lecture", lectureId: "stage0_qabas-wahhaj_09", subjectKey: "qabas-wahhaj", subjectName: "القبس الوهاج (مختصر شرح المنهاج)", title: "القبس الوهاج — من ص 182 إلى 204", link: "qabas-wahhaj/lectures/09.html" },
+        { day: 19, kind: "lecture", lectureId: "stage0_qabas-wahhaj_10", subjectKey: "qabas-wahhaj", subjectName: "القبس الوهاج (مختصر شرح المنهاج)", title: "القبس الوهاج — من ص 205 إلى 224", link: "qabas-wahhaj/lectures/10.html" },
+        { day: 20, kind: "lecture", lectureId: "stage0_midarasat_05", subjectKey: "midarasat", subjectName: "لقاءات مدارسة المنهاج", title: "لقاء مدارسة المنهاج (5)", link: "midarasat/lectures/05.html" },
+        { day: 21, kind: "rest", id: "stage0_rest_21", title: "استدراك وراحة" },
+        { day: 22, kind: "lecture", lectureId: "stage0_qabas-wahhaj_11", subjectKey: "qabas-wahhaj", subjectName: "القبس الوهاج (مختصر شرح المنهاج)", title: "القبس الوهاج — من ص 225 إلى نهاية الكتاب", link: "qabas-wahhaj/lectures/11.html" },
+        { day: 23, kind: "lecture", lectureId: "stage0_midarasat_06", subjectKey: "midarasat", subjectName: "لقاءات مدارسة المنهاج", title: "لقاء مدارسة المنهاج (6)", link: "midarasat/lectures/06.html" },
+        { day: 24, kind: "rest", id: "stage0_rest_24", title: "استدراك وراحة" },
+        { day: 25, kind: "rest", id: "stage0_rest_25", title: "استدراك وراحة" },
+        { day: 26, kind: "exam", id: "stage0_exam_26", title: "الامتحان الأول على النصف الأول من المرحلة التمهيدية" },
+        { day: 27, kind: "exam", id: "stage0_exam_27", title: "الامتحان الثاني على النصف الأول من المرحلة التمهيدية" },
+        { day: 28, kind: "lecture", lectureId: "stage0_manhajiyyah_01", subjectKey: "manhajiyyah", subjectName: "العلم بين المنهجية والفوضوية", title: "العلم بين المنهجية والفوضوية — النصف الأول", link: "manhajiyyah/lectures/01.html" },
+        { day: 29, kind: "lecture", lectureId: "stage0_manhajiyyah_02", subjectKey: "manhajiyyah", subjectName: "العلم بين المنهجية والفوضوية", title: "العلم بين المنهجية والفوضوية — النصف الثاني", link: "manhajiyyah/lectures/02.html" },
+        { day: 30, kind: "lecture", lectureId: "stage0_ilm-billah_01", subjectKey: "ilm-billah", subjectName: "العلم بالله", title: "العلم بالله — النصف الأول", link: "ilm-billah/lectures/01.html" },
+        { day: 31, kind: "lecture", lectureId: "stage0_ilm-billah_02", subjectKey: "ilm-billah", subjectName: "العلم بالله", title: "العلم بالله — النصف الثاني", link: "ilm-billah/lectures/02.html" },
+        { day: 32, kind: "rest", id: "stage0_rest_32", title: "استدراك وراحة" },
+        { day: 33, kind: "lecture", lectureId: "stage0_tawhid_01", subjectKey: "tawhid", subjectName: "لا إله إلا الله", title: "لا إله إلا الله — المحاضرة كاملة", link: "tawhid/lectures/01.html" },
+        { day: 34, kind: "lecture", lectureId: "stage0_bina-aqadi_01", subjectKey: "bina-aqadi", subjectName: "البناء العقدي", title: "البناء العقدي — من ص 27 إلى 51", link: "bina-aqadi/lectures/01.html" },
+        { day: 35, kind: "lecture", lectureId: "stage0_bina-aqadi_02", subjectKey: "bina-aqadi", subjectName: "البناء العقدي", title: "البناء العقدي — من ص 51 إلى 73", link: "bina-aqadi/lectures/02.html" },
+        { day: 36, kind: "lecture", lectureId: "stage0_bina-aqadi_03", subjectKey: "bina-aqadi", subjectName: "البناء العقدي", title: "البناء العقدي — من ص 75 إلى 96", link: "bina-aqadi/lectures/03.html" },
+        { day: 37, kind: "lecture", lectureId: "stage0_bina-aqadi_04", subjectKey: "bina-aqadi", subjectName: "البناء العقدي", title: "البناء العقدي — من ص 97 إلى 119", link: "bina-aqadi/lectures/04.html" },
+        { day: 38, kind: "lecture", lectureId: "stage0_bina-aqadi_05", subjectKey: "bina-aqadi", subjectName: "البناء العقدي", title: "البناء العقدي — من ص 120 إلى 139", link: "bina-aqadi/lectures/05.html" },
+        { day: 39, kind: "lecture", lectureId: "stage0_bina-aqadi_06", subjectKey: "bina-aqadi", subjectName: "البناء العقدي", title: "البناء العقدي — من ص 139 إلى نهاية الكتاب", link: "bina-aqadi/lectures/06.html" },
+        { day: 40, kind: "rest", id: "stage0_rest_40", title: "استدراك وراحة" },
+        { day: 41, kind: "rest", id: "stage0_rest_41", title: "استدراك وراحة" },
+        { day: 42, kind: "rest", id: "stage0_rest_42", title: "استدراك وراحة" },
+        { day: 43, kind: "exam", id: "stage0_exam_43", title: "الامتحان الأول على النصف الثاني من المرحلة التمهيدية" },
+        { day: 44, kind: "exam", id: "stage0_exam_44", title: "الامتحان الثاني على النصف الثاني من المرحلة التمهيدية" },
+        { day: 45, kind: "exam", id: "stage0_exam_45", title: "الامتحان النهائي على المرحلة التمهيدية" }
       ],
-      totalLectures: 20
+      totalLectures: 31
     },
+    
     stage1: {
       id: "stage1",
       name: "المرحلة الأولى",
