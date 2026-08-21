@@ -1147,7 +1147,7 @@
 </footer>
 
 <script>
-  // ===== Completion tracking (localStorage) =====
+  // ===== Completion tracking — موحّد مع نظام التتبع المركزي للموقع (ilm_) =====
   const LECTURE_ID = document.body.getAttribute('data-lecture-id');
   const completionBox = document.getElementById('completionBox');
   const completionText = document.getElementById('completionText');
@@ -1163,15 +1163,15 @@
   }
 
   function toggleCompletion(){
-    const key = 'lecture_completed_' + LECTURE_ID;
-    const current = localStorage.getItem(key) === 'true';
-    localStorage.setItem(key, (!current).toString());
+    const current = window.IlmTrack ? window.IlmTrack.isDone(LECTURE_ID) : false;
+    if(window.IlmTrack) window.IlmTrack.setDone(LECTURE_ID, !current);
     renderCompletion(!current);
   }
 
   (function initCompletion(){
-    const key = 'lecture_completed_' + LECTURE_ID;
-    renderCompletion(localStorage.getItem(key) === 'true');
+    if(window.IlmTrack){
+      window.IlmTrack.ready.then(function(){ renderCompletion(window.IlmTrack.isDone(LECTURE_ID)); });
+    }
   })();
 
   // ===== Anki export =====
@@ -1471,6 +1471,8 @@ window.quizData = {
   }
 })();
 </script>
+<script type="module" src="../../../firebase-sync-manhaj.js"></script>
+<script src="../../../ilm-track.js"></script>
 
 </body>
 </html>
