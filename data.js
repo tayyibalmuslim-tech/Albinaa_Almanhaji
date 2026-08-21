@@ -82,8 +82,7 @@ const SITE_DATA = {
           { id: "stage1_quran-sciences_02", n: 2, day: 22, title: "المحاضرة 2", file: "lectures/02.html" }
         ]},
         { key: "aqeedah", name: "مدخل إلى علم العقيدة", sheikh: "أحمد السيد", tags: ["مداخل_العلوم"], lectures: [
-          { id: "stage1_aqeedah_01", n: 1, day: 23, title: "المحاضرة 1", file: "lectures/01.html" },
-          { id: "stage1_aqeedah_02", n: 2, day: 24, title: "المحاضرة 2", file: "lectures/02.html" }
+          { id: "stage1_aqeedah_01", n: 1, day: 23, title: "محاضرة كاملة", file: "lectures/01.html" }
         ]},
         { key: "anwar-al-anbiya", name: "أنوار الأنبياء", sheikh: "أحمد السيد", tags: ["المنهج_الإصلاحي", "التزكية"], lectures: [
           { id: "stage1_anwar-al-anbiya_01", n: 1, day: 4, title: "من بداية الكتاب إلى ص 34", file: "lectures/03.html" },
@@ -148,8 +147,8 @@ const SITE_DATA = {
         { day: 20, kind: "lecture", lectureId: "stage1_riyad-al-saliheen_03", subjectKey: "riyad-al-saliheen", subjectName: "شرح رياض الصالحين", title: "باب التوبة 1", link: "riyad-al-saliheen/lectures/03.html" },
         { day: 21, kind: "rest", id: "stage1_day_21", title: "استدراك وراحة" },
         { day: 22, kind: "lecture", lectureId: "stage1_quran-sciences_02", subjectKey: "quran-sciences", subjectName: "مدخل إلى علوم القرآن", title: "المحاضرة 2", link: "quran-sciences/lectures/02.html" },
-        { day: 23, kind: "lecture", lectureId: "stage1_aqeedah_01", subjectKey: "aqeedah", subjectName: "مدخل إلى علم العقيدة", title: "المحاضرة 1", link: "aqeedah/lectures/01.html" },
-        { day: 24, kind: "lecture", lectureId: "stage1_aqeedah_02", subjectKey: "aqeedah", subjectName: "مدخل إلى علم العقيدة", title: "المحاضرة 2", link: "aqeedah/lectures/02.html" },
+        { day: 23, kind: "lecture", lectureId: "stage1_aqeedah_01", subjectKey: "aqeedah", subjectName: "مدخل إلى علم العقيدة", title: "محاضرة كاملة (١)", link: "aqeedah/lectures/01.html" },
+        { day: 24, kind: "lecture", lectureId: "stage1_aqeedah_01", subjectKey: "aqeedah", subjectName: "مدخل إلى علم العقيدة", title: "محاضرة كاملة (٢)", link: "aqeedah/lectures/01.html" },
         { day: 25, kind: "lecture", lectureId: "stage1_raqaeq-al-quran_02", subjectKey: "raqaeq-al-quran", subjectName: "رقائق القرآن", title: "من 34 إلى 53", link: "raqaeq-al-quran/lectures/02.html" },
         { day: 26, kind: "lecture", lectureId: "stage1_raqaeq-al-quran_03", subjectKey: "raqaeq-al-quran", subjectName: "رقائق القرآن", title: "من 54 إلى 78", link: "raqaeq-al-quran/lectures/03.html" },
         { day: 27, kind: "lecture", lectureId: "stage1_riyad-al-saliheen_04", subjectKey: "riyad-al-saliheen", subjectName: "شرح رياض الصالحين", title: "باب التوبة 1", link: "riyad-al-saliheen/lectures/04.html" },
@@ -175,7 +174,7 @@ const SITE_DATA = {
         { day: 47, kind: "rest", id: "stage1_day_47", title: "استدراك وراحة" },
         { day: 48, kind: "exam", id: "stage1_day_48", title: "اختبار المرحلة" }
       ],
-      totalLectures: 46
+      totalLectures: 45
     },
     stage2: {
       id: "stage2",
