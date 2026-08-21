@@ -317,7 +317,26 @@ footer .dl-btn{margin-top:16px}
 </style>
 
 </head>
-<body>
+<body data-lecture-id="stage1_hadith_05">
+<style id="ilm-completion-style">
+  #ilm-completion-box{
+    display:flex; align-items:center; gap:10px;
+    max-width:640px; margin:14px auto 0; padding:12px 18px;
+    background:#fbfaf4; border:1px solid #d3d8ca; border-radius:12px;
+    font-family:'Tajawal','Segoe UI',Tahoma,sans-serif; direction:rtl;
+    cursor:pointer; user-select:none; transition:background .15s, border-color .15s;
+  }
+  #ilm-completion-box:hover{ border-color:#b8862f; }
+  #ilm-completion-box.done{ background:#e3ebe4; border-color:#1f4a3d; }
+  #ilm-completion-box input{ width:18px; height:18px; accent-color:#1f4a3d; cursor:pointer; flex-shrink:0; }
+  #ilm-completion-box span{ font-size:14.5px; font-weight:600; color:#2b2a24; }
+  #ilm-completion-box.done span{ color:#163931; }
+</style>
+<label id="ilm-completion-box">
+  <input type="checkbox" data-lecture-id="stage1_hadith_05">
+  <span>تحديد هذه المحاضرة كمكتملة</span>
+</label>
+
 
 <header class="hero">
   <div class="hero-in">
@@ -1624,5 +1643,26 @@ window.quizData = {
 })();
 </script>
 
+<script type="module" src="../../../firebase-sync-manhaj.js"></script>
+<script src="../../../ilm-track.js"></script>
+<script>
+(function(){
+  var box = document.getElementById('ilm-completion-box');
+  var cb = box ? box.querySelector('input[data-lecture-id]') : null;
+  if(!cb) return;
+  var lid = cb.getAttribute('data-lecture-id');
+  function render(done){
+    cb.checked = done;
+    box.classList.toggle('done', done);
+  }
+  if(window.IlmTrack){
+    window.IlmTrack.ready.then(function(){ render(window.IlmTrack.isDone(lid)); });
+  }
+  cb.addEventListener('change', function(){
+    if(window.IlmTrack) window.IlmTrack.setDone(lid, cb.checked);
+    render(cb.checked);
+  });
+})();
+</script>
 </body>
 </html>
