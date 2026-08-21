@@ -460,17 +460,45 @@
   });
 
   /* ---------------- قسم التصدير لأنكي ---------------- */
+
+  // يتحقق هل mark ملاصق مباشرة لعنصر mark آخر (بدون أي فاصل نصي حقيقي بينهما)
+  // هذا يحدث حين يقسّم wrapRange تظليلًا واحدًا بصريًا إلى عدة عناصر <mark>
+  // بسبب عبوره على أكثر من عقدة نصية (نص عادي + آية بتنسيق مختلف + بولد...إلخ)
+  function isAdjacentMark(a, b) {
+    if (!a || !b) return false;
+    var node = a.nextSibling;
+    while (node) {
+      if (node === b) return true;
+      // يسمح بالمرور عبر نص فارغ (مسافات/أسطر جديدة) فقط، أي شيء آخر يقطع التجاور
+      if (node.nodeType === 3 && node.textContent.trim() === '') { node = node.nextSibling; continue; }
+      return false;
+    }
+    return false;
+  }
+
   function collectExportCards() {
     var cards = [];
     blocks.forEach(function (el) {
-      var marks = el.querySelectorAll('mark');
-      marks.forEach(function (m) {
-        var key = markKey(m);
-        var front = m.textContent.trim();
-        if (!front) return;
-        var back = state.notes[key] || '(بدون تعليق)';
+      var marks = Array.prototype.slice.call(el.querySelectorAll('mark'));
+      var i = 0;
+      while (i < marks.length) {
+        var group = [marks[i]];
+        // اجمع كل الـ mark المتجاورة تباعًا في نفس المجموعة (تمثل تظليلًا واحدًا فعليًا)
+        while (i + 1 < marks.length && isAdjacentMark(group[group.length - 1], marks[i + 1])) {
+          group.push(marks[i + 1]);
+          i++;
+        }
+        var front = group.map(function (m) { return m.textContent; }).join('').trim();
+        i++;
+        if (!front) continue;
+        // التعليق: أول ملاحظة موجودة على أي جزء من المجموعة
+        var back = '(بدون تعليق)';
+        for (var g = 0; g < group.length; g++) {
+          var note = state.notes[markKey(group[g])];
+          if (note) { back = note; break; }
+        }
         cards.push({ q: front, a: back });
-      });
+      }
     });
     return cards;
   }
