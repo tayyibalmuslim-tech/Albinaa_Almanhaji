@@ -697,38 +697,49 @@ function findLectureOwner(lectureId) {
 }
 
 // يبني كتلة التنقل: السابق/التالي (بترتيب day) + قائمة منسدلة لباقي محاضرات نفس المادة
-function lectureNavHtml(lectureId) {
+function lectureNavHtml(lectureId, slot) {
+  slot = slot || 'bottom';
   const owner = findLectureOwner(lectureId);
   if (!owner) return '';
-  const { subject, lecture } = owner;
+  const { stage, subject, lecture } = owner;
 
-  // ترتيب محاضرات المادة حسب اليوم (day) وليس بالضرورة ترتيب المصفوفة
+  /* السابق/التالي = اليوم السابق/التالي في جدول المرحلة (عبر كل المواد) */
+  // أيام المحاضرات فقط — تُتخطّى أيام الراحة والامتحان (لا روابط لها)
+  const days = (stage.days || [])
+    .filter(d => d.kind === 'lecture' && d.link && d.lectureId)
+    .sort((a, b) => a.day - b.day);
+  const dayPos = days.findIndex(d => d.lectureId === lectureId);
+  const prevDay = dayPos > 0 ? days[dayPos - 1] : null;
+  const nextDay = dayPos !== -1 && dayPos < days.length - 1 ? days[dayPos + 1] : null;
+
+  /* روابط days نسبية لجذر المرحلة، والصفحة داخل subject/lectures/ */
+  const toStage = '../../';
+  const dayBtn = (d, dir) => {
+    if (!d) {
+      return `<span class="btn btn-outline lecture-nav-adjacent is-disabled" aria-disabled="true">${
+        dir === 'prev' ? '→ لا يوجد يوم سابق' : 'لا يوجد يوم تالٍ ←'}</span>`;
+    }
+    const r = dir === 'prev' ? '→ ' : '';
+    const l = dir === 'next' ? ' ←' : '';
+    return `<a class="btn btn-outline lecture-nav-adjacent" href="${escapeHtml(toStage + d.link)}">${
+      r}<span class="lecture-nav-day">اليوم ${d.day}</span> ${escapeHtml(d.title)}${l}</a>`;
+  };
+
+  /* القائمة المنسدلة = محاضرات نفس المادة */
   const orderedLectures = subject.lectures.slice().sort((a, b) => a.day - b.day);
-  const posInOrder = orderedLectures.findIndex(l => l.id === lecture.id);
-  const prevLecture = posInOrder > 0 ? orderedLectures[posInOrder - 1] : null;
-  const nextLecture = posInOrder < orderedLectures.length - 1 ? orderedLectures[posInOrder + 1] : null;
-
-  const prevHtml = prevLecture
-    ? `<a class="btn btn-outline lecture-nav-adjacent" href="${escapeHtml(prevLecture.file)}">→ ${escapeHtml(prevLecture.title)}</a>`
-    : `<span class="btn btn-outline lecture-nav-adjacent is-disabled" aria-disabled="true">→ لا توجد محاضرة سابقة</span>`;
-
-  const nextHtml = nextLecture
-    ? `<a class="btn btn-outline lecture-nav-adjacent" href="${escapeHtml(nextLecture.file)}">${escapeHtml(nextLecture.title)} ←</a>`
-    : `<span class="btn btn-outline lecture-nav-adjacent is-disabled" aria-disabled="true">لا توجد محاضرة تالية ←</span>`;
-
   const optionsHtml = orderedLectures.map(l =>
-    `<option value="${escapeHtml(l.file)}" ${l.id === lecture.id ? 'selected' : ''}>${l.n}. ${escapeHtml(l.title)}</option>`
+    `<option value="${escapeHtml('../' + l.file)}" ${l.id === lecture.id ? 'selected' : ''}>${l.n}. ${escapeHtml(l.title)}</option>`
   ).join('');
 
   return `
     <div class="lecture-nav-extra">
       <div class="lecture-nav-adjacent-row">
-        ${prevHtml}
-        ${nextHtml}
+        ${dayBtn(prevDay, 'prev')}
+        ${dayBtn(nextDay, 'next')}
       </div>
       <div class="lecture-nav-jump">
-        <label for="lecture-jump-select">الانتقال إلى محاضرة أخرى من «${escapeHtml(subject.name)}»:</label>
-        <select id="lecture-jump-select" class="lecture-jump-select">
+        <label for="lecture-jump-select-${slot}">الانتقال إلى محاضرة أخرى من «${escapeHtml(subject.name)}»:</label>
+        <select id="lecture-jump-select-${slot}" class="lecture-jump-select">
           ${optionsHtml}
         </select>
       </div>
@@ -737,10 +748,12 @@ function lectureNavHtml(lectureId) {
 }
 
 function wireLectureJumpSelect() {
-  const select = document.getElementById('lecture-jump-select');
-  if (!select) return;
-  select.addEventListener('change', () => {
-    if (select.value) window.location.href = select.value;
+  document.querySelectorAll('.lecture-jump-select').forEach(select => {
+    if (select.dataset.wired) return;
+    select.dataset.wired = '1';
+    select.addEventListener('change', () => {
+      if (select.value) window.location.href = select.value;
+    });
   });
 }
 
@@ -749,9 +762,26 @@ function renderLecturePage() {
   const checkbox = document.querySelector(`[data-lecture-id="${lectureId}"]`);
   if (checkbox) checkbox.checked = isDone(lectureId);
 
+  // الشريط السفلي (الموضع الموجود في الصفحة)
   const navHost = document.querySelector('[data-lecture-nav-extra]');
   if (navHost) {
-    navHost.innerHTML = lectureNavHtml(lectureId);
+    navHost.innerHTML = lectureNavHtml(lectureId, 'bottom');
+
+    // الشريط العلوي: يُحقن تلقائياً أعلى المحاضرة إن لم يكن موجوداً
+    if (!document.querySelector('[data-lecture-nav-top]')) {
+      const html = lectureNavHtml(lectureId, 'top');
+      if (html) {
+        const top = document.createElement('div');
+        top.setAttribute('data-lecture-nav-top', '');
+        top.innerHTML = html;
+        const header = document.querySelector('header');
+        if (header && header.parentNode) {
+          header.parentNode.insertBefore(top, header.nextSibling);
+        } else if (navHost.parentNode) {
+          navHost.parentNode.insertBefore(top, navHost.parentNode.firstChild);
+        }
+      }
+    }
     wireLectureJumpSelect();
   }
 
