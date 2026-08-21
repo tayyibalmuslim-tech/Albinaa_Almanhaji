@@ -509,10 +509,80 @@ function renderSubjectPage() {
 /* =========================================================
    صفحة المحاضرة (lecture)
    ========================================================= */
+
+// يبحث عن المادة والمرحلة المالكتين لمحاضرة معينة عبر lectureId
+function findLectureOwner(lectureId) {
+  let result = null;
+  Object.entries(SITE_DATA.stages).forEach(([stageId, stage]) => {
+    stage.subjects.forEach(subject => {
+      const idx = subject.lectures.findIndex(l => l.id === lectureId);
+      if (idx !== -1) {
+        result = { stageId, stage, subject, lecture: subject.lectures[idx], index: idx };
+      }
+    });
+  });
+  return result;
+}
+
+// يبني كتلة التنقل: السابق/التالي (بترتيب day) + قائمة منسدلة لباقي محاضرات نفس المادة
+function lectureNavHtml(lectureId) {
+  const owner = findLectureOwner(lectureId);
+  if (!owner) return '';
+  const { subject, lecture } = owner;
+
+  // ترتيب محاضرات المادة حسب اليوم (day) وليس بالضرورة ترتيب المصفوفة
+  const orderedLectures = subject.lectures.slice().sort((a, b) => a.day - b.day);
+  const posInOrder = orderedLectures.findIndex(l => l.id === lecture.id);
+  const prevLecture = posInOrder > 0 ? orderedLectures[posInOrder - 1] : null;
+  const nextLecture = posInOrder < orderedLectures.length - 1 ? orderedLectures[posInOrder + 1] : null;
+
+  const prevHtml = prevLecture
+    ? `<a class="btn btn-outline lecture-nav-adjacent" href="${escapeHtml(prevLecture.file)}">→ ${escapeHtml(prevLecture.title)}</a>`
+    : `<span class="btn btn-outline lecture-nav-adjacent is-disabled" aria-disabled="true">→ لا توجد محاضرة سابقة</span>`;
+
+  const nextHtml = nextLecture
+    ? `<a class="btn btn-outline lecture-nav-adjacent" href="${escapeHtml(nextLecture.file)}">${escapeHtml(nextLecture.title)} ←</a>`
+    : `<span class="btn btn-outline lecture-nav-adjacent is-disabled" aria-disabled="true">لا توجد محاضرة تالية ←</span>`;
+
+  const optionsHtml = orderedLectures.map(l =>
+    `<option value="${escapeHtml(l.file)}" ${l.id === lecture.id ? 'selected' : ''}>${l.n}. ${escapeHtml(l.title)}</option>`
+  ).join('');
+
+  return `
+    <div class="lecture-nav-extra">
+      <div class="lecture-nav-adjacent-row">
+        ${prevHtml}
+        ${nextHtml}
+      </div>
+      <div class="lecture-nav-jump">
+        <label for="lecture-jump-select">الانتقال إلى محاضرة أخرى من «${escapeHtml(subject.name)}»:</label>
+        <select id="lecture-jump-select" class="lecture-jump-select">
+          ${optionsHtml}
+        </select>
+      </div>
+    </div>
+  `;
+}
+
+function wireLectureJumpSelect() {
+  const select = document.getElementById('lecture-jump-select');
+  if (!select) return;
+  select.addEventListener('change', () => {
+    if (select.value) window.location.href = select.value;
+  });
+}
+
 function renderLecturePage() {
   const lectureId = document.body.dataset.lectureId;
   const checkbox = document.querySelector(`[data-lecture-id="${lectureId}"]`);
   if (checkbox) checkbox.checked = isDone(lectureId);
+
+  const navHost = document.querySelector('[data-lecture-nav-extra]');
+  if (navHost) {
+    navHost.innerHTML = lectureNavHtml(lectureId);
+    wireLectureJumpSelect();
+  }
+
   wireCheckboxes(renderLecturePage);
 }
 
