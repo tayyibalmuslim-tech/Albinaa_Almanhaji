@@ -5,6 +5,7 @@
 
 const STORAGE_PREFIX = 'ilm_';
 const LOG_KEY = STORAGE_PREFIX + 'activity_log';
+const SYNC_TS_KEY = STORAGE_PREFIX + 'sync_ts'; // آخر وقت تغيّرت فيه بيانات هذا الجهاز محليًا
 
 /* ---------------- Storage helpers ---------------- */
 function isDone(id) {
@@ -14,7 +15,76 @@ function setDone(id, val) {
   const wasDone = isDone(id);
   localStorage.setItem(STORAGE_PREFIX + id, val ? '1' : '0');
   if (val && !wasDone) recordActivity();
+  markLocalChanged();
+  pushToCloud();
   return { justCompleted: val && !wasDone };
+}
+
+/* ---------------- طبقة المزامنة السحابية (ManhajCloud) ---------------- */
+function markLocalChanged() {
+  try { localStorage.setItem(SYNC_TS_KEY, String(Date.now())); } catch (e) {}
+}
+function getLocalTs() {
+  const v = localStorage.getItem(SYNC_TS_KEY);
+  return v ? parseInt(v, 10) : 0;
+}
+
+// يجمع كل مفاتيح ilm_* الحالية من localStorage في كائن واحد قابل للرفع
+function collectLocalLectureState() {
+  const out = {};
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    if (k && k.startsWith(STORAGE_PREFIX) && k !== LOG_KEY && k !== SYNC_TS_KEY) {
+      out[k.slice(STORAGE_PREFIX.length)] = localStorage.getItem(k);
+    }
+  }
+  return out;
+}
+function getLocalActivityLog() {
+  try { return JSON.parse(localStorage.getItem(LOG_KEY)) || []; } catch (e) { return []; }
+}
+
+// يرفع اللقطة الحالية بالكامل للسحابة (مؤجَّل داخليًا في وحدة الاتصال)
+function pushToCloud() {
+  if (!window.ManhajCloud || !window.ManhajCloud.user) return;
+  window.ManhajCloud.saveProgress({
+    lectures: collectLocalLectureState(),
+    activityLog: getLocalActivityLog()
+  }, getLocalTs());
+}
+
+// عند بدء التشغيل: نقارن الطابع الزمني المحلي بالسحابي ونأخذ الأحدث
+async function syncFromCloudOnce() {
+  if (!window.ManhajCloud) return; // الوحدة غير مضافة لهذه الصفحة، تجاهل بصمت
+  try {
+    await window.ManhajCloud.ready;
+  } catch (e) {
+    return;
+  }
+  let cloud = null;
+  try { cloud = await window.ManhajCloud.loadProgress(); } catch (e) { cloud = null; }
+  if (!cloud) {
+    // لا يوجد شيء بالسحابة بعد: نرفع ما هو موجود محليًا (أول مزامنة لهذا المستخدم)
+    pushToCloud();
+    return;
+  }
+  const cloudTs = cloud.ts || 0;
+  const localTs = getLocalTs();
+
+  if (cloudTs > localTs) {
+    // السحابة أحدث: نطبّق بياناتها على التخزين المحلي
+    const lectures = cloud.lectures || {};
+    Object.keys(lectures).forEach(id => {
+      localStorage.setItem(STORAGE_PREFIX + id, lectures[id]);
+    });
+    if (Array.isArray(cloud.activityLog)) {
+      localStorage.setItem(LOG_KEY, JSON.stringify(cloud.activityLog));
+    }
+    try { localStorage.setItem(SYNC_TS_KEY, String(cloudTs)); } catch (e) {}
+  } else if (localTs > cloudTs) {
+    // الجهاز الحالي أحدث: نرفع نسخته للسحابة لتعويض تأخرها
+    pushToCloud();
+  }
 }
 
 /* ---------------- سجل النشاط اليومي (للسلسلة/Streak) ---------------- */
@@ -484,9 +554,13 @@ function wireCheckboxes(rerender) {
 /* =========================================================
    نقطة الدخول
    ========================================================= */
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   const page = document.body.dataset.page;
   if (typeof SITE_DATA === 'undefined') return;
+
+  // ننتظر تسجيل الدخول ثم نزامن بيانات هذا الجهاز مع السحابة قبل أول عرض
+  // (لو الوحدة السحابية غير مضافة لهذه الصفحة، تنتهي فورًا بلا أثر)
+  await syncFromCloudOnce();
 
   if (page === 'home') renderHome();
   else if (page === 'stage') renderStagePage();
