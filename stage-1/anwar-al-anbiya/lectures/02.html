@@ -93,7 +93,7 @@ a{color:var(--accent-d)}
 
 /* ---------- layout ---------- */
 .wrap{max-width:calc(var(--maxw) + var(--notew) + var(--gap) + 40px);margin:0 auto;padding:0 20px}
-.col{max-width:var(--maxw);margin-inline-start:calc(var(--notew) + var(--gap));position:relative}
+.col{max-width:var(--maxw);margin-right:0;margin-left:calc(var(--notew) + var(--gap));position:relative}
 @media(max-width:1180px){.col{margin-inline-start:0;margin-inline-end:0}}
 
 /* ---------- cards ---------- */
@@ -150,10 +150,10 @@ html[data-theme="night"] .inq{color:var(--gold)}
 }
 .nmark:hover{filter:brightness(1.15)}
 .note{
-  position:absolute;width:var(--notew);inset-inline-start:calc(-1 * (var(--notew) + var(--gap)));
+  position:absolute;width:var(--notew);left:calc(-1 * (var(--notew) + var(--gap)));
   font-size:.76rem;line-height:1.8;color:var(--ink2);background:var(--paper);
   border:1px solid var(--line);border-radius:12px;padding:11px 14px;
-  border-inline-start:4px solid var(--nc,var(--ink3));font-family:'Cairo',sans-serif;text-align:start;
+  border-right:4px solid var(--nc,var(--ink3));font-family:'Cairo',sans-serif;text-align:start;
   transition:box-shadow .2s,transform .2s
 }
 .note.flash{box-shadow:0 0 0 3px color-mix(in srgb,var(--nc) 30%,transparent);transform:translateY(-2px)}
