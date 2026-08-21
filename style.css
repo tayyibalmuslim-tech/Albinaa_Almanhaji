@@ -673,3 +673,7 @@ a.day-title:hover, a.lecture-title:hover{ color: var(--green); }
 /* شريط التنقّل العلوي بين الأيام */
 [data-lecture-nav-top]{ margin: 18px 0 6px; }
 .lecture-nav-day{ font-size:11.5px; opacity:.75; font-weight:500; }
+.lecture-nav-adjacent{ display:flex; flex-direction:column; gap:2px; align-items:center; justify-content:center; }
+.lecture-nav-ttl{ font-size:13.5px; }
+.lecture-nav-subj{ font-size:11px; opacity:.7; font-weight:500; }
+.lecture-nav-subj.is-other{ opacity:.95; color:#8a6a1f; font-weight:600; }
