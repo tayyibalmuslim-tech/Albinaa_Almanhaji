@@ -980,15 +980,15 @@ const ankiCards = [
   ["لماذا يحب المؤمن اللغة العربية بحسب كلام الثعالبي؟","لأنها لغة القرآن ولغة النبي صلى الله عليه وسلم ولغة الصحابة، لا لذاتها"]
 ];
 
-// حفظ حالة "إتمام المحاضرة" محليًا في متصفح المستخدم
+// حفظ حالة "إتمام المحاضرة" — موحّد مع نظام التتبع المركزي للموقع (ilm_) ليدعم المزامنة السحابية
 (function(){
   const cb = document.querySelector('.checkbox-line input[data-lecture-id]');
   if(!cb) return;
-  const key = 'lecture_done_' + cb.getAttribute('data-lecture-id');
+  const lid = cb.getAttribute('data-lecture-id');
   try{
-    cb.checked = localStorage.getItem(key) === '1';
+    if(window.IlmTrack) window.IlmTrack.ready.then(function(){ cb.checked = window.IlmTrack.isDone(lid); });
     cb.addEventListener('change', function(){
-      try{ localStorage.setItem(key, cb.checked ? '1' : '0'); }catch(e){}
+      if(window.IlmTrack) window.IlmTrack.setDone(lid, cb.checked);
     });
   }catch(e){}
 })();
@@ -1332,6 +1332,8 @@ window.quizData = {
   }
 })();
 </script>
+<script type="module" src="../../../firebase-sync-manhaj.js"></script>
+<script src="../../../ilm-track.js"></script>
 
 </body>
 </html>
