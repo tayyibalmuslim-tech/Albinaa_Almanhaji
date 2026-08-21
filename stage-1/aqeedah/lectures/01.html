@@ -1,42 +1,1690 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>المحاضرة 1 - مدخل إلى علم العقيدة</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../../style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مداخل العلوم — مدخل إلى علم العقيدة | الشيخ أحمد السيد</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f6f3ec;
+  --paper-2:#fffdf8;
+  --ink:#232830;
+  --ink-soft:#4d545e;
+  --ink-faint:#7b828c;
+  --line:#e2dbcd;
+  --gold:#a8813f;
+  --gold-soft:#c9a86a;
+  --navy:#1b2a41;
+  --shadow:0 1px 2px rgba(35,40,48,.05),0 8px 24px rgba(35,40,48,.06);
+  --shadow-lg:0 2px 6px rgba(35,40,48,.07),0 18px 46px rgba(35,40,48,.10);
+  --r:14px;
+
+  --s1:#3d5a80;
+  --s2:#1f6f5c;
+  --s3:#8a5a2b;
+  --s4:#7a3b52;
+  --s5:#55632b;
+  --s6:#2f4858;
+
+  --sec:var(--navy);
+  --sec-tint:rgba(27,42,65,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:'Cairo',system-ui,sans-serif;font-size:17.5px;line-height:1.95;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%}
+h1,h2,h3,h4{font-family:'Amiri',serif;line-height:1.45;margin:0}
+p{margin:0 0 1.05em}
+a{color:var(--gold)}
+
+/* ============ شريط علوي ============ */
+.topbar{
+  position:sticky;top:0;z-index:60;background:rgba(246,243,236,.93);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+}
+.topbar-in{max-width:1180px;margin:0 auto;padding:9px 18px;display:flex;align-items:center;gap:14px}
+.brand{font-family:'Amiri',serif;font-size:19px;font-weight:700;color:var(--navy);white-space:nowrap}
+.brand span{color:var(--gold);font-size:15px;font-family:'Cairo';font-weight:600}
+.progress{flex:1;height:5px;background:var(--line);border-radius:99px;overflow:hidden}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold-soft),var(--gold));transition:width .15s linear}
+.tocbtn{
+  border:1px solid var(--line);background:var(--paper-2);color:var(--navy);
+  font-family:'Cairo';font-weight:700;font-size:14px;padding:7px 14px;border-radius:99px;cursor:pointer;
+  min-height:38px;
+}
+.tocbtn:hover{border-color:var(--gold-soft)}
+
+/* ============ الفهرس ============ */
+.toc{
+  position:fixed;inset:0;z-index:70;display:none;
+  background:rgba(27,42,65,.35);backdrop-filter:blur(3px);
+}
+.toc.open{display:block}
+.toc-panel{
+  position:absolute;top:0;right:0;height:100%;width:min(360px,88vw);
+  background:var(--paper-2);border-left:1px solid var(--line);
+  padding:22px 20px;overflow-y:auto;box-shadow:var(--shadow-lg);
+}
+.toc-panel h3{font-size:22px;color:var(--navy);margin-bottom:4px}
+.toc-panel .sub{font-size:13px;color:var(--ink-faint);margin-bottom:16px}
+.toc a{
+  display:flex;gap:10px;align-items:flex-start;text-decoration:none;color:var(--ink);
+  padding:11px 12px;border-radius:10px;font-size:15.5px;font-weight:600;
+  border-right:3px solid transparent;
+}
+.toc a:hover{background:var(--paper);border-right-color:var(--gold-soft)}
+.toc a i{font-style:normal;font-family:'Amiri';color:var(--gold);font-weight:700;min-width:20px}
+.toc-close{position:absolute;top:14px;left:14px;border:0;background:transparent;font-size:26px;color:var(--ink-faint);cursor:pointer;line-height:1}
+
+/* ============ الغلاف ============ */
+.cover{
+  background:
+    radial-gradient(1200px 400px at 50% -140px,rgba(168,129,63,.18),transparent 70%),
+    linear-gradient(175deg,#1b2a41 0%,#22344f 55%,#1b2a41 100%);
+  color:#f3ede1;padding:60px 20px 54px;position:relative;overflow:hidden;
+  border-bottom:3px solid var(--gold);
+}
+.cover::before{
+  content:"";position:absolute;inset:0;opacity:.10;
+  background-image:
+    linear-gradient(45deg,transparent 47%,#e6d3ab 47%,#e6d3ab 53%,transparent 53%),
+    linear-gradient(-45deg,transparent 47%,#e6d3ab 47%,#e6d3ab 53%,transparent 53%);
+  background-size:34px 34px;
+}
+.cover-in{max-width:820px;margin:0 auto;position:relative;text-align:center}
+.kicker{
+  display:inline-block;font-size:13px;font-weight:700;letter-spacing:.06em;
+  border:1px solid rgba(230,211,171,.45);color:#e6d3ab;padding:6px 16px;border-radius:99px;margin-bottom:20px;
+}
+.cover h1{font-size:44px;color:#fff;margin-bottom:12px;text-shadow:0 2px 20px rgba(0,0,0,.25)}
+.cover .lead{font-size:17px;color:#cfd8e4;max-width:620px;margin:0 auto 24px;line-height:1.9}
+.chips{display:flex;flex-wrap:wrap;gap:9px;justify-content:center}
+.chip{
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
+  color:#e8e2d5;font-size:13.5px;font-weight:600;padding:6px 14px;border-radius:99px;
+}
+.chip b{color:var(--gold-soft);font-weight:700}
+
+/* ============ الجسم ============ */
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+.sheet{max-width:790px;margin:0 auto}
+section.part{padding:56px 0 10px;--sec:var(--navy)}
+#s1{--sec:var(--s1)} #s2{--sec:var(--s2)} #s3{--sec:var(--s3)}
+#s4{--sec:var(--s4)} #s5{--sec:var(--s5)} #s6{--sec:var(--s6)}
+
+.part-head{display:flex;gap:16px;align-items:center;margin-bottom:26px}
+.pnum{
+  flex:none;width:52px;height:52px;background:var(--sec);color:#fff;
+  display:grid;place-items:center;font-family:'Amiri';font-size:24px;font-weight:700;
+  border-radius:16px 4px 16px 4px;box-shadow:var(--shadow);
+}
+.part-head h2{font-size:31px;color:var(--sec)}
+.part-head .eyebrow{font-family:'Cairo';font-size:12.5px;font-weight:700;color:var(--ink-faint);letter-spacing:.05em;display:block;margin-bottom:2px}
+
+h3.sub{
+  font-size:24px;color:var(--navy);margin:38px 0 14px;padding-right:14px;
+  border-right:4px solid var(--sec);
+}
+h4.mini{font-size:19.5px;color:var(--sec);margin:26px 0 10px;font-weight:700}
+
+/* ============ البلوكات ============ */
+.box{
+  background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r);
+  padding:20px 22px;margin:22px 0;box-shadow:var(--shadow);position:relative;
+}
+.box .tag{
+  display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;
+  padding:4px 12px;border-radius:99px;margin-bottom:10px;letter-spacing:.02em;
+}
+.box p:last-child{margin-bottom:0}
+
+.def{border-right:5px solid var(--sec)}
+.def .tag{background:var(--sec-tint);color:var(--sec)}
+
+.evid{border-right:5px solid #2f7a5c;background:#f3f9f5}
+.evid .tag{background:rgba(47,122,92,.12);color:#245f48}
+
+.quran{
+  border:1px solid #d9cba7;background:linear-gradient(180deg,#fdf9ee,#faf4e6);
+  border-radius:var(--r);padding:22px 24px;margin:22px 0;text-align:center;
+}
+.quran .aya{font-family:'Amiri',serif;font-size:24px;line-height:2.1;color:#6b5320}
+.quran .ref{font-size:13px;color:var(--ink-faint);margin-top:8px;font-weight:600}
+
+.hadith{border-right:5px solid #4a6b8a;background:#f2f6fa}
+.hadith .tag{background:rgba(74,107,138,.13);color:#365madd}
+.hadith .tag{color:#37536e}
+.hadith .matn{font-family:'Amiri',serif;font-size:20.5px;line-height:2.05;color:#2b3d52}
+
+.key{border-right:5px solid var(--gold);background:linear-gradient(180deg,#fdf8ee,#fbf5e8)}
+.key .tag{background:rgba(168,129,63,.15);color:#8a6a2f}
+
+.warn{border-right:5px solid #b5642c;background:#fdf4ec}
+.warn .tag{background:rgba(181,100,44,.14);color:#8f4d21}
+
+.fix{border-right:5px solid #8e4a86;background:#faf1f9}
+.fix .tag{background:rgba(142,74,134,.14);color:#6f3968}
+.fix .row{display:flex;gap:10px;margin:8px 0;font-size:15.5px;align-items:flex-start}
+.fix .row b{flex:none;font-size:12.5px;font-weight:700;padding:2px 10px;border-radius:99px;margin-top:4px}
+.fix .row.bad b{background:#f6dede;color:#8d3333}
+.fix .row.good b{background:#dcefe0;color:#2c6238}
+.fix .row.src b{background:#e8e3f2;color:#4c4472}
+
+.exam{border-right:5px solid #6b7a2b;background:#f7f9ee}
+.exam .tag{background:rgba(107,122,43,.14);color:#525e21}
+
+.note{
+  background:transparent;border:1px dashed var(--line);border-radius:12px;
+  padding:14px 18px;margin:20px 0;font-size:15.5px;color:var(--ink-soft);
+}
+.note b{color:var(--navy)}
+
+/* جدول */
+.tw{overflow-x:auto;margin:24px 0;border-radius:var(--r);border:1px solid var(--line);box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;background:var(--paper-2);font-size:15.5px;min-width:520px}
+th{background:var(--sec);color:#fff;padding:13px 14px;font-weight:700;text-align:right;font-size:15px}
+td{padding:12px 14px;border-top:1px solid var(--line);vertical-align:top;line-height:1.8}
+tr:nth-child(even) td{background:rgba(0,0,0,.014)}
+td b{color:var(--sec)}
+
+/* الطرفان والوسط */
+.triad{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:24px 0}
+.triad .t{
+  background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:16px;
+  font-size:15px;box-shadow:var(--shadow);
+}
+.triad .t h5{margin:0 0 8px;font-family:'Amiri';font-size:20px}
+.triad .t.left{border-top:4px solid #b5642c}
+.triad .t.left h5{color:#8f4d21}
+.triad .t.mid{border-top:4px solid #2f7a5c;background:#f4faf6}
+.triad .t.mid h5{color:#245f48}
+.triad .t.right{border-top:4px solid #4a6b8a}
+.triad .t.right h5{color:#37536e}
+
+/* قائمة مرقمة أنيقة */
+ol.steps{list-style:none;counter-reset:st;padding:0;margin:22px 0}
+ol.steps li{
+  counter-increment:st;position:relative;padding:0 46px 0 0;margin-bottom:18px;
+}
+ol.steps li::before{
+  content:counter(st);position:absolute;right:0;top:2px;width:30px;height:30px;
+  background:var(--sec);color:#fff;border-radius:9px;display:grid;place-items:center;
+  font-family:'Amiri';font-weight:700;font-size:16px;
+}
+ol.steps li b{color:var(--sec)}
+
+ul.plain{padding-right:20px;margin:14px 0}
+ul.plain li{margin-bottom:9px}
+ul.plain li::marker{color:var(--gold)}
+
+/* ============ الأسئلة التفاعلية ============ */
+.quiz{
+  background:var(--paper-2);border:1px solid var(--line);border-right:5px solid var(--sec);
+  border-radius:var(--r);padding:18px 20px;margin:26px 0;box-shadow:var(--shadow);
+}
+.quiz .qtag{
+  display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.04em;
+  background:var(--sec-tint);color:var(--sec);padding:3px 11px;border-radius:99px;margin-bottom:9px;
+}
+.quiz .qtext{font-weight:700;font-size:17px;margin-bottom:13px;line-height:1.75}
+.opt{
+  display:block;width:100%;text-align:right;background:var(--paper);
+  border:1.5px solid var(--line);border-radius:11px;padding:11px 15px;margin-bottom:9px;
+  font-family:'Cairo';font-size:15.5px;color:var(--ink);cursor:pointer;min-height:46px;
+  line-height:1.6;transition:.15s;
+}
+.opt:hover{border-color:var(--sec);background:#fff}
+.opt.correct{background:#e9f6ec;border-color:#3f8f5b;color:#245f48;font-weight:700}
+.opt.wrong{background:#fbeceb;border-color:#c0574f;color:#8d3333}
+.opt[disabled]{cursor:default}
+.expl{
+  display:none;margin-top:10px;padding:12px 15px;border-radius:11px;
+  background:var(--sec-tint);font-size:15px;line-height:1.8;color:var(--ink-soft);
+}
+.expl.show{display:block}
+.expl b{color:var(--sec)}
+.retry{
+  display:none;margin-top:9px;background:none;border:0;color:var(--sec);
+  font-family:'Cairo';font-weight:700;font-size:14px;cursor:pointer;text-decoration:underline;
+}
+.retry.show{display:inline-block}
+
+/* ============ الخلاصة ============ */
+.sumry{
+  background:linear-gradient(180deg,var(--sec) 0%,var(--sec) 100%);
+  color:#fff;border-radius:var(--r);padding:24px 26px;margin:34px 0 10px;box-shadow:var(--shadow-lg);
+}
+.sumry .h{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.sumry h4{font-size:23px;color:#fff}
+.score{
+  background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.24);
+  border-radius:99px;padding:5px 15px;font-size:13.5px;font-weight:700;
+}
+.sumry ul{margin:0;padding-right:20px}
+.sumry li{margin-bottom:9px;line-height:1.85}
+.sumry li::marker{color:#e6d3ab}
+
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);margin:44px 0}
+
+/* ============ بطاقات أنكي ============ */
+.anki{background:var(--navy);color:#e9e4d8;padding:56px 18px 64px;margin-top:56px;border-top:3px solid var(--gold)}
+.anki-in{max-width:790px;margin:0 auto}
+.anki h2{font-size:32px;color:#fff;text-align:center;margin-bottom:6px}
+.anki .lead{text-align:center;color:#aab6c6;font-size:15px;margin-bottom:26px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:22px}
+.filt{
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);color:#dbd5c8;
+  font-family:'Cairo';font-size:13.5px;font-weight:600;padding:7px 15px;border-radius:99px;cursor:pointer;min-height:38px;
+}
+.filt.on{background:var(--gold);border-color:var(--gold);color:#1b2a41;font-weight:700}
+.card{
+  perspective:1400px;height:250px;margin-bottom:16px;cursor:pointer;
+}
+.card-in{position:relative;width:100%;height:100%;transition:transform .55s;transform-style:preserve-3d}
+.card.flip .card-in{transform:rotateY(180deg)}
+.face{
+  position:absolute;inset:0;backface-visibility:hidden;border-radius:16px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:26px;text-align:center;
+}
+.front{background:#f6f3ec;color:#232830;border:1px solid #cfc7b6}
+.back{background:#2b3d56;color:#f0ebe0;border:1px solid #46577044;transform:rotateY(180deg)}
+.face .lbl{font-size:11.5px;font-weight:700;letter-spacing:.06em;color:var(--gold);margin-bottom:10px}
+.face .txt{font-size:18px;font-weight:600;line-height:1.85;overflow-y:auto;max-height:170px}
+.back .txt{font-size:16.5px;font-weight:400}
+.navrow{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:6px}
+.navbtn{
+  background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);color:#e9e4d8;
+  width:44px;height:44px;border-radius:12px;font-size:19px;cursor:pointer;
+}
+.navbtn:hover{background:var(--gold);color:#1b2a41;border-color:var(--gold)}
+.counter{font-family:'Amiri';font-size:18px;color:#c3ccd8;min-width:90px;text-align:center}
+.dl{
+  display:block;margin:26px auto 0;background:var(--gold);border:0;color:#1b2a41;
+  font-family:'Cairo';font-weight:700;font-size:16px;padding:14px 30px;border-radius:12px;cursor:pointer;min-height:50px;
+}
+.dl:hover{background:#c9a86a}
+.dlnote{text-align:center;color:#93a0b1;font-size:13px;margin-top:10px}
+
+footer{background:#141f30;color:#8b98a9;text-align:center;padding:26px 18px;font-size:13.5px}
+footer b{color:var(--gold-soft)}
+
+@media(max-width:760px){
+  body{font-size:16.5px;line-height:1.9}
+  .cover{padding:44px 18px 40px}
+  .cover h1{font-size:31px}
+  .part-head h2{font-size:25px}
+  .pnum{width:44px;height:44px;font-size:20px}
+  h3.sub{font-size:21px}
+  .triad{grid-template-columns:1fr}
+  .box{padding:17px 18px}
+  .quran .aya{font-size:20px}
+  .brand span{display:none}
+  .card{height:280px}
+}
+</style>
 </head>
-<body class="" data-page="lecture" data-lecture-id="stage1_aqeedah_01">
-  <div class="page">
-    <nav class="breadcrumbs"><a href="../../../index.html">الرئيسية</a><span class="sep">/</span><a href="../../index.html">المرحلة الأولى</a><span class="sep">/</span><a href="../index.html">مدخل إلى علم العقيدة</a><span class="sep">/</span><span aria-current="page">المحاضرة 1</span></nav>
-    
-      <header class="lecture-header">
-        <h1>المحاضرة 1</h1>
-        <p class="lecture-meta">المادة: مدخل إلى علم العقيدة &nbsp;|&nbsp; الشيخ: أحمد السيد &nbsp;|&nbsp; اليوم 23</p>
-        <label class="checkbox-line lecture-checkbox">
-          <input type="checkbox" data-lecture-id="stage1_aqeedah_01">
-          <span>إتمام هذه المحاضرة</span>
-        </label>
-      </header>
+<body data-lecture-id="stage1_aqeedah_01">
+<style id="ilm-completion-style">
+  #ilm-completion-box{
+    display:flex; align-items:center; gap:10px;
+    max-width:640px; margin:14px auto 0; padding:12px 18px;
+    background:#fbfaf4; border:1px solid #d3d8ca; border-radius:12px;
+    font-family:'Tajawal','Segoe UI',Tahoma,sans-serif; direction:rtl;
+    cursor:pointer; user-select:none; transition:background .15s, border-color .15s;
+  }
+  #ilm-completion-box:hover{ border-color:#b8862f; }
+  #ilm-completion-box.done{ background:#e3ebe4; border-color:#1f4a3d; }
+  #ilm-completion-box input{ width:18px; height:18px; accent-color:#1f4a3d; cursor:pointer; flex-shrink:0; }
+  #ilm-completion-box span{ font-size:14.5px; font-weight:600; color:#2b2a24; }
+  #ilm-completion-box.done span{ color:#163931; }
+</style>
+<label id="ilm-completion-box">
+  <input type="checkbox" data-lecture-id="stage1_aqeedah_01">
+  <span>تحديد هذه المحاضرة كمكتملة</span>
+</label>
 
-      <div class="lecture-placeholder">
-        <p>سيتم إضافة المحاضرة هنا لاحقًا</p>
-        <p class="placeholder-hint">(رابط يوتيوب / فيديو / ملف صوتي / PDF / نص المحاضرة / ملاحظاتي)</p>
-      </div>
 
-      <div class="lecture-nav">
-        <a href="../index.html" class="btn btn-outline">الرجوع إلى المادة</a>
-        <a href="../../index.html" class="btn btn-outline">الرجوع إلى المرحلة</a>
-      </div>
-
-      <div data-lecture-nav-extra></div>
-    
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="brand">مداخل العلوم <span>— علم العقيدة</span></div>
+    <div class="progress"><i id="prog"></i></div>
+    <button class="tocbtn" id="tocOpen">الفهرس</button>
   </div>
-  <script type="module" src="../../../firebase-sync-manhaj.js"></script>
-  <script src="../../../data.js"></script>
-  <script src="../../../script.js"></script>
+</div>
+
+<div class="toc" id="toc">
+  <div class="toc-panel">
+    <button class="toc-close" id="tocClose">&times;</button>
+    <h3>محتويات المحاضرة</h3>
+    <div class="sub">ستة عناصر + بطاقات المراجعة</div>
+    <a href="#s1"><i>١</i> تمهيد: هدف السلسلة وتنبيهان تأسيسيان</a>
+    <a href="#s2"><i>٢</i> تسميات علم العقيدة</a>
+    <a href="#s3"><i>٣</i> موضوعات علم العقيدة</a>
+    <a href="#s4"><i>٤</i> اتجاهات الطوائف العقدية</a>
+    <a href="#s5"><i>٥</i> قواعد منهجية للاعتقاد الصحيح</a>
+    <a href="#s6"><i>٦</i> منهجية مقترحة لدراسة العلم</a>
+    <a href="#anki"><i>★</i> بطاقات المراجعة (Anki)</a>
+  </div>
+</div>
+
+<header class="cover">
+  <div class="cover-in">
+    <div class="kicker">سلسلة مداخل العلوم — للجيل الصاعد</div>
+    <h1>مدخل إلى علم العقيدة</h1>
+    <p class="lead">إطلالة على أوسع العلوم الإسلامية: ما اسمه؟ وما موضوعاته؟ وكيف توزّعت فيه الطوائف؟ وما القواعد التي تُوصِّل إلى الصواب فيه؟ وكيف يبدأ طالبُ العلم دراسته؟</p>
+    <div class="chips">
+      <span class="chip">الشيخ <b>أحمد السيد</b></span>
+      <span class="chip"><b>٦</b> عناصر</span>
+      <span class="chip"><b>٢١</b> سؤالًا تفاعليًا</span>
+      <span class="chip"><b>٥٠</b> بطاقة مراجعة</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap"><div class="sheet" data-ilm-highlight-zone>
+
+<!-- ================= 1 ================= -->
+<section class="part" id="s1">
+  <div class="part-head">
+    <div class="pnum">١</div>
+    <div><span class="eyebrow">تمهيد</span><h2>هدف السلسلة وتنبيهان تأسيسيان</h2></div>
+  </div>
+
+  <p>علم العقيدة من أوسع العلوم الإسلامية، ومن أكثر العلوم التي نشأت فيها تيارات واختلافات ومذاهب. لكن هذه الاختلافات — على كثرتها — <b>لم تكن في أصل الديانة</b>؛ فلم تنشأ عندنا مذاهب إسلامية تقول إن النبي ﷺ ليس رسولًا من عند الله، أو إن هناك خلافًا في رسول آخر، أو إن القرآن ليس من عند الله سبحانه وتعالى.</p>
+
+  <p>وإنما وقعت الاختلافات أكثر ما وقعت في <b>تأويل القرآن وفهمه</b>، فنشأت تيارات ومذاهب عقدية كثيرة تنظر إلى القضايا الإسلامية بنظرات مختلفة: في باب القضاء والقدر، أو في باب الإيمان والكفر، أو في باب الأسماء والصفات، وما إلى ذلك. وهذه الاختلافات تتطلّب أن يعرف الإنسان الصواب، أو أن يعرف <b>القواعد الموصِّلة إلى الصواب</b> حتى يكون أقرب إلى الفهم.</p>
+
+  <div class="box def">
+    <span class="tag">تعريف بالسلسلة</span>
+    <p><b>الغرض من «مداخل العلوم»</b> أن يُلقي الإنسان نظرة على العلم المتحدَّث عنه: ما هو في ذاته؟ من خلال الكتب التي كُتبت فيه ومن خلال محتوياته — ماذا يتناول؟ وما طبيعته؟ وما تاريخه؟</p>
+    <p style="margin-top:10px"><b>وليس الهدف</b> الدخول في التقريرات التفصيلية وإعطاء النتائج في القضايا المختلَف فيها. الهدف هو <b>الإطلالة</b> فقط.</p>
+  </div>
+
+  <h3 class="sub">التنبيه الأول: العقيدة لا تبدأ من البعثة</h3>
+
+  <p>الاهتمام بالعقيدة ينبغي ألّا يبدأ عند الإنسان من مرحلة الإسلام ومن مرحلة البعثة النبوية؛ فهناك قضايا عقدية فيما قبل الإسلام من المهم الاطلاع عليها. فعندنا مثلًا ما يتعلق <b>بنشوء الشرك في البشرية: متى بدأ الشرك؟</b></p>
+
+  <p>وهذه النقطة صارت نقطة مقاطعة مع بعض الدراسات الغربية التي تنقض الأديان في رأيها، وترى أن <b>الشرك هو الأصل في البشرية</b> وما إلى ذلك. ومعرفة تاريخ العقيدة فيما قبل الإسلام مهمّ جدًا، ويشمل أول ما يشمل قضية الأنبياء ومعرفة قصصهم ومنهجهم في الدعوة — وهذا كله داخل في صميم العقيدة.</p>
+
+  <div class="box exam">
+    <span class="tag">توصية من الشيخ</span>
+    <p>سلسلة مرئية متميزة في <b>قناة المجد</b> بعنوان <b>«تاريخ العقيدة»</b>، موجودة على اليوتيوب. تتناول العقيدة من نشأة الإنسان ونشأة الحضارة والأنبياء، وتنتهي عند <b>إبراهيم عليه السلام</b> — فيبقى ما بين إبراهيم والنبي ﷺ.</p>
+    <p style="margin-top:8px;font-size:14.5px;color:var(--ink-faint)">تنبيه على عدد الحلقات: الشيخ نفسه لم يجزم، وقال ما معناه: «نسيت كم حلقة، ربما ثلاثون حلقة أو شيء». فالعدد مذكور على وجه التقريب لا التحديد.</p>
+  </div>
+
+  <div class="quiz" data-qid="q1"></div>
+
+  <h3 class="sub">التنبيه الثاني: أين التحدي العقدي الحقيقي اليوم؟</h3>
+
+  <p>مع الأسف، كثير ممن يهتم بعلم العقيدة يهتم به في <b>مراحل تاريخية معيّنة</b>؛ فالقضايا التي تثير اهتمامه هي القضايا التي كانت محل خلاف وجدل في مراحل معينة من التراث الإسلامي والتاريخ الإسلامي، بينما لا تجده يهتم بالإشكالات العقدية الكبرى الناشئة والحادثة في التاريخ الحديث.</p>
+
+  <p>فلو قيل الآن: ما أكبر التحديات العقدية التي ينبغي الاهتمام بها ودراسة مذاهبها وتياراتها وجذورها؟ فإن الشيخ لا يُسمّي التيارات الإسلامية داخل الصف الإسلامي؛ فليست المذاهب الإسلامية التي كانت موجودة في التاريخ الإسلامي هي التحديات الكبرى اليوم — نعم يوجد تحدّيات بقيت، لكنها ليست التحديات الكبرى.</p>
+
+  <div class="box key">
+    <span class="tag">النقطة المركزية</span>
+    <p>التحديات الكبرى اليوم هي <b>الاتجاهات والتيارات العلمانية والليبرالية والحداثية والمادية</b> — الاتجاهات التي تنقض الإسلام من أصله، ومعها <b>الإلحاد الجديد</b>. فدراسة مثل هذه المذاهب ومعرفة أصولها وجذورها هي <b>من صميم علم العقيدة</b>، لا مجرد «اهتمام بالفكر».</p>
+  </div>
+
+  <p>ونحن اليوم نسمّي هذا «المجال الفكري»، ويُقال: فلان مهتم بالفكر، يعني يعرف العلمانية وجذورها. لا — هذا هو صميم الاعتقاد وصميم ما يدخل في علم العقيدة؛ لأن علم العقيدة يدخل فيه — باعتبار الموجود في العلوم — <b>الأقوالُ والمذاهبُ المخالِفة</b>، وهذا من أهم ما يمكن أن يدخل فيه.</p>
+
+  <div class="box warn">
+    <span class="tag">إشكال</span>
+    <p>حصر علم العقيدة في مسائل معيّنة — الأسماء والصفات، والقضاء والقدر، والإيمان، والمسائل المتعلقة بالتقرّب إلى الله والبدع الناشئة في هذا المجال — <b>مشكلة كبيرة</b>. هذه أشياء مهمة ويجب مواصلة الاهتمام بها، لكن يجب أن تأخذ حيّزًا <b>لا يتجاوز</b> التحدي الحقيقي اليوم: التيارات الجديدة المناقِضة لأصل الديانة، ولأصل نزعة التديّن في الإنسان، ثم بشكل أخصّ لأصل التعبّد لله على الوجه الصحيح.</p>
+  </div>
+
+  <h4 class="mini">كيف يكون الاقتداء الحقيقي بابن تيمية؟</h4>
+
+  <p>بعض الناس يرى أن ابن تيمية رحمه الله متميز في دراسة الفرق والمذاهب وجذورها وتواريخها، فيظن أن تميّزه إنما هو بقدر حفظه لتواريخ الطوائف ورموزها وتحليل أقوالها. ومن كتبه في ذلك <b>«الفرقان بين الحق والباطل»</b> — وهو من أواخر ما ألّفه — تكلّم فيه كثيرًا عن الطوائف الإسلامية وأتى بخلاصات كثيرة. فقد يظن الظانّ أن معرفته بما قاله ابن تيمية هناك تعني أنه عرف العقيدة واتجاهاتها.</p>
+
+  <div class="box key">
+    <span class="tag">القاعدة</span>
+    <p>بقدر تميّز ابن تيمية في معرفة الاتجاهات والتيارات <b>المؤثرة في وقته</b>، فإن الاقتداء الحقيقي به ليس هو نقل نتائجه؛ وإنما هو أن تأخذ <b>جنس ما اهتم به</b>. وجنس ما اهتم به يتمثل اليوم في دراسة المذاهب العلمانية والحداثية والمادية والإلحادية، ومعرفة أصولها وجذورها.</p>
+  </div>
+
+  <div class="box fix">
+    <span class="tag">توضيح التباس — اسم الكتاب</span>
+    <div class="row bad"><b>ورد صوتيًا</b><span>«الفرقان بين الحق والبطلان»</span></div>
+    <div class="row good"><b>الاسم في المصدر</b><span>الرسالة مطبوعة ضمن <b>مجموع الفتاوى — المجلد الثالث عشر</b> باسم «الفرقان بين الحق والباطل»، وتُتداول أيضًا وتُشرح بعنوان «الفرقان بين الحق والبطلان»، فالتسميتان لكتاب واحد ولا تعارض.</span></div>
+    <div class="row src"><b>الأهم</b><span>هذا الكتاب <b>غير</b> كتاب ابن تيمية الآخر المشهور: «الفرقان بين أولياء الرحمن وأولياء الشيطان» — وهما كتابان متمايزان يقع فيهما اللبس كثيرًا.</span></div>
+  </div>
+
+  <div class="quiz" data-qid="q2"></div>
+
+  <h3 class="sub">إنصاف المعتزلة: نقد اختزالة شائعة</h3>
+
+  <p>بعضهم يختصر القضية حين ينظر لبعض التيارات اليوم فيقول: «هؤلاء امتداد للمعتزلة، فنحن ندرس المعتزلة». وهذا كلام سهل يُقال هكذا ويُلقى، لكن الأمر ليس هكذا. نعم، يوجد بعض الأقوال هي امتداد للمعتزلة، لكن لمّا تنظر في بعض الاتجاهات اليوم التي تُنسب للمعتزلة ستجد أن المطابقة بينها بهذه الطريقة ليست صحيحة.</p>
+
+  <div class="box key">
+    <span class="tag">وجه اللافتة</span>
+    <p>هذه المطابقة السريعة ظلمٌ من جهتين: ظلمٌ للطوائف المنتسِبة مؤخرًا، <b>وظلمٌ للمعتزلة أنفسهم</b> — فقد كان عندهم من الدفاع عن الشريعة والدين شيء كبير.</p>
+  </div>
+
+  <ul class="plain">
+    <li><b>القاضي عبد الجبار</b> في كتابه «تثبيت دلائل النبوة»، وفي بعض مجلدات «المغني» — فيها انتصار للشريعة.</li>
+    <li><b>مناقضتهم ومجادلتهم للزنادقة</b> في تلك المرحلة، وقد كان الزنادقة يومئذ يشاغبون على قضية النبوة خاصة.</li>
+    <li><b>نقاشهم للباطنية</b>؛ حتى إن ابن تيمية — في المجلد التاسع من الفتاوى — أشاد ببعض جهود المعتزلة في مقاومة الباطنية.</li>
+    <li><b>والمعتزلة أنفسهم ليسوا سواء</b>؛ فالنَّظّام ليس مثل عبد الجبار، بينهم اختلاف.</li>
+  </ul>
+
+  <p>فليست القضية أن يُقال: «هؤلاء معتزلة وانتهينا، عرفنا المعتزلة فالحقوهم». القضية تُدرَس <b>دراسة مستقلة</b>، وهذا أفضل.</p>
+
+  <div class="box fix">
+    <span class="tag">تصحيح تفريغ</span>
+    <div class="row bad"><b>ورد صوتيًا</b><span>«ابن تيمية في المَجَلّة التاسعة في الفتاوى»</span></div>
+    <div class="row good"><b>الصواب</b><span>«المجلد التاسع» من مجموع الفتاوى — والمقصود موضع إشادته ببعض جهود المعتزلة في مقاومة الباطنية.</span></div>
+  </div>
+
+  <div class="quiz" data-qid="q3"></div>
+
+  <div class="note">
+    <b>عناصر المحاضرة كما أعلنها الشيخ:</b> (١) تسميات علم العقيدة — (٢) موضوعاته — (٣) اتجاهات الطوائف في موضوعاته — (٤) نبذة تاريخية عن المواقف والاتجاهات العقدية — (٥) قواعد منهجية لفهم الاعتقاد الصحيح — (٦) منهجية مقترحة لدراسة العلم.
+  </div>
+
+  <div class="sumry">
+    <div class="h"><h4>خلاصة التمهيد</h4><span class="score" data-sec="s1">٠ / ٠</span></div>
+    <ul>
+      <li>الاختلاف العقدي في تاريخ المسلمين وقع في <b>تأويل القرآن وفهمه</b>، لا في أصل الديانة.</li>
+      <li>هدف «مداخل العلوم» إطلالةٌ على طبيعة العلم وتاريخه ومحتواه، لا الترجيح في المسائل الخلافية.</li>
+      <li>العقيدة تبدأ قبل البعثة: نشوء الشرك في البشرية، وقصص الأنبياء ومناهجهم في الدعوة.</li>
+      <li>التحدي العقدي الأكبر اليوم هو التيارات العلمانية والليبرالية والحداثية والمادية والإلحادية.</li>
+      <li>الاقتداء بابن تيمية يكون بأخذ <b>جنس</b> اهتمامه لا بتكرار نتائجه على تيارات وقته.</li>
+      <li>اختزال التيارات المعاصرة في «امتداد المعتزلة» ظلمٌ للطرفين، والصواب دراستها دراسة مستقلة.</li>
+    </ul>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ================= 2 ================= -->
+<section class="part" id="s2">
+  <div class="part-head">
+    <div class="pnum">٢</div>
+    <div><span class="eyebrow">العنصر الأول</span><h2>تسميات علم العقيدة</h2></div>
+  </div>
+
+  <p>أخذ هذا العلم مصطلحات متعددة في التراث الإسلامي. وهذه أشهرها:</p>
+
+  <h4 class="mini">١) علم العقيدة</h4>
+  <p>هذه التسمية ليس لها أصل في الكتاب ولا في السنة كاسمٍ لهذا العلم — وليس معنى ذلك أنها تسمية مبتدَعة أو لا تجوز؛ فهذه اصطلاحات، وإنما هو ضبطٌ لنسبة الأقوال. لكن <b>أصل مادّتها</b> وارد في القرآن، وإن لم يكن في باب العلم:</p>
+
+  <div class="quran">
+    <div class="aya">﴿لَا يُؤَاخِذُكُمُ اللَّهُ بِاللَّغْوِ فِي أَيْمَانِكُمْ وَلَٰكِن يُؤَاخِذُكُم بِمَا عَقَّدتُّمُ الْأَيْمَانَ﴾</div>
+    <div class="ref">المائدة: ٨٩</div>
+  </div>
+
+  <p>فيُؤخذ منها معنى <b>الشدّ والربط والثبوت والإحكام</b>. فعلم العقيدة يتناول الأمور التي يعقد عليها القلب ويُثبتها ويربط عليها.</p>
+
+  <h4 class="mini">٢) علم السنة</h4>
+  <p>وهي تسمية قديمة عند بعض علماء السلف. فتجد أن:</p>
+  <ul class="plain">
+    <li><b>عبد الله بن الإمام أحمد</b> له كتاب اسمه «السنة».</li>
+    <li><b>الخلّال</b> له كتاب اسمه «السنة».</li>
+    <li><b>المروزي</b> له كتاب اسمه «السنة».</li>
+  </ul>
+  <p>ولمّا تفتح هذه الكتب لا تجد فيها مصطلح الحديث أو أحاديث نبوية مجرّدة هكذا؛ وإنما تجد <b>أبوابًا عقدية</b>، وتحتها أحاديث وآثار وأقوال عن التابعين ومن بعدهم. فليس كل كتاب اسمه «السنة» يتكلم عن الأحاديث.</p>
+
+  <h4 class="mini">٣) علم التوحيد</h4>
+  <p>وهذه التسمية واضح اشتقاقها وواضحة دلالتها، وهي تسمية قديمة أيضًا:</p>
+  <ul class="plain">
+    <li><b>ابن خزيمة</b> له كتاب اسمه «التوحيد».</li>
+    <li>وقبل ذلك: <b>الإمام البخاري</b> — آخر كتاب في صحيحه هو «كتاب التوحيد».</li>
+    <li>حتى إن بعض المعاصرين أفرده بالشرح: <b>الدكتور عبد الله الغنيمان</b> شرح كتاب التوحيد من صحيح البخاري في مجلدين.</li>
+  </ul>
+
+  <h4 class="mini">٤) الإيمان</h4>
+  <p>وهذه التسمية على قسمين، والتفريق بينهما مهم:</p>
+
+  <div class="tw"><table>
+    <tr><th style="width:28%">القسم</th><th>ماذا يتناول؟</th><th style="width:24%">مثال</th></tr>
+    <tr>
+      <td><b>الإيمان = بابٌ واحد</b></td>
+      <td>مسائل الإيمان نفسه: حقيقة الإيمان وطبيعته، هل يزيد وينقص؟ الاستثناء في الإيمان، ما الذي يضادّه، وهل يكون الكفر بالعمل أم لا يكون إلا باللسان والجحود القلبي، ومتى يخرج الإنسان من الإيمان.</td>
+      <td>«كتاب الإيمان» في صحيح البخاري — وكتاب «الإيمان» لأبي عبيد القاسم بن سلّام</td>
+    </tr>
+    <tr>
+      <td><b>الإيمان = العقيدة كلها</b></td>
+      <td>يُقصد به العقيدة بشكل عام، فيدخل في مختلف القضايا العقدية لا في مسائل الإيمان فقط.</td>
+      <td>«كتاب الإيمان» في صحيح مسلم — وهو أول كتاب بعد المقدمة</td>
+    </tr>
+  </table></div>
+
+  <div class="note">
+    <b>ملحوظة على القسم الأول:</b> كتب «الإيمان» بالمعنى الضيق لا يقتصر همّها على أركان الإيمان الستة — قد تُذكر، لكنها ليست القضية الأساسية فيها. القضية الأساسية هي حقيقة الإيمان وما يضاده.
+  </div>
+
+  <h4 class="mini">تطبيق: كيف تقرأ «كتاب الإيمان» في صحيح البخاري؟</h4>
+  <p>إذا فتحت كتاب الإيمان في صحيح البخاري — وهو ثاني كتاب في الصحيح — تجد البخاري يترجم بأبوابٍ كل واحد منها يخدم مسألة عقدية:</p>
+
+  <ul class="plain">
+    <li>يبدأ بآيات <b>زيادة الإيمان</b>: ﴿لِيَزْدَادُوا إِيمَانًا مَعَ إِيمَانِهِمْ﴾، ﴿وَزِدْنَاهُمْ هُدًى﴾، ﴿وَيَزِيدُ اللَّهُ الَّذِينَ اهْتَدَوْا هُدًى﴾ — ليبيّن أن الإيمان <b>يزيد وينقص</b>.</li>
+    <li>«باب دعاؤكم إيمانكم»، و«باب أمور الإيمان».</li>
+    <li>«باب تفاضل أهل الإيمان في الأعمال»، و«باب من قال إن الإيمان هو العمل» — وهذه في مسألة أن <b>الإيمان قول وعمل واعتقاد</b>.</li>
+    <li>«باب كفران العشير وكفر دون كفر»، و«باب ظلم دون ظلم» — وهذه في <b>ما يضاد الإيمان</b>، وما يدخل في الكفر وما لا يدخل، وهل الكفر كفرٌ واحد.</li>
+    <li>«باب علامة المنافق» — والنفاق مما يضاد الإيمان.</li>
+    <li>«باب الصلاة من الإيمان» — وهي في قضية أن العمل قد يُسمّى إيمانًا.</li>
+  </ul>
+
+  <div class="box evid">
+    <span class="tag">وجه استدلال البخاري في «الصلاة من الإيمان»</span>
+    <p>ساق قوله تعالى في سياق تحويل القبلة: ﴿وَمَا كَانَ اللَّهُ لِيُضِيعَ إِيمَانَكُمْ﴾ [البقرة: ١٤٣] — أي <b>صلاتكم</b> التي كانت قبل تحويل القبلة.</p>
+    <p style="margin-top:8px">وأصل ذلك ما جاء في الحديث الصحيح: لمّا حُوّلت القبلة قالوا: يا رسول الله، إن إخوانًا لنا ماتوا قبل أن تُحوَّل القبلة — فحملوا همّهم — فجاءت الآية مطابِقة لهذا المعنى.</p>
+    <p style="margin-top:8px"><b>فوجه الدلالة:</b> أن الإيمان قد يُطلق على العمل، والعمل قد يُسمّى إيمانًا، وهو هنا الصلاة.</p>
+  </div>
+
+  <div class="box fix">
+    <span class="tag">تصحيح تفريغ</span>
+    <div class="row bad"><b>ورد صوتيًا</b><span>«باب كفران العشير وكفرٌ بعد كفر»</span></div>
+    <div class="row good"><b>الصواب</b><span>ترجمة البخاري: «باب كفران العشير وكفرٍ دون كفر» — والمعنى يستقيم بها؛ إذ مقصود الباب أن الكفر درجات لا درجة واحدة.</span></div>
+  </div>
+
+  <div class="box exam">
+    <span class="tag">كتاب مقترح</span>
+    <p><b>«الإيمان» لأبي عبيد القاسم بن سلّام</b> — من أئمة المسلمين في تلك المرحلة، إمام عظيم متمكّن، له إسهامات رائعة في العربية من جهة تفسير النص الشرعي، وله كتابات عقدية أشهرها هذا الكتاب. وهو كتاب صغير، وله شرح على اليوتيوب للدكتور <b>يوسف الغفيص</b>. ويتناول مسائل الإيمان والكفر ونحوها.</p>
+    <p style="margin-top:8px;font-size:14.5px;color:var(--ink-faint)"><b>ضبط:</b> وصفه الشيخ بأنه «صديق الإمام أحمد»، والمقصود المعاصرة والصلة بينهما؛ وإلا فأبو عبيد أسنّ من الإمام أحمد وأقدم مولدًا، وتوفي قبله.</p>
+  </div>
+
+  <div class="quiz" data-qid="q4"></div>
+
+  <h4 class="mini">٥) علم أصول الدين</h4>
+  <p>وهذه التسمية باعتبار مقابلتها للأحكام العملية الفقهية — المتعلقة بالطهارة والصلاة ونحوها — فتُسمّى العقيدة <b>أصول الدين</b>، وتُسمّى الأحكام العملية <b>فروع الدين</b>. وقد وقع خلاف ونقاش طويل عريض في صحة هذه التسمية، لكنّها من التسميات المستعملة.</p>
+
+  <h4 class="mini">٦) علم الشريعة</h4>
+  <p>ومنه كتاب <b>«الشريعة» للآجُرّي</b> — تجده مسائل عقدية.</p>
+
+  <h4 class="mini">٧) علم الكلام</h4>
+
+  <div class="box warn">
+    <span class="tag">التباس شائع</span>
+    <p>يظن بعض الناس أن <b>علم الكلام</b> هو نفسه <b>علم المنطق</b> أو قريب منه. بينما هذا شيء وهذا شيء آخر تمامًا. نعم، هناك امتزاج في بعض الأدوات والتأثّرات والاستمدادات، لكن <b>الموضوعات مختلفة تمامًا</b>: موضوعات علم الكلام موضوعات عقدية.</p>
+  </div>
+
+  <p>ولماذا أخذ هذه التسمية؟ لأن الكتب المسمّاة بذلك تتناول العقيدة <b>بطرق مخصوصة</b>، وهذه الطرق متعلقة بالعقل — لا بعموم العقل، وإنما بطرقٍ خاصة داخل العقل. ولذلك من أشهر تعريفات المتكلمين أنفسهم:</p>
+
+  <div class="box def">
+    <span class="tag">تعريف علم الكلام</span>
+    <p>«إثبات العقائد الدينية بالطرق العقلية».</p>
+    <p style="margin-top:6px">وقال بعضهم: «إثبات العقائد الدينية بإيراد الحجج ودفع الشُّبَه».</p>
+  </div>
+
+  <h4 class="mini">إشكال: لماذا ذمّ الشافعي علم الكلام إذًا؟</h4>
+  <p>ورد عن بعض الأئمة ذمّ علم الكلام وذمّ المتكلمين، ومن أوائلهم <b>الإمام الشافعي</b> رحمه الله. فثار السؤال: إذا كان علم الكلام هو إثبات العقائد الدينية بالطرق العقلية، فما الداعي لأن يُنكر الشافعي على المتكلمين؟ أليس الاشتغال العقلي في الباب العقدي قديمًا؟ أليس إثبات الشريعة بالطرق العقلية — من حيث الأصل — ممتدَحًا؟</p>
+
+  <div class="box key">
+    <span class="tag">الجواب</span>
+    <p>من حيث <b>المبدأ العام</b>: نعم. والمقصود ليس المحاقّة العقلية للشريعة، وإنما إثبات الشريعة بالطرق العقلية — وهذا ليس مذمومًا في أصله.</p>
+    <p style="margin-top:8px">لكن لمّا صار الأمر <b>بطرق معيّنة محددة</b>، وجُعلت هذه الطرق المحددة هي العقل نفسه، وترتّب عليها <b>نفيٌ لبعض القضايا العقدية الإسلامية</b> — صار علم الكلام مذمومًا في تلك الحال.</p>
+  </div>
+
+  <div class="quiz" data-qid="q5"></div>
+
+  <h4 class="mini">محتوى علم الكلام: مركزية «حدوث العالم»</h4>
+  <p>من أهم محتويات علم الكلام <b>إثبات وجود الله سبحانه وتعالى</b>، وأكبر مرتكز لذلك عندهم هو <b>إثبات حدوث الكون</b>. ولإثبات أن الكون حادث عندهم تراتيب عقلية معينة، أخذت جزءًا كبيرًا من كتب علم الكلام؛ فإذا توصّلوا إلى أن الكون حادث لزم أن يكون له <b>مُحدِث</b>، فيستدلّون بذلك على وجود الله.</p>
+
+  <h4 class="mini">أين الإشكال في هذا؟</h4>
+
+  <ol class="steps">
+    <li><b>الحصر غير لازم:</b> الاستدلال بالحدوث على وجود المُحدِث ليس بالضرورة أن يُحصر في إثبات حدوث <b>أصل الكون</b>؛ فإثبات حدوث <b>شيء واحد</b> من الأشياء التي تحدث يمكن أن يوصلك — باستدلال معيّن — إلى أنه لا بد أن ينتهي الأمر إلى مُحدِثٍ أول أوجد هذا الكون. فإن مشيتَ في سلسلة أسباب فيجب أن تصل إلى سببٍ أول.
+      <div style="margin-top:8px">ولهذه القضية في التراث الإسلامي <b>مساران</b>: مسار ضرورة إثبات حدوث أصل الكون، ومسار الاكتفاء بـ«إحداث أفراد الحوادث». وأصحاب المسار الثاني يقولون إن هذه هي <b>طريقة القرآن</b>؛ فالقرآن يربطك بالمخلوقات التي حولك: كيف يحيي الله الأرض بعد موتها ونحو ذلك — وإن كانت قد سيقت في سياق الاستدلال على البعث، فإنها مما يمكن أن يُستدلّ به على وجود الله. وكذلك الآيات العامة الآمرة بالتدبّر في المخلوقات، وقد سيقت لبيان عظمة الله ووحدانيته وربوبيته.</div>
+    </li>
+    <li><b>لوازم عقدية:</b> الطريقة المعيّنة في إثبات حدوث الكون أدّت إلى <b>نفي بعض الصفات</b> عن الله سبحانه وتعالى. والسبب: أنهم لو أجروا تلك الطرق العقلية فيما يتعلق بالله للزم عندهم أن يكون الله حادثًا؛ فنفَوا الصفات التي تتقاطع مع أدلة حدوث الكون.
+      <div style="margin-top:8px">فأساسهم ليس أساس <b>إنكار</b>، بل أساس <b>تنزيه</b> لله أن يكون حادثًا. لكن هذا الاشتغال الكبير بمركزية حدوث الكون أخذ مساحة أكبر من حجمها، وأدّى إلى سلبيات.</div>
+    </li>
+  </ol>
+
+  <div class="box key">
+    <span class="tag">تطبيق معاصر</span>
+    <p>في السجال الإسلامي الإلحادي المعاصر <b>لا تحتاج إلى تلك الطرق الكلامية</b> لإثبات حدوث الكون — حتى لو استفدت من بعض الأدوات، فلن تستفيد منها على نطاق أساسي. لماذا؟ لأن المُلحد الذي أمامك <b>لا ينازعك أصلًا في حدوث الكون</b>؛ فأشرس الملاحدة اليوم يتفقون معك على أن الكون حادث.</p>
+    <p style="margin-top:8px">فكل ذلك الجهد المبذول في كتب الكلام لإثبات حدوث الكون — تمهيدًا للمقدمة الأخرى: «أن الحادث لا بد له من مُحدِث» — يختصره الملحد اليوم بقوله: أنا أعترف أصلًا أن الكون حادث.</p>
+    <p style="margin-top:8px"><b>فأين موضع النزاع اليوم؟</b> في المقدمة الأخرى نفسها: يقول لك ليس بالضرورة أن يكون له مُحدِث. وأحيانًا ينازعون في <b>طبيعة</b> هذا المُحدِث.</p>
+  </div>
+
+  <div class="quiz" data-qid="q6"></div>
+
+  <div class="sumry">
+    <div class="h"><h4>خلاصة العنصر الأول</h4><span class="score" data-sec="s2">٠ / ٠</span></div>
+    <ul>
+      <li>تسميات العلم: <b>العقيدة، السنة، التوحيد، الإيمان، أصول الدين، الشريعة، الكلام</b>.</li>
+      <li>«العقيدة» اصطلاح لا أصل له كاسمٍ للعلم في الكتاب والسنة، لكن مادّته في القرآن بمعنى الشدّ والربط والإحكام.</li>
+      <li>كتب اسمها «السنة» محتواها عقدي لا حديثي — كتب عبد الله بن أحمد والخلّال والمروزي.</li>
+      <li>«الإيمان» تأتي بمعنى ضيّق (مسائل الإيمان كما في البخاري) وبمعنى واسع (العقيدة كلها كما في مسلم).</li>
+      <li>علم الكلام غير علم المنطق؛ وهو إثبات العقائد الدينية بطرق عقلية <b>مخصوصة</b>.</li>
+      <li>ذمّ الشافعي متوجّه إلى الطرق المحددة ولوازمها في نفي الصفات، لا إلى أصل الاشتغال العقلي.</li>
+    </ul>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ================= 3 ================= -->
+<section class="part" id="s3">
+  <div class="part-head">
+    <div class="pnum">٣</div>
+    <div><span class="eyebrow">العنصر الثاني</span><h2>موضوعات علم العقيدة</h2></div>
+  </div>
+
+  <p>يمكن تقسيم علم الاعتقاد إلى قسمين أساسيين:</p>
+
+  <div class="tw"><table>
+    <tr><th style="width:32%">القسم</th><th>ماذا يتناول؟</th></tr>
+    <tr>
+      <td><b>توحيد المعرفة والإثبات</b></td>
+      <td>موضوعات <b>إثباتية</b> ترجع إلى التصديق القلبي والتصوّر: معرفة الله وإثباته، وأسماؤه وصفاته. ويمكن إجمالها بما يتعلق <b>بأركان الإيمان</b>.</td>
+    </tr>
+    <tr>
+      <td><b>توحيد القصد والطلب</b></td>
+      <td>ما يتعلق بـ<b>صرف التعبّدات لله وحده</b>، أي توحيد الألوهية، وما يضادّه من الشرك المتمثل في عبادة غير الله.</td>
+    </tr>
+  </table></div>
+
+  <h4 class="mini">تفصيل القسم الأول: المعرفة والإثبات</h4>
+  <ul class="plain">
+    <li><b>الإيمان بالله</b>: من حيث وجوده، ومن حيث صفاته.</li>
+    <li><b>الملائكة</b>: التصديق بما ورد عنهم في القرآن، وهذا من الإيمان بالغيب.</li>
+    <li><b>الكتب</b>، و<b>الرسل</b>: كذلك.</li>
+    <li><b>اليوم الآخر</b>: ويشمل قضايا كثيرة — الميزان، الصراط، الحشر، البعث، بل ويمكن أن يُدرج فيه <b>عذاب القبر</b>.</li>
+    <li><b>القدر خيره وشره</b>: وتدخل هنا مسائل القدر والحكمة والتعليل ونحوها.</li>
+  </ul>
+  <p>وهذه كلها <b>مسائل تصديقية</b> موجودة في كتب علم العقيدة، وترجع إجمالًا إلى قسم المعرفة والإثبات.</p>
+
+  <h4 class="mini">تفصيل القسم الثاني: القصد والطلب</h4>
+  <ul class="plain">
+    <li><b>القضايا التعبدية القلبية</b>: التوكل، والمحبة، والرجاء، والخوف، والخشية، والإنابة، ونحوها.</li>
+    <li><b>وما يضاد هذا التعلّق</b> من صرف الأعمال والعبادات لغير الله: كالذبح لغير الله، والطواف لغير الله، والسجود لغير الله، ونحو ذلك.</li>
+  </ul>
+
+  <div class="quiz" data-qid="q7"></div>
+
+  <h3 class="sub">تقسيم الكتب المؤلَّفة في العقيدة على هذه الخارطة</h3>
+
+  <div class="note">
+    <b>ملاحظة على ترتيب المحاضرة:</b> نبّه الشيخ على هذه النقطة داخل عنصر الموضوعات وقال إنها كانت تستحق عنصرًا مستقلًّا لكن موضعها هنا مناسب. وقد أبقيتُها في موضعها كما وردت.
+  </div>
+
+  <p>الكتب المؤلَّفة في العقيدة تُوزَّع على هذه الخارطة، فتنقسم <b>ثلاثة أقسام إجمالية</b>:</p>
+
+  <ol class="steps">
+    <li>ما أُلِّف في <b>توحيد المعرفة والإثبات</b> فقط — فقد تفتح كتاب عقيدة كاملًا في خمسمئة أو ستمئة صفحة أو أكثر، وتجده يتناول الموضوعات التصديقية فحسب، ولو تناول شيئًا من القصد والطلب فتكميلًا أو لعلاقته بباب معيّن.</li>
+    <li>ما أُلِّف في <b>توحيد القصد والطلب</b> فقط.</li>
+    <li>ما أُلِّف في <b>النوعين</b> معًا.</li>
+  </ol>
+
+  <p>وهناك <b>أقسام تفصيلية</b> داخل ذلك: فبعض الكتب المؤلَّفة في المعرفة والإثبات ليست شمولية، وإنما تتناول <b>بابًا معيّنًا</b>:</p>
+
+  <ul class="plain">
+    <li>كتب في <b>القضاء والقدر</b> — مثل «شفاء العليل» لابن القيم.</li>
+    <li>كتب في <b>القرآن</b> بعينه — كالكتب المؤلَّفة في إثبات <b>إعجاز القرآن</b> وأنه من عند الله.</li>
+  </ul>
+
+  <div class="box key">
+    <span class="tag">لفتة في تصنيف العلوم</span>
+    <p>كتب إعجاز القرآن يرجع تصنيفها الشجري الفهرسي في التراث إلى <b>علوم القرآن</b> — ونعم هي من علوم القرآن. ولكنها في الوقت نفسه <b>من قضايا العقيدة</b>؛ باعتبار أنها راجعة إلى إثبات مكوّن أساسي من مكوّنات اعتقاد المسلم، وهو <b>صحة الكتب</b>. فأنت تدرك أن من أركان الإيمان: الإيمان بالله وملائكته <b>وكتبه</b>. فحين تتكلم عن إثبات صحة القرآن فأنت تتكلم في علم العقيدة.</p>
+  </div>
+
+  <div class="box fix">
+    <span class="tag">ضبط اسم كتاب</span>
+    <div class="row bad"><b>ورد صوتيًا</b><span>«شفاء العَلِيّ» لابن القيم</span></div>
+    <div class="row good"><b>الصواب</b><span>«شفاء العَليل في مسائل القضاء والقدر والحكمة والتعليل» — لابن قيّم الجوزية، وهو من أشهر ما أُفرِد في باب القدر.</span></div>
+  </div>
+
+  <div class="quiz" data-qid="q8"></div>
+
+  <div class="sumry">
+    <div class="h"><h4>خلاصة العنصر الثاني</h4><span class="score" data-sec="s3">٠ / ٠</span></div>
+    <ul>
+      <li>موضوعات العقيدة قسمان: <b>توحيد المعرفة والإثبات</b> و<b>توحيد القصد والطلب</b>.</li>
+      <li>الأول تصديقي تصوّري ويجمعه إجمالًا <b>أركان الإيمان الستة</b> بتفاصيلها.</li>
+      <li>الثاني عملي قلبي: صرف التعبّدات لله وحده، وما يضادّه من الشرك في العبادة.</li>
+      <li>الكتب المؤلَّفة ثلاثة أقسام: في الأول، أو في الثاني، أو فيهما معًا — وداخلها كتب أُفردت لبابٍ واحد.</li>
+      <li>كتب إعجاز القرآن تُصنَّف فهرسيًّا في علوم القرآن، وهي في حقيقتها عقدية لرجوعها إلى ركن <b>الإيمان بالكتب</b>.</li>
+    </ul>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ================= 4 ================= -->
+<section class="part" id="s4">
+  <div class="part-head">
+    <div class="pnum">٤</div>
+    <div><span class="eyebrow">العنصر الثالث</span><h2>اتجاهات الطوائف العقدية</h2></div>
+  </div>
+
+  <div class="note">
+    <b>عن العنصر الرابع (النبذة التاريخية):</b> أعلن الشيخ في أول المحاضرة ستة عناصر، منها «نبذة تاريخية عن المواقف والاتجاهات العقدية». وعند الوصول إليه اعتبر أنه قد استُوفي ضمن هذا العنصر — إذ جاء عرض الطوائف مرتّبًا تاريخيًّا من عهد الصحابة فما بعده — فانتقل مباشرة إلى القواعد المنهجية. فلا يوجد قسم مستقل ناقص، وإنما اندمج العنصران، ولم أُضِف شيئًا من عندي لسدّ الفراغ.
+  </div>
+
+  <h3 class="sub">أولًا: عصر الصحابة — لا تيارات عقدية</h3>
+
+  <p>في وقت الصحابة رضوان الله عليهم — حتى في الرصد التاريخي والتحليل التاريخي — <b>لم تكن داخل الصحابة تيارات عقدية معيّنة</b>. نعم وقع اختلاف نظري في قضايا عقدية <b>جزئية</b>، لكن لم تقع اختلافات عقدية كبرى ولم تنشأ تيارات.</p>
+
+  <div class="box exam">
+    <span class="tag">مثال الخلاف الجزئي</span>
+    <p>هل رأى النبي ﷺ ربّه ليلة الإسراء والمعراج أم لم يره؟ هذه مسألة عقدية بلا شك، وموضعها من خارطة العلوم عقدي، ووقع فيها خلاف بين الصحابة — لكنها <b>جزئية</b>.</p>
+  </div>
+
+  <p>أما في القضايا الكبرى — مثل <b>منهجية التعامل مع باب الأسماء والصفات</b> — فلا نجد تيارات داخل الصحابة: لا تيار تأويل، ولا تيار تفويض، ولا تيار تسليم مع الإيمان بالمعنى وتفويض الكيفية، ولا تيار تعطيل. الصحابة يتعاملون مع الباب <b>بمنهجية واحدة</b>. وكذلك في مسائل الإيمان والكفر، وإن اختلفوا في بعض الجزئيات.</p>
+
+  <div class="box hadith">
+    <span class="tag">شاهد تاريخي</span>
+    <p>وقع نقاش بين <b>أبي بكر الصديق وعمر بن الخطاب</b> رضي الله عنهما في قتال المرتدين؛ فقال عمر لأبي بكر: كيف تقاتلهم وقد قال رسول الله ﷺ: «أُمرتُ أن أقاتل الناس حتى يقولوا لا إله إلا الله» إلى آخره. ثم <b>رجع عمر إلى قول أبي بكر</b>.</p>
+    <p style="margin-top:8px"><b>موضع الشاهد:</b> لم تنشأ داخل صف الصحابة تيارات — تيارٌ مع عمر يتبنّى منهجية معينة في التكفير، وتيارٌ مع أبي بكر يتبنّى منهجية مضادة. وهذه من العلامات البارزة في القضية التاريخية العقدية.</p>
+  </div>
+
+  <h4 class="mini">فماذا عن الفتنة التي وقعت بينهم؟</h4>
+  <p>وقعت خلافات وإشكالات فيما حدث من الفتنة بين الصحابة رضوان الله عليهم، لكن <b>الخلاف الباعث لها ليس خلافًا عقديًّا</b>؛ وإنما هو خلاف في <b>تنزيل قضايا معيّنة</b> وتقدير الصواب فيها: عثمان رضي الله عنه قُتل، فهل يُؤخذ بدمه الآن أو لا يُؤخذ به الآن ولماذا؟</p>
+  <p>يُضاف إلى ذلك <b>وجود طوائف أخرى أشعلت النار داخل هذا الصف</b>، وهي طوائف وأناس لم يكونوا من الصحابة أصلًا. وبالتالي لا يمكن أن يُقال إن النزاع بين الصحابة نزاعٌ ناشئ عن تيارات عقدية: هؤلاء لهم رأي عقدي وهؤلاء لهم رأي عقدي آخر.</p>
+
+  <div class="box key">
+    <span class="tag">قاعدة مقرَّرة هنا</span>
+    <p><b>مجموع ما اتفق عليه الصحابة</b> لا يمكن أن يكون إلا ما كان عليه النبي ﷺ. أما الفرد من أفراد الصحابة فقد يخطئ في مسألة ويصيب في أخرى. بل نقول ما هو أعمّ: <b>الأمة الإسلامية لا تجتمع إلا على صواب</b>.</p>
+  </div>
+
+  <div class="quiz" data-qid="q9"></div>
+
+  <h3 class="sub">ثانيًا: نشوء التيارات — من خارج الصحابة</h3>
+
+  <p>ما كان عليه الصحابة من الاتفاق العام في القضايا العقدية لم يستمرّ — لا من جهة من كانوا في تلك المرحلة؛ فالذين حملوا العلم عن الصحابة استمروا وأخذوه وثبتوا عليه — وإنما كان في تلك المرحلة <b>أناس كُثر من خارج مكوّن المتلقّين عن الصحابة</b>.</p>
+
+  <p>فأنت تتكلم عن <b>فتوحات</b> بلغت في منتصف عهد الصحابة وأواخره أقاصي الأرض، ودخل في الإسلام أناس كثير جدًا: فيهم الداخل بإيمان وقناعة، وفيهم الداخل نفاقًا، وفيهم الداخل طمعًا، وفيهم من دخل بصدق ولكنه لم يثبت... فصارت هناك اتجاهات عقدية داخل الصف الإسلامي.</p>
+
+  <div class="box key">
+    <span class="tag">ملحظ دقيق</span>
+    <p>مع وجود هذه الاتجاهات العقدية، <b>الصحابة لم ينتموا إليها</b>.</p>
+  </div>
+
+  <h4 class="mini">١) الخوارج</h4>
+  <p>خرجوا في وقت <b>التحكيم في معركة صفّين</b>، ثم اعتزلوا، فصار لهم كيان محدد ورؤوس محددون وجيش محدد. وقبل قتالهم نادى الصحابة بمناظرتهم، فجاء <b>ابن عباس</b> رضي الله عنهما وناظرهم. فصارت عندنا <b>فرقة محددة</b> لها تبنٍّ لقضايا عقدية معيّنة — وهذا ظهور مبكر لفرقة عقدية منحرفة.</p>
+
+  <h4 class="mini">٢) القدرية</h4>
+  <p>ظهرت أيضًا في وقت الصحابة. فتجد في أوائل <b>صحيح الإمام مسلم</b> أن ابن عمر سمع بالقدرية وقيل له إن أناسًا يقولون كذا وكذا، فقال: أخبِرْهم أني بريء منهم وأنهم برآء مني.</p>
+
+  <div class="box hadith">
+    <span class="tag">أول حديث في صحيح مسلم</span>
+    <p class="matn">عن يحيى بن يَعمَر قال: كان أول من قال في القدر بالبصرة <b>معبد الجُهَني</b>. فانطلقتُ أنا وحُميد بن عبد الرحمن حاجَّين أو معتمرَين، فقلنا: لو لقينا أحدًا من أصحاب رسول الله ﷺ فسألناه عمّا يقول هؤلاء في القدر. فوُفِّق لنا <b>عبد الله بن عمر</b>، فاكتنفتُه أنا وصاحبي، أحدُنا عن يمينه والآخر عن شماله... فقلت: يا أبا عبد الرحمن، إنه قد ظهر قِبَلَنا أناسٌ <b>يقرؤون القرآن ويتقفَّرون العلم</b>، وذكر من شأنهم، وأنهم يزعمون أن لا قدر وأن الأمر أُنُف. فقال: إذا لقيتَ أولئك فأخبِرْهم أني بريء منهم وأنهم برآء مني، والذي يحلف به عبد الله بن عمر، لو أن لأحدهم مثل أُحُدٍ ذهبًا فأنفقه ما قَبِله الله منه حتى يؤمن بالقدر.</p>
+    <p style="margin-top:10px">ثم قال ابن عمر: حدّثني أبي <b>عمر بن الخطاب</b>، وذكر حديث جبريل: «بينما نحن جلوسٌ عند رسول الله ﷺ إذ طلع علينا رجل شديد بياض الثياب، شديد سواد الشعر، لا يُرى عليه أثر السفر ولا يعرفه منّا أحد، فجلس إلى النبي ﷺ فأسند ركبتيه إلى ركبتيه ووضع كفّيه على فخذيه وقال: يا محمد، أخبرني عن الإسلام...» — <b>وموضع الشاهد</b>: «وتؤمن بالقدر خيره وشره».</p>
+  </div>
+
+  <div class="box key">
+    <span class="tag">لفتة</span>
+    <p>هذا الحديث الذي نحفظه دائمًا في <b>الأربعين النووية</b> — أصله وقصته هنا، ساقه الإمام مسلم في هذا السياق. والمؤلم في القضية أن هؤلاء أناس <b>يقرؤون القرآن ويتتبّعون العلم ويطلبونه</b>، ثم يزعمون أن لا قدر.</p>
+  </div>
+
+  <h4 class="mini">القدرية والجبرية وأهل السنة: طرفان ووسط</h4>
+
+  <div class="box def">
+    <span class="tag">قاعدة عامة في الفرق</span>
+    <p>الأقوال العقدية دائمًا تجدها <b>طرفان ووسط</b> — طرفان ووسط. وهذه قاعدة تتكرّر في كل باب من أبواب العقيدة.</p>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">تنبيه على الاسم</span>
+    <p>«القدرية» قد يُفهم من اسمها أنها <b>تُثبت</b> القدر — وهي بالعكس تمامًا: هم النافون له. أما المبالغون في الإثبات فهم <b>الجبرية</b>.</p>
+  </div>
+
+  <div class="triad">
+    <div class="t left">
+      <h5>القدرية</h5>
+      يقولون: لا قدر. وهم أقسام: منهم من <b>ينفي العلم الإلهي</b> نفسه — أي أن الله لم يعلم أصلًا أن هذا سيقع، فإذا وقع علِمه — وهؤلاء لا يختلف السلف في أنهم كفار. ومنهم من لا ينفي العلم ويقول: الله يعلم ولكنه لم يقدّر.
+    </div>
+    <div class="t mid">
+      <h5>أهل السنة (الوسط)</h5>
+      تخطئة القدرية والجبرية معًا: فعل الإنسان من قضاء الله وقدره، ومعلوم لله، وبمشيئته سبحانه؛ وهو في الوقت نفسه <b>بمشيئة الإنسان واختياره</b>. ومشيئة الإنسان ضمن مشيئة الله: <b>إرادة صغرى ضمن إرادة كبرى</b>.
+    </div>
+    <div class="t right">
+      <h5>الجبرية</h5>
+      يقولون: لا إرادة للإنسان ولا اختيار. وهم أقسام؛ بعضهم جعل حاجزًا بينه وبين الجبر المباشر فقال بـ<b>الكسب</b>: أن للإنسان كسبًا — لكن هذا الكسب في مآله يؤول إلى الجبر، ولو في بعض تحقّقاته.
+    </div>
+  </div>
+
+  <div class="box evid">
+    <span class="tag">أثر</span>
+    <p>قيل للإمام <b>الشافعي</b> رحمه الله في القدرية، فقال ما معناه: «ناظِروهم بالعلم؛ فإن أقرّوا به خُصِموا، وإن نفَوه كفروا».</p>
+    <p style="margin-top:6px;font-size:14.5px;color:var(--ink-faint)">نقلها الشيخ بصيغة الظن: «أظن العبارة عن الإمام الشافعي» — وأُبقيت على تحفّظه.</p>
+  </div>
+
+  <p>وفي هذا الباب تأتي مسألة <b>خلق أفعال العباد</b>، وللإمام البخاري كتاب في نقاش هذه القضية اسمه «خلق أفعال العباد».</p>
+
+  <div class="box key">
+    <span class="tag">لماذا صعُب باب القدر؟</span>
+    <p>لأن العلاقة بين الإرادتين — إرادة العبد وإرادة الرب — <b>ليس لها مثال موجود في المخلوقات</b>، فصار باب القدر بابًا صعبًا غيبيًّا. فأنت تؤمن وتُسلّم؛ إذ ثبت عندك أن هذا الكتاب حق وأن الله حق، فما أخبر به حق.</p>
+  </div>
+
+  <div class="quran">
+    <div class="aya">﴿مَّن كَانَ يُرِيدُ الْعَاجِلَةَ عَجَّلْنَا لَهُ فِيهَا﴾ • ﴿مَن كَانَ يُرِيدُ حَرْثَ الْآخِرَةِ نَزِدْ لَهُ فِي حَرْثِهِ﴾<br>﴿فَمَن شَاءَ فَلْيُؤْمِن وَمَن شَاءَ فَلْيَكْفُرْ﴾ • ﴿لِمَن شَاءَ مِنكُمْ أَن يَسْتَقِيمَ﴾<br>﴿وَاللَّهُ يُرِيدُ أَن يَتُوبَ عَلَيْكُمْ وَيُرِيدُ الَّذِينَ يَتَّبِعُونَ الشَّهَوَاتِ أَن تَمِيلُوا مَيْلًا عَظِيمًا﴾</div>
+    <div class="ref">آيات ساقها الشيخ على أن للإنسان إرادة ومشيئة واختيارًا — غير منفكّة عن إرادة الله ومشيئته وقدره</div>
+  </div>
+
+  <p>فإذا أشكل على الإنسان: ما نوع هذه العلاقة بالضبط بين مشيئة الإنسان ومشيئة الله؟ فالجواب هنا: <b>الله أعلم بها</b>.</p>
+
+  <div class="quiz" data-qid="q10"></div>
+
+  <h4 class="mini">٣) التشيّع</h4>
+  <p>نشأ مبكرًا وتمثّل بصور متعددة. فظهر في البداية طائفة <b>غَلَت في علي بن أبي طالب</b> رضي الله عنه.</p>
+
+  <div class="box hadith">
+    <span class="tag">قصة وموقف فقهي</span>
+    <p>أحرق عليٌّ رضي الله عنه أناسًا غَلَوا فيه. فقال <b>ابن عباس</b>: لو كنتُ أنا <b>لم أحرقهم</b>، لأن النبي ﷺ قال: «لا تعذّبوا بعذاب الله»؛ <b>ولقتلتُهم</b>، لأن النبي ﷺ قال: «من بدّل دينه فاقتلوه».</p>
+  </div>
+
+  <div class="box fix">
+    <span class="tag">تصحيح تفريغ — يقلب المعنى</span>
+    <div class="row bad"><b>ورد صوتيًا</b><span>«لم أحرقهم... <b>ولا قتلتهم</b>»</span></div>
+    <div class="row good"><b>الصواب</b><span>«لم أحرقهم... <b>ولَقَتلتُهم</b>» — فموقف ابن عباس ليس تركهم، بل <b>تغيير طريقة العقوبة</b>: القتل بدل التحريق. واللفظ المشهور عنه: «لو كنتُ أنا لم أحرّقهم... ولقتلتُهم».</span></div>
+    <div class="row src"><b>وجه الخطأ</b><span>سقوط اللام الموطّئة في التفريغ الصوتي حوّل الإثبات إلى نفي، فانقلب معنى الأثر رأسًا على عقب.</span></div>
+  </div>
+
+  <p>ثم بعد ذلك، كل طائفة من هذه الطوائف تصير <b>مثل كرة الثلج</b>: تدور وتحمل معها. فهذا الحمل إذا فكّكته ستجد داخله تشعّبات وأقوالًا؛ أحيانًا يكون حقًّا ممزوجًا بباطل، وأحيانًا يكون باطلًا محضًا.</p>
+
+  <h4 class="mini">٤) باب الإيمان: الوعيدية والمرجئة</h4>
+  <p>وكما أن في باب القدر طرفين ووسطًا، ففي باب الإيمان والكفر كذلك: <b>الوعيدية</b> و<b>المرجئة</b>، وأهل السنة في الوسط.</p>
+
+  <div class="tw"><table>
+    <tr><th style="width:22%">الاتجاه</th><th>القول</th></tr>
+    <tr><td><b>الوعيدية</b></td>
+      <td>يشدّدون في أصحاب الذنوب، وهم طوائف:<br>
+      • طائفة ترى أن أصحاب الكبائر <b>كفار في الدنيا</b> ومخلَّدون في العذاب في الآخرة.<br>
+      • وطائفة ترى أنهم <b>ليسوا كفارًا في الدنيا</b>، بل في <b>منزلة بين المنزلتين</b>، وهم في الآخرة مخلَّدون في النار.</td></tr>
+    <tr><td><b>المرجئة</b></td>
+      <td>وهم أيضًا طوائف:<br>
+      • منهم من يقول: الإيمان هو <b>المعرفة القلبية فقط</b>، ولو لم ينطق بلسانه.<br>
+      • بل إن من أشدّ غلاتهم من يقول <b>بإيمان فرعون</b> — لأنه يعرف الله بقلبه: ﴿وَجَحَدُوا بِهَا وَاسْتَيْقَنَتْهَا أَنفُسُهُمْ﴾. وهذه أقوال موجودة، لكنها منحصرة في زوايا محدودة.</td></tr>
+    <tr><td><b>أهل السنة</b></td>
+      <td>الإيمان <b>قول وعمل</b>، يزيد بالطاعة وينقص بالمعصية. والكفر كما يكون بالاعتقاد وباللسان، فإنه يكون <b>بالعمل</b> كذلك؛ ومن الأعمال ما هو كفر. والكفر درجات: <b>كفر أكبر وكفر أصغر</b>.</td></tr>
+  </table></div>
+
+  <div class="quiz" data-qid="q11"></div>
+
+  <h4 class="mini">٥) باب الصحابة وآل البيت</h4>
+  <p>وهذا الباب داخل في القضية العقدية المتعلقة بالمعرفة والإثبات. وفيه أيضًا طرفان ووسط:</p>
+
+  <div class="triad">
+    <div class="t left">
+      <h5>الغلاة (الشيعة)</h5>
+      مغالون في محبة طائفة من الصحابة — آل البيت ومن تبعهم. وتحتهم درجات؛ فمن الفرق المنتسبة إلى التشيّع من كان أقرب إلى <b>الخارطة الباطنية</b>، ومنهم من <b>يؤلّه عليًّا</b> رضي الله عنه؛ والبيت المشهور «أشهد أن لا إله إلا عليٌّ الأنزعُ البطين» منسوب لبعض الفرق الباطنية.
+    </div>
+    <div class="t mid">
+      <h5>أهل السنة (الوسط)</h5>
+      لآل البيت <b>مكانتهم واحترامهم وتقديرهم</b>، وتجد الكلام عن ذلك في كتب العقيدة نفسها — حتى في متن مختصر كـ<b>العقيدة الواسطية</b> لابن تيمية تجده يتكلم عن <b>حقوق أهل البيت</b>. ومع ذلك <b>لا يُغلى فيهم</b> ولا يُزاد فيهم عن الحد.
+    </div>
+    <div class="t right">
+      <h5>النواصب</h5>
+      مغالون في <b>نصب العداء</b> لآل البيت. وهذا من جهة آل البيت خاصة. أما الموقف من الصحابة بوجه عام فهناك أيضًا من يعادي الصحابة عمومًا، وهناك من يتخذ فيهم موقفًا وسطًا حسنًا.
+    </div>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">وجه الإشكال في الغلوّ</span>
+    <p>لمّا تنظر في بعض الممارسات الشيعية الرافضية تكاد تتوهّم: هل الإسلام الذي نزل على محمد ﷺ هو الإسلام الموجود في القرآن، أم هو إسلامٌ يُسمّى «إسلام أهل البيت»؟ كل شيء أهل البيت والأئمة، ولا يكاد يوجد شيء آخر. وهذا إشكال.</p>
+  </div>
+
+  <h3 class="sub">تنبيه دقيق: التقسيم بالفِرَق ≠ التقسيم بالأقوال</h3>
+
+  <p>نحن نسمع «المعتزلة» و«الجهمية» و«الخوارج» والفرق بشكل عام — فأين توزيعها على الخارطة؟ الجواب أن توزيع الخارطة العقدية إما أن يكون <b>بأسماء الفرق</b> وإما أن يكون <b>بالأقوال</b>، وهما مستويان مختلفان.</p>
+
+  <div class="box def">
+    <span class="tag">المفتاح</span>
+    <p><b>«الوعيدية» ليست فرقة</b> اسمها الوعيدية — بل هي <b>قول</b>؛ ومَن قال بالوعيد يدخل فيه الخوارج وبعض المعتزلة.</p>
+    <p style="margin-top:8px"><b>و«المرجئة» ليست فرقة</b> محددة — بل هي قول معيّن في الإيمان؛ والقائلون بالإرجاء يُسمّون مرجئة، لكن لهم في التصنيف العقدي تسمية أخرى بحسب فرقهم؛ ومن أشهر المشهورين بالإرجاء: <b>الجهمية</b>.</p>
+  </div>
+
+  <p>فعندنا فرق مثل <b>المعتزلة</b> و<b>الرافضة</b> و<b>الجهمية</b>؛ ولكل فرقة منها أقوال في الإيمان، وأقوال في الأسماء والصفات، وأقوال في مختلف القضايا العقدية. وهذا تقسيم بحسب <b>الفرق</b>. وفي المقابل تقسيم آخر بحسب <b>الأقوال داخل المسائل</b>:</p>
+
+  <div class="tw"><table>
+    <tr><th style="width:26%">الفرقة</th><th>في باب الإيمان</th><th>في باب الأسماء والصفات</th><th>في باب آل البيت</th></tr>
+    <tr><td><b>المعتزلة</b></td><td>وعيدية</td><td>معطِّلة</td><td>—</td></tr>
+    <tr><td><b>الرافضة</b></td><td>—</td><td>معطِّلة (وبعض متقدميهم مالوا إلى التشبيه، ثم تبنّى متأخروهم التعطيل)</td><td>غلاة</td></tr>
+    <tr><td><b>الجهمية</b></td><td>مرجئة</td><td>معطِّلة</td><td>—</td></tr>
+  </table></div>
+
+  <div class="note">
+    <b>ملاحظة على الجدول:</b> هذا الجدول تنظيمٌ مني لما ذكره الشيخ متفرّقًا في السياق، لتقريب الفرق بين المستويين — ولم يذكره الشيخ في صورة جدول. والخانات الفارغة تعني أنه لم يتعرّض لها في هذه المحاضرة، لا أنه لا قول لهم فيها.
+  </div>
+
+  <h4 class="mini">الأقوال في باب الأسماء والصفات</h4>
+  <p>الأقوال ثلاثة: <b>التعطيل</b> و<b>التمثيل (التشبيه)</b> وقول <b>أهل السنة</b> الوسط. وداخل كل قول تيارات وفرق:</p>
+
+  <ul class="plain">
+    <li><b>التعطيل اتجاه لا فرقة</b>؛ وداخله: تعطيل كلي للأسماء والصفات، وتعطيل جزئي للأسماء دون الصفات، وتعطيل لبعض الأسماء والصفات أو لبعض الصفات. وطرق التعطيل تختلف: منه ما يمرّ عبر بوّابة <b>التأويل</b>، ومنه طرق أخرى متعددة — فليست فرقة واحدة ولا طريقة واحدة.</li>
+    <li><b>ومن الفرق داخل اتجاه التعطيل</b>: الجهمية والمعتزلة.</li>
+    <li><b>التشبيه اتجاه</b> أيضًا، لكن الفرق التي عُرفت به <b>أقل بكثير</b>؛ لأنه قول مستبشَع مرفوض فطرةً. فالقائلون به <b>أشخاص</b> أكثر من كونهم فِرَقًا، وإن كان لبعضهم أتباع. ومن أشهرهم <b>هشام بن الحكم</b>.</li>
+  </ul>
+
+  <div class="box fix">
+    <span class="tag">تنبيه على التباس اسم</span>
+    <div class="row bad"><b>الالتباس</b><span>هشام بن الحَكَم — يُخطئ بعضهم فيقرؤه «ابن الحاكم»</span></div>
+    <div class="row good"><b>الضبط</b><span>هو <b>هشام بن الحَكَم</b>، نبّه الشيخ على ضبطه صراحةً في المحاضرة ليتميّز عن غيره.</span></div>
+  </div>
+
+  <div class="box key">
+    <span class="tag">القاعدة العملية</span>
+    <p>لا يصحّ أن نعدّد الأقوال في باب الأسماء والصفات ثم نقول: «المعتزلة والجهمية» — لأن هذا خلطٌ بين مستوى الأقوال ومستوى الفرق. الأقوال: تعطيل وتمثيل ووسط. والفرق تندرج <b>داخل</b> الأقوال.</p>
+  </div>
+
+  <h4 class="mini">سؤال الشيخ: أيهما أعمّ — المعتزلة أم القدرية؟</h4>
+  <div class="box def">
+    <span class="tag">الجواب</span>
+    <p><b>كلاهما أعمّ من وجه وأخصّ من وجه.</b></p>
+    <p style="margin-top:8px">• باعتبار <b>باب واحد</b> (باب الوعيد): الوعيدية أعمّ من المعتزلة، لأن الوعيدية يدخل فيها الخوارج وغيرهم.</p>
+    <p style="margin-top:6px">• وباعتبار <b>الخارطة العامة</b>: المعتزلة أعمّ، لأن لهم أقوالًا في الأسماء والصفات وفي القدر وفي الإيمان وفي غير ذلك — بينما الوعيدية قولٌ في بابٍ واحد.</p>
+  </div>
+
+  <div class="quiz" data-qid="q12"></div>
+  <div class="quiz" data-qid="q13"></div>
+
+  <div class="sumry">
+    <div class="h"><h4>خلاصة العنصر الثالث</h4><span class="score" data-sec="s4">٠ / ٠</span></div>
+    <ul>
+      <li>لم تنشأ داخل الصحابة تيارات عقدية؛ وقع خلاف جزئي فقط، والفتنة سببها تنزيل قضايا لا خلاف عقدي.</li>
+      <li>مجموع ما اتفق عليه الصحابة لا يكون إلا ما كان عليه النبي ﷺ، والأمة لا تجتمع على ضلالة.</li>
+      <li>أول ظهور للفرق: <b>الخوارج</b> عند التحكيم في صفّين، ثم <b>القدرية</b> وأولهم معبد الجهني بالبصرة.</li>
+      <li>القاعدة المتكررة في كل باب: <b>طرفان ووسط</b> — قدرية/جبرية، وعيدية/مرجئة، غلاة آل البيت/نواصب.</li>
+      <li>«القدرية» نفاة القدر لا مثبتوه، خلافًا لما قد يُوهمه الاسم.</li>
+      <li>التقسيم بالفِرَق غير التقسيم بالأقوال: الوعيدية والإرجاء والتعطيل <b>أقوال</b> تندرج تحتها فِرَق.</li>
+    </ul>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ================= 5 ================= -->
+<section class="part" id="s5">
+  <div class="part-head">
+    <div class="pnum">٥</div>
+    <div><span class="eyebrow">العنصر الخامس</span><h2>قواعد منهجية للاعتقاد الصحيح</h2></div>
+  </div>
+
+  <h3 class="sub">القاعدة الأولى: وجوب ضبط مصادر المعرفة والتلقّي</h3>
+
+  <p>قد يقول قائل: ما دخل مصادر التلقّي والمعرفة في العقيدة؟ والجواب أن ارتباطها وثيق جدًا؛ فتأمّل هذه الأمثلة — كلها مسائل عقدية مآلها إلى <b>خلل في مصادر التلقّي</b>:</p>
+
+  <ol class="steps">
+    <li>ألا يوجد <b>فِرَق ردّت أحاديث صحيحة</b> في الأسماء والصفات بحجة أنها أخبار آحاد في العقيدة، وأخبار الآحاد — برأيهم — تفيد الظن، والظن لا يُؤخذ به في الاعتقاد؟ فهذه راجعة إلى <b>مصادر التلقّي</b>.</li>
+    <li>ألا يوجد من ردّ أحاديث معيّنة في أبواب العقيدة باعتبار أنها <b>تعارض العقل</b>، وأن العقل يُقدَّم على النقل في قولهم؟ فهذه راجعة إلى <b>مصادر التلقّي</b>.</li>
+    <li>ألا توجد أقوال لأناس يقولون إن <b>النظر العقلي واجب على كل مكلَّف</b>، وأن من لم يأخذ إيمانه بالنظر العقلي فهو — على اختلافهم — كافر أو مقصّر مفرِّط؟ فهذه راجعة إلى <b>مصادر التلقّي</b>.</li>
+    <li>ألا يوجد من يقول إن العمدة في فهم الشريعة على <b>الكشوفات</b> التي تتجلّى لبعض المشايخ والأولياء، وأن أتباعهم يتبعونهم على هذا المبدأ؟ فهذه راجعة إلى <b>مصادر التلقّي</b>.</li>
+  </ol>
+
+  <div class="box key">
+    <span class="tag">لماذا هي مركزية؟</span>
+    <p>قضية مصادر التلقّي مركزية جدًّا؛ فهي لا تؤثر في العقيدة فقط، بل <b>تؤثر في كل ما يتبنّاه الإنسان</b>. ونظرية المعرفة — وإن كانت اليوم مبحثًا فلسفيًّا موجودًا — فهي في الأساس قضية ترتبط بالعقيدة ارتباطًا مباشرًا.</p>
+  </div>
+
+  <div class="box exam">
+    <span class="tag">مواد يرشّحها الشيخ</span>
+    <p>• محاضرة له على اليوتيوب بعنوان <b>«مقدمة منهجية لنظرية المعرفة»</b>.<br>
+    • <b>المستوى الثاني من برنامج «صناعة المحاور»</b>، وفيه عناية كبيرة بمصادر التلقّي ونظرية المعرفة: العقل والحسّ والخبر.</p>
+  </div>
+
+  <h4 class="mini">ملف لا بد أن تفرغ منه: أخبار الآحاد</h4>
+  <p>يجب أن تفرغ من ملف أخبار الآحاد: هل تفيد اليقين أو لا؟ وإذا لم تُفد اليقين، فهل يُبنى عليها اعتقاد أو لا؟ وإلى أي مدى تفيد معرفة؟ وهذا باب خطير جدًا وقعت فيه انحرافات كثيرة للغاية.</p>
+
+  <div class="box def">
+    <span class="tag">ما هي أخبار الآحاد؟</span>
+    <p>ليست ما يرويه واحد فقط — بل <b>ما رواه واحد واثنان وثلاثة</b>، كلها أخبار آحاد، <b>ما لم تصل إلى حدّ التواتر</b> بالاعتبار الاصطلاحي. (وتحتها: المشهور والعزيز والغريب.)</p>
+  </div>
+
+  <div class="tw"><table>
+    <tr><th style="width:16%">القول</th><th>مضمونه</th></tr>
+    <tr><td><b>الأول</b></td><td>أخبار الآحاد الصحيحة تفيد <b>اليقين مطلقًا</b> — أي خبر آحاد ثقات فهو يفيد اليقين دائمًا.</td></tr>
+    <tr><td><b>الثاني</b></td><td>أخبار الآحاد تفيد <b>الظنّ مطلقًا</b> — أي رواية منها فهي تفيد الظن دائمًا.</td></tr>
+    <tr><td><b>الثالث</b></td><td>تفيد الظنّ <b>باعتبار الأصل</b>، وقد <b>ترتفع إلى اليقين بوجود القرائن</b>. وهذه القرائن فيها تفصيل طويل، وممن ذكرها باختصار شديد <b>ابن حجر في «نزهة النظر»</b>.</td></tr>
+  </table></div>
+
+  <div class="note">
+    <b>تنبيه من الشيخ:</b> هذه الأقوال في <b>أخبار الآحاد الصحيحة، أخبار الثقات</b> — لا في أخبار الآحاد الضعيفة. وقد ساقها هنا بلا أدلة اختصارًا، وأحال على مواضع أخرى ذكرها فيها.<br>
+    <b>ولاحظ تقاطع العلوم:</b> هذا مبحث في علم الحديث، وهو في الوقت نفسه مفتاح في باب الاعتقاد. وللشيخ مادة على اليوتيوب بعنوان «المتواتر والآحاد» تبلغ نحو ساعتين.
+  </div>
+
+  <div class="quiz" data-qid="q14"></div>
+
+  <h3 class="sub">القاعدة الثانية: ضرورة تثبيت دلائل أصول الإسلام</h3>
+
+  <p>وذلك باعتبار وجود الاعتراضات والشبهات والإشكالات وكثرة الفتن.</p>
+
+  <div class="box warn">
+    <span class="tag">تحرير مهم</span>
+    <p>نحن <b>لا نقول</b> إن الإنسان الذي لا يعرف دلائل صحة الإسلام فإسلامه ليس صحيحًا. ليس هذا المقصود.</p>
+  </div>
+
+  <p>وإنما نقول: بما أننا في زمن شُبهات وفتن ومشاكل من الناحية الفكرية والعقدية، وبما أن <b>القرآن الكريم نفسه</b> أورد في داخله النصوص التي تُثبت صحته باعتبار النظر العقلي وباعتبار النظر الواقعي — فالاهتمام بمعرفة دلائل تثبيت الإسلام في هذا الزمن أوجب من غيره.</p>
+
+  <div class="quran">
+    <div class="aya">﴿وَإِن كُنتُمْ فِي رَيْبٍ مِّمَّا نَزَّلْنَا عَلَىٰ عَبْدِنَا فَأْتُوا بِسُورَةٍ مِّن مِّثْلِهِ وَادْعُوا شُهَدَاءَكُم مِّن دُونِ اللَّهِ إِن كُنتُمْ صَادِقِينَ ۝ فَإِن لَّمْ تَفْعَلُوا وَلَن تَفْعَلُوا فَاتَّقُوا النَّارَ الَّتِي وَقُودُهَا النَّاسُ وَالْحِجَارَةُ﴾</div>
+    <div class="ref">البقرة: ٢٣–٢٤ — دليل عقلي داخل القرآن باعتبار الواقع: إمكان التطبيق، وانتظار من يطبّقه، ولم يفعل</div>
+  </div>
+
+  <div class="quran">
+    <div class="aya">﴿أَمْ خُلِقُوا مِنْ غَيْرِ شَيْءٍ أَمْ هُمُ الْخَالِقُونَ﴾</div>
+    <div class="ref">الطور: ٣٥</div>
+  </div>
+
+  <div class="box key">
+    <span class="tag">الخلاصة</span>
+    <p>فالاستدلال على صحة الإسلام <b>أصله شرعي</b> (منهج قرآني)، <b>والداعي الواقعي</b> — زمن الفتن والشبهات — يزيد القضية أهمية. وهذه قاعدة منهجية لها تأثير كبير في <b>ثبات الإنسان</b> على العقيدة.</p>
+  </div>
+
+  <h3 class="sub">القاعدة الثالثة: الوصول إلى الصواب ممكن، ومعياره معلوم</h3>
+
+  <div class="box def">
+    <span class="tag">نصّ القاعدة</span>
+    <p>«إن الوصول إلى الصواب فيما اختلف فيه المسلمون من أمور الاعتقاد <b>أمرٌ ممكن</b>، ومعياره <b>الرجوع إلى ما كان عليه المسلمون قبل الاختلاف</b>» — وهو ما كان عليه أصحاب رسول الله ﷺ.</p>
+    <p style="margin-top:8px">سواء في منهجية الأسماء والصفات، أو في منهجية القضاء والقدر، أو غيرها.</p>
+  </div>
+
+  <div class="quiz" data-qid="q15"></div>
+
+  <h3 class="sub">القاعدة الرابعة: أعمال القلوب من صميم الاعتقاد</h3>
+
+  <div class="box def">
+    <span class="tag">نصّ القاعدة</span>
+    <p>«إن معرفة <b>أعمال القلوب</b> والاعتناء بها أمرٌ من صميم القضية الاعتقادية، ومن أهم ما يعزّزها في نفس المسلم».</p>
+  </div>
+
+  <p>فموضوع أعمال القلوب يُصنَّف اليوم في علم <b>السلوك</b> والرقائق والتزكية — بينما هو في حقيقته <b>لبّ الاعتقاد الإسلامي</b>. فالإسلام كلّه جاء لينقاد <b>قلبُك قبل جسدك</b> لله وحده: تعظيمًا ومحبةً ورجاءً وخشيةً وإنابةً وتوكّلًا، ثم الجسد يتبع القلب.</p>
+
+  <div class="box hadith">
+    <span class="tag">الحديث</span>
+    <p class="matn">«ألا وإن في الجسد مُضغة، إذا صلَحت صلَح الجسد كله، وإذا فسدت فسد الجسد كله، ألا وهي القلب».</p>
+  </div>
+
+  <div class="box warn">
+    <span class="tag">الإشكال</span>
+    <p>فصل قضية أعمال القلوب عن علم العقيدة <b>مشكل جدًّا</b>. فالمفترض في تدريسنا العقدي أن نتناول أعمال القلوب؛ ولا يصلح أن أدرّس العقيدة فأتكلم فقط عن الأسماء والصفات ومسائل الإيمان والكفر والمعتزلة والخوارج والشيعة والرافضة، ولا أُدرج معها موضوع أعمال القلوب.</p>
+  </div>
+
+  <p>ونحن نقول إن العقيدة هي أصول الدين، وهي أهم ما في الإسلام، وهي التي كانت في ثلاثة عشر عامًا أكثر من نصف الإسلام. فما هذه العقيدة؟ <b>لبّها أعمال القلوب</b>. فحين ترى الإنسان يتوكل على الله حق التوكل، ويحبه حق المحبة، ويرجوه حق الرجاء، ويخشاه حق الخشية — فاعلم أن هذا هو <b>المحقِّق للعقيدة</b>.</p>
+
+  <div class="box key">
+    <span class="tag">اتّباع السلف: ما هو؟</span>
+    <p>اتّباع السلف الصالح <b>لا يكون أبدًا بالمسائل النظرية فقط</b> — أن أقول: أنا أنتمي إلى السلف لأنني أقول بكذا في الأسماء والصفات، وبكذا في القضاء والقدر، فأنا على عقيدة صحيحة ومتّبع للسلف... ثم تجد القضية الاعتقادية القلبية من ناحية السير إلى الله <b>ضعيفة جدًّا</b>. هذا <b>فِصام</b>.</p>
+    <p style="margin-top:8px">لم تكن عقيدة السلف يومًا عقيدةً نظرية منفصلة عن التحقيق والتعبّد لله. بل هناك <b>تلازم</b>.</p>
+  </div>
+
+  <h4 class="mini">العقيدة في مكة: أي شيء كانت؟</h4>
+  <p>العقيدة في مكة لم تكن مسائل وتقسيمات تُحفظ. كانت: <b>ثباتًا على الدين، وصبرًا عليه، ومجاهدةً فيه</b>، وتوجيه التعلّق والاعتصام والإنابة لله وحده، واستمداد النصر والفرج منه. هذه هي العقيدة في مكة.</p>
+
+  <div class="box key">
+    <span class="tag">الخلاصة العملية</span>
+    <p>لا نغترّ بقضية <b>الألقاب</b>. العقيدة الصحيحة لا تُنال بالألقاب، ولا بمقدار ما تحفظ من مسائل نظرية. والمسائل النظرية في الاعتقاد قضية مهمة ومتعلقة بالتصديق — لكن حين تُفصَل عن القضية الاعتقادية العملية المرتبطة بالقلب وعلاقته بالله، ثم يظن الإنسان أنه بمجرد اعتقاده النظري في أبواب معينة صار «صحيح العقيدة» — فهذا <b>خطأ كبير جدًّا</b>.</p>
+  </div>
+
+  <h4 class="mini">ومن أوثق ما يرتبط بذلك: الموقف من أعداء الدين</h4>
+
+  <div class="quran">
+    <div class="aya">﴿وَلَوْلَا أَن ثَبَّتْنَاكَ لَقَدْ كِدتَّ تَرْكَنُ إِلَيْهِمْ شَيْئًا قَلِيلًا ۝ إِذًا لَّأَذَقْنَاكَ ضِعْفَ الْحَيَاةِ وَضِعْفَ الْمَمَاتِ﴾</div>
+    <div class="ref">الإسراء: ٧٤–٧٥ — وهي سورة مكية</div>
+  </div>
+
+  <div class="quran">
+    <div class="aya">﴿وَلَا تَرْكَنُوا إِلَى الَّذِينَ ظَلَمُوا فَتَمَسَّكُمُ النَّارُ﴾</div>
+    <div class="ref">هود: ١١٣ — وهي سورة مكية</div>
+  </div>
+
+  <div class="box fix">
+    <span class="tag">تصحيح تفريغ — لفظ قرآني</span>
+    <div class="row bad"><b>ورد صوتيًا</b><span>«لقد <b>كنتَ</b> تركن إليهم» — و«فتمسّكوا النار»</span></div>
+    <div class="row good"><b>الصواب</b><span>﴿لَقَدْ <b>كِدتَّ</b> تَرْكَنُ إِلَيْهِمْ﴾ [الإسراء: ٧٤] — و﴿<b>فَتَمَسَّكُمُ</b> النَّارُ﴾ [هود: ١١٣].</span></div>
+    <div class="row src"><b>وجه التصحيح</b><span>سبق لسان أو خطأ في تفريغ الصوت؛ والفرق في المعنى جوهري: الآية نفت وقوع الركون وأثبتت قرب وقوعه لولا التثبيت.</span></div>
+  </div>
+
+  <p>فلم يكن يخطر على بال المسلم في تلك المرحلة أصلًا أن يكون اعتقاده في الله صحيحًا من جهة التصوّر، ثم تكون ممارسته أنه <b>مع أعداء الله</b>، ويقال بعد ذلك: عقيدته صحيحة.</p>
+
+  <div class="quran">
+    <div class="aya">﴿يَا أَيُّهَا الَّذِينَ آمَنُوا لَا تَتَّخِذُوا الْيَهُودَ وَالنَّصَارَىٰ أَوْلِيَاءَ ۘ بَعْضُهُمْ أَوْلِيَاءُ بَعْضٍ ۚ وَمَن يَتَوَلَّهُم مِّنكُمْ فَإِنَّهُ مِنْهُمْ﴾</div>
+    <div class="ref">المائدة: ٥١</div>
+  </div>
+
+  <div class="box key">
+    <span class="tag">المحصّلة</span>
+    <p>لا يصحّ أن يقول الإنسان اليوم: أنا سلفي العقيدة لأنني أقول بكذا وكذا في الأسماء والصفات — ثم تجده مع أعداء الله. فهذا يمكن أن يُسمّى — بالتسمية العقدية — نفاقًا، ويمكن أن يُسمّى خللًا في العقيدة، أو مخالفة الظاهر للباطن، أو أي تسمية أخرى. لكن المهم جدًّا ألّا يُظنّ أن العقيدة الصحيحة عقيدةٌ نظرية تصوّرية محضة، ثم لا يضرّ بعد ذلك ماذا تعمل ما دمت تعتقد.</p>
+    <p style="margin-top:8px"><b>وبعكس ذلك</b>: أناس قد يكون لديهم تعبّدات وأعمال، ولكن لديهم <b>تصوّرات عقدية خاطئة</b> — وهذا إشكال أيضًا. فالإشكال في الطرفين.</p>
+  </div>
+
+  <div class="box def">
+    <span class="tag">طريق الولاية</span>
+    <p>الاستقامة الصحيحة — وهي طريق أن يكون الإنسان وليًّا من أولياء الله — تجتمع من ثلاثة:</p>
+    <p style="margin-top:8px">١) <b>صحة التصوّرات التصديقية</b> المتعلقة بالله (باب المعرفة والإثبات).<br>
+    ٢) وما يتبعها من <b>عمل قلبي تعبّدي</b> لله (باب القصد والطلب).<br>
+    ٣) و<b>الموقف من أعداء الدين</b>.</p>
+    <p style="margin-top:8px">فالفكرة: كيف يكون الإنسان متوازنًا يحقّق العقيدة بالاعتبارات المتوازية، لا بالفِصام بين الأمور.</p>
+  </div>
+
+  <div class="quiz" data-qid="q16"></div>
+  <div class="quiz" data-qid="q17"></div>
+
+  <div class="sumry">
+    <div class="h"><h4>خلاصة العنصر الخامس</h4><span class="score" data-sec="s5">٠ / ٠</span></div>
+    <ul>
+      <li><b>القاعدة ١:</b> ضبط مصادر المعرفة والتلقّي — وأكثر الانحرافات العقدية مآلها إلى خلل فيها.</li>
+      <li>أخبار الآحاد ثلاثة أقوال: يقين مطلقًا / ظنّ مطلقًا / ظنٌّ يرتقي لليقين بالقرائن.</li>
+      <li>خبر الآحاد ليس ما رواه واحد فقط، بل كل ما لم يبلغ حدّ التواتر.</li>
+      <li><b>القاعدة ٢:</b> تثبيت دلائل أصول الإسلام — أصلها شرعي قرآني، ودافعها الواقعي زمن الشبهات.</li>
+      <li><b>القاعدة ٣:</b> الصواب فيما اختُلف فيه ممكن، ومعياره ما كان عليه الصحابة قبل الاختلاف.</li>
+      <li><b>القاعدة ٤:</b> أعمال القلوب لبّ الاعتقاد لا مبحث سلوكي منفصل؛ والعقيدة لا تُنال بالألقاب.</li>
+    </ul>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ================= 6 ================= -->
+<section class="part" id="s6">
+  <div class="part-head">
+    <div class="pnum">٦</div>
+    <div><span class="eyebrow">العنصر السادس</span><h2>منهجية مقترحة لدراسة علم العقيدة</h2></div>
+  </div>
+
+  <h3 class="sub">الخطوة الأولى: ضبط مصادر المعرفة والتلقّي</h3>
+
+  <p>برأي الشيخ، هذه أولى الخطوات في دراسة علم العقيدة، لارتباطها الوثيق جدًّا بالقضية العقدية — وهي في غاية الأهمية وفي غاية الخطورة. وتشمل:</p>
+
+  <ul class="plain">
+    <li><b>تثبيت القرآن الكريم</b> من جهة حجّيته وصحته وحفظه — وهو الأسبق.</li>
+    <li><b>حجّية السنة</b>.</li>
+    <li><b>الموقف من الإجماع</b>.</li>
+    <li>ملف <b>أخبار الآحاد</b>.</li>
+  </ul>
+
+  <div class="box exam">
+    <span class="tag">مواد مقترحة لهذه الخطوة</span>
+    <p>• محاضرة <b>«مقدمة منهجية لنظرية المعرفة في الإسلام»</b>.<br>
+    • كتاب <b>«النبأ العظيم»</b> — والقراءة فيه قراءةٌ في صميم علم العقيدة، وهو راجع إلى مصادر التلقّي.<br>
+    • القراءة في الكتب المثبِتة لحجّية السنة.</p>
+    <p style="margin-top:8px"><b>وجه ذلك:</b> أنك تبني اعتقادك في الأساس على كتاب الله وسنة رسوله ﷺ.</p>
+  </div>
+
+  <h3 class="sub">الخطوة الثانية: تثبيت دلائل أصول الإسلام</h3>
+
+  <p>أي دراسة القضية المتعلقة بوجود الله سبحانه وتعالى وكماله، وصحة القرآن الكريم، وصدق النبوة ونحو ذلك.</p>
+
+  <div class="box exam">
+    <span class="tag">ترشيح الشيخ</span>
+    <p>دراسة <b>المستوى الأول من «صناعة المحاور»</b> — حتى لو دخل الإنسان المستوى الأول فقط ليدرس هذا الموضوع؛ ففيه <b>جمعٌ جيد</b> مأخوذ من عدة كتب وعدة محاضرات لا من كتاب واحد. وقد قال الشيخ صراحة إن هذه التشكيلة بمجموعها لم يرَها في غيره بهذه الشمولية، وإنها أفضل ما رأى في تثبيت دلائل أصول الإسلام.</p>
+    <p style="margin-top:8px"><b>ومصادر تلك التشكيلة</b> كما ذكرها: جزء من كتاب «ظاهرة نقد الدين»، وجزء من «محاسن الإسلام»، وجزء من «النبأ العظيم» للدرّاز، وأجزاء من محاضرات متعددة.</p>
+  </div>
+
+  <div class="box key">
+    <span class="tag">ترتيب الخطوتين</span>
+    <p>فضبط مصادر التلقّي + ضبط دلائل أصول الإسلام = <b>الخطوات التكوينية الأولى</b> في العقيدة. فإذا اتضحت للإنسان سهُل عليه أن يصل إلى الفروع، ويمكن أن يسير بهذا التسلسل.</p>
+  </div>
+
+  <div class="quiz" data-qid="q18"></div>
+
+  <h3 class="sub">الخطوة الثالثة: كتب توحيد المعرفة والإثبات</h3>
+
+  <div class="box exam">
+    <span class="tag">الكتاب المركزي</span>
+    <p><b>«شرح العقيدة الطحاوية» لابن أبي العزّ الحنفي</b> — من الكتب المهمة والمركزية في هذا الباب.</p>
+    <p style="margin-top:8px"><b>تنبيه من الشيخ:</b> باعتبار القراءة الشخصية الذاتية قد يكون صعبًا على المبتدئ الذي يقرأ لأول مرة؛ فبعض الأبواب سهلة وبعضها صعب. ولذلك يُنصح بقراءته على متخصص أو فاهم، أو الاستعانة بالتعليقات الجيدة الموجودة على الشبكة واليوتيوب.</p>
+  </div>
+
+  <div class="box exam">
+    <span class="tag">شروح متينة على الواسطية والأبواب العقدية</span>
+    <p>• شرح الشيخ <b>سلطان العميري</b> على العقيدة الواسطية — مطبوع، وموجود أيضًا على اليوتيوب. وللشيخ سلطان معهد عقدي على الشبكة يمكن الاستفادة منه كثيرًا.<br>
+    • دروس الدكتور <b>يوسف الغفيص</b> العقدية — دروس متينة فيها عمق، وفيها صعوبة نوعًا ما، لكنها عميقة ومتينة.</p>
+  </div>
+
+  <div class="box fix">
+    <span class="tag">تصحيح — اسم الكتاب المطبوع</span>
+    <div class="row bad"><b>ورد صوتيًا</b><span>الشيخ لم يتذكّر الاسم وتردّد: «السبائك الذهبية... أو القواعد الذهبية... نسيت والله الصيغة»</span></div>
+    <div class="row good"><b>الصواب</b><span>الاسم المطبوع: <b>«العقود الذهبية على مقاصد العقيدة الواسطية»</b> للدكتور سلطان بن عبد الرحمن العميري، صدر في مجلدين عن <b>دار مدارج</b>.</span></div>
+    <div class="row src"><b>المصدر</b><span>بيانات الكتاب المتداولة لدى الناشر ومنصات التعريف بالكتب. وقد أصاب الشيخ في تذكّره لكلمة «الذهبية» وأخطأ في المضاف إليها.</span></div>
+  </div>
+
+  <h3 class="sub">الخطوة الرابعة: كتب توحيد القصد والطلب وما يضادّه</h3>
+
+  <div class="box exam">
+    <span class="tag">ترشيحات</span>
+    <p>• <b>«رسالة الشرك ومظاهره»</b> — لأحد تلاميذ الشيخ عبد الحميد بن باديس رحمه الله، وهو <b>مبارك الميلي</b>.<br>
+    • <b>«الأدلة العقلية النقلية على أصول الاعتقاد»</b> — للدكتور <b>سعود العريفي</b>.</p>
+  </div>
+
+  <h3 class="sub">الخطوة الخامسة: أعمال القلوب</h3>
+
+  <p>باعتبار أن أعمال القلوب من أهم القضايا الداخلة في العقيدة، وفي توحيد القصد والطلب:</p>
+
+  <div class="box exam">
+    <span class="tag">ترشيح</span>
+    <p><b>مختصرات ومهذَّبات «مدارج السالكين»</b> للإمام ابن القيم رحمه الله — وهي متعددة.</p>
+    <p style="margin-top:8px;font-size:14.5px;color:var(--ink-faint)"><b>مع تحفّظ الشيخ نفسه:</b> ذكر أنه وقف مؤخّرًا على مختصر أو مهذَّب صادر عن <b>دار ابن الجوزي</b>، كأنه لمجموعة من الباحثين، وصرّح بأنه <b>لم يقرأه</b> وإنما رأى الإعلان عنه أو صورته، وأنه يتوقّع أن يكون جيدًا — «مظنّة التجويد». فأُبقيت العبارة على تحفّظها ولم تُقلب إلى ترشيح جازم.</p>
+  </div>
+
+  <h3 class="sub">الخطوة السادسة: رسالة تأسيسية في النظر العقدي</h3>
+
+  <div class="box exam">
+    <span class="tag">ترشيح ختامي</span>
+    <p><b>«الرسالة الحموية»</b> لابن تيمية — في المجلد الخامس تقريبًا من الفتاوى. وهي في رأي الشيخ من الرسائل العقدية <b>المركزية جدًّا</b> في تأسيس النظر الصحيح في التعامل مع القضايا العقدية.</p>
+  </div>
+
+  <div class="box key">
+    <span class="tag">أهم من كل ذلك</span>
+    <p>باعتبار الدروس والكتب تختلف الآراء، وهناك دروس كثيرة جدًّا على الشبكة ومدارس في انتقاء الأفضل منها، وكتب كثيرة يختلف فيها الناس. لكن <b>من أفضل ما يمكن</b> أن يُهدى له الإنسان: أن يكون له <b>مدرّس أو أستاذ أو شيخ</b> على اعتقاد صحيح موافق لكتاب الله وسنة رسوله ﷺ، معتنٍ بما كان عليه أصحاب رسول الله ﷺ، ثم يدرس عليه أبواب الاعتقاد.</p>
+    <p style="margin-top:8px">ويرى الشيخ أن التسلسل في علم العقيدة <b>صعب</b> بدون مدرّس يمشي عليه الإنسان في المتون الأولية ونحوها. ومجموع ما ذُكر — مع وجود موجّه للطالب — كفيلٌ بإذن الله بتخريج قاعدة عقدية متميزة.</p>
+  </div>
+
+  <div class="quiz" data-qid="q19"></div>
+  <div class="quiz" data-qid="q20"></div>
+  <div class="quiz" data-qid="q21"></div>
+
+  <div class="sumry">
+    <div class="h"><h4>خلاصة العنصر السادس</h4><span class="score" data-sec="s6">٠ / ٠</span></div>
+    <ul>
+      <li><b>الخطوة ١:</b> ضبط مصادر التلقّي — تثبيت القرآن، حجّية السنة، الإجماع، أخبار الآحاد.</li>
+      <li><b>الخطوة ٢:</b> تثبيت دلائل أصول الإسلام — ويرشّح لها المستوى الأول من «صناعة المحاور».</li>
+      <li>الخطوتان الأوليان هما <b>الخطوات التكوينية</b>؛ فمن أتقنهما سهُل عليه ما بعدهما.</li>
+      <li>المعرفة والإثبات: «شرح العقيدة الطحاوية» لابن أبي العز، وشروح سلطان العميري ويوسف الغفيص.</li>
+      <li>القصد والطلب: «الشرك ومظاهره» لمبارك الميلي، و«الأدلة العقلية النقلية» لسعود العريفي، ومختصرات «مدارج السالكين».</li>
+      <li>ويبقى <b>وجود شيخٍ موجّه</b> أفضل ما يُهدى إليه الطالب؛ فالتسلسل بدونه صعب.</li>
+    </ul>
+  </div>
+</section>
+
+</div></div>
+
+<!-- ================= بطاقات ================= -->
+<section class="anki" id="anki">
+  <div class="anki-in">
+    <h2>بطاقات المراجعة</h2>
+    <p class="lead">اضغط على البطاقة لقلبها — ثم حمّلها ملف TSV جاهزًا للاستيراد في Anki</p>
+    <div class="filters" id="filters"></div>
+    <div class="card" id="card">
+      <div class="card-in">
+        <div class="face front"><div class="lbl">السؤال</div><div class="txt" id="fq"></div></div>
+        <div class="face back"><div class="lbl">الإجابة</div><div class="txt" id="fa"></div></div>
+      </div>
+    </div>
+    <div class="navrow">
+      <button class="navbtn" id="next">&#8594;</button>
+      <div class="counter" id="cnt">١ / ٥٠</div>
+      <button class="navbtn" id="prev">&#8592;</button>
+    </div>
+    <button class="dl" id="dl">تحميل ملف Anki (TSV)</button>
+    <p class="dlnote">ملف مفصول بعلامات جدولة، بترميز UTF-8 — استورده مباشرة في Anki</p>
+  </div>
+</section>
+
+<footer>
+  سلسلة <b>مداخل العلوم</b> — مدخل إلى علم العقيدة | الشيخ أحمد السيد<br>
+  ملف دراسي مبني على تفريغ المحاضرة، مع تمييز التصحيحات والإضافات التوضيحية داخل صناديق مستقلة.
+</footer>
+
+<script>
+/* ================= بيانات الأسئلة التفاعلية ================= */
+var QUIZ_DATA=[
+{id:"q1",sectionId:"s1",question:"ما وجه أهمية دراسة ما قبل البعثة في علم العقيدة كما ذكر الشيخ؟",
+ options:["لأن الشرائع السابقة ملزمة لنا","لأن مسألة نشوء الشرك في البشرية صارت نقطة مقاطعة مع دراسات غربية ترى الشرك أصلًا","لأن العقيدة لم تكتمل إلا بعد البعثة","لأن الأنبياء السابقين اختلفوا في أصول الاعتقاد"],
+ correctIndex:1,
+ explanation:"الشيخ ربط الأمر بجدل معاصر: بعض الدراسات الغربية تنقض الأديان بدعوى أن الشرك هو الأصل في البشرية، فمعرفة تاريخ نشوء الشرك تصير مسألة عقدية لا تاريخية فقط."},
+
+{id:"q2",sectionId:"s1",question:"«الاقتداء الحقيقي بابن تيمية» في دراسة الفرق يعني عند الشيخ:",
+ options:["حفظ خلاصاته عن الطوائف التي عاصرها","نقل أقواله في المعتزلة والجهمية إلى التيارات المعاصرة","أخذ جنس ما اهتم به، أي دراسة التيارات المؤثرة في زماننا نحن","الاقتصار على كتبه دون غيرها في باب الفرق"],
+ correctIndex:2,
+ explanation:"التميّز عند ابن تيمية كان في اشتغاله بالتيارات المؤثرة في وقته؛ فالاقتداء به هو تكرار الفعل لا النتيجة — أي دراسة العلمانية والمادية والإلحاد اليوم."},
+
+{id:"q3",sectionId:"s1",question:"لماذا اعترض الشيخ على قول: «التيارات المعاصرة امتداد للمعتزلة فندرس المعتزلة»؟",
+ options:["لأن المعتزلة انقرضوا ولا أثر لهم","لأن المطابقة غير صحيحة، وفيها ظلم للطرفين، والمعتزلة أنفسهم ليسوا سواء","لأن المعتزلة كانوا على الحق في أكثر أبوابهم","لأن دراسة الفرق القديمة لا فائدة فيها مطلقًا"],
+ correctIndex:1,
+ explanation:"الشيخ أثبت أن بعض الأقوال امتداد فعلًا، لكن المطابقة الشاملة خطأ؛ وذكر أن للمعتزلة دفاعًا عن الشريعة (تثبيت دلائل النبوة للقاضي عبد الجبار، ومقاومتهم للباطنية)، وأن النَّظّام ليس كعبد الجبار."},
+
+{id:"q4",sectionId:"s2",question:"ما الفرق بين «كتاب الإيمان» في صحيح البخاري و«كتاب الإيمان» في صحيح مسلم؟",
+ options:["البخاري يقصد العقيدة كلها، ومسلم يقصد مسائل الإيمان فقط","كلاهما يقصد مسائل الإيمان وحدها","البخاري يقصد مسائل الإيمان وما يضاده، ومسلم يقصد العقيدة بشكل عام","الفرق في الترتيب فقط لا في المضمون"],
+ correctIndex:2,
+ explanation:"عند البخاري: أبواب في حقيقة الإيمان وزيادته ونقصانه وما يضاده. أما مسلم فبدأ بكتاب الإيمان بعد المقدمة ويقصد به العقيدة عمومًا، فدخلت فيه قضايا كثيرة ليست من مسائل الإيمان."},
+
+{id:"q5",sectionId:"s2",question:"على ماذا ينصبّ ذمّ الشافعي لعلم الكلام بحسب تحرير الشيخ؟",
+ options:["على أصل الاشتغال العقلي في الباب العقدي مطلقًا","على الطرق العقلية المحددة التي جُعلت هي العقل نفسه، ولزم منها نفي بعض القضايا العقدية","على استعمال المنطق اليوناني فقط","على مناظرة المخالفين والرد على الشبهات"],
+ correctIndex:1,
+ explanation:"إثبات الشريعة بالطرق العقلية ليس مذمومًا من حيث المبدأ العام؛ وإنما المذموم حصر العقل في طرق معينة ترتّب عليها نفي صفات وقضايا عقدية."},
+
+{id:"q6",sectionId:"s2",question:"لماذا لا يحتاج المحاوِر اليوم إلى الطرق الكلامية في إثبات حدوث الكون؟",
+ options:["لأن العلم الحديث أبطل فكرة الحدوث","لأن الملاحدة المعاصرين لا ينازعون في حدوث الكون، وإنما في لزوم المحدِث وفي طبيعته","لأن هذه الطرق حُرِّمت عند أهل السنة","لأن القرآن نهى عن الاستدلال العقلي"],
+ correctIndex:1,
+ explanation:"أشرس الملاحدة اليوم يوافقون على أن الكون حادث، فينتقل النزاع مباشرة إلى المقدمة الثانية: هل يلزم من الحدوث محدِث؟ وما طبيعته؟"},
+
+{id:"q7",sectionId:"s3",question:"أين موضع «التوكل والمحبة والرجاء والخشية» من خارطة موضوعات العقيدة؟",
+ options:["في توحيد المعرفة والإثبات","في توحيد القصد والطلب","خارج علم العقيدة، فهي من علم السلوك","في باب الأسماء والصفات"],
+ correctIndex:1,
+ explanation:"القصد والطلب هو صرف التعبّدات لله وحده، ويشمل القضايا التعبدية القلبية وما يضادّها من صرفها لغير الله."},
+
+{id:"q8",sectionId:"s3",question:"لماذا عدّ الشيخ كتب إعجاز القرآن من قضايا العقيدة رغم تصنيفها الفهرسي في علوم القرآن؟",
+ options:["لأنها تُدرَّس في أقسام العقيدة بالجامعات","لأنها ترجع إلى إثبات صحة الكتب، وهو ركن من أركان الإيمان","لأن مؤلفيها من علماء العقيدة","لأن الإعجاز مسألة خلافية بين الفرق"],
+ correctIndex:1,
+ explanation:"التصنيف الشجري الفهرسي يضعها في علوم القرآن، لكن مضمونها إثبات مكوّن أساسي من اعتقاد المسلم: الإيمان بالكتب."},
+
+{id:"q9",sectionId:"s4",question:"ما الذي يدل عليه نقاش أبي بكر وعمر في قتال المرتدين بحسب الشيخ؟",
+ options:["أن الصحابة انقسموا إلى تيارين في مسائل التكفير","أن الخلاف كان عقديًّا في أصل الإيمان","أن الخلاف الجزئي وقع لكن لم تنشأ عنه تيارات، وقد رجع عمر إلى قول أبي بكر","أن عمر بقي على رأيه ولم يرجع"],
+ correctIndex:2,
+ explanation:"موضع الشاهد أن النقاش لم يتحول إلى منهجيتين متنافستين في التكفير؛ ورجوع عمر يؤكد أن الصف لم يتفرع إلى تيارات عقدية."},
+
+{id:"q10",sectionId:"s4",question:"من هم «القدرية» على وجه الدقة؟",
+ options:["المبالغون في إثبات القدر حتى نفوا اختيار العبد","نفاة القدر، ومنهم من ينفي العلم الإلهي أصلًا","القائلون بالكسب توسّطًا بين الجبر والاختيار","الذين يثبتون القدر ويثبتون الاختيار معًا"],
+ correctIndex:1,
+ explanation:"الاسم موهم؛ فالقدرية نفاة لا مثبتون. أما المبالغون في الإثبات فهم الجبرية، والقائلون بالكسب طائفة منهم، وأهل السنة هم الوسط."},
+
+{id:"q11",sectionId:"s4",question:"ما الفرق بين طائفتَي الوعيدية في حكم صاحب الكبيرة؟",
+ options:["إحداهما تكفّره في الدنيا وتخلّده، والأخرى تجعله في منزلة بين المنزلتين مع تخليده في الآخرة","إحداهما تخلّده والأخرى تخرجه من النار","إحداهما ترى الإيمان معرفة قلبية والأخرى ترى الإيمان عملًا","لا فرق بينهما، والتقسيم اصطلاحي فقط"],
+ correctIndex:0,
+ explanation:"الطائفتان تتفقان على التخليد في الآخرة وتفترقان في حكم الدنيا: تكفيرٌ صريح عند طائفة، ومنزلة بين المنزلتين عند الأخرى."},
+
+{id:"q12",sectionId:"s4",question:"أيّ العبارات التالية صحيح على تحرير الشيخ للفرق بين الفِرَق والأقوال؟",
+ options:["الوعيدية فرقة محددة لها رؤوس وأتباع","المعطّلة فرقة تندرج تحتها الجهمية والمعتزلة","التعطيل اتجاه وقول تندرج تحته فرق كالجهمية والمعتزلة","الجهمية قول في الإيمان لا فرقة لها أقوال في بقية الأبواب"],
+ correctIndex:2,
+ explanation:"التعطيل والإرجاء والوعيد كلها أقوال/اتجاهات، والفرق (جهمية، معتزلة، رافضة) تندرج داخلها ولكل فرقة أقوال في مختلف الأبواب."},
+
+{id:"q13",sectionId:"s4",question:"أيهما أعمّ: المعتزلة أم الوعيدية؟",
+ options:["المعتزلة أعمّ مطلقًا","الوعيدية أعمّ مطلقًا","كلٌّ أعمّ من وجه: الوعيدية أعمّ في باب الوعيد، والمعتزلة أعمّ باعتبار الخارطة كلها","هما مترادفان لا فرق بينهما"],
+ correctIndex:2,
+ explanation:"في باب الوعيد وحده يدخل تحت الوعيدية الخوارج وغيرهم فتكون أعمّ؛ وباعتبار مجموع الأبواب فالمعتزلة أعمّ لأن لهم أقوالًا في الصفات والقدر والإيمان وغيرها."},
+
+{id:"q14",sectionId:"s5",question:"ما تعريف خبر الآحاد كما قرره الشيخ؟",
+ options:["ما رواه راوٍ واحد فقط في كل طبقة","ما رواه واحد أو اثنان أو ثلاثة، أي ما لم يبلغ حدّ التواتر","ما رواه غير الثقات","ما انفرد به أحد الصحيحين"],
+ correctIndex:1,
+ explanation:"الضابط سلبي: كل ما لم يبلغ حد التواتر اصطلاحًا فهو آحاد، سواء رواه واحد أو أكثر — وتحته المشهور والعزيز والغريب."},
+
+{id:"q15",sectionId:"s5",question:"ما معيار الوصول إلى الصواب فيما اختلف فيه المسلمون في الاعتقاد؟",
+ options:["ترجيح قول الأكثر من العلماء","الرجوع إلى ما كان عليه المسلمون قبل الاختلاف، وهو ما كان عليه الصحابة","التوقف لأن الوصول إلى الصواب متعذّر","تقديم النظر العقلي عند التعارض"],
+ correctIndex:1,
+ explanation:"القاعدة تقرر أمرين: أن الوصول ممكن (لا متعذّر)، وأن معياره حال ما قبل الاختلاف، لأن مجموع ما اتفق عليه الصحابة لا يكون إلا ما كان عليه النبي ﷺ."},
+
+{id:"q16",sectionId:"s5",question:"ما الخلل الذي حذّر منه الشيخ في «اتّباع السلف»؟",
+ options:["الاهتمام بأعمال القلوب على حساب المسائل النظرية","حصر الاتّباع في تبنّي أقوال نظرية مع ضعف السير القلبي إلى الله","الاشتغال بالرد على المخالفين","القراءة في كتب الفرق والمقالات"],
+ correctIndex:1,
+ explanation:"سمّاه الشيخ فِصامًا؛ فعقيدة السلف لم تكن يومًا نظرية منفصلة عن التحقيق العملي، وبينهما تلازم لا انفكاك."},
+
+{id:"q17",sectionId:"s5",question:"«العقيدة في مكة» عند الشيخ كانت أساسًا:",
+ options:["مسائل وتقسيمات في الأسماء والصفات تُحفظ","ثباتًا على الدين وصبرًا ومجاهدة وإنابة لله واستمدادًا للنصر منه","الرد على الفرق المخالفة","تعلّم أحكام الحلال والحرام"],
+ correctIndex:1,
+ explanation:"المرحلة المكية تكشف أن لبّ العقيدة عملٌ قلبي وثبات، لا حفظ تقسيمات — ومنه: ألّا تُنال العقيدة الصحيحة بالألقاب."},
+
+{id:"q18",sectionId:"s6",question:"ما الخطوتان التكوينيتان الأوليان في دراسة العقيدة عند الشيخ؟",
+ options:["حفظ متن الواسطية ثم الطحاوية","ضبط مصادر المعرفة والتلقّي، ثم تثبيت دلائل أصول الإسلام","دراسة الفرق ثم الرد عليها","قراءة مدارج السالكين ثم شفاء العليل"],
+ correctIndex:1,
+ explanation:"جعلهما الشيخ الأساس؛ فإذا اتضحتا سهُل الوصول إلى الفروع، ورشّح لهما «مقدمة منهجية لنظرية المعرفة» و«النبأ العظيم» والمستوى الأول من صناعة المحاور."},
+
+{id:"q19",sectionId:"s6",question:"لِمَ نبّه الشيخ عند ترشيح «شرح العقيدة الطحاوية» لابن أبي العز؟",
+ options:["لأن فيه أخطاء عقدية يجب التنبّه لها","لأنه قد يصعب على المبتدئ في القراءة الذاتية، فيُنصح بقراءته على متخصص أو بالاستعانة بالتعليقات","لأنه مختصر جدًّا لا يكفي","لأنه غير مطبوع طبعة محققة"],
+ correctIndex:1,
+ explanation:"بعض أبوابه سهلة وبعضها صعب؛ فالتنبيه على طريقة القراءة لا على قيمة الكتاب، وهو من الكتب المركزية في باب المعرفة والإثبات."},
+
+{id:"q20",sectionId:"s6",question:"ما اسم رسالة ابن تيمية التي عدّها الشيخ مركزية في تأسيس النظر العقدي الصحيح؟",
+ options:["التدمرية","الرسالة الحموية، في المجلد الخامس تقريبًا من الفتاوى","الفرقان بين أولياء الرحمن وأولياء الشيطان","العقيدة الواسطية"],
+ correctIndex:1,
+ explanation:"ختم الشيخ بها ووصفها بأنها من الرسائل العقدية المركزية جدًّا في تأسيس النظر الصحيح في التعامل مع القضايا العقدية."},
+
+{id:"q21",sectionId:"s6",question:"ما الذي عدّه الشيخ أفضل ما يُهدى إليه طالب العقيدة؟",
+ options:["اقتناء أوسع مكتبة عقدية ممكنة","متابعة أكبر عدد من الدروس على الشبكة","مدرّس على اعتقاد صحيح معتنٍ بما كان عليه الصحابة يدرس عليه أبواب الاعتقاد","الاقتصار على المتون المختصرة وحفظها"],
+ correctIndex:2,
+ explanation:"لأن التسلسل في هذا العلم صعب بدون موجّه يمشي مع الطالب في المتون الأولية؛ ومجموع الكتب المرشّحة مع الموجّه كفيل بتخريج قاعدة عقدية متميزة."}
+];
+
+/* ================= بيانات بطاقات Anki ================= */
+var CARDS_DATA=[
+{s:"s1",q:"ما هدف سلسلة «مداخل العلوم»؟",a:"إلقاء نظرة على العلم في ذاته: ما هو، وماذا يتناول، وما طبيعته، وما تاريخه — من خلال كتبه ومحتوياته. وليس الهدف الدخول في التقريرات التفصيلية والترجيح في المسائل الخلافية."},
+{s:"s1",q:"أين وقع أكثر الاختلاف العقدي بين المسلمين؟",a:"في تأويل القرآن وفهمه — لا في أصل الديانة؛ فلم تنشأ مذاهب إسلامية تنكر رسالة النبي ﷺ أو كون القرآن من عند الله."},
+{s:"s1",q:"ما اسم السلسلة المرئية التي رشّحها الشيخ في تاريخ العقيدة قبل الإسلام؟",a:"سلسلة «تاريخ العقيدة» في قناة المجد، موجودة على اليوتيوب، وتنتهي عند إبراهيم عليه السلام."},
+{s:"s1",q:"ما التحديات العقدية الكبرى اليوم عند الشيخ أحمد السيد؟",a:"الاتجاهات العلمانية والليبرالية والحداثية والمادية والإلحاد الجديد — أي ما ينقض الإسلام من أصله، لا الفرق الإسلامية القديمة."},
+{s:"s1",q:"ما اسم كتاب ابن تيمية الذي وصفه الشيخ بأنه من أواخر ما ألّفه في الطوائف الإسلامية؟ وأين يوجد؟",a:"«الفرقان بين الحق والباطل» — ضمن مجموع الفتاوى، المجلد الثالث عشر. ويُتداول أيضًا باسم «الفرقان بين الحق والبطلان»، وهو غير «الفرقان بين أولياء الرحمن وأولياء الشيطان»."},
+{s:"s1",q:"ما كتاب القاضي عبد الجبار الذي استشهد به الشيخ على دفاع المعتزلة عن الدين؟",a:"«تثبيت دلائل النبوة»، وكذلك بعض مجلدات «المغني»."},
+
+{s:"s2",q:"عدّد تسميات علم العقيدة السبع الواردة في المحاضرة.",a:"العقيدة — السنة — التوحيد — الإيمان — أصول الدين — الشريعة — علم الكلام."},
+{s:"s2",q:"ما الآية التي يُؤخذ منها أصل مادة «العقيدة»؟ وما المعنى المستفاد؟",a:"﴿ولكن يؤاخذكم بما عقّدتم الأيمان﴾ [المائدة: ٨٩] — ومعناها الشدّ والربط والثبوت والإحكام؛ فالعقيدة ما يعقد عليه القلب."},
+{s:"s2",q:"اذكر ثلاثة من العلماء لهم كتاب اسمه «السنة» ومحتواه عقدي.",a:"عبد الله بن الإمام أحمد — الخلّال — المروزي."},
+{s:"s2",q:"أين يقع «كتاب التوحيد» في صحيح البخاري؟ ومن شرحه مفردًا؟",a:"هو آخر كتاب في الصحيح — وشرحه الدكتور عبد الله الغنيمان في مجلدين."},
+{s:"s2",q:"مَن مؤلف كتاب «الإيمان» الذي رشّحه الشيخ؟ ومن شرحه؟",a:"أبو عبيد القاسم بن سلّام — وله شرح على اليوتيوب للدكتور يوسف الغفيص."},
+{s:"s2",q:"ما وجه استدلال البخاري بـ«باب الصلاة من الإيمان»؟",a:"ساق ﴿وما كان الله ليضيع إيمانكم﴾ أي صلاتكم قبل تحويل القبلة — ليبيّن أن العمل قد يُسمّى إيمانًا."},
+{s:"s2",q:"لمن كتاب «الشريعة» الذي ذُكر كنموذج على تسمية العقيدة بـ«الشريعة»؟",a:"للآجُرّي."},
+{s:"s2",q:"ما تعريف علم الكلام عند المتكلمين أنفسهم؟",a:"«إثبات العقائد الدينية بالطرق العقلية» — وقال بعضهم: «بإيراد الحجج ودفع الشُّبَه»."},
+{s:"s2",q:"ما أكبر مرتكز لإثبات وجود الله في علم الكلام؟",a:"إثبات حدوث الكون؛ فإذا ثبت أنه حادث لزم أن له محدِثًا."},
+
+{s:"s3",q:"ما قسما موضوعات علم العقيدة؟",a:"توحيد المعرفة والإثبات (تصديقي: الله وأسماؤه وصفاته وأركان الإيمان) — وتوحيد القصد والطلب (صرف التعبّدات لله وحده وما يضادّه)."},
+{s:"s3",q:"ما القضايا الداخلة في اليوم الآخر ضمن باب المعرفة والإثبات؟",a:"الميزان والصراط والحشر والبعث، ويمكن إدراج عذاب القبر فيها."},
+{s:"s3",q:"مثّل لأعمال القلوب الداخلة في توحيد القصد والطلب.",a:"التوكل والمحبة والرجاء والخوف والخشية والإنابة."},
+{s:"s3",q:"إلى كم قسم تنقسم الكتب المؤلفة في العقيدة إجمالًا؟",a:"ثلاثة: ما أُلّف في المعرفة والإثبات فقط، وما أُلّف في القصد والطلب فقط، وما أُلّف في النوعين."},
+{s:"s3",q:"ما اسم كتاب ابن القيم المُفرَد في باب القضاء والقدر؟",a:"«شفاء العليل في مسائل القضاء والقدر والحكمة والتعليل»."},
+{s:"s3",q:"لماذا تُعدّ كتب إعجاز القرآن من العقيدة؟",a:"لأنها ترجع إلى إثبات صحة الكتب، وهو ركن من أركان الإيمان — وإن كان تصنيفها الفهرسي في علوم القرآن."},
+
+{s:"s4",q:"ما المسألة العقدية الجزئية التي اختلف فيها الصحابة كما مثّل الشيخ؟",a:"هل رأى النبي ﷺ ربّه ليلة الإسراء والمعراج أم لا."},
+{s:"s4",q:"ما سبب الفتنة التي وقعت بين الصحابة؟",a:"ليس خلافًا عقديًّا، بل خلافًا في تنزيل قضايا معينة وتقدير الصواب فيها (كالأخذ بدم عثمان)، مع وجود طوائف من خارج الصحابة أشعلت النار."},
+{s:"s4",q:"متى ظهر الخوارج؟ ومن ناظرهم من الصحابة؟",a:"ظهروا وقت التحكيم في معركة صفّين ثم اعتزلوا — وناظرهم عبد الله بن عباس رضي الله عنهما."},
+{s:"s4",q:"من أول من قال في القدر بالبصرة؟ وفي أي حديث ورد ذلك؟",a:"معبد الجُهَني — في حديث يحيى بن يَعمَر، وهو أول حديث في كتاب الإيمان من صحيح مسلم، وفيه موقف ابن عمر ثم حديث جبريل عن عمر بن الخطاب."},
+{s:"s4",q:"ما الفرق بين القدرية والجبرية؟",a:"القدرية نفاة القدر (ومنهم من ينفي العلم الإلهي)، والجبرية مبالغون في الإثبات حتى نفوا إرادة العبد واختياره."},
+{s:"s4",q:"ما الأثر المروي عن الشافعي في مناظرة القدرية؟",a:"«ناظِروهم بالعلم؛ فإن أقرّوا به خُصِموا، وإن نفَوه كفروا» — نقله الشيخ بصيغة الظن."},
+{s:"s4",q:"ما كتاب البخاري في مسألة أفعال العباد؟",a:"«خلق أفعال العباد»."},
+{s:"s4",q:"كيف عبّر الشيخ عن علاقة مشيئة العبد بمشيئة الله؟",a:"إرادة صغرى ضمن إرادة كبرى — ولا مثال لها في المخلوقات، ولذلك صار باب القدر بابًا غيبيًّا صعبًا."},
+{s:"s4",q:"ما موقف ابن عباس ممن أحرقهم عليّ رضي الله عنه من الغلاة؟",a:"قال: لو كنتُ أنا لم أحرّقهم لقوله ﷺ «لا تعذّبوا بعذاب الله»، ولقتلتُهم لقوله ﷺ «من بدّل دينه فاقتلوه» — أي تغيير طريقة العقوبة لا تركها."},
+{s:"s4",q:"ما قول أهل السنة في الإيمان والكفر؟",a:"الإيمان قول وعمل، يزيد بالطاعة وينقص بالمعصية؛ والكفر يكون بالاعتقاد وباللسان وبالعمل، وهو درجات: أكبر وأصغر."},
+{s:"s4",q:"ما البيت الشعري المنسوب لبعض الفرق الباطنية في تأليه علي؟",a:"«أشهد أن لا إله إلا عليٌّ الأنزعُ البطين»."},
+{s:"s4",q:"ما الفرق بين التقسيم بحسب الفِرَق والتقسيم بحسب الأقوال؟",a:"الوعيدية والإرجاء والتعطيل أقوالٌ واتجاهات لا فرق؛ والفرق (معتزلة، جهمية، رافضة) تندرج داخلها ولكلٍّ أقوال في مختلف الأبواب."},
+{s:"s4",q:"من أشهر من عُرف بالتشبيه؟ وما ضبط اسمه؟",a:"هشام بن الحَكَم — بالحَكَم لا «الحاكم». والتشبيه قائلوه أشخاص أكثر من كونهم فرقًا، لاستبشاعه فطرةً."},
+
+{s:"s5",q:"ما القاعدة المنهجية الأولى للوصول إلى الاعتقاد الصحيح؟",a:"وجوب ضبط مصادر المعرفة ومصادر التلقّي الشرعية."},
+{s:"s5",q:"ما الأقوال الثلاثة في إفادة أخبار الآحاد الصحيحة؟",a:"١) تفيد اليقين مطلقًا. ٢) تفيد الظن مطلقًا. ٣) تفيد الظن أصلًا وترتقي إلى اليقين بالقرائن — وممن ذكر القرائن باختصار ابن حجر في «نزهة النظر»."},
+{s:"s5",q:"ما تعريف خبر الآحاد؟",a:"ما رواه واحد أو اثنان أو ثلاثة — أي كل ما لم يبلغ حدّ التواتر اصطلاحًا. وتحته المشهور والعزيز والغريب."},
+{s:"s5",q:"ما القاعدة المنهجية الثانية؟ وما تحريرها المهم؟",a:"ضرورة تثبيت دلائل أصول الإسلام — مع التحرير: لا نقول إن من لم يعرف الدلائل فإسلامه باطل، بل الداعي زمن الشبهات، وأصله منهج قرآني."},
+{s:"s5",q:"ما القاعدة المنهجية الثالثة؟",a:"أن الوصول إلى الصواب فيما اختُلف فيه ممكن، ومعياره الرجوع إلى ما كان عليه المسلمون قبل الاختلاف، وهو ما كان عليه الصحابة."},
+{s:"s5",q:"ما القاعدة المنهجية الرابعة؟",a:"أن معرفة أعمال القلوب والاعتناء بها من صميم القضية الاعتقادية ومن أهم ما يعزّزها — فهي لبّ الاعتقاد لا مبحث سلوكي منفصل."},
+{s:"s5",q:"ما الآيتان المكيتان اللتان استدل بهما الشيخ في الموقف من أعداء الدين؟",a:"﴿ولولا أن ثبّتناك لقد كِدتَّ تركن إليهم شيئًا قليلًا﴾ [الإسراء]، و﴿ولا تركنوا إلى الذين ظلموا فتمسّكم النار﴾ [هود]."},
+{s:"s5",q:"مِمَّ تتركب الاستقامة الصحيحة وطريق الولاية عند الشيخ؟",a:"صحة التصورات التصديقية المتعلقة بالله + العمل القلبي التعبّدي له + الموقف الصحيح من أعداء الدين."},
+
+{s:"s6",q:"ما الخطوة الأولى في المنهجية المقترحة لدراسة العقيدة؟ وماذا تشمل؟",a:"ضبط مصادر المعرفة والتلقّي: تثبيت القرآن حجّية وصحة وحفظًا، وحجّية السنة، والموقف من الإجماع، وملف أخبار الآحاد."},
+{s:"s6",q:"ما الكتاب الذي عدّ الشيخ القراءة فيه قراءةً في صميم العقيدة ضمن مصادر التلقّي؟",a:"«النبأ العظيم» — للدرّاز."},
+{s:"s6",q:"ما المصادر التي تكوّنت منها مادة دلائل أصول الإسلام في «صناعة المحاور»؟",a:"«ظاهرة نقد الدين»، و«محاسن الإسلام»، و«النبأ العظيم» للدرّاز، ومحاضرات متعددة."},
+{s:"s6",q:"ما الكتاب المركزي المرشّح في توحيد المعرفة والإثبات؟",a:"«شرح العقيدة الطحاوية» لابن أبي العزّ الحنفي — مع التنبيه أنه قد يصعب على المبتدئ في القراءة الذاتية."},
+{s:"s6",q:"ما اسم شرح الشيخ سلطان العميري على العقيدة الواسطية المطبوع؟",a:"«العقود الذهبية على مقاصد العقيدة الواسطية» — في مجلدين، عن دار مدارج."},
+{s:"s6",q:"ما الكتابان المرشّحان في باب القصد والطلب وما يضادّه؟",a:"«الشرك ومظاهره» لمبارك الميلي (من تلاميذ ابن باديس)، و«الأدلة العقلية النقلية على أصول الاعتقاد» لسعود العريفي."},
+{s:"s6",q:"ماذا رشّح الشيخ في أعمال القلوب؟",a:"مختصرات ومهذَّبات «مدارج السالكين» لابن القيم — وأشار إلى مختصر صادر عن دار ابن الجوزي لم يقرأه بعد."},
+{s:"s6",q:"ما الرسالة التي وصفها الشيخ بأنها مركزية جدًّا في تأسيس النظر العقدي الصحيح؟",a:"«الرسالة الحموية» لابن تيمية — في المجلد الخامس تقريبًا من مجموع الفتاوى."}
+];
+
+/* ================= الفهرس والتقدّم ================= */
+(function(){
+  var toc=document.getElementById("toc");
+  document.getElementById("tocOpen").onclick=function(){toc.classList.add("open")};
+  document.getElementById("tocClose").onclick=function(){toc.classList.remove("open")};
+  toc.addEventListener("click",function(e){if(e.target===toc||e.target.tagName==="A")toc.classList.remove("open")});
+  window.addEventListener("scroll",function(){
+    var h=document.documentElement;
+    var p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+    document.getElementById("prog").style.width=(p||0)+"%";
+  });
+})();
+
+/* ================= رسم الأسئلة التفاعلية ================= */
+(function(){
+  var AR=["٠","١","٢","٣","٤","٥","٦","٧","٨","٩"];
+  function ar(n){return String(n).split("").map(function(d){return AR[+d]}).join("")}
+  var stats={};
+
+  function esc(t){return String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+
+  QUIZ_DATA.forEach(function(q){
+    var host=document.querySelector('.quiz[data-qid="'+q.id+'"]');
+    if(!host)return;
+    var h='<span class="qtag">تحقّق من فهمك</span><div class="qtext">'+esc(q.question)+'</div>';
+    q.options.forEach(function(o,i){
+      h+='<button class="opt" data-i="'+i+'">'+esc(o)+'</button>';
+    });
+    h+='<div class="expl"><b>التعليل:</b> '+esc(q.explanation)+'</div>';
+    h+='<button class="retry">إعادة المحاولة</button>';
+    host.innerHTML=h;
+    stats[q.sectionId]=stats[q.sectionId]||{c:0,t:0};
+    stats[q.sectionId].t++;
+  });
+
+  function paint(){
+    document.querySelectorAll(".score").forEach(function(el){
+      var s=stats[el.getAttribute("data-sec")]||{c:0,t:0};
+      el.textContent=ar(s.c)+" / "+ar(s.t)+" صحيحة";
+    });
+  }
+  paint();
+
+  document.addEventListener("click",function(e){
+    var host=e.target.closest(".quiz");
+    if(!host)return;
+    var id=host.getAttribute("data-qid");
+    var q=QUIZ_DATA.filter(function(x){return x.id===id})[0];
+    if(!q)return;
+
+    if(e.target.classList.contains("retry")){
+      host.querySelectorAll(".opt").forEach(function(b){
+        b.classList.remove("correct","wrong");b.disabled=false;
+      });
+      host.querySelector(".expl").classList.remove("show");
+      e.target.classList.remove("show");
+      if(host.dataset.scored==="1"){
+        if(host.dataset.wasRight==="1")stats[q.sectionId].c--;
+        host.dataset.scored="0";
+      }
+      paint();
+      return;
+    }
+
+    if(!e.target.classList.contains("opt"))return;
+    if(e.target.disabled)return;
+
+    var pick=+e.target.getAttribute("data-i");
+    var ok=pick===q.correctIndex;
+    host.querySelectorAll(".opt").forEach(function(b){
+      b.disabled=true;
+      var i=+b.getAttribute("data-i");
+      if(i===q.correctIndex)b.classList.add("correct");
+      else if(i===pick)b.classList.add("wrong");
+    });
+    host.querySelector(".expl").classList.add("show");
+    host.querySelector(".retry").classList.add("show");
+
+    if(host.dataset.scored!=="1"){
+      host.dataset.scored="1";
+      host.dataset.wasRight=ok?"1":"0";
+      if(ok)stats[q.sectionId].c++;
+      paint();
+    }
+  });
+})();
+
+/* ================= بطاقات Anki ================= */
+(function(){
+  var AR=["٠","١","٢","٣","٤","٥","٦","٧","٨","٩"];
+  function ar(n){return String(n).split("").map(function(d){return AR[+d]}).join("")}
+  var NAMES={all:"الكل",s1:"التمهيد",s2:"التسميات",s3:"الموضوعات",s4:"الطوائف",s5:"القواعد",s6:"المنهجية"};
+  var COLORS={s1:"#3d5a80",s2:"#1f6f5c",s3:"#8a5a2b",s4:"#7a3b52",s5:"#55632b",s6:"#2f4858"};
+  var cur="all",idx=0,list=CARDS_DATA.slice();
+
+  var fl=document.getElementById("filters");
+  ["all","s1","s2","s3","s4","s5","s6"].forEach(function(k){
+    var b=document.createElement("button");
+    b.className="filt"+(k==="all"?" on":"");
+    b.textContent=NAMES[k];
+    b.setAttribute("data-k",k);
+    if(COLORS[k])b.style.borderColor=COLORS[k];
+    fl.appendChild(b);
+  });
+
+  var card=document.getElementById("card");
+
+  function render(){
+    if(!list.length)return;
+    card.classList.remove("flip");
+    document.getElementById("fq").textContent=list[idx].q;
+    document.getElementById("fa").textContent=list[idx].a;
+    document.getElementById("cnt").textContent=ar(idx+1)+" / "+ar(list.length);
+  }
+
+  fl.addEventListener("click",function(e){
+    if(!e.target.classList.contains("filt"))return;
+    cur=e.target.getAttribute("data-k");
+    fl.querySelectorAll(".filt").forEach(function(b){b.classList.remove("on")});
+    e.target.classList.add("on");
+    list=cur==="all"?CARDS_DATA.slice():CARDS_DATA.filter(function(c){return c.s===cur});
+    idx=0;render();
+  });
+
+  card.onclick=function(){card.classList.toggle("flip")};
+  document.getElementById("next").onclick=function(){idx=(idx+1)%list.length;render()};
+  document.getElementById("prev").onclick=function(){idx=(idx-1+list.length)%list.length;render()};
+
+  document.getElementById("dl").onclick=function(){
+    var rows=CARDS_DATA.map(function(c){
+      return c.q.replace(/\t/g," ")+"\t"+c.a.replace(/\t/g," ");
+    }).join("\n");
+    var blob=new Blob(["\uFEFF"+rows],{type:"text/tab-separated-values;charset=utf-8"});
+    var a=document.createElement("a");
+    a.href=URL.createObjectURL(blob);
+    a.download="مداخل_العلوم_مدخل_علم_العقيدة.tsv";
+    document.body.appendChild(a);a.click();document.body.removeChild(a);
+    URL.revokeObjectURL(a.href);
+  };
+
+  render();
+})();
+</script>
+
+
+<style>
+  #ilm-custom-nav{
+    max-width:700px; margin:36px auto 24px; padding:20px 22px;
+    background:#fbfaf4; border:1px solid #d3d8ca; border-radius:14px;
+    font-family:'Tajawal','IBM Plex Sans Arabic','Segoe UI',Tahoma,sans-serif;
+    direction:rtl; color:#2b2a24;
+  }
+  #ilm-custom-nav .icn-row{
+    display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:14px;
+  }
+  #ilm-custom-nav .icn-link{
+    flex:1 1 auto; min-width:150px; text-align:center; text-decoration:none;
+    padding:10px 14px; border:1.5px solid #1f4a3d; border-radius:999px;
+    color:#1f4a3d; font-size:13.5px; font-weight:600; transition:background .15s,color .15s;
+  }
+  #ilm-custom-nav .icn-link:hover{ background:#1f4a3d; color:#fff; }
+  #ilm-custom-nav .icn-link.icn-disabled{
+    opacity:.4; pointer-events:none; border-color:#b3ac9e; color:#6a6a5b;
+  }
+  #ilm-custom-nav .icn-jump label{
+    display:block; font-size:12.5px; color:#6a6a5b; margin-bottom:6px;
+  }
+  #ilm-custom-nav select{
+    width:100%; padding:10px 12px; border:1px solid #d3d8ca; border-radius:8px;
+    background:#fff; color:#2b2a24; font-family:inherit; font-size:14px; cursor:pointer;
+  }
+</style>
+
+<div id="ilm-custom-nav">
+  <div class="icn-row">
+    <span class="icn-link icn-disabled">→ لا توجد محاضرة سابقة</span>
+    <span class="icn-link icn-disabled">لا توجد محاضرة تالية ←</span>
+  </div>
+</div>
+
+<script type="module" src="../../../firebase-sync-manhaj.js"></script>
+<script src="../../../ilm-track.js"></script>
+<script>
+(function(){
+  var box = document.getElementById('ilm-completion-box');
+  var cb = box ? box.querySelector('input[data-lecture-id]') : null;
+  if(!cb) return;
+  var lid = cb.getAttribute('data-lecture-id');
+  function render(done){
+    cb.checked = done;
+    box.classList.toggle('done', done);
+  }
+  if(window.IlmTrack){
+    window.IlmTrack.ready.then(function(){ render(window.IlmTrack.isDone(lid)); });
+  }
+  cb.addEventListener('change', function(){
+    if(window.IlmTrack) window.IlmTrack.setDone(lid, cb.checked);
+    render(cb.checked);
+  });
+})();
+</script>
+<script src="../../../ilm-highlight.js" data-lecture-id="stage1_aqeedah_01"></script>
 </body>
 </html>
