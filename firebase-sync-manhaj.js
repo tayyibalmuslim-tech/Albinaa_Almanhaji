@@ -52,6 +52,8 @@ window.ManhajCloud = {
   user: null,             // كائن المستخدم الحالي
   loadProgress,           // تحميل كل بيانات التقدم للمستخدم
   saveProgress,           // حفظ كل بيانات التقدم (مؤجَّل تلقائياً)
+  loadHighlights,         // تحميل هايلايت + تعليقات محاضرة معيّنة
+  saveHighlights,         // حفظ هايلايت + تعليقات محاضرة معيّنة (مؤجَّل تلقائياً)
   signOut: doSignOut      // تسجيل الخروج
 };
 
@@ -341,3 +343,59 @@ document.addEventListener('visibilitychange', () => {
   if(document.visibilityState === 'hidden') flushProgress();
 });
 window.addEventListener('pagehide', () => flushProgress());
+
+/* ============================================
+   3) الهايلايت والتعليقات لكل محاضرة على حدة
+   البنية: manhaj_highlights/{uid}_{lectureId}
+   مستند لكل (مستخدم × محاضرة) يحتوي:
+     blocks  (كائن: { blockId: "innerHTML..." })
+     notes   (كائن: { markKey: "نص التعليق" })
+     ts      (رقم — طابع وقت آخر تحديث)
+   ============================================ */
+
+async function loadHighlights(lectureId){
+  const user = window.ManhajCloud.user;
+  if(!user) return null;
+  try{
+    const snap = await getDoc(doc(db, 'manhaj_highlights', user.uid + '_' + lectureId));
+    return snap.exists() ? snap.data() : null;
+  }catch(e){
+    console.error('فشل تحميل الهايلايت السحابي:', e);
+    return null;
+  }
+}
+
+const _pendingHl = {};
+const _hlTimers = {};
+
+function saveHighlights(lectureId, dataObj, ts){
+  const user = window.ManhajCloud.user;
+  if(!user) return;
+  _pendingHl[lectureId] = { blocks: dataObj.blocks, notes: dataObj.notes, ts: ts || Date.now() };
+
+  clearTimeout(_hlTimers[lectureId]);
+  _hlTimers[lectureId] = setTimeout(() => flushHighlights(lectureId), 800);
+}
+
+async function flushHighlights(lectureId){
+  const user = window.ManhajCloud.user;
+  if(!user) return;
+  const data = _pendingHl[lectureId];
+  if(!data) return;
+  delete _pendingHl[lectureId];
+  try{
+    await setDoc(doc(db, 'manhaj_highlights', user.uid + '_' + lectureId), data, { merge:true });
+  }catch(e){
+    console.error('فشل الحفظ السحابي للهايلايت:', e);
+    _pendingHl[lectureId] = Object.assign(data, _pendingHl[lectureId] || {});
+  }
+}
+
+document.addEventListener('visibilitychange', () => {
+  if(document.visibilityState === 'hidden'){
+    Object.keys(_pendingHl).forEach(flushHighlights);
+  }
+});
+window.addEventListener('pagehide', () => {
+  Object.keys(_pendingHl).forEach(flushHighlights);
+});
