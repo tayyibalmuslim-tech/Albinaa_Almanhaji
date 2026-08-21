@@ -721,8 +721,13 @@ function lectureNavHtml(lectureId, slot) {
     }
     const r = dir === 'prev' ? '→ ' : '';
     const l = dir === 'next' ? ' ←' : '';
-    return `<a class="btn btn-outline lecture-nav-adjacent" href="${escapeHtml(toStage + d.link)}">${
-      r}<span class="lecture-nav-day">اليوم ${d.day}</span> ${escapeHtml(d.title)}${l}</a>`;
+    const other = d.subjectKey !== subject.key;
+    const subjLine = d.subjectName
+      ? `<span class="lecture-nav-subj${other ? ' is-other' : ''}">${other ? '⇄ ' : ''}${escapeHtml(d.subjectName)}</span>`
+      : '';
+    return `<a class="btn btn-outline lecture-nav-adjacent" href="${escapeHtml(toStage + d.link)}">`
+      + `<span class="lecture-nav-day">${r}اليوم ${d.day}${l}</span>`
+      + `<span class="lecture-nav-ttl">${escapeHtml(d.title)}</span>${subjLine}</a>`;
   };
 
   /* القائمة المنسدلة = محاضرات نفس المادة */
