@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مراحل مذهب الإمام أحمد وحكم التمذهب | سلسلة مدخل إلى علم الفقه</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700;900&family=Cairo:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #F2E7D0;
+    --bg-deep: #E9DAB8;
+    --surface: #FBF6EA;
+    --surface-2: #F5EAD2;
+    --ink: #2B2015;
+    --ink-soft: #5B4B38;
+    --ink-faint: #8A7A63;
+    --primary: #1F4D3A;
+    --primary-light: #2E6B4E;
+    --primary-pale: #E4EDE6;
+    --secondary: #6B1E23;
+    --secondary-pale: #F3E2E1;
+    --gold: #A9781F;
+    --gold-bright: #C99A34;
+    --gold-pale: #F1E3BE;
+    --line: #CBB482;
+    --shadow: 0 8px 24px rgba(43,32,21,0.10);
+    --radius: 14px;
+    --font-display: 'Amiri', 'Times New Roman', serif;
+    --font-body: 'Tajawal', 'Segoe UI', sans-serif;
+    --font-utility: 'Cairo', 'Tajawal', sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1200px 600px at 15% -10%, var(--bg-deep), transparent),
+      radial-gradient(1000px 500px at 110% 10%, #EFE0BC, transparent),
+      var(--bg);
+    color:var(--ink);
+    font-family:var(--font-body);
+    line-height:1.85;
+    font-size:17px;
+  }
+  h1,h2,h3,h4{font-family:var(--font-display); color:var(--primary); margin:0 0 .5em;}
+  p{margin:0 0 1em;}
+  a{color:var(--secondary);}
+  ::selection{background:var(--gold-pale);}
+
+  .container{max-width:980px; margin:0 auto; padding:0 22px;}
+
+  /* ===== AI disclaimer ===== */
+  .ai-note{
+    background:var(--secondary);
+    color:#F6E9E4;
+    font-family:var(--font-utility);
+    font-size:.85rem;
+    text-align:center;
+    padding:9px 14px;
+    letter-spacing:.2px;
+  }
+  .ai-note b{color:#FFEFC2;}
+
+  /* ===== Header ===== */
+  header.hero{
+    position:relative;
+    background:
+      linear-gradient(180deg, rgba(31,77,58,.94), rgba(31,77,58,.9)),
+      repeating-linear-gradient(135deg, rgba(255,255,255,.03) 0 2px, transparent 2px 26px);
+    color:#F4EEDD;
+    padding:54px 0 40px;
+    overflow:hidden;
+    border-bottom:6px solid var(--gold);
+  }
+  header.hero::before{
+    content:"";
+    position:absolute; inset:10px;
+    border:1px solid rgba(244,238,221,.25);
+    pointer-events:none;
+  }
+  .hero-inner{position:relative; text-align:center;}
+  .eyebrow{
+    font-family:var(--font-utility);
+    font-weight:700;
+    font-size:.8rem;
+    letter-spacing:1px;
+    color:var(--gold-pale);
+    text-transform:uppercase;
+    margin-bottom:14px;
+    display:flex; align-items:center; justify-content:center; gap:10px;
+  }
+  .eyebrow .dash{width:28px; height:1px; background:var(--gold-pale); opacity:.7;}
+  h1.title{
+    color:#FBF6EA;
+    font-size:clamp(1.7rem, 4vw, 2.6rem);
+    line-height:1.4;
+    margin-bottom:12px;
+  }
+  .subtitle{
+    color:#E6DEC5;
+    font-family:var(--font-utility);
+    font-weight:400;
+    max-width:640px;
+    margin:0 auto 22px;
+    font-size:1rem;
+  }
+  .badges{display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:24px;}
+  .badge{
+    font-family:var(--font-utility);
+    font-weight:700;
+    font-size:.85rem;
+    background:rgba(244,238,221,.12);
+    border:1px solid rgba(244,238,221,.35);
+    color:#F4EEDD;
+    padding:6px 16px;
+    border-radius:999px;
+  }
+  .badge.gold{background:var(--gold); border-color:var(--gold); color:#2B2015;}
+
+  .btn-anki{
+    font-family:var(--font-utility);
+    font-weight:700;
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--gold);
+    color:#2B2015;
+    border:none;
+    padding:12px 26px;
+    border-radius:999px;
+    font-size:.95rem;
+    cursor:pointer;
+    box-shadow:0 6px 18px rgba(169,120,31,.35);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-anki:hover{transform:translateY(-2px); box-shadow:0 10px 22px rgba(169,120,31,.45);}
+
+  /* ===== Silsila / chain timeline (signature element) ===== */
+  .silsila-wrap{background:var(--surface-2); padding:34px 0 40px; border-bottom:1px solid var(--line);}
+  .silsila-label{
+    text-align:center; font-family:var(--font-utility); font-weight:700;
+    color:var(--ink-soft); font-size:.85rem; letter-spacing:.5px; margin-bottom:22px;
+  }
+  .silsila{
+    display:flex; align-items:stretch; justify-content:space-between;
+    position:relative; gap:6px;
+  }
+  .silsila::before{
+    content:"";
+    position:absolute; top:26px; right:6%; left:6%; height:2px;
+    background:repeating-linear-gradient(90deg, var(--gold) 0 8px, transparent 8px 14px);
+  }
+  .silsila a.node{
+    position:relative; flex:1; text-decoration:none; text-align:center;
+    display:flex; flex-direction:column; align-items:center; gap:10px;
+    color:var(--ink);
+  }
+  .silsila .medal{
+    width:54px; height:54px; border-radius:50%;
+    background:var(--surface);
+    border:2.5px solid var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-display); font-weight:700; font-size:1.2rem; color:var(--primary);
+    box-shadow:var(--shadow);
+    z-index:1;
+  }
+  .silsila .stage-name{font-family:var(--font-utility); font-weight:700; font-size:.85rem; max-width:110px;}
+  .silsila .stage-sub{font-size:.75rem; color:var(--ink-faint);}
+
+  /* ===== TOC ===== */
+  nav.toc{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    margin:36px auto 10px;
+    padding:22px 26px;
+    box-shadow:var(--shadow);
+  }
+  nav.toc h2{font-size:1.15rem; margin-bottom:12px; display:flex; align-items:center; gap:8px;}
+  nav.toc ol{margin:0; padding-inline-start:22px; columns:2; gap:24px;}
+  nav.toc li{margin-bottom:8px; break-inside:avoid;}
+  nav.toc a{text-decoration:none; color:var(--ink); font-family:var(--font-utility); font-size:.92rem;}
+  nav.toc a:hover{color:var(--secondary);}
+  nav.toc .sub{font-size:.85rem; color:var(--ink-soft); padding-inline-start:16px;}
+
+  /* ===== Sections ===== */
+  main{padding:8px 0 20px;}
+  section.block{margin:48px 0;}
+  .section-head{
+    display:flex; align-items:center; gap:14px; margin-bottom:22px;
+    padding-bottom:12px; border-bottom:2px solid var(--gold-pale);
+  }
+  .section-head .icon{
+    width:46px; height:46px; border-radius:12px; background:var(--primary);
+    color:#F4EEDD; display:flex; align-items:center; justify-content:center;
+    font-size:1.3rem; flex:none;
+  }
+  .section-head h2{margin:0; font-size:1.5rem;}
+  .section-head .kicker{font-family:var(--font-utility); font-size:.8rem; color:var(--ink-faint); font-weight:700;}
+
+  h3.stage-title{
+    font-size:1.25rem; margin-top:34px; padding-inline-start:14px;
+    border-inline-start:5px solid var(--gold); color:var(--primary);
+  }
+  h4.sub-title{font-family:var(--font-utility); font-size:1rem; color:var(--secondary); margin:20px 0 8px;}
+
+  /* ===== Content blocks ===== */
+  .definition-box{
+    background:var(--primary-pale);
+    border-inline-start:5px solid var(--primary);
+    border-radius:10px;
+    padding:16px 20px;
+    margin:16px 0;
+  }
+  .definition-box .lbl{font-family:var(--font-utility); font-weight:700; color:var(--primary); font-size:.85rem; display:block; margin-bottom:4px;}
+
+  .quote-block{
+    background:var(--surface);
+    border:1px solid var(--gold-pale);
+    border-radius:10px;
+    padding:18px 22px;
+    margin:16px 0;
+    font-family:var(--font-display);
+    font-style:italic;
+    color:var(--ink-soft);
+    position:relative;
+  }
+  .quote-block::before{content:"”"; position:absolute; top:-6px; right:14px; font-size:2.6rem; color:var(--gold-pale); font-family:var(--font-display);}
+  .quote-block .src{display:block; font-family:var(--font-utility); font-style:normal; font-size:.8rem; color:var(--ink-faint); margin-top:8px;}
+
+  .key-point{
+    display:flex; gap:12px; align-items:flex-start;
+    background:var(--gold-pale);
+    border-radius:10px; padding:14px 18px; margin:14px 0;
+  }
+  .key-point .mark{font-size:1.2rem; flex:none;}
+  .key-point b{font-family:var(--font-utility);}
+
+  .warning-box{
+    background:var(--secondary-pale);
+    border-inline-start:5px solid var(--secondary);
+    border-radius:10px;
+    padding:16px 20px; margin:16px 0;
+  }
+  .warning-box .lbl{font-family:var(--font-utility); font-weight:700; color:var(--secondary); font-size:.85rem; display:block; margin-bottom:4px;}
+
+  .action-card{
+    background:linear-gradient(135deg, var(--primary), var(--primary-light));
+    color:#F4EEDD; border-radius:var(--radius); padding:22px 26px; margin:18px 0;
+    box-shadow:var(--shadow);
+  }
+  .action-card .lbl{font-family:var(--font-utility); font-weight:700; font-size:.8rem; color:var(--gold-pale); display:block; margin-bottom:6px;}
+  .action-card ul{margin:8px 0 0; padding-inline-start:20px;}
+
+  .flow-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:18px 20px; margin:14px 0; box-shadow:var(--shadow);
+    position:relative; padding-inline-start:52px;
+  }
+  .flow-card .step-no{
+    position:absolute; right:14px; top:16px;
+    width:28px; height:28px; border-radius:50%;
+    background:var(--gold); color:#2B2015; font-family:var(--font-utility); font-weight:700;
+    display:flex; align-items:center; justify-content:center; font-size:.9rem;
+  }
+  .flow-card h4{margin:0 0 6px; font-family:var(--font-utility); font-size:1.02rem; color:var(--primary);}
+  .flow-card .books{margin-top:8px; display:flex; flex-wrap:wrap; gap:6px;}
+  .flow-card .books span{
+    background:var(--primary-pale); color:var(--primary); font-family:var(--font-utility);
+    font-size:.78rem; padding:4px 10px; border-radius:999px; border:1px solid var(--line);
+  }
+
+  table.comparison-table{
+    width:100%; border-collapse:collapse; margin:16px 0;
+    background:var(--surface); border-radius:10px; overflow:hidden;
+    box-shadow:var(--shadow);
+  }
+  table.comparison-table caption{
+    font-family:var(--font-utility); font-weight:700; text-align:right;
+    padding:12px 16px; background:var(--primary); color:#F4EEDD;
+  }
+  table.comparison-table th, table.comparison-table td{
+    padding:12px 14px; border-bottom:1px solid var(--line); text-align:right; font-size:.92rem;
+  }
+  table.comparison-table thead th{background:var(--gold-pale); font-family:var(--font-utility); color:var(--ink);}
+  table.comparison-table tr:last-child td{border-bottom:none;}
+  table.comparison-table tr:nth-child(even){background:var(--surface-2);}
+
+  .family-tree{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin:14px 0;
+  }
+  .family-tree .person{
+    background:var(--surface); border:1px dashed var(--gold); border-radius:10px; padding:12px 14px;
+  }
+  .family-tree .person .role{font-family:var(--font-utility); font-size:.72rem; color:var(--secondary); font-weight:700;}
+  .family-tree .person .name{font-weight:700; margin:2px 0 4px;}
+  .family-tree .person .book{font-size:.85rem; color:var(--ink-soft);}
+
+  .note-box{
+    background:#EDEADF; border:1px dashed var(--ink-faint); border-radius:10px;
+    padding:14px 18px; margin:20px 0; font-size:.92rem; color:var(--ink-soft);
+  }
+
+  /* ===== Footer ===== */
+  footer{
+    background:var(--primary); color:#EFE7CF; padding:44px 0 30px; margin-top:40px;
+    border-top:6px solid var(--gold);
+  }
+  footer .container{text-align:center;}
+  footer .dua{font-family:var(--font-display); font-size:1.2rem; margin-bottom:20px; color:#FBF6EA;}
+  footer .foot-links{font-family:var(--font-utility); font-size:.8rem; color:#C9BE9E;}
+
+  @media (max-width:720px){
+    nav.toc ol{columns:1;}
+    .silsila{flex-direction:column; gap:22px;}
+    .silsila::before{display:none;}
+    .silsila .medal{margin:0 auto;}
+    .section-head h2{font-size:1.25rem;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+</style>
+
+<style>
+/* ===== تثبيت الفهم — الأسئلة التفاعلية ===== */
+.quiz-block{
+  margin:32px 0 24px;
+  background:var(--green-deeper, #132920);
+  border-radius:12px;
+  padding:24px;
+  box-shadow:0 6px 24px rgba(31,61,46,.14);
+  position:relative;
+  overflow:hidden;
+  direction:rtl;
+  text-align:right;
+}
+.quiz-block::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:radial-gradient(circle at 90% 10%, rgba(201,164,90,.12) 0, transparent 45%);
+  pointer-events:none;
+}
+.quiz-block-title{
+  display:flex; align-items:center; gap:8px;
+  font-weight:800; font-size:14px;
+  color:var(--gold-pale, #F2E6C4);
+  letter-spacing:.3px;
+  margin-bottom:16px;
+  position:relative;
+}
+.quiz-item{
+  background:rgba(255,254,250,.06);
+  border:1px solid rgba(199,164,90,.25);
+  border-radius:8px;
+  padding:16px;
+  margin-bottom:16px;
+  position:relative;
+}
+.quiz-item:last-child{margin-bottom:0;}
+.quiz-q{
+  font-size:15.5px; font-weight:700;
+  color:#FBF7EE;
+  margin:0 0 16px;
+  line-height:1.7;
+}
+.quiz-options{display:flex; flex-direction:column; gap:8px;}
+.quiz-opt{
+  display:block; width:100%; text-align:right;
+  background:rgba(251,247,238,.08);
+  border:1px solid rgba(251,247,238,.18);
+  color:#FBF7EE;
+  font-family:inherit; font-size:14px; line-height:1.6;
+  border-radius:8px;
+  padding:10px 14px;
+  cursor:pointer;
+  transition:background .15s ease, border-color .15s ease, transform .1s ease;
+}
+.quiz-opt:hover{background:rgba(251,247,238,.15); border-color:rgba(199,164,90,.5);}
+.quiz-opt:active{transform:scale(.99);}
+.quiz-opt.correct{
+  background:rgba(46,84,67,.9);
+  border-color:#8FBF9E;
+  color:#EAF6EE;
+  font-weight:700;
+}
+.quiz-opt.correct::after{content:" \2713"; color:#8FBF9E;}
+.quiz-opt.wrong{
+  background:rgba(140,59,46,.55);
+  border-color:#D89A8C;
+  color:#F7E6E2;
+}
+.quiz-opt.wrong::after{content:" \2715"; color:#F1B3A6;}
+.quiz-opt.disabled{cursor:default; pointer-events:none;}
+.quiz-feedback{
+  margin-top:10px;
+  font-size:13.5px; line-height:1.8;
+  color:var(--gold-pale, #F2E6C4);
+  background:rgba(0,0,0,.15);
+  border-right:3px solid var(--gold, #A9832E);
+  border-radius:6px;
+  padding:9px 12px;
+  display:none;
+}
+.quiz-feedback.show{display:block;}
+.quiz-reflect{
+  border-top:1px dashed rgba(199,164,90,.3);
+  padding-top:16px;
+  margin-top:16px;
+}
+.quiz-item > .quiz-reflect:first-child{border-top:none; padding-top:0; margin-top:0;}
+.quiz-reflect-q{
+  font-size:14.5px; color:var(--gold-pale, #F2E6C4); font-weight:600;
+  margin:0 0 8px;
+}
+.quiz-reveal-btn{
+  background:var(--gold, #A9832E);
+  color:var(--green-deeper, #132920);
+  border:none; border-radius:999px;
+  font-family:inherit;
+  font-weight:700; font-size:13px;
+  padding:8px 18px;
+  cursor:pointer;
+  transition:background .15s ease;
+}
+.quiz-reveal-btn:hover{background:var(--gold-soft, #C7A45A);}
+.quiz-answer{
+  display:none;
+  margin-top:10px;
+  font-size:14px; line-height:1.85;
+  color:#FBF7EE;
+  background:rgba(255,254,250,.08);
+  border-radius:8px;
+  padding:11px 14px;
+}
+.quiz-answer.show{display:block;}
+@media (max-width:640px){ .quiz-block{padding:16px;} }
+</style>
+
+</head>
+<body data-lecture-id="stage1_fiqh_06">
+<style id="ilm-completion-style">
+  #ilm-completion-box{
+    display:flex; align-items:center; gap:10px;
+    max-width:640px; margin:14px auto 0; padding:12px 18px;
+    background:#fbfaf4; border:1px solid #d3d8ca; border-radius:12px;
+    font-family:'Tajawal','Segoe UI',Tahoma,sans-serif; direction:rtl;
+    cursor:pointer; user-select:none; transition:background .15s, border-color .15s;
+  }
+  #ilm-completion-box:hover{ border-color:#b8862f; }
+  #ilm-completion-box.done{ background:#e3ebe4; border-color:#1f4a3d; }
+  #ilm-completion-box input{ width:18px; height:18px; accent-color:#1f4a3d; cursor:pointer; flex-shrink:0; }
+  #ilm-completion-box span{ font-size:14.5px; font-weight:600; color:#2b2a24; }
+  #ilm-completion-box.done span{ color:#163931; }
+</style>
+<label id="ilm-completion-box">
+  <input type="checkbox" data-lecture-id="stage1_fiqh_06">
+  <span>تحديد هذه المحاضرة كمكتملة</span>
+</label>
+
+
+<div class="ai-note">⚠️ <b>تنبيه:</b> هذا الملف تم إعداده بمساعدة الذكاء الاصطناعي وقد يحتوي على أخطاء — بعضها قد يصل إلى عكس المعنى المقصود. يُرجى مراجعة المعلومات الفقهية من مصادرها الأصلية قبل الاعتماد عليها.</div>
+
+<header class="hero">
+  <div class="container hero-inner">
+    <div class="eyebrow"><span class="dash"></span> سلسلة مدخل إلى علم الفقه — الشيخ عامر بهجت <span class="dash"></span></div>
+    <h1 class="title">مراحل مذهب الإمام أحمد وحكم التمذهب بمذهب فقهي معيّن</h1>
+    <p class="subtitle">رحلة عبر أربع مراحل تكوّن بها الفقه الحنبلي وكُتبه الكبرى، يليها تأصيل لحكم انتساب طالب العلم إلى مذهب فقهي من المذاهب الأربعة.</p>
+    <div class="badges">
+      <span class="badge gold">المحاضرة 4 — مراحل المذهب الحنبلي</span>
+      <span class="badge gold">المحاضرة 7 — حكم التمذهب</span>
+    </div>
+    <button class="btn-anki" onclick="downloadAnkiDeck()">🗂️ حمّل بطاقات أنكي</button>
+  </div>
+</header>
+
+<div class="silsila-wrap">
+  <div class="container">
+    <div class="silsila-label">سلسلة تطوّر المذهب الحنبلي عبر أربع مراحل</div>
+    <div class="silsila">
+      <a class="node" href="#stage1"><span class="medal">١</span><span class="stage-name">التأسيس</span><span class="stage-sub">الإمام أحمد وأصحابه</span></a>
+      <a class="node" href="#stage2"><span class="medal">٢</span><span class="stage-name">التقعيد</span><span class="stage-sub">الخرقي</span></a>
+      <a class="node" href="#stage3"><span class="medal">٣</span><span class="stage-name">التحرير والتنقيح</span><span class="stage-sub">ابن قدامة، ابن تيمية، المرداوي</span></a>
+      <a class="node" href="#stage4"><span class="medal">٤</span><span class="stage-name">الاستقرار</span><span class="stage-sub">الحجاوي، البهوتي</span></a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <nav class="toc" id="toc">
+    <h2>📑 فهرس المحاضرة</h2>
+    <ol>
+      <li><a href="#intro">مقدمة</a></li>
+      <li><a href="#sec1">القسم الأول: مراحل مذهب الإمام أحمد</a>
+        <ol>
+          <li class="sub"><a href="#stage1">المرحلة الأولى: التأسيس</a></li>
+          <li class="sub"><a href="#stage2">المرحلة الثانية: التقعيد</a></li>
+          <li class="sub"><a href="#stage3">المرحلة الثالثة: التحرير والتنقيح</a></li>
+          <li class="sub"><a href="#stage4">المرحلة الرابعة: استقرار المذهب</a></li>
+          <li class="sub"><a href="#reference-table">أين أبحث؟ (جدول مرجعي)</a></li>
+          <li class="sub"><a href="#modern-texts">المتون المعتمدة في التدريس اليوم</a></li>
+        </ol>
+      </li>
+      <li><a href="#sec2">القسم الثاني: حكم التمذهب بمذهب معيّن</a>
+        <ol>
+          <li class="sub"><a href="#agreement">مواضع الاتفاق</a></li>
+          <li class="sub"><a href="#misconception">تصحيح مفهوم شائع</a></li>
+          <li class="sub"><a href="#modern-taassub">ظاهرة معاصرة: التعصب ضد المذاهب</a></li>
+        </ol>
+      </li>
+      <li><a href="#khatima">خاتمة</a></li>
+      <li><a href="#anki">بطاقات أنكي</a></li>
+    </ol>
+  </nav>
+
+  <main data-ilm-highlight-zone>
+
+    <section class="block" id="intro">
+      <div class="section-head">
+        <div class="icon">📖</div>
+        <div>
+          <div class="kicker">مقدمة</div>
+          <h2>عن هاتين المحاضرتين</h2>
+        </div>
+      </div>
+      <p>هذا الملف يجمع بين محاضرتين من سلسلة "مدخل إلى علم الفقه": <b>الأولى</b> تستكمل الحديث عن مذهب الإمام أحمد بن حنبل رحمه الله، وتتتبّع المراحل التي مرّ بها هذا المذهب من التأسيس إلى الاستقرار، مع أبرز كتبه وعلمائه في كل مرحلة. <b>والثانية</b> (المحاضرة السابعة) تناقش سؤالًا مهمًا يتكرر طرحه بين طلبة العلم: ما حكم التمذهب بمذهب فقهي معيّن من المذاهب الأربعة؟ وما الفرق بين التعصب المذموم والانتساب الجائز؟</p>
+      <div class="note-box">
+        ℹ️ الجزء الثاني من هذه المحاضرة (حكم التمذهب) ينتهي في التسجيل الأصلي عند بداية الحديث عن "صور التعصب ضد المذاهب في الفقرة الثانية"، دون استكمال تفصيلها. تم إعداد هذا الملف بناءً على المتاح من التسجيل فقط، دون إضافة محتوى غير مذكور فيه.
+      </div>
+    </section>
+
+    <!-- ============ SECTION 1 ============ -->
+    <section class="block" id="sec1">
+      <div class="section-head">
+        <div class="icon">🕌</div>
+        <div>
+          <div class="kicker">المحاضرة الرابعة</div>
+          <h2>مراحل مذهب الإمام أحمد وتطوّر كتبه</h2>
+        </div>
+      </div>
+      <p>مرّ مذهب الإمام أحمد بن حنبل رحمه الله بأربع مراحل رئيسية، كل مرحلة أنتجت طبقة من العلماء والكتب التي بُني عليها ما بعدها.</p>
+
+      <!-- STAGE 1 -->
+      <h3 class="stage-title" id="stage1">المرحلة الأولى: التأسيس</h3>
+      <div class="definition-box">
+        <span class="lbl">تعريف</span>
+        مرحلة التأسيس هي المرحلة التي وُضعت فيها اللبنات الأولى للمذهب: تأسيس على يد الإمام أحمد نفسه، ثم نقل مسائله عبر أصحابه وتلاميذه.
+      </div>
+      <p>مؤسس المذهب هو <b>الإمام أحمد بن حنبل</b> رحمه الله، ثم نُقلت مسائله عن طريق عدد من أصحابه وتلاميذه في كتب مطبوعة تُعرف بـ"كتب المسائل". ومن أراد الوقوف على تراجم هؤلاء العلماء فليرجع إلى <b>طبقات الحنابلة لابن أبي يعلى</b>.</p>
+      <div class="flow-card">
+        <span class="step-no">١</span>
+        <h4>أبرز أصحاب الإمام أحمد الذين نقلوا مسائله</h4>
+        <div class="books">
+          <span>أبو داود السجستاني (صاحب السنن)</span>
+          <span>صالح بن الإمام أحمد</span>
+          <span>عبدالله بن الإمام أحمد</span>
+          <span>إسحاق بن منصور الكوسج</span>
+          <span>ابن هانئ</span>
+          <span>حرب بن إسماعيل الكرماني</span>
+        </div>
+      </div>
+      <div class="flow-card">
+        <span class="step-no">٢</span>
+        <h4>الخلّال يجمع كتب المسائل</h4>
+        <p style="margin:0">جمع <b>الخلّال</b> هذه الكتب المتفرقة في كتاب واحد سمّاه <b>"الجامع لعلوم الإمام أحمد"</b>. الكتاب اليوم مفقود في أغلبه، ولم يُطبع منه إلا أجزاء يسيرة (كـ"الترجّل" و"الوقوف").</p>
+        <div class="key-point" style="margin-top:12px">
+          <span class="mark">✳️</span>
+          <div><b>جهد معاصر:</b> قام الأستاذ خالد الرباط مع مجموعة من الباحثين بإعادة جمع تراث الإمام أحمد في عمل نفيس سمّوه أيضًا "الجامع لعلوم الإمام أحمد"، ويُعدّ من أعظم الخدمات المعاصرة لعلم الإمام أحمد.</div>
+        </div>
+      </div>
+      <p>ثم جاء بعد الخلّال تلميذه المعروف بـ<b>غلام الخلّال</b>، مواصلًا الجهد في هذه المرحلة.</p>
+
+      <!-- STAGE 2 -->
+      <h3 class="stage-title" id="stage2">المرحلة الثانية: التقعيد</h3>
+      <div class="definition-box">
+        <span class="lbl">تعريف</span>
+        مرحلة التقعيد هي مرحلة اختصار مسائل المذهب المتناثرة في متون مختصرة جامعة، تسهّل حفظها وتدريسها.
+      </div>
+      <div class="flow-card">
+        <span class="step-no">١</span>
+        <h4>الخرقي ومختصره</h4>
+        <p style="margin:0">ألّف الإمام <b>الخرقي</b> كتابًا مختصرًا في فقه الإمام أحمد عُرف بـ<b>"مختصر الخرقي"</b>، وظلّ هو الكتاب المعتمد في تدريس الحنابلة وشرحه وحفظه إلى أن جاء عصر ابن قدامة.</p>
+      </div>
+      <div class="flow-card">
+        <span class="step-no">٢</span>
+        <h4>الحسن بن حامد</h4>
+        <p style="margin:0">صنّف الإمام <b>الحسن بن حامد</b> كتاب <b>"تهذيب الأجوبة"</b> ضمن جهود هذه المرحلة.</p>
+      </div>
+
+      <!-- STAGE 3 -->
+      <h3 class="stage-title" id="stage3">المرحلة الثالثة: التحرير والتنقيح</h3>
+      <div class="definition-box">
+        <span class="lbl">تعريف</span>
+        دور التحرير والتنقيح: مرحلة مراجعة أقوال المذهب وتحرير الراجح منها، بدأت على يد القاضي أبي يعلى.
+      </div>
+      <div class="key-point">
+        <span class="mark">💡</span>
+        <div><b>فائدة اصطلاحية:</b> كل ما ورد في كتب الحنابلة بصيغة "قال القاضي" فالمراد به <b>القاضي أبو يعلى</b> رحمه الله.</div>
+      </div>
+      <div class="flow-card">
+        <span class="step-no">١</span>
+        <h4>القاضي أبو يعلى وتلميذه</h4>
+        <div class="books"><span>الروايتين والوجهين</span><span>العدة في أصول الفقه</span></div>
+        <p style="margin-top:10px">تلميذه <b>أبو الخطاب الكلوذاني</b> صنّف بدوره كتاب <b>الانتصار</b>، وكتاب <b>التمهيد في أصول الفقه</b>، وغيرهما.</p>
+      </div>
+
+      <div class="flow-card">
+        <span class="step-no">٢</span>
+        <h4>الإمام موفق الدين ابن قدامة المقدسي (ت 620هـ)</h4>
+        <p>يُعدّ ابن قدامة نقطة محورية في تاريخ المذهب الحنبلي، لكثرة مصنفاته وتدرّجها التعليمي البديع.</p>
+        <h4 class="sub-title" style="margin-top:14px">في أصول الفقه</h4>
+        <div class="books"><span>روضة الناظر وجنة المناظر (المقرر في أغلب كليات الشريعة بالسعودية)</span></div>
+        <h4 class="sub-title">في الفقه — أربعة كتب متدرجة</h4>
+        <table class="comparison-table">
+          <caption>تدرّج ابن قدامة الفقهي من الأسهل إلى الأوسع</caption>
+          <thead><tr><th>الكتاب</th><th>المستوى</th><th>الميزة</th></tr></thead>
+          <tbody>
+            <tr><td>عمدة الفقه</td><td>المبتدئون</td><td>سهل مختصر، على قول واحد بلا ذكر خلاف</td></tr>
+            <tr><td>المقنع</td><td>فوق المبتدئين</td><td>يذكر روايتين غالبًا داخل المذهب</td></tr>
+            <tr><td>الكافي</td><td>مرحلة أعلى</td><td>يذكر الأدلة ويتوسّع في الروايات</td></tr>
+            <tr><td>المغني</td><td>الفقه المقارن</td><td>يذكر أقوال المذاهب الأخرى (الخلاف العالي)</td></tr>
+          </tbody>
+        </table>
+        <div class="key-point">
+          <span class="mark">🎯</span>
+          <div><b>قاعدة التدرّج:</b> من فقه ابن قدامة في التعليم أنه بدأ بالمبتدئ بقول واحد بلا خلاف (عمدة الفقه) ثم رفعه تدريجيًا. ومن الخطأ المنهجي أن يُشرَح لمبتدئ كتاب موسّع بالخلاف كالمغني قبل أن يتأهل لذلك.</div>
+        </div>
+        <div class="quote-block">
+          كفى الناس بالكافي، وأقنعَ طالبًا بمقنعِ فقهٍ عن كتابٍ مطوَّلِ، وأغنى بمغني الفقه من كان عالمًا، وعمدتُهُ من يعتمدها يُحصِّلِ
+          <span class="src">— أبيات قيلت في وصف تدرّج كتب ابن قدامة الأربعة</span>
+        </div>
+      </div>
+
+      <h4 class="sub-title">بيت ابن قدامة (عائلة علمية)</h4>
+      <div class="family-tree">
+        <div class="person"><span class="role">المؤلف</span><div class="name">موفق الدين ابن قدامة المقدسي</div><div class="book">صاحب المقنع والمغني وعمدة الفقه والكافي</div></div>
+        <div class="person"><span class="role">ابن أخيه</span><div class="name">عبدالرحمن بن قدامة</div><div class="book">شرح المقنع في "الشرح الكبير"</div></div>
+        <div class="person"><span class="role">من العائلة</span><div class="name">عبدالغني المقدسي</div><div class="book">صاحب "عمدة الأحكام" (وليست عمدة الفقه)</div></div>
+        <div class="person"><span class="role">من العائلة</span><div class="name">بهاء الدين المقدسي</div><div class="book">صاحب "العدة" شرح العمدة</div></div>
+      </div>
+      <p style="font-size:.9rem; color:var(--ink-soft)">وبالمناسبة، كان للحنابلة وجود كبير في بيت المقدس وفلسطين وبلاد الشام، ومن هنا اشتهرت هذه العائلة بـ"المقادسة".</p>
+
+      <h4 class="sub-title">شروح مختصر الخرقي والمقنع</h4>
+      <table class="comparison-table">
+        <caption>أبرز الشروح في هذه المرحلة</caption>
+        <thead><tr><th>الأصل</th><th>الشرح</th><th>ملاحظة</th></tr></thead>
+        <tbody>
+          <tr><td>مختصر الخرقي</td><td>المغني (ابن قدامة)</td><td>من أوسع شروحه</td></tr>
+          <tr><td>مختصر الخرقي</td><td>شرح الزركشي</td><td>تحقيق الشيخ عبدالله بن جبرين رحمه الله</td></tr>
+          <tr><td>المقنع</td><td>المبدع</td><td>لابن مفلح الحفيد</td></tr>
+          <tr><td>المقنع</td><td>الشرح الكبير</td><td>لعبدالرحمن بن قدامة (ابن أبي عمر)</td></tr>
+        </tbody>
+      </table>
+
+      <div class="flow-card">
+        <span class="step-no">٣</span>
+        <h4>بيت ابن تيمية</h4>
+        <p>الجدّ هو <b>مجد الدين ابن تيمية</b> ("المجد" عند الحنابلة)، صاحب كتاب <b>المحرر في الفقه</b>، وكتاب <b>المنتقى في الحديث</b> (منتقى الأخبار) الذي شرحه <b>الشوكاني</b> في كتابه المشهور <b>"نيل الأوطار"</b>.</p>
+        <div class="family-tree" style="margin-top:10px">
+          <div class="person"><span class="role">الجدّ</span><div class="name">مجد الدين ابن تيمية</div><div class="book">المحرر، المنتقى في الحديث</div></div>
+          <div class="person"><span class="role">الابن</span><div class="name">عبدالحليم بن عبدالسلام</div><div class="book">والد شيخ الإسلام</div></div>
+          <div class="person"><span class="role">الحفيد</span><div class="name">شيخ الإسلام أحمد بن عبدالحليم ابن تيمية الحرّاني</div><div class="book">لم يتزوج رحمه الله</div></div>
+        </div>
+      </div>
+
+      <div class="flow-card">
+        <span class="step-no">٤</span>
+        <h4>بيت ابن مفلح</h4>
+        <div class="family-tree">
+          <div class="person"><span class="role">الجدّ</span><div class="name">ابن مفلح (الجدّ)</div><div class="book">الفروع، الآداب الشرعية</div></div>
+          <div class="person"><span class="role">الحفيد</span><div class="name">ابن مفلح (الحفيد)</div><div class="book">المبدع (شرح المقنع)</div></div>
+        </div>
+      </div>
+
+      <div class="flow-card">
+        <span class="step-no">٥</span>
+        <h4>علاء الدين المرداوي — خاتمة التنقيح الأول</h4>
+        <p>القاضي علاء الدين المرداوي يُلقَّب بـ<b>"المصحح والمرجّح والمنقّح"</b> للمذهب. ألّف كتابه العظيم <b>"الإنصاف في معرفة الراجح من الخلاف"</b>، وهو كتاب واحد في ظاهره لكنه يستوعب في باطنه خلاصة مئات كتب الحنابلة السابقة عليه.</p>
+        <div class="definition-box">
+          <span class="lbl">ماذا يفعل كتاب الإنصاف؟</span>
+          يأخذ كل مسألة فيذكر جميع الروايات والأقوال التي قال بها علماء الحنابلة فيها، ويذكر من رجّح كل قول من العلماء. فمن أراد معرفة روايات وأوجه المذهب الحنبلي في مسألة، فمرجعه كتاب الإنصاف.
+        </div>
+        <div class="books" style="margin-top:10px">
+          <span>الإنصاف في معرفة الراجح من الخلاف</span>
+          <span>التحرير (أصول الفقه)</span>
+          <span>التحبير (شرح التحرير)</span>
+          <span>التنقيح المشبع في تحرير أحكام المقنع</span>
+          <span>تصحيح الفروع (تصحيح لكتاب الفروع لابن مفلح)</span>
+        </div>
+      </div>
+
+      <!-- STAGE 4 -->
+      <h3 class="stage-title" id="stage4">المرحلة الرابعة: استقرار المذهب</h3>
+      <div class="definition-box">
+        <span class="lbl">تعريف</span>
+        مرحلة استقرار المذهب هي المرحلة التي كُتبت فيها المتون الجامعة المعتمدة نهائيًا للتدريس، وتركّز جهدها في أهل الشام ومصر ثم نجد لاحقًا.
+      </div>
+
+      <div class="flow-card">
+        <span class="step-no">١</span>
+        <h4>موسى الحجاوي (من بلاد الشام)</h4>
+        <div class="books">
+          <span>الإقناع لطالب الانتفاع — أوسع متن حنبلي (4 مجلدات، تحقيق الشيخ عبدالله التركي)</span>
+          <span>زاد المستقنع — المتن الأشهر في التدريس</span>
+        </div>
+        <p style="margin-top:10px">من شروح <b>الإقناع</b>: <b>كشاف القناع</b> للبهوتي. ومن شروح <b>زاد المستقنع</b>: <b>الروض المربع</b> للبهوتي (المقرر في أغلب كليات الشريعة بالسعودية)، وعليه حواشٍ عدة: حاشية <b>ابن قاسم</b> (7 مجلدات، من أوسعها)، وحاشية <b>العنقري</b> (3 مجلدات)، وحاشية <b>ابن فيروز</b>.</p>
+        <p>ومن الشروح المعاصرة لزاد المستقنع: <b>الشرح الممتع</b> لابن عثيمين، وشروح <b>الفوزان</b>، و<b>كلمات السداد</b> لفيصل المبارك، و<b>السلسبيل بمعرفة الدليل</b> لصالح البليهي.</p>
+      </div>
+
+      <div class="flow-card">
+        <span class="step-no">٢</span>
+        <h4>ابن النجار الفتوحي (من مصر)</h4>
+        <p>ألّف كتاب <b>"المنتهى"</b> (منتهى الإرادات).</p>
+        <div class="quote-block">
+          والمنتهى إن وافق الإقناعَ، فذلك المذهبُ لا نزاعَ
+          <span class="src">— نظمها ابن عقيل، تلخيصًا لقاعدة اعتماد المذهب</span>
+        </div>
+        <p>وفي أصول الفقه ألّف ابن النجار <b>"مختصر التحرير"</b> (اختصارًا لكتاب التحرير للمرداوي)، وشرحه بنفسه في <b>"شرح الكوكب المنير"</b>، وهو من أنفس كتب الحنابلة في أصول الفقه.</p>
+      </div>
+
+      <div class="flow-card">
+        <span class="step-no">٣</span>
+        <h4>مرعي الكرمي (من بلاد الشام)</h4>
+        <p>جمع بين كتابَي الإقناع والمنتهى في كتاب واحد سمّاه <b>"غاية المنتهى"</b>، وقد شرحه الرحيباني في <b>"مطالب أولي النهى"</b>.</p>
+        <p>وله أيضًا كتاب <b>"دليل الطالب لنيل المطالب"</b>، المعتمد في حلقات العلم. من شروحه: <b>منار السبيل</b> (ابن ضويان)، و<b>نيل المآرب</b> (التغلبي)، وشرح ابن عوض.</p>
+      </div>
+
+      <div class="flow-card">
+        <span class="step-no">٤</span>
+        <h4>منصور البهوتي — شارح المذهب بلا منازع</h4>
+        <div class="books">
+          <span>كشاف القناع عن متن الإقناع</span>
+          <span>الروض المربع (شرح زاد المستقنع)</span>
+          <span>شرح على منتهى الإرادات</span>
+          <span>عمدة الطالب (متن)</span>
+        </div>
+        <p style="margin-top:10px">متنه <b>"عمدة الطالب"</b> شرحه الشيخ <b>عثمان النجدي</b> في <b>"هداية الراغب"</b>، وهذّبه الشيخ <b>البسام</b> في كتابه <b>"نيل المآرب في تهذيب شرح عمدة الطالب"</b>.</p>
+        <div class="warning-box">
+          <span class="lbl">⚠️ تنبيه دقيق: اسم "نيل المآرب" يتكرر لكتابين مختلفين</span>
+          الأول: شرح <b>التغلبي</b> على "دليل الطالب" لمرعي الكرمي. والثاني: تهذيب <b>البسام</b> لشرح "هداية الراغب" على متن "عمدة الطالب" للبهوتي. الكتابان مختلفان تمامًا رغم تشابه الاسم.
+        </div>
+      </div>
+
+      <div class="flow-card">
+        <span class="step-no">٥</span>
+        <h4>متون أخرى معتمدة في هذه المرحلة</h4>
+        <div class="books">
+          <span>أخصر المختصرات (ابن بلبان) — وشروحه: كشف المخدرات (البعلي)، الفوائد المنتخبات (عثمان النجدي)</span>
+          <span>مختصر خوقير (أبو بكر خوقير، من علماء مكة)</span>
+          <span>عمدة الفقه (ابن قدامة، للمبتدئين)</span>
+        </div>
+      </div>
+
+      <table class="comparison-table" id="modern-texts">
+        <caption>زاد المستقنع مقابل دليل الطالب — أيهما يبدأ به الطالب؟</caption>
+        <thead><tr><th>المعيار</th><th>زاد المستقنع (الحجاوي)</th><th>دليل الطالب (مرعي الكرمي)</th></tr></thead>
+        <tbody>
+          <tr><td>السعة</td><td>أوسع، فروع ومسائل أكثر</td><td>أخصر</td></tr>
+          <tr><td>الترتيب</td><td>جيد</td><td>أكثر ترتيبًا وأسهل</td></tr>
+          <tr><td>رأي بعض المشايخ</td><td>يفضّلونه لكثرة فروعه</td><td>يفضّلونه ليُسره</td></tr>
+        </tbody>
+      </table>
+      <div class="quote-block">
+        وفضّلوا الزادَ على الدليلِ، وعلّلوا لذلك التفضيلِ، بكثرة الفروع والمسائلِ، فلا تكن عن حفظها بذاهلِ، وبعضُهم يُفضّل الدليلَ ليُسرِه، فاحفظ تجد سبيلا
+        <span class="src">— أبيات في المفاضلة بين المتنين، كما أنشدها المحاضر</span>
+      </div>
+
+      <table class="comparison-table" id="reference-table">
+        <caption>أين أبحث؟ — دليل مرجعي سريع</caption>
+        <thead><tr><th>ما الذي تريد معرفته؟</th><th>الكتاب المرجعي</th></tr></thead>
+        <tbody>
+          <tr><td>نصوص الإمام أحمد نفسه في مسألة</td><td>الجامع لعلوم الإمام أحمد</td></tr>
+          <tr><td>الروايات والأوجه المتعددة داخل المذهب</td><td>الإنصاف للمرداوي</td></tr>
+          <tr><td>أدلة المذهب وردّه على أدلة المذاهب الأخرى</td><td>المغني لابن قدامة، الشرح الكبير لابن أبي عمر، الممتع لابن المنجّا</td></tr>
+          <tr><td>مراجع إضافية في الأدلة</td><td>التنقيح والتحقيق لأحاديث التعليق (ابن الجوزي)، التعليقة (القاضي أبو يعلى)، الانتصار (أبو الخطاب الكلوذاني)</td></tr>
+        </tbody>
+      </table>
+    
+      <div class="quiz-block" data-quiz="sec1"></div>
+    </section>
+
+    <!-- ============ SECTION 2 ============ -->
+    <section class="block" id="sec2">
+      <div class="section-head">
+        <div class="icon">⚖️</div>
+        <div>
+          <div class="kicker">المحاضرة السابعة — مدخل إلى علم الفقه</div>
+          <h2>حكم التمذهب بمذهب فقهي معيّن</h2>
+        </div>
+      </div>
+      <p>بعد أن تناول الدرس السابق المذاهب الفقهية الأربعة (الحنفي والمالكي والشافعي والحنبلي) وتراجم أئمتها ونشأتها وصلتها بفقه الصحابة رضي الله عنهم، يأتي السؤال: <b>ما حكم التمذهب بمذهب من هذه المذاهب؟</b> هذه مسألة قديمة يتكرر طرحها بين وقت وآخر، وتنقسم إلى مواضع اتفاق ومواضع خلاف بين العلماء.</p>
+
+      <div class="definition-box" id="agreement">
+        <span class="lbl">تعريف</span>
+        التمذهب: انتساب طالب العلم إلى مذهب فقهي معيّن، والاعتماد على أقواله وترجيحاته في الفتيا والتعلّم.
+      </div>
+
+      <h3 class="stage-title">محل الاتفاق الأول: التعصب المذموم</h3>
+      <div class="warning-box">
+        <span class="lbl">⚠️ التعصب المذموم</span>
+        لا خلاف بين العلماء أن التعصب لمذهب معيّن أمر مذموم. والمقصود به: أن يتخذ الإنسان المذهب معيارًا للولاء والبراء — كأن يكون شافعيًا فلا يزوّج ابنته من مالكي، ولا يجالسه، ولا يصلي خلف من كان على مذهب غير مذهبه.
+      </div>
+
+      <h3 class="stage-title">محل الاتفاق الثاني: جواز الانتساب اللفظي</h3>
+      <div class="key-point">
+        <span class="mark">✅</span>
+        <div>أن يقول الإنسان عن نفسه: "أنا حنبلي" أو "شافعي" أو "مالكي" أو "حنفي" — هذا <b>انتساب لفظي جائز</b>، ولا يكاد يوجد فيه خلاف، ما دام لا يترتب عليه تعصب.</div>
+      </div>
+
+      <h3 class="stage-title" id="misconception">تصحيح مفهوم شائع</h3>
+      <div class="warning-box">
+        <span class="lbl">⚠️ تصوّر خاطئ منتشر</span>
+        يتورّع بعض الناس عن الانتساب لمذهب فيقول: "أنا على الكتاب والسنة فقط"، متصوّرًا أن الانتساب إلى مذهب فقهي يعني ترك الكتاب والسنة. هذا <b>تصوّر خاطئ تمامًا</b>: فليس هناك "مسار" اسمه الكتاب والسنة يقابله "مسار" آخر مباين له اسمه مسار المذاهب الفقهية.
+      </div>
+      <p>المذاهب الأربعة كلّها بلا استثناء هي <b>فقه للدليل</b>، والتفقّه عليها بمعرفة مسائلها وأدلتها هو بعينه تفقّه في الكتاب والسنة. ومن أثر هذا التصوّر الخاطئ أن يسأل بعض الطلبة: "أيهما أفضل، أن أدرس فقه الدليل أم فقه المذاهب؟" وهذا <b>سؤال فاسد الصياغة من أصله</b>، لأنه مبني على مقدّمة خاطئة، وهي أن هذه المذاهب ليست من فقه الدليل.</p>
+
+      <h3 class="stage-title" id="modern-taassub">ظاهرة معاصرة: التعصب ضد المذاهب</h3>
+      <p>في عصرنا الحاضر خفّ التعصب <b>للمذاهب</b> وقلّ، لكن نشأ عوضًا عنه تعصب <b>ضد المذاهب</b>، وهو لا يقل ذمًّا عن سابقه.</p>
+      <table class="comparison-table">
+        <caption>وجهان لنفس الخطأ: التعصب للمذهب مقابل التعصب ضد المذهب</caption>
+        <thead><tr><th></th><th>التعصب للمذهب (كان شائعًا في الماضي)</th><th>التعصب ضد المذاهب (ظاهرة معاصرة)</th></tr></thead>
+        <tbody>
+          <tr><td>مثال</td><td>هل تصح صلاة الحنفي خلف الشافعي؟</td><td>اعتبار الانتساب لمذهب "ضلالًا"</td></tr>
+          <tr><td>من يقع فيه غالبًا</td><td>عامة الناس، نادرًا عند كبار العلماء</td><td>بعض المعاصرين ممن يدّعون اتباع "الراجح" فقط</td></tr>
+          <tr><td>الحكم</td><td>مذموم</td><td>مذموم بنفس الدرجة</td></tr>
+        </tbody>
+      </table>
+
+      <div class="flow-card">
+        <span class="step-no">١</span>
+        <h4>الصورة الأولى للتعصب ضد المذاهب</h4>
+        <p style="margin:0">اعتبار الانتساب إلى المذاهب الأربعة أمرًا من الضلال، وتصويرها على أنها لا تمثّل الشريعة ولا تمتّ إلى فقه الدليل بصلة، وإنما هي "آراء رجال" فحسب.</p>
+      </div>
+      <div class="flow-card">
+        <span class="step-no">٢</span>
+        <h4>الصورة الثانية للتعصب ضد المذاهب</h4>
+        <p>استنكار اتباع شخص لمذهب معيّن، بحجة: "هل ينزل عليك وحي حتى تلتزم برأي إمام بعينه؟"، بينما يدّعي صاحب هذا الاستنكار نفسه أنه يأخذ "بالراجح" عند مشايخ معاصرين بأعيانهم.</p>
+        <div class="key-point">
+          <span class="mark">🔍</span>
+          <div><b>المفارقة:</b> هذا في حقيقته تقليد أيضًا، لكنه <b>تقليد أفراد معاصرين</b> بدل <b>تقليد مذهب مُجمَع على جواز تقليده</b>. فلا فرق حقيقة بين الأخذ بالراجح في مذهب أبي حنيفة أو أحمد أو مالك، وبين الأخذ بفتوى مشايخ معيّنين — كلاهما من باب التقليد.</div>
+        </div>
+      </div>
+      <div class="action-card">
+        <span class="lbl">مثال توضيحي: "الدرر البهية" للشوكاني</span>
+        من ينصح طالب العلم بترك المتون المذهبية، ودراسة متن غير مذهبي مثل "الدرر البهية" للشوكاني (وهو متن مجرّد عن الأدلة، مجرد مسائل فقهية) — فهو في الحقيقة يدعوه إلى التمذهب بمذهب آخر، وهو <b>مذهب الشوكاني نفسه</b>. فصاحب هذه النصيحة ترك التمذهب بمذاهب الأئمة الأربعة المُجمَع على جواز تقليدها، وذهب إلى التمذهب بمذهب فرد معاصر له نفس الإشكال الذي أنكره.
+      </div>
+
+      <div class="note-box">
+        ℹ️ ينتهي المتوفر من هذا الدرس هنا؛ إذ يشير المحاضر إلى أنه سيتحدث عن "صور التعصب ضد المذاهب" في "الفقرة الثانية"، لكن التسجيل المتاح ينقطع دون استكمال هذا التفصيل.
+      </div>
+    
+      <div class="quiz-block" data-quiz="sec2"></div>
+    </section>
+
+    <section class="block" id="khatima">
+      <div class="section-head">
+        <div class="icon">🌙</div>
+        <div>
+          <div class="kicker">خاتمة</div>
+          <h2>خلاصة الدرسين</h2>
+        </div>
+      </div>
+      <p>يتضح من مسيرة المذهب الحنبلي عبر مراحله الأربع (التأسيس، فالتقعيد، فالتحرير والتنقيح، فالاستقرار) أن كل جيل من علمائه كان يبني على ما قبله بمنهجية علمية دقيقة: جمعٌ، فاختصارٌ، فترجيحٌ، فاستقرارٌ. وهذا بعينه هو معنى أن يكون المذهب الفقهي <b>فقهًا للدليل</b> لا مجرد "آراء رجال" — وهو ما يؤكده الدرس الثاني حين يُقرّر أن الانتساب لمذهب معيّن، بلا تعصب، هو أخذ بثمرة قرون من التحرير والتدقيق، لا هروب من الكتاب والسنة.</p>
+    
+      <div class="quiz-block" data-quiz="khatima"></div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="dua">اللهم اجعل ما تعلّمناه علمًا نافعًا، ولوجهك خالصًا، وصلّى الله وسلّم على نبينا محمد وعلى آله وصحبه أجمعين</div>
+    <button class="btn-anki" onclick="downloadAnkiDeck()" id="anki">🗂️ حمّل بطاقات أنكي</button>
+    <p class="foot-links" style="margin-top:22px">سلسلة مدخل إلى علم الفقه — الشيخ عامر بهجت · المحاضرتان 4 و7</p>
+  </div>
+</footer>
+
+<script>
+const ankiCards = [
+  ["من هو مؤسس المذهب الحنبلي؟", "الإمام أحمد بن حنبل رحمه الله."],
+  ["ما الكتاب المرجعي لمعرفة تراجم أصحاب الإمام أحمد وتلاميذه؟", "طبقات الحنابلة لابن أبي يعلى."],
+  ["اذكر ثلاثة من أشهر أصحاب الإمام أحمد الذين نقلوا مسائله.", "أبو داود السجستاني، صالح بن الإمام أحمد، عبدالله بن الإمام أحمد (ومنهم أيضًا الكوسج وابن هانئ وحرب الكرماني)."],
+  ["من الذي جمع كتب مسائل الإمام أحمد في كتاب واحد، وما اسم كتابه؟", "الخلّال، وسمّاه «الجامع لعلوم الإمام أحمد»."],
+  ["ما حال كتاب «الجامع لعلوم الإمام أحمد» للخلّال اليوم؟", "أكثره مفقود، ولم يُطبع منه إلا أجزاء يسيرة مثل الترجّل والوقوف."],
+  ["من قام بجهد معاصر لإعادة جمع تراث الإمام أحمد تحت نفس الاسم؟", "الأستاذ خالد الرباط مع مجموعة من الباحثين."],
+  ["من مؤلف «مختصر الخرقي»، وما أهميته التاريخية؟", "الإمام الخرقي، وكان الكتاب المعتمد في تدريس فقه الحنابلة إلى عصر ابن قدامة."],
+  ["من صنّف كتاب «تهذيب الأجوبة» في مرحلة التقعيد؟", "الإمام الحسن بن حامد."],
+  ["من الذي بدأ دور التحرير والتنقيح في المذهب الحنبلي؟", "القاضي أبو يعلى رحمه الله."],
+  ["إذا وردت عبارة «قال القاضي» في كتب الحنابلة، فمن المقصود بها؟", "القاضي أبو يعلى."],
+  ["اذكر أهم كتابين للقاضي أبي يعلى.", "الروايتين والوجهين، والعدة في أصول الفقه."],
+  ["من هو تلميذ القاضي أبي يعلى، وما أشهر كتبه؟", "أبو الخطاب الكلوذاني، ومن كتبه: الانتصار، والتمهيد في أصول الفقه."],
+  ["من هو ابن قدامة المقدسي، ومتى توفي؟", "موفق الدين عبدالله بن قدامة المقدسي، المتوفى سنة 620هـ."],
+  ["ما كتاب ابن قدامة في أصول الفقه المقرر في كليات الشريعة بالسعودية؟", "روضة الناظر وجنة المناظر."],
+  ["رتّب كتب ابن قدامة الفقهية الأربعة من الأسهل إلى الأوسع.", "عمدة الفقه، ثم المقنع، ثم الكافي، ثم المغني."],
+  ["ما ميزة كتاب «عمدة الفقه» لابن قدامة من الناحية المنهجية؟", "ألّفه على قول واحد بلا ذكر خلاف، مراعاة لقاعدة التدرّج مع المبتدئين."],
+  ["ما الفرق بين كتابَي «الكافي» و«المغني» لابن قدامة؟", "الكافي يذكر الأدلة ويتوسع في روايات المذهب، والمغني يتوسع أكثر ويذكر أقوال المذاهب الأخرى (الفقه المقارن)."],
+  ["ما قاعدة التدرّج في طلب العلم كما وردت في المحاضرة؟", "ألا يُعطى المبتدئ كتابًا موسعًا بالخلاف مباشرة، بل يُبدأ معه بقول واحد ثم يُرتقى به تدريجيًا."],
+  ["من شرح «المقنع» لابن قدامة في «الشرح الكبير»؟", "عبدالرحمن بن قدامة، ابن أخي المؤلف."],
+  ["من هو «المجد» عند الحنابلة، وما أشهر كتبه؟", "مجد الدين ابن تيمية (جد شيخ الإسلام)، صاحب كتاب المحرر في الفقه، وكتاب المنتقى في الحديث."],
+  ["من شرح كتاب «المنتقى» (منتقى الأخبار) لمجد الدين ابن تيمية؟", "الشوكاني، في كتابه نيل الأوطار."],
+  ["اذكر أفراد بيت ابن تيمية الثلاثة العلماء.", "الجد مجد الدين صاحب المحرر، الابن عبدالحليم، والحفيد شيخ الإسلام أحمد بن عبدالحليم بن عبدالسلام ابن تيمية الحرّاني."],
+  ["ما أشهر كتب ابن مفلح الجدّ؟", "كتاب الفروع، وكتاب الآداب الشرعية."],
+  ["من ألّف كتاب «المبدع» شرح المقنع؟", "ابن مفلح الحفيد."],
+  ["من هو علاء الدين المرداوي، وبماذا يُلقّب؟", "قاضٍ حنبلي يُلقَّب بالمصحح والمرجّح والمنقّح للمذهب."],
+  ["ما كتاب الإنصاف للمرداوي، وما فائدته الأساسية؟", "كتاب يستوعب خلاصة كتب الحنابلة قبله، ويذكر كل الروايات والأقوال في كل مسألة مع من رجّحها؛ فهو المرجع لمعرفة روايات وأوجه المذهب."],
+  ["من ألّف كتاب «الإقناع لطالب الانتفاع»، وما ميزته؟", "موسى الحجاوي، وهو أوسع متن في المذهب الحنبلي (4 مجلدات)."],
+  ["ما أشهر متن ألّفه الحجاوي واعتُمد في التدريس على نطاق واسع؟", "زاد المستقنع."],
+  ["من شرح «زاد المستقنع» في «الروض المربع»، وأين يُدرَّس هذا الشرح؟", "منصور البهوتي، ويُدرَّس في أغلب كليات الشريعة بالسعودية."],
+  ["اذكر شرحين معاصرين على زاد المستقنع.", "الشرح الممتع لابن عثيمين، وكلمات السداد لفيصل المبارك (أو شرح الفوزان، أو السلسبيل لصالح البليهي)."],
+  ["من مؤلف كتاب «المنتهى» (منتهى الإرادات)، ومن أين هو؟", "ابن النجار الفتوحي، وهو من علماء مصر."],
+  ["ما القاعدة التي تحدد «المذهب المعتمد» عند اجتماع الإقناع والمنتهى على قول؟", "إذا اتفق الإقناع والمنتهى على قول فهو المذهب المعتمد بلا نزاع."],
+  ["من جمع بين الإقناع والمنتهى في كتاب واحد، وما اسمه؟", "مرعي الكرمي، في كتاب غاية المنتهى."],
+  ["ما الكتاب الآخر الشهير لمرعي الكرمي المعتمد في حلقات العلم؟", "دليل الطالب لنيل المطالب."],
+  ["من هو «شارح المذهب» الحنبلي الأكثر خدمة له بالشروح؟", "الشيخ منصور البهوتي."],
+  ["اذكر ثلاثة من مؤلفات البهوتي.", "كشاف القناع (شرح الإقناع)، الروض المربع (شرح زاد المستقنع)، ومتن عمدة الطالب."],
+  ["تنبيه: ما الفرق بين الكتابين اللذين يحملان اسم «نيل المآرب» في كتب الحنابلة؟", "أحدهما للتغلبي وهو شرح على دليل الطالب، والآخر للشيخ البسام وهو تهذيب لشرح هداية الراغب على متن عمدة الطالب."],
+  ["ما الفرق بين ميزتَي «زاد المستقنع» و«دليل الطالب» كما ذكر المحاضر؟", "زاد المستقنع أوسع وأكثر فروعًا ومسائل، ودليل الطالب أكثر ترتيبًا وأسهل حفظًا."],
+  ["إذا أردت الوقوف على نصوص الإمام أحمد نفسه في مسألة معيّنة، فأي كتاب ترجع إليه؟", "الجامع لعلوم الإمام أحمد."],
+  ["إذا أردت معرفة روايات وأوجه المذهب المتعددة في مسألة، فأي كتاب ترجع إليه؟", "الإنصاف للمرداوي."],
+  ["إذا أردت الوقوف على أدلة المذهب وردّه على أدلة المذاهب الأخرى، فأي كتب ترجع إليها؟", "المغني لابن قدامة، والشرح الكبير لابن أبي عمر، والممتع لابن المنجّا."],
+  ["ما تعريف «التمذهب» في اصطلاح العلماء؟", "انتساب طالب العلم إلى مذهب فقهي معيّن، والاعتماد على أقواله وترجيحاته."],
+  ["ما المقصود بـ«التعصب المذموم» للمذهب؟", "أن يتخذ الإنسان المذهب معيارًا للولاء والبراء، فيوالي أهل مذهبه ويعادي غيرهم."],
+  ["هل الانتساب اللفظي لمذهب فقهي (كأن يقول: أنا حنبلي) جائز؟", "نعم، جائز ولا خلاف فيه ما لم يترتب عليه تعصب."],
+  ["ما الخطأ في تصوّر أن هناك «مسار الكتاب والسنة» مقابل «مسار المذاهب الفقهية»؟", "تصوّر خاطئ تمامًا، لأن المذاهب الأربعة كلها بلا استثناء فقه للدليل، والتفقّه بها تفقّه في الكتاب والسنة."],
+  ["لماذا يُعدّ سؤال «هل أدرس فقه الدليل أم فقه المذاهب؟» فاسد الصياغة؟", "لأنه مبني على افتراض خاطئ بأن المذاهب ليست من فقه الدليل، وهذا غير صحيح."],
+  ["ما الظاهرة المعاصرة التي حلّت محل التعصب للمذاهب في زماننا؟", "التعصب ضد المذاهب."],
+  ["ما الصورة الأولى للتعصب ضد المذاهب في العصر الحاضر؟", "اعتبار الانتساب للمذاهب ضلالًا، وأنها لا تمثّل الشريعة بل مجرد آراء رجال."],
+  ["ما الصورة الثانية للتعصب ضد المذاهب، وما وجه التناقض فيها؟", "استنكار اتباع مذهب معيّن بحجة اتباع الراجح، مع أن المستنكِر نفسه يقلّد مشايخ معاصرين بأعيانهم؛ فهو وقع في تقليد أفراد بدل تقليد مذهب مُجمَع على جواز تقليده."],
+  ["ما المقصود بمثال «الدرر البهية» للشوكاني في سياق نقد التعصب ضد المذاهب؟", "من يدعو لترك المتون المذهبية ودراسة الدرر البهية (وهو مجرد مسائل بلا أدلة) فهو في الحقيقة يدعو للتمذهب بمذهب فرد (الشوكاني) بدل مذاهب الأئمة الأربعة."],
+  ["هل التعصب للمذهب والتعصب ضد المذهب سواء في الحكم؟", "نعم، كلاهما تعصب مذموم عند العلماء."]
+];
+
+function downloadAnkiDeck() {
+  let content = ankiCards.map(([q, a]) => {
+    const clean = s => s.replace(/\t/g, ' ').replace(/\r?\n/g, '<br>');
+    return `${clean(q)}\t${clean(a)}`;
+  }).join('\n');
+  const BOM = '\uFEFF';
+  const blob = new Blob([BOM + content], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'بطاقات_أنكي_مراحل_المذهب_الحنبلي_وحكم_التمذهب.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+</script>
+
+
+<script>
+window.quizData = {
+ "sec1": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما المراحل الأربع التي مرّ بها المذهب الحنبلي بالترتيب؟",
+    "options": [
+     "التقعيد، ثم التأسيس، ثم الاستقرار، ثم التحرير",
+     "التأسيس، ثم التقعيد، ثم التحرير والتنقيح، ثم الاستقرار",
+     "الجمع، ثم الشرح، ثم الاختصار، ثم النقد"
+    ],
+    "correct": 1,
+    "feedback": "كل مرحلة أنتجت طبقة من العلماء والكتب التي بُني عليها ما بعدها: تأسيس بالإمام أحمد ونقل تلاميذه، ثم اختصار في متون، ثم تحرير الراجح، ثم استقرار."
+   },
+   {
+    "type": "mcq",
+    "q": "من جمع «كتب المسائل» المتفرقة عن الإمام أحمد في كتاب واحد؟",
+    "options": [
+     "الخرقي في مختصره",
+     "الخلّال في «الجامع لعلوم الإمام أحمد»",
+     "ابن قدامة في المغني"
+    ],
+    "correct": 1,
+    "feedback": "والكتاب اليوم مفقود في أغلبه، ولم يُطبع منه إلا أجزاء يسيرة كـ«الترجّل» و«الوقوف». وقد قام الأستاذ خالد الرباط مع باحثين بإعادة جمع تراث الإمام أحمد في عمل معاصر بالاسم نفسه."
+   },
+   {
+    "type": "mcq",
+    "q": "فائدة اصطلاحية: إذا ورد في كتب الحنابلة «قال القاضي» فمن المراد؟",
+    "options": [
+     "القاضي أبو يوسف",
+     "القاضي أبو يعلى",
+     "القاضي عياض"
+    ],
+    "correct": 1,
+    "feedback": "القاضي أبو يعلى رحمه الله، صاحب «الروايتين والوجهين» و«العدة في أصول الفقه»، وهو من بدأت على يديه مرحلة التحرير والتنقيح."
+   },
+   {
+    "type": "reflect",
+    "q": "لابن قدامة أربعة كتب فقهية متدرجة. ما هي بالترتيب من الأسهل إلى الأوسع؟ وما ميزة كل منها؟",
+    "answer": "١) عمدة الفقه: للمبتدئين، سهل مختصر على قول واحد بلا ذكر خلاف. ٢) المقنع: فوق المبتدئين، يذكر روايتين غالبًا داخل المذهب. ٣) الكافي: مرحلة أعلى، يذكر الأدلة ويتوسّع في الروايات. ٤) المغني: في الفقه المقارن، يذكر أقوال المذاهب الأخرى. وله في الأصول «روضة الناظر وجنة المناظر»."
+   }
+  ]
+ },
+ "sec2": {
+  "items": [
+   {
+    "type": "mcq",
+    "q": "ما التعصب المذموم المتفق على ذمّه؟",
+    "options": [
+     "أن يقول الإنسان: أنا حنبلي أو شافعي",
+     "أن يتخذ المذهب معيارًا للولاء والبراء، فلا يزوّج ولا يجالس ولا يصلي خلف من خالف مذهبه",
+     "أن يدرس مذهبًا واحدًا فقط"
+    ],
+    "correct": 1,
+    "feedback": "أما مجرد الانتساب اللفظي («أنا حنبلي») فجائز ولا يكاد يوجد فيه خلاف، ما دام لا يترتب عليه تعصب."
+   },
+   {
+    "type": "mcq",
+    "q": "بعض الناس يقول: «أنا على الكتاب والسنة فقط» تورّعًا عن الانتساب لمذهب. ما تقويم هذا؟",
+    "options": [
+     "موقف صحيح ومحمود",
+     "تصوّر خاطئ؛ فليس هناك مسار اسمه الكتاب والسنة يقابله مسار مباين اسمه المذاهب",
+     "لا حكم فيه"
+    ],
+    "correct": 1,
+    "feedback": "المذاهب الأربعة كلّها بلا استثناء فقهٌ للدليل، والتفقّه عليها بمعرفة مسائلها وأدلتها هو بعينه تفقّه في الكتاب والسنة."
+   },
+   {
+    "type": "mcq",
+    "q": "سؤال شائع: «أيهما أفضل، أن أدرس فقه الدليل أم فقه المذاهب؟» — ما الحكم على هذا السؤال؟",
+    "options": [
+     "سؤال وجيه له جواب مفصّل",
+     "سؤال فاسد الصياغة من أصله؛ لأنه مبني على مقدّمة خاطئة أن المذاهب ليست من فقه الدليل",
+     "سؤال يجاب عنه بأن فقه الدليل أفضل"
+    ],
+    "correct": 1,
+    "feedback": "فالمقدّمة نفسها باطلة — المذاهب هي فقه للدليل، فلا معنى للمقابلة بينهما أصلًا."
+   },
+   {
+    "type": "reflect",
+    "q": "ما «التعصب ضد المذاهب»؟ ولماذا وُصف بأنه لا يقل ذمًّا عن التعصب للمذهب؟",
+    "answer": "هو ظاهرة معاصرة لها صورتان: اعتبار الانتساب للمذاهب ضلالًا وأنها مجرد «آراء رجال»، واستنكار اتباع شخص لمذهب بحجة «هل ينزل عليك وحي؟» — بينما يدّعي المستنكر نفسه أنه يأخذ بـ«الراجح» عند مشايخ معاصرين بأعيانهم. والمفارقة أن هذا في حقيقته تقليد أيضًا، لكنه تقليد أفراد معاصرين بدل تقليد مذهب مُجمَع على جواز تقليده."
+   }
+  ]
+ },
+ "khatima": {
+  "items": [
+   {
+    "type": "reflect",
+    "q": "كيف تربط مسيرة المذهب الحنبلي عبر مراحله الأربع بمسألة حكم التمذهب؟",
+    "answer": "كل جيل من علماء المذهب كان يبني على ما قبله بمنهجية دقيقة: جمعٌ، فاختصارٌ، فترجيحٌ، فاستقرارٌ. وهذا بعينه معنى أن يكون المذهب فقهًا للدليل لا مجرد «آراء رجال» — فالانتساب لمذهب معيّن، بلا تعصب، هو أخذ بثمرة قرون من التحرير والتدقيق، لا هروب من الكتاب والسنة."
+   }
+  ]
+ }
+};
+</script>
+
+<script>
+/* ===== تثبيت الفهم: محرك الرندر ===== */
+(function(){
+  function renderQuizBlocks(){
+    document.querySelectorAll('.quiz-block[data-quiz]').forEach(function(container){
+      var key = container.getAttribute('data-quiz');
+      var data = (window.quizData || {})[key];
+      if(!data || container.dataset.rendered) return;
+      container.dataset.rendered = '1';
+
+      var title = document.createElement('div');
+      title.className = 'quiz-block-title';
+      title.textContent = '\uD83E\uDDE0 تثبيت الفهم';
+      container.appendChild(title);
+
+      data.items.forEach(function(item){
+        var itemEl = document.createElement('div');
+        itemEl.className = 'quiz-item';
+
+        if(item.type === 'mcq'){
+          var qEl = document.createElement('p');
+          qEl.className = 'quiz-q';
+          qEl.textContent = item.q;
+          itemEl.appendChild(qEl);
+
+          var optsWrap = document.createElement('div');
+          optsWrap.className = 'quiz-options';
+
+          var feedbackEl = document.createElement('div');
+          feedbackEl.className = 'quiz-feedback';
+          feedbackEl.textContent = item.feedback || '';
+
+          item.options.forEach(function(optText, optIdx){
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'quiz-opt';
+            btn.textContent = optText;
+            btn.addEventListener('click', function(){
+              var allBtns = optsWrap.querySelectorAll('.quiz-opt');
+              allBtns.forEach(function(b){ b.classList.add('disabled'); });
+              if(optIdx === item.correct){
+                btn.classList.add('correct');
+              } else {
+                btn.classList.add('wrong');
+                if(allBtns[item.correct]) allBtns[item.correct].classList.add('correct');
+              }
+              feedbackEl.classList.add('show');
+            });
+            optsWrap.appendChild(btn);
+          });
+
+          itemEl.appendChild(optsWrap);
+          itemEl.appendChild(feedbackEl);
+
+        } else if(item.type === 'reflect'){
+          var wrap = document.createElement('div');
+          wrap.className = 'quiz-reflect';
+
+          var qText = document.createElement('p');
+          qText.className = 'quiz-reflect-q';
+          qText.textContent = '\uD83D\uDCAD ' + item.q;
+          wrap.appendChild(qText);
+
+          var revealBtn = document.createElement('button');
+          revealBtn.type = 'button';
+          revealBtn.className = 'quiz-reveal-btn';
+          revealBtn.textContent = 'إظهار الإجابة';
+
+          var answerEl = document.createElement('div');
+          answerEl.className = 'quiz-answer';
+          answerEl.textContent = item.answer;
+
+          revealBtn.addEventListener('click', function(){
+            answerEl.classList.toggle('show');
+            revealBtn.textContent = answerEl.classList.contains('show') ? 'إخفاء الإجابة' : 'إظهار الإجابة';
+          });
+
+          wrap.appendChild(revealBtn);
+          wrap.appendChild(answerEl);
+          itemEl.appendChild(wrap);
+        }
+
+        container.appendChild(itemEl);
+      });
+    });
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', renderQuizBlocks);
+  } else {
+    renderQuizBlocks();
+  }
+})();
+</script>
+
+
+<style>
+  #ilm-custom-nav{
+    max-width:700px; margin:36px auto 24px; padding:20px 22px;
+    background:#fbfaf4; border:1px solid #d3d8ca; border-radius:14px;
+    font-family:'Tajawal','IBM Plex Sans Arabic','Segoe UI',Tahoma,sans-serif;
+    direction:rtl; color:#2b2a24;
+  }
+  #ilm-custom-nav .icn-row{
+    display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:14px;
+  }
+  #ilm-custom-nav .icn-link{
+    flex:1 1 auto; min-width:150px; text-align:center; text-decoration:none;
+    padding:10px 14px; border:1.5px solid #1f4a3d; border-radius:999px;
+    color:#1f4a3d; font-size:13.5px; font-weight:600; transition:background .15s,color .15s;
+  }
+  #ilm-custom-nav .icn-link:hover{ background:#1f4a3d; color:#fff; }
+  #ilm-custom-nav .icn-link.icn-disabled{
+    opacity:.4; pointer-events:none; border-color:#b3ac9e; color:#6a6a5b;
+  }
+  #ilm-custom-nav .icn-jump label{
+    display:block; font-size:12.5px; color:#6a6a5b; margin-bottom:6px;
+  }
+  #ilm-custom-nav select{
+    width:100%; padding:10px 12px; border:1px solid #d3d8ca; border-radius:8px;
+    background:#fff; color:#2b2a24; font-family:inherit; font-size:14px; cursor:pointer;
+  }
+</style>
+
+<div id="ilm-custom-nav">
+  <div class="icn-row">
+    <a class="icn-link" href="05.html">→ المحاضرة 3</a>
+    <a class="icn-link" href="07.html">المحاضرة 5 ←</a>
+  </div>
+  <div class="icn-jump">
+    <label for="ilm-custom-jump">الانتقال إلى محاضرة أخرى من «مدخل إلى علم الفقه»:</label>
+    <select id="ilm-custom-jump" onchange="if(this.value) window.location.href=this.value;">
+      <option value="01.html">1. المحاضرة 1</option>
+<option value="02.html">2. المحاضرة 2</option>
+<option value="05.html">3. المحاضرة 3</option>
+<option value="06.html" selected>4. المحاضرة 4</option>
+<option value="07.html">5. المحاضرة 5</option>
+<option value="08.html">6. المحاضرة 6</option>
+<option value="09.html">7. المحاضرة 7</option>
+    </select>
+  </div>
+</div>
+
+<script type="module" src="../../../firebase-sync-manhaj.js"></script>
+<script src="../../../ilm-track.js"></script>
+<script src="../../../data.js"></script>
+<script src="../../../ilm-nav.js"></script>
+<script>
+(function(){
+  var box = document.getElementById('ilm-completion-box');
+  var cb = box ? box.querySelector('input[data-lecture-id]') : null;
+  if(!cb) return;
+  var lid = cb.getAttribute('data-lecture-id');
+  function render(done){
+    cb.checked = done;
+    box.classList.toggle('done', done);
+  }
+  if(window.IlmTrack){
+    window.IlmTrack.ready.then(function(){ render(window.IlmTrack.isDone(lid)); });
+  }
+  cb.addEventListener('change', function(){
+    if(window.IlmTrack) window.IlmTrack.setDone(lid, cb.checked);
+    render(cb.checked);
+  });
+})();
+</script>
+<script src="../../../ilm-highlight.js" data-lecture-id="stage1_fiqh_06"></script>
+</body>
+</html>
