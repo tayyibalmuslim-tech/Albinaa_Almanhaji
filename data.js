@@ -127,8 +127,8 @@ const SITE_DATA = {
           { id: "stage1_hadith_05", n: 5, day: 39, title: "المجلس الثاني (2/2)", file: "lectures/02.html?p=stage1_hadith_05" }
         ]},
         { key: "quran-sciences", name: "مدخل إلى علوم القرآن", sheikh: "أحمد السيد", tags: ["مداخل_العلوم"], lectures: [
-          { id: "stage1_quran-sciences_01", n: 1, day: 17, title: "المحاضرة 1", file: "lectures/01.html" },
-          { id: "stage1_quran-sciences_02", n: 2, day: 22, title: "المحاضرة 2", file: "lectures/02.html" }
+          { id: "stage1_quran-sciences_01_p1", n: 1, day: 17, title: "المدخل إلى علوم القرآن والتفسير — الجزء الأول", file: "lectures/01.html?p=1" },
+          { id: "stage1_quran-sciences_01_p2", n: 2, day: 22, title: "المدخل إلى علوم القرآن والتفسير — الجزء الثاني", file: "lectures/01.html?p=2" }
         ]},
         { key: "aqeedah", name: "مدخل إلى علم العقيدة", sheikh: "أحمد السيد", tags: ["مداخل_العلوم"], lectures: [
           { id: "stage1_aqeedah_01", n: 1, day: 23, title: "محاضرة كاملة", file: "lectures/01.html" }
@@ -190,12 +190,12 @@ const SITE_DATA = {
         { day: 14, kind: "rest", id: "stage1_day_14", title: "استدراك وراحة" },
         { day: 15, kind: "lecture", lectureId: "stage1_fiqh_08", subjectKey: "fiqh", subjectName: "مدخل إلى علم الفقه", title: "المحاضرة 6", link: "fiqh/lectures/08.html" },
         { day: 16, kind: "lecture", lectureId: "stage1_fiqh_09", subjectKey: "fiqh", subjectName: "مدخل إلى علم الفقه", title: "المحاضرة 7", link: "fiqh/lectures/09.html" },
-        { day: 17, kind: "lecture", lectureId: "stage1_quran-sciences_01", subjectKey: "quran-sciences", subjectName: "مدخل إلى علوم القرآن", title: "المحاضرة 1", link: "quran-sciences/lectures/01.html" },
+        { day: 17, kind: "lecture", lectureId: "stage1_quran-sciences_01_p1", subjectKey: "quran-sciences", subjectName: "مدخل إلى علوم القرآن", title: "المدخل إلى علوم القرآن والتفسير — الجزء الأول", link: "quran-sciences/lectures/01.html?p=1" },
         { day: 18, kind: "lecture", lectureId: "stage1_sharaya-wasael-maqasid_01", subjectKey: "sharaya-wasael-maqasid", subjectName: "العلوم الشرعية بين الوسائل والمقاصد", title: "محاضرة كاملة", link: "sharaya-wasael-maqasid/lectures/01.html" },
         { day: 19, kind: "lecture", lectureId: "stage1_raqaeq-al-quran_01", subjectKey: "raqaeq-al-quran", subjectName: "رقائق القرآن", title: "من البداية إلى ص 33", link: "raqaeq-al-quran/lectures/01.html" },
         { day: 20, kind: "lecture", lectureId: "stage1_riyad-al-saliheen_03", subjectKey: "riyad-al-saliheen", subjectName: "شرح رياض الصالحين", title: "باب التوبة 1", link: "riyad-al-saliheen/lectures/03.html" },
         { day: 21, kind: "rest", id: "stage1_day_21", title: "استدراك وراحة" },
-        { day: 22, kind: "lecture", lectureId: "stage1_quran-sciences_02", subjectKey: "quran-sciences", subjectName: "مدخل إلى علوم القرآن", title: "المحاضرة 2", link: "quran-sciences/lectures/02.html" },
+        { day: 22, kind: "lecture", lectureId: "stage1_quran-sciences_01_p2", subjectKey: "quran-sciences", subjectName: "مدخل إلى علوم القرآن", title: "المدخل إلى علوم القرآن والتفسير — الجزء الثاني", link: "quran-sciences/lectures/01.html?p=2" },
         { day: 23, kind: "lecture", lectureId: "stage1_aqeedah_01", subjectKey: "aqeedah", subjectName: "مدخل إلى علم العقيدة", title: "محاضرة كاملة (١)", link: "aqeedah/lectures/01.html" },
         { day: 24, kind: "lecture", lectureId: "stage1_aqeedah_01", subjectKey: "aqeedah", subjectName: "مدخل إلى علم العقيدة", title: "محاضرة كاملة (٢)", link: "aqeedah/lectures/01.html" },
         { day: 25, kind: "lecture", lectureId: "stage1_raqaeq-al-quran_02", subjectKey: "raqaeq-al-quran", subjectName: "رقائق القرآن", title: "من 34 إلى 53", link: "raqaeq-al-quran/lectures/02.html" },
