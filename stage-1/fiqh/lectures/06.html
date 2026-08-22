@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المدخل إلى الفقه الإسلامي — الدروس 8 · 9 · 10 | العصر الحاضر ودعوى التجديد</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f7f3ea;
+  --paper-2:#fffdf8;
+  --ink:#1c2430;
+  --ink-soft:#4a5568;
+  --muted:#7a8494;
+  --rule:#ddd4c2;
+  --rule-soft:#eae3d5;
+
+  --s1:#0d5c63;      /* الدرس 8 — أزرق زيتي */
+  --s1-bg:#e6f0ef;
+  --s2:#a2582b;      /* الدرس 9 — نحاسي */
+  --s2-bg:#f7ebe1;
+  --s3:#7b2d3b;      /* الدرس 10 — عنّابي */
+  --s3-bg:#f7e8ea;
+
+  --gold:#b28e42;
+  --warn:#8a5a00;
+  --warn-bg:#fdf3dc;
+  --fix:#1f6b4a;
+  --fix-bg:#e6f2eb;
+
+  --maxw:800px;
+  --radius:4px;
+  --shadow:0 1px 3px rgba(28,36,48,.07), 0 8px 24px rgba(28,36,48,.05);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; padding:0;
+  background:var(--paper);
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(178,142,66,.05) 0, transparent 42%),
+    radial-gradient(circle at 88% 92%, rgba(13,92,99,.045) 0, transparent 45%);
+  color:var(--ink);
+  font-family:'Cairo',system-ui,sans-serif;
+  font-size:17.5px; line-height:1.95;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ============ شريط علوي ============ */
+.topbar{
+  position:sticky; top:0; z-index:60;
+  background:rgba(247,243,234,.93);
+  backdrop-filter:blur(9px);
+  border-bottom:1px solid var(--rule);
+}
+.topbar-in{
+  max-width:var(--maxw); margin:0 auto; padding:9px 20px;
+  display:flex; align-items:center; gap:12px; justify-content:space-between;
+}
+.tb-title{font-size:13.5px; font-weight:700; color:var(--ink-soft); letter-spacing:.2px}
+.tb-title span{color:var(--muted); font-weight:400}
+.tb-links{display:flex; gap:6px; flex-wrap:wrap}
+.tb-links a{
+  font-size:12px; font-weight:600; text-decoration:none;
+  padding:4px 9px; border-radius:999px; border:1px solid var(--rule);
+  color:var(--ink-soft); background:var(--paper-2); white-space:nowrap;
+}
+.tb-links a:hover{border-color:var(--gold); color:var(--gold)}
+.progress{height:2px; background:var(--gold); width:0%; transition:width .12s linear}
+
+/* ============ الغلاف ============ */
+.cover{
+  max-width:var(--maxw); margin:0 auto; padding:56px 22px 34px; text-align:center;
+}
+.kicker{
+  display:inline-block; font-size:12.5px; letter-spacing:2.5px; font-weight:700;
+  color:var(--gold); border:1px solid var(--gold); border-radius:999px;
+  padding:5px 16px; margin-bottom:22px;
+}
+.cover h1{
+  font-family:'Amiri',serif; font-weight:700;
+  font-size:42px; line-height:1.35; margin:0 0 10px;
+  color:var(--ink);
+}
+.cover h2{
+  font-family:'Cairo',sans-serif; font-weight:400; font-size:18px;
+  color:var(--ink-soft); margin:0 0 26px; line-height:1.7;
+}
+.rule-orn{
+  display:flex; align-items:center; justify-content:center; gap:12px; margin:26px 0;
+}
+.rule-orn i{display:block; height:1px; width:72px; background:var(--rule)}
+.rule-orn b{color:var(--gold); font-size:15px}
+.chips{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-bottom:26px}
+.chip{
+  font-size:12.5px; font-weight:600; padding:5px 13px; border-radius:999px;
+  background:var(--paper-2); border:1px solid var(--rule); color:var(--ink-soft);
+}
+.chip.c1{color:var(--s1); border-color:var(--s1); background:var(--s1-bg)}
+.chip.c2{color:var(--s2); border-color:var(--s2); background:var(--s2-bg)}
+.chip.c3{color:var(--s3); border-color:var(--s3); background:var(--s3-bg)}
+
+.btn-dl{
+  display:inline-flex; align-items:center; gap:9px;
+  background:var(--ink); color:#fff; border:none; cursor:pointer;
+  font-family:'Cairo',sans-serif; font-weight:700; font-size:14.5px;
+  padding:12px 24px; border-radius:var(--radius); box-shadow:var(--shadow);
+  transition:transform .15s, background .15s;
+}
+.btn-dl:hover{background:var(--gold); transform:translateY(-1px)}
+
+/* ============ الحاوية ============ */
+main{max-width:var(--maxw); margin:0 auto; padding:0 22px 60px}
+
+/* ============ الفهرس ============ */
+.toc{
+  background:var(--paper-2); border:1px solid var(--rule);
+  border-radius:var(--radius); padding:24px 26px; margin:30px 0 40px;
+  box-shadow:var(--shadow);
+}
+.toc h3{
+  margin:0 0 14px; font-family:'Amiri',serif; font-size:23px; color:var(--ink);
+  border-bottom:1px solid var(--rule-soft); padding-bottom:10px;
+}
+.toc ol{margin:0; padding-inline-start:0; list-style:none; counter-reset:t}
+.toc li{margin:0 0 6px; font-size:15.5px}
+.toc a{text-decoration:none; color:var(--ink-soft); display:block; padding:5px 0; border-bottom:1px dotted var(--rule-soft)}
+.toc a:hover{color:var(--gold)}
+.toc a b{font-family:'Amiri',serif; margin-left:8px}
+.toc .l1 a b{color:var(--s1)} .toc .l2 a b{color:var(--s2)} .toc .l3 a b{color:var(--s3)}
+.toc .sub{padding-inline-start:26px; font-size:14px}
+.toc .sub a{border-bottom:none; padding:2px 0; color:var(--muted)}
+
+/* ============ الأقسام ============ */
+.section{margin:0 0 20px; scroll-margin-top:70px}
+.sec-head{
+  margin:56px 0 30px; padding:0;
+  border-top:3px double var(--rule); padding-top:30px;
+}
+.sec-badge{
+  display:inline-flex; align-items:center; gap:10px;
+  font-size:12.5px; font-weight:700; letter-spacing:1px;
+  padding:5px 14px; border-radius:999px; margin-bottom:14px;
+}
+.sec-head h2{
+  font-family:'Amiri',serif; font-weight:700; font-size:33px; line-height:1.4;
+  margin:0 0 8px;
+}
+.sec-head p{margin:0; color:var(--muted); font-size:15px}
+
+.s1 .sec-badge{background:var(--s1-bg); color:var(--s1)}
+.s1 .sec-head h2{color:var(--s1)}
+.s2 .sec-badge{background:var(--s2-bg); color:var(--s2)}
+.s2 .sec-head h2{color:var(--s2)}
+.s3 .sec-badge{background:var(--s3-bg); color:var(--s3)}
+.s3 .sec-head h2{color:var(--s3)}
+
+h3.sub{
+  font-family:'Cairo',sans-serif; font-weight:700; font-size:23px;
+  margin:44px 0 14px; line-height:1.6; position:relative; padding-inline-start:16px;
+}
+h3.sub::before{
+  content:''; position:absolute; inset-inline-start:0; top:8px; bottom:8px;
+  width:4px; border-radius:2px;
+}
+.s1 h3.sub::before{background:var(--s1)} .s1 h3.sub{color:var(--s1)}
+.s2 h3.sub::before{background:var(--s2)} .s2 h3.sub{color:var(--s2)}
+.s3 h3.sub::before{background:var(--s3)} .s3 h3.sub{color:var(--s3)}
+
+h4.mini{font-size:18.5px; font-weight:700; margin:28px 0 10px; color:var(--ink)}
+
+p{margin:0 0 17px}
+strong{font-weight:700; color:var(--ink)}
+em{font-style:normal; background:linear-gradient(transparent 62%, rgba(178,142,66,.28) 62%); font-weight:600}
+
+ul.plain, ol.plain{margin:0 0 18px; padding-inline-start:22px}
+ul.plain li, ol.plain li{margin-bottom:9px}
+
+/* ============ البلوكات ============ */
+.box{
+  border:1px solid var(--rule); border-radius:var(--radius);
+  padding:20px 22px; margin:26px 0; background:var(--paper-2);
+  box-shadow:var(--shadow);
+}
+.box .tag{
+  display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:1.2px;
+  padding:3px 11px; border-radius:999px; margin-bottom:11px;
+}
+.box p:last-child, .box ul:last-child, .box ol:last-child{margin-bottom:0}
+
+.def{border-inline-start:4px solid var(--s1)}
+.def .tag{background:var(--s1-bg); color:var(--s1)}
+.ev{border-inline-start:4px solid var(--gold); background:#fbf7ee}
+.ev .tag{background:rgba(178,142,66,.15); color:#8a6d2c}
+.key{border-inline-start:4px solid var(--s2)}
+.key .tag{background:var(--s2-bg); color:var(--s2)}
+.warnb{border-inline-start:4px solid var(--warn); background:var(--warn-bg)}
+.warnb .tag{background:rgba(138,90,0,.14); color:var(--warn)}
+.fixb{border-inline-start:4px solid var(--fix); background:var(--fix-bg)}
+.fixb .tag{background:rgba(31,107,74,.14); color:var(--fix)}
+.storyb{border:1px solid var(--rule); background:linear-gradient(180deg,#fffdf7,#fbf6ea)}
+.storyb .tag{background:rgba(28,36,48,.08); color:var(--ink-soft)}
+.addb{border-inline-start:4px dashed var(--muted); background:#f4f5f7}
+.addb .tag{background:rgba(122,132,148,.16); color:var(--muted)}
+
+blockquote.q{
+  margin:26px 0; padding:20px 24px;
+  border:none; border-inline-start:3px solid var(--gold);
+  background:#fbf8f1;
+  font-family:'Amiri',serif; font-size:21px; line-height:2.05; color:#3a3226;
+  border-radius:var(--radius);
+}
+blockquote.q cite{
+  display:block; font-family:'Cairo',sans-serif; font-style:normal;
+  font-size:13px; color:var(--muted); margin-top:10px; font-weight:600;
+}
+
+/* الخلاصة */
+.takeaway{
+  border:1.5px solid var(--ink); border-radius:var(--radius);
+  padding:22px 24px; margin:38px 0 10px; background:var(--paper-2);
+}
+.takeaway h4{
+  margin:0 0 14px; font-family:'Amiri',serif; font-size:24px;
+  display:flex; align-items:center; gap:10px;
+}
+.takeaway ol{margin:0; padding-inline-start:20px}
+.takeaway li{margin-bottom:10px; font-weight:600}
+.s1 .takeaway{border-color:var(--s1)} .s1 .takeaway h4{color:var(--s1)}
+.s2 .takeaway{border-color:var(--s2)} .s2 .takeaway h4{color:var(--s2)}
+.s3 .takeaway{border-color:var(--s3)} .s3 .takeaway h4{color:var(--s3)}
+
+/* جداول */
+.tbl-wrap{overflow-x:auto; margin:26px 0; border:1px solid var(--rule); border-radius:var(--radius); background:var(--paper-2)}
+table{border-collapse:collapse; width:100%; font-size:15px; min-width:520px}
+th,td{padding:12px 14px; text-align:right; border-bottom:1px solid var(--rule-soft); vertical-align:top}
+thead th{background:#f0ebdf; font-weight:700; font-size:14px; color:var(--ink)}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:rgba(178,142,66,.045)}
+td.b{font-weight:700}
+
+/* قائمة كتب */
+.booklist{list-style:none; margin:20px 0; padding:0}
+.booklist li{
+  background:var(--paper-2); border:1px solid var(--rule-soft);
+  border-inline-start:3px solid var(--gold);
+  border-radius:var(--radius); padding:13px 16px; margin-bottom:10px;
+}
+.booklist .bt{font-weight:700; font-size:16.5px; display:block; margin-bottom:3px}
+.booklist .bm{font-size:14px; color:var(--muted)}
+
+/* ============ البطاقات ============ */
+.cards-sec{
+  margin:70px 0 0; padding:34px 0 0; border-top:3px double var(--rule);
+}
+.cards-sec h2{font-family:'Amiri',serif; font-size:32px; margin:0 0 6px; text-align:center}
+.cards-sec .lead{text-align:center; color:var(--muted); font-size:15px; margin-bottom:22px}
+.filters{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-bottom:22px}
+.filters button{
+  font-family:'Cairo',sans-serif; font-size:13.5px; font-weight:600; cursor:pointer;
+  padding:7px 15px; border-radius:999px; border:1px solid var(--rule);
+  background:var(--paper-2); color:var(--ink-soft); transition:.15s;
+}
+.filters button:hover{border-color:var(--gold)}
+.filters button.on{background:var(--ink); color:#fff; border-color:var(--ink)}
+.filters button[data-f="1"].on{background:var(--s1); border-color:var(--s1)}
+.filters button[data-f="2"].on{background:var(--s2); border-color:var(--s2)}
+.filters button[data-f="3"].on{background:var(--s3); border-color:var(--s3)}
+
+.flip{
+  perspective:1400px; margin:0 auto 16px; max-width:660px; height:270px; cursor:pointer;
+}
+.flip-in{
+  position:relative; width:100%; height:100%;
+  transform-style:preserve-3d; transition:transform .55s cubic-bezier(.4,.2,.2,1);
+}
+.flip.f .flip-in{transform:rotateY(180deg)}
+.face{
+  position:absolute; inset:0; backface-visibility:hidden;
+  border:1px solid var(--rule); border-radius:8px; background:var(--paper-2);
+  box-shadow:var(--shadow); padding:26px; overflow-y:auto;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+}
+.face .side{
+  position:absolute; top:12px; inset-inline-start:16px;
+  font-size:11px; font-weight:700; letter-spacing:1.4px; color:var(--muted);
+}
+.face .sec-tag{
+  position:absolute; top:12px; inset-inline-end:16px;
+  font-size:11px; font-weight:700; padding:2px 9px; border-radius:999px;
+}
+.face .txt{font-size:19px; line-height:1.85; font-weight:600}
+.back{transform:rotateY(180deg); background:#fffdf6}
+.back .txt{font-size:17.5px; font-weight:400; line-height:1.9}
+.hintline{text-align:center; font-size:12.5px; color:var(--muted); margin-bottom:14px}
+.nav{display:flex; align-items:center; justify-content:center; gap:14px; margin-bottom:12px}
+.nav button{
+  font-family:'Cairo',sans-serif; font-size:14px; font-weight:700; cursor:pointer;
+  padding:9px 20px; border-radius:var(--radius); border:1px solid var(--rule);
+  background:var(--paper-2); color:var(--ink);
+}
+.nav button:hover{border-color:var(--gold); color:var(--gold)}
+.counter{font-size:14.5px; font-weight:700; color:var(--ink-soft); min-width:82px; text-align:center}
+
+footer{
+  border-top:1px solid var(--rule); margin-top:56px; padding:30px 22px 46px;
+  text-align:center; color:var(--muted); font-size:14px;
+}
+footer .fbtn{margin-bottom:16px}
+
+@media (max-width:640px){
+  body{font-size:16.5px; line-height:1.9}
+  .cover{padding:38px 18px 26px}
+  .cover h1{font-size:30px}
+  .cover h2{font-size:16px}
+  .sec-head h2{font-size:26px}
+  h3.sub{font-size:20px}
+  .flip{height:310px}
+  .face .txt{font-size:17px}
+  .back .txt{font-size:16px}
+  blockquote.q{font-size:18.5px; padding:16px 18px}
+  .tb-links{display:none}
+}
+</style>
+</head>
+<body data-lecture-id="stage1_fiqh_06">
+<div style="background:#FFF3CD;border-bottom:2px solid #E0A800;color:#664D03;padding:10px 16px;font-family:'Tajawal','Cairo',sans-serif;font-size:13.5px;line-height:1.7;text-align:center;direction:rtl" role="note">
+⚠️ <strong>تنبيه:</strong> هذا المحتوى تم إعداده بمساعدة الذكاء الاصطناعي بالاعتماد على تفريغ المحاضرة، وقد يحتوي على أخطاء، يُرجى المراجعة والتحقق خاصة في المسائل العلمية والنقول عن العلماء.
+</div>
+<style id="ilm-completion-style">
+  #ilm-completion-box{
+    display:flex; align-items:center; gap:10px;
+    max-width:640px; margin:16px auto 0; padding:12px 18px;
+    background:#fbfaf4; border:1px solid #d3d8ca; border-radius:12px;
+    font-family:'Tajawal','Cairo',sans-serif; direction:rtl;
+    cursor:pointer; user-select:none; transition:background .15s, border-color .15s;
+  }
+  #ilm-completion-box:hover{ border-color:#b8862f; }
+  #ilm-completion-box.done{ background:#e3ebe4; border-color:#1f4a3d; }
+  #ilm-completion-box input{ width:18px; height:18px; accent-color:#1f4a3d; cursor:pointer; flex-shrink:0; }
+  #ilm-completion-box span{ font-size:14.5px; font-weight:600; color:#2b2a24; }
+  #ilm-completion-box.done span{ color:#163931; }
+</style>
+<label id="ilm-completion-box">
+  <input type="checkbox" data-lecture-id="stage1_fiqh_06">
+  <span>تحديد هذه المحاضرة كمكتملة</span>
+</label>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="tb-title">المدخل إلى الفقه الإسلامي <span>· الدروس 8 – 10</span></div>
+    <div class="tb-links">
+      <a href="#d8">الدرس 8</a>
+      <a href="#d9">الدرس 9</a>
+      <a href="#d10">الدرس 10</a>
+      <a href="#cards">البطاقات</a>
+    </div>
+  </div>
+  <div class="progress" id="prog"></div>
+</div>
+
+<header class="cover">
+  <div class="kicker">المدخل إلى الفقه الإسلامي</div>
+  <h1>العصر الحاضر ودعوى التجديد</h1>
+  <h2>المرحلة الرابعة من مراحل الفقه: الطباعة والمجامع والنوازل — ثم دعوى التجديد في أصول الفقه وغلوّ المدرسة المقاصدية</h2>
+
+  <div class="rule-orn"><i></i><b>❈</b><i></i></div>
+
+  <div class="chips">
+    <span class="chip c1">الدرس 8 · المرحلة الرابعة والطباعة</span>
+    <span class="chip c2">الدرس 9 · خريطة المكتبة والمؤسسات</span>
+    <span class="chip c3">الدرس 10 · التجديد والمقاصد</span>
+    <span class="chip">68 بطاقة مراجعة</span>
+  </div>
+
+  <button class="btn-dl" onclick="downloadTSV()">⬇ تحميل بطاقات Anki (TSV)</button>
+</header>
+
+<main data-ilm-highlight-zone>
+
+  <div class="box addb">
+    <span class="tag">ملاحظة عن الترقيم</span>
+    <p>التسجيل يضم <strong>ثلاثة دروس متتابعة</strong>، لا درسًا واحدًا. المصرَّح به في التفريغ هو <strong>الدرس العاشر</strong> فقط (قال الشيخ: «حياكم الله في درسنا العاشر»). ولمّا كان الجزء الذي قبله ينتهي بوعد بالكلام عن التجديد «في الدرس القادم»، والجزء الذي قبلهما ينتهي بوعد باستكمال الكلام عن الطباعة «في الدرس القادم» — فالترتيب المنطقي أنّ الأجزاء الثلاثة هي <strong>8 ثم 9 ثم 10</strong>. رقّمتُها على هذا الاستنتاج، لا على تصريح.</p>
+  </div>
+
+  <nav class="toc">
+    <h3>محتويات الملف</h3>
+    <ol>
+      <li class="l1"><a href="#d8"><b>8</b> المرحلة الرابعة: العصر الحاضر وأثر الطباعة</a></li>
+      <li class="sub"><a href="#t-marahil">مراجعة المراحل الأربع · لماذا لا تُؤرَّخ بدقّة</a></li>
+      <li class="sub"><a href="#t-jumud">نقض تسمية القرون السابقة «عصر الجمود والتقليد»</a></li>
+      <li class="sub"><a href="#t-tibaa">الطباعة: النقلة الكبرى · قصة ابن الخاضبة</a></li>
+      <li class="sub"><a href="#t-ijmaa">كتب الإجماع المطبوعة · أدب المناظرة</a></li>
+      <li class="sub"><a href="#t-mathahib">مراجع المذاهب الأربعة المطبوعة</a></li>
+
+      <li class="l2"><a href="#d9"><b>9</b> خريطة المكتبة الفقهية والمؤسسات المعاصرة</a></li>
+      <li class="sub"><a href="#t-muqaran">الفقه المقارن والخلاف العالي · قاعدة «لماذا أُلِّف الكتاب؟»</a></li>
+      <li class="sub"><a href="#t-mawsuaat">الموسوعات الفقهية المعاصرة وموسوعات الأبواب</a></li>
+      <li class="sub"><a href="#t-majamie">المجامع الفقهية: لماذا نشأت وكيف تعمل</a></li>
+      <li class="sub"><a href="#t-elec">الموسوعات الإلكترونية والمجلات والمواقع</a></li>
+      <li class="sub"><a href="#t-nawazil">كثرة النوازل · الكليات الشرعية والدراسات العليا</a></li>
+
+      <li class="l3"><a href="#d10"><b>10</b> دعوى التجديد في أصول الفقه</a></li>
+      <li class="sub"><a href="#t-tajdid">التجديد المحمود والتجديد الهادم</a></li>
+      <li class="sub"><a href="#t-maqasid">دعوى إغناء المقاصد عن الأصول</a></li>
+      <li class="sub"><a href="#t-shatibi">الشاطبي وأنصاف الشاطبيّين</a></li>
+
+      <li class="l3" style="margin-top:8px"><a href="#cards"><b>❈</b> بطاقات المراجعة (68 بطاقة)</a></li>
+    </ol>
+  </nav>
+
+<!-- ==================== الدرس 8 ==================== -->
+<section class="section s1" id="d8">
+  <div class="sec-head">
+    <span class="sec-badge">الدرس الثامن</span>
+    <h2>المرحلة الرابعة: العصر الحاضر وأثر الطباعة</h2>
+    <p>من نقض تسمية «عصر الجمود» إلى خريطة أوّل ما طُبع من كتب الإجماع والمذاهب</p>
+  </div>
+
+  <h3 class="sub" id="t-marahil">أين نحن من مراحل الفقه؟</h3>
+
+  <p>افتتح الشيخ الدرس بالتذكير بأن الفقه — كما قُسِّم في أول الدورة — مرّ بأربع مراحل، مع التنبيه على أن الباحثين <em>اختلفوا في طريقة التقسيم</em> نفسها، وأن هذا التقسيم اختيار من اختيارات لا حكم قاطع.</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:80px">المرحلة</th><th>مضمونها</th><th style="width:150px">حدّها الزمني</th></tr></thead>
+      <tbody>
+        <tr><td class="b">الأولى</td><td>زمن التشريع</td><td>تنتهي بدقة: اللحظة التي توفي فيها رسول الله ﷺ</td></tr>
+        <tr><td class="b">الثانية</td><td>الصحابة، وما قبل المذاهب الفقهية</td><td>تقريبي</td></tr>
+        <tr><td class="b">الثالثة</td><td>مرحلة المذاهب الفقهية وما بعدها</td><td>تقريبي</td></tr>
+        <tr><td class="b">الرابعة</td><td>العصر الحاضر <span style="color:var(--s1);font-weight:700">← موضوع درسنا</span></td><td>تقريبًا من حدود سنة 1300هـ</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box def">
+    <span class="tag">قاعدة منهجية</span>
+    <p>هذه المراحل <strong>لا تُحدَّد بتاريخ محدد</strong>، فليست مثل تاريخ الميلاد والوفاة يُضبط باليوم. إنما يُوضع لها تاريخ تقريبي — <strong>باستثناء مرحلة التشريع وحدها</strong>، فإنها تنتهي بلحظة معلومة: وفاة النبي ﷺ.</p>
+  </div>
+
+  <h3 class="sub" id="t-jumud">هل كانت القرون السابقة «عصر جمود وتقليد»؟</h3>
+
+  <p>في هذا العصر ظهرت دعوات تنادي بترك المذهبية. بل وُجد من يسمّي القرون الطويلة السابقة — مئات السنين قبل سنة 1300 وقبل بدايات الاستعمار في العالم الإسلامي — بأنها <strong>«عصر الجمود والتقليد»</strong>؛ وهي قرون متطاولة مليئة بالجهود الفقهية.</p>
+
+  <p>وردّ الشيخ على هذه التسمية من أصلها، فقال إن <em>تصوّر «الجمود» نفسه غلط</em>. وبنى الردّ على حجّتين:</p>
+
+  <h4 class="mini">الحجّة الأولى: التراث كان يلبّي الاحتياج فعلًا</h4>
+
+  <p>إذا كان عندك تراث فقهي مكتمل يخدم جُلّ احتياجاتك في الحياة، فما الحاجة أصلًا إلى تصنيف كتب جديدة؟ ما دام هذا يلبّي الاحتياج فالأمر منتهٍ. وقالوا: «اقتصروا على الشرح والتخريج على الكتب والمدونات الفقهية» — والجواب: <strong>لأنها كانت تلبّي احتياجاتهم</strong>؛ ولمّا وُجدت نوازل — وكانت قليلة — خدموها وكتبوا فيها وصنّفوا. فلا يصحّ وصف هذه الأزمان بالتقليد والجمود <em>على جهة الإطلاق</em>.</p>
+
+  <h4 class="mini">الحجّة الثانية: مقارنة سرعة تغيّر الحياة</h4>
+
+  <div class="box key">
+    <span class="tag">مقارنة الشيخ</span>
+    <p><strong>ارجع 200 سنة إلى الخلف:</strong> ستجد أنه لا يوجد فرق بين حياة الناس قبل 200 سنة وبين حياة الناس في زمن التابعين، إلا أشياء ليست كثيرة.</p>
+    <p><strong>وانظر في الخمسين سنة الأخيرة:</strong> الفروق التي حصلت في حياة الناس بسبب الثورة الصناعية <strong>أكثر بأضعاف مضاعفة</strong> من الفروق التي حصلت في الخمسمئة سنة التي قبلها.</p>
+    <p style="margin-top:12px; color:var(--s2)"><strong>فالنتيجة:</strong> ثبات الحياة كان يعني ثبات الاحتياج الفقهي؛ فليس السكون جمودًا، بل استقرارًا.</p>
+  </div>
+
+  <h4 class="mini">مَثَل العمارة</h4>
+
+  <p>ثم ضرب الشيخ مثلًا: عندك عمارة ممتازة شامخة باقية منذ ألف سنة، فجاء يوم من الأيام وقال قائل: سأكسرها وأنقضها! لماذا؟ يقول: <strong>من باب التجديد</strong>. هذا عبث. أهذا مطلب؟ ليس مطلبًا. إذا كان فيها مشكلة — <strong>فرمِّم يا أخي</strong>، لا تهدم.</p>
+
+  <p>ثم قال بعضهم عن العصر الحاضر إنه «عصر النهضة الحديثة». فأين النهضة الحديثة؟ وهل نحن فعلًا نعيش نهضة فقهية؟ وهل المطلوب حقًّا أن نبدأ بنقض هذا البناء المتكامل الشامخ ونعيده من جديد؟</p>
+
+  <div class="box warnb">
+    <span class="tag">حكم الشيخ</span>
+    <p>عندنا مسائل نوازل تحتاج إلى كتابات مستقلة ونظر مستقل — <strong>نعم</strong>. وأما هذه الأبنية الشامخة والمدارس العلمية فلا حاجة إلى إعادة النظر فيها.</p>
+    <p>ودعوات «إعادة النظر» أو «تنقية التراث» أو «تصفية الكتب الفقهية» <strong>لا تصدر غالبًا إلا من شخص لا يعرف المذاهب الفقهية أصلًا</strong>، ولم يدرسها دراسة تستحق أن توصف بأنها دراسة.</p>
+  </div>
+
+  <h3 class="sub" id="t-tibaa">الطباعة: أعظم ما ميّز العصر الحاضر</h3>
+
+  <p>مع الثورة الصناعية ظهرت مخترعات كثيرة، ومن أشدّها أثرًا في الفقه: <strong>الطباعة</strong>. وأثرها في طباعة الكتب الفقهية لا شك فيه، كما كان الأثر كبيرًا من قبل عند اكتشاف <strong>مادة الكاغد</strong> (الورق) في زمن العباسيين تقريبًا، فكان لها أثر في التصنيف والتأليف.</p>
+
+  <div class="box def">
+    <span class="tag">تعريف</span>
+    <p><strong>الكاغد:</strong> الورق. ولمّا انتشرت صناعته في الدولة العباسية سهّلت التصنيف والتأليف بشكل غير مسبوق، فهي في زمنها نظير ما فعلته المطبعة في زمننا.</p>
+  </div>
+
+  <p>وقسّم الشيخ ما طُبع من كتب الفقه إلى <strong>نوعين</strong>:</p>
+
+  <ol class="plain">
+    <li><strong>النوع الأول:</strong> طباعة كتب العلماء التي صنّفوها قديمًا، وإعادة نشرها وتحقيقها، وتحويلها من النسخ الخطية قليلة التداول إلى نسخ مطبوعة.</li>
+    <li><strong>النوع الثاني:</strong> الكتب المؤلَّفة في العصر الحاضر نفسه (وسيأتي تفصيلها في الدرس التالي).</li>
+  </ol>
+
+  <p>وضرب مثالًا على الفارق: اليوم في أيام معدودات يُطبع لك ألف نسخة من <strong>حاشية ابن عابدين</strong> أو من <strong>المغني</strong>؛ وكان في السابق الحصول على نسخة واحدة من هذا الكتاب يحتاج إلى أشهر.</p>
+
+  <p>فصار اليوم حتى طالب العلم عنده مكتبة ما شاء الله، وأنشد الشيخ في ذلك:</p>
+
+  <blockquote class="q">
+    عشرون دولابًا ببيتِ الشيخِ<br>
+    كُتْبٌ قد شراها وجَمَعَها<br>
+    ولكنْ ما دراها<br>
+    وطابَتْ نفسُه منها بسلوى<br>
+    إذا دخلَ المكانَ بأن يراها
+    <cite>أنشده الشيخ في معرض بيان أن اقتناء الكتب غير تحصيل العلم — وقد ورد في التفريغ الصوتي مقطّعًا</cite>
+  </blockquote>
+
+  <p>أما في السابق فطالب العلم — حتى تكون له مكتبة — كان <strong>ينسخ بنفسه</strong>. ونسخُه لهذه الكتب تحصيلٌ للعلم في ذاته؛ بل <em>نسخُ الكتب أعظم تحصيلًا من قراءتها</em>، حتى إنه يكفيه أنه نسخ الكتاب، فلو لم يضعه في المكتبة بعد ذلك لكان كافيًا. وكان بعضهم ينسخ الكتاب الواحد عدة مرات — <strong>وكانوا يقابلون النسخ</strong>، لا يكتفي أحدهم بنسخة واحدة، بل ينسخ ويقابل.</p>
+
+  <div class="box storyb">
+    <span class="tag">قصة · ابن الخاضبة والنسخ سبع مرات</span>
+    <p>ومما يُروى في هذا أن رجلًا من أهل العلم اسمه <strong>ابن الخاضبة</strong> نسخ في سنة واحدة <strong>صحيح مسلم سبع مرات</strong>.</p>
+    <p>ومن شدة التعب والإعياء وهو ينسخ، <strong>نام</strong>. وفي أثناء نومه رأى في المنام أنه <strong>دخل الجنة</strong>. فلما دخل الجنة <strong>استلقى على ظهره</strong>، وبدأ يلعب برجله، وقال: <strong>«الحمد لله، استرحنا من النسخ»</strong> — من شدة التعب.</p>
+    <p>قال الشيخ: فنسأل الله أن يجمعنا في الجنة.</p>
+  </div>
+
+  <div class="box fixb">
+    <span class="tag">تحقّقتُ من القصة</span>
+    <p>القصة ثابتة في كتب التراجم بتفصيل أدقّ مما اختصره سياق الدرس، ونصّها عند <strong>ابن النجار في «المستفاد من ذيل تاريخ بغداد»</strong> ونحوه في <strong>«تذكرة الحفاظ» للذهبي</strong>، من طريق أبي الفضل محمد بن طاهر المقدسي أنه سمع ابن الخاضبة يقول:</p>
+    <ul class="plain">
+      <li><strong>السبب:</strong> في «سنة الغرق» وقعت داره على قماشه وكتبه، ولم يبقَ له شيء، وكان يعول والدته وزوجته وبناته — <strong>فكان يُورِّق للناس بالأجرة</strong> وينفق على الأهل.</li>
+      <li><strong>العدد:</strong> فكتب صحيح مسلم في تلك السنة بالوراقة <strong>سبع مرات</strong>.</li>
+      <li><strong>الرؤيا:</strong> رأى كأن القيامة قد قامت، ومنادٍ ينادي: أين ابن الخاضبة؟ فأُحضر، فقيل له: ادخل الجنة. فلما دخل الباب وصار من داخل، استلقى على قفاه ووضع إحدى رجليه على الأخرى وقال: <strong>آه، استرحتُ والله من النسخ.</strong></li>
+      <li><strong>وفاته:</strong> أبو بكر بن الخاضبة، توفي ليلة الجمعة ثاني عشر ربيع الأول سنة <strong>489هـ</strong>.</li>
+    </ul>
+    <p style="margin-top:10px"><strong>لماذا أضفتُ هذا؟</strong> لأن السبب (الفقر والوراقة بالأجرة) هو ما يفسّر «سبع مرات في سنة»، وبدونه تبدو القصة مجرد حماس. والزيادة من مصدر خارجي، ولم يذكرها الشيخ.</p>
+  </div>
+
+  <h3 class="sub" id="t-ijmaa">أولًا: كتب الإجماع المطبوعة</h3>
+
+  <p>حين نستعرض المكتبة الإسلامية نجد الكتب الفقهية على أنواع؛ فمنها ما صُنِّف <strong>في مسائل الإجماع فقط</strong>. وقد طُبع منها عدد.</p>
+
+  <div class="box warnb">
+    <span class="tag">تنبيه على خطأ شائع في الجواب</span>
+    <p>لمّا سأل الشيخُ الطلاب عن مثال، أجاب أحدهم بـ«<strong>التمهيد</strong> لابن عبد البر» فردّ الشيخ: التمهيد لا يتكلم عن مسألة الإجماع فقط. المطلوب هنا: <strong>الكتب التي تذكر المسائل الفقهية المُجمَع عليها</strong> تحديدًا.</p>
+  </div>
+
+  <ul class="booklist">
+    <li><span class="bt">الإجماع — لابن المنذر</span><span class="bm">مطبوع بتحقيق صغير أحمد الباكستاني (تحقيق في مجلد صغير).</span></li>
+    <li><span class="bt">مراتب الإجماع — لابن حزم</span><span class="bm">وعليه لشيخ الإسلام ابن تيمية كتاب مستقل في نقده اسمه «<strong>نقد مراتب الإجماع</strong>».</span></li>
+    <li><span class="bt">الإقناع في مسائل الإجماع — لابن القطان الفاسي</span><span class="bm">ميزته أنه <strong>جامع</strong>: نظر في «نقد مراتب الإجماع»، وفي «مراتب الإجماع» لابن حزم، وفي «الإجماع» لابن المنذر، وفي إجماعات حكاها عدد من أهل العلم، فجمعها كلها في كتاب واحد. مطبوع بتحقيق الدكتور فاروق حمادة.</span></li>
+    <li><span class="bt">إجماعات العبادات</span><span class="bm">كتاب معاصر جميل جدًا وسهل، من مطبوعات مؤسسة الدرر السنية. مفيد ونافع لطالب العلم.</span></li>
+  </ul>
+
+  <div class="box fixb">
+    <span class="tag">تفريق بين متشابهَين · نبّه عليه الشيخ نفسه</span>
+    <p>وقع في الدرس التباس بين كتابين لابن المنذر، وفصّله الشيخ:</p>
+    <ul class="plain">
+      <li><strong>«الإجماع» لابن المنذر</strong> — هو المقصود هنا، في مسائل الإجماع.</li>
+      <li><strong>«الإقناع» لابن المنذر</strong> — كتاب آخر مختلف تمامًا.</li>
+      <li>وثالث يُخلط بهما: <strong>«الإقناع في مسائل الإجماع» لابن القطان الفاسي</strong> — وهو غيرهما.</li>
+    </ul>
+    <p style="margin-top:10px"><strong>تصحيح تفريغ:</strong> ورد اسم محقق «الإجماع» صوتيًا كأنه «شاغف الباكستاني»، والصواب: <strong>أبو حمّاد صغير أحمد بن محمد حنيف الباكستاني</strong> — تحقّقتُ منه، وهو نفسه محقق «الأوسط» و«الإشراف» لابن المنذر.</p>
+  </div>
+
+  <h4 class="mini">لماذا معرفة مسائل الإجماع مهمة؟</h4>
+
+  <p>قال الشيخ: معرفة مسائل الإجماع من المسائل المهمة، وطلبة العلم اليوم كثير منهم مقصّر فيها. فربما يأتي إلى <strong>مسألة إجماعية فيظنها من المفردات عند الحنابلة</strong>! يقول: «هذا المذهب» — فتقول له: <strong>هذا إجماع الأمة</strong>.</p>
+
+  <h4 class="mini">استطراد: الردود والمناظرات بين أهل العلم</h4>
+
+  <p>وبمناسبة «نقد مراتب الإجماع»، نبّه الشيخ إلى أن أهل العلم في المسائل الفقهية بينهم من قديم الزمان مناقشات ومناظرات وردود، حتى قال <strong>الخطيب البغدادي</strong> — وذكر نحوه <strong>ابن عبد البر</strong> — إن الأمة <em>مجمعة على الجدال والمناظرة في مسائل الفقه</em>؛ فهذا أمر مُجمَع عليه بين العلماء.</p>
+
+  <div class="box ev">
+    <span class="tag">أمثلة من المناظرات والردود</span>
+    <ul class="plain">
+      <li>محمد بن الحسن تناظر مع مالك.</li>
+      <li>أبو يوسف تناظر مع مالك.</li>
+      <li>الشافعي تناظر مع محمد بن الحسن، وكتب «<strong>الرد على محمد بن الحسن</strong>».</li>
+      <li>وكُتب أيضًا «<strong>الرد على سِيَر الأوزاعي</strong>».</li>
+    </ul>
+  </div>
+
+  <p>وهذه ردود <strong>بأدب العلم</strong>: «حدثنا» و«أخبرنا» — ليست ردود مسافهات ومهاترات. وهذه المناقشات <em>تُحيي الحركة العلمية وتُحيي العلم</em> — إذا كانت بأدب العلم، وهذا كان دأبهم، لا تجد فيها كلامًا عنيفًا أو جارحًا.</p>
+
+  <div class="box warnb">
+    <span class="tag">تحذير · كتاب «المحلّى» لابن حزم</span>
+    <p>شنّع العلماء على من يتكلم بكلام غير لائق في مسائل الفقه، ومن ذلك <strong>الإمام ابن حزم</strong> رحمه الله؛ فإنه في مناقشة المسائل الفقهية في كتابه <strong>«المحلّى»</strong> لم يكن بالأسلوب المُرتضى عند العلماء.</p>
+    <p>ولهذا: <strong>«المحلّى» لا يصلح أبدًا أن يقرأ فيه طالب العلم المبتدئ.</strong> وإنما يقرؤه العلماء، وطالب العلم بعد ما يتربّى ويتأدّب ويحصّل العلم، ثم يقرأ فيه. وهو كتاب فيه علم كثير بلا شك، <strong>ولكنه قد يُفسد الطالب المتفقّه في البدايات</strong>.</p>
+    <p>وأدّب الشيخ نفسه في هذا فقال: لا ينبغي للإنسان أن ينظر في مساوئ أهل العلم ويتكلم في شيء من مثالبهم؛ ولولا ذلك لذكرتُ من «المحلّى» أشياء تُستغرب — <strong>ولكنه رحمه الله عالمٌ من العلماء</strong>.</p>
+  </div>
+
+  <h3 class="sub" id="t-mathahib">ثانيًا: مراجع المذاهب الأربعة المطبوعة</h3>
+
+  <p>ثم ذكر الشيخ في كل مذهب ما يصلح أن يكون <strong>مرجعًا</strong> يرجع إليه طالب العلم إذا أراد أن يعرف مسألة على ذلك المذهب:</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:110px">المذهب</th><th>الكتب المطبوعة التي تصلح مرجعًا</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="b">الحنفية</td>
+          <td><strong>بدائع الصنائع</strong> للكاساني · <strong>حاشية ابن عابدين</strong></td>
+        </tr>
+        <tr>
+          <td class="b">المالكية</td>
+          <td>شروح <strong>مختصر خليل</strong>، وأجلّها <strong>مواهب الجليل</strong> للحطّاب · وكذلك <strong>الموطأ</strong> و<strong>المدونة</strong> مطبوعان</td>
+        </tr>
+        <tr>
+          <td class="b">الشافعية</td>
+          <td><strong>الأم</strong> للشافعي (بتحقيق الشيخ رفعت فوزي عبد المطلب) · <strong>تحفة المحتاج</strong> لابن حجر الهيتمي · <strong>روضة الطالبين</strong> للنووي · <strong>الحاوي</strong> للماوردي</td>
+        </tr>
+        <tr>
+          <td class="b">الحنابلة</td>
+          <td><strong>كشاف القناع</strong> للبهوتي (وأفضل طبعاته: طبعة وزارة العدل بتحقيق لجنة) · ومعه <strong>الشرح الكبير</strong> لابن أبي عمر (مطبوع مع الإنصاف والمقنع بتحقيق التركي)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>وميزة كتب الحنابلة المذكورة أنها تصلح مرجعًا <strong>يُستغنى به في معرفة الصحيح من المذهب مع أدلة المسائل</strong>.</p>
+
+  <div class="box fixb">
+    <span class="tag">تصحيح تفريغ</span>
+    <ul class="plain">
+      <li>ورد صوتيًا «<strong>الحاوي للمادي</strong>» — والصواب: <strong>«الحاوي الكبير» للماوردي</strong>.</li>
+      <li>ورد «<strong>رفعه فوزي</strong>» — والصواب: <strong>رفعت فوزي عبد المطلب</strong>، محقّق «الأم».</li>
+      <li>ورد «<strong>ابن حجر الهيثمي</strong>» — والمشهور في ضبط اسمه: <strong>الهيتمي</strong> (بالتاء)، تمييزًا له عن الهيثمي صاحب «مجمع الزوائد».</li>
+    </ul>
+  </div>
+
+  <h4 class="mini">جهود معاصرة في طباعة كتب المذاهب</h4>
+
+  <div class="box key">
+    <span class="tag">علمان في خدمة التراث الحنبلي</span>
+    <p><strong>الشيخ عبد الله بن عبد المحسن التركي:</strong> له جهود كبيرة في طباعة كتب المذهب الحنبلي، طبع عددًا كبيرًا منها: <strong>الفروع</strong>، <strong>المغني</strong>، <strong>الشرح الكبير</strong>، <strong>الكافي</strong>، <strong>الإقناع</strong> وغيرها.</p>
+    <p><strong>الشيخ عبد الملك بن دهيش</strong> رحمه الله: طبع أيضًا عددًا من الكتب في هذا الباب.</p>
+  </div>
+
+  <div class="takeaway">
+    <h4>❈ خلاصة الدرس الثامن</h4>
+    <ol>
+      <li>مراحل الفقه أربع، والرابعة هي العصر الحاضر من نحو 1300هـ — وكلها تواريخ تقريبية إلا نهاية مرحلة التشريع فمضبوطة بوفاة النبي ﷺ.</li>
+      <li>وصف القرون السابقة بـ«الجمود والتقليد» على الإطلاق وصف باطل؛ لأن التراث كان يلبّي الاحتياج، ولأن حياة الناس لم تكن تتغير قبل الثورة الصناعية.</li>
+      <li>النقد وإعادة البناء ليسا مطلبًا في ذاتهما؛ فالبناء الشامخ يُرمَّم لا يُهدَم.</li>
+      <li>أعظم ما ميّز العصر الحاضر فقهيًا: الطباعة — كما ميّز اكتشافُ الكاغد العصرَ العباسي.</li>
+      <li>سهولة اقتناء الكتب اليوم ليست دليل علم؛ والسلف كان النسخ عندهم تحصيلًا للعلم لا مجرد وسيلة لاقتنائه.</li>
+      <li>كتب الإجماع أصل مهمّ يُقصّر فيه الطلبة، ومدارها على: الإجماع لابن المنذر، مراتب الإجماع لابن حزم ونقده لابن تيمية، والإقناع لابن القطان الجامع بينها.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ==================== الدرس 9 ==================== -->
+<section class="section s2" id="d9">
+  <div class="sec-head">
+    <span class="sec-badge">الدرس التاسع</span>
+    <h2>خريطة المكتبة الفقهية والمؤسسات المعاصرة</h2>
+    <p>الفقه المقارن · الموسوعات · المجامع الفقهية · المجلات · النوازل · الكليات الشرعية</p>
+  </div>
+
+  <p>افتتح الشيخ بمراجعة سريعة: العصر الحاضر تميّز بظهور الطباعة، وكان لها أثر كبير في نشر عدد من الكتب الفقهية؛ وقد ذُكرت نماذج مما طُبع في <strong>الإجماع</strong> وفي <strong>المذاهب الأربعة</strong>. ثم انتقل إلى النوع الثالث: كتب <strong>الفقه المقارن</strong>.</p>
+
+  <h3 class="sub" id="t-muqaran">أولًا: قاعدة قبل الكتب — «لماذا أُلِّف هذا الكتاب؟»</h3>
+
+  <p>قبل تعداد الكتب، وضع الشيخ قاعدة قال إنها <strong>أمر مهم لطالب العلم</strong>: أن يعرف <em>هذا الكتاب أُلّف لأي هدف</em>، حتى يرجع إليه ليحقق له ذلك الهدف.</p>
+
+  <div class="box def">
+    <span class="tag">مثال تطبيقي · الإنصاف للمرداوي</span>
+    <p>يأتي واحد يريد أن يعرف أدلة مسألة، فيقول: «والله رجعتُ لـ<strong>الإنصاف</strong> للمرداوي فما لقيتُ أدلة أصلًا!»</p>
+    <p><strong>الجواب:</strong> كتاب «الإنصاف» <strong>لم يُصنَّف لبيان أدلة المسألة</strong>، وإنما صُنِّف <strong>لبيان الروايات في المذهب</strong> — وانتهينا. فقوله «ما ذكر ولا دليلًا» ليس مأخذًا على الكتاب؛ لأن الكتاب <strong>لم يستهدف ذلك أصلًا</strong>.</p>
+  </div>
+
+  <p>فالمهم لطالب العلم أن يعرف كيف يتعامل مع المكتبة الفقهية:</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:200px">إذا أردتَ…</th><th>فالسؤال: ما الكتاب المناسب؟</th></tr></thead>
+      <tbody>
+        <tr><td class="b">دليل المسألة</td><td>كتب الأدلة والفقه المقارن (المغني، الأوسط…)</td></tr>
+        <tr><td class="b">معرفة الخلاف في المسألة</td><td>كتب الخلاف العالي (بداية المجتهد، اختلاف الأئمة…)</td></tr>
+        <tr><td class="b">هل المسألة إجماعية أم لا</td><td>كتب الإجماع (ابن المنذر، ابن القطان…)</td></tr>
+        <tr><td class="b">الروايات داخل المذهب</td><td>الإنصاف للمرداوي ونحوه</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="sub">ثانيًا: كتب الفقه المقارن والخلاف العالي (من المتقدمين)</h3>
+
+  <ul class="booklist">
+    <li><span class="bt">الأوسط — لابن المنذر</span><span class="bm">كتاب جليل عظيم، ومن أعظم ما صُنِّف في معرفة اختلاف العلماء.</span></li>
+    <li><span class="bt">اختلاف الأئمة العلماء — للوزير ابن هبيرة</span><span class="bm">ميزته أنه <strong>يوضّح مواضع الاتفاق ومواضع الخلاف</strong>؛ يأتي للباب فيقول: اتفقوا على كذا وكذا، واختلفوا في كذا وكذا.</span></li>
+    <li><span class="bt">بداية المجتهد ونهاية المقتصد — لابن رشد الحفيد</span><span class="bm">من الكتب المهمة في الخلاف، وهو <strong>مقرر دراسي في الجامعة الإسلامية بالمدينة</strong>. وميزته: يذكر الخلاف <strong>بأوجز ما يمكن من العبارات</strong>، ويقتصر على مهمات المسائل ورؤوسها، ويبيّن في كل مسألة <strong>سبب اختلافهم</strong> — وهو ما يُعرف بـ«سبب الخلاف».</span></li>
+    <li><span class="bt">المغني — لابن قدامة</span><span class="bm">مطبوع بتحقيق الشيخ عبد الله التركي.</span></li>
+    <li><span class="bt">الشرح الكبير — لابن أبي عمر</span><span class="bm">وغير ذلك من الكتب.</span></li>
+  </ul>
+
+  <div class="box warnb">
+    <span class="tag">هامش مهم · «الكتاب العظيم» ≠ «الكتاب المناسب لك»</span>
+    <p>قال الشيخ: لمّا تسمع واحدًا يقول لك «الكتاب الفلاني كتاب عظيم وجليل» — <strong>ليس بالضرورة أن الكتاب الجليل مناسب لجميع طبقات المتعلمين</strong>.</p>
+    <p>فيجيء من يسمع أن «الأوسط» لابن المنذر كتاب عظيم فيقول: أنا سأبدأ طلب العلم به، وهو ما درس فقهًا أبدًا! <strong>غير صحيح</strong>. فليس معنى أن الكتاب عظيم في ذاته أنه يصلح لجميع الطبقات، ولا أنه يصلح أن يكون <strong>متنًا يُدرَّس</strong> أو مقررًا دراسيًا.</p>
+    <p><strong>النظير في التفسير:</strong> يكاد يكون أعظم تفسير أُلّف في التاريخ هو <strong>تفسير ابن جرير</strong> — فهل معنى ذلك أن المبتدئ يبدأ تعلّم التفسير به؟ ليس الأمر كذلك.</p>
+  </div>
+
+  <p>وأشار الشيخ إلى أن هناك كتبًا في فنون إسلامية أخرى <strong>خادمة للفقه</strong> — مثل <strong>أحاديث الأحكام</strong> و<strong>آيات الأحكام</strong> وشروحها — لكنه لم يُطِل بذكرها.</p>
+
+  <h3 class="sub" id="t-mawsuaat">ثالثًا: المؤلَّفات في العصر الحاضر — الموسوعات الفقهية</h3>
+
+  <div class="box def">
+    <span class="tag">تعريف · الموسوعة الفقهية</span>
+    <p>كتب تستهدف أن <strong>تجمع الخلاف العالي</strong>، لكنها <strong>مرتّبة على الحروف</strong> لا على الأبواب.</p>
+    <p><strong>الفرق عمليًا:</strong> إذا مسكتَ «المغني» لابن قدامة وأردتَ مسألة <strong>الآنية</strong> بحثتَ عنها في كتاب الطهارة، ومسألة <strong>إقامة الحد</strong> في آخر الكتاب في الجنايات والحدود. أما في الموسوعة فترجع في «الآنية» إلى <strong>حرف الألف</strong>، وفي «إقامة الحد» إلى <strong>حرف الألف</strong> أيضًا — وهكذا، حتى لو كانت المسألة من الجنايات.</p>
+  </div>
+
+  <h4 class="mini">الموسوعة الفقهية الكويتية</h4>
+
+  <p>أجلّ الموسوعات الفقهية المكتوبة في العصر الحاضر <strong>بلا منازع</strong>، وهي عمل عظيم جدًا. وليس معنى كونه عملًا عظيمًا أنه لا يخلو من ملحوظات أو أوهام أو خطأ — <strong>لا يمكن أن يخلو كتاب من هذا</strong> — ولكنه في المجمل كتاب نفيس.</p>
+
+  <ul class="plain">
+    <li><strong>ما تفعله:</strong> تجمع لك المسألة الفقهية بالمذاهب الأربعة: المعتمد عند الحنفية، والمعتمد عند المالكية، والمعتمد عند الشافعية، والمعتمد عند الحنابلة.</li>
+    <li><strong>ما لا تفعله:</strong> لا تستهدف التوسّع في الاستدلال لكل مسألة؛ وقد تذكر الأدلة موجزة، <strong>لكنها لا تستوعب ذكر الأدلة</strong>.</li>
+  </ul>
+
+  <div class="box warnb">
+    <span class="tag">قاعدة في التوثيق العلمي</span>
+    <p>الاعتماد التام في <strong>تحرير المذهب</strong> على الموسوعة لا يصح — بل حتى الاعتماد على كتب المتقدمين من غير أهل المذهب لا يصح؛ فمن ينقل <strong>مذهب الحنفية من «بداية المجتهد» لابن رشد</strong> فقد أخطأ المنهج.</p>
+    <p><strong>المنهجية العلمية:</strong> إذا أردتَ أن توثّق مذهبًا من المذاهب فيكون التوثيق <strong>من الكتب المعتمدة في ذلك المذهب</strong> نفسه.</p>
+    <p><strong>ومتى تنفع هذه الكتب إذن؟</strong> إذا لم تكن تبحث بحثًا أكاديميًا موسّعًا، وأردتَ المسألة بشكل سريع.</p>
+  </div>
+
+  <h4 class="mini">موسوعات الأبواب (لا الفقه كله)</h4>
+
+  <p>وهناك موسوعات لا تتعلق بأبواب الفقه كلها، وإنما بباب محدد. وترتيبها <strong>على الأبواب لا على الحروف</strong>. ومنها:</p>
+
+  <ul class="booklist">
+    <li><span class="bt">موسوعة أحكام الطهارة — الشيخ دبيان الدبيان</span><span class="bm">وهي <strong>أوسع ما كُتب في الطهارة</strong>؛ من أراد أن يستغني بكتاب واحد في أبواب الطهارة فهذا كتابه.</span></li>
+    <li><span class="bt">موسوعة المعاملات المالية أصالة ومعاصرة — الشيخ دبيان الدبيان</span><span class="bm">كتاب قيّم جدًا ونفيس في أبواب المعاملات. <strong>لكنه لم يكتمل:</strong> انتهى الشيخ من <strong>المعاوضات</strong> وبدأ في <strong>التبرعات</strong> ولم يكملها، وتوقف عند أبواب العارية.</span></li>
+    <li><span class="bt">الجامع لأحكام الوقف والهبات والوصايا — الشيخ خالد المشيقح</span><span class="bm">تُكمل الجانب الذي توقف عنده الدبيان: باب <strong>التبرعات</strong> — الوصايا والوقف والهبة وما إلى ذلك.</span></li>
+    <li><span class="bt">موسوعة القضايا الفقهية المعاصرة — مركز التميز البحثي</span><span class="bm">صدرت مؤخرًا، ويبدو أنها إلى الآن لم تُوزَّع توزيعًا كافيًا على المكتبات. <strong>شاملة لجميع الأبواب</strong> من الطهارة إلى آخر أبواب الفقه، <strong>لكنها تقتصر على النوازل المعاصرة فقط</strong>.</span></li>
+  </ul>
+
+  <div class="box key">
+    <span class="tag">كيف تفهم «موسوعة القضايا المعاصرة» بمثال</span>
+    <p>لن تجد فيها <strong>حكم التيمم لكل صلاة</strong> (مسألة قديمة). وستجد فيها:</p>
+    <ul class="plain">
+      <li><strong>في الطهارة:</strong> حكم الغسيل الجاف · حكم مياه الصرف الصحي إذا عولجت.</li>
+      <li><strong>في الصلاة:</strong> حكم الصلاة في الطائرة.</li>
+      <li><strong>في المعاملات:</strong> حكم التورّق المصرفي · المعاملات المصرفية.</li>
+      <li><strong>في الطب:</strong> القضايا الطبية المعاصرة.</li>
+    </ul>
+  </div>
+
+  <div class="box addb">
+    <span class="tag">تنبيه على طبيعة هذه الكتب</span>
+    <p>قال الشيخ: هذه الموسوعات <strong>مراجع وليست كتبًا دراسية</strong>؛ ليست كتبًا للتفقّه يأخذها الإنسان ويدرسها، وإنما يرجع إليها عند الحاجة.</p>
+  </div>
+
+  <h4 class="mini">كتب متخصصة في أبواب بعينها</h4>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:110px">الباب</th><th>الكتاب</th><th>ملاحظة</th></tr></thead>
+      <tbody>
+        <tr><td class="b">الزكاة</td><td><strong>النوازل في الزكاة</strong> — د. عبد الله الغفيلي</td><td>يخدم باب الزكاة فقط، بل جزءًا منه وهو النوازل</td></tr>
+        <tr><td class="b">الصيام</td><td><strong>مشكلات المفطرات</strong> — د. فؤاد الهاشمي</td><td>من كتب متعددة في الباب</td></tr>
+        <tr><td class="b">الصيام</td><td>النوازل المتعلقة بالتداوي في الصيام — الشيخ أسامة خلاوي</td><td>كما ورد في الدرس</td></tr>
+        <tr><td class="b">الحج</td><td><strong>منسك ابن جاسر</strong></td><td>من أوسع كتب المناسك، يركّز على <strong>المذهب الحنبلي</strong>، في مجلد كبير ومفيد جدًا</td></tr>
+        <tr><td class="b">الحج</td><td><strong>منسك ابن جماعة الكناني</strong></td><td>يتميز بذكر <strong>المذاهب الأربعة</strong> في المسائل</td></tr>
+        <tr><td class="b">الحج</td><td><strong>نوازل الحج</strong> — رسالة دكتوراه للشلعان</td><td></td></tr>
+        <tr><td class="b">البيوع</td><td colspan="2">سبق ذكرها ضمن موسوعة المعاملات المالية</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box fixb">
+    <span class="tag">تحقّقتُ من العناوين</span>
+    <ul class="plain">
+      <li><strong>«مشكلات المفطرات»</strong> — مؤلفه <strong>د. فؤاد بن يحيى الهاشمي</strong>، من إصدارات سلسلة الشبكة الفقهية. مطابق لما ذكره الشيخ.</li>
+      <li>ورد صوتيًا «الجامع في الوصايا والأوقاف والهبات» للمشيقح — والعنوان المطبوع الدقيق: <strong>«الجامع لأحكام الوقف والهبات والوصايا»</strong> في 8 مجلدات (ط. وزارة الأوقاف القطرية).</li>
+      <li>اسم صاحب «النوازل المتعلقة بالتداوي في الصيام» ورد في التفريغ «أسامة خلاوي»؛ <strong>لم أستطع تأكيد ضبط الاسم بيقين</strong>، فأثبتُّه كما ورد ولم أغيّره.</li>
+    </ul>
+  </div>
+
+  <h3 class="sub" id="t-majamie">رابعًا: نشأة المجامع الفقهية</h3>
+
+  <h4 class="mini">لماذا نشأت؟ (السبب قبل التعريف)</h4>
+
+  <ol class="plain">
+    <li><strong>كثرة المستجدات والنوازل.</strong></li>
+    <li>أن هذه النوازل <strong>تتعلق بأبواب فقهية متعددة</strong> في وقت واحد.</li>
+    <li>أن فيها من <strong>التعقيد</strong> ما لا يكفي معه أن تصدر فيه فتوى فردية من عالم وحده.</li>
+  </ol>
+
+  <p>ووضّح الشيخ ذلك بمثالين: نوازل <strong>المعاملات</strong> قد تحتاج للفتوى فيها إلى الرجوع إلى المتخصصين في المصرفية والاقتصاد؛ والنوازل <strong>الطبية</strong> — حتى تتصور حقيقتها — تحتاج إلى أن تسمع الرأي الطبي بشكل متخصص ومعمّق.</p>
+
+  <div class="box def">
+    <span class="tag">تعريف · المجمع الفقهي</span>
+    <p><strong>هيئات علمية يجتمع فيها جمع من أهل العلم للنظر في المسائل، ثم يصدر فيها قرار أو فتوى.</strong></p>
+    <p>والغالب أن هذه القرارات <strong>تصدر بالأغلبية</strong>، ولا يلزم أن تصدر بالإجماع من جميع الأعضاء.</p>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:230px">المجمع</th><th>التبعية والمقر</th></tr></thead>
+      <tbody>
+        <tr><td class="b">المجمع الفقهي الدولي</td><td>تابع لـ<strong>منظمة التعاون الإسلامي</strong> (كانت تسمى منظمة المؤتمر الإسلامي) — مقره الرئيسي <strong>جدة</strong></td></tr>
+        <tr><td class="b">المجمع الفقهي</td><td>تابع لـ<strong>رابطة العالم الإسلامي</strong> — مقره الرئيسي <strong>مكة</strong></td></tr>
+        <tr><td class="b">مجامع إقليمية</td><td>مجمع يضم علماء <strong>الهند</strong> · <strong>مجمع البحوث الإسلامية</strong> بالقاهرة · المجمع الفقهي في <strong>السودان</strong> … إلخ</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>وأشهر المجامع التي فيها <strong>تمثيل من جميع دول العالم الإسلامي</strong> هما الأولان.</p>
+
+  <h4 class="mini">مجلة المجمع الفقهي الدولي — ولماذا هي مهمة لطالب العلم</h4>
+
+  <p>قرارات المجمع الدولي مطبوعة في مجلد، وله موقع على الإنترنت، وله <strong>مجلة كبيرة جدًا</strong>. وميزتها أنها لا تنشر القرار فقط، بل:</p>
+
+  <ul class="plain">
+    <li>الأبحاث التي قدّمها الأعضاء في المسألة (مثلًا: التورق المصرفي).</li>
+    <li><strong>تفريغ كل المناقشات التي دارت في الجلسة</strong> — «قال الشيخ فلان كذا، وعقّب عليه الشيخ فلان بكذا».</li>
+  </ul>
+
+  <div class="box key">
+    <span class="tag">فائدة تربوية</span>
+    <p>القراءة في هذه المناقشات <strong>تنمّي ملكة النقاش</strong> عند الطالب؛ لأنه يقرأ حوارًا حيًّا بين علماء، لا نتيجة جاهزة. ولهذا قد يصدر العدد الواحد في <strong>ثلاثة مجلدات كبار</strong> وأحيانًا أكثر.</p>
+  </div>
+
+  <p>وأما مجمع رابطة العالم الإسلامي فله كذلك مجلة مطبوعة، وإن كان انتشارها ليس كبيرًا.</p>
+
+  <div class="box ev">
+    <span class="tag">أين تجد قرارات المجامع مجموعة؟</span>
+    <p>في كتاب <strong>«فقه النوازل»</strong> للشيخ <strong>محمد حسين الجيزاني</strong>، في <strong>أربع مجلدات</strong>. رتّب فيه الأبواب الفقهية، ويأتي في كل مسألة بالقرارات التي صدرت فيها من المجامع — فيضم في طيّاته قرارات المجمعَين المذكورَين وغيرهما.</p>
+  </div>
+
+  <h3 class="sub" id="t-elec">خامسًا: الموسوعات الإلكترونية والمجلات والمواقع</h3>
+
+  <p>النوع الثاني من الموسوعات هو <strong>الموسوعات الفقهية الإلكترونية</strong>، ومن أبرزها وأشهرها <strong>«جامع الفقه الإسلامي»</strong>. والتقنية بلا شك خدمت البحث العلمي — لكن الشيخ وقف هنا وقفة مهمة.</p>
+
+  <div class="box warnb">
+    <span class="tag">تحذير · الوصول إلى المعلومة ليس فهمها</span>
+    <p>طالب العلم لا يفتقر فقط إلى <strong>الوصول</strong> إلى المعلومة — والتقنية تساعدك في هذا — بل يحتاج إلى ما <strong>لا يقل أهمية</strong> عن الوصول: <strong>كيفية التعامل مع هذه المعلومة وكيفية فهمها</strong>.</p>
+    <p>والحقيقة أن الموسوعات الإلكترونية قد توقفك على الكلام، <strong>لكن غير المتمرّس قد تُضلّه هذه المعلومة</strong> فيفهمها على نقيض المقصود بها.</p>
+  </div>
+
+  <div class="box storyb">
+    <span class="tag">مثال واقعي · وقع كثيرًا في الرسائل العلمية</span>
+    <p>قال الشيخ: وقد وجدتُ هذا كثيرًا في بعض الرسائل العلمية. تجد الشخص يبحث بحثًا إلكترونيًا، فيجد كلامًا — نفترض في <strong>فتاوى شيخ الإسلام ابن تيمية</strong> — فيأتي فينقل الكلام ويوثّقه من «مجموع الفتاوى»؛ فقد ظهر أمامه الكلام في نتيجة البحث.</p>
+    <p>لكن <strong>لو رجع ثلاث صفحات إلى الخلف</strong> — بل أحيانًا صفحة واحدة — لاكتشف أن هذا الكلام <strong>ليس كلامًا لشيخ الإسلام، وإنما ينقله عن غيره</strong>.</p>
+    <p>وبعض الأحيان يكون <strong>اسم المنقول عنه في الصفحة السابقة</strong>، و<strong>الردّ على ذلك الكلام في الصفحة اللاحقة</strong>! فالذي يأتي فقط ليقف على المعلومة دون أن تكون عنده ملَكة، ربما يَضِلّ بذلك.</p>
+  </div>
+
+  <blockquote class="q">
+    إذا رُمتَ العلومَ بغيرِ شيخٍ &nbsp;⁕&nbsp; ضَلَلتَ عن الصراطِ المستقيمِ<br>
+    وتلتبسُ الأمورُ عليكَ حتى &nbsp;⁕&nbsp; تصيرَ أضلَّ من تُومَا الحكيمِ
+    <cite>أنشده الشيخ في هذا الموضع — وورد الشطر الأخير في التفريغ الصوتي ناقصًا «من تو الحكيم»</cite>
+  </blockquote>
+
+  <h4 class="mini">المجلات الفقهية</h4>
+
+  <div class="box def">
+    <span class="tag">تعريف</span>
+    <p><strong>المجلات الفقهية:</strong> مجلات تُعنى بالأبحاث الفقهية <strong>المحكَّمة</strong>.</p>
+  </div>
+
+  <ul class="booklist">
+    <li><span class="bt">مجلة المجمع الفقهي الدولي</span><span class="bm">التابع لمنظمة التعاون الإسلامي — سبق ذكرها.</span></li>
+    <li><span class="bt">مجلة مجمع الفقه الإسلامي</span><span class="bm">التابع لرابطة العالم الإسلامي.</span></li>
+    <li><span class="bt">مجلة الجمعية الفقهية السعودية</span><span class="bm">مجلة نفيسة ومفيدة، وصلت إلى نحو <strong>20 عددًا</strong> إلى الآن، كل عدد في نحو <strong>300 إلى 400 صفحة</strong>.</span></li>
+    <li><span class="bt">مجلة البحوث الفقهية المعاصرة</span><span class="bm">وغيرها.</span></li>
+  </ul>
+
+  <div class="box addb">
+    <span class="tag">وقفة الشيخ مع نفسه — وهذه مهمة</span>
+    <p>قال الشيخ ساخرًا من كثرة «يحسن بطالب العلم»: تقول لي طالب العلم يحسن به أن يقرأ كتب الإجماع، ويحسن به أن يقرأ كتب المذهب، ويحسن به أن يحفظ متنًا، ويحسن به أن يقرأ مجلات… <strong>نقول: كل هذا يحسن به، ويحسن بطالب العلم أن يشغل حياته بالعلم!</strong></p>
+    <p>ثم قرّر القاعدة: <strong>«العلم إذا أعطيته كلك أعطاك بعضه»</strong>. فيجتهد الطالب في تحصيل هذا.</p>
+    <p><strong>لكن بشرط:</strong> لا يعني قولنا «يحسن به» أن هذا في <strong>أول الأولويات</strong>، ولا أنه <strong>أهم المهمات</strong>. ووعد الشيخ ببيان <strong>منهجية الدراسة والتفقّه</strong> بعد درس أو درسين.</p>
+  </div>
+
+  <h4 class="mini">المواقع الشبكية — وأثرها في مسألة الإجماع</h4>
+
+  <p>ومما ظهر في العصر الحاضر <strong>المواقع الشبكية على الإنترنت</strong>، ومنها المتخصص في الفقه مثل <strong>الشبكة الفقهية</strong> و<strong>الملتقى الفقهي</strong> وغيرها. وهذه المواقع سهّلت التواصل بين أهل العلم.</p>
+
+  <div class="box key">
+    <span class="tag">أثر أصوليّ لطيف</span>
+    <p><strong>الإشكال القديم:</strong> تكلّم بعض العلماء سابقًا فقالوا إن <strong>الإجماع يَعسُر حصوله أو الوقوف عليه</strong>؛ لأن العلماء انتشروا في الأقطار وتفرّقوا فيها، فكيف تصل إلى أقوالهم جميعًا؟</p>
+    <p><strong>الجواب في العصر الحاضر:</strong> هذه المسألة <strong>تيسّرت</strong>؛ فما بينك وبين العالم الذي في آخر الدنيا إلا أن ترفع السماعة وتكلّمه، أو ترسل له إيميلًا أو رسالة واتساب.</p>
+    <p><strong>والمقارنة:</strong> كان <strong>ابن المنذر</strong> يقول: «<em>أجمع مَن نحفظ عنه من أهل العلم</em>»، ويقول: «أجمع علماء الأمصار» — وهذه الكلمة كانت تحتاج حتى يُحصّلها الإنسان إلى <strong>بذل وجهد ورحلة وتنقّل</strong>؛ وقد سهُلت اليوم إلى حد كبير.</p>
+  </div>
+
+  <h3 class="sub" id="t-nawazil">سادسًا: كثرة النوازل الفقهية</h3>
+
+  <p>ومما ظهر في العصر الحاضر <strong>كثرة النوازل</strong> — وسببها الثورة الصناعية وظهور التقنية واستخدام المكائن والكهرباء. فظهرت نوازل كثيرة جدًا في كل الأبواب، وفي كل يوم وليلة تظهر أشياء عجائب.</p>
+
+  <div class="box def">
+    <span class="tag">لماذا هذا متوقَّع أصلًا؟ (ربط بتعريف الفقه)</span>
+    <p>الفقه هو <strong>العلم المتعلق بأفعال المكلَّفين</strong>. وأفعال العباد — من ناحية أنواعها وأجناسها — <strong>تتطور وتتسارع وتتغير بشكل عجيب</strong>. وكل فعل من هذه الأفعال، وكل نازلة من هذه النوازل، <strong>فيها حكم شرعي</strong>.</p>
+    <p style="margin-top:10px">فكثرة النوازل ليست خللًا طارئًا، بل هي <strong>نتيجة طبيعية</strong> لتعريف الفقه نفسه.</p>
+  </div>
+
+  <blockquote class="q">
+    «فإنه لا تنزل بأحدٍ من الناس نازلةٌ إلا وفي كتاب الله عز وجل بيانُ الهدى فيها»
+    <cite>قول الإمام الشافعي رحمه الله، كما أورده الشيخ</cite>
+  </blockquote>
+
+  <p>وهذه النوازل متنوعة: منها ما يتعلق <strong>بالعبادات</strong>، ومنها <strong>بالمعاملات</strong>، ومنها <strong>بالأسرة</strong>، ومنها <strong>بالجنايات</strong>، ومنها ما <strong>يجمع أبوابًا متعددة</strong>.</p>
+
+  <div class="box key">
+    <span class="tag">أمثلة النوازل في كل باب</span>
+    <ul class="plain">
+      <li><strong>الطهارة:</strong> حكم استعمال مياه الصرف الصحي المعالَجة.</li>
+      <li><strong>الصلاة:</strong> الصلاة في الطائرة · القراءة من المصحف في الجوال · هل يجوز مسّ المصحف بغير طهارة إذا كان في الجوال؟</li>
+      <li>وأشياء لا حصر لها.</li>
+    </ul>
+  </div>
+
+  <div class="box ev">
+    <span class="tag">مؤسسة متخصصة</span>
+    <p>نشأ مركز يختص بدراسة هذه القضايا وخدمتها، مقرّه <strong>جامعة الإمام</strong>، اسمه <strong>«مركز التميز البحثي في فقه القضايا المعاصرة»</strong>. وصدر عنه عدد من الدراسات والأبحاث، وعنه صدرت <strong>موسوعة القضايا الفقهية المعاصرة</strong> السابق ذكرها، وأقام عددًا من الندوات والمؤتمرات.</p>
+  </div>
+
+  <h3 class="sub">سابعًا: نشأة الكليات الشرعية والدراسات العليا</h3>
+
+  <p>ومن معالم العصر الحاضر: <strong>ظهور الكليات الشرعية والأقسام الفقهية</strong>. فأُنشئت الجامعات، ومن ضمن كلياتها كليات الشريعة، وقد خدمت من ناحية نشر العلم وتعليم الناس. ومنها: كلية الشريعة في <strong>جامعة الإمام</strong>، و<strong>جامعة أم القرى</strong>، و<strong>جامعة القصيم</strong>، و<strong>الجامعة الإسلامية</strong> — ولكل واحدة منهج ومقررات ومفردات.</p>
+
+  <p>ومما حرّك البحث العلمي في هذه الكليات: <strong>افتتاح الدراسات العليا</strong>؛ فصار كل طالب إذا أراد أن يتخرج في الماجستير أو الدكتوراه لا بد أن يكتب بحثًا. وهذه البحوث بعضها يُطبع وبعضها لا، لكنها <strong>حرّكت البحث الفقهي</strong>.</p>
+
+  <div class="box warnb">
+    <span class="tag">لكن الميزان ليس الشهادة</span>
+    <p>الرسائل العلمية — ماجستير ودكتوراه — <strong>فيها ما هو على مستوى الجودة</strong> ومفيد جدًا ويُعتبر مرجعًا في بابه، <strong>وفيها ما هو دون ذلك</strong>.</p>
+  </div>
+
+  <blockquote class="q">
+    فلا يَغُرَّنَّكَ بريقُ الأغلفةْ &nbsp;⁕&nbsp; فكم كتابٍ حقُّه أن تُتلِفَهْ
+  </blockquote>
+
+  <blockquote class="q">
+    استبدلوا لفظَ الفقيهِ بغيرِه &nbsp;⁕&nbsp; ومن العجيبِ مُحدِّثونَ دكاترهْ<br>
+    واللهِ لو عَلِمَ الجدودُ بحالِنا &nbsp;⁕&nbsp; لتناقلوها في المجالسِ نادرهْ
+  </blockquote>
+
+  <blockquote class="q">
+    ودخلتُ فيها جاهلًا متواضعًا &nbsp;⁕&nbsp; وخرجتُ منها جاهلًا دكتورا
+    <cite>وفي رواية: «وخرجتُ منها جاهلًا مغرورا» — وقال الشيخ عند إنشادها: «وما أُبرِّئ نفسي»</cite>
+  </blockquote>
+
+  <p>فليس تحصيل الشهادات في حد ذاته نهاية العلم، ولا دليلًا على العلم، كما قال الشيخ <strong>حافظ الحكمي</strong> رحمه الله:</p>
+
+  <blockquote class="q">
+    ما العلمُ حَملُ شهاداتٍ مُزَخرفةٍ &nbsp;⁕&nbsp; بزُخرفِ القولِ من نثرٍ ومُنتظِمِ<br>
+    بل خشيةُ اللهِ في سرٍّ وفي عَلَنٍ &nbsp;⁕&nbsp; فاعلَمْ، هي العلمُ كلُّ العلمِ فالتزِمِ
+  </blockquote>
+
+  <div class="takeaway">
+    <h4>❈ خلاصة الدرس التاسع</h4>
+    <ol>
+      <li>القاعدة الحاكمة في التعامل مع المكتبة الفقهية: اعرف <strong>لماذا أُلِّف الكتاب</strong> قبل أن تطالبه بما لم يستهدفه — «الإنصاف» للروايات لا للأدلة.</li>
+      <li>عظمة الكتاب في ذاته لا تعني صلاحيته لكل طبقات المتعلمين؛ الأوسط وتفسير ابن جرير عظيمان، ولا يبدأ بهما مبتدئ.</li>
+      <li>الموسوعة الفقهية الكويتية أجلّ الموسوعات، ترتيبها على الحروف، وتعطيك المعتمد في المذاهب الأربعة بلا استيعاب للأدلة — ولا يصح تحرير المذهب منها.</li>
+      <li>المجامع الفقهية نشأت لأن النوازل كثرت وتعقّدت وتشابكت أبوابها حتى عجزت عنها الفتوى الفردية؛ وقراراتها بالأغلبية لا بالإجماع.</li>
+      <li>التقنية تُوصلك إلى المعلومة ولا تعطيك ملَكة فهمها؛ والنقل الإلكتروني بلا سياق قد ينسب لابن تيمية ما هو ردٌّ عليه.</li>
+      <li>كثرة النوازل نتيجة طبيعية لكون الفقه متعلقًا بأفعال المكلفين المتغيرة، لا خللًا في الشريعة.</li>
+      <li>الكليات والدراسات العليا حرّكت البحث الفقهي، لكن الشهادة ليست ميزان العلم؛ الميزان خشية الله.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ==================== الدرس 10 ==================== -->
+<section class="section s3" id="d10">
+  <div class="sec-head">
+    <span class="sec-badge">الدرس العاشر</span>
+    <h2>دعوى التجديد في أصول الفقه</h2>
+    <p>ما التجديد المقبول؟ وما التجديد الهادم؟ ولماذا الشاطبي ليس شاهدًا للمقاصديين المعاصرين؟</p>
+  </div>
+
+  <div class="box addb">
+    <span class="tag">افتتاح الشيخ</span>
+    <p>نبّه الشيخ في مطلع الدرس إلى فرق يخلط فيه كثيرون: <strong>هناك فرق بين «مقرر الفقه» و«مقرر المدخل إلى الفقه»</strong> — ونحن الآن في <strong>المدخل</strong>.</p>
+  </div>
+
+  <p>وصلنا في الدرس الماضي إلى معالم الفقه في العصر الحاضر، وذُكر من ضمنها <strong>ظهور دعوى التجديد في أصول الفقه</strong>. فقد ظهرت في هذا العصر دعوات تدعو إلى إعادة بناء الفقه الإسلامي من جديد، وإلى «تنقية المذاهب»، وتتعصّب تعصبًا مذهبيًا <strong>ضد</strong> المذاهب الفقهية المعتبرة.</p>
+
+  <div class="box def">
+    <span class="tag">تفريق أساسي</span>
+    <ul class="plain">
+      <li><strong>الدعوة الأولى (سبق الردّ عليها):</strong> إعادة بناء <strong>الفقه</strong> — أي الفروع الفقهية.</li>
+      <li><strong>الدعوة الثانية (موضوع هذا الدرس):</strong> إعادة بناء <strong>أصول الفقه</strong> نفسه.</li>
+    </ul>
+  </div>
+
+  <h3 class="sub" id="t-tajdid">ما المقصود بـ«التجديد» هنا؟</h3>
+
+  <h4 class="mini">أولًا: التجديد المقبول — تجديد طريقة التصنيف</h4>
+
+  <p>لو كانت الدعوة إلى التجديد بمعنى: أن كتب أصول الفقه الأولى التي كتبها المتقدمون فيها شيء من الصعوبة، فنحتاج أن نكتب عليها <strong>شروحًا</strong>، أو <strong>نبسّطها</strong>، أو <strong>نقرّبها</strong>، أو نضع <strong>مشجّرات</strong> ودروسًا مبسّطة — <strong>فهذا كله ليس هو المقصود هنا، ولا إشكال فيه</strong>.</p>
+
+  <p>وقال الشيخ: العلماء لا يوجد فيهم أحد إلا وإذا ألّف يكون عنده شيء من التجديد في طريقة تأليفه، إما في <strong>جمع متفرّق</strong> أو في <strong>تفصيل مسألة</strong> أو نحو ذلك. ومن أمثلة ذلك أنه كانت عندنا <strong>طريقة الشافعية</strong> و<strong>طريقة الحنفية</strong> في التصنيف الأصولي، فجاء من العلماء من جدّد <strong>فجمع بين الطريقتين في كتاب واحد</strong> — وهذا تجديد لا إشكال فيه.</p>
+
+  <h4 class="mini">ثانيًا: التجديد الهادم — تجديد المضامين</h4>
+
+  <p>الإشكال أن هذه الدعوة تدعو إلى التجديد <strong>في مضامين هذا العلم</strong>: أن قواعد العلم — <strong>قواعد فهم الشريعة</strong> التي سار عليها السلف — لا بد من إعادة النظر فيها في عصرنا الحاضر.</p>
+
+  <div class="box ev">
+    <span class="tag">لماذا أصول الفقه بالذات؟</span>
+    <p>الإمام <strong>الشافعي</strong> لمّا ألّف <strong>«الرسالة»</strong> — وهو أول من صنّف في أصول الفقه — إنما أراد أن <strong>يدوّن القواعد التي سار عليها الصحابة والتابعون في فهم الشريعة</strong>.</p>
+    <p>وقال بعضهم: <strong>الكتاب والسنة حصن، وسورُه الإجماع، وبوابته أصول الفقه</strong>؛ لأنه لا يمكن أن تُفهم الشريعة إلا على الوجه الذي فهمها به الصحابة الذين شهدوا التنزيل وسمعوا من النبي ﷺ مباشرة ومشافهة.</p>
+    <p>ولهذا فعلم أصول الفقه — الذي هو طريقة فهم السلف للأدلة الشرعية — هو <strong>سور الشريعة</strong>.</p>
+  </div>
+
+  <div class="box warnb">
+    <span class="tag">معلومة ذكرها الشيخ وشكّك في ثبوتها بنفسه</span>
+    <p>ذكر بعض الباحثين أن <strong>المستشرقين حاولوا إخفاء كتاب «الرسالة» وتتبُّع مخطوطاته للقضاء عليه</strong>.</p>
+    <p>وقال الشيخ صراحةً: <strong>«ولا أدري عن صحة ذلك»</strong> — فأبقيتُها في صندوق منفصل ولم أدرجها في متن المحتوى، لأن ناقلها نفسه لم يجزم بها.</p>
+  </div>
+
+  <h4 class="mini">مَثَل النحو: لماذا القواعد غير قابلة للتجديد؟</h4>
+
+  <div class="box key">
+    <span class="tag">قياس الشيخ</span>
+    <p>هل يمكن أن نقول: كان العرب الأوائل يجعلون الفاعل <strong>مرفوعًا</strong>، لكن المناسب للعصر الحاضر أن نجعله <strong>مجرورًا أو منصوبًا</strong>؟!</p>
+    <p>هذا أمر <strong>لا يقبل التجديد أبدًا</strong>. وكذلك قواعد فهم الشريعة لا تقبل التجديد.</p>
+  </div>
+
+  <h4 class="mini">صورة الدعوة عمليًا — وأين تصل</h4>
+
+  <p>ونبّه الشيخ إلى نقطة مفصلية: <strong>أي تأثير يمسّ أصول الفقه سينتقل أثره على طول إلى الفروع الفقهية مباشرة</strong>. فيقول لك: «الأمر يقتضي الوجوب — قاعدة صحيحة سار عليها السلف جيلًا بعد جيل — <strong>ولكن عصرنا الحاضر يقتضي أن نجدّد</strong>».</p>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th style="width:220px">القاعدة عند السلف</th><th>ما تُستبدل به في دعوى التجديد</th><th>الأثر</th></tr></thead>
+      <tbody>
+        <tr><td class="b">الأمر يقتضي الوجوب</td><td>الأمر للاستحباب أو للإباحة</td><td>الصلوات الخمس تتحول من واجب إلى مستحب</td></tr>
+        <tr><td class="b">النهي يقتضي التحريم</td><td>النهي للكراهة</td><td>المحرَّمات تصير مكروهات</td></tr>
+        <tr><td class="b">اللفظ العام يشمل جميع الصور</td><td>يدخل فيه من الصور ما تراه أنت مناسبًا أو ما تقتضيه المصلحة</td><td>العموم يصير انتقائيًا بحسب الناظر</td></tr>
+        <tr><td class="b">الكتاب والسنة أول الأدلة</td><td>المصلحة أول الأدلة، ثم يُنظر في الكتاب والسنة</td><td>لا يُؤخذ من النص إلا ما عضّد ما نراه مصلحة</td></tr>
+        <tr><td class="b">الإجماع حجة</td><td>الإجماع ليس بحجة</td><td>إعادة النظر في كل مسائل الشريعة من الصفر</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box warnb">
+    <span class="tag">حكم الشيخ على الدعوة</span>
+    <p>هذه <strong>دعوة مرفوضة تمام الرفض</strong>، ولا شك أنها <strong>هدم للشريعة</strong>.</p>
+    <p>ووجه خطورتها أنها أذكى من نقد الفروع: فبدلًا من أن يأتي إليك ويقول «الزنا مكروه» — وهو ما سترفضه فورًا — <strong>يقول: خلّينا نغيّر القاعدة من الأصل، وكل الفروع بعد ذلك تنتقض عليها</strong>.</p>
+  </div>
+
+  <p>وأصحاب هذه الدعوات ليسوا على رتبة واحدة، وقد تعددت أسماؤهم: منهم من سمّى نفسه <strong>بالعقلانيين</strong>، ومنهم <strong>التنويريون</strong>، ومنهم <strong>الليبراليون</strong>، وغير ذلك من الأسماء — <em>وتعددت الأسباب والموت واحد</em>.</p>
+
+  <h3 class="sub" id="t-maqasid">دعوى إغناء «مقاصد الشريعة» عن أصول الفقه</h3>
+
+  <p>ومن الدعوات التي حصل منها إشكال في هذا الباب: الدعوة إلى جعل <strong>علم مقاصد الشريعة هو العلم الحاكم على الاجتهاد والاستنباط</strong>، وأنه لا حاجة كبيرة إلى علم أصول الفقه، وأن المقاصد <strong>تُغني عنه</strong>.</p>
+
+  <div class="box def">
+    <span class="tag">منطق الدعوة</span>
+    <p>يقولون: <strong>مقصد الشريعة هو مصلحة العباد في المعاش والمعاد</strong>، فهي إذن تتكلم عن <strong>المصالح</strong>؛ ومقاصد الشريعة هي العلم الذي تُضبط من خلاله المصالح.</p>
+    <p>فيأتي فيقول: لا نحتاج علم أصول الفقه — هذا الذي يتعلق بالكتاب والسنة والإجماع والقياس — <strong>نحتاج علم مقاصد الشريعة</strong> الذي يتعلق بضبط المصالح.</p>
+  </div>
+
+  <p>والناس في هذا مراتب: منهم من يطرح هذا الطرح كاملًا، ومنهم من تكون دعوته أخفّ فلا يدّعي أن المقاصد تغني بالكلية عن الأصول، <strong>ولكنه ربما يضخّم فيه</strong>.</p>
+
+  <h4 class="mini">تنبيه تاريخي مهم</h4>
+
+  <div class="box key">
+    <span class="tag">نبّه عليه الشيخ خاصة</span>
+    <p>على مرّ <strong>13 قرنًا</strong> لا يُعرف في مدونات الإسلام أن هناك <strong>علمًا مستقلًا اسمه «علم مقاصد الشريعة»</strong> — أبدًا. لا يوجد علم بهذا الاسم إلى ما قبل <strong>مئة سنة</strong>.</p>
+    <p><strong>الدليل العملي:</strong> لا يمكن أن تجد في ترجمة عالم من العلماء قولهم: «كان رحمه الله فقيهًا أصوليًا <strong>مقاصديًا</strong>». لن تجد هذا.</p>
+    <p>فإفراد مقاصد الشريعة وجعلها علمًا مستقلًا <strong>أمر حدث في الأزمنة المتأخرة</strong>.</p>
+  </div>
+
+  <p>وقد يقول قائل: <strong>لا مشاحّة في الاصطلاح</strong>. والجواب: نعم، لا مشاحّة؛ فكون المبحث المتعلق بالمقاصد يُفرَد بعلم مستقل وبكتب مستقلة <strong>أمر لا إشكال فيه</strong>، وقد أفرده بعض المتقدمين — فـ<strong>العز بن عبد السلام</strong> صنّف كتابًا يركّز على قضية المصلحة ومراتب المصالح، وله في ذلك <strong>«القواعد الكبرى»</strong> و<strong>«القواعد الصغرى»</strong>.</p>
+
+  <div class="box warnb">
+    <span class="tag">فأين يقع الإشكال بالضبط؟</span>
+    <p>يقع الإشكال حين <strong>يُفرَد هذا العلم استقلالًا، ثم يُدرَّس لغير المتخصصين، ويُدّعى أنه هو الآلة التي تؤهّل للاجتهاد</strong>.</p>
+  </div>
+
+  <h4 class="mini">شبهة الاستدلال بالشاطبي</h4>
+
+  <p>وبعضهم يستدل بكلام للإمام <strong>الشاطبي</strong> في <strong>«الموافقات»</strong>؛ قال: يُشترط ليكون الإنسان مجتهدًا <strong>شرطان</strong>:</p>
+
+  <ol class="plain">
+    <li>العلم <strong>باللغة العربية</strong>.</li>
+    <li>العلم <strong>بمقاصد الشريعة</strong>.</li>
+  </ol>
+
+  <div class="box ev">
+    <span class="tag">الجواب · وما المقصود بالمقاصد عند الشاطبي؟</span>
+    <p>لم يقصد رحمه الله بـ«العلم بمقاصد الشريعة» ما يُسمّى اليوم بـ«علم مقاصد الشريعة» أبدًا. <strong>والدليل من كلامه نفسه:</strong> فإنه في نفس الموضع قال: <strong>«كمعرفة العموم والخصوص، والأمر والنهي»</strong>!</p>
+    <p>فالمقصود أن الإنسان يحتاج أن يعرف <strong>الحقائق اللغوية</strong> ولسان العرب، ويحتاج أن يعرف <strong>مقاصد الشرع ولسان الشرع واصطلاحات الشرع</strong>؛ فلا تكفيه معرفته باللغة العربية وحدها.</p>
+    <p><strong>برهان ذلك:</strong> الإنسان إذا درس اللغة العربية، هل يتحصّل له من دراستها معرفةُ أن مقصد <strong>الأمر</strong> هو <strong>الوجوب</strong>؟ لا يحصل ذلك بمجرد اللغة. فمن مقاصد الشرع: إرادة الوجوب من صيغة الأمر، وإرادة الاستغراق للأفراد من صيغة العموم، وإرادة التحريم من صيغة النهي، وهكذا.</p>
+    <p style="margin-top:10px; font-weight:700; color:var(--s3)">فباختصار: مقاصد الشريعة في كلام الشاطبي هي <strong>علم أصول الفقه بجميع أبوابه</strong>.</p>
+  </div>
+
+  <p>فجاء اليوم من أفرد ذلك وأبرزه وقال: الشاطبي يقول يكفي لتحصيل الاجتهاد معرفة مقاصد الشريعة! ويسمّونه <strong>«الاجتهاد المقاصدي»</strong> — كأن عندنا اجتهادًا مقاصديًا واجتهادًا آخر <strong>نصّيًا</strong> تنظر فيه إلى النصوص الشرعية؛ وبعضهم يجعل المقاصدي <strong>فوق ذلك</strong>: لا تنظر في حروف النص الشرعي، وإنما تنظر في <strong>روح الشريعة</strong> ومقاصدها. ولا شك أنه <strong>لا يمكن تحصيل هذا المعنى إلا بالنظر في النصوص الشرعية</strong> نفسها.</p>
+
+  <h4 class="mini">حجّة قاصمة: المصالح الدنيوية لا يختص بها علماء الشريعة</h4>
+
+  <div class="box key">
+    <span class="tag">تحليل الشيخ</span>
+    <p>قضية المقاصد تركّز على <strong>المصالح</strong>. فإذا طرحنا المصالح <strong>بالمعنى الدنيوي</strong> — مثلًا: قضية اقتصادية، هل المصلحة أن نتخذ القرار «أ» ونمنع هذه المعاملة، أو القرار «ب» ونسمح بها؟ — <strong>فهذا أمر لا يختص به علماء الشريعة</strong>.</p>
+    <p><strong>بل لا يختص به المسلمون أصلًا!</strong> فالكفار — أليسوا يدركون مصالحهم الدنيوية؟ يدركونها.</p>
+    <p><strong>فالنتيجة اللازمة:</strong> أن نجعل شرط الاجتهاد هو معرفة المصالح بالمعنى الدنيوي يعني أن <strong>أكثر الكفار يصيرون مجتهدين</strong>! فعندهم آلة الاجتهاد وهي معرفة المصالح ورُتَبها. فالمتخصص — يهوديًا كان أو نصرانيًا أو ملحدًا — يستطيع أن يقول لك: هذه المصلحة أعلى من هذه، وهذه مصلحة جماعة وهذه مصلحة فرد، وهذا ضروري وهذا حاجي وهذا تكميلي. <strong>ترتيب المصالح بهذا النمط ليس أمرًا يختص به علماء الشريعة، بل ولا المسلمون.</strong></p>
+  </div>
+
+  <h3 class="sub" id="t-shatibi">الشاطبي في الميزان: أربعة فروق تفصله عن المقاصديين</h3>
+
+  <div class="box addb">
+    <span class="tag">تنبيه تمهيدي</span>
+    <p>بالمناسبة: <strong>الشاطبي لم يُفرد علمًا اسمه «علم مقاصد الشريعة» أصلًا</strong> حتى يُفسَّر كلامه بهذا. الشاطبي ألّف «الموافقات» وجعل فيه أبواب <strong>أصول الفقه</strong>، ومن ضمنها بابٌ سمّاه «كتاب المقاصد» — فهو <strong>جزء من كتاب</strong>، لا علم مستقل.</p>
+  </div>
+
+  <h4 class="mini">الفرق الأول: الشاطبي يركّز على المقاصد الأخروية</h4>
+
+  <p>كان يركّز كثيرًا في «الموافقات» على <strong>المقاصد الأخروية</strong> للشريعة، التي لا تتمثل في المصالح الدنيوية. ولهذا لمّا ذكر المقصد الشرعي من وضع الشريعة قال:</p>
+
+  <blockquote class="q">
+    «المقصد الشرعي من وضع الشريعة: إخراجُ المكلَّف عن داعية هواه، ليكون عبدًا لله اختيارًا كما أنه عبدٌ لله اضطرارًا»
+    <cite>الشاطبي — ذكره في أول المقاصد من وضع الشريعة</cite>
+  </blockquote>
+
+  <h4 class="mini">الفرق الثاني: تعظيمه لفهم السلف</h4>
+
+  <p>يركّز الشاطبي كثيرًا جدًا على <strong>تعظيم فهم السلف</strong> وتعظيم اتّباعهم، وأن الإنسان <strong>لا يجتهد خارج فهم السلف</strong>، وله في ذلك عبارات قوية:</p>
+
+  <blockquote class="q">
+    «فكلُّ ما جاء مخالفًا لما عليه السلف الصالح فهو الضلالُ بعينه»
+    <cite>الشاطبي</cite>
+  </blockquote>
+
+  <blockquote class="q">
+    «فلهذا كلِّه يجب على كل ناظر في الدليل الشرعي مراعاةُ ما فَهِم منه الأوَّلون وما كانوا عليه في العمل به، فهو أحرى بالصواب وأقوم في العلم والعمل»
+    <cite>الشاطبي</cite>
+  </blockquote>
+
+  <div class="box warnb">
+    <span class="tag">المقابلة</span>
+    <p>هذه العبارة <strong>لا يمكن أن يقولها أصحاب مدرسة المصالح والمقاصد الدنيوية</strong>؛ بل هم بالعكس يدعون إلى التجديد في أصول الفقه <strong>لأنك تنقض طريقة فهم السلف</strong> وتأتي بطريقة فهم عصرية.</p>
+    <p>وبعضهم يعبّر عن ذلك بـ<strong>«قدسية النص وحرية الفهم»</strong>: النص مقدَّس على الرأس والعين، وأما طريقة الفهم <strong>فأنت حر فيها</strong>. تفهم النص كما تريد.</p>
+  </div>
+
+  <h4 class="mini">الفرق الثالث: تعظيمه لمقام المجتهدين والمدارس الفقهية</h4>
+
+  <blockquote class="q">
+    «وعلى الجملة، فالمفتي مُخبِرٌ عن الله كالنبي، ومُوقِّعٌ للشريعة على أفعال المكلَّفين بحسب نظره كالنبي، ونافذٌ أمرُه في الأمة بمنشور الخلافة كالنبي؛ ولذلك سُمُّوا أولي الأمر، وقُرِنت طاعتُهم بطاعة الله ورسوله»
+    <cite>الشاطبي</cite>
+  </blockquote>
+
+  <div class="box addb">
+    <span class="tag">توضيح مني لدفع اللبس</span>
+    <p>مقصود الشاطبي بقوله «كالنبي» — كما شرحه الشيخ — أن <strong>العلماء ورثة الأنبياء</strong>، فيجب اتباعهم في فهم الشريعة. وليس المراد مساواة المفتي بالنبي في العصمة أو الوحي.</p>
+  </div>
+
+  <h4 class="mini">الفرق الرابع: التزامه المذهب المالكي في الفتوى</h4>
+
+  <p>والشاطبي نفسه كان <strong>مالكيًا لا يخرج عن مذهب مالك في الفتوى</strong>، ويقول رحمه الله:</p>
+
+  <blockquote class="q">
+    «وأما نقل مذاهب الأنصار سوى مذهب مالك والفتوى بها بالنسبة إلينا، فهو أشدُّ؛ لأنها مذاهب يُذكر لنا منها أطرافٌ في مسائل الخلاف لم نتفقّه فيها، ولا رأينا من تفقّه فيها، ولا عرف أصولها، ولا دلّ على معانيها، ولا حصّل قواعدها التي تُبنى عليها — <strong>فنحن والعوامُّ سواء</strong>.<br><br>
+    فكما أنه لا يحلّ للعامي الذي لم يقرأ كتابًا ولا سمع فقهًا أن يأخذ كتب الفقه فيقرأها لنفسه ويفتي بما حصل منها على عِلمه، كذلك من لم يتفقّه في مذهبٍ غيرِ مذهب مالك، وإن كان إمامًا في مذهب مالك»
+    <cite>الشاطبي</cite>
+  </blockquote>
+
+  <blockquote class="q">
+    «وأنا لا أستحلّ — إن شاء الله — في دين الله وأمانته أن أجد قولين في المذهب فأُفتي بأحدهما على التخيير مع أني مقلِّد؛ بل أتحرّى ما هو المشهور والمعمول به، فهو الذي أذكره للمستفتي»
+    <cite>الشاطبي</cite>
+  </blockquote>
+
+  <blockquote class="q">
+    «وقد نُقل عن الإمام المازري — على إمامته — أنه لا يفتي بغير المشهور من مذهب مالك، ومحلُّه من العلم ما قد عُلم»
+    <cite>الشاطبي، ناقلًا عن المازري</cite>
+  </blockquote>
+
+  <p>ويقول أيضًا: «وإنما يبقى النظر في المسألة أن من يترخّص في ذلك يبني على بعض التأويلات التي هي <strong>خلاف المعتمد من مذهب مالك</strong>»، ويقول: «<strong>والعمل إنما يكون في المسائل الخلافية على ما هو المشهور</strong>».</p>
+
+  <div class="box key">
+    <span class="tag">النتيجة</span>
+    <p>فإذا كان <strong>هذا</strong> هو الإمام الشاطبي — فكيف ينتسب إليه هؤلاء؟ <strong>شتّان، وبونٌ شاسع</strong> بين بعض دعاة المقاصد اليوم الذين يدعون إلى فتح باب الاجتهاد عن طريق النظر في المقاصد والمصالح المحضة، وبين طريقة الإمام الشاطبي.</p>
+  </div>
+
+  <h4 class="mini">شهادة من داخل المدرسة المقاصدية نفسها</h4>
+
+  <p>ومن أجل ذلك كتب أحدهم — وهو من المنتسبين إلى المدرسة المقاصدية — معترفًا بهذا الفارق:</p>
+
+  <blockquote class="q">
+    «لقد بدا لنا من خلال هذه الفتوى المطوّلة كيف أن التزام المذهب ظلّ مقيِّدًا للشاطبي في طبيعة تنزيله واجتهاده المقاصدي، وهو ما يؤكد أنه <strong>لم يخرج في مجال الاجتهاد الفقهي التنزيلي عن حدود المذهب</strong>… فالشاطبي — على جلالته مقاصديًّا — <strong>لم يتمكّن من ذلك</strong>، وتفعيلُه المقاصدي على مستوى الاختيار الفقهي لم يكن يتناسب مع حجم تنظيره»
+    <cite>نقله الشيخ عن أحد كتّاب المدرسة المقاصدية المعاصرة</cite>
+  </blockquote>
+
+  <div class="box warnb">
+    <span class="tag">ماذا يعني هذا الاعتراف؟</span>
+    <p>يعني باختصار — كما لخّصه الشيخ — أنهم يقولون: <strong>المقاصد التي نريدها ليست بالنمط الذي طبّقه الشاطبي رحمه الله</strong>. فهم أنفسهم يقرّون أن إمامهم المفترَض لم يعمل بما ينسبونه إليه.</p>
+  </div>
+
+  <h4 class="mini">«أنصاف الشاطبي»</h4>
+
+  <div class="box key">
+    <span class="tag">تسمية لطيفة</span>
+    <p>للشاطبي كتابان: <strong>«الموافقات»</strong> و<strong>«الاعتصام»</strong>. و«الاعتصام» يتكلم عن أهمية الاعتصام بالكتاب والسنة والتحذير من البدعة.</p>
+    <p>ولهذا سمّى بعضهم الذين يركّزون فقط على «الموافقات»: <strong>«أنصاف الشاطبي»</strong> — كما نقول: نصف الفقيه ونصف النحوي — فقد أخذ بجزء من كلام الشاطبي وترك جزءًا.</p>
+  </div>
+
+  <h4 class="mini">وتحذير الشاطبي نفسه ممن يتقحّم كتابه</h4>
+
+  <blockquote class="q">
+    «ولا يحلّ لأحد أن ينظر في كتابي هذا نظرَ مفيدٍ أو مستفيدٍ إلا وهو <strong>رَيّانُ من علوم الشريعة أصولِها وفروعِها</strong>… لأنه إن فعل ذلك كان ذلك عليه فتنةً بالعَرَض وإن كان حُكمُه بالذات»
+    <cite>الشاطبي في مقدمة «الموافقات»</cite>
+  </blockquote>
+
+  <p>يعني: يُفتتن بهذا الكتاب — وإن كان الكتاب ما فيه إلا حق — لكنه هو لا يفهم، <strong>فيَضِل</strong>. والآن يجيء من لم يدرس شيئًا فيأخذ «الموافقات»!</p>
+
+  <div class="box def">
+    <span class="tag">أين موضع المقاصد الصحيح من العلم؟</span>
+    <p>مسألة المقاصد والمصالح <strong>من أدقّ مسائل أصول الفقه</strong>، وتتعلق بـ<strong>مبحث المناسبة في القياس</strong>. وليست من المسائل التي تُشاع لكل أحد.</p>
+    <p><strong>ومثالها في النحو:</strong> تأتي إلى من لم يدرس «الآجُرُّومية» في النحو وتقول له: تعالَ ادرس <strong>عِلَل النحويين</strong> في مسائل النحو! وهو لا يعرف أصلًا كلام النحويين حتى يعرف طريقة تعليلهم.</p>
+  </div>
+
+  <div class="box warnb">
+    <span class="tag">نصيحة الشيخ الختامية لطلبة العلم</span>
+    <p>لا ينبغي لطالب العلم أن يشغل نفسه كثيرًا بتتبّع الكتب المكتوبة في المقاصد وجمعها. فالمطبوعات اليوم — تنظر في «صدر حديثًا» فتجد <strong>25 كتابًا في المقاصد</strong>! وكثير منها <strong>نُقل بعضُه من بعض</strong>، وبعضها قد يكون أصلًا في اتجاه ليس بصواب.</p>
+    <p>وقد ظهر أن يتكلم في التجديد في أصول الفقه <strong>من لا علاقة له بعلوم الشريعة</strong>، ومن ليس له فيها ناقة ولا جمل.</p>
+    <p style="margin-top:10px">وقد وقعت النتيجة العملية: صار بعض طلبة العلم <strong>لم يدرس في حياته متنًا فقهيًا على قول واحد</strong>، ثم يبدأ يدرس المقاصد وربما يكتب فيها أبحاثًا يأخذ بها <strong>أبحاث الترقية</strong> — وهو لم يدرس متنًا فقهيًا ولا درس في أصول الفقه شيئًا ذا بال. <strong>فليُتنبَّه لهذا.</strong></p>
+  </div>
+
+  <div class="box addb">
+    <span class="tag">ماذا في الدرس القادم؟</span>
+    <p>وعد الشيخ بالحديث عن <strong>الاتجاهات الفقهية</strong>، ولها علاقة بالكلام عن المقاصد، وهي أربعة:</p>
+    <ol class="plain">
+      <li>مدرسة <strong>أهل الحديث</strong>.</li>
+      <li>مدرسة <strong>أهل الرأي</strong>.</li>
+      <li>مدرسة <strong>أهل الظاهر</strong>.</li>
+      <li><strong>المدرسة العقلية الحديثة</strong> (بتسمية الشيخ).</li>
+    </ol>
+  </div>
+
+  <div class="takeaway">
+    <h4>❈ خلاصة الدرس العاشر</h4>
+    <ol>
+      <li>التجديد في <strong>طريقة</strong> التصنيف الأصولي (شرح، تبسيط، مشجّرات، جمع بين طريقتي الشافعية والحنفية) مقبول ولا إشكال فيه.</li>
+      <li>التجديد في <strong>مضامين</strong> أصول الفقه هدمٌ للشريعة؛ لأن أثره ينتقل مباشرة إلى كل الفروع دفعةً واحدة — وهذا أخطر من نقد الفروع فرعًا فرعًا.</li>
+      <li>قواعد فهم الشريعة لا تقبل التجديد كما لا يقبل رفعُ الفاعل تجديدًا؛ وهي سور الشريعة الذي دوّنه الشافعي عن الصحابة والتابعين.</li>
+      <li>«علم مقاصد الشريعة» كعلم مستقل لم يُعرف في 13 قرنًا، ولا يوجد عالم وُصف بأنه «مقاصدي». وإفراده بالتصنيف لا إشكال فيه؛ الإشكال في تدريسه لغير المتخصصين وادّعاء أنه آلة الاجتهاد.</li>
+      <li>«مقاصد الشريعة» في شرط الشاطبي للاجتهاد هي أصول الفقه بجميع أبوابه — بدليل أنه مثّل لها بالعموم والخصوص والأمر والنهي.</li>
+      <li>المصالح بالمعنى الدنيوي يدركها غير المسلمين؛ فجعلها آلة الاجتهاد يلزم منه أن يصير أكثر الكفار مجتهدين.</li>
+      <li>الشاطبي يفارق المقاصديين المعاصرين في أربعة: تركيزه على المقاصد الأخروية، وتعظيمه فهم السلف، وتعظيمه مقام المجتهدين، والتزامه المشهور من مذهب مالك في الفتوى — وقد اعترف بذلك أحد المقاصديين نفسه.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ==================== البطاقات ==================== -->
+<section class="cards-sec" id="cards">
+  <h2>بطاقات المراجعة</h2>
+  <p class="lead">اضغط على البطاقة لقلبها · <span id="total-lbl"></span> بطاقة</p>
+
+  <div class="filters" id="filters">
+    <button data-f="all" class="on">الكل</button>
+    <button data-f="1">الدرس 8</button>
+    <button data-f="2">الدرس 9</button>
+    <button data-f="3">الدرس 10</button>
+  </div>
+
+  <div class="flip" id="flip" onclick="toggleFlip()">
+    <div class="flip-in">
+      <div class="face front">
+        <span class="side">سؤال</span>
+        <span class="sec-tag" id="tag-front"></span>
+        <div class="txt" id="q-txt"></div>
+      </div>
+      <div class="face back">
+        <span class="side">إجابة</span>
+        <span class="sec-tag" id="tag-back"></span>
+        <div class="txt" id="a-txt"></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="hintline">اضغط البطاقة للقلب — أو استخدم مفاتيح الأسهم والمسافة</p>
+
+  <div class="nav">
+    <button onclick="prevCard()">← السابق</button>
+    <div class="counter" id="counter">1 / 68</div>
+    <button onclick="nextCard()">التالي →</button>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="fbtn"><button class="btn-dl" onclick="downloadTSV()">⬇ تحميل بطاقات Anki (TSV)</button></div>
+  <p>المدخل إلى الفقه الإسلامي — الدروس 8 · 9 · 10<br>ملف دراسة شخصي مبنيّ على التفريغ الصوتي للمحاضرات</p>
+</footer>
+
+<script>
+/* ===== مصفوفة البيانات الواحدة: مصدر العرض والتحميل معًا ===== */
+const CARDS = [
+  /* ---------- الدرس 8 ---------- */
+  {s:1,q:"ما مراحل الفقه الأربع كما قسّمها الشيخ؟",a:"1) زمن التشريع. 2) الصحابة وما قبل المذاهب الفقهية. 3) مرحلة المذاهب الفقهية وما بعدها. 4) العصر الحاضر."},
+  {s:1,q:"متى تبدأ المرحلة الرابعة (العصر الحاضر) تقريبًا؟",a:"من حدود سنة 1300هـ تقريبًا — وهو تحديد تقريبي لا قطعي."},
+  {s:1,q:"أي مرحلة من مراحل الفقه وحدها تُحدَّد بتاريخ دقيق؟ ولماذا؟",a:"مرحلة التشريع؛ لأنها تنتهي باللحظة التي توفي فيها رسول الله ﷺ. أما باقي المراحل فتواريخها تقريبية."},
+  {s:1,q:"بأي حجّتين ردّ الشيخ تسمية القرون السابقة بـ«عصر الجمود والتقليد»؟",a:"1) التراث الفقهي كان يلبّي احتياج الناس فلا حاجة لتصنيف جديد. 2) حياة الناس لم تكن تتغير: الفرق بين حياة الناس قبل 200 سنة وزمن التابعين يسير، بخلاف ما أحدثته الثورة الصناعية في 50 سنة."},
+  {s:1,q:"ما مَثَل «العمارة» الذي ضربه الشيخ لدعوى إعادة البناء؟",a:"عمارة شامخة باقية ألف سنة، فيأتي من يقول أهدمها من باب التجديد — وهذا عبث. وإذا كان فيها خلل فالحل الترميم لا الهدم."},
+  {s:1,q:"ما نظير المطبعة في العصر العباسي، وما أثره؟",a:"اكتشاف مادة الكاغد (الورق)؛ وكان له أثر كبير في التصنيف والتأليف كما كان للطباعة أثر في انتشار العلم."},
+  {s:1,q:"لماذا كان نسخُ الكتب عند المتقدمين أعظم تحصيلًا من قراءتها؟",a:"لأن الناسخ يمرّ على الكتاب كلمة كلمة ويقابله، فيكفيه أنه نسخ الكتاب حتى لو لم يضعه في مكتبته بعد ذلك."},
+  {s:1,q:"من هو ابن الخاضبة، وما قصته المشهورة؟",a:"عالم نسخ صحيح مسلم سبع مرات في سنة واحدة. ومن شدة التعب نام فرأى في المنام أنه دخل الجنة، فاستلقى على ظهره ووضع إحدى رجليه على الأخرى وقال: استرحتُ والله من النسخ. توفي سنة 489هـ."},
+  {s:1,q:"ما السبب الحقيقي لنسخ ابن الخاضبة صحيح مسلم سبع مرات في سنة؟",a:"أنه في «سنة الغرق» سقطت داره على كتبه ومتاعه ولم يبقَ له شيء، وكان يعول والدته وزوجته وبناته، فكان يُورِّق للناس بالأجرة وينفق على الأهل."},
+  {s:1,q:"لماذا ردّ الشيخ جواب من مثّل لكتب الإجماع بـ«التمهيد» لابن عبد البر؟",a:"لأن التمهيد لا يتكلم عن مسألة الإجماع فقط؛ والمطلوب الكتب التي تذكر المسائل الفقهية المُجمَع عليها تحديدًا."},
+  {s:1,q:"اذكر أربعة كتب في مسائل الإجماع ذكرها الشيخ.",a:"1) الإجماع لابن المنذر. 2) مراتب الإجماع لابن حزم. 3) نقد مراتب الإجماع لابن تيمية. 4) الإقناع في مسائل الإجماع لابن القطان الفاسي. ويُضاف: إجماعات العبادات (الدرر السنية)."},
+  {s:1,q:"ما ميزة «الإقناع في مسائل الإجماع» لابن القطان الفاسي؟ ومن حققه؟",a:"ميزته أنه جامع: نظر في نقد مراتب الإجماع، وفي مراتب الإجماع لابن حزم، وفي الإجماع لابن المنذر، وفي إجماعات حكاها أهل العلم، فجمعها في كتاب واحد. حققه د. فاروق حمادة."},
+  {s:1,q:"فرّق بين: الإجماع لابن المنذر / الإقناع لابن المنذر / الإقناع في مسائل الإجماع لابن القطان.",a:"ثلاثة كتب مختلفة: الأول في مسائل الإجماع لابن المنذر، والثاني كتاب آخر لابن المنذر غير الأول، والثالث لابن القطان الفاسي وهو الجامع بين كتب الإجماع."},
+  {s:1,q:"من محقق «الإجماع» لابن المنذر؟",a:"أبو حمّاد صغير أحمد بن محمد حنيف الباكستاني — وهو نفسه محقق «الأوسط» و«الإشراف» لابن المنذر. (ورد اسمه في التفريغ الصوتي محرَّفًا)."},
+  {s:1,q:"ما الخطأ الشائع الذي يقع فيه طلبة العلم بسبب جهل مسائل الإجماع؟",a:"أن يظنّ المسألة الإجماعية من المفردات في مذهب الحنابلة، فيقول: هذا المذهب — والحقيقة أنه إجماع الأمة."},
+  {s:1,q:"ما حكم الجدال والمناظرة في مسائل الفقه؟ ومن نقل ذلك؟",a:"الأمة مجمعة على الجدال والمناظرة في مسائل الفقه؛ نقله الخطيب البغدادي، وذكر نحوه ابن عبد البر."},
+  {s:1,q:"لماذا حذّر الشيخ المبتدئ من كتاب «المحلّى» لابن حزم؟",a:"لأن أسلوبه في مناقشة المسائل الفقهية ليس بالأسلوب المُرتضى عند العلماء، وهو كتاب فيه علم كثير لكنه قد يُفسد المتفقّه في بداياته؛ فيقرؤه العلماء ومن تربّى وتأدّب."},
+  {s:1,q:"ما المرجعان اللذان ذكرهما الشيخ في المذهب الحنفي؟",a:"بدائع الصنائع للكاساني، وحاشية ابن عابدين."},
+  {s:1,q:"ما أجلّ شروح مختصر خليل في المذهب المالكي؟ وما الكتب المطبوعة الأخرى في المذهب؟",a:"أجلّها «مواهب الجليل» للحطّاب؛ وكذلك الموطأ والمدونة مطبوعان."},
+  {s:1,q:"اذكر أربعة من كتب المذهب الشافعي المطبوعة التي ذكرها الشيخ.",a:"الأم للشافعي (تحقيق رفعت فوزي عبد المطلب)، وتحفة المحتاج لابن حجر الهيتمي، وروضة الطالبين للنووي، والحاوي الكبير للماوردي."},
+  {s:1,q:"ما أفضل طبعة لـ«كشاف القناع» للبهوتي؟",a:"طبعة وزارة العدل بتحقيق لجنة."},
+  {s:1,q:"من أبرز مَن خدم طباعة كتب المذهب الحنبلي؟ وماذا طبعوا؟",a:"الشيخ عبد الله بن عبد المحسن التركي: طبع الفروع والمغني والشرح الكبير والكافي والإقناع وغيرها. والشيخ عبد الملك بن دهيش: طبع عددًا من الكتب في الباب."},
+
+  /* ---------- الدرس 9 ---------- */
+  {s:2,q:"لماذا لا يصح انتقاد «الإنصاف» للمرداوي بأنه خالٍ من الأدلة؟",a:"لأنه لم يُصنَّف لبيان أدلة المسائل، وإنما صُنِّف لبيان الروايات في المذهب؛ فالكتاب لم يستهدف ذلك أصلًا."},
+  {s:2,q:"ما القاعدة التي وضعها الشيخ للتعامل مع المكتبة الفقهية؟",a:"أن يعرف طالب العلم لماذا أُلِّف الكتاب، حتى يرجع إليه ليحقق له هدفه: كتاب للأدلة، وآخر للخلاف، وآخر للإجماع، وآخر للروايات في المذهب."},
+  {s:2,q:"ما ميزة «بداية المجتهد ونهاية المقتصد»؟ ولمن هو؟",a:"لابن رشد الحفيد. يذكر الخلاف بأوجز عبارة، ويقتصر على مهمات المسائل ورؤوسها، ويبيّن في كل مسألة سبب الخلاف. وهو مقرر دراسي في الجامعة الإسلامية بالمدينة."},
+  {s:2,q:"ما ميزة كتاب «اختلاف الأئمة العلماء» للوزير ابن هبيرة؟",a:"أنه يوضّح مواضع الاتفاق ومواضع الخلاف؛ فيأتي للباب فيقول: اتفقوا على كذا واختلفوا في كذا."},
+  {s:2,q:"ما الهامش المهم الذي ذكره الشيخ عند وصف كتاب بأنه «عظيم»؟",a:"أن عظمة الكتاب في ذاته لا تعني صلاحيته لجميع طبقات المتعلمين، ولا صلاحيته أن يكون متنًا يُدرَّس. ومثاله: تفسير ابن جرير أعظم التفاسير ولا يبدأ به المبتدئ، وكذلك الأوسط لابن المنذر."},
+  {s:2,q:"ما الفرق بين ترتيب «المغني» وترتيب «الموسوعة الفقهية»؟",a:"المغني مرتب على الأبواب (الآنية في الطهارة، إقامة الحد في الحدود)، والموسوعة مرتبة على الحروف (الآنية وإقامة الحد كلاهما في حرف الألف)."},
+  {s:2,q:"ما الذي تعطيه الموسوعة الفقهية الكويتية وما الذي لا تعطيه؟",a:"تعطيك المعتمد في المذاهب الأربعة في المسألة، وقد تذكر الأدلة موجزة؛ لكنها لا تستوعب ذكر الأدلة ولا تتوسّع في الاستدلال."},
+  {s:2,q:"ما المنهجية العلمية الصحيحة في توثيق مذهب من المذاهب؟",a:"أن يكون التوثيق من الكتب المعتمدة في ذلك المذهب نفسه؛ فلا يصح نقل مذهب الحنفية من «بداية المجتهد» ولا تحرير المذهب من الموسوعة."},
+  {s:2,q:"ما أوسع ما كُتب في الطهارة؟ ومن مؤلفه؟",a:"موسوعة أحكام الطهارة، للشيخ دبيان الدبيان."},
+  {s:2,q:"إلى أين وصلت «موسوعة المعاملات المالية أصالة ومعاصرة» للدبيان؟ وما الكتاب الذي يكمل جانبها؟",a:"انتهى من المعاوضات وبدأ في التبرعات ولم يكملها (توقف عند أبواب العارية). ويكمل جانب التبرعات كتاب «الجامع لأحكام الوقف والهبات والوصايا» للشيخ خالد المشيقح."},
+  {s:2,q:"ما مميزات «موسوعة القضايا الفقهية المعاصرة»؟ ومن أصدرها؟",a:"شاملة لجميع الأبواب من الطهارة إلى آخر الفقه، لكنها تقتصر على النوازل المعاصرة فقط. صدرت عن مركز التميز البحثي في فقه القضايا المعاصرة بجامعة الإمام."},
+  {s:2,q:"ما الفرق بين منسك ابن جاسر ومنسك ابن جماعة الكناني؟",a:"منسك ابن جاسر يركّز على المذهب الحنبلي وهو في مجلد كبير؛ ومنسك ابن جماعة يتميز بذكر المذاهب الأربعة في المسائل."},
+  {s:2,q:"لماذا نشأت المجامع الفقهية؟",a:"لكثرة المستجدات والنوازل، ولتعلّقها بأبواب فقهية متعددة، ولما فيها من التعقيد الذي لا تكفي فيه فتوى فردية — كنوازل المعاملات المصرفية والنوازل الطبية التي تحتاج رأي المتخصصين."},
+  {s:2,q:"عرّف المجمع الفقهي، وبيّن كيف تصدر قراراته.",a:"هيئات علمية يجتمع فيها جمع من أهل العلم للنظر في المسائل ثم يصدر فيها قرار أو فتوى. والغالب أن القرارات تصدر بالأغلبية لا بإجماع جميع الأعضاء."},
+  {s:2,q:"ما أشهر مجمعين فقهيين فيهما تمثيل من جميع دول العالم الإسلامي؟ وأين مقرّاهما؟",a:"المجمع الفقهي الدولي التابع لمنظمة التعاون الإسلامي — مقره جدة؛ والمجمع الفقهي التابع لرابطة العالم الإسلامي — مقره مكة."},
+  {s:2,q:"ما ميزة مجلة المجمع الفقهي الدولي لطالب العلم؟",a:"أنها تنشر الأبحاث المقدَّمة في المسألة، وتنشر تفريغ كل المناقشات التي دارت في الجلسة — وهذا ينمّي ملكة النقاش عند الطالب."},
+  {s:2,q:"أين تجد قرارات المجامع الفقهية مجموعة مرتبة على الأبواب؟",a:"في كتاب «فقه النوازل» للشيخ محمد حسين الجيزاني، في أربع مجلدات."},
+  {s:2,q:"ما التحذير الذي ذكره الشيخ في شأن الموسوعات الإلكترونية؟",a:"أنها توصلك إلى المعلومة لكنها لا تعطيك ملكة فهمها؛ وغير المتمرّس قد تُضلّه فيفهمها على نقيض المقصود."},
+  {s:2,q:"اذكر مثال الشيخ على خطر النقل الإلكتروني بلا سياق.",a:"باحث ينقل كلامًا من «مجموع الفتاوى» وينسبه لابن تيمية، ولو رجع صفحة أو ثلاثًا للخلف لوجد أنه ينقله عن غيره؛ بل قد يكون اسم المنقول عنه في الصفحة السابقة والردّ عليه في الصفحة اللاحقة."},
+  {s:2,q:"كيف أثّر التواصل الحديث في مسألة تحصيل الإجماع؟",a:"كان بعض العلماء يقولون يعسر الوقوف على الإجماع لتفرّق العلماء في الأقطار؛ وقد تيسّر اليوم بالهاتف والبريد والرسائل. وكان ابن المنذر يقول: «أجمع من نحفظ عنه من أهل العلم» وكانت تحتاج رحلة وتنقلًا."},
+  {s:2,q:"لماذا كثرة النوازل نتيجة طبيعية لتعريف الفقه؟",a:"لأن الفقه هو العلم المتعلق بأفعال المكلفين، وأفعال العباد تتطور وتتسارع وتتغير؛ وكل فعل وكل نازلة فيها حكم شرعي."},
+  {s:2,q:"ما قول الإمام الشافعي الذي استشهد به الشيخ في باب النوازل؟",a:"«فإنه لا تنزل بأحد من الناس نازلة إلا وفي كتاب الله عز وجل بيان الهدى فيها»."},
+  {s:2,q:"ما بيتا حافظ الحكمي في ميزان العلم؟",a:"ما العلمُ حَملُ شهاداتٍ مزخرفةٍ ⁕ بزُخرف القول من نثرٍ ومنتظمِ / بل خشيةُ الله في سرٍّ وفي علنٍ ⁕ فاعلم، هي العلمُ كلُّ العلمِ فالتزمِ."},
+
+  /* ---------- الدرس 10 ---------- */
+  {s:3,q:"ما الفرق الذي نبّه عليه الشيخ في مطلع الدرس العاشر؟",a:"أن هناك فرقًا بين «مقرر الفقه» و«مقرر المدخل إلى الفقه»، والدرس في المدخل لا في الفقه."},
+  {s:3,q:"ما التجديد المقبول في أصول الفقه؟",a:"التجديد في طريقة التصنيف والعرض: كتابة الشروح، والتبسيط، والتقريب، والمشجّرات، والدروس المبسطة، ومنه الجمع بين طريقة الشافعية وطريقة الحنفية في كتاب واحد."},
+  {s:3,q:"ما التجديد المرفوض في أصول الفقه؟ ولماذا هو أخطر من نقد الفروع؟",a:"التجديد في مضامين العلم، أي إعادة النظر في قواعد فهم الشريعة التي سار عليها السلف. وهو أخطر لأن أثره ينتقل مباشرة إلى كل الفروع دفعة واحدة، بدل مناقشة كل فرع على حدة."},
+  {s:3,q:"لماذا صنّف الشافعي «الرسالة»؟",a:"ليدوّن القواعد التي سار عليها الصحابة والتابعون في فهم الشريعة. وهو أول من صنّف في أصول الفقه."},
+  {s:3,q:"اشرح قول بعضهم: الكتاب والسنة حصن، وسوره الإجماع، وبوابته أصول الفقه.",a:"أن الشريعة لا تُفهم إلا على الوجه الذي فهمها به الصحابة الذين شهدوا التنزيل؛ فأصول الفقه هو طريقة فهم السلف للأدلة، وهو سور الشريعة."},
+  {s:3,q:"ما مثال النحو الذي ضربه الشيخ لبيان أن قواعد الفهم لا تقبل التجديد؟",a:"لا يُقال: كان العرب يرفعون الفاعل لكن المناسب لعصرنا جرّه أو نصبه. فكذلك قواعد فهم الشريعة لا تقبل التجديد."},
+  {s:3,q:"اذكر ثلاثة أمثلة على أثر «تجديد الأصول» في الفروع.",a:"1) الأمر للوجوب يصير للاستحباب فتصير الصلوات مستحبة. 2) النهي للتحريم يصير للكراهة. 3) العام لا يشمل كل الصور بل ما تراه مناسبًا. ويُضاف: تقديم المصلحة على الكتاب والسنة، ونفي حجية الإجماع."},
+  {s:3,q:"ما الأسماء التي تسمّى بها أصحاب دعوات التجديد؟",a:"العقلانيون، التنويريون، الليبراليون وغيرها — «وتعددت الأسباب والموت واحد»."},
+  {s:3,q:"ما التنبيه التاريخي المهم على «علم مقاصد الشريعة»؟",a:"أنه لم يُعرف علمًا مستقلًا بهذا الاسم على مرّ 13 قرنًا، ولا يوجد قبل نحو 100 سنة. والدليل: لا تجد في ترجمة عالم قولهم «كان فقيهًا أصوليًا مقاصديًا»."},
+  {s:3,q:"إذا قيل: لا مشاحّة في الاصطلاح، فأين يقع الإشكال في إفراد المقاصد بعلم؟",a:"لا إشكال في إفراده بالتصنيف، وقد أفرد العز بن عبد السلام مباحث المصلحة في «القواعد الكبرى» و«القواعد الصغرى». الإشكال في تدريسه لغير المتخصصين وادعاء أنه الآلة المؤهِّلة للاجتهاد."},
+  {s:3,q:"ما شرطا الاجتهاد عند الشاطبي؟ وما المقصود بالثاني؟",a:"العلم باللغة العربية، والعلم بمقاصد الشريعة. والمقصود بالثاني هو أصول الفقه بجميع أبوابه — بدليل أنه مثّل له بمعرفة العموم والخصوص والأمر والنهي."},
+  {s:3,q:"لماذا لا تكفي اللغة العربية وحدها في فهم الشريعة عند الشاطبي؟",a:"لأن الإنسان لا يتحصّل من اللغة وحدها أن مقصد الأمر هو الوجوب؛ فمعرفة أن الأمر للوجوب والنهي للتحريم والعموم للاستغراق إنما هي من مقاصد الشرع ولسانه واصطلاحاته."},
+  {s:3,q:"ما الحجّة التي تُبطل جعل معرفة المصالح الدنيوية آلةً للاجتهاد؟",a:"أن المصالح الدنيوية يدركها غير علماء الشريعة، بل غير المسلمين؛ فيلزم أن يصير أكثر الكفار مجتهدين لأن المتخصص يهوديًا أو نصرانيًا أو ملحدًا يستطيع ترتيب المصالح إلى ضروري وحاجي وتكميلي."},
+  {s:3,q:"هل أفرد الشاطبي علمًا اسمه مقاصد الشريعة؟",a:"لا. ألّف «الموافقات» وجعل فيه أبواب أصول الفقه، ومن ضمنها بابٌ سمّاه «كتاب المقاصد» — فهو جزء من كتاب لا علم مستقل."},
+  {s:3,q:"ما المقصد الشرعي من وضع الشريعة عند الشاطبي؟",a:"«إخراج المكلَّف عن داعية هواه ليكون عبدًا لله اختيارًا كما أنه عبد لله اضطرارًا» — وهو تركيز على المقاصد الأخروية لا الدنيوية."},
+  {s:3,q:"ما موقف الشاطبي من فهم السلف؟ اذكر عبارتين له.",a:"«فكل ما جاء مخالفًا لما عليه السلف الصالح فهو الضلال بعينه»، و«يجب على كل ناظر في الدليل الشرعي مراعاة ما فهم منه الأولون وما كانوا عليه في العمل به، فهو أحرى بالصواب وأقوم في العلم والعمل»."},
+  {s:3,q:"ما معنى شعار «قدسية النص وحرية الفهم»؟ وبم يُردّ عليه؟",a:"معناه أن النص مقدَّس لكن طريقة فهمه متروكة لحرية الناظر. ويُردّ بأنه نقض لطريقة فهم السلف، وهو خلاف تقرير الشاطبي نفسه الذي أوجب مراعاة فهم الأولين."},
+  {s:3,q:"ما موقف الشاطبي من التزام المذهب في الفتوى؟",a:"كان مالكيًا لا يخرج عن مذهب مالك، ولا يستحلّ أن يجد قولين في المذهب فيفتي بأحدهما على التخيير، بل يتحرّى المشهور المعمول به فهو الذي يذكره للمستفتي."},
+  {s:3,q:"ماذا اعترف به أحد كتّاب المدرسة المقاصدية بشأن الشاطبي؟",a:"أن التزام المذهب ظلّ مقيِّدًا للشاطبي، وأنه لم يخرج في الاجتهاد الفقهي التنزيلي عن حدود المذهب، وأن تفعيله المقاصدي لم يتناسب مع حجم تنظيره — أي أنهم أنفسهم يقرّون أنه لم يعمل بما ينسبونه إليه."},
+  {s:3,q:"من هم «أنصاف الشاطبي»؟",a:"الذين يركّزون على «الموافقات» وحدها ويتركون «الاعتصام» الذي يقرر الاعتصام بالكتاب والسنة والتحذير من البدعة — فأخذوا بجزء من كلامه وتركوا جزءًا."},
+  {s:3,q:"بم حذّر الشاطبي من قراءة «الموافقات»؟",a:"قال: لا يحلّ لأحد أن ينظر في كتابي هذا نظر مفيد أو مستفيد إلا وهو ريّان من علوم الشريعة أصولها وفروعها؛ لأنه إن فعل كان الكتاب عليه فتنة بالعَرَض وإن كان حكمه بالذات."},
+  {s:3,q:"ما الموضع الصحيح لمسألة المقاصد والمصالح داخل العلم؟",a:"هي من أدقّ مسائل أصول الفقه، وتتعلق بمبحث المناسبة في القياس؛ فليست مما يُشاع لكل أحد. ومثالها في النحو: تعليم عِلَل النحويين لمن لم يدرس الآجرومية."},
+  {s:3,q:"ما الاتجاهات الفقهية الأربعة التي وعد الشيخ ببيانها في الدرس القادم؟",a:"مدرسة أهل الحديث، ومدرسة أهل الرأي، ومدرسة أهل الظاهر، والمدرسة العقلية الحديثة."}
+];
+
+const SEC_NAMES = {1:"الدرس 8",2:"الدرس 9",3:"الدرس 10"};
+const SEC_STYLE = {
+  1:{bg:"var(--s1-bg)",c:"var(--s1)"},
+  2:{bg:"var(--s2-bg)",c:"var(--s2)"},
+  3:{bg:"var(--s3-bg)",c:"var(--s3)"}
+};
+
+let filter = "all";
+let view = CARDS.slice();
+let idx = 0;
+
+const $ = id => document.getElementById(id);
+
+function render(){
+  if(!view.length) return;
+  const c = view[idx];
+  $("q-txt").textContent = c.q;
+  $("a-txt").textContent = c.a;
+  const st = SEC_STYLE[c.s];
+  ["tag-front","tag-back"].forEach(id=>{
+    const el = $(id);
+    el.textContent = SEC_NAMES[c.s];
+    el.style.background = st.bg;
+    el.style.color = st.c;
+  });
+  $("counter").textContent = (idx+1) + " / " + view.length;
+  $("flip").classList.remove("f");
+}
+
+function toggleFlip(){ $("flip").classList.toggle("f"); }
+function nextCard(){ idx = (idx+1) % view.length; render(); }
+function prevCard(){ idx = (idx-1+view.length) % view.length; render(); }
+
+document.querySelectorAll("#filters button").forEach(b=>{
+  b.addEventListener("click", ()=>{
+    document.querySelectorAll("#filters button").forEach(x=>x.classList.remove("on"));
+    b.classList.add("on");
+    filter = b.dataset.f;
+    view = (filter === "all") ? CARDS.slice() : CARDS.filter(c => String(c.s) === filter);
+    idx = 0; render();
+  });
+});
+
+document.addEventListener("keydown", e=>{
+  if(e.key === "ArrowLeft"){ nextCard(); }
+  else if(e.key === "ArrowRight"){ prevCard(); }
+  else if(e.key === " "){ e.preventDefault(); toggleFlip(); }
+});
+
+function downloadTSV(){
+  const lines = CARDS.map(c =>
+    c.q.replace(/\t/g," ").replace(/\r?\n/g," ") + "\t" + c.a.replace(/\t/g," ").replace(/\r?\n/g," ")
+  );
+  const blob = new Blob(["\uFEFF" + lines.join("\n")], {type:"text/tab-separated-values;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "المدخل_إلى_الفقه_الإسلامي_الدروس_8-10.tsv";
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+window.addEventListener("scroll", ()=>{
+  const h = document.documentElement;
+  const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  $("prog").style.width = pct + "%";
+});
+
+$("total-lbl").textContent = CARDS.length;
+render();
+</script>
+
+<script type="module" src="../../../firebase-sync-manhaj.js"></script>
+<script src="../../../ilm-track.js"></script>
+<script src="../../../data.js"></script>
+<script src="../../../ilm-nav.js"></script>
+<script>
+(function(){
+  var box = document.getElementById('ilm-completion-box');
+  var cb = box ? box.querySelector('input[data-lecture-id]') : null;
+  if(!cb) return;
+  var lid = cb.getAttribute('data-lecture-id');
+  function render(done){
+    cb.checked = done;
+    box.classList.toggle('done', done);
+  }
+  if(window.IlmTrack){
+    window.IlmTrack.ready.then(function(){ render(window.IlmTrack.isDone(lid)); });
+  }
+  cb.addEventListener('change', function(){
+    if(window.IlmTrack) window.IlmTrack.setDone(lid, cb.checked);
+    render(cb.checked);
+  });
+})();
+</script>
+<script src="../../../ilm-highlight.js" data-lecture-id="stage1_fiqh_06"></script>
+</body>
+</html>
