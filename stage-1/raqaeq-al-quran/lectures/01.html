@@ -1,42 +1,1089 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>من البداية إلى ص 33 - رقائق القرآن</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../../style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>رقائق القرآن — 1 — ذهول الحقائق</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700&family=Reem+Kufi:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f2f4f1; --surface:#ffffff; --surface-2:#f7f9f6;
+  --ink:#1c2320; --ink-soft:#4d5a54; --ink-faint:#78857f;
+  --line:#dde3dc; --line-strong:#c3ccc2;
+  --brand:#173b33; --brand-2:#2f6d5f; --gold:#a8802a;
+  --s1:#6f6446; --s2:#7b4a46; --s3:#3f5c6b; --s4:#5b4a70; --s5:#3f6b53; --s6:#7a5f2e; --s7:#2f5f6b;
+  --n-doc:#6f6446; --n-def:#3f6b53; --n-bio:#3f5c6b; --n-exp:#8a6a1e; --n-link:#5b4a70; --n-fix:#a33a2c; --n-ctx:#7a5f2e;
+  --fs:18px; --radius:6px;
+  --shadow:0 1px 2px rgba(23,59,51,.06),0 8px 24px rgba(23,59,51,.05);
+}
+body.dark{
+  --bg:#121714; --surface:#1a201d; --surface-2:#1f2622;
+  --ink:#e6ece8; --ink-soft:#a9b6b0; --ink-faint:#7f8c86;
+  --line:#2c3531; --line-strong:#3d4844;
+  --brand:#8fc4b4; --brand-2:#6fae9c; --gold:#d3a94a;
+  --s1:#b5a67e; --s2:#c58c86; --s3:#86a8bb; --s4:#a892c4; --s5:#7cbc9b; --s6:#c9a458; --s7:#79aebb;
+  --n-doc:#b5a67e; --n-def:#7cbc9b; --n-bio:#86a8bb; --n-exp:#d3a94a; --n-link:#a892c4; --n-fix:#e08b7d; --n-ctx:#c9a458;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Cairo',system-ui,sans-serif;font-size:var(--fs);line-height:1.95;-webkit-text-size-adjust:100%}
+h1,h2,h3,h4{font-family:'Amiri',Georgia,serif;line-height:1.45;font-weight:700;color:var(--brand)}
+a{color:var(--brand-2)}
+button{font-family:inherit;cursor:pointer}
+::selection{background:rgba(168,128,42,.25)}
+
+/* ===== شريط علوي ===== */
+.topbar{position:fixed;inset:0 0 auto 0;height:52px;background:var(--surface);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:0 12px;z-index:60}
+.topbar .brandmark{font-family:'Reem Kufi',sans-serif;font-size:14px;color:var(--ink-soft);margin-inline-end:auto;letter-spacing:.3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tbtn{width:36px;height:36px;border:1px solid var(--line);background:var(--surface);color:var(--ink-soft);border-radius:var(--radius);font-size:15px;display:grid;place-items:center;transition:.15s}
+.tbtn:hover{border-color:var(--brand-2);color:var(--brand-2)}
+.tbtn:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+#progress{position:fixed;top:52px;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--brand-2));width:0;z-index:61;transition:width .1s}
+
+/* ===== الفهرس (يسار) ===== */
+.toc{position:fixed;top:55px;bottom:0;left:0;width:262px;background:var(--surface);border-left:1px solid var(--line);padding:18px 14px 40px;overflow-y:auto;z-index:55;transform:translateX(-102%);transition:transform .25s ease}
+.toc.open{transform:none}
+.toc h5{font-family:'Reem Kufi',sans-serif;font-size:12px;color:var(--ink-faint);margin:0 0 10px;letter-spacing:1px}
+.toc a{display:block;text-decoration:none;color:var(--ink-soft);font-size:14.5px;line-height:1.6;padding:5px 8px;border-radius:4px;border-right:2px solid transparent}
+.toc a.lvl2{padding-right:18px;font-size:13.5px;color:var(--ink-faint)}
+.toc a:hover{background:var(--surface-2);color:var(--brand-2)}
+.toc a.active{color:var(--brand-2);border-right-color:var(--gold);background:var(--surface-2);font-weight:600}
+@media(min-width:1500px){.toc{transform:none}.toc.closed{transform:translateX(-102%)}}
+
+/* ===== التخطيط: المتن يمين، الهامش يسار ===== */
+.wrap{max-width:1140px;margin:0 auto;padding:76px 20px 80px}
+.prose{max-width:1120px;padding-left:296px}
+.para{display:flex;gap:28px;align-items:flex-start;margin-left:-296px}
+.para__main{flex:1 1 auto;min-width:0}
+.para__notes{flex:0 0 268px;padding-top:6px}
+.prose p{margin:0 0 1.05em;text-align:justify;hyphens:auto}
+.prose>p,.para__main{max-width:820px}
+
+.booknav{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;font-family:'Reem Kufi',sans-serif;font-size:12.5px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.booknav a{color:var(--brand-2);text-decoration:none;border:1px solid var(--line);padding:6px 12px;border-radius:99px}
+.booknav a:hover{border-color:var(--brand-2)}
+.booknav span{color:var(--ink-faint)}
+.booknav .off{border:1px dashed var(--line);padding:6px 12px;border-radius:99px;opacity:.55}
+/* ===== الغلاف ===== */
+.cover{border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);padding:44px 34px;text-align:center;position:relative;box-shadow:var(--shadow);margin-bottom:26px}
+.cover::before{content:"";position:absolute;inset:9px;border:1px solid var(--line);border-radius:6px;pointer-events:none}
+.cover .kicker{font-family:'Reem Kufi',sans-serif;font-size:12.5px;letter-spacing:2.5px;color:var(--gold)}
+.cover h1{font-size:40px;margin:12px 0 6px}
+.cover .sub{color:var(--ink-soft);font-size:15px;margin:0}
+.cover .rule{width:70px;height:1px;background:var(--line-strong);margin:20px auto}
+.cover .chapter{font-family:'Amiri',serif;font-size:25px;color:var(--s2)}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px}
+.chip{font-family:'Reem Kufi',sans-serif;font-size:11.5px;padding:4px 11px;border:1px solid var(--line);border-radius:99px;color:var(--ink-faint)}
+
+/* ===== صناديق عامة ===== */
+.box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;margin:22px 0;box-shadow:var(--shadow)}
+.box h4{margin:0 0 8px;font-size:17px;display:flex;align-items:center;gap:7px}
+.box p{margin:0 0 .6em}
+.box p:last-child{margin-bottom:0}
+.box--src{border-right:3px solid var(--gold)}
+.box--src h4{color:var(--gold)}
+.box--fix{border-right:3px solid var(--n-fix);background:color-mix(in srgb,var(--n-fix) 5%,var(--surface))}
+.box--fix h4{color:var(--n-fix)}
+.box--guide{border-style:dashed;background:var(--surface-2)}
+.box small,.small{font-size:13.5px;color:var(--ink-faint);line-height:1.75}
+
+/* ===== الآيات والأحاديث والنقول ===== */
+.aya{font-family:'Amiri',serif;font-size:1.32em;line-height:2.1;color:var(--brand);background:var(--surface-2);border:1px solid var(--line);border-right:3px solid var(--brand-2);border-radius:var(--radius);padding:14px 18px;margin:18px 0;text-align:center}
+body.dark .aya{color:var(--brand)}
+.hadith{font-family:'Amiri',serif;font-size:1.2em;line-height:2;background:var(--surface);border:1px solid var(--line);border-right:3px solid var(--s6);border-radius:var(--radius);padding:13px 17px;margin:18px 0}
+.naql{border-right:3px solid var(--s4);background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:13px 17px;margin:18px 0;font-size:.97em}
+.naql .who{font-family:'Reem Kufi',sans-serif;font-size:12px;color:var(--s4);display:block;margin-bottom:5px}
+
+/* ===== الأقسام ===== */
+.section{margin:52px 0 0;scroll-margin-top:90px}
+.section__head{border-top:2px solid var(--sc,var(--brand));padding-top:14px;margin-bottom:20px}
+.section__no{font-family:'Reem Kufi',sans-serif;font-size:11.5px;letter-spacing:2px;color:var(--sc,var(--brand))}
+.section h2{font-size:29px;margin:4px 0 0;color:var(--sc,var(--brand))}
+.section h3{font-size:22px;margin:34px 0 12px;color:var(--sc,var(--brand))}
+.gen{display:inline-block;font-family:'Reem Kufi',sans-serif;font-size:10.5px;padding:2px 8px;border:1px dashed var(--line-strong);border-radius:99px;color:var(--ink-faint);vertical-align:middle;margin-inline-start:8px;font-weight:400}
+.chapter-open{text-align:center;margin:60px 0 30px}
+.chapter-open .line{height:1px;background:var(--line-strong);margin:14px auto;width:120px}
+.chapter-open h2{font-size:34px;color:var(--s2)}
+
+/* ===== الهامش ===== */
+.nref{display:inline-block;min-width:20px;height:20px;padding:0 4px;margin:0 2px;border:none;background:var(--gold);color:#fff;border-radius:4px;font-size:11.5px;font-family:'Reem Kufi',sans-serif;line-height:20px;vertical-align:super;transition:.15s}
+.nref:hover{filter:brightness(1.15)}
+.nref.on{background:var(--brand)}
+.note{border-right:2px solid var(--nc,var(--n-doc));background:var(--surface);border-radius:4px;padding:9px 11px;margin:0 0 12px;font-size:13.6px;line-height:1.75;color:var(--ink-soft);box-shadow:0 1px 2px rgba(0,0,0,.04);transition:.2s}
+.note.hl{box-shadow:0 0 0 2px var(--gold);background:var(--surface-2)}
+.note__t{display:block;font-family:'Reem Kufi',sans-serif;font-size:10.5px;letter-spacing:.5px;color:var(--nc,var(--n-doc));margin-bottom:3px}
+.note--doc{--nc:var(--n-doc)} .note--def{--nc:var(--n-def)} .note--bio{--nc:var(--n-bio)}
+.note--exp{--nc:var(--n-exp)} .note--link{--nc:var(--n-link)} .note--fix{--nc:var(--n-fix)} .note--ctx{--nc:var(--n-ctx)}
+.note a{color:var(--nc)}
+
+/* ===== الخلاصة ===== */
+.summary{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--sc,var(--brand));border-radius:var(--radius);padding:16px 20px;margin:26px 0;box-shadow:var(--shadow)}
+.summary h4{color:var(--sc,var(--brand));margin:0 0 10px;font-size:18px}
+.summary ul{margin:0;padding-inline-start:20px}
+.summary li{margin-bottom:7px;font-size:16.5px;line-height:1.8}
+.summary .tag{font-family:'Reem Kufi',sans-serif;font-size:10.5px;color:var(--ink-faint);border:1px dashed var(--line-strong);border-radius:99px;padding:2px 8px;margin-inline-start:6px}
+
+/* ===== الأسئلة ===== */
+.quiz{background:var(--surface-2);border:1px dashed var(--sc,var(--brand));border-radius:var(--radius);padding:15px 17px;margin:26px 0}
+.quiz__hd{font-family:'Reem Kufi',sans-serif;font-size:11.5px;letter-spacing:1px;color:var(--sc,var(--brand));display:flex;justify-content:space-between;margin-bottom:10px}
+.q{margin-bottom:16px}
+.q:last-child{margin-bottom:0}
+.q__text{font-weight:600;margin-bottom:9px;line-height:1.7}
+.opt{display:block;width:100%;text-align:right;min-height:44px;padding:9px 13px;margin-bottom:7px;background:var(--surface);border:1px solid var(--line);border-radius:5px;color:var(--ink);font-size:15.5px;line-height:1.6;transition:.15s}
+.opt:hover{border-color:var(--sc,var(--brand))}
+.opt.ok{border-color:#2e8b57;background:color-mix(in srgb,#2e8b57 12%,var(--surface))}
+.opt.no{border-color:var(--n-fix);background:color-mix(in srgb,var(--n-fix) 10%,var(--surface))}
+.q__exp{display:none;font-size:14.5px;color:var(--ink-soft);border-right:2px solid var(--sc,var(--brand));padding:7px 11px;margin-top:6px;background:var(--surface)}
+.q__exp.show{display:block}
+
+/* ===== البطاقات ===== */
+.cards-wrap{margin-top:60px;border-top:2px solid var(--gold);padding-top:22px}
+.filters{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 18px}
+.filt{font-family:'Reem Kufi',sans-serif;font-size:12px;padding:6px 13px;border:1px solid var(--line);background:var(--surface);color:var(--ink-soft);border-radius:99px;transition:.15s}
+.filt.on{color:#fff;border-color:transparent}
+.card{perspective:1400px;height:250px;margin-bottom:14px}
+.card__in{position:relative;width:100%;height:100%;transition:transform .55s;transform-style:preserve-3d;cursor:pointer}
+.card.flip .card__in{transform:rotateY(180deg)}
+.card__f,.card__b{position:absolute;inset:0;backface-visibility:hidden;border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:22px;display:flex;align-items:center;justify-content:center;text-align:center;overflow-y:auto;box-shadow:var(--shadow)}
+.card__f{font-size:19px;font-weight:600;line-height:1.75}
+.card__b{transform:rotateY(180deg);background:var(--surface-2);font-size:16.5px;line-height:1.85;color:var(--ink-soft)}
+.card__tag{position:absolute;top:9px;right:12px;font-family:'Reem Kufi',sans-serif;font-size:10px;color:var(--ink-faint)}
+.cnav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:6px}
+.cnav button{padding:8px 16px;border:1px solid var(--line);background:var(--surface);border-radius:5px;color:var(--ink-soft);font-size:14px}
+.cnav span{font-family:'Reem Kufi',sans-serif;font-size:13px;color:var(--ink-faint);min-width:70px;text-align:center}
+.dl{display:inline-flex;align-items:center;gap:7px;margin-top:16px;padding:11px 20px;background:var(--brand);color:#fff;border:none;border-radius:6px;font-size:14.5px;font-family:'Reem Kufi',sans-serif}
+body.dark .dl{color:#121714}
+.foot{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-faint);text-align:center;line-height:1.9}
+
+/* ===== الهاتف ===== */
+@media(max-width:1100px){
+  .prose{padding-left:0;max-width:820px;margin:0 auto}
+  .para{display:block;margin-left:0}
+  .para__notes{padding-top:0}
+  .note{display:none;margin:6px 0 14px;font-size:14.5px}
+  .note.open{display:block;animation:fade .2s}
+  @keyframes fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1}}
+}
+@media(max-width:640px){
+  body{--fs:17px}
+  .wrap{padding:70px 14px 60px}
+  .cover{padding:30px 18px}.cover h1{font-size:30px}.cover .chapter{font-size:20px}
+  .section h2{font-size:24px}.chapter-open h2{font-size:27px}
+  .aya{font-size:1.2em;padding:12px 13px}
+  .card{height:290px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+
+/* ===== الطباعة ===== */
+@media print{
+  .topbar,.toc,#progress,.quiz,.cards-wrap,.nref{display:none!important}
+  body{background:#fff;font-size:12pt}
+  .wrap{padding:0;max-width:none}
+  .prose{padding-left:0}.para{display:block;margin-left:0}
+  .note{display:block;font-size:9.5pt;border:none;border-right:2px solid #999;box-shadow:none;margin:6px 0 10px}
+  .box,.summary,.aya{break-inside:avoid;box-shadow:none}
+}
+</style>
 </head>
-<body class="" data-page="lecture" data-lecture-id="stage1_raqaeq-al-quran_01">
-  <div class="page">
-    <nav class="breadcrumbs"><a href="../../../index.html">الرئيسية</a><span class="sep">/</span><a href="../../index.html">المرحلة الأولى</a><span class="sep">/</span><a href="../index.html">رقائق القرآن</a><span class="sep">/</span><span aria-current="page">من البداية إلى ص 33</span></nav>
-    
-      <header class="lecture-header">
-        <h1>من البداية إلى ص 33</h1>
-        <p class="lecture-meta">المادة: رقائق القرآن &nbsp;|&nbsp; الشيخ: إبراهيم السكران &nbsp;|&nbsp; اليوم 19</p>
-        <label class="checkbox-line lecture-checkbox">
-          <input type="checkbox" data-lecture-id="stage1_raqaeq-al-quran_01">
-          <span>إتمام هذه المحاضرة</span>
-        </label>
-      </header>
+<body data-lecture-id="stage1_raqaeq-al-quran_01">
+<style id="ilm-completion-style">
+  #ilm-completion-box{
+    display:flex; align-items:center; gap:10px;
+    max-width:640px; margin:14px auto 0; padding:12px 18px;
+    background:#fbfaf4; border:1px solid #d3d8ca; border-radius:12px;
+    font-family:'Tajawal','Segoe UI',Tahoma,sans-serif; direction:rtl;
+    cursor:pointer; user-select:none; transition:background .15s, border-color .15s;
+  }
+  #ilm-completion-box:hover{ border-color:#b8862f; }
+  #ilm-completion-box.done{ background:#e3ebe4; border-color:#1f4a3d; }
+  #ilm-completion-box input{ width:18px; height:18px; accent-color:#1f4a3d; cursor:pointer; flex-shrink:0; }
+  #ilm-completion-box span{ font-size:14.5px; font-weight:600; color:#2b2a24; }
+  #ilm-completion-box.done span{ color:#163931; }
+</style>
+<label id="ilm-completion-box">
+  <input type="checkbox" data-lecture-id="stage1_raqaeq-al-quran_01">
+  <span>تحديد هذه المحاضرة كمكتملة</span>
+</label>
 
-      <div class="lecture-placeholder">
-        <p>سيتم إضافة المحاضرة هنا لاحقًا</p>
-        <p class="placeholder-hint">(رابط يوتيوب / فيديو / ملف صوتي / PDF / نص المحاضرة / ملاحظاتي)</p>
-      </div>
 
-      <div class="lecture-nav">
-        <a href="../index.html" class="btn btn-outline">الرجوع إلى المادة</a>
-        <a href="../../index.html" class="btn btn-outline">الرجوع إلى المرحلة</a>
-      </div>
+<div class="topbar">
+  <button class="tbtn" id="btnToc" title="الفهرس" aria-label="الفهرس">☰</button>
+  <span class="brandmark">رقائق القرآن &nbsp;·&nbsp; الجزء ١ &nbsp;·&nbsp; ذهول الحقائق</span>
+  <button class="tbtn" id="btnMinus" title="تصغير الخط" aria-label="تصغير الخط">أ−</button>
+  <button class="tbtn" id="btnPlus" title="تكبير الخط" aria-label="تكبير الخط">أ+</button>
+  <button class="tbtn" id="btnDark" title="وضع القراءة الليلي" aria-label="وضع القراءة الليلي">◐</button>
+</div>
+<div id="progress"></div>
 
-      <div data-lecture-nav-extra></div>
-    
+<nav class="toc" id="toc" aria-label="فهرس المحتوى">
+  <h5>الفهرس</h5>
+  <div id="tocList"></div>
+</nav>
+
+<main class="wrap" data-ilm-highlight-zone>
+
+<div class="booknav">
+  <span class="off">‹ بداية الكتاب</span>
+  <span>الجزء الأول من خمسة</span>
+  <a href="02.html">الجزء الثاني: لحظة فداء والإطراق الأخير ›</a>
+</div>
+
+<header class="cover">
+  <div class="kicker">كتاب مقروء · النقل الكامل للمتن</div>
+  <h1>رقائق القرآن</h1>
+  <p class="sub">إبراهيم بن عمر السكران</p>
+  <div class="rule"></div>
+  <div class="chapter">الجزء الأول: المقدمة وفصل «ذهول الحقائق»</div>
+  <div class="meta-row">
+    <span class="chip">٧ مقاطع</span>
+    <span class="chip">١٤ سؤالًا تفاعليًّا</span>
+    <span class="chip">٣٤ بطاقة مراجعة</span>
+    <span class="chip">هامش موسَّع</span>
   </div>
-  <script type="module" src="../../../firebase-sync-manhaj.js"></script>
-  <script src="../../../data.js"></script>
-  <script src="../../../script.js"></script>
+</header>
+
+<div class="box box--guide" id="howto">
+  <h4>كيف تقرأ هذه الصفحة</h4>
+  <p class="small"><b>النص الأساسي (المتن) على اليمين هو كلام المؤلف كاملًا بلا حذف ولا تلخيص؛ وما في العمود الجانبي الأيسر إضافة توضيحية ليست من الكتاب.</b> اضغط على العلامة الذهبية داخل النص لإبراز الهامش المقابل لها — وعلى الهاتف تُفتح تحت الفقرة مباشرة.</p>
+  <p class="small">العناوين المُعلَّمة بشارة <span class="gen">عنوان تنظيمي</span> ليست من الكتاب، بل وُضعت لتقطيع الفصل الطويل. وصناديق «الخلاصة» في نهاية كل مقطع إضافة كذلك، لا يُنسب شيء منها للمؤلف.</p>
+</div>
+
+<div class="box box--src">
+  <h4>◆ عن المصدر</h4>
+  <p class="small">هذا النص مُفرَّغ من النسخة الصوتية التي أنتجتها <b>قناة صوت فصيح</b> ضمن «مشروع كفالة الكتب الصوتية»، وأُهديت صدقةً جارية على روح الدكتور أبي العطا النادي. قراءة: محمد ريان، وهندسة صوتية: محمد الخلفاوي. هذه المقدمات والفواصل الصوتية ليست من الكتاب، ولذلك ذُكرت هنا مرة واحدة ولم تُقحَم في المتن.</p>
+</div>
+
+<div class="box box--fix">
+  <h4>⚠ تصحيحات في التفريغ الصوتي</h4>
+  <p class="small"><b>اسم الكتاب:</b> ورد في المقدمة الصوتية «حقائق القرآن»، والصواب <b>«رقائق القرآن»</b>، وهو الاسم المطبوع للكتاب.</p>
+  <p class="small"><b>التاريخ:</b> ورد في موضعين «عام ٣٣٤ من الهجرة»، وهو سقوط رقم في التفريغ؛ والصواب <b>١٤٣٤هـ</b> بدلالة تاريخ خاتمة الرسالة نفسها.</p>
+  <p class="small"><b>توقيع المؤلف:</b> ورد «أبو عمر ذي القيادة»، والصواب <b>«أبو عمر» — وهي كنية المؤلف — ثم تاريخ الكتابة: «ذو القعدة»</b>.</p>
+  <p class="small">وما عدا ذلك من أخطاء النطق الصريحة (مثل «دالوب» و«فلات» و«الاشه») صُحِّح مباشرة بلا تنبيه، فهو خطأ تفريغ لا خطأ محتوى. أما الأخطاء المؤثرة في المعنى فموثَّقة في هوامش حمراء في مواضعها.</p>
+</div>
+
+<div class="prose" data-ilm-highlight-zone>
+
+<section class="section" id="s1" style="--sc:var(--s1)">
+  <div class="section__head">
+    <div class="section__no">المقطع الأول</div>
+    <h2>مقدمة المؤلف</h2>
+  </div>
+
+<div class="para">
+<div class="para__main">
+<p>الحمد لله، وبعد:</p>
+<p>إنسانُ هذا العصر مُنهمِكٌ في دوامة الحياة اليومية، أصبح الواحد منا كأنه تِرْسٌ في دولاب المهام والتفاصيل الصغيرة التي تستلمك منذ أن تستيقظ صباحًا حتى تُلقيك مُنهَكًا فوق سريرك في أواخر المساء<button class="nref" data-note="n1">١</button>؛ دوامٌ مُضْنٍ، ورسالةُ جوال، وبريدٌ إلكتروني، وتعليقٌ فيسبوكي، وخبرٌ تويتري، ومقطعٌ يوتيوبي، وتنقُّلٌ بين الفضائيات، وصراخُ منبِّهاتٍ في طرقٍ مكتظة، وأعمالٌ مؤجَّلة كلما تذكرتها قرصك الهمُّ، والتزاماتٌ اجتماعية أخذ بعضها بِرِكاب بعض... إلخ.</p>
+</div>
+<div class="para__notes">
+<aside class="note note--bio" id="n1"><span class="note__t">ترجمة المؤلف</span><b>إبراهيم بن عمر السكران</b>: باحث شرعي سعودي معاصر، له عناية بالتزكية ونقد الخطاب الحداثي. من كتبه: «الطريق إلى القرآن»، و«مآلات الخطاب المدني»، و«سلطة الثقافة الغالِبة».</aside>
+</div>
+</div>
+
+<p>هل نُظُم الاتصالات المتقدمة هذه مشكلة؟ لا قطعًا، بل هي نعمة من الله يجب تسخيرها فيما يُرضيه، لقد جنينا منها الكثير. نعم، ربحنا، لكن لا أدري... أشعر أننا خسرنا الصفاء؛ صفاءَ الذهن، وخلوَّ البال، والتأملَ الرقراق حين يتطامن السكونُ من حولك.</p>
+
+<div class="para">
+<div class="para__main">
+<p>حين يكون الإنسان في فلاةٍ من الأرض<button class="nref" data-note="n2">٢</button> وتناديه عشراتُ الأصوات تتنهَّشه من كل جهة، فإنه لا يزداد إلا تيهًا وذهولًا، وأرانا ذلك الرجلَ الذاهلَ بين ضجيج المدنية المعاصرة، وخصوصًا إذا أضاف إلى ذلك أنماطَ الترفيه التي غزت حياتنا، والاسترسالَ في السهرات مع الأصدقاء في استراحات الضياع.</p>
+<p>ومن أفظعِ<button class="nref" data-note="n3">٣</button> نتائج هذا الانهماك المُضني في تروس المدنية المعاصرة تلك القسوةُ التي تدبُّ إلى القلوب فتستنزف الإيمان وتُفزِع السكينة الداخلية، حتى صارت شكوى شائعة.</p>
+</div>
+<div class="para__notes">
+<aside class="note note--exp" id="n2"><span class="note__t">إيضاح لغوي</span><b>يتطامن السكون</b>: يهدأ ويسكن ويطمئنّ. و<b>الفلاة</b>: الصحراء الواسعة الخالية. والصورة: صفاءُ الخلاء في مقابل تنهُّش الأصوات.</aside>
+<aside class="note note--fix" id="n3"><span class="note__t">تصحيح تفريغ</span>ورد في التفريغ الصوتي «ومن أفضل نتائج»، والسياق قاطع في أن المراد الذمُّ لا المدح؛ فالكلام عن قسوة القلب واستنزاف الإيمان.</aside>
+</div>
+</div>
+
+<p>ألم يَحِنْ لنا أن نستقطع وقتًا نهرب فيه من هذا التطاحن المعاصر لنعيد شحن أرواحنا بنسيم الإيمان؟ ألم يَأْنِ لنا أن نُرقِّق قلوبنا بالقرآن؟</p>
+
+<div class="para">
+<div class="para__main">
+<p>وكونُ القرآن هو المَفزَع لتزكية النفوس وترقيق القلوب وتصفية الأرواح وانتشالها من الثِّقلة الأرضية ليس استنباطًا ولا وجهةَ نظر، بل هو حقيقة دلّ عليها القرآن ذاته، كما قال الله تعالى:</p>
+<div class="aya">﴿فَذَكِّرْ بِالْقُرْآنِ مَن يَخَافُ وَعِيدِ﴾<button class="nref" data-note="n4">٤</button></div>
+<p>وقال الله تعالى:</p>
+<div class="aya">﴿قُلْ إِنَّمَا أُنذِرُكُم بِالْوَحْيِ﴾</div>
+<p>ووصف الله القرآن بأنه موعظة:</p>
+<div class="aya">﴿يَا أَيُّهَا النَّاسُ قَدْ جَاءَتْكُم مَّوْعِظَةٌ مِّن رَّبِّكُمْ﴾</div>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n4"><span class="note__t">توثيق الآيات</span>الأولى: ق ٤٥. والثانية: الأنبياء ٤٥. والثالثة: يونس ٥٧. وتمام الثالثة: ﴿وَشِفَاءٌ لِّمَا فِي الصُّدُورِ وَهُدًى وَرَحْمَةٌ لِّلْمُؤْمِنِينَ﴾.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>والحقيقة أنه كانت تمرُّ بي مشاهداتٌ اجتماعية في الحياة اليومية، فكنت أتأمل بعضها في ضوء القرآن، وأتنقل بين الآيات وأقلِّب معانيها، وأحاول أن أستخلص هدايات القرآن في مثل هذه الأحداث والمواقف، ثم أسجّل خلاصة هذه التأملات في فصول متناثرة في أوقات متفاوتة.</p>
+<p>وقد كانت تلك التأملات لا تزيدني إلا دهشةً<button class="nref" data-note="n5">٥</button> من أسرار القرآن في تليين القلوب وترقيقها، وتزكية النفوس، وبناء السموّ والرقيّ والجمال الأخلاقي والتعبدي فيها.</p>
+<p>وفي هذه الرسالة التي بين يديك ستمرُّ بك حصيلةُ بعض هذه التأملات؛ فهذه الرسالة في جوهرها هي مشاهداتٌ اجتماعية مررتُ بها ثم عرضتها تحت سراج القرآن، وانكشف لي فيها معانٍ أخّاذة في ترقيق القلب وتليينه وتزكيته وتطهيره وإعادته لمساره الطبيعي، ودوّنتُ خلاصة هذه النتائج والتأملات في هذه الفصول التي ستمرُّ بك بإذن الله.</p>
+<p>والله أعلم، وصلى الله وسلم على نبينا محمد وآله وصحبه.</p>
+<p style="text-align:left;color:var(--ink-soft)">أبو عمر<br><span style="font-size:.9em">ذو القعدة، عام ١٤٣٤ من الهجرة<button class="nref" data-note="n6">٦</button></span></p>
+</div>
+<div class="para__notes">
+<aside class="note note--exp" id="n5"><span class="note__t">إيضاح</span>هذه الجملة هي مفتاح منهج الكتاب كله: مشاهدةٌ اجتماعية أولًا، ثم عرضُها على القرآن ثانيًا، ثم تدوين ما انكشف ثالثًا. وستراها مطّردة في كل فصل.</aside>
+<aside class="note note--fix" id="n6"><span class="note__t">تصحيح تفريغ</span>ورد صوتيًّا: «أبو عمر ذي القيادة عام ٣٣٤ من الهجرة». و«أبو عمر» كنية المؤلف، و«ذي القيادة» تحريفٌ سمعيّ عن <b>ذي القَعدة</b>، وسقط من التاريخ رقم الألف والأربعمئة.</aside>
+</div>
+</div>
+
+<div class="quiz" data-section="s1"></div>
+
+<div class="summary">
+  <h4>خلاصة المقطع <span class="tag">إضافة ليست من الكتاب</span></h4>
+  <ul>
+    <li>المشكلة التي ينطلق منها الكتاب ليست في وسائل العصر نفسها — فهي نعمة — بل في الانهماك الذي يسلب الصفاء وخلوّ البال.</li>
+    <li>أخطر ثمرة لهذا الانهماك: قسوةُ القلب التي تستنزف الإيمان وتُذهِب السكينة، حتى صارت شكوى عامة.</li>
+    <li>كون القرآن هو الدواء المُرقِّق للقلب ليس رأيًا للمؤلف، بل نصٌّ دلّ عليه القرآن على نفسه في ثلاث آيات.</li>
+    <li>منهج الكتاب: مشاهدة اجتماعية واقعية، ثم عرضها على آيات القرآن، ثم استخلاص الهداية منها.</li>
+    <li>الرسالة كُتبت في فصول متفرقة وأوقات متفاوتة، فلا يُتوقَّع منها تسلسلٌ موضوعيّ صارم بين الفصول.</li>
+  </ul>
+</div>
+</section>
+
+<div class="chapter-open">
+  <div class="section__no">الفصل الأول من الكتاب</div>
+  <div class="line"></div>
+  <h2>ذُهول الحقائق</h2>
+  <div class="line"></div>
+</div>
+
+<section class="section" id="s2" style="--sc:var(--s2)">
+  <div class="section__head">
+    <div class="section__no">المقطع الثاني</div>
+    <h2>الفجيعة التي أيقظت السؤال <span class="gen">عنوان تنظيمي</span></h2>
+  </div>
+
+<div class="para">
+<div class="para__main">
+<p>في يوم الأربعاء الثاني من شهر الله المحرَّم لعام ١٤٣٤<button class="nref" data-note="n7">٧</button> قدِم إلى الرياض أحدُ أقاربي يُكنى بأبي عبد الكريم، وهو في منتصف الأربعينات من عمره، وكانت بيني وبينه مودة حميمية خاصة، وإلى هذه الساعة ما رأيت مثله في سلامة القلب للناس والإحسان للمستضعفين كالعمّال والجاليات والأطفال ونحوهم، وله عليّ فضلٌ خاص لا أنساه ما حييت.</p>
+<p>وما إن وصل منزلي إلا وكانت آثار الإرهاق بادية عليه، فطلب فراشًا ونام في المجلس ساعة، ولما حان موعد الغداء أيقظته وتناولنا الغداء سويًّا، ثم جلسنا نتجاذب أطراف الحديث، فأثار صاحبي مسألة صلاة الجماعة للمسافر وطلب مني كتبًا عن هذا الموضوع، فصعدت لمكتبتي وأتيت بجزء الصلاة من فتاوى ابن باز<button class="nref" data-note="n8">٨</button> التي فُرِّغت من «نور على الدرب»، وفتاوى ابن عثيمين التي جمعها الشيخ فهد السليمان<button class="nref" data-note="n9">٩</button>، قرأنا المسألة التي أرادها، ثم استأذن صاحبي وغادر.</p>
+</div>
+<div class="para__notes">
+<aside class="note note--fix" id="n7"><span class="note__t">تصحيح تفريغ</span>ورد صوتيًّا «لعام ٣٣٤»، وسقط منه رقم الألف والأربعمئة. و<b>١٤٣٤هـ</b> هو التاريخ الذي وقّع به المؤلف خاتمة رسالته، فالحادثة في العام نفسه.</aside>
+<aside class="note note--bio" id="n8"><span class="note__t">ترجمة عَلَم</span><b>عبد العزيز بن باز</b> (ت ١٤٢٠هـ): مفتي السعودية ورئيس هيئة كبار العلماء. و«نور على الدرب» برنامج إذاعي للفتوى، فُرِّغت حلقاته في مجلدات.</aside>
+<aside class="note note--bio" id="n9"><span class="note__t">ترجمة عَلَم</span><b>محمد بن صالح العثيمين</b> (ت ١٤٢١هـ): عضو هيئة كبار العلماء، صاحب «الشرح الممتع». و<b>فهد بن ناصر السليمان</b>: تلميذه الذي جمع فتاواه ورسائله في «مجموع فتاوى ورسائل ابن عثيمين».</aside>
+</div>
+</div>
+
+<p>هذا كان يوم الأربعاء. وفي يوم الجمعة الذي يليه اتصلت بي والدتي تُقدِّم لي الخبر على التدريج، فقالت لي: أبو عبد الكريم يا وليدي — الحمد لله على قدره — جاء حادث. ثم سكتت. سألتها: وفي أي مستشفى هو الآن؟ فقالت لي: تُوفِّي، الله يرحمه.</p>
+
+<div class="para">
+<div class="para__main">
+<p>صمتُّ برهة، وودّعت الوالدة وأغلقت الهاتف. كل الذي دار في خَلَدي تلك الساعة أن الوالدة أتاها الخبر بشكل خاطئ، وأن أبا عبد الكريم قطعًا لم يمت.</p>
+<p>مكثت قليلًا ثم عاودت الاتصال وسألت والدتي: أنتِ متأكدة من الخبر؟ قالت: ها هم أهله يبكون يا وليدي، الله يرحمه. ودّعت الوالدة مرة أخرى وأغلقت الهاتف، وبقيت في مكاني لا أعرف ماذا أصنع.</p>
+<p>ثم اتصلت بشقيقه، فلما ردّ عليّ وسمعت صوته المتهدِّج دبّ اليقين، وسألته: أبو عبد الكريم؟ فقاطعني وقال بصوت ممزوج بعَبَرات متكسرة: أبو عبد الكريم يطلبك الحال<button class="nref" data-note="n10">١٠</button>.</p>
+<p>أدرت محرّك سيارتي متوجهًا لمنزله خارج الرياض، وذهبت في نفرٍ من أهله إلى مغسلة الموتى التي سيُغسَّل فيها، انتظرنا سُويعة، وحين فرغ المُغسِّل أذن لنا بالدخول وكشف لنا عن وجهه، فسلّمتُ عليه وقبّلتُ بين عينيه ودعوتُ له، ولم أملك نفسي حينها أن قلت: ما أطيبك حيًّا وميتًا يا أبا عبد الكريم!</p>
+</div>
+<div class="para__notes">
+<aside class="note note--exp" id="n10"><span class="note__t">إيضاح</span>«يطلبك الحال» تعبير دارج في نجد، معناه: الأمر يستعجلك فأقبِل فورًا. والشقيق آثر هذا اللفظ فرارًا من التصريح بالخبر.</aside>
+</div>
+</div>
+
+<p>جلسنا في منزله وقدِم بعض الناس يُعزّون، وأنا لا زلت غير قادر على الإفاقة من صدمة المواجهة. عدتُ للرياض ومكثت ليالي وصورته لا تفارق ناظري، وأُعيد تذكُّر كل كلمة قالها حين كان في ضيافتي يوم الأربعاء الذي سبق وفاته، بل وكنت أدخل مجلس منزلي وأشاهد الزاوية التي افترشها ونام فيها، وأشكو بثّي وحزني إلى الله، وأكظِم أزيزًا في داخلي ما استطعت.</p>
+
+<p>مررتُ بحوادث ووفيات كثيرة، لكن لأول مرة يهجم عليّ الإحساس بقرب الموت ودنوّ الأجل بمثل هذه الصورة.</p>
+
+<div class="para">
+<div class="para__main">
+<p>لما كنت في منزل ذويه والمعزّون يقدمون عليهم كنت أطالع وجوه الناس وأنظر لنفسي بينهم وأقول: كلنا قدِمنا للعزاء، وغالبُنا يظن أن المصيبة مصيبةُ غيره، وننسى أن هناك ساعةً سُجِّلت لكل واحد منا سيغادر فيها هذه الحياة، وسيُغسَّل ويوضع في كفنه ويوسَّد لحده، وتُصَفّ اللَّبِنات فوقه، ويُهال عليه التراب، وينصرف الناس عنه.</p>
+<p>من الناس من سيموت في هذا الشهر، ومنا من سيموت قُبيل رمضان هذا العام ولن يدركه، ومنا من سيدرك سنة أو سنتين أو ما زاد على ذلك، ولكنها النهاية المحتومة: ساعةٌ مكتوبة قريبة منا سنغادر فيها هذه الحياة.</p>
+<p>هذه الساعة التي تم تحديدها قبل أن تُخلق السماوات والأرض بخمسين ألف سنة<button class="nref" data-note="n11">١١</button>، ثم كتبها الملائكة الكرام في التقدير العُمُري<button class="nref" data-note="n12">١٢</button> حيث كان الإنسان جنينًا عمره أربعة أشهر. نحن نسير إليها الآن بالعدّ التنازلي؛ فإذا كان العام الماضي يفصلنا عنها ثلاث سنين، فاليوم يفصلنا عنها سنتان، وهكذا نحن نقترب كل دقيقة من هذه اللحظة الحاسمة للانتقال للدار الآخرة والمسكن الأبدي.</p>
+</div>
+<div class="para__notes">
+<aside class="note note--fix" id="n11"><span class="note__t">تصحيح وتوثيق</span>ورد في التفريغ «بخمس ألف سنة»، والصواب <b>بخمسين ألف سنة</b>، وهو نصّ حديث عبد الله بن عمرو عند مسلم: كتب الله مقادير الخلائق قبل أن يخلق السماوات والأرض بخمسين ألف سنة.</aside>
+<aside class="note note--def" id="n12"><span class="note__t">تعريف مصطلح</span><b>التقدير العُمُري</b>: كتابة الملَك رزقَ العبد وأجله وعمله وشقاوته أو سعادته وهو جنين، كما في حديث ابن مسعود في الصحيحين. وهو مرتبة من مراتب التقدير، تليها الحَولية في ليلة القدر، ثم اليومية.</aside>
+</div>
+</div>
+
+<p>هذه الحقيقة الكبرى، كيف غفلتُ عنها طيلة هذه السنوات؟ وكيف يغفل كثيرٌ من الناس عنها؟ الكثير من الناس يعرف هذه الحقيقة معرفةً نظرية عقلية بحتة، لكنه لم يعشها يقينًا قلبيًّا غامرًا يستحوذ على تفكيره.</p>
+
+<div class="quiz" data-section="s2"></div>
+
+<div class="summary">
+  <h4>خلاصة المقطع <span class="tag">إضافة ليست من الكتاب</span></h4>
+  <ul>
+    <li>الفصل ينطلق من واقعة شخصية: ضيفٌ حميم نام في مجلس المؤلف يوم الأربعاء، وجاء نعيُه يوم الجمعة.</li>
+    <li>ما هزّ المؤلف ليس الموت في ذاته — فقد مرّ بوفيات كثيرة — بل قِصَر المسافة بين المجلس والمغسلة.</li>
+    <li>مجلس العزاء نفسه صار مرآة: كلٌّ يحسب المصيبة مصيبة غيره، وينسى أن له ساعة مسجَّلة مثله.</li>
+    <li>ساعة الموت مكتوبة في تقديرين: تقديرٍ سابق لخلق السماوات والأرض بخمسين ألف سنة، وتقديرٍ عُمُريّ وقت الجنين.</li>
+    <li>الفرق الذي يبني عليه الفصل كله: معرفةٌ نظرية عقلية بالموت، في مقابل يقينٍ قلبيّ غامر يستحوذ على التفكير.</li>
+  </ul>
+</div>
+</section>
+
+<section class="section" id="s3" style="--sc:var(--s3)">
+  <div class="section__head">
+    <div class="section__no">المقطع الثالث</div>
+    <h2>لا فرارٌ ولا تحايُد <span class="gen">عنوان تنظيمي</span></h2>
+  </div>
+
+<p>ومن أعاجيب النفوس وما يمرّ فيها من الأحاسيس أن بعض الناس يكره ذكرى الموت، ويدور في مشاعره الخفية أنه حين يتحاشى ذكره فإنه يبتعد عنه، وأنه حين يذكره فسيكون قريبًا منه، ويتكلّف الأسباب المشروعة وغير المشروعة في مدافعة الموت يظن أنه سيؤجّل يومه المكتوب.</p>
+
+<div class="para">
+<div class="para__main">
+<p>وهذا الفرار النفسي من الموت صوّره القرآن تصويرًا تبكيتيًّا حين قال تعالى:</p>
+<div class="aya">﴿قُلْ إِنَّ الْمَوْتَ الَّذِي تَفِرُّونَ مِنْهُ فَإِنَّهُ مُلَاقِيكُمْ ۖ ثُمَّ تُرَدُّونَ إِلَىٰ عَالِمِ الْغَيْبِ وَالشَّهَادَةِ فَيُنَبِّئُكُم بِمَا كُنتُمْ تَعْمَلُونَ﴾<button class="nref" data-note="n13">١٣</button></div>
+<p>وهَبْ أنك فررت، وافترض أن خطرًا من الأخطار سلمتَ منه، فحتى ما ستعيشه بعد ذلك سيظل فترة زمنية محدودة، يقول تعالى:</p>
+<div class="aya">﴿قُل لَّن يَنفَعَكُمُ الْفِرَارُ إِن فَرَرْتُم مِّنَ الْمَوْتِ أَوِ الْقَتْلِ وَإِذًا لَّا تُمَتَّعُونَ إِلَّا قَلِيلًا﴾</div>
+<p>فحتى لو سلمتَ من خطر معين فسيظل المتاع قليلًا، وسيأتي خطرٌ لن تفرّ منه.</p>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n13"><span class="note__t">توثيق الآيات</span>الأولى: الجمعة ٨. والثانية: الأحزاب ١٦.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>وصوّر القرآن معنى آخر قريبًا من الفرار، وهو <b>التحايُد</b>؛ ذلك أن الفرار ابتعادٌ عن موضع الخطر، وأما التحايد فهو أشبه بمحاولة التحاشي عن سهام الموت، يقول تعالى:</p>
+<div class="aya">﴿وَجَاءَتْ سَكْرَةُ الْمَوْتِ بِالْحَقِّ ۖ ذَٰلِكَ مَا كُنتَ مِنْهُ تَحِيدُ﴾<button class="nref" data-note="n14">١٤</button></div>
+<p>فلن ينفع الفرار، ولن ينفع التحايد، وستأتي قريبًا ساعةُ الانتقال للدار الأبدية.</p>
+</div>
+<div class="para__notes">
+<aside class="note note--def" id="n14"><span class="note__t">تعريف مصطلح</span><b>التحايُد</b> من «حادَ عنه»: مالَ عنه وانحرف. والفرق الذي يبنيه المؤلف: الفرارُ ابتعادٌ عن الموضع كله، والتحايُد مراوغةٌ في الموضع نفسه. والآية في ق ١٩.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>بل تأمّل ما هو أعجب من ذلك، وهو أن الإنسان يسير بقدميه إلى الموضع الذي كتب الله وفاته فيه وهو لا يعلم القدر المخبوء، حيث يقول تعالى:</p>
+<div class="aya">﴿قُل لَّوْ كُنتُمْ فِي بُيُوتِكُمْ لَبَرَزَ الَّذِينَ كُتِبَ عَلَيْهِمُ الْقَتْلُ إِلَىٰ مَضَاجِعِهِمْ﴾<button class="nref" data-note="n15">١٥</button></div>
+<p>بل قد تجد كثيرًا من الناس يمرّ بطريق أو غرفة أو مستشفى أو غيرها سنواتٍ عديدة من عمره، ولا يخطر بباله أن هذا الموضع الذي يمرّ به يحتمل أن يكون هو الذي كتب الله وفاته فيه بعد كذا وكذا من الساعات والدقائق.</p>
+<p>والمراد أن هذه اللحظة القادمة التي تنتظرني وتنتظرك يا أخي الكريم لحظةٌ لا تقبل التأجيل ولا التقديم، ساعةٌ قرّرها الجبار جل جلاله، كما قال تعالى:</p>
+<div class="aya">﴿وَلَٰكِن يُؤَخِّرُهُمْ إِلَىٰ أَجَلٍ مُّسَمًّى ۚ فَإِذَا جَاءَ أَجَلُهُمْ لَا يَسْتَأْخِرُونَ سَاعَةً وَلَا يَسْتَقْدِمُونَ﴾</div>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n15"><span class="note__t">توثيق الآيات</span>الأولى: آل عمران ١٥٤، نزلت في شأن أُحد. والثانية: النحل ٦١.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>ومن جملة التعلق بالأسباب المادية أن كثيرًا من الساسة والأثرياء يتوهّمون أنهم في قصورهم المشيَّدة أُبعِدوا عن مخاطر الموت من سكان الشقق والصفيح والأحياء العشوائية، والقرآن يكشف هذا الشعور المزيّف حيث يقول تعالى:</p>
+<div class="aya">﴿أَيْنَمَا تَكُونُوا يُدْرِككُّمُ الْمَوْتُ وَلَوْ كُنتُمْ فِي بُرُوجٍ مُّشَيَّدَةٍ﴾<button class="nref" data-note="n16">١٦</button></div>
+<p>ولذلك فإن فريقًا من الناس يكره فريضة الجهاد لأنه يظن أنها تقرّبه للموت، وينسى أن الموت قُرِّرت له ساعةٌ معينة قبل أن يُخلق، وقد شرح القرآن شيئًا من هذا التصوّر كما يقول تعالى:</p>
+<div class="aya">﴿قَالُوا رَبَّنَا لِمَ كَتَبْتَ عَلَيْنَا الْقِتَالَ لَوْلَا أَخَّرْتَنَا إِلَىٰ أَجَلٍ قَرِيبٍ﴾</div>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n16"><span class="note__t">توثيق وإيضاح</span>الأولى: النساء ٧٨، و«البروج المشيَّدة» الحصون المرتفعة المُحكَمة البناء. والثانية: النساء ٧٧.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>ولذلك يعرف الناس قصصًا كثيرة لمقاتلين تمرّغوا فوق جبهات الشظايا وزحفوا تحت قصف الطائرات، ومع ذلك عادوا لبلدانهم وعمّروا سنين عددًا؛ ويعرف الناس بالمقابل أصحّاءَ أشدّاءَ داهمهم الموت فجأةً فوق أَسِرّتهم الأنيقة. لماذا؟ لأن هذه الآجال محسومة قبل أن يُخلق الناس، لا ينفع فيها فرارٌ ولا تحايُدٌ ولا محاولةُ تجاهلٍ وتناسٍ للحظة فراق الدنيا.</p>
+<p>بل إن بعض الجهلة إذا ذُكِر له أن رجلًا من الناس مات في سبيل الله يقع في قلبه أن سلامته هو من هذا الموت نعمةٌ من الله، وهذا نظير تفكير عبد الله بن أُبيّ<button class="nref" data-note="n17">١٧</button> حين حكى الله تصرّفه ومقالته:</p>
+<div class="aya">﴿وَإِنَّ مِنكُمْ لَمَن لَّيُبَطِّئَنَّ ۚ فَإِنْ أَصَابَتْكُم مُّصِيبَةٌ قَالَ قَدْ أَنْعَمَ اللَّهُ عَلَيَّ إِذْ لَمْ أَكُن مَّعَهُمْ شَهِيدًا﴾</div>
+</div>
+<div class="para__notes">
+<aside class="note note--bio" id="n17"><span class="note__t">ترجمة عَلَم</span><b>عبد الله بن أُبَيّ ابن سَلول</b> (ت ٩هـ): رأس المنافقين بالمدينة، وهو الذي انخزل بثلث الجيش يوم أُحد. والآية: النساء ٧٢.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>لقد وقفتُ بعد هذه الجنازة المهيبة وأخذت أتذكّر قوائم من الأصدقاء والأقرباء وغيرهم ممن حانت ساعة رحيلهم المكتوبة وودّعونا في السنوات السابقة؛ تذكّرت أصدقاءَ درسوا معنا في المرحلة الثانوية، وأصدقاءَ درسوا معنا في الجامعة، وأقرباءَ كانوا يخالطوننا بشكل دوري، وتذكّرت علماءَ كانوا سمعَ الدنيا وبصرَها حين كنا نتداول أخبارهم، تذكّرت ابن باز وابن عثيمين وابن جبرين وابن غديان<button class="nref" data-note="n18">١٨</button> وغيرهم، بل تذكّرت رسول الله صلى الله عليه وسلم الذي مشى في طرقات المدينة وقرأ بالناس إمامًا في مسجده النبوي وجلس مع أصحابه بعد صلاة الفجر... ذهبوا كلهم بين أطباق الثرى!</p>
+<p>فكيف يا ترى يأمن الإنسان ويغفل وهو يرى الناس حوله يتناقصون؟! هذا والله سرٌّ من أسرار النفس البشرية.</p>
+</div>
+<div class="para__notes">
+<aside class="note note--bio" id="n18"><span class="note__t">ترجمة عَلَمين</span><b>عبد الله بن جِبرين</b> (ت ١٤٣٠هـ): عضو الإفتاء، له شروح على كتب الحديث والعقيدة. و<b>عبد الله بن غُدَيّان</b> (ت ١٤٣١هـ): عضو هيئة كبار العلماء واللجنة الدائمة للإفتاء.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>حين يتمعّن الإنسان في هذه الحقيقة الكبرى — حقيقة الموت — تسري به سلسلة التساؤلات إلى هذه المفارقة التي نعيشها يوميًّا، أعني التناقض بين العقيدة والسلوك. إذا كنا نؤمن فعلًا بأن لحظة توديع الدنيا قريبة منا جدًّا، إنها لحظةٌ بالأبواب، إنها على طرف الثُّمام<button class="nref" data-note="n19">١٩</button>، وقد أخذت أعدادًا ممن ساكنونا وأكلونا وناقشونا وزاملونا ودرّسونا، فكيف يا ترى نغفل ونحن نرى أخبار الموتى لا تتوقف؟!</p>
+<p>وقد أشار القرآن إلى هذه المفارقة بين قرب الأجل في مقابل استمرار الغفلة فقال تعالى:</p>
+<div class="aya">﴿اقْتَرَبَ لِلنَّاسِ حِسَابُهُمْ وَهُمْ فِي غَفْلَةٍ مُّعْرِضُونَ﴾</div>
+</div>
+<div class="para__notes">
+<aside class="note note--def" id="n19"><span class="note__t">تعريف مثل</span><b>على طرف الثُّمام</b>: مثل عربي للشيء القريب المتناوَل بلا كُلفة؛ والثُّمام نبتٌ قصير لا يحتاج آخذه إلى تسلُّق. والآية: الأنبياء ١.</aside>
+</div>
+</div>
+
+<div class="quiz" data-section="s3"></div>
+
+<div class="summary">
+  <h4>خلاصة المقطع <span class="tag">إضافة ليست من الكتاب</span></h4>
+  <ul>
+    <li>كراهية ذكر الموت شعورٌ خفيّ يظن صاحبه أن تحاشي ذكره يُبعده عنه — وهو وهمٌ بكّته القرآن.</li>
+    <li>القرآن أبطل مسلكين: <b>الفرار</b> (الابتعاد عن موضع الخطر)، و<b>التحايُد</b> (المراوغة عن سهامه).</li>
+    <li>الإنسان يسير بقدميه إلى موضع وفاته وهو لا يدري؛ والأجل لا يُقدَّم ساعة ولا يُؤخَّر.</li>
+    <li>لا القصور المشيَّدة تمنع، ولا ترك الجهاد يُطيل؛ فناجون من جبهات القتال، وموتى فوق الأَسِرّة الآمنة.</li>
+    <li>موتُ الأصدقاء والعلماء بل ورسول الله صلى الله عليه وسلم شاهدٌ يومي، ومع ذلك تستمر الغفلة — وهي المفارقة التي عبّرت عنها آية الأنبياء.</li>
+  </ul>
+</div>
+</section>
+
+<section class="section" id="s4" style="--sc:var(--s4)">
+  <div class="section__head">
+    <div class="section__no">المقطع الرابع</div>
+    <h2>أمنيات المحتضرين الثلاث: غمامة التأجيل <span class="gen">عنوان تنظيمي</span></h2>
+  </div>
+
+<p>وأخذت مرة أتأمل أسباب هذه الإشكالية في كتاب الله وأحاول البحث عن موقف القرآن من هذه العلاقة، فوجدتُ ثلاثة مشاهد صوّر القرآن تفاصيلها تكشف سرًّا من أسرار المشكلة، ألا وهي <b>مشكلة التأجيل</b>.</p>
+
+<p>فهذه الخطايا التي لا زلنا نواقعها لا تجدنا غالبًا مخططين للاستمرار عليها، وإنما نقول في أنفسنا إنها مجرد فترة يسيرة وسنصحّح أوضاعنا جذريًّا، لكن الزمان يتفارط وينسلّ الوقت من بين أيدينا ونحن لا نشعر، حتى نتفاجأ بملك الموت واقفًا فوق رؤوسنا ليأخذ أرواحنا في الساعة المقدَّرة. أرأيت؟ إنه الذهول عن الحقائق الكبرى تحت غمامة التأجيل.</p>
+
+<div class="para">
+<div class="para__main">
+<p>أخبرنا كتاب الله عن فِئام<button class="nref" data-note="n20">٢٠</button> من الناس حين يحضرهم الموت يسألون الله أن يُرجعهم ويعاهدونه أن يعملوا الأعمال الصالحة التي أجّلوها، ولكن هيهات! لقد فات الأوان، يقول الله تعالى:</p>
+<div class="aya">﴿حَتَّىٰ إِذَا جَاءَ أَحَدَهُمُ الْمَوْتُ قَالَ رَبِّ ارْجِعُونِ ۝ لَعَلِّي أَعْمَلُ صَالِحًا فِيمَا تَرَكْتُ ۚ كَلَّا ۚ إِنَّهَا كَلِمَةٌ هُوَ قَائِلُهَا ۖ وَمِن وَرَائِهِم بَرْزَخٌ إِلَىٰ يَوْمِ يُبْعَثُونَ﴾<button class="nref" data-note="n21">٢١</button></div>
+<p>أمامنا اليوم فرصةٌ للعمل الصالح قبل أن تأتي هذه الساعة القريبة المفاجئة التي لن تنفع فيها التوسلات بالعودة لزمان العمل.</p>
+</div>
+<div class="para__notes">
+<aside class="note note--def" id="n20"><span class="note__t">تعريف لفظ</span><b>فِئام</b> من الناس: الجماعة الكثيرة منهم. ولاحظ أن المؤلف كرّرها ثلاث مرات في مطلع كل مشهد؛ فالتكرار هنا بناءٌ أسلوبي مقصود لا حشو.</aside>
+<aside class="note note--def" id="n21"><span class="note__t">توثيق وتعريف</span>الآيتان: المؤمنون ٩٩–١٠٠. و<b>البرزخ</b>: الحاجز بين الدنيا والآخرة، وهو ما بين الموت والبعث؛ سُمّي بذلك لأنه يحول دون الرجوع.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>وأخبرنا كتاب الله عن فِئام من الناس حين حضرهم الموت يسألون الله فسحةً زمنية يسيرة ليتصدّقوا، ولكن بعد ماذا؟ بعد أن فات الأوان، يقول الله:</p>
+<div class="aya">﴿وَأَنفِقُوا مِن مَّا رَزَقْنَاكُم مِّن قَبْلِ أَن يَأْتِيَ أَحَدَكُمُ الْمَوْتُ فَيَقُولَ رَبِّ لَوْلَا أَخَّرْتَنِي إِلَىٰ أَجَلٍ قَرِيبٍ فَأَصَّدَّقَ وَأَكُن مِّنَ الصَّالِحِينَ ۝ وَلَن يُؤَخِّرَ اللَّهُ نَفْسًا إِذَا جَاءَ أَجَلُهَا ۚ وَاللَّهُ خَبِيرٌ بِمَا تَعْمَلُونَ﴾<button class="nref" data-note="n22">٢٢</button></div>
+<p>وها نحن الآن في زمن إمكانية التصدق، فهل سنتردد في قرار النفقة حتى تأتي تلك الساعة التي نُبدي فيها الاستعداد للتصدق ولكن بعد فوات الأوان؟</p>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n22"><span class="note__t">توثيق</span>الآيتان: المنافقون ١٠–١١. ولاحظ أن الأمنية هنا ليست الرجوع للدنيا كاملة، بل مجرد <b>تأخير قصير</b> — ومع ذلك رُدَّت.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>وأخبرنا كتاب الله عن فِئام من الناس حين يحضرهم الموت يعلنون التوبة ويستغفرون الله، ولكن هل هذا هو وقت التوبة والاستغفار؟ يقول الله:</p>
+<div class="aya">﴿وَلَيْسَتِ التَّوْبَةُ لِلَّذِينَ يَعْمَلُونَ السَّيِّئَاتِ حَتَّىٰ إِذَا حَضَرَ أَحَدَهُمُ الْمَوْتُ قَالَ إِنِّي تُبْتُ الْآنَ وَلَا الَّذِينَ يَمُوتُونَ وَهُمْ كُفَّارٌ ۚ أُولَٰئِكَ أَعْتَدْنَا لَهُمْ عَذَابًا أَلِيمًا﴾<button class="nref" data-note="n23">٢٣</button></div>
+<p>ولا زلنا الآن في الساعات الأخيرة التي تسبق إغلاق باب التوبة، والتوبة إلى الله تحتاج قرارًا فوريًّا عاجلًا، قرارًا لا يحتمل التأجيل ثانية واحدة، قرارًا يجب أن يُدشَّن الآن قبل أن تفوت الفرصة.</p>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n23"><span class="note__t">توثيق وإيضاح</span>الآية: النساء ١٨. وهذه هي المسمّاة عند أهل العلم <b>توبة الغرغرة</b>، أي بعد معاينة الموت؛ وفي الحديث: «إن الله يقبل توبة العبد ما لم يُغرغِر» رواه الترمذي وحسّنه.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>هذه المشاهد الثلاثة التي ذكرها القرآن عن أحوال المحتضرين وأمنياتهم من أشدّ المشاهد زلزلةً لمشاعر المؤمن الموقن بلحظة الموت وقربها<button class="nref" data-note="n24">٢٤</button>، وخصوصًا إذا وضع نفسه في هذه المشاهد؛ فتخيَّلْ كيف لو كان هو نفسه يسأل الله عند الاحتضار أن يعود للدنيا ليعمل صالحًا، أو يسأل الله أن يعود للدنيا ليتصدق ويكون من الصالحين، أو يسأل الله عند الاحتضار أن يتوب عليه ويغفر له؛ وفي كل هذه الأمنيات يُواجَه بالرفض، لأنها دعوات تجاوزت الموعد النهائي للقبول، وقد كان يمكنه ذلك لو بادر قبل هذه اللحظة.</p>
+</div>
+<div class="para__notes">
+<aside class="note note--exp" id="n24"><span class="note__t">إيضاح البناء</span>المشاهد الثلاثة مرتَّبة تصاعديًّا في ضيق المطلوب: رجوعٌ كامل للعمل، ثم تأخيرٌ قصير للصدقة، ثم مجرد كلمة توبة. وكلها رُدَّت — فالعبرة ليست بحجم الطلب بل بانقضاء وقته.</aside>
+</div>
+</div>
+
+<div class="quiz" data-section="s4"></div>
+
+<div class="summary">
+  <h4>خلاصة المقطع <span class="tag">إضافة ليست من الكتاب</span></h4>
+  <ul>
+    <li>سرّ التناقض بين العقيدة والسلوك هو <b>التأجيل</b>: لا أحد يخطط للاستمرار على الخطيئة، لكن الوقت ينسلّ.</li>
+    <li>المشهد الأول: طلب الرجوع للعمل الصالح — فيُردّ بـ«كلا» ويُضرب دونه البرزخ (المؤمنون ٩٩–١٠٠).</li>
+    <li>المشهد الثاني: طلب تأخيرٍ قصير للصدقة — ولن يؤخّر الله نفسًا إذا جاء أجلها (المنافقون ١٠–١١).</li>
+    <li>المشهد الثالث: إعلان التوبة عند الاحتضار — وليست التوبة لمن أخّرها إلى تلك اللحظة (النساء ١٨).</li>
+    <li>الدواء عملي: العمل والصدقة والتوبة قرارات تُتّخذ الآن، لأن الفرصة قائمة الآن فقط.</li>
+  </ul>
+</div>
+</section>
+
+<section class="section" id="s5" style="--sc:var(--s5)">
+  <div class="section__head">
+    <div class="section__no">المقطع الخامس</div>
+    <h2>دوّامة التكاثر ومفهوم الأبدية <span class="gen">عنوان تنظيمي</span></h2>
+  </div>
+
+<div class="para">
+<div class="para__main">
+<p>والواقع المشاهَد اليوم أن من أكثر ما ينسج حول العيون حجابَ الغفلة: التنافسُ الاجتماعي على الدنيا؛ فالمرء منذ أن يُستجرّ إلى دوّامة المباهاة فإنه لا يكاد يفيق منها إلا على أعتاب القبر، والناس اليوم كأفراس رهان على المناصب والمساكن والسيارات والملابس، لا يكاد أحدنا يلتقط أنفاسه من هذه المنافسات الاجتماعية على حطام الدنيا.</p>
+<p>وقد نبّه القرآن على هذا المعنى الواسع بأوجز عبارة وأبلغ صياغة، بالله عليك تأمّل قول ربنا:</p>
+<div class="aya">﴿أَلْهَاكُمُ التَّكَاثُرُ ۝ حَتَّىٰ زُرْتُمُ الْمَقَابِرَ﴾<button class="nref" data-note="n25">٢٥</button></div>
+<p>أرأيت أين تنتهي حفلة التكاثر هذه؟ تنتهي عند أول ليلة في القبر، وحينها يكتشف أحدنا أنه ضيّع حياته المستقبلية الحقيقية، ولكن بعد ماذا؟ بعد فوات الزمن المحدد من الله جل وعلا.</p>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n25"><span class="note__t">توثيق وإيضاح</span>التكاثر ١–٢. و«ألهاكم» أي شغلكم عمّا خُلقتم له؛ وجملة «حتى زرتم المقابر» غايةٌ تكشف أن الانشغال لم ينقطع إلا بالموت.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>وهذا التكاثر الذي تحدثت عنه سورة التكاثر جاء في آية أخرى في سورة الحديد حيث يقول الله:</p>
+<div class="aya">﴿اعْلَمُوا أَنَّمَا الْحَيَاةُ الدُّنْيَا لَعِبٌ وَلَهْوٌ وَزِينَةٌ وَتَفَاخُرٌ بَيْنَكُمْ وَتَكَاثُرٌ فِي الْأَمْوَالِ وَالْأَوْلَادِ﴾<button class="nref" data-note="n26">٢٦</button></div>
+<p>وإذا وفّق الله الإنسانَ أن ينخلع من ملاحظة ما يكتسبه الخلق ويتزاحمون عليه والتحرُّكِ على المنافسة فيه — مناصبَ ومساكنَ وسياراتٍ وعقاراتٍ وأرصدةً ونحو ذلك — وأقبل على ما هو أعظم من ذلك، وهو صناعة المستقبل الأبدي وعمارة النفس بالله، فإنه سيكتشف للحياة معنًى آخر، معنًى أسمى من الحطام الصغير المؤقت.</p>
+<p>كلما رأيت نفسي في غفلة، وكلما رأيت نفسي وقد ذُهِلت عن الحقائق الكبرى، أخذت أُردِّد: <b>فتِّشْ عن دوّامة التكاثر</b>.</p>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n26"><span class="note__t">توثيق</span>الحديد ٢٠. ولاحظ ترتيب الآية للأعمار: لعبٌ (الطفولة)، فلهوٌ، فزينةٌ، فتفاخر، فتكاثرٌ في الأموال والأولاد — وهو ترتيبٌ ذكره جمعٌ من المفسرين.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>وبكل صراحة فإنني لا أعرف مفهومًا عقليًّا لا يكاد المرءُ حين يتأمّله أن يُطيق آثاره الإيمانية مثل المقارنة بين أبدية الحياة الآخرة وتأقيت الحياة الدنيا. مقارنةُ التأقيت بالأبدية تجعل الدنيا رقمًا مهملًا لا يستحق الذكر أصلًا<button class="nref" data-note="n27">٢٧</button>. الأبدية ليست مئة سنة، ولا ألف سنة، ولا مليونًا، ولا مليارًا، ولكنه أبدُ الآبدين بلا نهاية، من يستطيع أن يتصوّر؟! ثم قارن تلك الحياة الأبدية بالدنيا التي لا تتجاوز سنواتٍ معدودة<button class="nref" data-note="n28">٢٨</button>.</p>
+</div>
+<div class="para__notes">
+<aside class="note note--fix" id="n27"><span class="note__t">تصحيح تفريغ</span>ورد في التفريغ «تجعل الدنيا رقمًا مهملًا يستحق الذكر أصلًا» بسقوط أداة النفي، وهو انقلابٌ تامّ للمعنى؛ والصواب <b>«لا يستحق الذكر»</b> كما يقتضيه السياق.</aside>
+<aside class="note note--fix" id="n28"><span class="note__t">تصحيح تفريغ</span>ورد صوتيًّا «لا تتجاوز ثنيات معدودة»، وهي كلمة غير مستقيمة، والأشبه بالسياق <b>«سنوات معدودة»</b>. وكذلك في فقرة المثال التالي سقط تمام العبارة «قدر [ما يستطيع]» فأُكمِل بين معقوفتين.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>مجرد التأمل في مفهوم الأبدية يكاد أن يصل بالنفس إلى أعظم مراتب العزم. تأمّل معي هذا المثال<button class="nref" data-note="n29">٢٩</button>: لو قيل لشخص من الناس: إنك ستجلس في هذا البلد الذي أنت فيه خمس سنين، ثم سننقلك إلى بلد مجاور وستعيش فيه مئة سنة — فماذا ترى هذا الرجل صانعًا؟ لا شك أنه سيحوّل كل ممتلكاته وأمواله وأرصدته إلى البلد الثاني الذي سيعيش فيه الزمن الأطول، وسيقتصد في الصرف في بلده الأول قدر [ما يستطيع] ويتبلّغ بالكفاف، لأنه ينتظر الحياة المستقرة في البلد الثاني الذي سينتقل إليه.</p>
+<p>إذا كان هذا في المقارنة بين منزلين أحدهما خمس سنين والآخر مئة سنة، فكيف — بالله عليك — سيكون التصرف حين المقارنة بين منزلٍ مؤقت ومنزلٍ مؤبَّدٍ لا ينتهي أصلًا؟! ثم ليس الأمر مؤبَّدًا فقط، بل قد يكون مؤبَّدًا بأعلى درجات السعادة في قصور الجنة ونعيمها، أو مؤبَّدًا في أحطّ درجات الآلام الجسدية والنفسية في أودية النار ولهيبها، كل ذلك أبدَ الآبدين.</p>
+<p>وماذا بعد مفهوم الأبدية من واعظ؟!</p>
+</div>
+<div class="para__notes">
+<aside class="note note--exp" id="n29"><span class="note__t">إيضاح</span>قوّة المثال في أنه لا يطالبك بترك البلد الأول، بل بترتيب <b>نسبة الإنفاق</b> بين دارين تعرف مدتيهما. والمؤلف يستعمله ليقول: العقل نفسه يحكم بالتقديم للأطول، والخلل في اليقين لا في المنطق.</aside>
+</div>
+</div>
+
+<div class="quiz" data-section="s5"></div>
+
+<div class="summary">
+  <h4>خلاصة المقطع <span class="tag">إضافة ليست من الكتاب</span></h4>
+  <ul>
+    <li>أكبر ناسجٍ لحجاب الغفلة هو التنافس الاجتماعي: المناصب والمساكن والسيارات والملابس.</li>
+    <li>سورة التكاثر تحدّد نهاية هذا السباق بدقة: «حتى زرتم المقابر» — أول ليلة في القبر.</li>
+    <li>علاج المؤلف الشخصي عند الغفلة قاعدةٌ واحدة: «فتِّشْ عن دوّامة التكاثر».</li>
+    <li>أقوى مفهوم عقلي مولِّد للعزم عنده: مقارنة أبدية الآخرة بتأقيت الدنيا.</li>
+    <li>مثال البلدين (خمس سنين مقابل مئة) يكشف أن العقل يحكم بالتقديم للأطول — والخلل في اليقين لا في الحساب.</li>
+  </ul>
+</div>
+</section>
+
+<section class="section" id="s6" style="--sc:var(--s6)">
+  <div class="section__head">
+    <div class="section__no">المقطع السادس</div>
+    <h2>هل يُعطِّل ذكرُ الموت بناءَ النهضة؟ <span class="gen">عنوان تنظيمي</span></h2>
+  </div>
+
+<p>وكنت ألاحظ في كثير من كتب الفكر المعاصر أنها تكاد تخلو من ذكر الموت والدار الآخرة وصناعة المستقبل الأبدي، ويعدّون ذلك شأنًا غير رفيع. فذكرتُ هذه الملاحظة لأحد الشباب الذين يقرؤون في هذه الكتب، فقال لي: إن هذا تصرُّفٌ له ما يبرره. فقلت له: وما الذي يبرره؟ فقال لي: إن استحضار الموت واليوم الآخر يصرف الإنسان عن بناء الحضارة والنهضة، فيجب أن نؤمن بالموت واليوم الآخر ثم نُحيِّده حتى نستطيع أن نبني الحضارة والنهضة بعيدًا عن الضغط النفسي لفكرة الموت واليوم الآخر. هذا ملخص كلامه، بعضه بعبارته وبعضه بمعناه.</p>
+
+<p>والحقيقة أن هذا فهمٌ مغلوط كليًّا، ولا يقول هذا الكلامَ رجلٌ قرأ كتاب الله وأيقن صدقًا بمعانيه؛ فإن استحضار الموت واليوم الآخر هو الذي يدفع فعلًا للعمل الصالح النافع المثمر طبقًا لمراد الله.</p>
+
+<div class="para">
+<div class="para__main">
+<p>تأمّل مثلًا لما ذكر الله الصلاة — وهي رأس العبادات — ذكر أنه لا يطيقها إلا من يوقن بالموت ولقاء الله، قال تعالى:</p>
+<div class="aya">﴿وَاسْتَعِينُوا بِالصَّبْرِ وَالصَّلَاةِ ۚ وَإِنَّهَا لَكَبِيرَةٌ إِلَّا عَلَى الْخَاشِعِينَ ۝ الَّذِينَ يَظُنُّونَ أَنَّهُم مُّلَاقُو رَبِّهِمْ وَأَنَّهُمْ إِلَيْهِ رَاجِعُونَ﴾<button class="nref" data-note="n30">٣٠</button></div>
+<p>فانظر كيف كانت الصلاة هيّنةً ميسَّرة لمن امتلأ قلبه باليقين بلقاء الله.</p>
+<p>ولما ذكر الله تخاذل جنود طالوت بيّن أنه لم يقف ويثبت معه إلا من امتلأت قلوبهم باليقين بلقاء الله، قال الله تعالى:</p>
+<div class="aya">﴿فَلَمَّا جَاوَزَهُ هُوَ وَالَّذِينَ آمَنُوا مَعَهُ قَالُوا لَا طَاقَةَ لَنَا الْيَوْمَ بِجَالُوتَ وَجُنُودِهِ ۚ قَالَ الَّذِينَ يَظُنُّونَ أَنَّهُم مُّلَاقُو اللَّهِ كَم مِّن فِئَةٍ قَلِيلَةٍ غَلَبَتْ فِئَةً كَثِيرَةً بِإِذْنِ اللَّهِ ۗ وَاللَّهُ مَعَ الصَّابِرِينَ﴾<button class="nref" data-note="n31">٣١</button></div>
+<p>فانظر كيف لم يصبر في مقام الجهاد إلا من عمرت نفوسهم بحقيقة الموت واليوم الآخر.</p>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n30"><span class="note__t">توثيق وإيضاح</span>البقرة ٤٥–٤٦. و«يظنون» هنا بمعنى <b>يوقنون</b> عند جمهور المفسرين، وهو من استعمال الظن في اليقين، ومنه الآية التالية في قصة طالوت.</aside>
+<aside class="note note--doc" id="n31"><span class="note__t">توثيق</span>البقرة ٢٤٩. و<b>طالوت</b> الملك الذي بعثه الله لبني إسرائيل، و<b>جالوت</b> قائد عدوّهم الذي قتله داود عليه السلام.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>وترى أمثال هؤلاء المفكرين التغريبيين — أو من أصابتهم بعضُ شُعَب التغريب — يتندّرون بمن يُكثر من ذكر الموت، بل ويسمّيها بعضهم «عقيدة انتظار الموت» على سبيل الاستهانة والانتقاص، بالرغم من أن انتظار الموت شعبةٌ من شعب الإيمان في كتاب الله، قال الله تعالى:</p>
+<div class="aya">﴿مِّنَ الْمُؤْمِنِينَ رِجَالٌ صَدَقُوا مَا عَاهَدُوا اللَّهَ عَلَيْهِ ۖ فَمِنْهُم مَّن قَضَىٰ نَحْبَهُ وَمِنْهُم مَّن يَنتَظِرُ ۖ وَمَا بَدَّلُوا تَبْدِيلًا﴾<button class="nref" data-note="n32">٣٢</button></div>
+<p>وامتلاء القلب باليقين بقرب الأجل والحساب نبّه عليه القرآن في قول الله تعالى:</p>
+<div class="aya">﴿أَوَلَمْ يَنظُرُوا فِي مَلَكُوتِ السَّمَاوَاتِ وَالْأَرْضِ وَمَا خَلَقَ اللَّهُ مِن شَيْءٍ وَأَنْ عَسَىٰ أَن يَكُونَ قَدِ اقْتَرَبَ أَجَلُهُمْ﴾</div>
+<p>وأعاد ذلك المعنى في مطلع سورة الأنبياء فقال تعالى:</p>
+<div class="aya">﴿اقْتَرَبَ لِلنَّاسِ حِسَابُهُمْ وَهُمْ فِي غَفْلَةٍ مُّعْرِضُونَ﴾</div>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n32"><span class="note__t">توثيق</span>الأحزاب ٢٣، و«قضى نحبه» أي وفّى بعهده فمات على ذلك. ثم الأعراف ١٨٥، ثم الأنبياء ١ — وهي الآية نفسها التي بنى عليها المؤلف مفارقة المقطع الثالث.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>وقد كان أئمة الأولياء في هذه الأمة يستحضرون دومًا قربَ الأجل ودنوَّ الموت، فهذا رأس أولياء هذه الأمة أبو بكر الصديق رضوان الله عليه يستحضر هذا المعنى كثيرًا، فقد روى البخاري في صحيحه قصة مؤثرة عن أبي بكر حيث جاء فيها: لما قدِم رسول الله صلى الله عليه وسلم المدينة وُعِك أبو بكر وبلال، فكان أبو بكر إذا أخذته الحُمّى يقول:</p>
+<div class="hadith">كلُّ امرئٍ مُصبَّحٌ في أهلهِ &nbsp;&nbsp;***&nbsp;&nbsp; والموتُ أدنى من شِراكِ نَعلِهِ<button class="nref" data-note="n33">٣٣</button></div>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n33"><span class="note__t">تخريج</span>رواه البخاري من حديث عائشة رضي الله عنها في قدوم المهاجرين المدينة ووعكهم بحُمّاها. و<b>الشِّراك</b>: السَّير الذي يُمسك النعل على ظهر القدم — فالمعنى: الموت أقرب إليك من نعلك.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>والمراد أنه ليست الإشكالية في أن يستحوذ على القلب والعقل اليقينُ بقرب الأجل والحساب، فهذه شعبة إيمانية قرآنية عظيمة، وإنما الخلل هو تعطيل العمل والفتور عن الدعوة والإصلاح.</p>
+<p>وقد أوضح كتاب الله أن اليقين بلقاء الله يدفع للمزيد من العمل ويمنح المؤمن القوة والصلابة<button class="nref" data-note="n34">٣٤</button>، لا العكس كما يتوهم كثير من التغريبيين أو من أصابتهم بعض شعب التغريب.</p>
+</div>
+<div class="para__notes">
+<aside class="note note--fix" id="n34"><span class="note__t">تصحيح تفريغ</span>انقطعت العبارة في التسجيل هكذا: «ويمنح المؤمن القوة والص... للعكس»، وأُكمِلت هنا بما يستقيم به السياق: <b>«القوة والصلابة، لا العكس»</b>.</aside>
+</div>
+</div>
+
+<div class="quiz" data-section="s6"></div>
+
+<div class="summary">
+  <h4>خلاصة المقطع <span class="tag">إضافة ليست من الكتاب</span></h4>
+  <ul>
+    <li>الشبهة كما نقلها المؤلف عن محدِّثه: نؤمن بالموت واليوم الآخر ثم <b>نُحيّده</b> لنبني النهضة بلا ضغط نفسي.</li>
+    <li>الردّ الأول: الصلاة نفسها — رأس العبادات — لا تهون إلا على من أيقن بلقاء الله (البقرة ٤٥–٤٦).</li>
+    <li>الردّ الثاني: الثبات في أشد المواقف (جيش طالوت) كان لأهل اليقين بلقاء الله لا لغيرهم (البقرة ٢٤٩).</li>
+    <li>«انتظار الموت» ليس تهمة بل شعبة إيمانية نصّ عليها القرآن (الأحزاب ٢٣)، وكان دأب أبي بكر رضي الله عنه.</li>
+    <li>الخلل ليس في استحواذ اليقين بالأجل على القلب، بل في تعطيل العمل والفتور عن الدعوة والإصلاح — وهذان شيئان مختلفان.</li>
+  </ul>
+</div>
+</section>
+
+<section class="section" id="s7" style="--sc:var(--s7)">
+  <div class="section__head">
+    <div class="section__no">المقطع السابع</div>
+    <h2>ثمراتُ اليقظة، والساعاتُ التي لا تعود <span class="gen">عنوان تنظيمي</span></h2>
+  </div>
+
+<div class="para">
+<div class="para__main">
+<p>والحقيقة أن استحضار الحقائق الكبرى كالموت ولقاء الله، وتمزيقَ ضباب الذهول الذي يلفّها، يُثمر للمرء تصحيحًا هائلًا في مسيرته العلمية والدعوية والاجتماعية، ويُغيّر جذريًّا من نظرته لكثير من الأمور، فيصبح يقرأ الأشياء على ضوء سؤال: هل تقرّب من الله وتنفع في اليوم الآخر أم لا؟</p>
+<p>وهذا السؤال القلِق المُشفِق منذ أن يسيطر على التفكير تنقلب شخصية المرء رأسًا على عقب، ويصبح نظره أبعدَ من مظاهر الأمور ومسافاتها القصيرة، ولا يزال هذا السؤال القلق يقوده ويسيّره حتى تأتي لحظة لقاء الله فيحمد العاقبة:</p>
+<div class="aya">﴿قَالُوا إِنَّا كُنَّا قَبْلُ فِي أَهْلِنَا مُشْفِقِينَ ۝ فَمَنَّ اللَّهُ عَلَيْنَا وَوَقَانَا عَذَابَ السَّمُومِ﴾<button class="nref" data-note="n35">٣٥</button></div>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n35"><span class="note__t">توثيق وإيضاح</span>الطور ٢٦–٢٧. و<b>السَّموم</b>: حرّ النار النافذ في المسامّ. ولاحظ أن الآية جعلت الإشفاق في الدنيا سببًا للوقاية في الآخرة — وهو عين ما يسمّيه المؤلف «السؤال القلِق».</aside>
+</div>
+</div>
+
+<p>ومن أعظم آثار هذا السؤال القلِق: الانزعاجُ حول طبيعة قضاء الوقت والعمر؛ فالإنسان الغافل عن ذكر الموت تمرّ أوقاته وساعاته دون أن يتنبّه ويتساءل حول جدوى ما يصنع، لكن المؤمن الذي يهجم عليه ذكر الموت ودنوّ الأجل وقرب لقاء الله فإنك تجده يزهد في اللقاءات والاجتماعات في استراحات الضياع التي تذهب فيها الأوقات سدى، وتتعالى فيها القهقهات، ويجوب الناس فيها أحاديث لا تقرّب من الله إن لم تكن تُبعد عنه — حتى وإن كان ظاهر الجالسين الصلاح أو طلب العلم، فالعبرة بالحقائق، وما أكثر ما تكون المجالس في غير ما يقرّب من الله.</p>
+
+<p>المؤمن المستحضِر لحقيقة الموت ودنوّ الأجل يبخل بوقته أن يذهب في رواياتٍ تلو روايات، وأفلامٍ سينمائية تتلاحق أضواؤها، وتتبُّعٍ لتعليقات وترّهات على صفحات المواقع الاجتماعية كالفيسبوك وتويتر ونحوهما، أو منتديات الإنترنت.</p>
+
+<div class="para">
+<div class="para__main">
+<p>طالب العلم الجادّ الذي تشبّع بحقيقة الموت تختلف نظرته للمؤلفات والكتب، ويدبّ إليه الزهد في الترف النظري<button class="nref" data-note="n36">٣٦</button>، ويصبح مقصوده في الكتب معرفةَ الهدى بدليله، ويَضمُر شغفه بمُلَح العلم ونُكَته ولطائفه الجانبية، وتصبح في مرتبة تبعية غير مقصودة بالأصالة، وإنما مقصوده الأصلي معرفة معاني كلام الله ورسوله والانفعال والتخلق بها وبثّها في الناس.</p>
+<p>والمجاهد الذي يجاهد التيارات البدعية والفكرية المنحرفة إذا تشبّع قلبه بحقيقة الموت وقرب الحساب صار يقتصد في ذكر الناس إلا بقدر ما يبيّن الحق ويظهره، وما أحسن العبارة المنقولة عن الإمام الحافظ عبد الله بن عون<button class="nref" data-note="n37">٣٧</button> شيخِ شعبة وابنِ المبارك أنه قال:</p>
+<div class="naql"><span class="who">عبد الله بن عون</span>ذِكْرُ الناس داء، وذِكْرُ الله دواء.</div>
+</div>
+<div class="para__notes">
+<aside class="note note--def" id="n36"><span class="note__t">تعريف مصطلح</span><b>الترف النظري</b>: التوسّع في المسائل العلمية لذّةً بالبحث لا حاجةً للعمل. و<b>مُلَح العلم ونُكَته</b>: طرائفه ودقائقه الجانبية التي تُستملَح ولا يُبنى عليها عمل.</aside>
+<aside class="note note--bio" id="n37"><span class="note__t">ترجمة عَلَم</span><b>عبد الله بن عَون البصري</b> (ت ١٥١هـ): من أئمة التابعين وأثبتهم، اشتُهر بالورع وكفّ اللسان. و<b>شعبة بن الحجاج</b> و<b>عبد الله بن المبارك</b> من تلاميذه، وهما إمامان كبيران في الحديث.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>والمؤمن إذا امتلأ قلبه باليقين بلحظة القبر يتحرّج<button class="nref" data-note="n38">٣٨</button> على أوقات الانتظار والمسير والجلوس العابر أن تذهب في غير ذكر الله، وأيُّ جمالٍ وبهاءٍ لحالة الذاكر لله واقفًا وجالسًا ومضطجعًا، والتي يصفها كتاب الله في قوله سبحانه:</p>
+<div class="aya">﴿الَّذِينَ يَذْكُرُونَ اللَّهَ قِيَامًا وَقُعُودًا وَعَلَىٰ جُنُوبِهِمْ﴾<button class="nref" data-note="n39">٣٩</button></div>
+<p>بل تأمّل ما هو أعجب من ذلك، وهو أن الله يأمر بالصلاة التي كلها أذكار، ثم بعد الصلاة يأمر باستمرار الذكر على هذه الأحوال فيقول تعالى:</p>
+<div class="aya">﴿فَإِذَا قَضَيْتُمُ الصَّلَاةَ فَاذْكُرُوا اللَّهَ قِيَامًا وَقُعُودًا وَعَلَىٰ جُنُوبِكُمْ﴾</div>
+</div>
+<div class="para__notes">
+<aside class="note note--fix" id="n38"><span class="note__t">تصحيح تفريغ</span>ورد صوتيًّا «يتحرّك على أوقات الانتظار»، وهو تصحيفٌ سمعيّ؛ والصواب <b>«يتحرَّج»</b> أي يضيق صدره ويتأثّم أن تذهب سدى.</aside>
+<aside class="note note--doc" id="n39"><span class="note__t">توثيق</span>الأولى: آل عمران ١٩١. والثانية: النساء ١٠٣، وهي في ذكر الله بعد صلاة الخوف. والمعنى الجامع: الذكر لا تشترط له هيئة.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>بالله عليك خذ هذا المثال العابر: تأمّل هذه الساعات التي فاتت من ظهر اليوم أو من عصر اليوم، أو السهرة التي قُضيت البارحة؛ هذه الساعات التي فاتت ذهبت عليّ وعليك، هذه الساعات سُلِخت من أعمارنا ولن تعود أبدًا.</p>
+<p>فإن كنّا عمّرناها بتسبيح أو تحميد أو تكبير أو سجدة أو مدارسة علم نافع أو مصلحة للمسلمين، فإنها ستكون شاهدةً غدًا في صحائفنا تُبيِّض وجوهنا وتسرّنا في اليوم العصيب. وإن ذهبت هذه الساعات من نهار اليوم وليله سُدًى، فيا حسرتنا ويا غبننا في فرصةٍ أُعطيت لنا ثم سُحبت ولم نستغلها! ساعاتٌ كانت لنا ثم ذهبت، نعم ذهبت ولن تعود، انتهت الفرصة.</p>
+<p>كلما تأملت في هذا المعنى تغشاني الذهولُ من برودنا أمام دقات الساعة التي لا تتوقف. أعوذ بالله من الشيطان الرجيم:</p>
+<div class="aya">﴿وَاتَّبِعُوا أَحْسَنَ مَا أُنزِلَ إِلَيْكُم مِّن رَّبِّكُم مِّن قَبْلِ أَن يَأْتِيَكُمُ الْعَذَابُ بَغْتَةً وَأَنتُمْ لَا تَشْعُرُونَ ۝ أَن تَقُولَ نَفْسٌ يَا حَسْرَتَىٰ عَلَىٰ مَا فَرَّطتُ فِي جَنبِ اللَّهِ وَإِن كُنتُ لَمِنَ السَّاخِرِينَ﴾<button class="nref" data-note="n40">٤٠</button></div>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n40"><span class="note__t">توثيق</span>الزمر ٥٥–٥٦. و«جَنْب الله» أي حقّه وأمره وطاعته، كما قال الطبري وغيره. وهنا ينتهي الجزء الأول.</aside>
+</div>
+</div>
+
+<div class="quiz" data-section="s7"></div>
+
+<div class="summary">
+  <h4>خلاصة المقطع <span class="tag">إضافة ليست من الكتاب</span></h4>
+  <ul>
+    <li>ثمرة استحضار الموت ليست الانكفاء، بل سؤالٌ حاكم يُعاد به ترتيب كل شيء: هل يُقرِّب من الله وينفع في الآخرة؟</li>
+    <li>أول ما يُصلحه هذا السؤال: الوقت — فيزهد صاحبه في مجالس الضياع ولو كان ظاهر أهلها الصلاح.</li>
+    <li>عند طالب العلم يتحوّل المقصود من مُلَح العلم ولطائفه إلى معرفة الهدى بدليله والتخلّق به وبثّه.</li>
+    <li>وعند المشتغل بالردّ على المخالفين يقتصد في ذكر الناس، وشاهده كلمة ابن عون: ذكر الناس داء وذكر الله دواء.</li>
+    <li>خاتمة الفصل مثالٌ عمليّ: ساعات اليوم الماضية سُلخت من العمر ولن تعود، فإما شاهدةٌ تُبيّض الوجه وإما حسرة.</li>
+  </ul>
+</div>
+</section>
+
+<div class="box box--guide">
+  <h4>نهاية الجزء الأول</h4>
+  <p class="small">ينتهي هنا فصل «ذهول الحقائق» تمامًا كما ورد في الكتاب، ولم يُحذف منه شيء. ويبدأ الجزء الثاني بفصل «لحظة فداء» ثم «الإطراق الأخير».</p>
+</div>
+</div><!-- /prose -->
+
+<section class="cards-wrap" id="cards">
+  <div class="section__no" style="color:var(--gold)">مراجعة</div>
+  <h2 style="margin:4px 0 6px;font-size:28px">بطاقات التثبيت</h2>
+  <p class="small">اضغط على البطاقة لقلبها. البطاقات مرتّبة على المقاطع، ويمكنك تحميلها ملفَّ TSV جاهزًا للاستيراد في Anki.</p>
+  <div class="filters" id="filters"></div>
+  <div class="card" id="card">
+    <div class="card__in" id="cardIn">
+      <div class="card__f"><span class="card__tag" id="tagF"></span><span id="front"></span></div>
+      <div class="card__b"><span class="card__tag">الإجابة</span><span id="back"></span></div>
+    </div>
+  </div>
+  <div class="cnav">
+    <button id="prevC">السابق ›</button>
+    <span id="pos">١ / ٣٤</span>
+    <button id="nextC">‹ التالي</button>
+  </div>
+  <button class="dl" id="dl">⤓ تحميل البطاقات (TSV)</button>
+</section>
+
+<div class="foot">
+  رقائق القرآن — إبراهيم السكران · الجزء الأول: المقدمة وفصل «ذهول الحقائق»<br>
+  المتن منقول كاملًا بلا حذف؛ والهوامش والخلاصات والأسئلة إضافةٌ ليست من الكتاب.
+</div>
+</main>
+
+<script>
+const SECTIONS=[
+ {id:"s1",t:"مقدمة المؤلف",c:"#6f6446"},
+ {id:"s2",t:"الفجيعة التي أيقظت السؤال",c:"#7b4a46"},
+ {id:"s3",t:"لا فرارٌ ولا تحايُد",c:"#3f5c6b"},
+ {id:"s4",t:"أمنيات المحتضرين الثلاث",c:"#5b4a70"},
+ {id:"s5",t:"دوّامة التكاثر ومفهوم الأبدية",c:"#3f6b53"},
+ {id:"s6",t:"هل يُعطِّل ذكرُ الموت النهضة؟",c:"#7a5f2e"},
+ {id:"s7",t:"ثمراتُ اليقظة والساعاتُ التي لا تعود",c:"#2f5f6b"}
+];
+
+const QUIZ_DATA=[
+{id:"q1",sectionId:"s1",question:"منهج الكتاب كما وصفه المؤلف في مقدمته هو:",options:["استنباط الأحكام الفقهية من آيات الأحكام","مشاهدة اجتماعية تُعرض على القرآن ثم تُدوَّن هدايتها","الرد على شبهات المستشرقين حول القرآن","تفسير متتابع للسور على ترتيب المصحف"],correctIndex:1,explanation:"نصّ المؤلف على أن الرسالة في جوهرها مشاهدات اجتماعية مرّ بها ثم عرضها «تحت سراج القرآن»، ودوّن خلاصة ما انكشف له."},
+{id:"q2",sectionId:"s1",question:"بمَ استدل على أن كون القرآن مُرقِّقًا للقلوب ليس مجرد وجهة نظر؟",options:["بإجماع المفسرين على أن مقصود القرآن التزكية","بتجربته الشخصية الطويلة في التأمل","بوصف القرآن نفسَه بالتذكير والإنذار والموعظة","بأحاديث تصف أثر القرآن في القلب"],correctIndex:2,explanation:"ساق ثلاث آيات يصف فيها القرآن نفسه: «فذكّر بالقرآن»، و«إنما أنذركم بالوحي»، و«قد جاءتكم موعظة من ربكم»."},
+{id:"q3",sectionId:"s2",question:"ما الذي جعل هذه الوفاة تحديدًا تهزّ المؤلف دون ما سبقها من وفيات؟",options:["قرابة الفقيد منه في النسب","صِغَر سنّ الفقيد","قِصَر المدة بين مجالسته له وبين نعيه","أنه كان أول من رآه بعد التغسيل"],correctIndex:2,explanation:"صرّح بأنه مرّ بحوادث ووفيات كثيرة، لكن كون الرجل نام في مجلسه يوم الأربعاء وجاء نعيه يوم الجمعة هو ما أحضر إحساس دنوّ الأجل."},
+{id:"q4",sectionId:"s2",question:"«التقدير العُمُري» الذي أشار إليه المؤلف هو:",options:["الكتابة السابقة لخلق السماوات والأرض بخمسين ألف سنة","ما يُكتب للجنين بعد أربعة أشهر من رزقٍ وأجلٍ وعمل","ما يُفرَق في ليلة القدر من أمر السنة","ما يكتبه الملَكان من أعمال العبد كل يوم"],correctIndex:1,explanation:"التقدير العمري يكون والإنسان جنين، وهو غير التقدير السابق لخلق السماوات والأرض، وغير التقدير الحَولي في ليلة القدر."},
+{id:"q5",sectionId:"s3",question:"الفرق الذي قرّره المؤلف بين «الفرار» و«التحايُد»:",options:["الفرار فعل الكافر والتحايد فعل المنافق","الفرار ابتعادٌ عن موضع الخطر، والتحايد مراوغةٌ عن سهامه","الفرار من الموت والتحايد من الحساب","الفرار حسّي والتحايد قلبيٌّ محض"],correctIndex:1,explanation:"مثّل للفرار بآية الجمعة «الموت الذي تفرون منه»، وللتحايد بآية ق «ذلك ما كنت منه تحيد»؛ فالأول ترك للموضع، والثاني مراوغة فيه."},
+{id:"q6",sectionId:"s3",question:"ساق المؤلف آية «قد أنعم الله عليّ إذ لم أكن معهم شهيدًا» ليبيّن:",options:["أن ترك الجهاد رخصة لأصحاب الأعذار","أن الشهادة لا تُطلب وإنما تُساق","فسادَ من يعدّ سلامته من الموت في سبيل الله نعمةً عليه","أن المنافقين كانوا يحضرون الغزو ثم يُبطِئون"],correctIndex:2,explanation:"نقلها عن حال عبد الله بن أُبيّ، وجعلها نظير تفكير من يقع في قلبه أن نجاته ممن قُتل في سبيل الله نعمةٌ خُصّ بها."},
+{id:"q7",sectionId:"s4",question:"ترتيب المشاهد الثلاثة لأمنيات المحتضرين كما ساقها المؤلف:",options:["التوبة، ثم الصدقة، ثم العمل الصالح","الرجوع للعمل الصالح، ثم تأخيرٌ قصير للصدقة، ثم إعلان التوبة","الصدقة، ثم الرجوع، ثم طلب الشهادة","الرجوع، ثم التوبة، ثم طلب الشفاعة"],correctIndex:1,explanation:"المؤمنون ٩٩–١٠٠ (العمل)، ثم المنافقون ١٠–١١ (الصدقة)، ثم النساء ١٨ (التوبة)."},
+{id:"q8",sectionId:"s4",question:"ما القاسم المشترك في ردّ هذه الأمنيات الثلاث؟",options:["أن أصحابها ماتوا على الكفر جميعًا","أن مطلوبها كان عظيمًا يتعذّر تحقيقه","أنها جاءت بعد انقضاء وقت القبول لا لعظم المطلوب","أنها لم تكن مقرونة بالإخلاص"],correctIndex:2,explanation:"أضيقها طلبًا (كلمة توبة) رُدّ كما رُدّ أوسعها (الرجوع للدنيا)؛ فالمانع فوات الوقت لا حجم الطلب."},
+{id:"q9",sectionId:"s5",question:"عبارة «فتِّشْ عن دوّامة التكاثر» يستعملها المؤلف:",options:["في تشخيص أسباب فقر المجتمعات","كعنوانٍ لتفسير سورة التكاثر","في تشخيص غفلته الشخصية عن الحقائق الكبرى","في نقد الخطاب الحداثي"],correctIndex:2,explanation:"يقولها لنفسه كلما رأى نفسه في غفلة أو ذهول عن الحقائق الكبرى، فيبحث عن التنافس الاجتماعي الذي أورثه ذلك."},
+{id:"q10",sectionId:"s5",question:"مقصود المؤلف من مثال البلدين (خمس سنين ثم مئة سنة):",options:["الحثّ على ترك الدنيا والزهد التام فيها","أن العقل نفسه يقضي بتقديم الدار الأطول","أن نعيم الآخرة يزيد على الدنيا بمئة ضعف","أن الانتقال بين البلدان سنّة الأنبياء"],correctIndex:1,explanation:"المثال حجة عقلية: لو حكّم المرء حسابه لحوّل ماله للدار الأطول؛ فالخلل إذن في اليقين لا في المنطق."},
+{id:"q11",sectionId:"s6",question:"الشبهة التي نقلها المؤلف عن محدِّثه تقول:",options:["إن الإيمان باليوم الآخر غير ثابت من جهة العقل","إن ذكر الموت عبادةٌ للعوامّ لا شأن للمفكرين بها","إن الإيمان باليوم الآخر يبقى، لكن يُحيَّد عن التفكير حتى تُبنى النهضة","إن الحضارة الغربية إنما قامت على إنكار الآخرة"],correctIndex:2,explanation:"قال محدّثه: نؤمن بالموت واليوم الآخر ثم نحيّده، لنبني الحضارة بعيدًا عن ضغطهما النفسي."},
+{id:"q12",sectionId:"s6",question:"وجه الاستدلال بآيتي البقرة (الخاشعين، وجنود طالوت):",options:["أن الصلاة والجهاد أعظم العبادات على الإطلاق","أن اليقين بلقاء الله هو ما يُطيق به المرء العمل والثبات","أن الظنّ في القرآن يأتي بمعنى الشك","أن التخاذل من علامات النفاق"],correctIndex:1,explanation:"الآيتان جعلتا ملاقاة الله سببَ تيسير الصلاة وسببَ الثبات أمام جالوت؛ فاليقين دافعٌ للعمل لا معطِّلٌ له."},
+{id:"q13",sectionId:"s7",question:"«ذِكرُ الناس داء وذِكرُ الله دواء» عبارة منقولة عن:",options:["شعبة بن الحجاج","عبد الله بن المبارك","عبد الله بن عون","سفيان الثوري"],correctIndex:2,explanation:"نقلها المؤلف عن الإمام عبد الله بن عون البصري، ووصفه بأنه شيخ شعبة وابن المبارك."},
+{id:"q14",sectionId:"s7",question:"أول ما يُصلحه استحضارُ الموت عند المؤلف:",options:["العلاقة بالوالدين والأرحام","طريقة إنفاق المال","ترتيب أولويات طلب العلم وحده","النظر في جدوى الوقت وطبيعة قضاء العمر"],correctIndex:3,explanation:"عدّ الانزعاج حول طبيعة قضاء الوقت والعمر من أعظم آثار «السؤال القلِق المشفِق»."}
+];
+
+const CARDS_DATA=[
+{s:"s1",f:"ما اسم الكتاب واسم مؤلفه؟",b:"«رقائق القرآن» — لإبراهيم بن عمر السكران. (وقع في التفريغ الصوتي «حقائق القرآن» وهو خطأ)"},
+{s:"s1",f:"بأي كنية ووقتٍ وقّع المؤلف خاتمة الرسالة؟",b:"«أبو عمر» — في ذي القعدة، عام ١٤٣٤ من الهجرة."},
+{s:"s1",f:"الآيات الثلاث التي استدل بها على أن القرآن موعظةٌ ومُذكِّر؟",b:"«فذكّر بالقرآن من يخاف وعيد» (ق ٤٥) · «قل إنما أنذركم بالوحي» (الأنبياء ٤٥) · «قد جاءتكم موعظة من ربكم» (يونس ٥٧)"},
+{s:"s1",f:"ما الذي رأى المؤلف أن إنسان العصر خسره رغم مكاسب التقنية؟",b:"الصفاء: صفاء الذهن، وخلوّ البال، والتأمل الرقراق."},
+{s:"s1",f:"ما أخطر ثمرة للانهماك في «تروس المدنية المعاصرة»؟",b:"قسوة القلب التي تستنزف الإيمان وتُفزع السكينة الداخلية."},
+{s:"s2",f:"متى وقعت حادثة أبي عبد الكريم؟",b:"زار المؤلف يوم الأربعاء ٢ محرم ١٤٣٤هـ، وجاء نعيه يوم الجمعة الذي يليه."},
+{s:"s2",f:"أي كتابين أخرجهما المؤلف لضيفه في مسألة صلاة الجماعة للمسافر؟",b:"فتاوى ابن باز المفرَّغة من برنامج «نور على الدرب»، وفتاوى ابن عثيمين التي جمعها فهد السليمان."},
+{s:"s2",f:"كم بين كتابة المقادير وبين خلق السماوات والأرض؟",b:"خمسون ألف سنة — كما في حديث عبد الله بن عمرو عند مسلم."},
+{s:"s2",f:"ما «التقدير العُمُري»؟",b:"كتابة الملَك للجنين رزقه وأجله وعمله وشقاوته أو سعادته، بعد أربعة أشهر."},
+{s:"s2",f:"ما الفرق الذي أقامه المؤلف بين نوعي معرفة الناس بالموت؟",b:"معرفة نظرية عقلية بحتة · ويقين قلبي غامر يستحوذ على التفكير."},
+{s:"s3",f:"آية الفرار من الموت وموضعها؟",b:"«قل إن الموت الذي تفرون منه فإنه ملاقيكم» — الجمعة ٨."},
+{s:"s3",f:"آية التحايُد وموضعها؟ وما معنى التحايد؟",b:"«وجاءت سكرة الموت بالحق ذلك ما كنت منه تحيد» — ق ١٩. والتحايد: المراوغة والميل عن سهام الموت."},
+{s:"s3",f:"ما «البروج المشيَّدة»؟ وفي أي آية وردت؟",b:"الحصون المرتفعة المحكَمة البناء — «أينما تكونوا يدرككم الموت ولو كنتم في بروج مشيدة» النساء ٧٨."},
+{s:"s3",f:"من صاحب مقولة «قد أنعم الله عليّ إذ لم أكن معهم شهيدًا»؟",b:"حكاها الله عن عبد الله بن أُبيّ ابن سلول رأس المنافقين — النساء ٧٢."},
+{s:"s3",f:"ما معنى المثل «على طرف الثُّمام»؟",b:"للشيء القريب المتناوَل بلا كُلفة؛ والثمام نبتٌ قصير لا يحتاج آخذه إلى تسلُّق."},
+{s:"s4",f:"ما «مشكلة التأجيل» كما شخّصها المؤلف؟",b:"أن المرء لا ينوي الاستمرار على الخطيئة، بل يعدّها فترة يسيرة ثم يصحّح — فينسلّ الوقت حتى يفاجئه ملك الموت."},
+{s:"s4",f:"آية طلب الرجوع للعمل الصالح عند الموت وموضعها؟",b:"«رب ارجعون لعلي أعمل صالحًا فيما تركت» — المؤمنون ٩٩–١٠٠."},
+{s:"s4",f:"آية طلب التأخير للتصدُّق وموضعها؟",b:"«رب لولا أخرتني إلى أجل قريب فأصّدّق وأكن من الصالحين» — المنافقون ١٠–١١."},
+{s:"s4",f:"آية ردّ التوبة عند حضور الموت وموضعها؟",b:"«وليست التوبة للذين يعملون السيئات حتى إذا حضر أحدهم الموت قال إني تبت الآن» — النساء ١٨."},
+{s:"s4",f:"ما البرزخ؟",b:"الحاجز بين الدنيا والآخرة، من الموت إلى البعث، يحول دون الرجوع."},
+{s:"s5",f:"أين تنتهي «حفلة التكاثر» بنصّ سورة التكاثر؟",b:"عند القبر: «ألهاكم التكاثر · حتى زرتم المقابر»."},
+{s:"s5",f:"الآية التي عدّدت مراتب الحياة الدنيا وموضعها؟",b:"«لعب ولهو وزينة وتفاخر بينكم وتكاثر في الأموال والأولاد» — الحديد ٢٠."},
+{s:"s5",f:"ما القاعدة التي يردّدها المؤلف على نفسه كلما رأى نفسه في غفلة؟",b:"«فتِّشْ عن دوّامة التكاثر»."},
+{s:"s5",f:"ما أقوى مفهوم عقليّ مولِّد للعزم عند المؤلف؟",b:"المقارنة بين أبدية الحياة الآخرة وتأقيت الحياة الدنيا."},
+{s:"s5",f:"اذكر مضمون «مثال البلدين».",b:"خمس سنين في بلد ثم مئة سنة في آخر: العاقل يحوّل أمواله للبلد الأطول ويتبلّغ بالكفاف في الأول."},
+{s:"s6",f:"ما نصّ الشبهة التي عرضها المؤلف على لسان محدِّثه؟",b:"أن نؤمن بالموت واليوم الآخر ثم نُحيّدهما، حتى نبني الحضارة والنهضة بعيدًا عن ضغطهما النفسي."},
+{s:"s6",f:"الآية التي جعلت الصلاة هيّنة على الموقنين بلقاء الله؟",b:"«وإنها لكبيرة إلا على الخاشعين · الذين يظنون أنهم ملاقو ربهم» — البقرة ٤٥–٤٦."},
+{s:"s6",f:"من الذي ثبت مع طالوت في مواجهة جالوت بنصّ الآية؟",b:"«الذين يظنون أنهم ملاقو الله» — البقرة ٢٤٩."},
+{s:"s6",f:"ما دليل أن انتظار الموت شعبةٌ إيمانية لا تهمة؟",b:"«فمنهم من قضى نحبه ومنهم من ينتظر وما بدّلوا تبديلًا» — الأحزاب ٢٣."},
+{s:"s6",f:"ما البيت الذي كان يردّده أبو بكر في حُمّاه؟ ومن رواه؟",b:"«كل امرئ مصبَّح في أهله · والموت أدنى من شراك نعله» — رواه البخاري في قصة وعك أبي بكر وبلال."},
+{s:"s7",f:"ما السؤال الحاكم الذي تنقلب به شخصية المرء رأسًا على عقب؟",b:"هل هذا يقرّب من الله وينفع في اليوم الآخر أم لا؟"},
+{s:"s7",f:"ما «الترف النظري»؟ وما «مُلَح العلم»؟",b:"الترف النظري: التوسّع في المسائل لذّةً بالبحث لا حاجةً للعمل. ومُلَح العلم: طرائفه ولطائفه الجانبية."},
+{s:"s7",f:"من قائل «ذِكرُ الناس داء وذِكرُ الله دواء»؟",b:"عبد الله بن عون البصري (ت ١٥١هـ)، وهو شيخ شعبة بن الحجاج وعبد الله بن المبارك."},
+{s:"s7",f:"بأي آيتين خُتم فصل «ذهول الحقائق»؟",b:"«واتبعوا أحسن ما أنزل إليكم من ربكم من قبل أن يأتيكم العذاب بغتة... أن تقول نفس يا حسرتى على ما فرّطت في جنب الله» — الزمر ٥٥–٥٦."}
+];
+
+/* ---------- أدوات ---------- */
+const $=(q,r=document)=>r.querySelector(q), $$=(q,r=document)=>[...r.querySelectorAll(q)];
+const AR=n=>String(n).replace(/[0-9]/g,d=>"٠١٢٣٤٥٦٧٨٩"[d]);
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+
+/* ---------- الفهرس ---------- */
+(function(){
+  const list=$("#tocList");
+  let h='<a href="#howto">مدخل الصفحة</a>';
+  SECTIONS.forEach((s,i)=>{h+=`<a href="#${s.id}" data-t="${s.id}">${AR(i+1)}. ${s.t}</a>`});
+  h+='<a href="#cards">بطاقات التثبيت</a>';
+  list.innerHTML=h;
+  $("#btnToc").addEventListener("click",()=>{
+    const t=$("#toc");
+    if(window.matchMedia("(min-width:1500px)").matches){t.classList.toggle("closed")}
+    else{t.classList.toggle("open")}
+  });
+  list.addEventListener("click",e=>{if(e.target.tagName==="A"&&window.innerWidth<1500)$("#toc").classList.remove("open")});
+})();
+
+/* ---------- شريط التقدم + القسم النشط + حفظ الموضع ---------- */
+(function(){
+  const bar=$("#progress"), links=$$("#tocList a[data-t]");
+  let tick=false;
+  function upd(){
+    const h=document.documentElement, y=h.scrollTop, max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(y/max*100):0)+"%";
+    store.set("raqaiq1_pos",y);
+    let cur=null;
+    SECTIONS.forEach(s=>{const el=document.getElementById(s.id); if(el&&el.getBoundingClientRect().top<160)cur=s.id});
+    links.forEach(a=>a.classList.toggle("active",a.dataset.t===cur));
+    tick=false;
+  }
+  addEventListener("scroll",()=>{if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});
+  const saved=parseInt(store.get("raqaiq1_pos")||"0",10);
+  if(saved>300)addEventListener("load",()=>scrollTo(0,saved));
+  upd();
+})();
+
+/* ---------- الخط والوضع الليلي ---------- */
+(function(){
+  let fs=parseInt(store.get("raqaiq1_fs")||"18",10);
+  const apply=()=>{document.body.style.setProperty("--fs",fs+"px");store.set("raqaiq1_fs",fs)};
+  $("#btnPlus").onclick=()=>{if(fs<23){fs++;apply()}};
+  $("#btnMinus").onclick=()=>{if(fs>15){fs--;apply()}};
+  apply();
+  if(store.get("raqaiq1_dark")==="1")document.body.classList.add("dark");
+  $("#btnDark").onclick=()=>{document.body.classList.toggle("dark");store.set("raqaiq1_dark",document.body.classList.contains("dark")?"1":"0")};
+})();
+
+/* ---------- الهوامش ---------- */
+document.addEventListener("click",e=>{
+  const b=e.target.closest(".nref"); if(!b)return;
+  const n=document.getElementById(b.dataset.note); if(!n)return;
+  const mob=window.innerWidth<=1100;
+  if(mob){const o=n.classList.toggle("open");b.classList.toggle("on",o);
+    if(o)setTimeout(()=>n.scrollIntoView({block:"nearest",behavior:"smooth"}),60);}
+  else{$$(".note.hl").forEach(x=>{if(x!==n)x.classList.remove("hl")});
+    $$(".nref.on").forEach(x=>{if(x!==b)x.classList.remove("on")});
+    n.classList.toggle("hl");b.classList.toggle("on");}
+});
+
+/* ---------- الأسئلة التفاعلية ---------- */
+(function(){
+  $$(".quiz").forEach(box=>{
+    const sid=box.dataset.section, qs=QUIZ_DATA.filter(q=>q.sectionId===sid);
+    let h=`<div class="quiz__hd"><span>اختبر فهمك</span><span id="sc_${sid}">٠ / ${AR(qs.length)}</span></div>`;
+    qs.forEach(q=>{
+      h+=`<div class="q" data-q="${q.id}"><div class="q__text">${q.question}</div>`;
+      q.options.forEach((o,i)=>{h+=`<button class="opt" data-i="${i}">${o}</button>`});
+      h+=`<div class="q__exp"></div></div>`;
+    });
+    box.innerHTML=h;
+  });
+  const score={};
+  document.addEventListener("click",e=>{
+    const opt=e.target.closest(".opt"); if(!opt)return;
+    const qEl=opt.closest(".q"), box=opt.closest(".quiz"), sid=box.dataset.section;
+    const q=QUIZ_DATA.find(x=>x.id===qEl.dataset.q);
+    const i=+opt.dataset.i, right=i===q.correctIndex;
+    $$(".opt",qEl).forEach(o=>o.classList.remove("ok","no"));
+    opt.classList.add(right?"ok":"no");
+    if(right)$$(".opt",qEl)[q.correctIndex].classList.add("ok");
+    const exp=$(".q__exp",qEl);
+    exp.innerHTML=(right?"<b>إجابة صحيحة.</b> ":"<b>أعد المحاولة.</b> ")+q.explanation;
+    exp.classList.add("show");
+    if(right&&!qEl.dataset.done){qEl.dataset.done="1";score[sid]=(score[sid]||0)+1;
+      const n=QUIZ_DATA.filter(x=>x.sectionId===sid).length;
+      $("#sc_"+sid).textContent=AR(score[sid])+" / "+AR(n);}
+  });
+})();
+
+/* ---------- البطاقات ---------- */
+(function(){
+  let filt="all", idx=0, view=CARDS_DATA;
+  const cardEl=$("#card");
+  const F=$("#filters");
+  let fh=`<button class="filt on" data-f="all" style="background:#173b33;color:#fff;border-color:transparent">الكل (${AR(CARDS_DATA.length)})</button>`;
+  SECTIONS.forEach((s,i)=>{const n=CARDS_DATA.filter(c=>c.s===s.id).length;
+    fh+=`<button class="filt" data-f="${s.id}" data-c="${s.c}">${AR(i+1)}. ${s.t} (${AR(n)})</button>`});
+  F.innerHTML=fh;
+  function draw(){
+    const c=view[idx]; if(!c)return;
+    cardEl.classList.remove("flip");
+    setTimeout(()=>{$("#front").textContent=c.f;$("#back").textContent=c.b;
+      const s=SECTIONS.find(x=>x.id===c.s); $("#tagF").textContent=s?s.t:"";},120);
+    $("#pos").textContent=AR(idx+1)+" / "+AR(view.length);
+  }
+  F.addEventListener("click",e=>{
+    const b=e.target.closest(".filt"); if(!b)return;
+    filt=b.dataset.f;
+    $$(".filt",F).forEach(x=>{x.classList.remove("on");x.style.background="";x.style.color="";x.style.borderColor=""});
+    b.classList.add("on"); b.style.background=b.dataset.c||"#173b33"; b.style.color="#fff"; b.style.borderColor="transparent";
+    view=filt==="all"?CARDS_DATA:CARDS_DATA.filter(c=>c.s===filt); idx=0; draw();
+  });
+  $("#cardIn").onclick=()=>cardEl.classList.toggle("flip");
+  $("#nextC").onclick=()=>{idx=(idx+1)%view.length;draw()};
+  $("#prevC").onclick=()=>{idx=(idx-1+view.length)%view.length;draw()};
+  $("#dl").onclick=()=>{
+    const tsv=CARDS_DATA.map(c=>c.f.replace(/\t/g," ")+"\t"+c.b.replace(/\t/g," ")).join("\n");
+    const blob=new Blob(["\uFEFF"+tsv],{type:"text/tab-separated-values;charset=utf-8"});
+    const a=document.createElement("a");
+    a.href=URL.createObjectURL(blob); a.download="رقائق_القرآن_1_ذهول_الحقائق.tsv";
+    document.body.appendChild(a); a.click(); a.remove();
+  };
+  draw();
+})();
+</script>
+
+<style>
+  #ilm-custom-nav{
+    max-width:700px; margin:36px auto 24px; padding:20px 22px;
+    background:#fbfaf4; border:1px solid #d3d8ca; border-radius:14px;
+    font-family:'Tajawal','IBM Plex Sans Arabic','Segoe UI',Tahoma,sans-serif;
+    direction:rtl; color:#2b2a24;
+  }
+  #ilm-custom-nav .icn-row{
+    display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:14px;
+  }
+  #ilm-custom-nav .icn-link{
+    flex:1 1 auto; min-width:150px; text-align:center; text-decoration:none;
+    padding:10px 14px; border:1.5px solid #1f4a3d; border-radius:999px;
+    color:#1f4a3d; font-size:13.5px; font-weight:600; transition:background .15s,color .15s;
+  }
+  #ilm-custom-nav .icn-link:hover{ background:#1f4a3d; color:#fff; }
+  #ilm-custom-nav .icn-link.icn-disabled{
+    opacity:.4; pointer-events:none; border-color:#b3ac9e; color:#6a6a5b;
+  }
+  #ilm-custom-nav .icn-jump label{
+    display:block; font-size:12.5px; color:#6a6a5b; margin-bottom:6px;
+  }
+  #ilm-custom-nav select{
+    width:100%; padding:10px 12px; border:1px solid #d3d8ca; border-radius:8px;
+    background:#fff; color:#2b2a24; font-family:inherit; font-size:14px; cursor:pointer;
+  }
+</style>
+
+<div id="ilm-custom-nav">
+  <div class="icn-row">
+    <span class="icn-link icn-disabled">→ لا توجد محاضرة سابقة</span>
+    <a class="icn-link" href="02.html">من 34 إلى 53 ←</a>
+  </div>
+  <div class="icn-jump">
+    <label for="ilm-custom-jump">الانتقال إلى محاضرة أخرى من «رقائق القرآن»:</label>
+    <select id="ilm-custom-jump" onchange="if(this.value) window.location.href=this.value;">
+<option value="01.html" selected>1. من البداية إلى ص 33</option>
+<option value="02.html">2. من 34 إلى 53</option>
+<option value="03.html">3. من 54 إلى 78</option>
+<option value="04.html">4. من 109 إلى 133</option>
+<option value="05.html">5. من 135 إلى النهاية</option>
+    </select>
+  </div>
+</div>
+
+<script type="module" src="../../../firebase-sync-manhaj.js"></script>
+<script src="../../../ilm-track.js"></script>
+<script src="../../../data.js"></script>
+<script src="../../../ilm-nav.js"></script>
+<script>
+(function(){
+  var box = document.getElementById('ilm-completion-box');
+  var cb = box ? box.querySelector('input[data-lecture-id]') : null;
+  if(!cb) return;
+  var lid = cb.getAttribute('data-lecture-id');
+  function render(done){
+    cb.checked = done;
+    box.classList.toggle('done', done);
+  }
+  if(window.IlmTrack){
+    window.IlmTrack.ready.then(function(){ render(window.IlmTrack.isDone(lid)); });
+  }
+  cb.addEventListener('change', function(){
+    if(window.IlmTrack) window.IlmTrack.setDone(lid, cb.checked);
+    render(cb.checked);
+  });
+})();
+</script>
+<script src="../../../ilm-highlight.js" data-lecture-id="stage1_raqaeq-al-quran_01"></script>
+
 </body>
 </html>
