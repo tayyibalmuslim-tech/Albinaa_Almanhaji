@@ -675,9 +675,8 @@
   /* ---------------- أحداث شريط الأدوات ---------------- */
   var pendingNoteGroup = null;
 
-  menu.addEventListener('click', function (e) {
-    var btn = e.target.closest('button');
-    if (!btn) return;
+  // معالج موحّد لأزرار شريط الأدوات (لون / تعليق / إزالة)، يُستدعى من الماوس واللمس معًا
+  function handleMenuButton(btn) {
     var action = btn.dataset.action;
     var color = btn.dataset.color;
     if (!savedRange && !activeGroup) return;
@@ -732,6 +731,25 @@
       refreshPanel();
       savedRange = null; activeGroup = null;
     }
+  }
+
+  // على الهواتف: preventDefault على touchstart (أعلى الملف) يمنع المتصفح من توليد
+  // حدث click الاصطناعي بعد اللمس، فنعالج touchend يدويًا مع حارس زمني يمنع التكرار
+  // لو نفس اللمسة ولّدت click فعليًا على بعض المتصفحات.
+  var lastTouchHandledAt = 0;
+  menu.addEventListener('touchend', function (e) {
+    var btn = e.target.closest('button');
+    if (!btn) return;
+    e.preventDefault();
+    lastTouchHandledAt = Date.now();
+    handleMenuButton(btn);
+  }, { passive: false });
+
+  menu.addEventListener('click', function (e) {
+    if (Date.now() - lastTouchHandledAt < 500) return; // تم التعامل معها بالفعل عبر اللمس
+    var btn = e.target.closest('button');
+    if (!btn) return;
+    handleMenuButton(btn);
   });
 
   function clearSelection() {
