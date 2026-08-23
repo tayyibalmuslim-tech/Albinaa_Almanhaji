@@ -1,42 +1,1077 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>من 135 إلى النهاية - رقائق القرآن</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../../style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>رقائق القرآن — 5 — أقوى الناس وكأنك تراه</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700&family=Reem+Kufi:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f2f4f1; --surface:#ffffff; --surface-2:#f7f9f6;
+  --ink:#1c2320; --ink-soft:#4d5a54; --ink-faint:#78857f;
+  --line:#dde3dc; --line-strong:#c3ccc2;
+  --brand:#173b33; --brand-2:#2f6d5f; --gold:#a8802a;
+  --s1:#3f5c6b; --s2:#4f6b4a; --s3:#6b3f3f; --s4:#6b5a2e; --s5:#4a3f6b; --s6:#2f6b64; --s7:#7a4a3c;
+  --n-doc:#6f6446; --n-def:#3f6b53; --n-bio:#3f5c6b; --n-exp:#8a6a1e; --n-link:#5b4a70; --n-fix:#a33a2c; --n-ctx:#7a5f2e;
+  --fs:18px; --radius:6px;
+  --shadow:0 1px 2px rgba(23,59,51,.06),0 8px 24px rgba(23,59,51,.05);
+}
+body.dark{
+  --bg:#121714; --surface:#1a201d; --surface-2:#1f2622;
+  --ink:#e6ece8; --ink-soft:#a9b6b0; --ink-faint:#7f8c86;
+  --line:#2c3531; --line-strong:#3d4844;
+  --brand:#8fc4b4; --brand-2:#6fae9c; --gold:#d3a94a;
+  --s1:#86a8bb; --s2:#93bc8d; --s3:#d19191; --s4:#c9b45f; --s5:#a396d1; --s6:#71c0b6; --s7:#c99b86;
+  --n-doc:#b5a67e; --n-def:#7cbc9b; --n-bio:#86a8bb; --n-exp:#d3a94a; --n-link:#a892c4; --n-fix:#e08b7d; --n-ctx:#c9a458;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Cairo',system-ui,sans-serif;font-size:var(--fs);line-height:1.95;-webkit-text-size-adjust:100%}
+h1,h2,h3,h4{font-family:'Amiri',Georgia,serif;line-height:1.45;font-weight:700;color:var(--brand)}
+a{color:var(--brand-2)}
+button{font-family:inherit;cursor:pointer}
+::selection{background:rgba(168,128,42,.25)}
+
+/* ===== شريط علوي ===== */
+.topbar{position:fixed;inset:0 0 auto 0;height:52px;background:var(--surface);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:0 12px;z-index:60}
+.topbar .brandmark{font-family:'Reem Kufi',sans-serif;font-size:14px;color:var(--ink-soft);margin-inline-end:auto;letter-spacing:.3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tbtn{width:36px;height:36px;border:1px solid var(--line);background:var(--surface);color:var(--ink-soft);border-radius:var(--radius);font-size:15px;display:grid;place-items:center;transition:.15s}
+.tbtn:hover{border-color:var(--brand-2);color:var(--brand-2)}
+.tbtn:focus-visible,a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+#progress{position:fixed;top:52px;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--brand-2));width:0;z-index:61;transition:width .1s}
+
+/* ===== الفهرس (يسار) ===== */
+.toc{position:fixed;top:55px;bottom:0;left:0;width:262px;background:var(--surface);border-left:1px solid var(--line);padding:18px 14px 40px;overflow-y:auto;z-index:55;transform:translateX(-102%);transition:transform .25s ease}
+.toc.open{transform:none}
+.toc h5{font-family:'Reem Kufi',sans-serif;font-size:12px;color:var(--ink-faint);margin:0 0 10px;letter-spacing:1px}
+.toc a{display:block;text-decoration:none;color:var(--ink-soft);font-size:14.5px;line-height:1.6;padding:5px 8px;border-radius:4px;border-right:2px solid transparent}
+.toc a.lvl2{padding-right:18px;font-size:13.5px;color:var(--ink-faint)}
+.toc a:hover{background:var(--surface-2);color:var(--brand-2)}
+.toc a.active{color:var(--brand-2);border-right-color:var(--gold);background:var(--surface-2);font-weight:600}
+@media(min-width:1500px){.toc{transform:none}.toc.closed{transform:translateX(-102%)}}
+
+/* ===== التخطيط: المتن يمين، الهامش يسار ===== */
+.wrap{max-width:1140px;margin:0 auto;padding:76px 20px 80px}
+.prose{max-width:1120px;padding-left:296px}
+.para{display:flex;gap:28px;align-items:flex-start;margin-left:-296px}
+.para__main{flex:1 1 auto;min-width:0}
+.para__notes{flex:0 0 268px;padding-top:6px}
+.prose p{margin:0 0 1.05em;text-align:justify;hyphens:auto}
+.prose>p,.para__main{max-width:820px}
+
+.booknav{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;font-family:'Reem Kufi',sans-serif;font-size:12.5px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.booknav a{color:var(--brand-2);text-decoration:none;border:1px solid var(--line);padding:6px 12px;border-radius:99px}
+.booknav a:hover{border-color:var(--brand-2)}
+.booknav span{color:var(--ink-faint)}
+.booknav .off{border:1px dashed var(--line);padding:6px 12px;border-radius:99px;opacity:.55}
+/* ===== الغلاف ===== */
+.cover{border:1px solid var(--line-strong);border-radius:10px;background:var(--surface);padding:44px 34px;text-align:center;position:relative;box-shadow:var(--shadow);margin-bottom:26px}
+.cover::before{content:"";position:absolute;inset:9px;border:1px solid var(--line);border-radius:6px;pointer-events:none}
+.cover .kicker{font-family:'Reem Kufi',sans-serif;font-size:12.5px;letter-spacing:2.5px;color:var(--gold)}
+.cover h1{font-size:40px;margin:12px 0 6px}
+.cover .sub{color:var(--ink-soft);font-size:15px;margin:0}
+.cover .rule{width:70px;height:1px;background:var(--line-strong);margin:20px auto}
+.cover .chapter{font-family:'Amiri',serif;font-size:25px;color:var(--s2)}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px}
+.chip{font-family:'Reem Kufi',sans-serif;font-size:11.5px;padding:4px 11px;border:1px solid var(--line);border-radius:99px;color:var(--ink-faint)}
+
+/* ===== صناديق عامة ===== */
+.box{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;margin:22px 0;box-shadow:var(--shadow)}
+.box h4{margin:0 0 8px;font-size:17px;display:flex;align-items:center;gap:7px}
+.box p{margin:0 0 .6em}
+.box p:last-child{margin-bottom:0}
+.box--src{border-right:3px solid var(--gold)}
+.box--src h4{color:var(--gold)}
+.box--fix{border-right:3px solid var(--n-fix);background:color-mix(in srgb,var(--n-fix) 5%,var(--surface))}
+.box--fix h4{color:var(--n-fix)}
+.box--guide{border-style:dashed;background:var(--surface-2)}
+.box small,.small{font-size:13.5px;color:var(--ink-faint);line-height:1.75}
+
+/* ===== الآيات والأحاديث والنقول ===== */
+.aya{font-family:'Amiri',serif;font-size:1.32em;line-height:2.1;color:var(--brand);background:var(--surface-2);border:1px solid var(--line);border-right:3px solid var(--brand-2);border-radius:var(--radius);padding:14px 18px;margin:18px 0;text-align:center}
+body.dark .aya{color:var(--brand)}
+.hadith{font-family:'Amiri',serif;font-size:1.2em;line-height:2;background:var(--surface);border:1px solid var(--line);border-right:3px solid var(--s6);border-radius:var(--radius);padding:13px 17px;margin:18px 0}
+.naql{border-right:3px solid var(--s4);background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:13px 17px;margin:18px 0;font-size:.97em}
+.naql .who{font-family:'Reem Kufi',sans-serif;font-size:12px;color:var(--s4);display:block;margin-bottom:5px}
+
+/* ===== الأقسام ===== */
+.section{margin:52px 0 0;scroll-margin-top:90px}
+.section__head{border-top:2px solid var(--sc,var(--brand));padding-top:14px;margin-bottom:20px}
+.section__no{font-family:'Reem Kufi',sans-serif;font-size:11.5px;letter-spacing:2px;color:var(--sc,var(--brand))}
+.section h2{font-size:29px;margin:4px 0 0;color:var(--sc,var(--brand))}
+.section h3{font-size:22px;margin:34px 0 12px;color:var(--sc,var(--brand))}
+.gen{display:inline-block;font-family:'Reem Kufi',sans-serif;font-size:10.5px;padding:2px 8px;border:1px dashed var(--line-strong);border-radius:99px;color:var(--ink-faint);vertical-align:middle;margin-inline-start:8px;font-weight:400}
+.chapter-open{text-align:center;margin:60px 0 30px}
+.chapter-open .line{height:1px;background:var(--line-strong);margin:14px auto;width:120px}
+.chapter-open h2{font-size:34px;color:var(--s2)}
+
+/* ===== الهامش ===== */
+.nref{display:inline-block;min-width:20px;height:20px;padding:0 4px;margin:0 2px;border:none;background:var(--gold);color:#fff;border-radius:4px;font-size:11.5px;font-family:'Reem Kufi',sans-serif;line-height:20px;vertical-align:super;transition:.15s}
+.nref:hover{filter:brightness(1.15)}
+.nref.on{background:var(--brand)}
+.note{border-right:2px solid var(--nc,var(--n-doc));background:var(--surface);border-radius:4px;padding:9px 11px;margin:0 0 12px;font-size:13.6px;line-height:1.75;color:var(--ink-soft);box-shadow:0 1px 2px rgba(0,0,0,.04);transition:.2s}
+.note.hl{box-shadow:0 0 0 2px var(--gold);background:var(--surface-2)}
+.note__t{display:block;font-family:'Reem Kufi',sans-serif;font-size:10.5px;letter-spacing:.5px;color:var(--nc,var(--n-doc));margin-bottom:3px}
+.note--doc{--nc:var(--n-doc)} .note--def{--nc:var(--n-def)} .note--bio{--nc:var(--n-bio)}
+.note--exp{--nc:var(--n-exp)} .note--link{--nc:var(--n-link)} .note--fix{--nc:var(--n-fix)} .note--ctx{--nc:var(--n-ctx)}
+.note a{color:var(--nc)}
+
+/* ===== الخلاصة ===== */
+.summary{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--sc,var(--brand));border-radius:var(--radius);padding:16px 20px;margin:26px 0;box-shadow:var(--shadow)}
+.summary h4{color:var(--sc,var(--brand));margin:0 0 10px;font-size:18px}
+.summary ul{margin:0;padding-inline-start:20px}
+.summary li{margin-bottom:7px;font-size:16.5px;line-height:1.8}
+.summary .tag{font-family:'Reem Kufi',sans-serif;font-size:10.5px;color:var(--ink-faint);border:1px dashed var(--line-strong);border-radius:99px;padding:2px 8px;margin-inline-start:6px}
+
+/* ===== الأسئلة ===== */
+.quiz{background:var(--surface-2);border:1px dashed var(--sc,var(--brand));border-radius:var(--radius);padding:15px 17px;margin:26px 0}
+.quiz__hd{font-family:'Reem Kufi',sans-serif;font-size:11.5px;letter-spacing:1px;color:var(--sc,var(--brand));display:flex;justify-content:space-between;margin-bottom:10px}
+.q{margin-bottom:16px}
+.q:last-child{margin-bottom:0}
+.q__text{font-weight:600;margin-bottom:9px;line-height:1.7}
+.opt{display:block;width:100%;text-align:right;min-height:44px;padding:9px 13px;margin-bottom:7px;background:var(--surface);border:1px solid var(--line);border-radius:5px;color:var(--ink);font-size:15.5px;line-height:1.6;transition:.15s}
+.opt:hover{border-color:var(--sc,var(--brand))}
+.opt.ok{border-color:#2e8b57;background:color-mix(in srgb,#2e8b57 12%,var(--surface))}
+.opt.no{border-color:var(--n-fix);background:color-mix(in srgb,var(--n-fix) 10%,var(--surface))}
+.q__exp{display:none;font-size:14.5px;color:var(--ink-soft);border-right:2px solid var(--sc,var(--brand));padding:7px 11px;margin-top:6px;background:var(--surface)}
+.q__exp.show{display:block}
+
+/* ===== البطاقات ===== */
+.cards-wrap{margin-top:60px;border-top:2px solid var(--gold);padding-top:22px}
+.filters{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 18px}
+.filt{font-family:'Reem Kufi',sans-serif;font-size:12px;padding:6px 13px;border:1px solid var(--line);background:var(--surface);color:var(--ink-soft);border-radius:99px;transition:.15s}
+.filt.on{color:#fff;border-color:transparent}
+.card{perspective:1400px;height:250px;margin-bottom:14px}
+.card__in{position:relative;width:100%;height:100%;transition:transform .55s;transform-style:preserve-3d;cursor:pointer}
+.card.flip .card__in{transform:rotateY(180deg)}
+.card__f,.card__b{position:absolute;inset:0;backface-visibility:hidden;border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:22px;display:flex;align-items:center;justify-content:center;text-align:center;overflow-y:auto;box-shadow:var(--shadow)}
+.card__f{font-size:19px;font-weight:600;line-height:1.75}
+.card__b{transform:rotateY(180deg);background:var(--surface-2);font-size:16.5px;line-height:1.85;color:var(--ink-soft)}
+.card__tag{position:absolute;top:9px;right:12px;font-family:'Reem Kufi',sans-serif;font-size:10px;color:var(--ink-faint)}
+.cnav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:6px}
+.cnav button{padding:8px 16px;border:1px solid var(--line);background:var(--surface);border-radius:5px;color:var(--ink-soft);font-size:14px}
+.cnav span{font-family:'Reem Kufi',sans-serif;font-size:13px;color:var(--ink-faint);min-width:70px;text-align:center}
+.dl{display:inline-flex;align-items:center;gap:7px;margin-top:16px;padding:11px 20px;background:var(--brand);color:#fff;border:none;border-radius:6px;font-size:14.5px;font-family:'Reem Kufi',sans-serif}
+body.dark .dl{color:#121714}
+.foot{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-faint);text-align:center;line-height:1.9}
+
+/* ===== الهاتف ===== */
+@media(max-width:1100px){
+  .prose{padding-left:0;max-width:820px;margin:0 auto}
+  .para{display:block;margin-left:0}
+  .para__notes{padding-top:0}
+  .note{display:none;margin:6px 0 14px;font-size:14.5px}
+  .note.open{display:block;animation:fade .2s}
+  @keyframes fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1}}
+}
+@media(max-width:640px){
+  body{--fs:17px}
+  .wrap{padding:70px 14px 60px}
+  .cover{padding:30px 18px}.cover h1{font-size:30px}.cover .chapter{font-size:20px}
+  .section h2{font-size:24px}.chapter-open h2{font-size:27px}
+  .aya{font-size:1.2em;padding:12px 13px}
+  .card{height:290px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+
+/* ===== الطباعة ===== */
+@media print{
+  .topbar,.toc,#progress,.quiz,.cards-wrap,.nref{display:none!important}
+  body{background:#fff;font-size:12pt}
+  .wrap{padding:0;max-width:none}
+  .prose{padding-left:0}.para{display:block;margin-left:0}
+  .note{display:block;font-size:9.5pt;border:none;border-right:2px solid #999;box-shadow:none;margin:6px 0 10px}
+  .box,.summary,.aya{break-inside:avoid;box-shadow:none}
+}
+</style>
 </head>
-<body class="" data-page="lecture" data-lecture-id="stage1_raqaeq-al-quran_05">
-  <div class="page">
-    <nav class="breadcrumbs"><a href="../../../index.html">الرئيسية</a><span class="sep">/</span><a href="../../index.html">المرحلة الأولى</a><span class="sep">/</span><a href="../index.html">رقائق القرآن</a><span class="sep">/</span><span aria-current="page">من 135 إلى النهاية</span></nav>
-    
-      <header class="lecture-header">
-        <h1>من 135 إلى النهاية</h1>
-        <p class="lecture-meta">المادة: رقائق القرآن &nbsp;|&nbsp; الشيخ: إبراهيم السكران &nbsp;|&nbsp; اليوم 31</p>
-        <label class="checkbox-line lecture-checkbox">
-          <input type="checkbox" data-lecture-id="stage1_raqaeq-al-quran_05">
-          <span>إتمام هذه المحاضرة</span>
-        </label>
-      </header>
+<body data-lecture-id="stage1_raqaeq-al-quran_05">
+<style id="ilm-completion-style">
+  #ilm-completion-box{
+    display:flex; align-items:center; gap:10px;
+    max-width:640px; margin:14px auto 0; padding:12px 18px;
+    background:#fbfaf4; border:1px solid #d3d8ca; border-radius:12px;
+    font-family:'Tajawal','Segoe UI',Tahoma,sans-serif; direction:rtl;
+    cursor:pointer; user-select:none; transition:background .15s, border-color .15s;
+  }
+  #ilm-completion-box:hover{ border-color:#b8862f; }
+  #ilm-completion-box.done{ background:#e3ebe4; border-color:#1f4a3d; }
+  #ilm-completion-box input{ width:18px; height:18px; accent-color:#1f4a3d; cursor:pointer; flex-shrink:0; }
+  #ilm-completion-box span{ font-size:14.5px; font-weight:600; color:#2b2a24; }
+  #ilm-completion-box.done span{ color:#163931; }
+</style>
+<label id="ilm-completion-box">
+  <input type="checkbox" data-lecture-id="stage1_raqaeq-al-quran_05">
+  <span>تحديد هذه المحاضرة كمكتملة</span>
+</label>
 
-      <div class="lecture-placeholder">
-        <p>سيتم إضافة المحاضرة هنا لاحقًا</p>
-        <p class="placeholder-hint">(رابط يوتيوب / فيديو / ملف صوتي / PDF / نص المحاضرة / ملاحظاتي)</p>
-      </div>
 
-      <div class="lecture-nav">
-        <a href="../index.html" class="btn btn-outline">الرجوع إلى المادة</a>
-        <a href="../../index.html" class="btn btn-outline">الرجوع إلى المرحلة</a>
-      </div>
+<div class="topbar">
+  <button class="tbtn" id="btnToc" title="الفهرس" aria-label="الفهرس">☰</button>
+  <span class="brandmark">رقائق القرآن &nbsp;·&nbsp; الجزء ٥ &nbsp;·&nbsp; أقوى الناس وكأنك تراه</span>
+  <button class="tbtn" id="btnMinus" title="تصغير الخط" aria-label="تصغير الخط">أ−</button>
+  <button class="tbtn" id="btnPlus" title="تكبير الخط" aria-label="تكبير الخط">أ+</button>
+  <button class="tbtn" id="btnDark" title="وضع القراءة الليلي" aria-label="وضع القراءة الليلي">◐</button>
+</div>
+<div id="progress"></div>
 
-      <div data-lecture-nav-extra></div>
-    
+<nav class="toc" id="toc" aria-label="فهرس المحتوى">
+  <h5>الفهرس</h5>
+  <div id="tocList"></div>
+</nav>
+
+<main class="wrap" data-ilm-highlight-zone>
+
+<div class="booknav">
+  <a href="04.html">‹ الجزء الرابع: السجود بين السهام والسهر المجهول</a>
+  <span>الجزء الخامس من خمسة</span>
+  <span class="off">نهاية الكتاب</span>
+</div>
+
+<header class="cover">
+  <div class="kicker">كتاب مقروء · النقل الكامل للمتن</div>
+  <h1>رقائق القرآن</h1>
+  <p class="sub">إبراهيم بن عمر السكران</p>
+  <div class="rule"></div>
+  <div class="chapter">الجزء الخامس والأخير: «أقوى الناس» و«كأنك تراه» و«لم نفعلها وحُسبت علينا» والخاتمة</div>
+  <div class="meta-row">
+    <span class="chip">٤ فصول · ٧ مقاطع</span>
+    <span class="chip">١٤ سؤالًا تفاعليًّا</span>
+    <span class="chip">٣٦ بطاقة مراجعة</span>
+    <span class="chip">هامش موسَّع</span>
   </div>
-  <script type="module" src="../../../firebase-sync-manhaj.js"></script>
-  <script src="../../../data.js"></script>
-  <script src="../../../script.js"></script>
+</header>
+
+<div class="box box--guide" id="howto">
+  <h4>كيف تقرأ هذه الصفحة</h4>
+  <p class="small"><b>النص الأساسي (المتن) على اليمين هو كلام المؤلف كاملًا بلا حذف ولا تلخيص؛ وما في العمود الجانبي الأيسر إضافة توضيحية ليست من الكتاب.</b> اضغط على العلامة الذهبية داخل النص لإبراز الهامش المقابل لها — وعلى الهاتف تُفتح تحت الفقرة مباشرة.</p>
+  <p class="small">العناوين المُعلَّمة بشارة <span class="gen">عنوان تنظيمي</span> ليست من الكتاب، بل وُضعت لتقطيع الفصل الطويل. وصناديق «الخلاصة» في نهاية كل مقطع إضافة كذلك، لا يُنسب شيء منها للمؤلف.</p>
+</div>
+
+<div class="box box--src">
+  <h4>◆ عن المصدر</h4>
+  <p class="small">هذا النص مُفرَّغ من النسخة الصوتية التي أنتجتها <b>قناة صوت فصيح</b> ضمن «مشروع كفالة الكتب الصوتية»، وأُهديت صدقةً جارية على روح الدكتور أبي العطا النادي. قراءة: محمد ريان، وهندسة صوتية: محمد الخلفاوي. هذه المقدمات والفواصل الصوتية ليست من الكتاب، ولذلك ذُكرت هنا مرة واحدة ولم تُقحَم في المتن.</p>
+</div>
+
+<div class="box box--fix">
+  <h4>⚠ تصحيحات في التفريغ الصوتي</h4>
+  <p class="small">أخطاء النطق الصريحة صُحِّحت مباشرة بلا تنبيه، فهي خطأ تفريغ لا خطأ محتوى. أما ما أثّر في المعنى — كسقوط «لا» النافية، وانكسار بعض الجمل، وخطأ في نصّ آية — فموثَّق في هوامش حمراء في مواضعه.</p>
+</div>
+
+<div class="prose" data-ilm-highlight-zone>
+
+<div class="chapter-open">
+  <div class="section__no">الفصل العاشر من الكتاب</div>
+  <div class="line"></div>
+  <h2>أقوى الناس</h2>
+  <div class="line"></div>
+</div>
+
+<section class="section" id="s1" style="--sc:var(--s1)">
+  <div class="section__head">
+    <div class="section__no">المقطع الأول</div>
+    <h2>القوةُ ليست في قوّة الأسباب <span class="gen">عنوان تنظيمي</span></h2>
+  </div>
+
+<p>حياتنا معجونةٌ بالمهامّ والالتزامات والقرارات العابرة والجسيمة: في الدراسة والعمل والزواج والمسكن والسفر والإقامة والصحة والمرض؛ وفي كل هذه المتطلبات فإننا نسعى لإنجازها باتخاذ الأسباب كما أمرنا الله وكما هو مركّبٌ في فطرتنا أصلًا. هذا المشهد مشهدٌ طبيعي ومتكرر، وإنما الذي يستحق أن نفحصه ونتأمله هو تلك المشاعر والأحاسيس التي تتحرك في داخلنا في كيفية قراءتنا للعلاقة بين النتائج والأسباب.</p>
+
+<p>كثيرًا ما يرتبط في أذهاننا أن قوة النتائج مرتبطةٌ بما يظهر من قوة الأسباب في مظاهرها وغطائها المادي، ولذلك تهفو النفوس للتعلق بالسبب؛ وكثيرًا ما يمرّ في عقولنا تصوراتٌ مسبقة أن أقوى الناس هم أولئك الذين يملكون أقوى الأسباب المادية.</p>
+
+<div class="para">
+<div class="para__main">
+<p>وقد أثار انتباهي تنبيهٌ لطيف لأحد السلف يزلزل هذه القناعات والتصورات المطمورة، وقد نقله أبو العباس بن تيمية رحمه الله واحتفى به في عدة مواضع من كتبه؛ يقول ابن تيمية في رسالته التي تسمى «التحفة العراقية»<button class="nref" data-note="n1">١</button>:</p>
+<div class="naql"><span class="who">ابن تيمية</span>قومٌ ينظرون إلى جانب الأمر والنهي والعبادة والطاعة، شاهدين لإلهية الربّ سبحانه الذي أُمروا أن يعبدوه، ولا ينظرون إلى جانب القضاء والقدر والتوكل والاستعانة؛ وهو حال كثيرٍ من المتفقّهة والمتعبّدة، فهم — مع حسن قصدهم وتعظيمهم لحرمات الله ولشعائره — يغلب عليهم الضعف والعجز والخذلان. إن الاستعانة بالله والتوكل عليه واللَّجَأ إليه والدعاء له هي التي تقوّي العبد وتيسّر عليه الأمور؛ ولهذا قال بعض السلف: <b>من سرّه أن يكون أقوى الناس فليتوكل على الله</b>.</div>
+<p>ورُوي هذا الأثر مرفوعًا إلى النبي صلى الله عليه وسلم، لكن لا يثبت مرفوعًا كما أعلّه الإمام أبو جعفر العقيلي<button class="nref" data-note="n2">٢</button>.</p>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n1"><span class="note__t">توثيق</span><b>«التحفة العراقية في الأعمال القلبية»</b> رسالةٌ لابن تيمية في أعمال القلوب، من أنفس ما كُتب في الباب، وتُطبع ضمن مجموع الفتاوى وأفردت أيضًا.</aside>
+<aside class="note note--bio" id="n2"><span class="note__t">ترجمة عَلَم</span><b>أبو جعفر العقيلي</b> (ت ٣٢٢هـ): إمامٌ في علل الحديث، صاحب كتاب «الضعفاء الكبير». ولاحظ دقّة المؤلف: نقل الأثر ثم بيّن أنه لا يصح مرفوعًا.</aside>
+</div>
+</div>
+
+<p>حسنًا، هذا الأثر السلفي يبيّن أن القوة الحقيقية مرتبطةٌ بقوة التعلق بالله لا بالتعلق بالأسباب؛ فقوةُ التوكل هي المدد الحقيقي أمام صعوبات الحياة، ويتفاوت الناس في قوتهم بحسب ما في قلوبهم من التوكل الشرعي.</p>
+
+<div class="quiz" data-section="s1"></div>
+
+<div class="summary">
+  <h4>خلاصة المقطع <span class="tag">إضافة ليست من الكتاب</span></h4>
+  <ul>
+    <li>اتخاذ الأسباب مأمورٌ به ومركوزٌ في الفطرة — والمفحوص هو المشاعر التي تحكم قراءتنا للعلاقة بين السبب والنتيجة.</li>
+    <li>التصور الشائع: أقوى الناس أصحاب أقوى الأسباب المادية.</li>
+    <li>نقلُ ابن تيمية يكشف خللًا في صنفٍ حسنِ القصد: عبادةٌ بلا نظرٍ إلى القدر والتوكل، فيغلب عليهم الضعف والخذلان.</li>
+    <li>القوة الحقيقية من الاستعانة واللجأ والدعاء: «من سرّه أن يكون أقوى الناس فليتوكل على الله».</li>
+    <li>ودقّة المؤلف الحديثية: نبّه إلى أن الأثر لا يثبت مرفوعًا إلى النبي صلى الله عليه وسلم.</li>
+  </ul>
+</div>
+</section>
+
+<section class="section" id="s2" style="--sc:var(--s2)">
+  <div class="section__head">
+    <div class="section__no">المقطع الثاني</div>
+    <h2>لماذا نتوكّل على الله؟ <span class="gen">عنوان تنظيمي</span></h2>
+  </div>
+
+<p>ولكن قبل أن نتحدث عن هذه العلاقة: ما هو الدافع للتوكل؟ بمعنًى آخر: لماذا نتوكل على الله؟ دعنا أخي القارئ نحلّل دوافع التوكل، أو نجيب على سؤال: لماذا نتوكل على الله بحسب المنظور القرآني؟</p>
+
+<div class="para">
+<div class="para__main">
+<p><b>نتوكل على الله لأن التوكل معيار الإيمان.</b> التوكل على الله هو اللحظة التي تكشف مصداقية إيماننا بالله، ولاحظ هذا الامتحان في قول الله:</p>
+<div class="aya">﴿وَعَلَى اللَّهِ فَتَوَكَّلُوا إِن كُنتُم مُّؤْمِنِينَ﴾<button class="nref" data-note="n3">٣</button></div>
+<p>وفي الحوار الذي دار بين موسى عليه السلام وقومه كم يلفت النظر دورانُ الحوار حول التوكل وأنه مقياس الإيمان والإسلام:</p>
+<div class="aya">﴿وَقَالَ مُوسَىٰ يَا قَوْمِ إِن كُنتُمْ آمَنتُم بِاللَّهِ فَعَلَيْهِ تَوَكَّلُوا إِن كُنتُم مُّسْلِمِينَ ۝ فَقَالُوا عَلَى اللَّهِ تَوَكَّلْنَا﴾</div>
+<p>فإذا تدبّر قارئ القرآن هذه المنزلة لاعتماد القلب على الله ولجوئه إليه وتفويضه الأمور إليه، تغيّرت نظرته كليًّا لموقع التوكل في حياته.</p>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n3"><span class="note__t">توثيق</span>المائدة ٢٣، ثم يونس ٨٤–٨٥. ولاحظ في الآيتين تعليق التوكل على شرط الإيمان والإسلام، وهو موضع الاستدلال.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p><b>نتوكل على الله لأن الله سبحانه هو أعظم وكيل</b>، حتى إن الله سبحانه قال في خمسة مواضع من القرآن ذاتَ الجملة: ﴿وَكَفَىٰ بِاللَّهِ وَكِيلًا﴾؛ قالها سبحانه في سورة النساء ثلاث مرات وفي سورة الأحزاب مرتين<button class="nref" data-note="n4">٤</button>، كقوله سبحانه:</p>
+<div class="aya">﴿وَتَوَكَّلْ عَلَى اللَّهِ ۚ وَكَفَىٰ بِاللَّهِ وَكِيلًا﴾ · ﴿وَلِلَّهِ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۚ وَكَفَىٰ بِاللَّهِ وَكِيلًا﴾</div>
+<p>فإذا كان القرآن يُعيد على مسامعنا خمس مرات ذات الجملة ﴿وكفى بالله وكيلًا﴾، فهل امتلأت قلوبنا فعلًا بحقيقة هذا المعنى ونحن نعارك تصاريف الحياة؟ وهل نحن نتسلّق المطالب ونتجرّع المصائب ونخوض الأهوال وقلوبنا معلّقةٌ بالسماء تفيض بهذا المعنى؟ ألا يكفيك يا نفسُ أن الله هو الوكيل؟! بل هو نِعم الوكيل سبحانه كما قال أهل الإيمان:</p>
+<div class="aya">﴿وَقَالُوا حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ﴾</div>
+</div>
+<div class="para__notes">
+<aside class="note note--def" id="n4"><span class="note__t">تعريف وتوثيق</span><b>الوكيل</b> في اللغة: المفوَّض إليه أمرُ غيره ليقوم به. ومواضعها: النساء ٨١ و١٣٢ و١٧١، والأحزاب ٣ و٤٨.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p><b>نتوكل على الله لأنه هو الذي يكفينا</b>، ومن أعظمُ كفايةً من الله؟!</p>
+<div class="aya">﴿وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ﴾<button class="nref" data-note="n5">٥</button></div>
+<p>لو علم المرء أن فلانًا من المسؤولين هو المتكفّل بمعاملته لتنفّس اليقين وفرّغ قلبه من الشك بتحقّق مطلبه؛ فكيف يفوّت المرء على نفسه أن يكون الله — خالقُ هذه الحاجات، والخالقُ لسُبل قضائها، والخالقُ لموانعها — هو الذي سيتكفّل بأمرك إذا توكلت عليه؟! ﴿ومن يتوكل على الله فهو حسبه﴾. من كان الله حسبَه فكيف ستكون قوته بين الناس؟! ولذلك قال من قال من السلف: من سرّه أن يكون أقوى الناس فليتوكل على الله.</p>
+<p>ومما يفغر فمَ الاستغراب حين يتأمل المرء هذه الحقائق القرآنية التي أخبرنا بها الله ذاته، ثم يلاحظ غياب الانتفاع والاستفادة من هذه الحقائق في حياتنا! الخالق سبحانه يفتح فرصةً لعبده ليكون الله تعالى هو حسبه إذا توكل عليه، ومع ذلك يقصّر القلب في الانكباب على الله والتعلق به، فيفوّت على نفسه هذه القوة العظيمة.</p>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n5"><span class="note__t">توثيق وسياق</span>الطلاق ٣، وقد جاءت بعد ﴿ومن يتق الله يجعل له مخرجًا ويرزقه من حيث لا يحتسب﴾ — فالتقوى والتوكل مقترنان في السياق.</aside>
+</div>
+</div>
+
+<div class="quiz" data-section="s2"></div>
+
+<div class="summary">
+  <h4>خلاصة المقطع <span class="tag">إضافة ليست من الكتاب</span></h4>
+  <ul>
+    <li>الدافع الأول: التوكل معيارٌ للإيمان — عُلّق في الآيتين على شرط الإيمان والإسلام.</li>
+    <li>الدافع الثاني: عظمة الوكيل — ﴿وكفى بالله وكيلًا﴾ تكررت في خمسة مواضع.</li>
+    <li>الدافع الثالث: الكفاية — ﴿ومن يتوكل على الله فهو حسبه﴾، وهو خالق الحاجة وسبيلها ومانعها.</li>
+    <li>المقارنة العملية: اطمئنان من يعلم أن مسؤولًا يتكفّل بمعاملته — فكيف بمن يتكفّل الله بأمره؟</li>
+    <li>ومع وضوح ذلك يبقى الغياب العملي لهذه الحقائق في حياتنا هو موضع العجب عند المؤلف.</li>
+  </ul>
+</div>
+</section>
+
+<section class="section" id="s3" style="--sc:var(--s3)">
+  <div class="section__head">
+    <div class="section__no">المقطع الثالث</div>
+    <h2>التوكّلُ حِمًى من سلطان الشيطان <span class="gen">عنوان تنظيمي</span></h2>
+  </div>
+
+<div class="para">
+<div class="para__main">
+<p><b>نتوكل على الله لأن التوكل عليه سبحانه يحمينا من سلطة الشيطان</b>، كما قال الله تعالى:</p>
+<div class="aya">﴿إِنَّهُ لَيْسَ لَهُ سُلْطَانٌ عَلَى الَّذِينَ آمَنُوا وَعَلَىٰ رَبِّهِمْ يَتَوَكَّلُونَ﴾<button class="nref" data-note="n6">٦</button></div>
+<p>فالشيطان حاضرٌ في تفاصيل حياتنا يسعى بفنون الإضلال ليجرّ ابن آدم معه إلى المصير التعيس؛ فالشيطان حاضرٌ في حياتنا: يُزِلّ ويستزلّ، ويوسوس ويفتن، وينزغ ويهمز، ويسوّل ويُملي، ويؤزّ ويُضلّ، ويصدّ عن سبيل الله، ويستهوي للحيرة، ويرمي في طريقنا الخطوات ليستدرجنا للخطايا، ويخوّفنا من الفقر كلما فكّرنا في النفقة في سبيل الله، ويزيّن لنا الباطل فيضعه في قالب الأمر الطبيعي والجميل وأنه لا داعي للمبالغة — وهي من أخطر أساليب الشيطان — وتستخفّ الشياطينُ أهلَ الباطل وتؤزّهم وتورّطهم في الاندفاع، ويسعى الشيطان لِيُنسِيَنا أمر الله.</p>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n6"><span class="note__t">توثيق وإيضاح</span>النحل ٩٩. و«السلطان» هنا التسلّط والغلبة لا مجرد الوسوسة؛ فالوسوسة تقع للمؤمن لكنها لا تستحكم.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>سواءٌ كان ذلك النسيان معفوًّا عنه — بمعنى غياب العلم، أو اجتنان المعلوم كما في السهو، كما قال في «مراقي السعود»: «زوالُ ما عُلِم قُلْ نسيانُ ... والعلمُ في السهو له اكتنانُ» — أو إنساءً غيرَ معفوٍّ عنه، وهو حضور العلم وغياب خشية الله وإرادته؛ فالشيطان حريصٌ على كلا النوعين من النسيان: نسيانِ الذهول المعفوّ عنه، ونسيانِ الغفلة المتوعَّد عليه<button class="nref" data-note="n7">٧</button>.</p>
+<p>وكلا نوعَي النسيان مما تحتملهما لغة العرب، كما قال حافظ المغرب أبو عمر بن عبد البر<button class="nref" data-note="n8">٨</button>: «والنسيان في لغة العرب يكون للترك عمدًا، ويكون ضدّ الذكر». وجاء هذان الوجهان العربيان في القرآن، كما قال ابن القيم: «النسيان في القرآن على وجهين: نسيانُ ترك، ونسيانُ سهو».</p>
+</div>
+<div class="para__notes">
+<aside class="note note--def" id="n7"><span class="note__t">تعريف مصطلح</span><b>مراقي السعود</b>: منظومة في أصول الفقه لسيدي عبد الله الشنقيطي. و<b>الاكتنان</b>: الاستتار؛ فالسهو استتارُ العلم مع بقائه، والنسيان زوالُه.</aside>
+<aside class="note note--bio" id="n8"><span class="note__t">ترجمة عَلَم</span><b>ابن عبد البر النَّمَري</b> (ت ٤٦٣هـ): حافظ المغرب، صاحب «التمهيد» و«الاستذكار» و«الاستيعاب».</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>قال الله تعالى في كون الشيطان يُزِلّ ويستزلّ:</p>
+<div class="aya">﴿فَأَزَلَّهُمَا الشَّيْطَانُ عَنْهَا فَأَخْرَجَهُمَا مِمَّا كَانَا فِيهِ﴾ · ﴿إِنَّمَا اسْتَزَلَّهُمُ الشَّيْطَانُ بِبَعْضِ مَا كَسَبُوا﴾<button class="nref" data-note="n9">٩</button></div>
+<p>وأخبر الله سبحانه عن سعي الشيطان في الإضلال: ﴿وَيُرِيدُ الشَّيْطَانُ أَن يُضِلَّهُمْ ضَلَالًا بَعِيدًا﴾. وأخبر عن نزغ الشيطان:</p>
+<div class="aya">﴿وَقُل لِّعِبَادِي يَقُولُوا الَّتِي هِيَ أَحْسَنُ ۚ إِنَّ الشَّيْطَانَ يَنزَغُ بَيْنَهُمْ﴾ · ﴿مِن بَعْدِ أَن نَّزَغَ الشَّيْطَانُ بَيْنِي وَبَيْنَ إِخْوَتِي﴾ · ﴿وَإِمَّا يَنزَغَنَّكَ مِنَ الشَّيْطَانِ نَزْغٌ فَاسْتَعِذْ بِاللَّهِ﴾</div>
+<p>وأخبر عن هَمز الشيطان في النفوس: ﴿وَقُل رَّبِّ أَعُوذُ بِكَ مِنْ هَمَزَاتِ الشَّيَاطِينِ﴾. وأخبر عن وسوسة الشيطان بالمعاصي والفواحش: ﴿فَوَسْوَسَ لَهُمَا الشَّيْطَانُ لِيُبْدِيَ لَهُمَا مَا وُورِيَ عَنْهُمَا مِن سَوْآتِهِمَا﴾. وأخبر الله عن تسويل الشيطان وإملائه:</p>
+<div class="aya">﴿إِنَّ الَّذِينَ ارْتَدُّوا عَلَىٰ أَدْبَارِهِم مِّن بَعْدِ مَا تَبَيَّنَ لَهُمُ الْهُدَى ۙ الشَّيْطَانُ سَوَّلَ لَهُمْ وَأَمْلَىٰ لَهُمْ﴾</div>
+<p>وأخبر عن استهواء الشياطين إلى الحيرة والارتيابات والشكوك: ﴿كَالَّذِي اسْتَهْوَتْهُ الشَّيَاطِينُ فِي الْأَرْضِ حَيْرَانَ﴾. وأخبر عن استخفاف الشياطين لأهل الباطل ودفعها إياهم إلى التهور والاندفاع في الانحراف: ﴿أَلَمْ تَرَ أَنَّا أَرْسَلْنَا الشَّيَاطِينَ عَلَى الْكَافِرِينَ تَؤُزُّهُمْ أَزًّا﴾<button class="nref" data-note="n10">١٠</button>.</p>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n9"><span class="note__t">توثيق</span>البقرة ٣٦، وآل عمران ١٥٥، والنساء ٦٠، والإسراء ٥٣، ويوسف ١٠٠، والأعراف ٢٠٠.</aside>
+<aside class="note note--doc" id="n10"><span class="note__t">توثيق وتعريف</span>المؤمنون ٩٧، والأعراف ٢٠، ومحمد ٢٥، والأنعام ٧١، ومريم ٨٣. و<b>الأزّ</b>: الإزعاج والتحريك بشدة، كأزيز القِدر.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>وحذّرنا ربنا من تفنّن الشيطان بالفتن: ﴿يَا بَنِي آدَمَ لَا يَفْتِنَنَّكُمُ الشَّيْطَانُ﴾. وأن الشيطان يشوّش تفكيرنا بالقلق من الفقر إن أنفقنا في سبيل الله: ﴿الشَّيْطَانُ يَعِدُكُمُ الْفَقْرَ﴾. وأخبرنا الله عن خُبث الشيطان في تغييب واستكنان المطلوب الشرعي:</p>
+<div class="aya">﴿وَإِمَّا يُنسِيَنَّكَ الشَّيْطَانُ﴾ · ﴿فَأَنسَاهُ الشَّيْطَانُ ذِكْرَ رَبِّهِ﴾ · ﴿اسْتَحْوَذَ عَلَيْهِمُ الشَّيْطَانُ فَأَنسَاهُمْ ذِكْرَ اللَّهِ﴾<button class="nref" data-note="n11">١١</button></div>
+<p>وأن الشيطان ينصب الخطوات التدريجية، كما قال الله سبحانه:</p>
+<div class="aya">﴿يَا أَيُّهَا الَّذِينَ آمَنُوا لَا تَتَّبِعُوا خُطُوَاتِ الشَّيْطَانِ ۚ وَمَن يَتَّبِعْ خُطُوَاتِ الشَّيْطَانِ فَإِنَّهُ يَأْمُرُ بِالْفَحْشَاءِ وَالْمُنكَرِ﴾</div>
+<p>وقال الله عز وجل: ﴿وَلَا تَتَّبِعُوا خُطُوَاتِ الشَّيْطَانِ﴾.</p>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n11"><span class="note__t">توثيق</span>الأعراف ٢٧، والبقرة ٢٦٨، والأنعام ٦٨، ويوسف ٤٢، والمجادلة ١٩، والنور ٢١، والبقرة ١٦٨.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>وأخبر الله تعالى عن رسم الشيطان للباطل والمعاصي في قالب الأمر الجميل والواقعي والمصلحي والطبيعي:</p>
+<div class="aya">﴿وَزَيَّنَ لَهُمُ الشَّيْطَانُ مَا كَانُوا يَعْمَلُونَ﴾ · ﴿وَإِذْ زَيَّنَ لَهُمُ الشَّيْطَانُ أَعْمَالَهُمْ﴾</div>
+<p>ولذلك ترى الرجل يرتكب المعصية ويؤنّبه ضميره زمنًا، وتراه يقول لمن حوله: والله إني متألم من هذا الأمر وجزاكم الله خيرًا على النصيحة؛ ثم لا يزال الشيطان به حتى تراه بعد زمنٍ يدافع عن معصيته ويراها أمرًا طبيعيًّا، وأن من حوله يعانون في نظره من غلوٍّ ونزعةٍ للتحريم، وأن هذه فتاوى قديمة والعصر تغيّر... إلى آخر ذلك من أفكار الشيطان في تزيين المعاصي للناس<button class="nref" data-note="n12">١٢</button>. فإذا رأيت هذا المشهد فتذكّر فورًا قول الله تعالى ﴿وَإِذْ زَيَّنَ لَهُمُ الشَّيْطَانُ أَعْمَالَهُمْ﴾ وقوله ﴿وَزَيَّنَ لَهُمُ الشَّيْطَانُ مَا كَانُوا يَعْمَلُونَ﴾.</p>
+<p>وأخبر عن وظيفة الشيطان العامة في الصدّ عن سبيل الله: ﴿وَلَا يَصُدَّنَّكُمُ الشَّيْطَانُ﴾. ومن أعجب ما يقوم به الشيطان سرعةُ تنصّله بعد أن يقع الإنسان في شباكه:</p>
+<div class="aya">﴿كَمَثَلِ الشَّيْطَانِ إِذْ قَالَ لِلْإِنسَانِ اكْفُرْ فَلَمَّا كَفَرَ قَالَ إِنِّي بَرِيءٌ مِّنكَ﴾</div>
+</div>
+<div class="para__notes">
+<aside class="note note--exp" id="n12"><span class="note__t">إيضاح</span>لاحظ التدرّج الذي يرسمه المؤلف في ثلاث مراحل: تأنيبُ ضمير، ثم اعتيادٌ، ثم مدافعةٌ عن الفعل واتهامُ الناصحين بالغلوّ. وهو تطبيقٌ عمليّ لمعنى «التزيين» و«الخطوات».</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>فمن تأمّل أعمال الشيطان وأساليبه وخططه ومؤامراته وأفخاخه التي ينصبها — كما صوّرها الله لنا تفصيلًا في كتابه — أدرك شدة خطر الشيطان؛ حتى إن الإمام ابن القيم لما لاحظ هذا المعنى ألّف كتابًا بديعًا استمدّ عنوانه من هذا المعنى فسمّاه <b>«إغاثة اللهفان من مصايد الشيطان»</b><button class="nref" data-note="n13">١٣</button>، وذكر فيه من المعاني الشرعية حول صحة القلب ومرضه والأدوية الشرعية له، ثم فصّل تفصيلًا مذهلًا في مكايد الشيطان في العقيدة كما في القبور، أو في فقه الفروع كما في الطهارة والمعازف والحيل في النكاح والربا وأنواعٍ من المعاملات، وختم كتابه بتلاعب الشيطان وكيده بالاتجاهات غير الإسلامية كالفلاسفة والمجوس وأهل الكتابين قبلنا؛ وهو كتابٌ عظيم مشحونٌ بالفوائد والأبحاث والاستطرادات العقدية والفقهية والإيمانية، يدلّ نَفَسُه فيه أنه ألّفه على البسط لا على إرادة الاختصار.</p>
+<p>المهمّ أن الله في كتابه قد بيّن لنا أن التوكل من أعظم وسائل مكافحة مخاطر وسلطة الشيطان، كما قال سبحانه: ﴿إِنَّهُ لَيْسَ لَهُ سُلْطَانٌ عَلَى الَّذِينَ آمَنُوا وَعَلَىٰ رَبِّهِمْ يَتَوَكَّلُونَ﴾</p>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n13"><span class="note__t">توثيق</span>لابن قيّم الجوزية (ت ٧٥١هـ)، تلميذ ابن تيمية. والكتاب في مجلدين، وأشهر طبعاته بتحقيق محمد حامد الفقي.</aside>
+</div>
+</div>
+
+<div class="quiz" data-section="s3"></div>
+
+<div class="summary">
+  <h4>خلاصة المقطع <span class="tag">إضافة ليست من الكتاب</span></h4>
+  <ul>
+    <li>الدافع الرابع للتوكل: أنه يمنع تسلّط الشيطان — ﴿ليس له سلطان على الذين آمنوا وعلى ربهم يتوكلون﴾.</li>
+    <li>المؤلف يستقرئ أفعال الشيطان في القرآن: الإزلال، والإضلال، والنزغ، والهمز، والوسوسة، والتسويل، والاستهواء، والأزّ.</li>
+    <li>ومنها ما هو خفيّ: الإنساء، ونصب الخطوات التدريجية، والوعد بالفقر عند النفقة.</li>
+    <li>وأخطرها عنده: <b>التزيين</b> — أن يوضع الباطل في قالب الطبيعي والمصلحي حتى يدافع صاحبه عن معصيته.</li>
+    <li>وأعجبها: التنصّل بعد الإيقاع ﴿فلما كفر قال إني بريء منك﴾. وقد أفرد ابن القيم الباب بكتاب «إغاثة اللهفان».</li>
+  </ul>
+</div>
+</section>
+
+<section class="section" id="s4" style="--sc:var(--s4)">
+  <div class="section__head">
+    <div class="section__no">المقطع الرابع</div>
+    <h2>ما التوكّل؟ ومتى؟ وطمأنينةُ الخليل <span class="gen">عنوان تنظيمي</span></h2>
+  </div>
+
+<div class="para">
+<div class="para__main">
+<p>كما أن من أعظم دوافع التوكل: أننا <b>نتوكل على الله شكرًا له وامتنانًا لأنه هدانا</b> سبحانه؛ فحين ترى نفسك من أهل لا إله إلا الله، أو ترى نفسك محافظًا على الصلاة، أو ترى نفسك بعيدًا عن فكر الهزيمة والانكسار والانحناء للثقافة الغربية، وبعيدًا عن حمل النصوص الشرعية وتأويلها لتوافق مقررات الثقافة الغربية الغالبة — فإنك تحمد الله وتشكره إذ رفعك عن الانحطاط السلوكي والفكري، وترى مِنّة الله عليك إذ شرّفك بالرقيّ العقدي؛ ويوجب لك هذا مزيدًا من التوكل والتعلق بالله. تأمّل أهلَ الإيمان كيف يربطون بين هداية الله والتوكل:</p>
+<div class="aya">﴿وَمَا لَنَا أَلَّا نَتَوَكَّلَ عَلَى اللَّهِ وَقَدْ هَدَانَا سُبُلَنَا﴾<button class="nref" data-note="n14">١٤</button></div>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n14"><span class="note__t">توثيق</span>إبراهيم ١٢، من كلام الرسل لأقوامهم حين توعّدوهم؛ فربطوا التوكل بالهداية السابقة، وجعلوه شكرًا لها.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>هذه بعض دوافع التوكل التي أشار إليها كتاب الله العظيم. ولكن قد يثور ها هنا سؤال: متى نتوكل بالضبط؟</p>
+<p>الحقيقة أن التوكل له <b>مرتبتان</b>: توكلٌ عامّ لا ينفكّ المؤمن عنه، بحيث يكون قلبه معلقًا بالله بشكل مستمر بمقتضى توحيد الله وألوهيته، كما قال الله تعالى: ﴿اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ ۚ وَعَلَى اللَّهِ فَلْيَتَوَكَّلِ الْمُؤْمِنُونَ﴾ — فهذا التوكل معيار الإيمان. وثمّ مرتبةٌ أخرى، وهي التوكل في الأمر الخاص المعيّن، وهذا يكون بعد العزم عليه مباشرة كما قال الله سبحانه:</p>
+<div class="aya">﴿فَإِذَا عَزَمْتَ فَتَوَكَّلْ عَلَى اللَّهِ﴾<button class="nref" data-note="n15">١٥</button></div>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n15"><span class="note__t">توثيق وإيضاح</span>التغابن ١٣، ثم آل عمران ١٥٩. ولاحظ ترتيب الآية الثانية: مشاورةٌ، ثم عزم، ثم توكل — فالتوكل بعد استفراغ الوسع لا قبله.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>حسنًا، هذا التوكل الذي أبدأ القرآن فيه وأعاد وكرّره في مواضع كثيرة وسياقات متنوعة، ما هو بالضبط؟ ما معنى التوكل؟ والإشكال بصياغةٍ أخرى: الكثير يتساءل: كيف أكون متوكلًا؟ كيف أحقّق هذا المقام الإيماني العظيم الذي يحبه الله ويعرضه لنا في القرآن بكثرة ويرغّبنا فيه؟</p>
+<p>لأهل العلم في علم السلوك ومقامات الإيمان تعريفاتٌ كثيرة للتوكل: بعضها فيه تعريفٌ للتوكل في حقيقته الكلية، وبعضها فيه إضاءةٌ لبعض جوانب التوكل، ويبدو أنها بحسب حال السائل. ولكن بعيدًا عن الإسهاب في استعراض تعريفات التوكل، يمكن القول بكل اختصار إن التوكل هو: <b>اشتغال الجوارح بالأسباب، واشتغال القلب بالله</b><button class="nref" data-note="n16">١٦</button>.</p>
+<p>وقد لخّص الإمام ابن القيم شيئًا من الوقائع الشرعية في اتخاذ الأسباب لما انتقد الطائفة الصوفية التي ظنّت أن التوكل يعني ترك الأسباب، كما يقول ابن القيم ناقدًا:</p>
+<div class="naql"><span class="who">ابن القيم</span>مدّعين لأنفسهم حالًا أكملَ من حال رسول الله صلى الله عليه وسلم وأصحابه، إذ لم يكن فيهم أحدٌ قط يفعل ذلك، ولا أخلّ النبي والصحابة بشيءٍ من الأسباب؛ وقد ظاهَر رسول الله صلى الله عليه وسلم بين دِرعين يوم أُحد، واستأجر دليلًا مشركًا على دين قومه يدلّه على طريق الهجرة، وكان يدّخر لأهله قوت سنة وهو سيد المتوكلين، وكان إذا سافر في جهادٍ أو حجٍّ أو عمرة حمل الزاد والمَزاد، وجمَع أصحابَه وهم أولو التوكل حقًّا؛ وأكملُ المتوكلين بعدهم هو من اشتمّ رائحة توكّلهم من مسيرةٍ بعيدة.<button class="nref" data-note="n17">١٧</button></div>
+</div>
+<div class="para__notes">
+<aside class="note note--def" id="n16"><span class="note__t">تعريف مصطلح</span>هذا التعريف مشهور عند أهل السلوك، ومداره على التفريق بين <b>عمل الجارحة</b> (السبب) و<b>عمل القلب</b> (الاعتماد) — فلا تعارض بينهما.</aside>
+<aside class="note note--def" id="n17"><span class="note__t">تعريف ألفاظ</span><b>ظاهَر بين درعين</b>: لبس درعًا فوق درع. و<b>المَزاد</b>: أوعية الماء في السفر. ووجه الحجة: أن سيد المتوكلين أخذ بأشدّ الأسباب احتياطًا.</aside>
+</div>
+</div>
+
+<p>ولكن ومع فعل الأسباب فإن القلب معلَّقٌ بالله، ملتفتٌ إليه، مُعرِضٌ عن التعلق بهذه الأسباب؛ ولذلك ترى المتوكل يلهج بالذكر، يرقب توفيق ربه، ويتمتم بالدعاء. يتحدث المتوكلون عن أذواقٍ لهم يشعرون بها لا يتصورها المحبوسون في زنازين خطاياهم مثلنا؛ فمن أراد أن يعرف ما هي الطمأنينة، وما هي السكينة، وأيُّ شيءٍ هو راحة البال — فليجرّب التوكل.</p>
+
+<div class="para">
+<div class="para__main">
+<p>هل تظن رجلًا قلبُه معلّقٌ بملك الملوك سبحانه فوق سبع سماواته يُقلقه شيءٌ من مقادير هذه الدنيا؟! تأمّل طمأنينة وسكون خليل الله إبراهيم عليه السلام وهو يرى أعمدة اللهب التي أضرمها قومه ليحرقوه فيها، كما قصّ الله سبحانه:</p>
+<div class="aya">﴿قَالُوا حَرِّقُوهُ وَانصُرُوا آلِهَتَكُمْ إِن كُنتُمْ فَاعِلِينَ﴾<button class="nref" data-note="n18">١٨</button></div>
+<p>وقد اقترب الخليل من الوقوع في هذه النار العظيمة فلم يجزع ولم يرتبك ولم يلتمس منهم الرحمة والعفو والصفح، بل كلُّ الذي كان يقوله هو: «حسبنا الله ونعم الوكيل»؛ ولم يكن ذلك فقط قبل أن يُلقى، بل حتى بعد أن وقع في النار عليه السلام، كما روى البخاري في صحيحه عن ابن عباس قال:</p>
+<div class="hadith">كان آخرَ قولِ إبراهيم حين أُلقي في النار: حسبيَ الله ونعم الوكيل.</div>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n18"><span class="note__t">توثيق</span>الأنبياء ٦٨. وأثر ابن عباس رواه البخاري تعليقًا مجزومًا به في كتاب التفسير.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>ثم تأمّل طمأنينة النبي صلى الله عليه وسلم إذ جاءته الأنباء باجتماع الجيوش ضده، فكان أن قال هذه العبارة ذاتها: «حسبنا الله ونعم الوكيل». وقد قارن ابن عباس بين موقف خليل الله إبراهيم وخليل الله محمد صلى الله عليهما فقال:</p>
+<div class="hadith">«حسبنا الله ونعم الوكيل» قالها إبراهيم عليه السلام حين أُلقي في النار، وقالها محمد صلى الله عليه وسلم حين قالوا: ﴿إِنَّ النَّاسَ قَدْ جَمَعُوا لَكُمْ فَاخْشَوْهُمْ فَزَادَهُمْ إِيمَانًا وَقَالُوا حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ﴾.<button class="nref" data-note="n19">١٩</button></div>
+<p>ثم تأمّل ماذا قال الله عن موقف رسول الله صلى الله عليه وسلم ومن معه، قال الله سبحانه:</p>
+<div class="aya">﴿الَّذِينَ قَالَ لَهُمُ النَّاسُ إِنَّ النَّاسَ قَدْ جَمَعُوا لَكُمْ فَاخْشَوْهُمْ فَزَادَهُمْ إِيمَانًا وَقَالُوا حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ﴾</div>
+<p>ألا تلاحظ روعة الموقف؟! إذ قال الله تعالى ﴿فزادهم إيمانًا﴾! الخبر يقول إن جيوش الأعداء مكتظّة في الطريق إليكم، وهؤلاء يزدادون إيمانًا! يزدادون إيمانًا في اللحظة التي تنهار فيها نفوس كثيرٍ من الناس! رباه، ما أسعد المتوكلين!</p>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n19"><span class="note__t">تخريج وسياق</span>رواه البخاري عن ابن عباس. والآية: آل عمران ١٧٣، ونزلت في غزوة حمراء الأسد بعد أُحد، حين خُوِّفوا بجيش أبي سفيان.</aside>
+</div>
+</div>
+
+<p>حسنًا، من الواضح من خلال التصوير القرآني للتوكل أن التوكل حالةٌ قلبية في التحليل الأخير؛ لذلك كان إمام أهل السنة الإمام أحمد بن حنبل رحمه الله يقول: «التوكل عمل القلب».</p>
+
+<p>فإذا تدبّر قارئ القرآن الآيات التي وصف الله فيها التوكل في كتابه، وكيف يأمر به تارة، ويصف أهل الإيمان به تارة أخرى، ويرغّب المتوكل بأن يكون الله حسبه وأن الله نعم الوكيل — فإنه يدرك حبّ الله سبحانه لقيام هذه الحالة القلبية في عبده، وأنها من أرفع مقامات الإيمان عند الله. فهل ستنقضي هذه الدنيا ونرقد في قبورنا ونحن لم نتذوق هذا المقام العالي: مقام التوكل الذي تزداد به قوة النفس وتصبح القوى البشرية أمامها كالهباء؟!</p>
+
+<div class="quiz" data-section="s4"></div>
+
+<div class="summary">
+  <h4>خلاصة المقطع <span class="tag">إضافة ليست من الكتاب</span></h4>
+  <ul>
+    <li>دافعٌ خامس: التوكل شكرًا على الهداية — ﴿وما لنا ألا نتوكل على الله وقد هدانا سبلنا﴾.</li>
+    <li>مرتبتا التوكل: عامٌّ لازمٌ بمقتضى التوحيد، وخاصٌّ في الأمر المعيّن بعد العزم.</li>
+    <li>تعريفه المختصر: اشتغال الجوارح بالأسباب واشتغال القلب بالله — فلا تعارض بين السبب والاعتماد.</li>
+    <li>ردّ ابن القيم على من ظنّ التوكل تركًا للأسباب: النبي صلى الله عليه وسلم ظاهَر بين درعين، واستأجر دليلًا مشركًا، وادّخر قوت سنة.</li>
+    <li>وشاهد الحال: «حسبنا الله ونعم الوكيل» قالها إبراهيم في النار، وقالها النبي صلى الله عليه وسلم عند اجتماع الجيوش — ﴿فزادهم إيمانًا﴾.</li>
+  </ul>
+</div>
+</section>
+
+<div class="chapter-open">
+  <div class="section__no">الفصل الحادي عشر من الكتاب</div>
+  <div class="line"></div>
+  <h2>كأنّك تراه</h2>
+  <div class="line"></div>
+</div>
+
+<section class="section" id="s5" style="--sc:var(--s5)">
+  <div class="section__head">
+    <div class="section__no">المقطع الخامس</div>
+    <h2>اليقينُ غايةُ التفصيل... والمجلسُ الجبرائيلي <span class="gen">عنوان تنظيمي</span></h2>
+  </div>
+
+<div class="para">
+<div class="para__main">
+<p>أخبرنا سبحانه أنه يفصّل الآيات لنا في كتابه المقروء والمشهود لتحقيق غايةٍ في نفوسنا نحن، كما قال الله سبحانه:</p>
+<div class="aya">﴿يُدَبِّرُ الْأَمْرَ يُفَصِّلُ الْآيَاتِ لَعَلَّكُم بِلِقَاءِ رَبِّكُمْ تُوقِنُونَ﴾<button class="nref" data-note="n20">٢٠</button></div>
+<p>أليس عجيبًا أن تكون هذه التفاصيل المهيبة في آيات الله الشرعية والكونية هي من أجلنا نحن؟! بل من أجل أن ترفّ قلوبنا باليقين!</p>
+<p>وأظهر الله لخليله إبراهيم عليه السلام من الآيات البديعة في ملكوت الكون حتى يكمل يقين الخليل، كما قال الله تعالى: ﴿وَكَذَٰلِكَ نُرِي إِبْرَاهِيمَ مَلَكُوتَ السَّمَاوَاتِ وَالْأَرْضِ وَلِيَكُونَ مِنَ الْمُوقِنِينَ﴾</p>
+<p>ومدح الله سبحانه أحكامه الشرعية بالجمال والحسن، ولكن القرآن ذاته نبّه أنه لا يتمتع بكمال الفهم لحسن وجمال أحكام الله إلا من تطهّرت قلوبهم باليقين، كما قال الله تعالى:</p>
+<div class="aya">﴿وَمَنْ أَحْسَنُ مِنَ اللَّهِ حُكْمًا لِّقَوْمٍ يُوقِنُونَ﴾</div>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n20"><span class="note__t">توثيق</span>الرعد ٢، والأنعام ٧٥، والمائدة ٥٠. و<b>الملكوت</b>: عظيم المُلك وباطنه؛ ولذلك عُدّي بالرؤية القلبية لا البصرية وحدها.</aside>
+</div>
+</div>
+
+<p>ألا يعني هذا أن من فاته إدراك جمال وحسن أحكام الشريعة إنما كان ذلك بسبب ما فات قلبه من اليقين، وبسبب ما زاحم اليقين في قلبه من الارتيابات والتردد؟! ألا يعني هذا أن القلب كلما ارتفع في مدارج اليقين زادت قدرته على مشاهدة المعالم الجمالية لمملكة أحكام الشريعة، وكلما تكاثف ضباب الشكوك والحيرة في أجواء قلبه تعسّر عليه رؤية جماليات الأحكام الشرعية؟!</p>
+
+<div class="para">
+<div class="para__main">
+<p>وجعل الله في هذا القرآن رحمة، لكن الناس يتفاوتون في الانتفاع بهذه الرحمة القرآنية بحسب ما في قلوبهم من اليقين، كما قال الله سبحانه: ﴿هَٰذَا بَصَائِرُ لِلنَّاسِ وَهُدًى وَرَحْمَةٌ لِّقَوْمٍ يُوقِنُونَ﴾. فانظر كيف أنه كلما تعاظم اليقين في قلب العبد تنزّلت عليه رحمات الله وانفتحت له رحمات القرآن.</p>
+<p>وأخبرنا الله أن اليقين هو الطريق إلى أعلى وصفٍ من أوصاف التديّن، وهو وصف <b>الإمامة في الدين</b>، كما قال الله سبحانه:</p>
+<div class="aya">﴿وَجَعَلْنَا مِنْهُمْ أَئِمَّةً يَهْدُونَ بِأَمْرِنَا لَمَّا صَبَرُوا ۖ وَكَانُوا بِآيَاتِنَا يُوقِنُونَ﴾<button class="nref" data-note="n21">٢١</button></div>
+<p>بل إن القرآن لم يرسم لقارئه درب اليقين فقط، وإنما أضاف طريقة التعامل مع الشريحة التي تعاني من نقص اليقين، فنهانا القرآن أن نتأثر بإرجاف مرضى الحيرة والشكوك، كما قال الله عز وجل:</p>
+<div class="aya">﴿فَاصْبِرْ إِنَّ وَعْدَ اللَّهِ حَقٌّ ۖ وَلَا يَسْتَخِفَّنَّكَ الَّذِينَ لَا يُوقِنُونَ﴾</div>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n21"><span class="note__t">توثيق وإيضاح</span>الجاثية ٢٠، والسجدة ٢٤، والروم ٦٠. ولاحظ ركني الإمامة في الدين: <b>صبرٌ</b> و<b>يقين</b> — وهو أصلٌ مشهور عند أهل العلم.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>وفي واقعةٍ شهيرة جدًّا في تاريخ الإسلام — رواها البخاري ومسلم بل غالبُ كتب السنة، وجمع العلامة ابن حجر العسقلاني رواياتِ هذه الواقعة من كتب السنة والفروقَ بينها في أول كتابه «فتح الباري»<button class="nref" data-note="n22">٢٢</button> — جاء جبرائيل عليه السلام إلى مجلسٍ اجتمع فيه النبي صلى الله عليه وسلم وأصحابه، وكان جبرائيل قد تمثّل بصورة رجلٍ بشري، وكان شديد بياض الثياب شديد سواد الشعر، لا يُرى عليه أثر السفر ولا يعرفه من الصحابة أحد. وفي بعض الروايات: «إذ أقبل رجلٌ أحسنُ الناس وجهًا وأطيبُ الناس ريحًا، كأن ثيابه لم يمسّها دنس»، وفي روايةٍ أخرى: «شديد سواد اللحية»، وفي روايةٍ أخرى: «ليس عليه سَحْناء السفر وليس من البلد».</p>
+<p>وهذا كان في غاية الغرابة بالنسبة للصحابة، حتى إنه عمّهم الوجوم كما جاء في بعض الروايات: «فنظر القوم بعضهم إلى بعض فقالوا: ما نعرف هذا»؛ إذ إن هذا الرجل ليس من أهل المدينة — فهم يعرفون أهلها جيدًا — وفي ذات الوقت لا يمكن أن يكون رجلًا مسافرًا قدِم للمدينة، لأن هيئته وملابسه ليست هيئة وملابس المسافر.</p>
+<p>وفي مرأًى من الناس جاء هذا الرجل — الذي هو جبريل في حقيقة الأمر — يتخطّى الصحابة حتى وصل إلى رسول الله صلى الله عليه وسلم وجلس أمامه، وصارت ركبة جبريل تلامس ركبتَي النبي محمد صلى الله عليه وسلم، وزاد جبريل في الاقتراب فوضع يديه على فخذَي النبي، والناس لا يعرفون من هذا الرجل!</p>
+</div>
+<div class="para__notes">
+<aside class="note note--def" id="n22"><span class="note__t">تعريف وتوثيق</span>الحديث معروف بـ<b>«حديث جبريل»</b>، وهو أول حديث في صحيح مسلم من رواية عمر بن الخطاب. و<b>السَّحْناء</b>: الهيئة واللون الذي يعلو المسافر من غبار الطريق ووعثائه.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>ثم بدأ جبريل يسأل النبي صلى الله عليه وسلم أسئلةً مرتّبةً هرميًّا تدور حول أصول الإسلام، والصحابة مشدودةٌ أعناقهم إلى هذا المشهد. فاستفتح جبريل أولَ سؤالٍ بالاستفسار عن مفهوم <b>الإسلام</b>، والنبي صلى الله عليه وسلم يجيب عن السؤال ويستعرض تعريف مفهوم الإسلام، فيجعل الإسلام هو الأركان الخمسة التي تدور حول التوحيد والشعائر الأربع الكبرى.</p>
+<p>ثم ينتقل جبريل ويسأل عن مرتبةٍ أعلى وهي مفهوم <b>الإيمان</b>، والنبي صلى الله عليه وسلم يجيب فيستعرض تعريف الإيمان ويجعله يدور حول التصديق بالغيبيات أساسًا.</p>
+<p>ثم ينتقل جبريل ويسأل عن مرتبةٍ أعلى من الإسلام والإيمان، وهي أعلى مراتب الدين، وهي مفهوم <b>الإحسان</b>؛ فيعرّفها النبي صلى الله عليه وسلم بتعريفٍ غايةٍ في الروعة، إذ يجعل الإحسان هو اليقين المطلق الذي تنهار فيه الفوارق بين الغيب والشهادة، حيث يقول جبريل: فأخبرني عن الإحسان، فيقول المصطفى صلى الله عليه وسلم:</p>
+<div class="hadith">أن تعبد الله كأنك تراه، فإن لم تكن تراه فإنه يراك.<button class="nref" data-note="n23">٢٣</button></div>
+</div>
+<div class="para__notes">
+<aside class="note note--exp" id="n23"><span class="note__t">إيضاح</span>المرتبة الثالثة ليست عملًا جديدًا يُضاف، بل <b>حالٌ قلبية</b> تُؤدّى بها الأعمال السابقة نفسها؛ ولذلك سمّاها المؤلف «سلوكًا قلبيًّا محضًا».</aside>
+</div>
+</div>
+
+<p>انظر أين وصل اليقين! حيث أصبح الأمرُ الغائب الذي لا تراه كأنه الأمرُ الحاضر الذي تراه! إنها تلك اللحظة التي يصبح فيها ما يراه بصرُ رأسك حسًّا بنفس المستوى الذي تراه بصيرةُ قلبك إيمانًا؛ عيونُ الموقن في رأسه وقلبه تسيران جنبًا إلى جنب في هذه الحياة ولا يتخلف أحدهما عن الآخر، ويُبصران المرئيَّ وغيرَ المرئيّ بذات الحدّة البصرية. «أن تعبد الله كأنك تراه».</p>
+
+<p>ثم كشف رسول الله صلى الله عليه وسلم أن هذا هو الإحسان الذي هو أعلى مراتب الدين. أعلى مراتب الدين سلوكٌ قلبيّ محض!</p>
+
+<p>ثم إن هذه الحقيقة الباهرة لم يخبر بها النبي صلى الله عليه وسلم خبرًا عارضًا، بل تمّ تنسيقُ مشهدٍ مهيب يتحاور فيه سيد الملائكة وسيد البشر — جبريل ومحمد — والناس يسمعون ليتلقّوا هذه الحقيقة الكبرى. رباه! أيُّ شرفٍ لمنزلة اليقين أعظمُ من جعل الشارع لها أعظمَ مراتب الدين فوق الإسلام والإيمان، وفي جلسةٍ تعليمية مشهودة بين جبرائيل ومحمد صلى الله عليه وسلم؟!</p>
+
+<div class="quiz" data-section="s5"></div>
+
+<div class="summary">
+  <h4>خلاصة المقطع <span class="tag">إضافة ليست من الكتاب</span></h4>
+  <ul>
+    <li>تفصيل الآيات الشرعية والكونية غايتُه المعلنة في القرآن: ﴿لعلكم بلقاء ربكم توقنون﴾.</li>
+    <li>وإدراك جمال أحكام الشريعة موقوفٌ على اليقين: ﴿ومن أحسن من الله حكمًا لقوم يوقنون﴾.</li>
+    <li>والانتفاع برحمة القرآن يتفاوت باليقين، والإمامة في الدين ركناها: صبرٌ ويقين.</li>
+    <li>وحديث جبريل رتّب الدين ثلاث مراتب: إسلامٌ (أركان)، فإيمانٌ (تصديق بالغيب)، فإحسانٌ.</li>
+    <li>وأعلى المراتب — الإحسان — سلوكٌ قلبيّ محض: ﴿أن تعبد الله كأنك تراه﴾، أي أن يصير الغيب كالمشاهد.</li>
+  </ul>
+</div>
+</section>
+
+<section class="section" id="s6" style="--sc:var(--s6)">
+  <div class="section__head">
+    <div class="section__no">المقطع السادس</div>
+    <h2>على مِشرحة اليقين: سبعةُ أخبارٍ نختبر بها أنفسنا <span class="gen">عنوان تنظيمي</span></h2>
+  </div>
+
+<div class="para">
+<div class="para__main">
+<p>على أيّ حال، هذه المواضع الكثيرة التي يُبدئ فيها القرآن ويكرر ويعيد في منزلة اليقين، وهذا المجلس الجبرائيلي المحمدي العظيم الذي جُعل فيه اليقين أعلى مراتب الدين — يثير الانتباه فعلًا حول موقع اليقين في دين الله. فما هو هذا اليقين يا ترى؟ وما هي حقيقته؟ وما هي موارده؟ وهل نحن موقنون وبلغنا هذه المنزلة، أم نعاني من ضعفٍ في اليقين؟</p>
+<p>اليقين في حقيقته هو <b>كمال جزم القلب بخبر الله ورسوله، وفراغه من التردد والارتياب والاحتمالات</b>. اليقين هو أن يصبح خبر الله ورسوله كأنه المعاينة؛ فإذا صار الخبر كالمعاينة فقد كُشفت سُجُف<button class="nref" data-note="n24">٢٤</button> اليقين وارتُشف النبع.</p>
+<p>خذ بعض الأمثلة من خبر الله ورسوله، ودعنا نختبر أنفسنا فوق مِشرحة اليقين:</p>
+</div>
+<div class="para__notes">
+<aside class="note note--def" id="n24"><span class="note__t">تعريف لفظ</span><b>السُّجُف</b>: جمع سِجْف، وهو السِّتر المرخى على الباب. والصورة: أن اليقين محجوبٌ بستارٍ يُرفع لا بابٍ يُفتح.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p><b>الأول:</b> أخبرنا الله سبحانه — الذي لا أصدقَ منه حديثًا ولا أصدقَ منه قيلًا — بقوله: ﴿وَمَا أَنفَقْتُم مِّن شَيْءٍ فَهُوَ يُخْلِفُهُ﴾<button class="nref" data-note="n25">٢٥</button>؛ فهل نحن حين نمدّ يدنا بحفنةٍ من دراهم الصدقة نضعها في يد المسكين يتشبّع قلبنا يقينًا بأنها لا تنقص مالنا بل سيُخلفه الله؟ هل نجد في قلوبنا اليقين بهذا الخبر القرآني؟</p>
+<p><b>الثاني:</b> ويقول الله سبحانه: ﴿وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ ۖ أُجِيبُ دَعْوَةَ الدَّاعِ إِذَا دَعَانِ﴾؛ فهل نحن إذا رفعنا أكفّنا ندعو الله ونسأله تمتلئ قلوبنا يقينًا بقرب الله وإجابته، أم نحن ندعو الله باعتباره سلوكًا مطلوبًا فقط لا أنه أعظم الوسائل فعلًا لتحقيق المطلوب؟ بل هناك من يدعو الله على طريقة «إن لم ينفع لم يضرّ» والعياذ بالله!</p>
+<p><b>الثالث:</b> وأخبرنا الله أصدقُ القائلين سبحانه عن أن القرآن رُقيةٌ وشفاء بقوله تعالى: ﴿وَنُنَزِّلُ مِنَ الْقُرْآنِ مَا هُوَ شِفَاءٌ وَرَحْمَةٌ لِّلْمُؤْمِنِينَ﴾؛ فهل تفور قلوبنا باليقين بخبر الله هذا فنفزع للرقية كلما أصبنا بالمرض ونرقي أنفسنا ونحن موقنون بخبر الله أن هذا القرآن شفاء؟</p>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n25"><span class="note__t">توثيق</span>سبأ ٣٩، والبقرة ١٨٦، والإسراء ٨٢.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p><b>الرابع:</b> وأخبرنا الله بخيرية هذه الأمة على سائر الأمم وأنها أحبُّ الأمم إلى الله، كما في قول الله تعالى: ﴿كُنتُمْ خَيْرَ أُمَّةٍ أُخْرِجَتْ لِلنَّاسِ﴾، ويقول الله عز وجل: ﴿وَأَنتُمُ الْأَعْلَوْنَ﴾<button class="nref" data-note="n26">٢٦</button>؛ فهل المسلم حين يقارن هذه الأمة ببقية الأمم التي تمتلك إمكانيات مادية يشمخ قلبه يقينًا بخبر الله بشرف هذه الأمة وخيريتها وعلوّها على غيرها مهما امتلك الآخرون من إمكانيات مادية، أم يمرّ في زوايا القلب شكوكٌ وارتياباتٌ بخبر الله عن خيرية هذه الأمة؟</p>
+<p><b>الخامس:</b> وشرع الله تأديب الزوجة الناشز بشروطٍ وضوابطَ وأخلاقياتٍ معروفة في كتب الفقه: ﴿وَاللَّاتِي تَخَافُونَ نُشُوزَهُنَّ فَعِظُوهُنَّ وَاهْجُرُوهُنَّ فِي الْمَضَاجِعِ وَاضْرِبُوهُنَّ﴾<button class="nref" data-note="n27">٢٧</button>؛ فهل يستعلي القلب بخبر الله ويوقن أن تشريع الله هذا يفوق كل النظريات الغربية في هذا المجال، أم ترى قلبًا يتملّص حرجًا من هذه الآية أمام الغربيين؟</p>
+<p><b>السادس:</b> وأخبرنا الله تفصيلًا عن ترصّد الشيطان وأفعاله بالإنسان — مثل النزغ والهمز والوسوسة والتزيين والوعد والخطوات والتسويل والاستحواذ والأزّ إلى آخر ذلك — فهل نعيش حياتنا ونحن موقنون بخبر الله عن حضور الشيطان وترصّده؟</p>
+<p><b>السابع:</b> وأخبرنا الله بوعدٍ عظيم أننا إن آمنّا وعملنا صالحًا أن يحقق لنا رسالةً عظيمة، وهي قول الله تعالى:</p>
+<div class="aya">﴿وَعَدَ اللَّهُ الَّذِينَ آمَنُوا مِنكُمْ وَعَمِلُوا الصَّالِحَاتِ لَيَسْتَخْلِفَنَّهُمْ فِي الْأَرْضِ كَمَا اسْتَخْلَفَ الَّذِينَ مِن قَبْلِهِمْ وَلَيُمَكِّنَنَّ لَهُمْ دِينَهُمُ الَّذِي ارْتَضَىٰ لَهُمْ﴾</div>
+<p>فهل يفور القلب يقينًا بخبر الله عن هذه الحقيقة السياسية القرآنية في طريق النهضة، وأن الإيمان والعمل الصالح هو الطريق للاستخلاف والتمكين في هذه الأرض؟</p>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n26"><span class="note__t">توثيق</span>آل عمران ١١٠، وآل عمران ١٣٩، ثم النور ٥٥.</aside>
+<aside class="note note--exp" id="n27"><span class="note__t">إيضاح مهم</span>النساء ٣٤. والمؤلف نصّ على أن الحكم مقيّدٌ بـ«شروط وضوابط وأخلاقيات معروفة في كتب الفقه»، ومنها عند أهل العلم: أن يكون بعد الوعظ والهجر، وأن يكون غير مبرّح ولا شائن، وأن يُترك إذا لم يُفد.</aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>هذه مجرد نماذج لخبر الله سبحانه وتعالى في كتابه العزيز: ﴿وَمَنْ أَصْدَقُ مِنَ اللَّهِ حَدِيثًا﴾ · ﴿وَمَنْ أَصْدَقُ مِنَ اللَّهِ قِيلًا﴾. وهذه وعود القرآن التي وعدنا الله إياها: ﴿وَعْدَ اللَّهِ ۖ لَا يُخْلِفُ اللَّهُ وَعْدَهُ﴾ · ﴿أَلَا إِنَّ لِلَّهِ مَا فِي السَّمَاوَاتِ وَالْأَرْضِ ۗ أَلَا إِنَّ وَعْدَ اللَّهِ حَقٌّ وَلَٰكِنَّ أَكْثَرَهُمْ لَا يَعْلَمُونَ﴾</p>
+<p>فهل كانت وعود الله لنا سبحانه في القرآن محلَّ جزمٍ وثقةٍ ويقينٍ مطلق في قلوبنا حاضرةً في حياتنا، أم هي أشبه بالإيمان البارد الفاتر، وهي أشبه بالحاضر الغائب؟</p>
+<p>والعلاقة بين وعد الله وعبودية اليقين ليست مجرد استنباط، بل القرآن ذاته أشار إليها كما قال الله سبحانه: ﴿فَاصْبِرْ إِنَّ وَعْدَ اللَّهِ حَقٌّ وَلَا يَسْتَخِفَّنَّكَ الَّذِينَ لَا يُوقِنُونَ﴾. فهل استطعنا أن نصل لعبودية اليقين التي هي أعظم مراتب الدين فوق الإسلام والإيمان، فنُخرج من قلوبنا كل ذرّة احتمالٍ أو ارتيابٍ أو تردد؟</p>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n28"><span class="note__t">توثيق</span>النساء ٨٧ و١٢٢، والروم ٦، ويونس ٥٥، والروم ٦٠.<button class="nref" data-note="n28">٢٨</button></aside>
+</div>
+</div>
+
+<div class="para">
+<div class="para__main">
+<p>ومن المواقف المحزنة التي يمرّ بها المؤمن في حياته: حينما يقارن بين تعظيم الوحي لشأن اليقين وجعله أشرفَ منازل الدين، وبالمقابل يأتيك من يردّد: «لا أحد يملك الحقيقة المطلقة»! برغم أن الحقيقة المطلقة في القرآن أصلًا.</p>
+<p>المؤمنون يجاهدون أنفسهم ليصلوا إلى اليقين، وهؤلاء المساكين يجاهدون أنفسهم ليصلوا إلى الشكّ<button class="nref" data-note="n29">٢٩</button>! كلما طالعتُ تراجم أئمة الدين رأيت تنافسَهم في اليقين، وإذا رأيت كتابات بعض المتفلسفة رأيت التنافس في الشكوك والارتيابات والحيرة؛ فشتّان بين الفريقين!</p>
+</div>
+<div class="para__notes">
+<aside class="note note--fix" id="n29"><span class="note__t">تصحيح تفريغ</span>انقطعت الجملة في التسجيل هكذا: «المؤمنون يجاهدون أنفسهم لِيَ... وهؤلاء المساكين يجاهدون أنفسهم لِيَش...»، وأُكملت هنا بما تدلّ عليه المقابلة في تمام الفقرة: <b>ليصلوا إلى اليقين / ليصلوا إلى الشك</b>.</aside>
+</div>
+</div>
+
+<div class="quiz" data-section="s6"></div>
+
+<div class="summary">
+  <h4>خلاصة المقطع <span class="tag">إضافة ليست من الكتاب</span></h4>
+  <ul>
+    <li>حدّ اليقين: كمال جزم القلب بخبر الله ورسوله وفراغه من التردد — حتى يصير الخبر كالمعاينة.</li>
+    <li>سبعة أخبارٍ يختبر بها المرء يقينه: خَلَف النفقة، وقرب المجيب، وشفاء القرآن، وخيرية الأمة، وحكم النشوز، وترصّد الشيطان، ووعد الاستخلاف.</li>
+    <li>الاختبار ليس في التصديق النظري، بل في أثره لحظة الفعل: عند الصدقة، وعند الدعاء، وعند المرض، وعند المقارنة بالأمم.</li>
+    <li>وعود الله محلُّ جزمٍ لا «إيمانٍ بارد فاتر» — والقرآن نفسه ربط الصبر على الوعد باليقين.</li>
+    <li>المفارقة الختامية: أئمة الدين يتنافسون في اليقين، وبعض المتفلسفة يتنافسون في الشك.</li>
+  </ul>
+</div>
+</section>
+
+<div class="chapter-open">
+  <div class="section__no">الفصل الثاني عشر والخاتمة</div>
+  <div class="line"></div>
+  <h2>لم نفعلها... وحُسبت علينا</h2>
+  <div class="line"></div>
+</div>
+
+<section class="section" id="s7" style="--sc:var(--s7)">
+  <div class="section__head">
+    <div class="section__no">المقطع السابع</div>
+    <h2>أوزارُ الآخرين في صحيفتك... ثم الخاتمة <span class="gen">عنوان تنظيمي</span></h2>
+  </div>
+
+<p>حين يقف الإنسان في اليوم الآخر لحظةَ تسليم الصحائف والاطلاع على محتوياتها، فإن الإنسان ربما لن يتفاجأ كثيرًا من خطايا نفّذها فعلًا وقام بها، فهو قد علم مسبقًا بأنه سيراها في صحيفته؛ وإنما المفاجأة المذهلة حقًّا أن يجد الإنسان في صحيفته <b>خطايا لم يفعلها</b> ومع ذلك يجدها مدوّنةً في كتاب أعماله محسوبةً عليه!</p>
+
+<p>ربما يجد الإنسان في صحيفته خطايا لعشرات الأشخاص، بل ربما لمئات الأشخاص، بل ربما لملايين الأشخاص، وكلها مجدولةٌ في صحيفة سيئاته وسيحاسبه الله عليها!</p>
+
+<div class="para">
+<div class="para__main">
+<p>حسنًا، من أين جاءته هذه الأعمال التي لم يعملها؟ وكيف حُسبت عليه خطايا لم يفعلها هو؟ استمع إلى هاتين الآيتين العجيبتين اللتين تكشفان هذه الحقيقة المخيفة:</p>
+<div class="aya">﴿لِيَحْمِلُوا أَوْزَارَهُمْ كَامِلَةً يَوْمَ الْقِيَامَةِ ۙ وَمِنْ أَوْزَارِ الَّذِينَ يُضِلُّونَهُم بِغَيْرِ عِلْمٍ﴾ · ﴿وَلَيَحْمِلُنَّ أَثْقَالَهُمْ وَأَثْقَالًا مَّعَ أَثْقَالِهِمْ﴾<button class="nref" data-note="n30">٣٠</button></div>
+<p>يا الله! كم من كلمةٍ نطقنا بها في مجلسٍ من المجالس وقلنا فيها على الله بغير علم، فتأثّر بها أحد الجالسين فتجرّأ على المعصية، فصارت خطيئته في صحائفنا ونحن لا نعلم! وكلما كرّر معصيته تكررت في صحائفنا، يلاحقنا شؤمُ تلك الجرأة على الشريعة!</p>
+</div>
+<div class="para__notes">
+<aside class="note note--doc" id="n30"><span class="note__t">توثيق وإيضاح</span>النحل ٢٥، والعنكبوت ١٣. ولاحظ قوله ﴿ومن أوزارهم﴾ بـ«مِن» التبعيضية: فلا يُنقَص من وزر التابع شيء، وإنما يُحمَّل المتبوع مثله.</aside>
+</div>
+</div>
+
+<p>وكم من مقالةٍ أثار فيها كاتبٌ من الكتّاب شبهةً شوّشت على آلاف القراء، فتساهلوا في ذلك الحكم الشرعي ونقلوا بدورهم تلك الشبهة إلى آلافٍ آخرين، فيأتي ذلك الكاتب يوم القيامة يُجرجر في صحيفته خطايا آلافٍ وآلافٍ من الناس لا يعرفهم!</p>
+
+<p>وكم من منتسبٍ للمشيخة مكّنه التغريبيون من فضائياتهم ليوفّر لهم لغةً شرعية مشحونةً بمضامين غير شرعية، فانخدع به ملايينُ من العامة، وثِقوا في لحيته وعباءته ولحنه بألفاظٍ تشبه ألفاظ المشايخ، فصار يدفع باتجاه توهين الدين في نفوس الناس وأوقعهم في شذوذاتٍ فقهية وشبهاتٍ عقدية كانوا في سلامةٍ منها!</p>
+
+<div class="para">
+<div class="para__main">
+<p>وقد يظن بعض الناس أن ازدياد عدد المشاهدين لهذا المتصدّر يدلّ على الإنجاز، بل ترى بعضهم يقول: هذا الرجل يُسمع له ويشاهده كذا من الناس! ولا يعلم هذا المسكين أن زيادة الأرقام تعني <b>زيادة عدد الضحايا</b>، لا يعلم أن زيادة الأرقام تعني زيادة أوزار المضلَّلين التي ربما يحملها يوم القيامة<button class="nref" data-note="n31">٣١</button>.</p>
+<p>والله إن الإنسان إذا جلس مع نفسه وأخذ يتذكّر خطاياه أدرك أنها كافيةٌ أن توبق مستقبله الأخروي؛ فكيف إذا انضمّ إلى ذلك أن يحمل فوق ظهره معاصيَ أشخاصٍ آخرين لا يعرفهم؟! والله إن الغبن كلَّ الغبن أن يرى المرء نفسه يوم القيامة يصطلي بنار جهنم، لا لمعصيةٍ فعلها هو، وإنما يُعاقَب على معصيةٍ فعلها غيره! إنها مجردُ كلمةٍ متهورة في حكمٍ شرعي استحسنها المرء بذوقه وغفل عن تبعاتها المفتوحة.</p>
+<p>إذا كان الأمر بمثل هذه الخطورة فكيف غفلنا عنه؟! إنه الرَّينُ الذي غلّف القلوب حتى غفلت عن فضائعَ وأهوالٍ هي أقرب للمرء من شِراك نعله<button class="nref" data-note="n32">٣٢</button>.</p>
+<p>أخي الغالي، والله إني لأحبّ لك ما أحبّ لنفسي؛ فيا ليتنا يا أخي الكريم إذا أُثيرت في مجلسٍ من المجالس مسألةٌ شرعية أن نتلوَ في أنفسنا قول الله تعالى: ﴿لِيَحْمِلُوا أَوْزَارَهُمْ كَامِلَةً يَوْمَ الْقِيَامَةِ وَمِنْ أَوْزَارِ الَّذِينَ يُضِلُّونَهُم بِغَيْرِ عِلْمٍ﴾ · ﴿وَلَيَحْمِلُنَّ أَثْقَالَهُمْ وَأَثْقَالًا مَّعَ أَثْقَالِهِمْ﴾</p>
+<p>فيا ليتنا نسلم من معاصينا، فضلًا عن أن نسلم من معاصي الآخرين!</p>
+</div>
+<div class="para__notes">
+<aside class="note note--exp" id="n31"><span class="note__t">إيضاح</span>القاعدة التي يقرّرها المؤلف: الأثر مقياسٌ ذو اتجاهين — فكما تُضاعَف الحسنة بعدد المهتدين، تُضاعَف السيئة بعدد المتأثرين. والرقم لا يشهد للمتصدّر ولا عليه إلا بحسب ما يبثّه.</aside>
+<aside class="note note--link" id="n32"><span class="note__t">ربط داخلي</span>عاد المؤلف هنا إلى تعبيرين مرّا في أول الكتاب: <b>الرَّين</b> (انظر <a href="03.html#s4">الجزء الثالث</a>)، و<b>شِراك النعل</b> من بيت أبي بكر رضي الله عنه (<a href="01.html#s6">الجزء الأول</a>) — فالكتاب يُغلق دائرته بألفاظه نفسها.</aside>
+</div>
+</div>
+
+<div class="box box--src" style="border-right-color:var(--s7)">
+  <h4>◆ خاتمة الكتاب</h4>
+  <p>ما سبق كان نظراتٍ وخطراتٍ في بعض معاني الإيمان والتديّن التي استعرضها القرآن، وهي تدور حول: استحضار الآخرة ولقاء الله والأحداث التفصيلية التي قصّها القرآن عمّا سيحدث في هذا اليوم القريب القادم؛ وما وصفه القرآن من قسوة بعض القلوب حتى تتفوق عليها الصخور؛ وتعظيمِ كثيرٍ منا لدنياه أكثرَ من تعظيمه لصلاة الفجر، بل تقديمِ بعضنا لحظاتِ الترفيه على الصلاة؛ وبهاءِ صورة المتهجدين بالليل حين رسمها القرآن؛ وخطورةِ استبعاد وقوع نفاق وأنه يقع بأمورٍ نتهاون فيها؛ وتفخيمِ القرآن لشأن التسبيح حتى جعل الله العالم من حولنا يعجّ به؛ وغفلةِ كثيرٍ منا عن القوة الساحقة التي يثمرها التوكل؛ وأثرِ الحسم والجزم والثقة واليقين بخبر الله ورسوله في صعود المؤمن إلى أعلى مراتب الدين؛ وأخيرًا العجبِ من سيئاتٍ قد تُحسب على المرء وهو لم يفعلها.</p>
+  <p>وهذه المعاني الإيمانية ليست إلا نماذجَ يسيرة جدًّا مما احتواه القرآن بأمثلته وقصصه وبراهينه وتنبيهاته؛ وفي مطاوي آيات القرآن بحرٌ لا تُعرف شواطئه من حقائق التديّن، وأسرارِ العلاقة مع الله سبحانه وتعالى، ودقائقِ التعامل مع الخالق جل وعلا. والقارئ الكريم ليس بعاجزٍ بإذن الله أن يتدبّر القرآن وينفع أهله وأصدقاءه بمعاني الإيمان وحقائق التديّن والتنسّك والدروب التي توصل إلى الله سبحانه.</p>
+  <p>والله أعلم، وصلى الله وسلم على نبينا محمد وآله وصحبه أجمعين.</p>
+</div>
+
+<div class="quiz" data-section="s7"></div>
+
+<div class="summary">
+  <h4>خلاصة المقطع <span class="tag">إضافة ليست من الكتاب</span></h4>
+  <ul>
+    <li>أشدّ المفاجآت يوم الصحائف: خطايا لم يفعلها صاحبها ومع ذلك حُمّلها.</li>
+    <li>مصدرها آيتا النحل والعنكبوت: حملُ أوزار من أُضلّوا بغير علم — بلا نقصٍ من أوزارهم.</li>
+    <li>أمثلته: كلمةٌ متهورة في مجلس، ومقالةٌ تُثير شبهة، ومتصدّرٌ يُوهّن الدين بلغةٍ شرعية الظاهر.</li>
+    <li>ولذلك فارتفاع أرقام المتابعين ليس دليل إنجازٍ بذاته، بل قد يكون عدّادًا للضحايا.</li>
+    <li>وخاتمة الكتاب تجمع موضوعاته الاثني عشر في فقرةٍ واحدة، وتُعلن أنها نماذج يسيرة من بحرٍ لا تُعرف شواطئه.</li>
+  </ul>
+</div>
+</section>
+
+<div class="box box--guide">
+  <h4>تمّ الكتاب</h4>
+  <p class="small">بهذا الجزء يكتمل كتاب «رقائق القرآن» لإبراهيم السكران في خمسة ملفات، منقولًا نصُّه كاملًا بلا حذفٍ ولا اختصار. ولمراجعة الأجزاء السابقة أو تحميل بطاقات الكتاب كاملة، انتقل إلى <a href="../index.html">فهرس الكتاب</a>.</p>
+</div>
+</div><!-- /prose -->
+
+<section class="cards-wrap" id="cards">
+  <div class="section__no" style="color:var(--gold)">مراجعة</div>
+  <h2 style="margin:4px 0 6px;font-size:28px">بطاقات التثبيت</h2>
+  <p class="small">اضغط على البطاقة لقلبها. البطاقات مرتّبة على المقاطع، ويمكنك تحميلها ملفَّ TSV جاهزًا للاستيراد في Anki.</p>
+  <div class="filters" id="filters"></div>
+  <div class="card" id="card">
+    <div class="card__in" id="cardIn">
+      <div class="card__f"><span class="card__tag" id="tagF"></span><span id="front"></span></div>
+      <div class="card__b"><span class="card__tag">الإجابة</span><span id="back"></span></div>
+    </div>
+  </div>
+  <div class="cnav">
+    <button id="prevC">السابق ›</button>
+    <span id="pos">١ / ٣٦</span>
+    <button id="nextC">‹ التالي</button>
+  </div>
+  <button class="dl" id="dl">⤓ تحميل البطاقات (TSV)</button>
+</section>
+
+<div class="foot">
+  رقائق القرآن — إبراهيم السكران · الجزء الخامس والأخير: أقوى الناس · كأنك تراه · لم نفعلها وحُسبت علينا · الخاتمة<br>
+  المتن منقول كاملًا بلا حذف؛ والهوامش والخلاصات والأسئلة إضافةٌ ليست من الكتاب.
+</div>
+</main>
+
+<script>
+const SECTIONS=[
+ {id:"s1",t:"القوة ليست في قوة الأسباب",c:"#3f5c6b"},
+ {id:"s2",t:"لماذا نتوكل على الله؟",c:"#4f6b4a"},
+ {id:"s3",t:"التوكل حِمًى من سلطان الشيطان",c:"#6b3f3f"},
+ {id:"s4",t:"ما التوكل؟ وطمأنينة الخليل",c:"#6b5a2e"},
+ {id:"s5",t:"اليقين والمجلس الجبرائيلي",c:"#4a3f6b"},
+ {id:"s6",t:"على مِشرحة اليقين",c:"#2f6b64"},
+ {id:"s7",t:"أوزار الآخرين... ثم الخاتمة",c:"#7a4a3c"}
+];
+
+const QUIZ_DATA=[
+{id:"q1",sectionId:"s1",question:"«من سرّه أن يكون أقوى الناس فليتوكل على الله» — ما درجة هذا الأثر كما بيّنه المؤلف؟",options:["حديث متفق عليه","أثرٌ عن بعض السلف، ورُوي مرفوعًا ولا يثبت","حديث حسن لغيره","من الإسرائيليات"],correctIndex:1,explanation:"نقله ابن تيمية عن بعض السلف، ونبّه المؤلف إلى أن رفعه إلى النبي صلى الله عليه وسلم لا يثبت، وقد أعلّه أبو جعفر العقيلي."},
+{id:"q2",sectionId:"s1",question:"ما الخلل الذي وصفه ابن تيمية في كثيرٍ من «المتفقّهة والمتعبّدة»؟",options:["ضعف علمهم بالفقه","نظرُهم إلى جانب الأمر والنهي دون جانب القدر والتوكل والاستعانة","إفراطهم في الرخص","اشتغالهم بالدنيا"],correctIndex:1,explanation:"قال: فهم مع حسن قصدهم وتعظيمهم للحرمات يغلب عليهم الضعف والعجز والخذلان."},
+{id:"q3",sectionId:"s2",question:"كم مرة تكررت جملة ﴿وكفى بالله وكيلًا﴾ في القرآن؟",options:["ثلاث مرات","خمس مرات","سبع مرات","مرتان"],correctIndex:1,explanation:"ثلاثًا في سورة النساء ومرتين في سورة الأحزاب."},
+{id:"q4",sectionId:"s2",question:"﴿ومن يتوكل على الله فهو حسبه﴾ في سورة:",options:["المائدة","الطلاق","الأنفال","إبراهيم"],correctIndex:1,explanation:"الطلاق ٣، وجاءت بعد ﴿ومن يتق الله يجعل له مخرجًا﴾ — فاقترنت التقوى بالتوكل."},
+{id:"q5",sectionId:"s3",question:"أيّ أساليب الشيطان عدّه المؤلف من أخطرها؟",options:["الوسوسة عند الصلاة","التزيين: وضع الباطل في قالب الطبيعي والمصلحي","الهمز واللمز","التخويف من الموت"],correctIndex:1,explanation:"لأنه ينتهي بصاحب المعصية إلى الدفاع عنها واتهام الناصحين بالغلو — بعد أن كان يؤنّبه ضميره."},
+{id:"q6",sectionId:"s3",question:"ما الكتاب الذي أفرده ابن القيم لمكايد الشيطان؟",options:["مدارج السالكين","إغاثة اللهفان من مصايد الشيطان","الداء والدواء","طريق الهجرتين"],correctIndex:1,explanation:"ذكر فيه صحة القلب ومرضه وأدويته، وفصّل في مكايد الشيطان في العقيدة والفقه والاتجاهات المخالفة."},
+{id:"q7",sectionId:"s4",question:"ما تعريف التوكل المختصر الذي اختاره المؤلف؟",options:["ترك الأسباب اعتمادًا على الله","اشتغال الجوارح بالأسباب واشتغال القلب بالله","كثرة الدعاء عند الشدائد","الرضا بالقضاء بعد وقوعه"],correctIndex:1,explanation:"فلا تعارض بين عمل الجارحة (السبب) وعمل القلب (الاعتماد)."},
+{id:"q8",sectionId:"s4",question:"بمَ ردّ ابن القيم على من ظنّ أن التوكل ترك الأسباب؟",options:["بإجماع الفقهاء","بأفعال النبي صلى الله عليه وسلم: ظاهَر بين درعين، واستأجر دليلًا مشركًا، وادّخر قوت سنة","بأقوال الصوفية أنفسهم","بالقياس على الزكاة"],correctIndex:1,explanation:"وقال إنهم ادّعوا لأنفسهم حالًا أكمل من حال رسول الله صلى الله عليه وسلم وأصحابه — وهو سيد المتوكلين."},
+{id:"q9",sectionId:"s5",question:"ما ترتيب المراتب في حديث جبريل؟",options:["الإيمان ثم الإسلام ثم الإحسان","الإسلام ثم الإيمان ثم الإحسان","الإحسان ثم الإيمان ثم الإسلام","الإسلام ثم الإحسان ثم الإيمان"],correctIndex:1,explanation:"أسئلة مرتّبة هرميًّا: الأركان الخمسة، ثم التصديق بالغيبيات، ثم الإحسان وهو أعلاها."},
+{id:"q10",sectionId:"s5",question:"ما الركنان اللذان جعلهما الله سببًا للإمامة في الدين؟",options:["العلم والعمل","الصبر واليقين","الصدق والإخلاص","الجهاد والهجرة"],correctIndex:1,explanation:"﴿وجعلنا منهم أئمة يهدون بأمرنا لما صبروا وكانوا بآياتنا يوقنون﴾ السجدة ٢٤."},
+{id:"q11",sectionId:"s6",question:"ما حدّ اليقين كما عرّفه المؤلف؟",options:["كثرة الأدلة على صدق الخبر","كمال جزم القلب بخبر الله ورسوله وفراغه من التردد والاحتمالات","العلم بالغيب","رؤية الآخرة في المنام"],correctIndex:1,explanation:"وزاد: اليقين أن يصبح خبر الله ورسوله كأنه المعاينة."},
+{id:"q12",sectionId:"s6",question:"ما مقصود المؤلف من عرض الأخبار السبعة على «مِشرحة اليقين»؟",options:["اختبار حفظ الآيات","اختبار أثر التصديق لحظةَ الفعل: عند الصدقة والدعاء والمرض وغيرها","بيان ضعف أسانيدها","الترجيح بين أقوال المفسرين"],correctIndex:1,explanation:"فالمقياس ليس التصديق النظري، بل ما يظهر منه عند الممارسة العملية."},
+{id:"q13",sectionId:"s7",question:"هل يُنقَص من أوزار التابعين شيءٌ حين يحمل المُضِلّ مثلها؟",options:["نعم، يُقسَّم الوزر بينهما","لا، فالمُضِلّ يحمل أوزاره كاملة ومن أوزارهم، ولا يُنقص من أوزارهم شيء","لا يحمل المضلّ شيئًا","يسقط الوزر عن الجميع بالتوبة وحدها"],correctIndex:1,explanation:"﴿ليحملوا أوزارهم كاملة يوم القيامة ومن أوزار الذين يضلونهم بغير علم﴾ النحل ٢٥، و«مِن» للتبعيض."},
+{id:"q14",sectionId:"s7",question:"ما دلالة ارتفاع أعداد متابعي المتصدّر عند المؤلف؟",options:["دليل إنجازٍ ونجاح","قد تعني زيادة عدد الضحايا وزيادة الأوزار المحمولة","لا دلالة لها البتة","دليل على صحة علمه"],correctIndex:1,explanation:"قال: لا يعلم هذا المسكين أن زيادة الأرقام تعني زيادة أوزار المضلَّلين التي ربما يحملها يوم القيامة."}
+];
+
+const CARDS_DATA=[
+{s:"s1",f:"ما الأثر السلفي الذي بُني عليه فصل «أقوى الناس»؟ وما درجته؟",b:"«من سرّه أن يكون أقوى الناس فليتوكل على الله» — أثرٌ عن بعض السلف، ورُوي مرفوعًا ولا يثبت، أعلّه العقيلي."},
+{s:"s1",f:"ما الخلل الذي وصفه ابن تيمية في «التحفة العراقية»؟",b:"نظرٌ إلى جانب الأمر والنهي والعبادة دون جانب القدر والتوكل والاستعانة — فيغلب عليهم الضعف والعجز والخذلان."},
+{s:"s1",f:"ما «التحفة العراقية»؟",b:"رسالةٌ لابن تيمية في الأعمال القلبية، من أنفس ما كُتب في بابها."},
+{s:"s1",f:"من أبو جعفر العقيلي؟",b:"إمامٌ في علل الحديث (ت ٣٢٢هـ)، صاحب «الضعفاء الكبير»."},
+{s:"s1",f:"ما التصور الذي جاء الفصل لزلزلته؟",b:"أن أقوى الناس هم أصحاب أقوى الأسباب المادية — والحقيقة أن القوة بقوة التعلق بالله."},
+{s:"s2",f:"ما الدوافع الثلاثة الأولى للتوكل في المنظور القرآني؟",b:"أنه معيار الإيمان · وأن الله أعظم وكيل · وأنه هو الذي يكفي عبده."},
+{s:"s2",f:"كيف جعل القرآن التوكل معيارًا للإيمان؟",b:"﴿وعلى الله فتوكلوا إن كنتم مؤمنين﴾ المائدة ٢٣ · ﴿إن كنتم آمنتم بالله فعليه توكلوا إن كنتم مسلمين﴾ يونس ٨٤."},
+{s:"s2",f:"أين وردت ﴿وكفى بالله وكيلًا﴾؟ وكم مرة؟",b:"خمس مرات: ثلاثًا في النساء ومرتين في الأحزاب."},
+{s:"s2",f:"آية الكفاية وموضعها؟",b:"﴿ومن يتوكل على الله فهو حسبه﴾ الطلاق ٣، بعد ﴿ومن يتق الله يجعل له مخرجًا﴾."},
+{s:"s2",f:"ما المثال العملي الذي ضربه المؤلف للكفاية؟",b:"اطمئنان من يعلم أن مسؤولًا تكفّل بمعاملته — فكيف بمن تكفّل الله بأمره وهو خالق الحاجة وسبيلها ومانعها؟"},
+{s:"s3",f:"الآية التي تجعل التوكل حِمًى من الشيطان؟",b:"﴿إنه ليس له سلطان على الذين آمنوا وعلى ربهم يتوكلون﴾ النحل ٩٩."},
+{s:"s3",f:"عدّد بعض أفعال الشيطان التي استقرأها المؤلف من القرآن.",b:"الإزلال والاستزلال · الإضلال · النزغ · الهمز · الوسوسة · التسويل والإملاء · الاستهواء · الأزّ · الإنساء · الخطوات · التزيين · الصدّ."},
+{s:"s3",f:"ما مراحل «التزيين» الثلاث كما وصفها المؤلف؟",b:"تأنيب ضمير وشكر للناصحين · ثم اعتياد · ثم مدافعة عن المعصية واتهام الناصحين بالغلوّ."},
+{s:"s3",f:"ما الفرق بين نوعَي النسيان؟",b:"نسيان ذهولٍ معفوّ عنه (غياب العلم أو استتاره) · ونسيان غفلةٍ متوعَّد عليه (حضور العلم وغياب الخشية)."},
+{s:"s3",f:"ما كتاب ابن القيم في هذا الباب؟ وبمَ خُتم؟",b:"«إغاثة اللهفان من مصايد الشيطان» — وخُتم بتلاعب الشيطان بالاتجاهات غير الإسلامية كالفلاسفة والمجوس وأهل الكتابين."},
+{s:"s4",f:"ما الدافع الخامس للتوكل؟ وما دليله؟",b:"التوكل شكرًا لله على الهداية — ﴿وما لنا ألا نتوكل على الله وقد هدانا سبلنا﴾ إبراهيم ١٢."},
+{s:"s4",f:"ما مرتبتا التوكل؟",b:"توكلٌ عامّ لازمٌ بمقتضى التوحيد ﴿وعلى الله فليتوكل المؤمنون﴾ · وتوكلٌ خاصّ في الأمر المعيّن بعد العزم ﴿فإذا عزمت فتوكل على الله﴾."},
+{s:"s4",f:"ما تعريف التوكل عند المؤلف؟",b:"اشتغال الجوارح بالأسباب واشتغال القلب بالله."},
+{s:"s4",f:"ما شواهد ابن القيم على أخذ النبي صلى الله عليه وسلم بالأسباب؟",b:"ظاهَر بين درعين يوم أُحد · استأجر دليلًا مشركًا في الهجرة · ادّخر لأهله قوت سنة · حمل الزاد والمَزاد في السفر."},
+{s:"s4",f:"من قال «حسبنا الله ونعم الوكيل» في موقفين متشابهين؟",b:"إبراهيم عليه السلام حين أُلقي في النار، ومحمد صلى الله عليه وسلم حين قيل ﴿إن الناس قد جمعوا لكم﴾ — قارن بينهما ابن عباس، رواه البخاري."},
+{s:"s5",f:"ما الغاية المعلنة لتفصيل الآيات في سورة الرعد؟",b:"﴿يدبّر الأمر يفصّل الآيات لعلكم بلقاء ربكم توقنون﴾ الرعد ٢."},
+{s:"s5",f:"لمن يظهر جمال أحكام الشريعة بنص القرآن؟",b:"﴿ومن أحسن من الله حكمًا لقوم يوقنون﴾ المائدة ٥٠ — فإدراك الجمال موقوفٌ على اليقين."},
+{s:"s5",f:"ما ركنا الإمامة في الدين؟",b:"الصبر واليقين — ﴿وجعلنا منهم أئمة يهدون بأمرنا لما صبروا وكانوا بآياتنا يوقنون﴾ السجدة ٢٤."},
+{s:"s5",f:"صف هيئة جبريل في حديث جبريل.",b:"رجلٌ شديد بياض الثياب شديد سواد الشعر، لا يُرى عليه أثر السفر ولا يعرفه أحد، جلس فألصق ركبتيه بركبتي النبي صلى الله عليه وسلم ووضع يديه على فخذيه."},
+{s:"s5",f:"ما تعريف الإحسان في حديث جبريل؟ ولماذا عدّه المؤلف قمة اليقين؟",b:"«أن تعبد الله كأنك تراه فإن لم تكن تراه فإنه يراك» — لأنه اللحظة التي تنهار فيها الفوارق بين الغيب والشهادة."},
+{s:"s6",f:"ما حدّ اليقين عند المؤلف؟",b:"كمال جزم القلب بخبر الله ورسوله وفراغه من التردد والارتياب والاحتمالات، حتى يصير الخبر كالمعاينة."},
+{s:"s6",f:"اذكر الأخبار السبعة التي تُختبر بها درجة اليقين.",b:"خَلَف النفقة · قرب المجيب · شفاء القرآن · خيرية الأمة · حكم النشوز · ترصّد الشيطان · وعد الاستخلاف."},
+{s:"s6",f:"آية خَلَف النفقة وآية قرب المجيب؟",b:"﴿وما أنفقتم من شيء فهو يخلفه﴾ سبأ ٣٩ · ﴿وإذا سألك عبادي عني فإني قريب أجيب دعوة الداع إذا دعان﴾ البقرة ١٨٦."},
+{s:"s6",f:"آية وعد الاستخلاف وموضعها؟",b:"﴿وعد الله الذين آمنوا منكم وعملوا الصالحات ليستخلفنّهم في الأرض... وليمكّننّ لهم دينهم الذي ارتضى لهم﴾ النور ٥٥."},
+{s:"s6",f:"ما المفارقة التي ختم بها المؤلف فصل «كأنك تراه»؟",b:"أئمة الدين يتنافسون في اليقين، وبعض المتفلسفة يتنافسون في الشكوك والحيرة."},
+{s:"s7",f:"ما أشدّ المفاجآت يوم تسليم الصحائف؟",b:"أن يجد الإنسان في صحيفته خطايا لم يفعلها هو، محسوبةً عليه."},
+{s:"s7",f:"آيتا حمل أوزار الآخرين وموضعهما؟",b:"﴿ليحملوا أوزارهم كاملة يوم القيامة ومن أوزار الذين يضلونهم بغير علم﴾ النحل ٢٥ · ﴿وليحملنّ أثقالهم وأثقالًا مع أثقالهم﴾ العنكبوت ١٣."},
+{s:"s7",f:"هل يُنقص من وزر التابع شيء؟",b:"لا؛ فـ«مِن» تبعيضية والتابع يحمل وزره كاملًا، وإنما يُحمَّل المُضِلّ مثلَه."},
+{s:"s7",f:"ما الأمثلة الثلاثة التي ضربها المؤلف لحمل أوزار الآخرين؟",b:"كلمة متهورة في مجلس · مقالة تُثير شبهة عند آلاف · متصدّرٌ في فضائية يوهّن الدين بلغةٍ شرعية الظاهر."},
+{s:"s7",f:"ما وصيّة المؤلف عند إثارة مسألة شرعية في مجلس؟",b:"أن نتلو في أنفسنا ﴿ليحملوا أوزارهم كاملة يوم القيامة ومن أوزار الذين يضلونهم بغير علم﴾."},
+{s:"s7",f:"ما الموضوعات التي جمعتها خاتمة الكتاب؟",b:"استحضار الآخرة · قسوة القلوب · تعظيم الدنيا على الصلاة · بهاء المتهجدين · وقوع النفاق بما نتهاون فيه · منزلة التسبيح · قوة التوكل · اليقين بخبر الله · وحمل أوزار الآخرين."}
+];
+
+/* ---------- أدوات ---------- */
+const $=(q,r=document)=>r.querySelector(q), $$=(q,r=document)=>[...r.querySelectorAll(q)];
+const AR=n=>String(n).replace(/[0-9]/g,d=>"٠١٢٣٤٥٦٧٨٩"[d]);
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+
+/* ---------- الفهرس ---------- */
+(function(){
+  const list=$("#tocList");
+  let h='<a href="#howto">مدخل الصفحة</a>';
+  SECTIONS.forEach((s,i)=>{h+=`<a href="#${s.id}" data-t="${s.id}">${AR(i+1)}. ${s.t}</a>`});
+  h+='<a href="#cards">بطاقات التثبيت</a>';
+  list.innerHTML=h;
+  $("#btnToc").addEventListener("click",()=>{
+    const t=$("#toc");
+    if(window.matchMedia("(min-width:1500px)").matches){t.classList.toggle("closed")}
+    else{t.classList.toggle("open")}
+  });
+  list.addEventListener("click",e=>{if(e.target.tagName==="A"&&window.innerWidth<1500)$("#toc").classList.remove("open")});
+})();
+
+/* ---------- شريط التقدم + القسم النشط + حفظ الموضع ---------- */
+(function(){
+  const bar=$("#progress"), links=$$("#tocList a[data-t]");
+  let tick=false;
+  function upd(){
+    const h=document.documentElement, y=h.scrollTop, max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0?(y/max*100):0)+"%";
+    store.set("raqaiq5_pos",y);
+    let cur=null;
+    SECTIONS.forEach(s=>{const el=document.getElementById(s.id); if(el&&el.getBoundingClientRect().top<160)cur=s.id});
+    links.forEach(a=>a.classList.toggle("active",a.dataset.t===cur));
+    tick=false;
+  }
+  addEventListener("scroll",()=>{if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});
+  const saved=parseInt(store.get("raqaiq5_pos")||"0",10);
+  if(saved>300)addEventListener("load",()=>scrollTo(0,saved));
+  upd();
+})();
+
+/* ---------- الخط والوضع الليلي ---------- */
+(function(){
+  let fs=parseInt(store.get("raqaiq5_fs")||"18",10);
+  const apply=()=>{document.body.style.setProperty("--fs",fs+"px");store.set("raqaiq5_fs",fs)};
+  $("#btnPlus").onclick=()=>{if(fs<23){fs++;apply()}};
+  $("#btnMinus").onclick=()=>{if(fs>15){fs--;apply()}};
+  apply();
+  if(store.get("raqaiq5_dark")==="1")document.body.classList.add("dark");
+  $("#btnDark").onclick=()=>{document.body.classList.toggle("dark");store.set("raqaiq5_dark",document.body.classList.contains("dark")?"1":"0")};
+})();
+
+/* ---------- الهوامش ---------- */
+document.addEventListener("click",e=>{
+  const b=e.target.closest(".nref"); if(!b)return;
+  const n=document.getElementById(b.dataset.note); if(!n)return;
+  const mob=window.innerWidth<=1100;
+  if(mob){const o=n.classList.toggle("open");b.classList.toggle("on",o);
+    if(o)setTimeout(()=>n.scrollIntoView({block:"nearest",behavior:"smooth"}),60);}
+  else{$$(".note.hl").forEach(x=>{if(x!==n)x.classList.remove("hl")});
+    $$(".nref.on").forEach(x=>{if(x!==b)x.classList.remove("on")});
+    n.classList.toggle("hl");b.classList.toggle("on");}
+});
+
+/* ---------- الأسئلة التفاعلية ---------- */
+(function(){
+  $$(".quiz").forEach(box=>{
+    const sid=box.dataset.section, qs=QUIZ_DATA.filter(q=>q.sectionId===sid);
+    let h=`<div class="quiz__hd"><span>اختبر فهمك</span><span id="sc_${sid}">٠ / ${AR(qs.length)}</span></div>`;
+    qs.forEach(q=>{
+      h+=`<div class="q" data-q="${q.id}"><div class="q__text">${q.question}</div>`;
+      q.options.forEach((o,i)=>{h+=`<button class="opt" data-i="${i}">${o}</button>`});
+      h+=`<div class="q__exp"></div></div>`;
+    });
+    box.innerHTML=h;
+  });
+  const score={};
+  document.addEventListener("click",e=>{
+    const opt=e.target.closest(".opt"); if(!opt)return;
+    const qEl=opt.closest(".q"), box=opt.closest(".quiz"), sid=box.dataset.section;
+    const q=QUIZ_DATA.find(x=>x.id===qEl.dataset.q);
+    const i=+opt.dataset.i, right=i===q.correctIndex;
+    $$(".opt",qEl).forEach(o=>o.classList.remove("ok","no"));
+    opt.classList.add(right?"ok":"no");
+    if(right)$$(".opt",qEl)[q.correctIndex].classList.add("ok");
+    const exp=$(".q__exp",qEl);
+    exp.innerHTML=(right?"<b>إجابة صحيحة.</b> ":"<b>أعد المحاولة.</b> ")+q.explanation;
+    exp.classList.add("show");
+    if(right&&!qEl.dataset.done){qEl.dataset.done="1";score[sid]=(score[sid]||0)+1;
+      const n=QUIZ_DATA.filter(x=>x.sectionId===sid).length;
+      $("#sc_"+sid).textContent=AR(score[sid])+" / "+AR(n);}
+  });
+})();
+
+/* ---------- البطاقات ---------- */
+(function(){
+  let filt="all", idx=0, view=CARDS_DATA;
+  const cardEl=$("#card");
+  const F=$("#filters");
+  let fh=`<button class="filt on" data-f="all" style="background:#173b33;color:#fff;border-color:transparent">الكل (${AR(CARDS_DATA.length)})</button>`;
+  SECTIONS.forEach((s,i)=>{const n=CARDS_DATA.filter(c=>c.s===s.id).length;
+    fh+=`<button class="filt" data-f="${s.id}" data-c="${s.c}">${AR(i+1)}. ${s.t} (${AR(n)})</button>`});
+  F.innerHTML=fh;
+  function draw(){
+    const c=view[idx]; if(!c)return;
+    cardEl.classList.remove("flip");
+    setTimeout(()=>{$("#front").textContent=c.f;$("#back").textContent=c.b;
+      const s=SECTIONS.find(x=>x.id===c.s); $("#tagF").textContent=s?s.t:"";},120);
+    $("#pos").textContent=AR(idx+1)+" / "+AR(view.length);
+  }
+  F.addEventListener("click",e=>{
+    const b=e.target.closest(".filt"); if(!b)return;
+    filt=b.dataset.f;
+    $$(".filt",F).forEach(x=>{x.classList.remove("on");x.style.background="";x.style.color="";x.style.borderColor=""});
+    b.classList.add("on"); b.style.background=b.dataset.c||"#173b33"; b.style.color="#fff"; b.style.borderColor="transparent";
+    view=filt==="all"?CARDS_DATA:CARDS_DATA.filter(c=>c.s===filt); idx=0; draw();
+  });
+  $("#cardIn").onclick=()=>cardEl.classList.toggle("flip");
+  $("#nextC").onclick=()=>{idx=(idx+1)%view.length;draw()};
+  $("#prevC").onclick=()=>{idx=(idx-1+view.length)%view.length;draw()};
+  $("#dl").onclick=()=>{
+    const tsv=CARDS_DATA.map(c=>c.f.replace(/\t/g," ")+"\t"+c.b.replace(/\t/g," ")).join("\n");
+    const blob=new Blob(["\uFEFF"+tsv],{type:"text/tab-separated-values;charset=utf-8"});
+    const a=document.createElement("a");
+    a.href=URL.createObjectURL(blob); a.download="رقائق_القرآن_5_أقوى_الناس_وكأنك_تراه.tsv";
+    document.body.appendChild(a); a.click(); a.remove();
+  };
+  draw();
+})();
+</script>
+
+<style>
+  #ilm-custom-nav{
+    max-width:700px; margin:36px auto 24px; padding:20px 22px;
+    background:#fbfaf4; border:1px solid #d3d8ca; border-radius:14px;
+    font-family:'Tajawal','IBM Plex Sans Arabic','Segoe UI',Tahoma,sans-serif;
+    direction:rtl; color:#2b2a24;
+  }
+  #ilm-custom-nav .icn-row{
+    display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:14px;
+  }
+  #ilm-custom-nav .icn-link{
+    flex:1 1 auto; min-width:150px; text-align:center; text-decoration:none;
+    padding:10px 14px; border:1.5px solid #1f4a3d; border-radius:999px;
+    color:#1f4a3d; font-size:13.5px; font-weight:600; transition:background .15s,color .15s;
+  }
+  #ilm-custom-nav .icn-link:hover{ background:#1f4a3d; color:#fff; }
+  #ilm-custom-nav .icn-link.icn-disabled{
+    opacity:.4; pointer-events:none; border-color:#b3ac9e; color:#6a6a5b;
+  }
+  #ilm-custom-nav .icn-jump label{
+    display:block; font-size:12.5px; color:#6a6a5b; margin-bottom:6px;
+  }
+  #ilm-custom-nav select{
+    width:100%; padding:10px 12px; border:1px solid #d3d8ca; border-radius:8px;
+    background:#fff; color:#2b2a24; font-family:inherit; font-size:14px; cursor:pointer;
+  }
+</style>
+
+<div id="ilm-custom-nav">
+  <div class="icn-row">
+    <a class="icn-link" href="04.html">→ من 109 إلى 133</a>
+    <span class="icn-link icn-disabled">لا توجد محاضرة تالية ←</span>
+  </div>
+  <div class="icn-jump">
+    <label for="ilm-custom-jump">الانتقال إلى محاضرة أخرى من «رقائق القرآن»:</label>
+    <select id="ilm-custom-jump" onchange="if(this.value) window.location.href=this.value;">
+<option value="01.html">1. من البداية إلى ص 33</option>
+<option value="02.html">2. من 34 إلى 53</option>
+<option value="03.html">3. من 54 إلى 78</option>
+<option value="04.html">4. من 109 إلى 133</option>
+<option value="05.html" selected>5. من 135 إلى النهاية</option>
+    </select>
+  </div>
+</div>
+
+<script type="module" src="../../../firebase-sync-manhaj.js"></script>
+<script src="../../../ilm-track.js"></script>
+<script src="../../../data.js"></script>
+<script src="../../../ilm-nav.js"></script>
+<script>
+(function(){
+  var box = document.getElementById('ilm-completion-box');
+  var cb = box ? box.querySelector('input[data-lecture-id]') : null;
+  if(!cb) return;
+  var lid = cb.getAttribute('data-lecture-id');
+  function render(done){
+    cb.checked = done;
+    box.classList.toggle('done', done);
+  }
+  if(window.IlmTrack){
+    window.IlmTrack.ready.then(function(){ render(window.IlmTrack.isDone(lid)); });
+  }
+  cb.addEventListener('change', function(){
+    if(window.IlmTrack) window.IlmTrack.setDone(lid, cb.checked);
+    render(cb.checked);
+  });
+})();
+</script>
+<script src="../../../ilm-highlight.js" data-lecture-id="stage1_raqaeq-al-quran_05"></script>
+
 </body>
 </html>
