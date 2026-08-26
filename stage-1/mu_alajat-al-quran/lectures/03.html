@@ -1,42 +1,1036 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>من 59 إلى نهاية الكتاب - معالجة القرآن لنفوس المصلحين</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../../style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>معالجة القرآن لنفوس المصلحين — ٣ — المقاطع ٥–٨ والخاتمة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&family=Reem+Kufi:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+:root{
+  --bg:#F4F5F1; --paper:#FFFFFF; --ink:#1C2024; --ink2:#4C555D; --ink3:#6E7880;
+  --line:#DCDCD2; --line2:#EBEBE3;
+  --brand:#2E4756; --brand2:#43606F;
+  --accent:#8C3B4A; --accent2:#C98D97; --accentbg:#F8EBED;
+  --quran:#0E4A26; --quranbg:#E8F1EA; --quranln:#A9C7B4;
+  --hadith:#5B2A86; --hadithbg:#F1EAF9; --hadithln:#CDB8E4;
+  --n-doc:#146B62; --n-term:#9A6B12; --n-alam:#2E4756; --n-exp:#5A6570; --n-fix:#B02020; --n-link:#6D4AA8; --n-ctx:#4A6A2E;
+  --fs:18px; --radius:10px;
+  --shadow:0 1px 2px rgba(28,32,36,.05),0 8px 24px rgba(28,32,36,.05);
+}
+body.night{
+  --bg:#15181B; --paper:#1D2226; --ink:#E7E5DE; --ink2:#B4BCC2; --ink3:#8D959B;
+  --line:#2E353A; --line2:#262C31;
+  --brand:#9FC0D0; --brand2:#8AAABA;
+  --quran:#8ED6A8; --quranbg:#16281D; --quranln:#2C5138;
+  --hadith:#D3B4F2; --hadithbg:#241A31; --hadithln:#43305C;
+  --accentbg:#241F16;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
+}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Cairo',system-ui,'Segoe UI',sans-serif;
+     font-size:var(--fs);line-height:1.95;-webkit-text-size-adjust:100%}
+[dir]{direction:rtl}
+a{color:var(--brand);text-decoration-thickness:1px;text-underline-offset:3px}
+
+/* ---------- progress + topbar ---------- */
+#prog{position:fixed;top:0;right:0;height:3px;background:var(--accent);width:0;z-index:60}
+.topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+.topbar .in{max-width:1180px;margin:0 auto;padding:8px 16px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.topbar .name{font-family:'Reem Kufi',serif;font-size:.82rem;color:var(--ink2);margin-inline-end:auto;letter-spacing:.2px}
+.btn{border:1px solid var(--line);background:var(--paper);color:var(--ink2);border-radius:8px;
+  padding:6px 11px;font-family:'Reem Kufi',serif;font-size:.78rem;cursor:pointer;min-height:36px;line-height:1}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.navlinks{display:flex;gap:6px}
+.navlinks a{text-decoration:none}
+
+/* ---------- header ---------- */
+header.hero{max-width:900px;margin:0 auto;padding:54px 20px 26px;text-align:center}
+.eyebrow{font-family:'Reem Kufi',serif;font-size:.74rem;letter-spacing:2px;color:var(--accent);
+  text-transform:none;margin-bottom:14px}
+h1{font-family:'Amiri',serif;font-size:2.5rem;line-height:1.45;margin:0 0 6px;color:var(--brand);font-weight:700}
+.sub{font-family:'Amiri',serif;font-size:1.25rem;color:var(--ink2);margin:0}
+.byline{margin-top:16px;font-size:.85rem;color:var(--ink3);font-family:'Reem Kufi',serif}
+.rule{width:74px;height:2px;background:var(--accent);margin:22px auto 0;border-radius:2px}
+
+/* ---------- key ---------- */
+.key{max-width:820px;margin:26px auto;padding:14px 18px;background:var(--paper);border:1px solid var(--line);
+  border-radius:var(--radius);font-size:.86rem;color:var(--ink2);line-height:1.85;box-shadow:var(--shadow)}
+.key b{color:var(--ink)}
+
+/* ---------- layout ---------- */
+main{max-width:1180px;margin:0 auto;padding:0 20px 80px}
+.content{max-width:1120px;margin:0 auto;padding-left:300px;position:relative}
+.segment{margin:0 0 12px;padding-top:26px}
+h2.seg{font-family:'Amiri',serif;font-size:1.95rem;color:var(--brand);margin:34px 0 4px;
+  padding-bottom:10px;border-bottom:2px solid var(--accent);max-width:820px}
+h2.seg .num{font-family:'Reem Kufi',serif;font-size:.7rem;color:var(--accent);display:block;letter-spacing:2px;margin-bottom:4px}
+h3.ayah{font-family:'Amiri',serif;font-size:1.32rem;color:var(--quran);margin:38px 0 10px;max-width:820px;
+  padding-inline-start:14px;border-inline-start:4px solid var(--quranln);line-height:1.8}
+h4.gen{font-family:'Reem Kufi',serif;font-size:.95rem;color:var(--accent);margin:26px 0 8px;max-width:820px}
+h4.gen::before{content:"◆ ";font-size:.7em;opacity:.7}
+p{max-width:820px;margin:0 0 14px}
+.lead{max-width:820px}
+.isti{max-width:820px;font-family:'Amiri',serif;color:var(--ink3);font-size:1rem;margin:6px 0 10px}
+
+/* ---------- quran / hadith / naql ---------- */
+.quran{max-width:820px;font-family:'Amiri',serif;font-size:1.36rem;line-height:2.15;color:var(--quran);
+  background:var(--quranbg);border:1px solid var(--quranln);border-inline-start:5px solid var(--quran);
+  border-radius:var(--radius);padding:18px 20px;margin:18px 0 20px;text-align:justify}
+.quran .aynum{font-family:'Reem Kufi',serif;font-size:.62em;color:var(--quran);opacity:.75}
+q.q,.qi{color:var(--quran);font-family:'Amiri',serif;font-size:1.12em;quotes:none}
+.hadith{max-width:820px;font-family:'Amiri',serif;font-size:1.2rem;line-height:2.05;color:var(--hadith);
+  background:var(--hadithbg);border:1px solid var(--hadithln);border-inline-start:5px solid var(--hadith);
+  border-radius:var(--radius);padding:16px 18px;margin:16px 0;text-align:justify}
+.hi{color:var(--hadith);font-family:'Amiri',serif;font-size:1.08em}
+.naql{max-width:820px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 18px;margin:16px 0;font-family:'Amiri',serif;font-size:1.1rem;line-height:2;color:var(--ink2)}
+.naql .who{display:block;font-family:'Reem Kufi',serif;font-size:.74rem;color:var(--accent);margin-bottom:8px;letter-spacing:.5px}
+
+.lbl{font-family:'Reem Kufi',serif;font-size:.84rem;color:var(--ink3);margin:16px 0 8px;max-width:820px}
+/* ---------- fawaid ---------- */
+.fawaid{list-style:none;counter-reset:f;padding:0;margin:0 0 8px;max-width:820px}
+.fawaid>li{counter-increment:f;position:relative;padding-inline-start:44px;margin:0 0 20px}
+.fawaid>li::before{content:counter(f);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;
+  border-radius:50%;background:var(--accentbg);color:var(--accent);border:1px solid var(--accent2);
+  display:flex;align-items:center;justify-content:center;font-family:'Reem Kufi',serif;font-size:.8rem}
+.fawaid>li>.ord{font-family:'Reem Kufi',serif;color:var(--accent);font-size:.82rem;margin-inline-end:6px}
+
+/* ---------- notes (margin column) ---------- */
+sup.ref{font-family:'Reem Kufi',serif;font-size:.62em;color:var(--accent);background:var(--accentbg);
+  border:1px solid var(--accent2);border-radius:5px;padding:1px 5px;cursor:pointer;margin:0 3px;vertical-align:super;
+  line-height:1;user-select:none}
+sup.ref:hover,sup.ref.on{background:var(--accent);color:#fff}
+aside.note{float:left;clear:left;width:264px;margin-left:-288px;margin-right:20px;margin-bottom:16px;
+  font-family:'Cairo',sans-serif;font-size:.78rem;line-height:1.75;color:var(--ink2);
+  background:var(--paper);border:1px solid var(--line);border-inline-start:3px solid var(--n-exp);
+  border-radius:8px;padding:10px 12px}
+aside.note .tag{display:block;font-family:'Reem Kufi',serif;font-size:.66rem;letter-spacing:.5px;margin-bottom:4px}
+aside.note.hl{box-shadow:0 0 0 2px var(--accent)}
+.n-doc{border-inline-start-color:var(--n-doc)} .n-doc .tag{color:var(--n-doc)}
+.n-term{border-inline-start-color:var(--n-term)} .n-term .tag{color:var(--n-term)}
+.n-alam{border-inline-start-color:var(--n-alam)} .n-alam .tag{color:var(--n-alam)}
+.n-exp{border-inline-start-color:var(--n-exp)} .n-exp .tag{color:var(--n-exp)}
+.n-fix{border-inline-start-color:var(--n-fix);background:color-mix(in srgb,var(--n-fix) 7%,var(--paper))} .n-fix .tag{color:var(--n-fix)}
+.n-link{border-inline-start-color:var(--n-link)} .n-link .tag{color:var(--n-link)}
+.n-ctx{border-inline-start-color:var(--n-ctx)} .n-ctx .tag{color:var(--n-ctx)}
+
+/* ---------- boxes ---------- */
+.fix{max-width:820px;border:1px solid #E0B4B4;background:color-mix(in srgb,#B02020 6%,var(--paper));
+  border-inline-start:5px solid var(--n-fix);border-radius:var(--radius);padding:14px 16px;margin:18px 0;font-size:.92rem}
+.fix .tag{font-family:'Reem Kufi',serif;font-size:.74rem;color:var(--n-fix);display:block;margin-bottom:5px}
+.summary{max-width:820px;background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--accent);
+  border-radius:var(--radius);padding:18px 20px;margin:28px 0 10px;box-shadow:var(--shadow)}
+.summary h5{font-family:'Reem Kufi',serif;font-size:.9rem;color:var(--accent);margin:0 0 10px}
+.summary ul{margin:0;padding-inline-start:20px}
+.summary li{margin-bottom:8px;font-size:.94rem;color:var(--ink2)}
+.summary .from{display:block;margin-top:10px;font-size:.72rem;color:var(--ink3);font-family:'Reem Kufi',serif}
+
+/* ---------- quiz ---------- */
+.quizwrap{max-width:820px;background:var(--accentbg);border:1px solid var(--accent2);border-radius:var(--radius);
+  padding:16px 18px;margin:30px 0 6px}
+.quizwrap>h5{font-family:'Reem Kufi',serif;font-size:.86rem;color:var(--accent);margin:0 0 4px;
+  display:flex;justify-content:space-between;align-items:center;gap:10px}
+.quizwrap .score{font-size:.72rem;color:var(--ink2);font-weight:400}
+.q{margin:14px 0 0;padding-top:12px;border-top:1px dashed var(--accent2)}
+.q:first-of-type{border-top:none;padding-top:0}
+.q .qt{font-size:.95rem;margin:0 0 10px;color:var(--ink)}
+.opt{display:block;width:100%;text-align:start;min-height:46px;padding:10px 13px;margin-bottom:7px;
+  background:var(--paper);border:1px solid var(--line);border-radius:8px;color:var(--ink);cursor:pointer;
+  font-family:'Cairo',sans-serif;font-size:.9rem;line-height:1.6}
+.opt:hover{border-color:var(--accent)}
+.opt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.opt.good{border-color:#2E7D4F;background:color-mix(in srgb,#2E7D4F 10%,var(--paper))}
+.opt.bad{border-color:#B02020;background:color-mix(in srgb,#B02020 8%,var(--paper))}
+.expl{font-size:.84rem;color:var(--ink2);background:var(--paper);border:1px dashed var(--line);
+  border-radius:8px;padding:9px 12px;margin-top:6px}
+
+/* ---------- cards ---------- */
+#cards{max-width:900px;margin:60px auto 0;padding:0 4px}
+#cards h2{font-family:'Amiri',serif;font-size:1.8rem;color:var(--brand);border-bottom:2px solid var(--accent);
+  padding-bottom:10px;margin-bottom:14px}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 16px}
+.chip{border:1px solid var(--line);background:var(--paper);color:var(--ink2);border-radius:20px;padding:6px 13px;
+  font-family:'Reem Kufi',serif;font-size:.74rem;cursor:pointer;min-height:34px}
+.chip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.flip{perspective:1600px;margin:0 auto}
+.card{position:relative;min-height:230px;cursor:pointer}
+.face{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 22px;min-height:230px;
+  display:flex;flex-direction:column;justify-content:center;box-shadow:var(--shadow)}
+.face .side{font-family:'Reem Kufi',serif;font-size:.68rem;color:var(--accent);margin-bottom:10px;letter-spacing:1px}
+.face .txt{font-size:1rem;line-height:1.95}
+.face.back{border-top:3px solid var(--accent)}
+.cardnav{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px}
+.cardnav .pos{font-family:'Reem Kufi',serif;font-size:.78rem;color:var(--ink2)}
+.hint{font-size:.75rem;color:var(--ink3);text-align:center;margin-top:8px;font-family:'Reem Kufi',serif}
+
+/* ---------- index drawer ---------- */
+#toc{position:fixed;inset-block:0;inset-inline-start:0;width:310px;max-width:86vw;background:var(--paper);
+  border-inline-end:1px solid var(--line);z-index:70;transform:translateX(-105%);transition:transform .22s ease;
+  overflow-y:auto;padding:18px 16px 40px;box-shadow:var(--shadow)}
+body.night #toc{box-shadow:none}
+#toc.open{transform:none}
+#toc h6{font-family:'Reem Kufi',serif;font-size:.82rem;color:var(--accent);margin:0 0 12px}
+#toc ol{list-style:none;padding:0;margin:0}
+#toc>ol>li{margin-bottom:10px}
+#toc a{display:block;text-decoration:none;color:var(--ink);font-size:.86rem;padding:5px 6px;border-radius:6px}
+#toc a:hover{background:var(--accentbg);color:var(--accent)}
+#toc ol ol a{font-size:.78rem;color:var(--ink2);padding-inline-start:16px;font-family:'Amiri',serif}
+#scrim{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:65;display:none}
+#scrim.on{display:block}
+
+footer{max-width:820px;margin:60px auto 0;padding:20px;border-top:1px solid var(--line);
+  text-align:center;font-size:.78rem;color:var(--ink3);font-family:'Reem Kufi',serif;line-height:2}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .content{padding-left:0}
+  aside.note{float:none;clear:none;width:auto;margin:0 0 14px;display:none}
+  aside.note.open{display:block}
+  h1{font-size:1.9rem}
+  h2.seg{font-size:1.5rem}
+  .quran{font-size:1.2rem;padding:14px}
+  body{--fs:17px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+@media print{
+  .topbar,#toc,#scrim,#prog,.quizwrap,#cards,.btn{display:none!important}
+  body{background:#fff;color:#000;font-size:12pt}
+  .content{padding-left:0}
+  aside.note{float:none;width:auto;margin:6px 0;display:block;font-size:9pt;page-break-inside:avoid}
+  .quran,.hadith,.naql,.summary{page-break-inside:avoid}
+}
+
+#ilm-completion-box{display:flex;align-items:center;gap:9px;max-width:340px;margin:16px auto 0;
+  padding:10px 16px;border:1.5px solid var(--line);border-radius:999px;background:var(--paper);
+  cursor:pointer;transition:.15s}
+#ilm-completion-box:hover{border-color:var(--accent)}
+#ilm-completion-box.done{background:var(--quranbg);border-color:var(--quran)}
+#ilm-completion-box input{width:17px;height:17px;accent-color:var(--quran);cursor:pointer;flex-shrink:0}
+#ilm-completion-box span{font-size:.85rem;font-weight:600;color:var(--ink2)}
+#ilm-completion-box.done span{color:var(--quran)}
+.lecture-meta-line{text-align:center;font-size:.8rem;color:var(--ink3);margin-top:6px;font-family:'Cairo',sans-serif}
+.ilm-breadcrumbs{max-width:1180px;margin:0 auto;padding:8px 16px 0;font-size:.78rem;color:var(--ink3);
+  font-family:'Cairo',sans-serif}
+.ilm-breadcrumbs a{color:var(--brand);text-decoration:none}
+.ilm-breadcrumbs a:hover{text-decoration:underline}
+.ilm-breadcrumbs .sep{padding:0 4px;color:var(--ink3)}
+</style>
 </head>
-<body class="" data-page="lecture" data-lecture-id="stage1_mu_alajat-al-quran_03">
-  <div class="page">
-    <nav class="breadcrumbs"><a href="../../../index.html">الرئيسية</a><span class="sep">/</span><a href="../../index.html">المرحلة الأولى</a><span class="sep">/</span><a href="../index.html">معالجة القرآن لنفوس المصلحين</a><span class="sep">/</span><span aria-current="page">من 59 إلى نهاية الكتاب</span></nav>
-    
-      <header class="lecture-header">
-        <h1>من 59 إلى نهاية الكتاب</h1>
-        <p class="lecture-meta">المادة: معالجة القرآن لنفوس المصلحين &nbsp;|&nbsp; الشيخ: أحمد السيد &nbsp;|&nbsp; اليوم 37</p>
-        <label class="checkbox-line lecture-checkbox">
-          <input type="checkbox" data-lecture-id="stage1_mu_alajat-al-quran_03">
-          <span>إتمام هذه المحاضرة</span>
-        </label>
-      </header>
+<body data-page="lecture" data-lecture-id="stage1_mu_alajat-al-quran_03">
+<nav class="ilm-breadcrumbs">
+  <a href="../../../index.html">الرئيسية</a><span class="sep">/</span>
+  <a href="../../index.html">المرحلة الأولى</a><span class="sep">/</span>
+  <a href="../index.html">معالجة القرآن لنفوس المصلحين</a><span class="sep">/</span>
+  <span aria-current="page">المقاطع الخامس إلى الثامن والخاتمة</span>
+</nav>
 
-      <div class="lecture-placeholder">
-        <p>سيتم إضافة المحاضرة هنا لاحقًا</p>
-        <p class="placeholder-hint">(رابط يوتيوب / فيديو / ملف صوتي / PDF / نص المحاضرة / ملاحظاتي)</p>
-      </div>
+<div id="prog"></div>
+<div id="scrim"></div>
+<nav id="toc" aria-label="فهرس الكتاب">
+<h6>فهرس هذا الجزء</h6>
+<ol>
+<li><a href="#s5">المقطع الخامس (١٥٦–١٦٠)</a>
+  <ol>
+  <li><a href="#s5a1">﴿لا تكونوا كالذين كفروا﴾</a></li>
+  <li><a href="#s5a2">﴿ولئن قتلتم في سبيل الله﴾</a></li>
+  <li><a href="#s5a3">﴿فبما رحمة من الله لنت لهم﴾</a></li>
+  <li><a href="#s5a4">﴿إن ينصركم الله فلا غالب لكم﴾</a></li>
+  </ol></li>
+<li><a href="#s6">المقطع السادس (١٦٤–١٦٨)</a>
+  <ol>
+  <li><a href="#s6a1">﴿لقد منّ الله على المؤمنين﴾</a></li>
+  <li><a href="#s6a2">﴿أولما أصابتكم مصيبة﴾</a></li>
+  <li><a href="#s6a3">﴿وما أصابكم يوم التقى الجمعان﴾</a></li>
+  </ol></li>
+<li><a href="#s7">المقطع السابع (١٦٩–١٧٤)</a>
+  <ol>
+  <li><a href="#s7a1">﴿ولا تحسبن الذين قتلوا في سبيل الله أمواتا﴾</a></li>
+  <li><a href="#s7a2">﴿الذين استجابوا لله والرسول﴾</a></li>
+  </ol></li>
+<li><a href="#s8">المقطع الثامن (١٧٥–١٧٩)</a>
+  <ol>
+  <li><a href="#s8a1">﴿إنما ذلكم الشيطان يخوف أولياءه﴾</a></li>
+  <li><a href="#s8a2">﴿ولا يحسبن الذين كفروا أنما نملي لهم﴾</a></li>
+  <li><a href="#s8a3">﴿ما كان الله ليذر المؤمنين﴾</a></li>
+  </ol></li>
+<li><a href="#s9">خاتمة المؤلف</a></li>
+<li><a href="#cards">بطاقات المراجعة</a></li>
+</ol>
+</nav>
 
-      <div class="lecture-nav">
-        <a href="../index.html" class="btn btn-outline">الرجوع إلى المادة</a>
-        <a href="../../index.html" class="btn btn-outline">الرجوع إلى المرحلة</a>
-      </div>
+<div class="topbar"><div class="in">
+  <button class="btn" id="bToc">☰ الفهرس</button>
+  <span class="name">معالجة القرآن لنفوس المصلحين · الجزء الثالث</span>
+  <span class="navlinks"><a class="btn" href="02.html">‹ الجزء السابق</a></span>
+  <button class="btn" id="bMinus">أ−</button>
+  <button class="btn" id="bPlus">أ+</button>
+  <button class="btn" id="bNight">وضع ليلي</button>
+</div></div>
 
-      <div data-lecture-nav-extra></div>
-    
+<header class="hero">
+  <div class="eyebrow">آيات آل عمران في غزوة أحد · الجزء الثالث</div>
+  <h1>معالجة القرآن لنفوس المصلحين</h1>
+  <p class="sub">المقاطع: الخامس والسادس والسابع والثامن، وخاتمة الكتاب</p>
+  <div class="byline">تأليف: أحمد بن يوسف السيد</div>
+  <p class="lecture-meta-line">المادة: معالجة القرآن لنفوس المصلحين &nbsp;|&nbsp; الشيخ: أحمد بن يوسف السيد &nbsp;|&nbsp; اليوم 37</p>
+  <label id="ilm-completion-box">
+    <input type="checkbox" data-lecture-id="stage1_mu_alajat-al-quran_03">
+    <span>✅ إتمام هذا الجزء</span>
+  </label>
+  <div class="rule"></div>
+</header>
+
+<div class="key">
+  <b>كيف تقرأ هذه الصفحة:</b> النصّ الأساسي في العمود الأيمن هو <b>كلام المؤلف كاملًا</b> بلا حذف ولا اختصار،
+  وما في <b>الهامش الجانبي الأيسر</b> (والبطاقات المطويّة تحت الفقرة على الهاتف) إضافةٌ توضيحية ليست من الكتاب:
+  توثيقٌ للآيات والأحاديث، أو تعريفٌ بمصطلح، أو ترجمةٌ لعَلَم، أو تصحيحٌ لخطأ تفريغ.
+  وكذلك <b>صناديق الخلاصة</b> و<b>أسئلة «اختبر فهمك»</b> و<b>بطاقات المراجعة</b> — كلّها من إعدادي لا من الكتاب.
+  <br>الآيات باللون الأخضر الغامق، والأحاديث باللون البنفسجي.
+</div>
+
+<main data-ilm-highlight-zone>
+<div class="content">
+
+<section class="segment" id="s5">
+<h2 class="seg"><span class="num">سورة آل عمران</span>المقطع الخامس</h2>
+<p class="isti">أعوذ بالله من الشيطان الرجيم</p>
+
+<div class="quran">
+﴿يَا أَيُّهَا الَّذِينَ آمَنُوا لَا تَكُونُوا كَالَّذِينَ كَفَرُوا وَقَالُوا لِإِخْوَانِهِمْ إِذَا ضَرَبُوا فِي الْأَرْضِ أَوْ كَانُوا غُزًّى لَّوْ كَانُوا عِندَنَا مَا مَاتُوا وَمَا قُتِلُوا لِيَجْعَلَ اللَّهُ ذَٰلِكَ حَسْرَةً فِي قُلُوبِهِمْ ۗ وَاللَّهُ يُحْيِي وَيُمِيتُ ۗ وَاللَّهُ بِمَا تَعْمَلُونَ بَصِيرٌ <span class="aynum">﴿١٥٦﴾</span> وَلَئِن قُتِلْتُمْ فِي سَبِيلِ اللَّهِ أَوْ مُتُّمْ لَمَغْفِرَةٌ مِّنَ اللَّهِ وَرَحْمَةٌ خَيْرٌ مِّمَّا يَجْمَعُونَ <span class="aynum">﴿١٥٧﴾</span> وَلَئِن مُّتُّمْ أَوْ قُتِلْتُمْ لَإِلَى اللَّهِ تُحْشَرُونَ <span class="aynum">﴿١٥٨﴾</span> فَبِمَا رَحْمَةٍ مِّنَ اللَّهِ لِنتَ لَهُمْ ۖ وَلَوْ كُنتَ فَظًّا غَلِيظَ الْقَلْبِ لَانفَضُّوا مِنْ حَوْلِكَ ۖ فَاعْفُ عَنْهُمْ وَاسْتَغْفِرْ لَهُمْ وَشَاوِرْهُمْ فِي الْأَمْرِ ۖ فَإِذَا عَزَمْتَ فَتَوَكَّلْ عَلَى اللَّهِ ۚ إِنَّ اللَّهَ يُحِبُّ الْمُتَوَكِّلِينَ <span class="aynum">﴿١٥٩﴾</span> إِن يَنصُرْكُمُ اللَّهُ فَلَا غَالِبَ لَكُمْ ۖ وَإِن يَخْذُلْكُمْ فَمَن ذَا الَّذِي يَنصُرُكُم مِّن بَعْدِهِ ۗ وَعَلَى اللَّهِ فَلْيَتَوَكَّلِ الْمُؤْمِنُونَ <span class="aynum">﴿١٦٠﴾</span>﴾
+</div>
+
+<h3 class="ayah" id="s5a1">قوله سبحانه وتعالى: ﴿يَا أَيُّهَا الَّذِينَ آمَنُوا لَا تَكُونُوا كَالَّذِينَ كَفَرُوا وَقَالُوا لِإِخْوَانِهِمْ إِذَا ضَرَبُوا فِي الْأَرْضِ أَوْ كَانُوا غُزًّى لَّوْ كَانُوا عِندَنَا مَا مَاتُوا وَمَا قُتِلُوا لِيَجْعَلَ اللَّهُ ذَٰلِكَ حَسْرَةً فِي قُلُوبِهِمْ وَاللَّهُ يُحْيِي وَيُمِيتُ وَاللَّهُ بِمَا تَعْمَلُونَ بَصِيرٌ﴾<sup class="ref" data-n="n1">١</sup></h3>
+<p class="lbl">الفوائد:</p>
+<ol class="fawaid">
+<li><span class="ord">الأولى:</span> في قوله سبحانه ﴿لَا تَكُونُوا كَالَّذِينَ كَفَرُوا﴾: تكرر في سورة آل عمران في سياق يوم أحد التحذيرُ من طاعة الكافرين أو التشبه بهم؛ وهذا يذكّر المؤمنين بالمفارقة الواضحة بين العقيدتين والمنهجين والطريقين، فطريق الإيمان له مرجعية ومعالم وغاية تختلف عن مرجعية ومعالم وغايات طريق الكافرين. والمؤمن في طريقه الإصلاحي يحتاج إلى تعزيز الاستغناء المنهجي بمرجعية طريقه ومعالمه وغايته عن المرجعيات والمنهجيات الأخرى. ومن هذه المعالم الفارقة بين المؤمنين والكفار هو ما ذكره الله في هذه الآية، وهو الإيمان بالقدر والتسليم لما قضاه الله سبحانه وتعالى وقدّره.</li>
+<li><span class="ord">الثانية:</span> في قوله سبحانه وتعالى ﴿لِيَجْعَلَ اللَّهُ ذَٰلِكَ حَسْرَةً فِي قُلُوبِهِمْ﴾: ذكر سبحانه في هذه الآية الأثرَ السيئ المترتب على عدم الإيمان بالقدر؛ وذلك أن هؤلاء المشركين يستبعدون المعنى القدري في المصائب، ويعتمدون على تدبيرهم ونظرهم وآرائهم، ولذلك قالوا في هذه الآية لإخوانهم ﴿لَّوْ كَانُوا عِندَنَا مَا مَاتُوا وَمَا قُتِلُوا﴾؛ والنتيجة المترتبة على هذه المقولة هي الحسرة في القلوب، لأنهم يرون أنهم هم السبب في حصول ذلك. والله سبحانه وتعالى يحذّر المؤمنين من سلوك هذا المسلك، ويذكّرهم بالحقائق التي تقودهم إلى التسليم بقضاء الله وقدره، فقال ﴿وَاللَّهُ يُحْيِي وَيُمِيتُ﴾، وقبل ذلك بآيتين قال سبحانه ﴿قُل لَّوْ كُنتُمْ فِي بُيُوتِكُمْ لَبَرَزَ الَّذِينَ كُتِبَ عَلَيْهِمُ الْقَتْلُ إِلَىٰ مَضَاجِعِهِمْ﴾؛ فهذا تأكيد لأهمية الإيمان بقضاء الله وقدره، وعدمِ الاتكال على الرأي والدوران في فلكه، مما يقود إلى الحسرة والاعتراض على القدر.
+<p>ولذلك فإن من أهم ما ينبغي أن يستحضره المصلح في سياق عمله الإصلاحي أن يكون إيمانه بالقدر حاضرًا دائمًا؛ حتى لو اجتهد المصلح اجتهادًا ثم تبيّن له أنه خطأ — ولكنه كان مجتهدًا متوكلًا على الله مؤمنًا به — فإنه ينبغي أن يجعل اللوم على نفسه، وألّا يؤدي ذلك إلى الحسرة في القلب، وإنما يؤمن بقضاء الله وقدره، ثم يستفيد من هذه التجربة لتصحيح ما يمكن تصحيحه في المستقبل.</p></li>
+</ol>
+<aside class="note n-term" id="n1"><span class="tag">تعريف مصطلح</span><b>غُزًّى:</b> جمع غازٍ. و<b>ضربوا في الأرض:</b> سافروا فيها للتجارة أو غيرها.</aside>
+
+<h3 class="ayah" id="s5a2">قوله سبحانه وتعالى: ﴿وَلَئِن قُتِلْتُمْ فِي سَبِيلِ اللَّهِ أَوْ مُتُّمْ لَمَغْفِرَةٌ مِّنَ اللَّهِ وَرَحْمَةٌ خَيْرٌ مِّمَّا يَجْمَعُونَ • وَلَئِن مُّتُّمْ أَوْ قُتِلْتُمْ لَإِلَى اللَّهِ تُحْشَرُونَ﴾</h3>
+<p class="lbl">الفوائد:</p>
+<ol class="fawaid">
+<li><span class="ord">الأولى:</span> في هاتين الآيتين فائدة عظيمة جدًا في معالجة إرجاف الكفار الذين قالوا لإخوانهم إذا ضربوا في الأرض أو كانوا غزًّى ﴿لَّوْ كَانُوا عِندَنَا مَا مَاتُوا وَمَا قُتِلُوا﴾، ومعالجةِ قول المنافق ﴿لَوْ كَانَ لَنَا مِنَ الْأَمْرِ شَيْءٌ مَّا قُتِلْنَا هَاهُنَا﴾؛ وذلك بإعادة ضبط المعايير المتعلقة بالدنيا والآخرة، وأن الخيرية والنجاح والفوز الحقيقي ليس هو بمقدار السلامة البدنية والبقاء في هذه الدنيا، بل المعيار الحقيقي هو المغفرة من الله سبحانه وتعالى والرحمة والرضا، والتي من أهم ما يحققها القتال في سبيل الله.
+<p>ولذلك فإن مما يعين على تجاوز إرجاف المرجفين وتخذيل المنافقين في مقامات نصرة الدين: الالتفاتَ إلى الدار الآخرة، وتذكّرَ ما عند الله، وأن الإنسان إذا قُتل في سبيل الله أو مات فما يناله من مغفرة الله ورحمته هو خير مما يناله من جمع الأموال والممتلكات في الدنيا واكتساب الملذات.</p>
+<p>ثم يبين الله لهم حقيقة جامعة بين الذين يُقتلون في سبيل الله ويبذلون أرواحهم وبين الذين يموتون موتًا عاديًا، وهي حقيقة الفناء ثم الحشر؛ فكل شيء في هذه الدنيا زائل، وكلُّ من عليها فانٍ، والجميع إلى الله صائر. وهذا مما يعين الإنسان على تجاوز مثل هذه التخذيلات والتثبيطات التي يكاد يقول المنافقون من خلالها إنهم باقون خالدون غير فانين، فيذكّرهم الله بهذه الحقيقة ﴿وَلَئِن مُّتُّمْ أَوْ قُتِلْتُمْ لَإِلَى اللَّهِ تُحْشَرُونَ﴾. وإذا كان الحال كذلك، وأن الإنسان فانٍ وأنه إلى الله راجع، فليفكر في النتيجة الأخروية أكثر من تفكيره في النتيجة الدنيوية.</p></li>
+</ol>
+
+<h3 class="ayah" id="s5a3">قوله سبحانه وتعالى: ﴿فَبِمَا رَحْمَةٍ مِّنَ اللَّهِ لِنتَ لَهُمْ وَلَوْ كُنتَ فَظًّا غَلِيظَ الْقَلْبِ لَانفَضُّوا مِنْ حَوْلِكَ فَاعْفُ عَنْهُمْ وَاسْتَغْفِرْ لَهُمْ وَشَاوِرْهُمْ فِي الْأَمْرِ فَإِذَا عَزَمْتَ فَتَوَكَّلْ عَلَى اللَّهِ إِنَّ اللَّهَ يُحِبُّ الْمُتَوَكِّلِينَ﴾</h3>
+<p class="lbl">الفوائد:</p>
+<ol class="fawaid">
+<li><span class="ord">الأولى:</span> جملة ﴿فَبِمَا رَحْمَةٍ مِّنَ اللَّهِ لِنتَ لَهُمْ﴾ تدل على حال عظيمة للنبي صلى الله عليه وسلم أكسبه الله إياها برحمته؛ وذلك أنه بعد كل ما ناله يوم أحد من الإصابة والجراح وفقدان الأحبة والأصحاب — وكان من أهم أسباب ذلك فرارُ من فرّ من أصحابه وعصيانُهم له — فإنه صلى الله عليه وسلم لان لهم بعد ذلك كله، وعفا عنهم، واحتمل خطأهم، ولم يواجههم بالتعنيف والشدة. وكان ذلك — كما قال البقاعي رحمه الله<sup class="ref" data-n="n2">٢</sup> — أمرًا خارقًا للعادة في هذا الاحتمال وفي هذه الرحمة؛ وكل ذلك إنما هو برحمة الله لنبيه ولأصحاب نبيه، إذ جعل الله هذه الرحمة في قلبه فعاد بها على أصحابه، خاصة أنه أصابهم من الهمّ والغمّ والحزن والنَّصَب ما كان شديدًا عليهم، فتداركهم الله برحمته بأن جعل نبيه صلى الله عليه وسلم يلين لهم ويتغاضى، ولا يقف عند هذا الخطأ وإن كان جسيمًا كبيرًا. فاللهم لك الحمد على رحمتك، واللهم صلّ وسلّم على نبيك.</li>
+<li><span class="ord">الثانية:</span> ﴿وَلَوْ كُنتَ فَظًّا غَلِيظَ الْقَلْبِ لَانفَضُّوا مِنْ حَوْلِكَ﴾: في هذه الجملة من الفائدة أن على أئمة المسلمين وقادة المصلحين المتّبعين للنبي صلى الله عليه وسلم أن يبتعدوا عن الشدة وقسوة القلب والفظاظة في التعامل مع المؤمنين من أتباعهم، وأن يلزموا اللين ولو رأوا من أتباعهم تقصيرًا أو وقوعًا في بعض الذنوب؛ فإن النبي صلى الله عليه وسلم — وهو النبي الكريم الخاتم — لو كان فظًّا غليظ القلب لانفضّ أصحابه من حوله حتى مع وجود الوحي معه، فكيف لو كان الأمر دون ذلك؟ فهذه سنة أئمة المصلحين المتّبعين للأنبياء: يجب أن يكون لديهم من الحلم والصبر ولين الجانب وخفض الجناح للمؤمنين ما يجعلهم أهلًا للإمامة في الدين. كما قال ابن سعدي رحمه الله<sup class="ref" data-n="n3">٣</sup> في تفسير هذه الآية:
+<div class="naql"><span class="who">ابن سعدي</span>«فالأخلاق الحسنة من الرئيس في الدين تجذب الناس إلى دين الله وترغّبهم فيه، مع ما لصاحبه من المدح والثواب الخاص؛ والأخلاق السيئة من الرئيس في الدين تنفّر الناس عن الدين وتبغّضهم إليه، مع ما لصاحبها من الذم والعقاب الخاص. فهذا الرسول المعصوم يقول الله له ما يقول، فكيف بغيره؟ أليس من أوجب الواجبات وأهم المهمات الاقتداءُ بأخلاقه الكريمة، ومعاملةُ الناس بما يعاملهم به صلى الله عليه وسلم من اللين وحسن الخلق والتأليف، امتثالًا لأمر الله وجذبًا لعباد الله لدين الله؟ ثم أمره الله تعالى بأن يعفو عنهم ما صدر منهم من التقصير في حقه صلى الله عليه وسلم، ويستغفر لهم في التقصير في حق الله، فيجمع بين العفو والإحسان».</div>
+<p>وذهب بعض المفسرين إلى أن المقصود بالرحمة واللين في هذه الآية، وبقوله ﴿لَانفَضُّوا مِنْ حَوْلِكَ﴾، ليس خاصًا بما جرى يوم أحد، وإنما المقصود به عمومُ تعامل النبي صلى الله عليه وسلم وسياستِه للأمة، ويدخل في ذلك المشركون والمنافقون وغيرهم؛ كما قال ابن عاشور<sup class="ref" data-n="n4">٤</sup>:</p>
+<div class="naql"><span class="who">ابن عاشور</span>«والعرب أمة عُرفت بالأنَفة وإباء الضيم وسلامة الفطرة وسرعة الفهم، وهم المتلقّون الأولون للدين، فلم تكن تليق بهم الشدة والغلظة، ولكنهم محتاجون إلى استنزال طائرهم في تبليغ الشريعة لهم، ليتجنبوا بذلك المكابرة التي هي الحائل الوحيد بينهم وبين الإذعان إلى الحق. وورد أن صفح النبي صلى الله عليه وسلم وعفوه ورحمته كان سببًا في دخول كثير في الإسلام، كما ذكر بعض ذلك عياضٌ في كتاب الشفاء<sup class="ref" data-n="n5">٥</sup>. فضمير ﴿لَهُمْ﴾ عائد على جميع الأمة كما هو مقتضى مقام التشريع وسياسة الأمة، وليس عائدًا على المسلمين الذين عصوا أمر الرسول صلى الله عليه وسلم يوم أحد، لأنه لا يناسب قوله بعده ﴿لَانفَضُّوا مِنْ حَوْلِكَ﴾ إذ لا يُظن ذلك بالمسلمين، ولأنه لا يناسب قوله بعده ﴿وَشَاوِرْهُمْ فِي الْأَمْرِ﴾ إذا كان المراد المشاورة للاستعانة بآرائهم؛ بل المعنى: لو كنتَ فظًّا لنفّرتَ كثيرًا ممن استجاب لك فهلكوا. أو يكون الضمير عائدًا على المنافقين المعبَّر عنهم بقوله ﴿وَطَائِفَةٌ قَدْ أَهَمَّتْهُمْ أَنفُسُهُمْ﴾، فالمعنى: ولو كنتَ فظًّا لأعلنوا الكفر وتفرّقوا عنك. وليس المراد أنك لِنتَ لهم في وقعة أحد خاصة، لأن قوله بعده ﴿وَلَوْ كُنتَ فَظًّا غَلِيظَ الْقَلْبِ لَانفَضُّوا مِنْ حَوْلِكَ﴾ إلى آخره ينافي ذلك المحمل».</div>
+<p>وعلى كل الأحوال فالمقصود هو أهمية لين الجانب والرحمة وخفض الجناح واحتمال الأذى لكل من يتبع النبي صلى الله عليه وسلم في إمامة الناس وسياستهم وهدايتهم.</p></li>
+<li><span class="ord">الثالثة:</span> ﴿وَشَاوِرْهُمْ فِي الْأَمْرِ﴾: في هذه الجملة من الفائدة أهميةُ مشاورة ذوي الرأي من أهل الإيمان فيما يتعلق بالأعمال الإصلاحية، والتدافعِ بين الحق والباطل، والجهادِ في سبيل الله، وما إلى ذلك من أمور إقامة الدين. وقد اختلف العلماء في توجيه الأمر للنبي صلى الله عليه وسلم بأن يشاور أصحابه على أقوال متعددة، بيّنها الإمام الطبري رحمه الله تعالى<sup class="ref" data-n="n6">٦</sup>، وذلك على النحو التالي:
+<div class="naql"><span class="who">الطبري</span>«ثم اختلف أهل التأويل في المعنى الذي من أجله أمر تعالى ذكره نبيَّه صلى الله عليه وسلم أن يشاورهم، وما المعنى الذي أمره أن يشاورهم فيه؟ فقال بعضهم: أمر الله نبيه صلى الله عليه وسلم بقوله ﴿وَشَاوِرْهُمْ فِي الْأَمْرِ﴾ بمشاورة أصحابه في مكايد الحرب وعند لقاء العدو، تطييبًا منه بذلك أنفسَهم، وتألفًا لهم على دينهم، وليَروا أنه يسمع منهم ويستعين بهم، وإن كان الله جل جلاله قد أغناه بتدبيره له أمورَه وسياستِه إياه وتقويمِه أسبابَه عنهم.
+<br>وقال آخرون: بل أمره بذلك في ذلك — وإن كان له الرأي وأصوب الأمور في التدبير — لِما علم تعالى ذكره في المشورة من الفضل.
+<br>وقال آخرون: إنما أمره الله بمشاورة أصحابه فيما أمره بمشاورتهم فيه — مع إغنائه بتقويمه إياه وتدبيره أسبابه عن آرائهم — ليتّبعه المؤمنون من بعده فيما حَزَبهم من أمر دينهم، ويستنّوا بسنته في ذلك، ويحتذوا المثال الذي رأوه يفعله في حياته من مشاورته — مع المنزلة التي هو بها من الله — أصحابَه وأتباعَه في الأمر ينزل بهم من أمر دينهم ودنياهم، فيتشاوروا بينهم ثم يصدروا عما اجتمع عليه ملؤهم؛ لأن المؤمنين إذا تشاوروا في أمور دينهم متبعين الحق في ذلك لم يُخلِهم الله جل جلاله من لطفه وتوفيقه للصواب من الرأي والقول فيه. قالوا: وذلك نظير قوله سبحانه وتعالى الذي مدح به أهل الإيمان ﴿وَأَمْرُهُمْ شُورَىٰ بَيْنَهُمْ﴾<sup class="ref" data-n="n7">٧</sup>.
+<br>قال أبو جعفر: وأولى الأقوال بالصواب في ذلك أن يقال: إن الله جل جلاله أمر نبيه صلى الله عليه وسلم بمشاورة أصحابه فيما حَزَبه من أمر عدوه ومكايدِ حربه، تألفًا منه بذلك من لم تكن بصيرته بالإسلام البصيرةَ التي يُؤمَن عليه معها فتنةُ الشيطان، وتعريفًا منه أمتَه ما في الأمور التي تحزبهم من بعده ومطلبِها، ليقتدوا به في ذلك عند النوازل التي تنزل بهم، فيتشاوروا فيما بينهم كما كانوا يرونه في حياته صلى الله عليه وسلم يفعله. فأما النبي صلى الله عليه وسلم فإن الله كان يعرّفه مطالبَ وجوهِ ما حَزَبه من الأمور بوحيه أو إلهامِه إياه صوابَ ذلك. وأما أمته فإنهم إذا تشاوروا مستنّين بفعله في ذلك، على تصادقٍ وتآخٍ للحق، وإرادةِ جميعهم للصواب، من غير ميل إلى هوًى ولا حَيدٍ عن هدًى، فالله مسدّدهم وموفّقهم».</div>
+<p>وهذا الكلام الذي ذكره الإمام الطبري رحمه الله تعالى وجيه، إلا أنه عند التحقيق لا يلغي حقيقةَ أن الرسول صلى الله عليه وسلم كان يستشير أصحابه استشارةً يتطلب منها الوصول إلى أفضل الرأي، وإن كان هو أكملهم عقلًا ورأيًا وسدادًا كما هو معلوم؛ ومن ذلك استشارته أصحابه يوم بدر، ويوم أحد، وفي حادثة الإفك، وغير ذلك من المقامات. وهذا كله فيما لم ينزل فيه وحي، أو لم يعقد الله له فيه قلبَه صلى الله عليه وسلم عزيمةً واضحة مستقرة.</p>
+<p>وقد اختلف العلماء في حكم الشورى على من هم بعد النبي صلى الله عليه وسلم من أئمة المسلمين، وقد توسّع الإمام ابن عاشور في تفسيره في ذكر بعض الأقوال في هذه المسألة فقال:</p>
+<div class="naql"><span class="who">ابن عاشور</span>«واختلف العلماء في مدلول قوله ﴿وَشَاوِرْهُمْ﴾: هل هو للوجوب أو للندب؟ وهل هو خاص بالرسول صلى الله عليه وسلم أو عام له ولولاة أمور الأمة كلهم؟ فذهب المالكية إلى الوجوب والعموم. قال ابن خُوَيْزِ مَنْداد: واجب على الولاة المشاورة، فيشاورون العلماء فيما يشكل من أمور الدين، ويشاورون وجوه الجيش فيما يتعلق بالحرب، ويشاورون وجوه الناس فيما يتعلق بمصالحهم، ويشاورون وجوه الكتّاب والعمال والوزراء فيما يتعلق بمصالح البلاد وعمارتها.
+<br>وأشار ابن العربي إلى وجوبها بأنها سبب للصواب فقال: والشورى مِسبار العقل وسبب الصواب — يشير إلى أننا مأمورون بتحرّي الصواب في مصالح الأمة، وما يتوقف عليه الواجب فهو واجب.
+<br>وقال ابن عطية: الشورى من قواعد الشريعة وعزائم الأحكام، ومن لا يستشير أهل العلم والدين فعزله واجب، وهذا ما لا اختلاف فيه. واعترض عليه ابن عرفة قولَه «فعزله واجب»، ولم يعترض كونها واجبة، إلا أن ابن عطية ذكر ذلك جازمًا به. وابن عرفة اعترض بالقياس على قول علماء الكلام بعدم عزل الأمير إذا ظهر فسقه — يعني ولا يزيد ترك الشورى على كونه ترك واجب فهو فسق. وقلت: مَن حفظ حجةٌ على من لم يحفظ، وإن القياس فيه فارق معتبر، فإن الفسق مضرته قاصرة على النفس، وتركُ التشاور تعريضٌ بمصالح المسلمين للخطر والفوات. ومحمل الأمر عند المالكية للوجوب، والأصل عندهم عدم الخصوصية في التشريع إلا لدليل.
+<br>وعن الشافعي أن هذا للاستحباب، ولتقتدي به الأمة، وهو عام للرسول صلى الله عليه وسلم وغيره، تطييبًا لنفوس أصحابه ورفعًا لأقدارهم؛ ورُوي مثله عن قتادة والربيع وابن إسحاق. ورد هذا أبو بكر أحمد بن علي الرازي الحنفي المشهور بالجصّاص<sup class="ref" data-n="n8">٨</sup> بقوله: لو كان معلومًا عندهم أنهم إذا استفرغوا جهدهم في استنباط الصواب عما سُئلوا عنه ثم لم يكن معمولًا به، لم يكن في ذلك تطييب لنفوسهم ولا رفع لأقدارهم، بل فيه إيحاشهم، فالمشاورة لم تفد شيئًا؛ فهذا تأويل ساقط. وقال النووي في صدر كتاب الصلاة في شرح مسلم: الصحيح عندهم وجوبها وهو المختار. وقال الفخر: ظاهر الأمر أنه للوجوب.
+<br>ولم يَنسب العلماء للحنفية قولًا في هذا الأمر، إلا أن الجصاص قال في كتابه «أحكام القرآن» عند قوله تعالى ﴿وَأَمْرُهُمْ شُورَىٰ بَيْنَهُمْ﴾: هذا يدل على جلالة موقع المشورة لذكرها مع الإيمان وإقامة الصلاة، ويدل على أننا مأمورون بها. ومجموع كلامَي الجصاص يدل أن مذهب أبي حنيفة وجوبها.
+<br>ومن السلف من ذهب إلى اختصاص الوجوب بالنبي صلى الله عليه وسلم، قاله الحسن وسفيان، وإنما أُمر بها ليقتدي به غيره وتشيع في أمته، وذلك فيما لا وحي فيه. وقد استشار النبي صلى الله عليه وسلم أصحابه في الخروج لبدر، وفي الخروج إلى أحد، وفي شأن الأسرى يوم بدر، واستشار عموم الجيش في ردّ سبي هوازن. والظاهر أنها لا تكون في الأحكام الشرعية، لأن الأحكام إن كانت بوحي فظاهر، وإن كانت اجتهادية — بناءً على جواز الاجتهاد للنبي صلى الله عليه وسلم في الأمور الشرعية — فالاجتهاد إنما يستند للأدلة لا للآراء؛ وإذا كان المجتهد من أمته لا يستشير في اجتهاده، فكيف تجب الاستشارة على النبي صلى الله عليه وسلم؟ مع أنه لو اجتهد وقلنا بجواز الخطأ عليه فإنه لا يُقَرّ على خطأ باتفاق العلماء.
+<br>ولم يزل من سنة خلفاء العدل استشارةُ أهل الرأي في مصالح المسلمين. قال البخاري في كتاب الاعتصام من صحيحه: وكانت الأئمة بعد النبي صلى الله عليه وسلم يستشيرون الأمناء من أهل العلم، وكان القراء أصحاب مشورة عمر كهولًا كانوا أو شبانًا، وكان وقّافًا عند كتاب الله. واستشار أبو بكر في قتال أهل الردة، وتشاور الصحابة في أمر الخليفة بعد وفاة النبي صلى الله عليه وسلم، وجعل عمر رضي الله عنه الأمر شورى بعده في ستة عيّنهم، وجعل مراقبة الشورى لخمسة من الأنصار. وكان عمر يكتب لعماله يأمرهم بالتشاور، ويتمثّل لهم في كتبه بقول الشاعر — لم أقف على اسمه:
+<br>خليليَّ ليس الرأيُ في صدرِ واحدٍ ••• أشيرا عليّ بالذي تَرَيانِ
+<br>هذا، والشورى مما جبل الله عليه الإنسان في فطرته السليمة، أي فُطر على محبة الصلاح وتطلّب النجاح في المساعي، ولم تزل الشورى في أطوار التاريخ رائجة في البشر، وإنما يُلهي الناس عنها حبُّ الاستبداد وكراهية سماع ما يخالف الهوى، وذلك من انحراف الطبائع وليس من أصل الفطرة، ولذلك يفزع المستبد إلى الشورى عند المضائق. قال ابن عبد البر في «بهجة المجالس»: الشورى محمودة عند عامة العلماء، ولا أعلم أحدًا رضي الاستبداد إلا رجلًا مفتونًا مخادعًا لمن يطلب عنده فائدة، أو رجلًا فاتكًا يحاول حَيْنَ الغفلة، وكلا الرجلين فاسق».</div></li>
+<li><span class="ord">الرابعة:</span> في قوله سبحانه وتعالى ﴿فَإِذَا عَزَمْتَ فَتَوَكَّلْ عَلَى اللَّهِ إِنَّ اللَّهَ يُحِبُّ الْمُتَوَكِّلِينَ﴾: أهميةُ الجمع بين ثلاثة أمور؛ الأول: الاستشارة، الثاني: العزيمة وإمضاء الرأي، الثالث: التوكل على الله سبحانه وتعالى. والجمع بين هذه الأمور الثلاثة مهم جدًا للمصلح في عمله الإصلاحي. مع أن قوله سبحانه وتعالى ﴿فَإِذَا عَزَمْتَ فَتَوَكَّلْ عَلَى اللَّهِ﴾ لا ينحصر في العزيمة الناشئة بعد الاستشارة، بل هو متعلق بمطلق العزيمة، سواء أكانت منعقدة بعد استشارة، أو منعقدة بعد رأي مجرد، أو بعد إلهام من الله سبحانه وتعالى؛ لكن مع ذلك فإن هذه الآية فيها الجمع بين هذه الأمور الثلاثة المهمة جدًا كما تقدم: فلا يُستغنى بالاستشارة عن العزيمة، ولا بالعزيمة عن التوكل، وكذلك لا يُستغنى بالتوكل عن العزيمة وعن الاستشارة.</li>
+</ol>
+<aside class="note n-alam" id="n2"><span class="tag">ترجمة عَلَم</span><b>برهان الدين البقاعي</b> (ت ٨٨٥هـ): مفسر، صاحب «نظم الدرر في تناسب الآيات والسور».</aside>
+<aside class="note n-alam" id="n3"><span class="tag">ترجمة عَلَم</span><b>عبد الرحمن بن ناصر السعدي</b> (ت ١٣٧٦هـ): مفسر نجدي، صاحب «تيسير الكريم الرحمن».</aside>
+<aside class="note n-alam" id="n4"><span class="tag">ترجمة عَلَم</span><b>محمد الطاهر بن عاشور</b> (ت ١٣٩٣هـ): مفسر تونسي مالكي، صاحب «التحرير والتنوير».</aside>
+<aside class="note n-alam" id="n5"><span class="tag">ترجمة عَلَم</span><b>القاضي عياض</b> (ت ٥٤٤هـ): عالم المغرب، صاحب «الشفا بتعريف حقوق المصطفى».</aside>
+<aside class="note n-alam" id="n6"><span class="tag">ترجمة عَلَم</span><b>ابن جرير الطبري</b> (ت ٣١٠هـ)، وكنيته <b>أبو جعفر</b>؛ فقوله الآتي «قال أبو جعفر» هو ترجيحه هو.</aside>
+<aside class="note n-doc" id="n7"><span class="tag">توثيق</span>سورة الشورى، الآية ٣٨.</aside>
+<aside class="note n-alam" id="n8"><span class="tag">ترجمة عَلَم</span><b>أبو بكر الجصّاص</b> (ت ٣٧٠هـ): فقيه حنفي، صاحب «أحكام القرآن».</aside>
+
+<h3 class="ayah" id="s5a4">قوله سبحانه وتعالى: ﴿إِن يَنصُرْكُمُ اللَّهُ فَلَا غَالِبَ لَكُمْ وَإِن يَخْذُلْكُمْ فَمَن ذَا الَّذِي يَنصُرُكُم مِّن بَعْدِهِ وَعَلَى اللَّهِ فَلْيَتَوَكَّلِ الْمُؤْمِنُونَ﴾</h3>
+<p class="lbl">الفوائد:</p>
+<ol class="fawaid">
+<li><span class="ord">الأولى:</span> هذه الآية من أهم الآيات المؤسِّسة لقضية التوكل والتفويض إلى الله سبحانه وتعالى، والحرصِ على طاعته واجتنابِ معصيته في سياق العمل للإسلام والجهاد في سبيل الله ونصرة الدين. وهذه الآية يجب أن تكون عقيدة راسخة في قلب كل من يعمل لدين الله جل جلاله؛ وهي تجعل المؤمن غير معظِّم للأسباب في قلبه — وإن كان مهتمًا بها حريصًا على تحقيقها — وفي نفس الوقت هي آية تجعل المؤمن خائفًا من أثر الذنوب والمعاصي، لأنها هي السبب الذي به يخذل الله عبده، فيتخلف النصر بهذا الخذلان.</li>
+<li><span class="ord">الثانية:</span> هذه الآية حين نزلت على المؤمنين بعد يوم أحد وقعت منهم موقعًا عظيمًا قلّ أن يقع مثله إلا لمن مرّ بمثل تجربة الصحابة تلك؛ وذلك أنهم عايشوا الأحداث، ورأوا التحقق التام للشق الأول من الآية ﴿إِن يَنصُرْكُمُ اللَّهُ فَلَا غَالِبَ لَكُمْ﴾ يوم بدر، فشاهدوا كيف ينصر الله عباده المؤمنين ولو كانوا أذلّة كما قال سبحانه ﴿وَلَقَدْ نَصَرَكُمُ اللَّهُ بِبَدْرٍ وَأَنتُمْ أَذِلَّةٌ﴾، وعرفوا أن الله جل جلاله إذا كان مع عباده المتوكلين عليه فإنه لن يقف أمامهم أحد، ورأوا تحقق ذلك أيضًا في بداية يوم أحد كما قال سبحانه ﴿وَلَقَدْ صَدَقَكُمُ اللَّهُ وَعْدَهُ إِذْ تَحُسُّونَهُم بِإِذْنِهِ﴾. وأما الشق الثاني في قوله سبحانه ﴿حَتَّىٰ إِذَا فَشِلْتُمْ وَتَنَازَعْتُمْ فِي الْأَمْرِ وَعَصَيْتُم مِّن بَعْدِ مَا أَرَاكُم مَّا تُحِبُّونَ﴾ فقد رأوه بأعينهم يوم أحد كذلك، حين عصوا وفشلوا وتنازعوا في الأمر، فرأوا كيف أدال الله المشركين عليهم ورفع نصره عنهم، فأُصيبوا وقُتلوا واغتمّوا.
+<p>والفائدة من ذلك كله: أن يعلم المؤمن أن مقدار وضوح الآيات القرآنية ورسوخها في القلب يتفاوت بقدر تفاوت العاملين في تجاربهم وأعمالهم التي نصروا فيها الدين، وعايشوا فيها الأحوال الإيمانية على الواقع، وما رأوه من أقدار الله جل جلاله؛ فالذي يتلقى هذه الآية وقد رأى بعينيه نصر الله تعالى، فإنها تقرّ في قلبه وترسخ بمستوى لا يتحقق لمن لم يرَ ويعاين مثل ذلك.</p>
+<p>وهذا يذكّر بما أشار إليه الإمام الطبري رحمه الله تعالى في تفسيره لقول الله تعالى ﴿فَلَوْلَا نَفَرَ مِن كُلِّ فِرْقَةٍ مِّنْهُمْ طَائِفَةٌ لِّيَتَفَقَّهُوا فِي الدِّينِ﴾<sup class="ref" data-n="n9">٩</sup>، حين بيّن أن الفقه في الدين هنا هو بمعاينة نصر الله جل جلاله للمؤمنين وغلبتِه لأعدائهم، وفي ذلك من الفقه في الدين ما لا يتأتى بمجرد الحقائق النظرية، فقال رحمه الله تعالى:</p>
+<div class="naql"><span class="who">الطبري</span>«ليتفقّه الطائفة النافرة بما تعاين من نصر الله أهلَ دينه وأصحابَ رسوله على أهل عداوته والكفر به، فأفقهُ بذلك — من معاينته حقيقةَ علمِ أمر الإسلام وظهورِه على الأديان — من لم يكن فقهًا».</div></li>
+</ol>
+<aside class="note n-doc" id="n9"><span class="tag">توثيق</span>سورة التوبة، الآية ١٢٢.</aside>
+
+<div class="quizwrap" data-section="s5"></div>
+
+<div class="summary">
+<h5>خلاصة المقطع الخامس</h5>
+<ul>
+<li>﴿لا تكونوا كالذين كفروا﴾: الفارق المنهجي بين الطريقين، وأخصُّ معالمه هنا الإيمانُ بالقدر والتسليم له.</li>
+<li>إنكار القدر يورث الحسرة في القلب، لأن صاحبه يرى نفسه سببًا لما جرى؛ وعلاجه ﴿والله يحيي ويميت﴾.</li>
+<li>معالجة الإرجاف بإعادة ضبط المعيار: المغفرة والرحمة خير مما يُجمع، والكل إلى الله يُحشر — فالنظر إلى النتيجة الأخروية.</li>
+<li>لِين النبي صلى الله عليه وسلم بعد أحد رحمةٌ من الله؛ وسنةُ أئمة المصلحين: الحلم واللين وخفض الجناح، لا الفظاظة المنفّرة.</li>
+<li>الشورى: أمرٌ نبويٌّ صريح، اختلف العلماء في وجوبها وعمومها، ومضت عليها سنة خلفاء العدل.</li>
+<li>ثلاثيةٌ لا يُستغنى ببعضها عن بعض: استشارة، ثم عزيمة، ثم توكل.</li>
+<li>﴿إن ينصركم الله فلا غالب لكم﴾ عقيدة العامل: لا تعظيم للأسباب في القلب مع الأخذ بها، وخوفٌ من الذنوب لأنها سبب الخذلان.</li>
+<li>رسوخ الآية في القلب يتفاوت بحسب معاينة العامل لأقدار الله — وهو معنى «التفقه في الدين» عند الطبري.</li>
+</ul>
+<span class="from">هذه الخلاصة من إعداد هذا الملف، لا من الكتاب.</span>
+</div>
+</section>
+
+<section class="segment" id="s6">
+<h2 class="seg"><span class="num">سورة آل عمران</span>المقطع السادس</h2>
+<p class="isti">أعوذ بالله من الشيطان الرجيم</p>
+
+<div class="quran">
+﴿لَقَدْ مَنَّ اللَّهُ عَلَى الْمُؤْمِنِينَ إِذْ بَعَثَ فِيهِمْ رَسُولًا مِّنْ أَنفُسِهِمْ يَتْلُو عَلَيْهِمْ آيَاتِهِ وَيُزَكِّيهِمْ وَيُعَلِّمُهُمُ الْكِتَابَ وَالْحِكْمَةَ وَإِن كَانُوا مِن قَبْلُ لَفِي ضَلَالٍ مُّبِينٍ <span class="aynum">﴿١٦٤﴾</span> أَوَلَمَّا أَصَابَتْكُم مُّصِيبَةٌ قَدْ أَصَبْتُم مِّثْلَيْهَا قُلْتُمْ أَنَّىٰ هَٰذَا ۖ قُلْ هُوَ مِنْ عِندِ أَنفُسِكُمْ ۗ إِنَّ اللَّهَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ <span class="aynum">﴿١٦٥﴾</span> وَمَا أَصَابَكُمْ يَوْمَ الْتَقَى الْجَمْعَانِ فَبِإِذْنِ اللَّهِ وَلِيَعْلَمَ الْمُؤْمِنِينَ <span class="aynum">﴿١٦٦﴾</span> وَلِيَعْلَمَ الَّذِينَ نَافَقُوا ۚ وَقِيلَ لَهُمْ تَعَالَوْا قَاتِلُوا فِي سَبِيلِ اللَّهِ أَوِ ادْفَعُوا ۖ قَالُوا لَوْ نَعْلَمُ قِتَالًا لَّاتَّبَعْنَاكُمْ ۗ هُمْ لِلْكُفْرِ يَوْمَئِذٍ أَقْرَبُ مِنْهُمْ لِلْإِيمَانِ ۚ يَقُولُونَ بِأَفْوَاهِهِم مَّا لَيْسَ فِي قُلُوبِهِمْ ۗ وَاللَّهُ أَعْلَمُ بِمَا يَكْتُمُونَ <span class="aynum">﴿١٦٧﴾</span> الَّذِينَ قَالُوا لِإِخْوَانِهِمْ وَقَعَدُوا لَوْ أَطَاعُونَا مَا قُتِلُوا ۗ قُلْ فَادْرَءُوا عَنْ أَنفُسِكُمُ الْمَوْتَ إِن كُنتُمْ صَادِقِينَ <span class="aynum">﴿١٦٨﴾</span>﴾
+</div>
+
+<h3 class="ayah" id="s6a1">قوله جل جلاله: ﴿لَقَدْ مَنَّ اللَّهُ عَلَى الْمُؤْمِنِينَ إِذْ بَعَثَ فِيهِمْ رَسُولًا مِّنْ أَنفُسِهِمْ يَتْلُو عَلَيْهِمْ آيَاتِهِ وَيُزَكِّيهِمْ وَيُعَلِّمُهُمُ الْكِتَابَ وَالْحِكْمَةَ وَإِن كَانُوا مِن قَبْلُ لَفِي ضَلَالٍ مُّبِينٍ﴾</h3>
+<p class="lbl">الفوائد:</p>
+<ol class="fawaid">
+<li><span class="ord">الأولى:</span> في هذه الآيات المتعلقة بمعركة أحد، وفي آيات الأنفال المتعلقة بغزوة بدر، وفي آيات سورة الأحزاب المتعلقة بمعركة الخندق، هناك أمر مشترك فيها، وهو التأكيد على طاعة الرسول صلى الله عليه وسلم، والاستجابةِ له، والامتثالِ لأمره، والاقتداءِ به، ومعرفةِ قدره وشأنه، والنظرِ إلى أحواله؛ كما قال سبحانه وتعالى في سورة الأنفال ﴿يَا أَيُّهَا الَّذِينَ آمَنُوا اسْتَجِيبُوا لِلَّهِ وَلِلرَّسُولِ إِذَا دَعَاكُمْ لِمَا يُحْيِيكُمْ﴾<sup class="ref" data-n="n10">١٠</sup>، وقال أيضًا ﴿وَأَطِيعُوا اللَّهَ وَرَسُولَهُ وَلَا تَنَازَعُوا فَتَفْشَلُوا﴾<sup class="ref" data-n="n11">١١</sup>، وقال سبحانه في سورة الأحزاب ﴿لَّقَدْ كَانَ لَكُمْ فِي رَسُولِ اللَّهِ أُسْوَةٌ حَسَنَةٌ﴾<sup class="ref" data-n="n12">١٢</sup>.
+<p>وقد يؤخذ من هذا مركزيةُ الاقتداء بالنبي صلى الله عليه وسلم والائتساءِ به في جميع أحواله، وخاصة عند القتال ونصرة الدين والعمل للإسلام، وفي سياق الصبر والبذل والتضحية؛ فإن النبي صلى الله عليه وسلم في جميع سيرته كان أول الثابتين، وأول الصابرين، وأول المجاهدين، وأعلمَ الناس بالله. ومن المهم لمن يتطلّب الإصلاح والعمل للدين أن يجعل الهدي العملي للنبي صلى الله عليه وسلم حاضرًا في تصوراته، وأن يكون هو الأنموذج التطبيقي الكامل الذي فيه امتثال الحقائق القرآنية التي يقررها الله سبحانه وتعالى.</p>
+<p>وهذا من أهم الأسباب التي رفعت من شأن أبي بكر الصديق رضي الله عنه، كما في موقفه يوم الحديبية حين اضطربت الأحوال حتى لحق هذا الاضطراب من لحق من كبار أصحاب رسول الله صلى الله عليه وسلم كعمر بن الخطاب رضي الله عنه، لكن أبا بكر الصديق رضي الله عنه تجلّت لديه هذه الحقيقة ناصعة فقال لعمر: <span class="hi">«الزم غَرْزَه، فوالله إنه على الحق»</span><sup class="ref" data-n="n13">١٣</sup>؛ مع أن أبا بكر لم يكن عارفًا بمآلات ما فعله النبي صلى الله عليه وسلم على وجه التفصيل، ولكنه كان ممتلئًا بهذا المعنى. وهذا يؤكد مركزية هدي الأنبياء في السياق الإصلاحي.</p></li>
+</ol>
+<aside class="note n-doc" id="n10"><span class="tag">توثيق</span>سورة الأنفال، الآية ٢٤.</aside>
+<aside class="note n-doc" id="n11"><span class="tag">توثيق</span>سورة الأنفال، الآية ٤٦.</aside>
+<aside class="note n-doc" id="n12"><span class="tag">توثيق</span>سورة الأحزاب، الآية ٢١.</aside>
+<aside class="note n-doc" id="n13"><span class="tag">توثيق</span>من حديث الحديبية عند البخاري ومسلم. و<b>الغَرْز:</b> ركاب رحل البعير؛ ولزومُه كنايةٌ عن التمسك بأمره وعدم مفارقته.</aside>
+
+<h3 class="ayah" id="s6a2">قوله سبحانه وتعالى: ﴿أَوَلَمَّا أَصَابَتْكُم مُّصِيبَةٌ قَدْ أَصَبْتُم مِّثْلَيْهَا قُلْتُمْ أَنَّىٰ هَٰذَا قُلْ هُوَ مِنْ عِندِ أَنفُسِكُمْ إِنَّ اللَّهَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ﴾</h3>
+<p class="lbl">الفوائد:</p>
+<ol class="fawaid">
+<li><span class="ord">الأولى:</span> في قوله سبحانه وتعالى ﴿قَدْ أَصَبْتُم مِّثْلَيْهَا﴾: المقصود بذلك ما حصل للمؤمنين يوم بدر من قتل سبعين من المشركين وأسرِ سبعين آخرين<sup class="ref" data-n="n14">١٤</sup>. والذي يتأمل في آيات القرآن وفي السيرة النبوية يجد الارتباط الواضح بين يوم بدر ويوم أحد؛ فكانت أحدٌ هي المتمّمة للدروس المنهجية والعقيدة العميقة المتعلقة ببدر. وقوله سبحانه ﴿قَدْ أَصَبْتُم مِّثْلَيْهَا﴾ فيه تذكير للمؤمنين بنصر الله لهم يوم بدر، كما ذكّرهم بذلك في أول الآيات المتعلقة بيوم أحد في سورة آل عمران بقوله سبحانه ﴿وَلَقَدْ نَصَرَكُمُ اللَّهُ بِبَدْرٍ وَأَنتُمْ أَذِلَّةٌ﴾.
+<p>ومن الفوائد التي تترتب على المعايشة السابقة لمعاني النصر والهزيمة: وجودُ الرصيد النفسي المعين على الصبر عند الانكسار، وذلك بتذكّر الآلام التي أُصيب بها أعداء المسلمين كذلك؛ فإذا كان المسلمون قد أُصيبوا يوم أحد فقد أصابوا المشركين قبل ذلك يوم بدر كما في هذه الآية. ولذلك قال الله سبحانه وتعالى ﴿إِن تَكُونُوا تَأْلَمُونَ فَإِنَّهُمْ يَأْلَمُونَ كَمَا تَأْلَمُونَ﴾<sup class="ref" data-n="n15">١٥</sup>، وكما قال ﴿إِن يَمْسَسْكُمْ قَرْحٌ فَقَدْ مَسَّ الْقَوْمَ قَرْحٌ مِّثْلُهُ﴾. وهذا المعنى يكون مفقودًا حين لا يكون هناك رصيد من السجال بين أهل الحق وأهل الباطل، وحين تكون الصولة دائمًا لأهل الباطل ويكون أهل الحق مستسلمين؛ فهذه هي المصيبة في النفس والدين.</p></li>
+<li><span class="ord">الثانية:</span> في قوله ﴿قُلْ هُوَ مِنْ عِندِ أَنفُسِكُمْ إِنَّ اللَّهَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ﴾ يربّي الله جل جلاله أصحاب نبيه صلى الله عليه وسلم بأن ما أصابهم من تلك الهزيمة إنما هو بسببهم ومن عند أنفسهم، وإن كان ذلك بتقدير الله سبحانه وتعالى كما قال سبحانه ﴿وَمَا أَصَابَكُمْ يَوْمَ الْتَقَى الْجَمْعَانِ فَبِإِذْنِ اللَّهِ﴾؛ فهو بقدر الله، ولكن قد جعل الله لكل شيء سببًا، فالسبب الذي أدى إلى الهزيمة يوم أحد هو السبب الاختياري الذي فعله المسلمون من عند أنفسهم بعصيانهم وفشلهم.
+<p>وفي هذا معنى مهم في البحث في أحوالنا المعاصرة عن أسباب تخلفنا وهزائمنا؛ فالذي يُلقي باللوم دائمًا على أعداء الله بأنهم هم السبب في كل شيء، دون البحث عن الأسباب الداخلية التي يمكن تغييرها، فهو مقصّر في البحث والنظر. والذي يتأمل في القرآن في مثل هذه الآيات يجد أن الله سبحانه وتعالى يوجّه انتباه المؤمنين وعنايتهم إلى الأسباب الداخلية المتعلقة بإيمانهم وتوكلهم وطاعتهم لله ورسوله؛ فإن أحسنوا فيها واتخذوا ما يمكنهم من الأسباب الخارجية فلا يبقى لهم بعد ذلك إلا التسليم لقدر الله.</p></li>
+</ol>
+<aside class="note n-ctx" id="n14"><span class="tag">سياق تاريخي</span>قُتل من المشركين يوم بدر سبعون وأُسر سبعون؛ وقُتل من المسلمين يوم أحد نحو سبعين، فكانت مصيبة أحد نصفَ ما أصابوا به عدوهم.</aside>
+<aside class="note n-doc" id="n15"><span class="tag">توثيق</span>سورة النساء، الآية ١٠٤.</aside>
+
+<h3 class="ayah" id="s6a3">قوله سبحانه وتعالى: ﴿وَمَا أَصَابَكُمْ يَوْمَ الْتَقَى الْجَمْعَانِ فَبِإِذْنِ اللَّهِ وَلِيَعْلَمَ الْمُؤْمِنِينَ • وَلِيَعْلَمَ الَّذِينَ نَافَقُوا...﴾</h3>
+<p class="lbl">الفوائد:</p>
+<ol class="fawaid">
+<li><span class="ord">الأولى:</span> في قوله ﴿فَبِإِذْنِ اللَّهِ﴾ دليل على أن ما يصيب المسلمين من مصائب وكوارث وأزمات — وخاصة من جهة تسليط الأعداء عليهم — فإنما هو بإذن الله تعالى وقدره وإرادته الكونية، فلا يخرج شيء عن قدر الله جل جلاله. والمطلوب في علاقة المؤمن بالقدر أن يصبر على المصائب لأنه يعلم أنها مقدَّرة، ثم يعمل بواجب الشرع تجاه الأمر القدري، ولا يستسلم للمصائب المقدَّرة بحجة أنها مقدَّرة؛ وإنما يجب عليه أن يجمع بين الشرع والقدر، فلله الخلق والأمر، فهو الذي قدّر وهو الذي أمر عباده بفعل ما يجب عليهم تجاه هذه الأقدار.
+<p>وقد ضلّ قوم في هذا الباب فجعلوا الأمر القدري هو الأمر الشرعي، فقالوا: إذا كان الله قد قدّر علينا تسلّط الأعداء فإن الرضا بالقدر يقتضي عدم جهادهم وعدم مقاومتهم؛ وكذلك قالوا في الفساد والمنكرات التي تكون في الأرض من جهة الحكام الفجّار أو غيرهم. وهذا ضلال مبين، وهو حجة من حجج المشركين المذكورين في قوله سبحانه ﴿وَقَالَ الَّذِينَ أَشْرَكُوا لَوْ شَاءَ اللَّهُ مَا عَبَدْنَا مِن دُونِهِ مِن شَيْءٍ نَّحْنُ وَلَا آبَاؤُنَا﴾<sup class="ref" data-n="n16">١٦</sup>.</p></li>
+<li><span class="ord">الثانية:</span> في قوله جل جلاله ﴿وَلِيَعْلَمَ الْمُؤْمِنِينَ • وَلِيَعْلَمَ الَّذِينَ نَافَقُوا﴾ بيانٌ لحكمة من أعظم الحِكَم التي يقدّر الله لأجلها الأقدار المؤلمة على من يحبهم، وهي التمييز بين المؤمنين والمنافقين؛ وقد مرّ معنا شيء من ذلك، وسيأتي فيه مزيد بيان عند قوله ﴿مَّا كَانَ اللَّهُ لِيَذَرَ الْمُؤْمِنِينَ عَلَىٰ مَا أَنتُمْ عَلَيْهِ حَتَّىٰ يَمِيزَ الْخَبِيثَ مِنَ الطَّيِّبِ﴾.</li>
+<li><span class="ord">الثالثة:</span> قوله ﴿وَلِيَعْلَمَ الَّذِينَ نَافَقُوا وَقِيلَ لَهُمْ تَعَالَوْا قَاتِلُوا فِي سَبِيلِ اللَّهِ أَوِ ادْفَعُوا قَالُوا لَوْ نَعْلَمُ قِتَالًا لَّاتَّبَعْنَاكُمْ...﴾: من موضوعات القرآن المهمة التي يربّي الله عليها عباده المؤمنين بيانُ سبيل المجرمين، وقد تكرر ذكره في كتاب الله جل جلاله. والمجرمون الذين يذكرهم الله سبحانه وتعالى في كتابه، ويبين سبلهم وطرائقهم وأساليبهم وأدواتهم وبواعث أعمالهم، على أصناف: فمنهم المشركون، ومنهم أهل الكتاب، ومنهم المنافقون، ومنهم الشياطين؛ ولكل صنف من هؤلاء سبيل بيّنه الله جل جلاله وذكر معالمه.
+<p>فأما سبيل المنافقين فكثيرًا ما يذكره الله سبحانه وتعالى في سياق التدافع بين الحق والباطل، ولذلك نجد أن ذكرهم قد تكرر في سورة الأحزاب والتوبة وآل عمران؛ وذلك لأن عوار المنافقين يظهر أكثر ما يظهر في أوقات الابتلاءات والشدائد، لشدة جبنهم، وحبهم الدنيا، وكراهيتهم الموت، ولتربّصهم بالمؤمنين؛ فهم إذا جاء العدو يرون فيه الأمل في القضاء على المسلمين، فتبدو البغضاء من أفواههم وما تخفي صدورهم أكبر.</p>
+<p>وها هنا في هذه الآيات يبين الله لنا شيئًا من سبيلهم، وهو تخذيلهم المؤمنين عن مقاتلة الكفار والمجرمين؛ فهم أولًا قعدوا عن مقاومة الأعداء فلم يقاتلوهم، ثم لم يكتفوا بالقعود بل خذّلوا المؤمنين، وذكروا في سبيل تبرير قعودهم حججًا واهية كما بيّنها الله في هذه الآية بقوله ﴿لَوْ نَعْلَمُ قِتَالًا لَّاتَّبَعْنَاكُمْ﴾.</p>
+<p>ولذلك فإن من أهم ما ينبغي على المؤمنين والمسلمين: كشفُ سبيل المنافقين، والحذرُ منهم ومن أفعالهم، خاصة في سياق الصراع بين الحق والباطل، حتى لا يكونوا سببًا من أسباب الهزيمة. وإن من الخلل الكبير أن يتربى كثير من طلاب العلم على موضوعات العلوم الشرعية دون أن يأخذوا نصيبهم من موضوع الوعي بسبيل المجرمين؛ فهم بذلك قد أخلّوا بموضوع قرآني أساسي، ولذلك نرى في الواقع غفلة كثير منهم واستغلال الأعداء لبعضهم.</p></li>
+</ol>
+<aside class="note n-doc" id="n16"><span class="tag">توثيق</span>سورة النحل، الآية ٣٥.</aside>
+
+<div class="quizwrap" data-section="s6"></div>
+
+<div class="summary">
+<h5>خلاصة المقطع السادس</h5>
+<ul>
+<li>آيات المعارك الثلاث (بدر وأحد والخندق) تشترك في التأكيد على طاعة الرسول والاقتداء به ومعرفة قدره.</li>
+<li>موقف أبي بكر يوم الحديبية «الزم غرزه» أنموذجٌ لامتلاء القلب بمركزية هدي النبي صلى الله عليه وسلم قبل وضوح المآلات.</li>
+<li>﴿قد أصبتم مثليها﴾: الرصيد السابق من السجال مع العدو عونٌ نفسي على الصبر عند الانكسار.</li>
+<li>﴿هو من عند أنفسكم﴾ مع ﴿فبإذن الله﴾: الهزيمة بقدر الله وبسبب اختياري من العباد — فالبحث في الأسباب الداخلية واجب لا إلقاء للّوم على العدو وحده.</li>
+<li>الجمع بين الشرع والقدر: لا يُحتجّ بالقدر على ترك الجهاد وإنكار المنكر، وهي حجة المشركين ﴿لو شاء الله ما عبدنا من دونه من شيء﴾.</li>
+<li>الوعي بـ«سبيل المجرمين» — ومنه سبيل المنافقين في التخذيل — موضوعٌ قرآني أساسي يخلّ به كثير من طلاب العلم.</li>
+</ul>
+<span class="from">هذه الخلاصة من إعداد هذا الملف، لا من الكتاب.</span>
+</div>
+</section>
+
+<section class="segment" id="s7">
+<h2 class="seg"><span class="num">سورة آل عمران</span>المقطع السابع</h2>
+<p class="isti">أعوذ بالله من الشيطان الرجيم</p>
+
+<div class="quran">
+﴿وَلَا تَحْسَبَنَّ الَّذِينَ قُتِلُوا فِي سَبِيلِ اللَّهِ أَمْوَاتًا ۚ بَلْ أَحْيَاءٌ عِندَ رَبِّهِمْ يُرْزَقُونَ <span class="aynum">﴿١٦٩﴾</span> فَرِحِينَ بِمَا آتَاهُمُ اللَّهُ مِن فَضْلِهِ وَيَسْتَبْشِرُونَ بِالَّذِينَ لَمْ يَلْحَقُوا بِهِم مِّنْ خَلْفِهِمْ أَلَّا خَوْفٌ عَلَيْهِمْ وَلَا هُمْ يَحْزَنُونَ <span class="aynum">﴿١٧٠﴾</span> يَسْتَبْشِرُونَ بِنِعْمَةٍ مِّنَ اللَّهِ وَفَضْلٍ وَأَنَّ اللَّهَ لَا يُضِيعُ أَجْرَ الْمُؤْمِنِينَ <span class="aynum">﴿١٧١﴾</span> الَّذِينَ اسْتَجَابُوا لِلَّهِ وَالرَّسُولِ مِن بَعْدِ مَا أَصَابَهُمُ الْقَرْحُ ۚ لِلَّذِينَ أَحْسَنُوا مِنْهُمْ وَاتَّقَوْا أَجْرٌ عَظِيمٌ <span class="aynum">﴿١٧٢﴾</span> الَّذِينَ قَالَ لَهُمُ النَّاسُ إِنَّ النَّاسَ قَدْ جَمَعُوا لَكُمْ فَاخْشَوْهُمْ فَزَادَهُمْ إِيمَانًا وَقَالُوا حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ <span class="aynum">﴿١٧٣﴾</span> فَانقَلَبُوا بِنِعْمَةٍ مِّنَ اللَّهِ وَفَضْلٍ لَّمْ يَمْسَسْهُمْ سُوءٌ وَاتَّبَعُوا رِضْوَانَ اللَّهِ ۗ وَاللَّهُ ذُو فَضْلٍ عَظِيمٍ <span class="aynum">﴿١٧٤﴾</span>﴾
+</div>
+
+<h3 class="ayah" id="s7a1">قوله سبحانه وتعالى: ﴿وَلَا تَحْسَبَنَّ الَّذِينَ قُتِلُوا فِي سَبِيلِ اللَّهِ أَمْوَاتًا بَلْ أَحْيَاءٌ عِندَ رَبِّهِمْ يُرْزَقُونَ...﴾</h3>
+<p class="lbl">الفوائد:</p>
+<ol class="fawaid">
+<li><span class="ord">الأولى:</span> في هذه الآيات بيانُ الفضل العظيم للشهداء الذين قُتلوا في سبيل الله. ومن يتأمل في النصوص الشرعية التي وردت في فضل الشهداء فإنه تعظم رغبته في بلوغ هذه المنزلة وتحقيق هذه المكانة؛ والشهادة اصطفاءٌ من الله كما قال سبحانه ﴿وَيَتَّخِذَ مِنكُمْ شُهَدَاءَ﴾. والشهداء — كما بيّن الله في هذه الآية — ﴿أَحْيَاءٌ عِندَ رَبِّهِمْ يُرْزَقُونَ﴾.
+<p>وقد جاء في صحيح مسلم من حديث عبد الله بن مسعود بيانُ شيء من صفة هذه الحياة البرزخية للشهداء، حين سُئل عن هذه الآية فقال رضي الله عنه: أما إنا قد سألنا عن ذلك فقال:</p>
+<div class="hadith">«أرواحهم في جوف طير خُضر، لها قناديل معلقة بالعرش، تسرح من الجنة حيث شاءت ثم تأوي إلى تلك القناديل. فاطّلع إليهم ربهم اطّلاعة فقال: هل تشتهون شيئًا؟ قالوا: أيَّ شيء نشتهي ونحن نسرح من الجنة حيث شئنا؟ ففعل ذلك بهم ثلاث مرات، فلما رأوا أنهم لن يُتركوا من أن يُسألوا قالوا: يا رب، نريد أن تردّ أرواحنا في أجسادنا حتى نُقتل في سبيلك مرة أخرى. فلما رأى أن ليس لهم حاجة تُركوا».<sup class="ref" data-n="n17">١٧</sup></div>
+<p>ومن أعظم ما ورد في الشهداء من فضل ما ثبت في الصحيحين من حديث أنس عن النبي صلى الله عليه وسلم أنه قال:</p>
+<div class="hadith">«ما أحد يدخل الجنة يحب أن يرجع إلى الدنيا وله ما على الأرض من شيء، إلا الشهيد؛ يتمنى أن يرجع إلى الدنيا فيُقتل عشر مرات، لما يرى من الكرامة» — وفي رواية: «لما يرى من فضل الشهادة».<sup class="ref" data-n="n18">١٨</sup></div>
+<p>ولك أن تتخيل ما هذه الكرامة التي رآها الشهيد منذ مقتله إلى دخول الجنة في حياة البرزخ، حتى يتمنى أن يرجع من الجنة إلى الدنيا — لا ليأخذ شيئًا من نعيمها، فهو لا يحتاج إلى ذلك لأنه يعيش في الجنة — وإنما ليُقتل مرة أخرى حتى يعيش الكرامة التي عاشها حين قُتل في سبيل الله.</p>
+<p>ولذلك تمنّى رسول الله صلى الله عليه وسلم أن يُقتل في سبيل الله فقال:</p>
+<div class="hadith">«والذي نفس محمد بيده، لوددتُ أني أغزو في سبيل الله فأُقتل، ثم أُحيا فأُقتل» — قال ذلك ثلاثًا.<sup class="ref" data-n="n19">١٩</sup></div>
+<p>بل وقد تمنى النبي صلى الله عليه وسلم أن يُقتل في يوم أحد تحديدًا، كما أخرج الإمام أحمد في مسنده أن النبي صلى الله عليه وسلم قال: <span class="hi">«أما والله لوددتُ أني غُودِرتُ مع أصحابِ نَحْصِ الجبل»</span><sup class="ref" data-n="n20">٢٠</sup>؛ ونَحْصُ الجبل هو سفحه، وهو المكان الذي قُتل فيه شهداء أحد.</p>
+<p>والإيمان بذلك والتصديق به يدفع المؤمن إلى تمني هذه المنزلة؛ ولذلك ثبت في صحيح مسلم أن رسول الله صلى الله عليه وسلم قال: <span class="hi">«من سأل الله الشهادة بصدق بلّغه الله منازل الشهداء وإن مات على فراشه»</span>. فهذه المنزلة العظيمة والكرامة الجسيمة هي من أعظم ما يعين المؤمن على الثبات عند التحام الصفوف واحتدام القتال، لإيمانه بأن ما عند الله خير وأبقى، وأنه ولو خسر روحه فإنه لن يخسر كل شيء، بل يؤمن أنه مقدَّم إلى رضوان الله وكرامته.</p>
+<p>والذي يستقر في قلبه هذا الإيمان يكون من أعظم الثابتين، بل قد يكون من المقبلين وقت الإدبار، والمقدِّمين حين التراجع؛ كما فعل أنس بن النضر يوم أحد لما رأى تأخّر أصحابه وفرار بعضهم، ورأى ما فعله المشركون بالمسلمين، فقال: اللهم إني أعتذر إليك مما صنع هؤلاء — يعني المسلمين — وأبرأ إليك مما جاء به المشركون. فتقدّم بسيفه فلقي سعد بن معاذ فقال: أين يا سعد؟ إني أجد ريح الجنة دون أحد. فمضى فقُتل، فما عُرف حتى عرفته أخته بشامةٍ أو ببنانه، وبه بضع وثمانون من طعنة وضربة ورمية بسهم<sup class="ref" data-n="n21">٢١</sup>.</p>
+<p>وهذا المعنى من أعظم ما ينبغي أن يُربّى عليه المصلحون: أن يُربَّوا على حب الشهادة في سبيل الله، وعلى أن ما عند الله خير وأبقى؛ فإن هذا من أعظم ما يمنحهم الطمأنينة والثبات في طريق العمل للدين.</p></li>
+</ol>
+<aside class="note n-doc" id="n17"><span class="tag">توثيق</span>أخرجه مسلم من حديث عبد الله بن مسعود رضي الله عنه.</aside>
+<aside class="note n-doc" id="n18"><span class="tag">توثيق</span>متفق عليه: البخاري ومسلم من حديث أنس بن مالك رضي الله عنه.</aside>
+<aside class="note n-doc" id="n19"><span class="tag">توثيق</span>متفق عليه من حديث أبي هريرة رضي الله عنه.</aside>
+<aside class="note n-doc" id="n20"><span class="tag">توثيق</span>أخرجه أحمد في المسند. و<b>غُودِرتُ</b> أي: تُركتُ. و<b>نَحْص الجبل:</b> أصله وسفحه.</aside>
+<aside class="note n-doc" id="n21"><span class="tag">توثيق</span>قصة أنس بن النضر رضي الله عنه أخرجها البخاري ومسلم؛ وفيها نزل قوله تعالى ﴿فَمِنْهُم مَّن قَضَىٰ نَحْبَهُ﴾.</aside>
+
+<h3 class="ayah" id="s7a2">قوله سبحانه وتعالى: ﴿الَّذِينَ اسْتَجَابُوا لِلَّهِ وَالرَّسُولِ مِن بَعْدِ مَا أَصَابَهُمُ الْقَرْحُ لِلَّذِينَ أَحْسَنُوا مِنْهُمْ وَاتَّقَوْا أَجْرٌ عَظِيمٌ • الَّذِينَ قَالَ لَهُمُ النَّاسُ إِنَّ النَّاسَ قَدْ جَمَعُوا لَكُمْ فَاخْشَوْهُمْ فَزَادَهُمْ إِيمَانًا وَقَالُوا حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ...﴾</h3>
+<p class="lbl">الفوائد:</p>
+<ol class="fawaid">
+<li><span class="ord">الأولى:</span> قوله سبحانه ﴿الَّذِينَ اسْتَجَابُوا لِلَّهِ وَالرَّسُولِ مِن بَعْدِ مَا أَصَابَهُمُ الْقَرْحُ﴾ يُعلم منه أن الله جل جلاله قد يضاعف أجر العمل حين يُؤدّى في ظروف صعبة أو في زمن صعب، فيكتب لمن يقوم بهذا العمل من الأجور ما لا يكتبه لمن عمل نفس العمل في وقت آخر؛ ولذلك قال عن السابقين للإسلام ﴿لَا يَسْتَوِي مِنكُم مَّنْ أَنفَقَ مِن قَبْلِ الْفَتْحِ وَقَاتَلَ ۚ أُولَٰئِكَ أَعْظَمُ دَرَجَةً مِّنَ الَّذِينَ أَنفَقُوا مِن بَعْدُ وَقَاتَلُوا ۚ وَكُلًّا وَعَدَ اللَّهُ الْحُسْنَىٰ﴾<sup class="ref" data-n="n22">٢٢</sup>.
+<p>وكذلك في هذه الآية التي أثنى الله فيها على الصحابة بقوله ﴿الَّذِينَ اسْتَجَابُوا لِلَّهِ وَالرَّسُولِ مِن بَعْدِ مَا أَصَابَهُمُ الْقَرْحُ﴾؛ وذلك أنهم رضوان الله عليهم كانت لا تزال دماؤهم تنزف من جراح يوم أحد، وقد أصابهم ما أصابهم من الغم والحزن والشدة وفقدان الأكابر، إلا أنهم حين ناداهم رسول الله صلى الله عليه وسلم ليقوموا إلى منطقة حمراء الأسد لردّ عدوان المشركين الذين أرادوا الرجوع بعد أن انصرفوا ليقضوا على ما بقي من جيش المسلمين — فهؤلاء الصحابة الذين استجابوا لأمر الرسول صلى الله عليه وسلم بعد كل تلك الدماء والجراح لهم أجرٌ عند الله عظيم. ولذلك بيّن الله شرف عملهم في هذه الآية. وفي ذلك من الفائدة كذلك بيانٌ لمنزلة أصحاب رسول الله صلى الله عليه وسلم وفضلهم وعِظَم شأنهم، رضي الله تعالى عنهم وأرضاهم.</p></li>
+<li><span class="ord">الثانية:</span> في قوله سبحانه ﴿قَالَ لَهُمُ النَّاسُ إِنَّ النَّاسَ قَدْ جَمَعُوا لَكُمْ فَاخْشَوْهُمْ فَزَادَهُمْ إِيمَانًا وَقَالُوا حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ﴾: في هذه الآية درسٌ عظيم للمؤمنين، بأن يكون من أهم أحوالهم عند شدة الخوف من كيد الناس وشرهم تحقيقُ التوكل على الله سبحانه وتعالى؛ وتحقيقُ هذا التوكل من أعظم صور زيادة الإيمان، وهو يتضمن إحسان الظن بالله والثقة بكفايته ومعيته مع شدة الخوف وكثرة الأعداء. ولذلك فإن من أعظم المواطن التي يزيد فيها إيمان المؤمن هذه المواطنَ التي يخاف فيها من الأعداء؛ وقد لا تتأتّى مثل هذه المقامات الإيمانية في أحوال الرخاء.</li>
+</ol>
+<aside class="note n-doc" id="n22"><span class="tag">توثيق</span>سورة الحديد، الآية ١٠.</aside>
+
+<div class="quizwrap" data-section="s7"></div>
+
+<div class="summary">
+<h5>خلاصة المقطع السابع</h5>
+<ul>
+<li>الشهداء أحياء عند ربهم يُرزقون، والشهادة اصطفاءٌ من الله لا مجرد نتيجة قتال.</li>
+<li>من كرامة الشهيد أنه وحده يتمنى الرجوع إلى الدنيا ليُقتل مرارًا؛ وقد تمنى النبي صلى الله عليه وسلم ذلك لنفسه، وتمنى أن يكون مع شهداء أحد.</li>
+<li>سؤال الشهادة بصدق يُبلّغ منازل الشهداء ولو مات صاحبه على فراشه؛ وهذا الإيمان من أعظم مثبّتات القلب عند احتدام القتال.</li>
+<li>أنس بن النضر أنموذجُ من ثبت حين أدبر الناس: «إني أجد ريح الجنة دون أحد».</li>
+<li>العمل في الظرف الصعب يضاعَف أجره ﴿لا يستوي منكم من أنفق من قبل الفتح وقاتل﴾ — ومنه خروج الجرحى إلى حمراء الأسد.</li>
+<li>﴿حسبنا الله ونعم الوكيل﴾ عند التخويف من أعظم صور زيادة الإيمان، ولا تتأتى مثلها في الرخاء.</li>
+</ul>
+<span class="from">هذه الخلاصة من إعداد هذا الملف، لا من الكتاب.</span>
+</div>
+</section>
+
+<section class="segment" id="s8">
+<h2 class="seg"><span class="num">سورة آل عمران</span>المقطع الثامن والأخير</h2>
+<p class="isti">أعوذ بالله من الشيطان الرجيم</p>
+
+<div class="quran">
+﴿إِنَّمَا ذَٰلِكُمُ الشَّيْطَانُ يُخَوِّفُ أَوْلِيَاءَهُ فَلَا تَخَافُوهُمْ وَخَافُونِ إِن كُنتُم مُّؤْمِنِينَ <span class="aynum">﴿١٧٥﴾</span> وَلَا يَحْزُنكَ الَّذِينَ يُسَارِعُونَ فِي الْكُفْرِ ۚ إِنَّهُمْ لَن يَضُرُّوا اللَّهَ شَيْئًا ۗ يُرِيدُ اللَّهُ أَلَّا يَجْعَلَ لَهُمْ حَظًّا فِي الْآخِرَةِ ۖ وَلَهُمْ عَذَابٌ عَظِيمٌ <span class="aynum">﴿١٧٦﴾</span> إِنَّ الَّذِينَ اشْتَرَوُا الْكُفْرَ بِالْإِيمَانِ لَن يَضُرُّوا اللَّهَ شَيْئًا وَلَهُمْ عَذَابٌ أَلِيمٌ <span class="aynum">﴿١٧٧﴾</span> وَلَا يَحْسَبَنَّ الَّذِينَ كَفَرُوا أَنَّمَا نُمْلِي لَهُمْ خَيْرٌ لِّأَنفُسِهِمْ ۚ إِنَّمَا نُمْلِي لَهُمْ لِيَزْدَادُوا إِثْمًا ۚ وَلَهُمْ عَذَابٌ مُّهِينٌ <span class="aynum">﴿١٧٨﴾</span> مَّا كَانَ اللَّهُ لِيَذَرَ الْمُؤْمِنِينَ عَلَىٰ مَا أَنتُمْ عَلَيْهِ حَتَّىٰ يَمِيزَ الْخَبِيثَ مِنَ الطَّيِّبِ ۗ وَمَا كَانَ اللَّهُ لِيُطْلِعَكُمْ عَلَى الْغَيْبِ وَلَٰكِنَّ اللَّهَ يَجْتَبِي مِن رُّسُلِهِ مَن يَشَاءُ ۖ فَآمِنُوا بِاللَّهِ وَرُسُلِهِ ۚ وَإِن تُؤْمِنُوا وَتَتَّقُوا فَلَكُمْ أَجْرٌ عَظِيمٌ <span class="aynum">﴿١٧٩﴾</span>﴾
+</div>
+
+<h3 class="ayah" id="s8a1">قوله سبحانه وتعالى: ﴿إِنَّمَا ذَٰلِكُمُ الشَّيْطَانُ يُخَوِّفُ أَوْلِيَاءَهُ فَلَا تَخَافُوهُمْ وَخَافُونِ إِن كُنتُم مُّؤْمِنِينَ﴾</h3>
+<p class="lbl">الفوائد:</p>
+<ol class="fawaid">
+<li><span class="ord">الأولى:</span> ﴿إِنَّمَا ذَٰلِكُمُ الشَّيْطَانُ يُخَوِّفُ أَوْلِيَاءَهُ﴾: المراد بهذه الآية أن الشيطان يحاول أن يجعل لأوليائه هيبةً في القلوب بحيث يُخافون ويُخشَون؛ فمعنى ﴿يُخَوِّفُ أَوْلِيَاءَهُ﴾ أي: يخوّفكم أولياءه، كما قال أئمة التفسير<sup class="ref" data-n="n23">٢٣</sup>. ولذلك فليس كل ما يجده المؤمن من هيبة لأعدائه يكون بالضرورة أثرًا نفسيًا حقيقيًا متعلقًا بأسباب واقعية، بل قد يكون هذا إنما هو من الشيطان الذي يحرص على جعل أوليائه محلًا للرهبة والخوف عند المؤمنين. ولذلك نجد أن من يغلق على نفسه مداخل الشيطان، ويتعلق بالله سبحانه، ويتوكل عليه، ويخافه وحده — نجد أنه لا يهاب أعداء الله، ولا يجد لهم في نفسه الرهبة، بل بعكس ذلك: هم الذين يهابونه ويخشونه.</li>
+<li><span class="ord">الثانية:</span> في قوله سبحانه ﴿فَلَا تَخَافُوهُمْ وَخَافُونِ إِن كُنتُم مُّؤْمِنِينَ﴾ بيانٌ أن استقرار الخوف من الله جل جلاله في قلب المؤمن من أعظم ما يعينه على الثبات والإقدام وتجاوز الأزمات وعدم الانكسار أمام التحديات؛ فقد جعل الله تعالى الوقاية من تخويف الشيطان أولياءَه: التذكيرَ بالخوف منه سبحانه وتعالى. وقد ذكر الله سبحانه وتعالى هذا المعنى في سورة المائدة في قصة خوف بني إسرائيل من الجبارين وعدم دخولهم الأرض المقدسة، وفيها أبرز الله تعالى صفة الخوف منه في الثابتين الذين دعوا إلى دخول الباب على الأعداء وعدم الخوف منهم أو التردد من ذلك، كما قال سبحانه ﴿قَالَ رَجُلَانِ مِنَ الَّذِينَ يَخَافُونَ أَنْعَمَ اللَّهُ عَلَيْهِمَا ادْخُلُوا عَلَيْهِمُ الْبَابَ﴾<sup class="ref" data-n="n24">٢٤</sup>؛ فهذه من أعظم ثمرات الخوف من الله جل جلاله.</li>
+</ol>
+<aside class="note n-exp" id="n23"><span class="tag">إيضاح</span>أي أن المفعول الأول محذوف؛ والتقدير: يخوّفكم أولياءَه. وهو قول جمهور المفسرين.</aside>
+<aside class="note n-doc" id="n24"><span class="tag">توثيق</span>سورة المائدة، الآية ٢٣.</aside>
+
+<h3 class="ayah" id="s8a2">قوله سبحانه وتعالى: ﴿وَلَا يَحْزُنكَ الَّذِينَ يُسَارِعُونَ فِي الْكُفْرِ... وَلَا يَحْسَبَنَّ الَّذِينَ كَفَرُوا أَنَّمَا نُمْلِي لَهُمْ خَيْرٌ لِّأَنفُسِهِمْ إِنَّمَا نُمْلِي لَهُمْ لِيَزْدَادُوا إِثْمًا وَلَهُمْ عَذَابٌ مُّهِينٌ﴾</h3>
+<p class="lbl">الفوائد:</p>
+<ol class="fawaid">
+<li><span class="ord">الأولى:</span> بعد أن ذكر الله سبحانه وتعالى حال المؤمنين الذين قُتلوا في سبيله، وأنهم أحياء عند ربهم يُرزقون، وأنهم فرحون بما آتاهم الله من فضله ويستبشرون بالذين لم يلحقوا بهم من خلفهم؛ وبعد أن ذكر سبحانه حكمته في تقدير الابتلاءات — بعد ذلك كله يبين الله لعباده المؤمنين أن ما يرونه من أحوال الكفار والمنافقين المسارعين في الكفر، من طول المهلة التي أُعطوها، وما يتقلبون فيه من القوة والعافية — يبين أن ذلك كله ليس خيرًا لهم، ولا أمرًا يُفرح به، ولا هو حال يستحق البقاء والعيش؛ بل إن ذلك كله إنما هو شر عريض ووبال شديد على أولئك الكفار. فإن المصيبة كل المصيبة أنه سبحانه يريد ألا يجعل لهم حظًا في الآخرة، بل يريد لهم سبحانه أن يزدادوا إثمًا حتى يستحقوا مزيدًا من العذاب والعقاب في الدنيا وفي الآخرة.
+<p>ولك أن تتخيل أن إنسانًا يعيش في هذه الحياة متنعمًا في عافية ورغد من العيش، وتكون إرادة الله فيه أن يزداد من الآثام ليزيد عليه العقوبة في جهنم! فهذا كله استدراج من الله سبحانه وتعالى وكيدٌ بأعدائه؛ فإنهم في سياق هذا الاستدراج لا يفهمون أنه مكرٌ بهم، وإنما يظنون أن ذلك كله من الخير والعز والفلاح. وقد قال سبحانه في سياق ذلك ﴿أَيَحْسَبُونَ أَنَّمَا نُمِدُّهُم بِهِ مِن مَّالٍ وَبَنِينَ • نُسَارِعُ لَهُمْ فِي الْخَيْرَاتِ ۚ بَل لَّا يَشْعُرُونَ﴾<sup class="ref" data-n="n25">٢٥</sup>، فبيّن الله أنهم لا يشعرون بمكر الله بهم، وأن هذا الإملاء والإمهال إنما هو شر محض عليهم.</p>
+<p>وهذا التصور مهم جدًا للمؤمنين، لأنهم حين يرون علوّ الكفار وشدة النكال الذي ألحقوه بالمؤمنين، يحتاجون إلى ما يُسكّن غيظ قلوبهم بهذه العقيدة التي يعلمون بها أن أحوال المشركين آيلة إلى الشر والعذاب.</p></li>
+</ol>
+<aside class="note n-doc" id="n25"><span class="tag">توثيق</span>سورة المؤمنون، الآيتان ٥٥–٥٦.</aside>
+
+<h3 class="ayah" id="s8a3">قوله سبحانه وتعالى: ﴿مَّا كَانَ اللَّهُ لِيَذَرَ الْمُؤْمِنِينَ عَلَىٰ مَا أَنتُمْ عَلَيْهِ حَتَّىٰ يَمِيزَ الْخَبِيثَ مِنَ الطَّيِّبِ وَمَا كَانَ اللَّهُ لِيُطْلِعَكُمْ عَلَى الْغَيْبِ وَلَٰكِنَّ اللَّهَ يَجْتَبِي مِن رُّسُلِهِ مَن يَشَاءُ فَآمِنُوا بِاللَّهِ وَرُسُلِهِ وَإِن تُؤْمِنُوا وَتَتَّقُوا فَلَكُمْ أَجْرٌ عَظِيمٌ﴾</h3>
+<p class="lbl">الفوائد:</p>
+<ol class="fawaid">
+<li><span class="ord">الأولى:</span> في هذه الآية بيانُ سنة من سنن الله سبحانه وتعالى، وذلك لأنها صُدّرت بأسلوب ﴿مَّا كَانَ اللَّهُ﴾؛ وهذا الأسلوب إذا جاء في القرآن فإنه يدل على سنة من سنن الله تعالى، كما قال سبحانه ﴿وَمَا كَانَ رَبُّكَ لِيُهْلِكَ الْقُرَىٰ بِظُلْمٍ وَأَهْلُهَا مُصْلِحُونَ﴾<sup class="ref" data-n="n26">٢٦</sup>. وهذه السنة المبيَّنة في هذه الآية هي سنة التمييز بين الحق والباطل — وإن شئت فقل: سنة الابتلاء التي يُراد منها التمييز بين الحق والباطل، فبين الأمرين تداخل؛ فإن من عادة الله سبحانه أن يميز بين الخبيث والطيب، ومن عادته أنه يبتلي عباده المؤمنين، ومن أهم ثمرات هذا الابتلاء التمييزُ بين الخبيث والطيب.
+<p>ولذلك حين فسّر الإمام الطبري هذه الآية ربطها بمعنى الابتلاء فقال:</p>
+<div class="naql"><span class="who">الطبري</span>«وما كان الله ليُطلعكم على ضمائر قلوب عباده فتعرفوا المؤمن منهم من المنافق والكافر، ولكنه يميز بينهم بالمحن والابتلاء، كما ميّز بينهم بالبأساء يوم أحد وجهادِ عدوه وما أشبه ذلك من صنوف المحن، حتى تعرفوا مؤمنهم وكافرهم ومنافقهم».</div>
+<p>والتمييز بين الحق والباطل والخبيث والطيب هو معنى قرآني محكم، ومقصدٌ من المقاصد الإلهية المتعلقة بكثير من الأقدار والأحكام؛ فالله جل جلاله نهى بني إسرائيل عن أن يلبسوا الحق بالباطل، وقدّر الأقدار المؤلمة الشديدة على المؤمنين لكيلا يلتبس الحق بالباطل والخبيثُ بالطيب، وجعل الولاء بين المؤمنين وقطع الولاء بينهم وبين الكفار لحِكَم منها ألا يلتبس الحق بالباطل، كما قال في سورة الأنفال ﴿وَالَّذِينَ كَفَرُوا بَعْضُهُمْ أَوْلِيَاءُ بَعْضٍ ۚ إِلَّا تَفْعَلُوهُ تَكُن فِتْنَةٌ فِي الْأَرْضِ وَفَسَادٌ كَبِيرٌ﴾<sup class="ref" data-n="n27">٢٧</sup>. قال ابن كثير<sup class="ref" data-n="n28">٢٨</sup> في الآية: «أي إن لم تجانبوا المشركين وتوالوا المؤمنين، وإلا وقعت الفتنة في الناس، وهو التباس الأمر واختلاط المؤمن بالكافر، فيقع بين الناس فساد منتشر طويل عريض».</p>
+<p>وهذا يؤكد أهمية الولاء والبراء، وبيانِ الحق وكشفِ الباطل، ويبين خطورة المناهج التي تلبس الحق بالباطل وتقرّب الطيب من الخبيث.</p></li>
+</ol>
+<aside class="note n-doc" id="n26"><span class="tag">توثيق</span>سورة هود، الآية ١١٧.</aside>
+<aside class="note n-doc" id="n27"><span class="tag">توثيق</span>سورة الأنفال، الآية ٧٣.</aside>
+<aside class="note n-alam" id="n28"><span class="tag">ترجمة عَلَم</span><b>إسماعيل بن كثير الدمشقي</b> (ت ٧٧٤هـ): محدّث ومفسر ومؤرخ، صاحب «تفسير القرآن العظيم».</aside>
+
+<div class="quizwrap" data-section="s8"></div>
+
+<div class="summary">
+<h5>خلاصة المقطع الثامن</h5>
+<ul>
+<li>﴿يخوّف أولياءه﴾ أي يخوّفكم أولياءه؛ فليست كل هيبةٍ للعدو أثرًا واقعيًا، وقد تكون من نفث الشيطان.</li>
+<li>الخوف من الله وحده هو الوقاية من تخويف الشيطان، وشاهده ﴿قال رجلان من الذين يخافون ادخلوا عليهم الباب﴾.</li>
+<li>مهلةُ الكفار وتقلّبهم في العافية استدراجٌ لا خير: ﴿إنما نملي لهم ليزدادوا إثما﴾ و﴿بل لا يشعرون﴾.</li>
+<li>هذا التصور يُسكّن غيظ المؤمنين حين يرون علوّ الباطل وشدة نكاله.</li>
+<li>﴿ما كان الله﴾ صيغةٌ تدل على سنة إلهية؛ والسنة هنا: التمييز بين الخبيث والطيب بالمحن والابتلاء، لا بالاطلاع على الغيب.</li>
+<li>الولاء والبراء وبيان الحق من مقاصد منع التباس الحق بالباطل ﴿إلا تفعلوه تكن فتنة في الأرض وفساد كبير﴾.</li>
+</ul>
+<span class="from">هذه الخلاصة من إعداد هذا الملف، لا من الكتاب.</span>
+</div>
+</section>
+
+<section class="segment" id="s9">
+<h2 class="seg"><span class="num">آخر الكتاب</span>خاتمة المؤلف</h2>
+<p>أحمد الله سبحانه وتعالى على توفيقه وفتحه في التأمل في هذه الآيات العظيمة، وأسأله سبحانه أن ينفع بهذه الفوائد والعبر، وأن يتقبلها، وأن يعين على إتمام هذه السلسلة من التدبر لبقية آيات كتابه العزيز المتعلقة بمعالجة نفوس المصلحين والتدافع بين الحق والباطل.</p>
+<p>اللهم صلِّ على محمد وعلى آل محمد، كما صليت على إبراهيم وعلى آل إبراهيم، إنك حميد مجيد؛ وبارك على محمد وعلى آل محمد، كما باركت على إبراهيم وعلى آل إبراهيم، إنك حميد مجيد.</p>
+</section>
+
+</div>
+
+<section id="cards">
+  <h2>بطاقات المراجعة</h2>
+  <p style="font-size:.88rem;color:var(--ink2);max-width:820px">بطاقات هذا الجزء، مصنّفة بالمقطع. كل بطاقة قائمة بذاتها، ويمكن تحميلها بصيغة TSV لاستيرادها في أنكي.</p>
+  <div class="filters"><button class="chip on" data-f="all">الكل</button><button class="chip" data-f="s5">المقطع الخامس</button><button class="chip" data-f="s6">السادس</button><button class="chip" data-f="s7">السابع</button><button class="chip" data-f="s8">الثامن</button></div>
+  <div class="flip"><div class="card" id="cCard">
+    <div class="face" id="faceFront"><span class="side">السؤال</span><div class="txt" id="cFront"></div></div>
+    <div class="face back" id="faceBack" style="display:none"><span class="side">الجواب</span><div class="txt" id="cBack"></div></div>
+  </div></div>
+  <div class="cardnav">
+    <button class="btn" id="cPrev">السابقة ›</button>
+    <span class="pos" id="cPos"></span>
+    <button class="btn" id="cNext">‹ التالية</button>
   </div>
-  <script type="module" src="../../../firebase-sync-manhaj.js"></script>
-  <script src="../../../data.js"></script>
-  <script src="../../../script.js"></script>
+  <p class="hint">اضغط على البطاقة لقلبها</p>
+  <p style="text-align:center;margin-top:16px"><button class="btn" id="bTsv">⤓ تحميل البطاقات (TSV لأنكي)</button></p>
+</section>
+</main>
+
+<footer>
+معالجة القرآن لنفوس المصلحين — الجزء الثالث<br>
+النصّ للشيخ أحمد بن يوسف السيد · الهوامش والخلاصات والأسئلة والبطاقات من إعداد هذا الملف
+</footer>
+
+<script>
+const POSKEY="mq_pos_3";
+const TSVNAME="معالجة_القرآن_لنفوس_المصلحين_3.tsv";
+const QUIZ_DATA=[
+{
+"id": "q1",
+"sectionId": "s5",
+"question": "﴿ليجعل الله ذلك حسرة في قلوبهم﴾ — ما الأثر النفسي المترتب على إنكار القدر كما بيّنته الآية؟",
+"options": [
+"الطمأنينة لأنهم يعتمدون على تدبيرهم",
+"الحسرة، لأنهم يرون أنفسهم سببًا فيما جرى",
+"الرضا بما وقع",
+"الزهد في الدنيا"
+],
+"correctIndex": 1,
+"explanation": "لأنهم يستبعدون المعنى القدري ويعتمدون على تدبيرهم ورأيهم، فيقولون ﴿لو كانوا عندنا ما ماتوا وما قتلوا﴾؛ وعلاجه ﴿والله يحيي ويميت﴾."
+},
+{
+"id": "q2",
+"sectionId": "s5",
+"question": "﴿فإذا عزمت فتوكل على الله﴾ — ما الأمور الثلاثة التي جمعتها الآية ولا يُستغنى ببعضها عن بعض؟",
+"options": [
+"العلم والعمل والدعوة",
+"الصبر والتقوى واليقين",
+"الاستشارة والعزيمة والتوكل",
+"النية والسبب والنتيجة"
+],
+"correctIndex": 2,
+"explanation": "لا يُستغنى بالاستشارة عن العزيمة، ولا بالعزيمة عن التوكل، ولا بالتوكل عن العزيمة والاستشارة."
+},
+{
+"id": "q3",
+"sectionId": "s6",
+"question": "كيف يجتمع قوله ﴿قل هو من عند أنفسكم﴾ مع قوله ﴿وما أصابكم يوم التقى الجمعان فبإذن الله﴾؟",
+"options": [
+"الأولى ناسخة للثانية",
+"الهزيمة بقدر الله، وسببها الاختياري معصية المسلمين وفشلهم",
+"الأولى للمنافقين والثانية للمؤمنين",
+"لا علاقة بينهما"
+],
+"correctIndex": 1,
+"explanation": "فهو بقدر الله، ولكن الله جعل لكل شيء سببًا؛ وفيه توجيه للبحث في الأسباب الداخلية القابلة للتغيير لا إلقاء اللوم على العدو وحده."
+},
+{
+"id": "q4",
+"sectionId": "s6",
+"question": "ما الضلال الذي وقع فيه من جعل الأمر القدري هو الأمر الشرعي؟",
+"options": [
+"إنكار وقوع المصائب بقدر الله",
+"القول بأن الرضا بالقدر يقتضي ترك جهاد الأعداء وإنكار المنكر",
+"نفي الحكمة عن أفعال الله",
+"القول بأن العبد يخلق فعل نفسه"
+],
+"correctIndex": 1,
+"explanation": "وهو ضلال مبين، وحجةٌ من حجج المشركين ﴿وقال الذين أشركوا لو شاء الله ما عبدنا من دونه من شيء﴾؛ والواجب الجمع بين الشرع والقدر."
+},
+{
+"id": "q5",
+"sectionId": "s7",
+"question": "﴿الذين استجابوا لله والرسول من بعد ما أصابهم القرح﴾ — أي قاعدةٍ في الأجر تدل عليها؟",
+"options": [
+"أن الأجر واحد في كل الأحوال",
+"أن العمل في الظرف الصعب يُضاعف أجره",
+"أن الأجر بحسب النتيجة لا العمل",
+"أن الجرحى يسقط عنهم التكليف"
+],
+"correctIndex": 1,
+"explanation": "ونظيره ﴿لا يستوي منكم من أنفق من قبل الفتح وقاتل أولئك أعظم درجة من الذين أنفقوا من بعد وقاتلوا﴾؛ وقد خرجوا إلى حمراء الأسد ودماؤهم تنزف."
+},
+{
+"id": "q6",
+"sectionId": "s7",
+"question": "ما وجه تميّز الشهيد في حديث أنس: «ما أحد يدخل الجنة يحب أن يرجع إلى الدنيا… إلا الشهيد»؟",
+"options": [
+"أنه يرجع ليأخذ حظه من نعيم الدنيا",
+"أنه يتمنى الرجوع ليُقتل مرارًا لما رأى من الكرامة",
+"أنه لم يدخل الجنة بعد",
+"أنه يرجع ليتم عمله الذي انقطع"
+],
+"correctIndex": 1,
+"explanation": "يتمنى أن يرجع فيُقتل عشر مرات لما يرى من الكرامة وفضل الشهادة، لا لحاجة إلى نعيم الدنيا فهو في الجنة."
+},
+{
+"id": "q7",
+"sectionId": "s8",
+"question": "﴿إنما ذلكم الشيطان يخوف أولياءه﴾ — ما تقدير المعنى عند أئمة التفسير؟",
+"options": [
+"أن الشيطان يخوّف أولياءه من المؤمنين",
+"أن أولياء الشيطان يخوّفون الناس بأنفسهم",
+"أن الشيطان يخوّفكم أولياءه",
+"أن الشيطان يخاف من أوليائه"
+],
+"correctIndex": 2,
+"explanation": "المفعول الأول محذوف؛ فالشيطان يحرص على جعل أوليائه محلًا للرهبة في قلوب المؤمنين، فليست كل هيبة للعدو أثرًا واقعيًا."
+},
+{
+"id": "q8",
+"sectionId": "s8",
+"question": "﴿ما كان الله ليذر المؤمنين على ما أنتم عليه حتى يميز الخبيث من الطيب﴾ — بأي شيء يقع هذا التمييز؟",
+"options": [
+"بإطلاع الله المؤمنين على الغيب",
+"بالمحن والابتلاء",
+"بإقرار الناس على أنفسهم",
+"بعلامات ظاهرة في الأبدان"
+],
+"correctIndex": 1,
+"explanation": "قال الطبري: «ولكنه يميز بينهم بالمحن والابتلاء، كما ميّز بينهم بالبأساء يوم أحد»؛ وصيغة ﴿ما كان الله﴾ تدل على سنة إلهية."
+}
+];
+const CARDS_DATA=[
+{
+"s": "s5",
+"level": 2,
+"q": "﴿لَا تَكُونُوا كَالَّذِينَ كَفَرُوا وَقَالُوا لِإِخْوَانِهِمْ… لَّوْ كَانُوا عِندَنَا مَا مَاتُوا وَمَا قُتِلُوا﴾ — أي معلمٍ فارقٍ بين المنهجين تبرزه الآية؟",
+"a": "الإيمانُ بالقدر والتسليمُ لما قضاه الله. وتكرر في آل عمران التحذير من طاعة الكافرين أو التشبه بهم؛ لأن طريق الإيمان له مرجعية ومعالم وغاية تخالف طريق الكافرين، فيحتاج المصلح إلى تعزيز الاستغناء المنهجي."
+},
+{
+"s": "s5",
+"level": 1,
+"q": "﴿لِيَجْعَلَ اللَّهُ ذَٰلِكَ حَسْرَةً فِي قُلُوبِهِمْ﴾ — ما الأثر النفسي لإنكار القدر، وما علاجه في الآية؟",
+"a": "الحسرة؛ لأن منكِر القدر يرى نفسه سببًا فيما جرى ويعتمد على تدبيره ورأيه. وعلاجه ﴿وَاللَّهُ يُحْيِي وَيُمِيتُ﴾، وقبله ﴿قُل لَّوْ كُنتُمْ فِي بُيُوتِكُمْ لَبَرَزَ الَّذِينَ كُتِبَ عَلَيْهِمُ الْقَتْلُ إِلَىٰ مَضَاجِعِهِمْ﴾."
+},
+{
+"s": "s5",
+"level": 2,
+"q": "إذا اجتهد المصلح ثم تبيّن له خطأ اجتهاده، فما مقتضى الإيمان بالقدر في موقفه؟",
+"a": "أن يجعل اللوم على نفسه، وألّا يؤدي ذلك إلى الحسرة في القلب؛ بل يؤمن بقضاء الله وقدره، ثم يستفيد من التجربة لتصحيح ما يمكن تصحيحه في المستقبل."
+},
+{
+"s": "s5",
+"level": 2,
+"q": "﴿وَلَئِن قُتِلْتُمْ فِي سَبِيلِ اللَّهِ أَوْ مُتُّمْ لَمَغْفِرَةٌ مِّنَ اللَّهِ وَرَحْمَةٌ خَيْرٌ مِّمَّا يَجْمَعُونَ﴾ — كيف تعالج إرجاف المرجفين؟",
+"a": "بإعادة ضبط المعيار: فالخيرية والفوز ليسا بالسلامة البدنية والبقاء في الدنيا، بل بالمغفرة والرحمة والرضا. ثم بتقرير الفناء والحشر ﴿وَلَئِن مُّتُّمْ أَوْ قُتِلْتُمْ لَإِلَى اللَّهِ تُحْشَرُونَ﴾، فينظر إلى النتيجة الأخروية."
+},
+{
+"s": "s5",
+"level": 4,
+"q": "﴿فَبِمَا رَحْمَةٍ مِّنَ اللَّهِ لِنتَ لَهُمْ﴾ — لماذا عدّ البقاعي هذا اللين أمرًا خارقًا للعادة؟",
+"a": "لأنه جاء بعد الجراح وفقدان الأحبة يوم أحد، وكان من أهم أسباب ذلك فرارُ من فرّ وعصيانُهم؛ فلان لهم وعفا واحتمل خطأهم ولم يواجههم بالتعنيف — وذلك برحمة الله لنبيه ولأصحاب نبيه."
+},
+{
+"s": "s5",
+"level": 1,
+"q": "﴿وَلَوْ كُنتَ فَظًّا غَلِيظَ الْقَلْبِ لَانفَضُّوا مِنْ حَوْلِكَ﴾ — ما مقتضاها في قادة المصلحين؟",
+"a": "لزوم الحلم والصبر ولين الجانب وخفض الجناح، ولو رأوا من أتباعهم تقصيرًا. قال ابن سعدي: الأخلاق الحسنة من الرئيس في الدين تجذب الناس إلى دين الله، والسيئة تنفّرهم عنه وتبغّضهم إليه."
+},
+{
+"s": "s5",
+"level": 4,
+"q": "على من يعود ضمير ﴿لِنتَ لَهُمْ﴾ عند ابن عاشور، وبمَ استدلّ؟",
+"a": "على جميع الأمة (أو على المنافقين)، لا على عصاة أحد خاصة؛ لأن ﴿لَانفَضُّوا مِنْ حَوْلِكَ﴾ لا يُظن بالمسلمين، ولأن ﴿وَشَاوِرْهُمْ فِي الْأَمْرِ﴾ لا يناسب حصرَه فيهم. والمقصود على كل حال: أهمية اللين واحتمال الأذى في سياسة الناس."
+},
+{
+"s": "s5",
+"level": 2,
+"q": "﴿وَشَاوِرْهُمْ فِي الْأَمْرِ﴾ — ما ترجيح الطبري في المعنى الذي أُمر النبي صلى الله عليه وسلم بالمشاورة فيه؟",
+"a": "أنه أُمر بمشاورتهم فيما حَزَبه من أمر عدوه ومكايد حربه؛ تألفًا لمن لم تستحكم بصيرته، وتعريفًا للأمة لتقتدي به عند النوازل. وإذا تشاور المؤمنون على تصادقٍ وتآخٍ للحق فالله مسدّدهم وموفّقهم."
+},
+{
+"s": "s5",
+"level": 4,
+"q": "ما مذاهب العلماء في حكم الشورى على ولاة أمر الأمة كما نقله ابن عاشور؟",
+"a": "المالكية على الوجوب والعموم (ابن خويز منداد، ابن العربي، ابن عطية)؛ والشافعي على الاستحباب ورُوي مثله عن قتادة والربيع وابن إسحاق؛ ورجّح النووي والفخر الوجوب؛ ومجموع كلام الجصاص يدل على وجوبها عند أبي حنيفة؛ وذهب الحسن وسفيان إلى اختصاص الوجوب بالنبي صلى الله عليه وسلم."
+},
+{
+"s": "s5",
+"level": 1,
+"q": "﴿فَإِذَا عَزَمْتَ فَتَوَكَّلْ عَلَى اللَّهِ﴾ — ما الثلاثية التي لا يُستغنى ببعضها عن بعض في العمل الإصلاحي؟",
+"a": "الاستشارة، ثم العزيمة وإمضاء الرأي، ثم التوكل على الله. فلا يُستغنى بالاستشارة عن العزيمة، ولا بالعزيمة عن التوكل، ولا بالتوكل عن العزيمة والاستشارة. والعزيمة المذكورة أعمّ من أن تكون بعد استشارة."
+},
+{
+"s": "s5",
+"level": 1,
+"q": "﴿إِن يَنصُرْكُمُ اللَّهُ فَلَا غَالِبَ لَكُمْ وَإِن يَخْذُلْكُمْ فَمَن ذَا الَّذِي يَنصُرُكُم مِّن بَعْدِهِ﴾ — أي عقيدةٍ تؤسّسها للعامل؟",
+"a": "التوكل والتفويض؛ فلا يعظّم الأسباب في قلبه وإن كان مهتمًا بها حريصًا على تحقيقها، ويظل خائفًا من أثر الذنوب والمعاصي لأنها سبب الخذلان الذي يتخلف به النصر."
+},
+{
+"s": "s5",
+"level": 3,
+"q": "لماذا وقعت آية ﴿إن ينصركم الله فلا غالب لكم﴾ من الصحابة موقعًا عظيمًا، وما القاعدة المستفادة؟",
+"a": "لأنهم عاينوا شقّيها: النصر ببدر وأول أحد، والخذلان بعد الفشل والتنازع والمعصية. والقاعدة: رسوخُ الآية في القلب يتفاوت بحسب معاينة العامل لأقدار الله؛ وهو معنى «التفقه في الدين» عند الطبري في ﴿ليتفقهوا في الدين﴾."
+},
+{
+"s": "s6",
+"level": 1,
+"q": "ما القاسم المشترك بين آيات بدر في الأنفال، وأحد في آل عمران، والخندق في الأحزاب؟",
+"a": "التأكيد على طاعة الرسول صلى الله عليه وسلم والاستجابةِ له والاقتداءِ به ومعرفةِ قدره؛ ﴿اسْتَجِيبُوا لِلَّهِ وَلِلرَّسُولِ إِذَا دَعَاكُمْ لِمَا يُحْيِيكُمْ﴾، ﴿وَأَطِيعُوا اللَّهَ وَرَسُولَهُ وَلَا تَنَازَعُوا فَتَفْشَلُوا﴾، ﴿لَّقَدْ كَانَ لَكُمْ فِي رَسُولِ اللَّهِ أُسْوَةٌ حَسَنَةٌ﴾."
+},
+{
+"s": "s6",
+"level": 5,
+"q": "ما موقف أبي بكر يوم الحديبية، وما وجه دلالته على مركزية هدي النبي صلى الله عليه وسلم؟",
+"a": "قال لعمر: «الزم غَرْزَه، فوالله إنه على الحق»، مع أنه لم يكن عارفًا بمآلات ما فعله النبي صلى الله عليه وسلم تفصيلًا. فدلّ على أن امتلاء القلب بمركزية هدي النبي يثبّت صاحبه حين تضطرب الأحوال."
+},
+{
+"s": "s6",
+"level": 2,
+"q": "﴿قَدْ أَصَبْتُم مِّثْلَيْهَا﴾ — ما المقصود بها، وما فائدتها النفسية للمصاب؟",
+"a": "المقصود ما أصابوا به المشركين يوم بدر: قتلُ سبعين وأسرُ سبعين. وفائدتها: رصيدٌ نفسي يعين على الصبر عند الانكسار ﴿إِن تَكُونُوا تَأْلَمُونَ فَإِنَّهُمْ يَأْلَمُونَ كَمَا تَأْلَمُونَ﴾؛ ويُفقد هذا المعنى حين تدوم الصولة لأهل الباطل."
+},
+{
+"s": "s6",
+"level": 1,
+"q": "﴿قُلْ هُوَ مِنْ عِندِ أَنفُسِكُمْ﴾ مع ﴿وَمَا أَصَابَكُمْ يَوْمَ الْتَقَى الْجَمْعَانِ فَبِإِذْنِ اللَّهِ﴾ — كيف يجتمعان؟",
+"a": "الهزيمة واقعة بقدر الله، ولكن الله جعل لكل شيء سببًا؛ والسبب الاختياري هو معصية المسلمين وفشلهم. وتطبيقه المعاصر: البحث في الأسباب الداخلية القابلة للتغيير، لا إلقاء اللوم على العدو وحده."
+},
+{
+"s": "s6",
+"level": 2,
+"q": "ما الضلال الذي وقع فيه من جعل الأمر القدري هو الأمر الشرعي؟",
+"a": "قالوا: ما دام الله قدّر تسلّط الأعداء فالرضا بالقدر يقتضي ترك جهادهم ومقاومتهم، وكذلك في الفساد والمنكرات. وهو ضلال مبين وحجةٌ من حجج المشركين ﴿لَوْ شَاءَ اللَّهُ مَا عَبَدْنَا مِن دُونِهِ مِن شَيْءٍ﴾؛ والواجب الجمع بين الشرع والقدر."
+},
+{
+"s": "s6",
+"level": 2,
+"q": "ما «سبيل المجرمين» بوصفه موضوعًا قرآنيًا، ومن أصنافهم؟",
+"a": "بيانُ الله لطرائق المجرمين وأساليبهم وأدواتهم وبواعث أعمالهم. وأصنافهم: المشركون، وأهل الكتاب، والمنافقون، والشياطين؛ ولكل صنف سبيلٌ بيّنه الله وذكر معالمه."
+},
+{
+"s": "s6",
+"level": 2,
+"q": "لماذا يظهر عوار المنافقين في الشدائد، وما صورة تخذيلهم يوم أحد؟",
+"a": "لشدة جبنهم وحبهم الدنيا وكراهيتهم الموت وتربّصهم بالمؤمنين؛ فيرون في مجيء العدو أملًا في القضاء على المسلمين. وصورته: قعدوا عن القتال، ثم لم يكتفوا بل خذّلوا المؤمنين بحجة واهية ﴿لَوْ نَعْلَمُ قِتَالًا لَّاتَّبَعْنَاكُمْ﴾."
+},
+{
+"s": "s7",
+"level": 1,
+"q": "﴿بَلْ أَحْيَاءٌ عِندَ رَبِّهِمْ يُرْزَقُونَ﴾ — ما صفة حياة الشهداء البرزخية في حديث ابن مسعود؟",
+"a": "«أرواحهم في جوف طير خُضر، لها قناديل معلقة بالعرش، تسرح من الجنة حيث شاءت ثم تأوي إلى تلك القناديل»؛ ولما سُئلوا ثلاثًا عن حاجتهم قالوا: «نريد أن تردّ أرواحنا في أجسادنا حتى نُقتل في سبيلك مرة أخرى»."
+},
+{
+"s": "s7",
+"level": 2,
+"q": "ما وجه تميّز الشهيد في حديث أنس: «ما أحد يدخل الجنة يحب أن يرجع إلى الدنيا… إلا الشهيد»؟",
+"a": "أنه وحده يتمنى الرجوع ليُقتل عشر مرات، لا ليأخذ شيئًا من نعيم الدنيا — فهو في الجنة لا يحتاجه — بل لما رأى من الكرامة وفضل الشهادة."
+},
+{
+"s": "s7",
+"level": 5,
+"q": "ماذا تمنّى النبي صلى الله عليه وسلم في شأن الشهادة عمومًا، وفي يوم أحد خصوصًا؟",
+"a": "قال ثلاثًا: «والذي نفس محمد بيده، لوددتُ أني أغزو في سبيل الله فأُقتل ثم أُحيا فأُقتل». وقال في أحد: «لوددتُ أني غُودِرتُ مع أصحاب نَحْص الجبل» — ونَحْصُ الجبل سفحُه، حيث قُتل شهداء أحد."
+},
+{
+"s": "s7",
+"level": 5,
+"q": "ما المفصل الحاسم في قصة أنس بن النضر يوم أحد، وما العبرة منها؟",
+"a": "لما رأى تأخّر أصحابه قال: «اللهم إني أعتذر إليك مما صنع هؤلاء، وأبرأ إليك مما جاء به المشركون»، ثم قال لسعد: «إني أجد ريح الجنة دون أحد»، فتقدّم فقُتل وبه بضع وثمانون إصابة. والعبرة: أن اليقين بما عند الله يجعل صاحبه مقبلًا وقت الإدبار."
+},
+{
+"s": "s7",
+"level": 2,
+"q": "﴿الَّذِينَ اسْتَجَابُوا لِلَّهِ وَالرَّسُولِ مِن بَعْدِ مَا أَصَابَهُمُ الْقَرْحُ﴾ — أي قاعدةٍ في الأجر تدل عليها؟",
+"a": "أن العمل إذا أُدّي في ظرف صعب أو زمن صعب ضوعف أجره؛ ونظيره ﴿لَا يَسْتَوِي مِنكُم مَّنْ أَنفَقَ مِن قَبْلِ الْفَتْحِ وَقَاتَلَ ۚ أُولَٰئِكَ أَعْظَمُ دَرَجَةً﴾. وهؤلاء خرجوا إلى حمراء الأسد ودماؤهم تنزف."
+},
+{
+"s": "s7",
+"level": 2,
+"q": "﴿فَزَادَهُمْ إِيمَانًا وَقَالُوا حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ﴾ — لماذا كانت مواطن الخوف من أعظم مواطن زيادة الإيمان؟",
+"a": "لأن تحقيق التوكل عند شدة الخوف وكثرة الأعداء يتضمن إحسان الظن بالله والثقة بكفايته ومعيته؛ وهذه مقامات إيمانية قد لا تتأتّى في أحوال الرخاء."
+},
+{
+"s": "s7",
+"level": 1,
+"q": "﴿وَيَتَّخِذَ مِنكُمْ شُهَدَاءَ﴾ — ماذا يفيد التعبير بـ«الاتخاذ» في شأن الشهادة؟",
+"a": "أنها اصطفاءٌ واختيار من الله، لا مجرد نتيجةٍ للقتال؛ فمن حكمة الابتلاء وتسليط الأعداء أن يكون من عباده المؤمنين من يُراق دمه في سبيله."
+},
+{
+"s": "s8",
+"level": 1,
+"q": "﴿إِنَّمَا ذَٰلِكُمُ الشَّيْطَانُ يُخَوِّفُ أَوْلِيَاءَهُ﴾ — ما تقدير المعنى عند أئمة التفسير، وما أثره العملي؟",
+"a": "التقدير: يخوّفكم أولياءه؛ فالشيطان يحرص على جعل أوليائه محلًا للرهبة في القلوب. وأثره: أن ليست كل هيبةٍ يجدها المؤمن للعدو أثرًا واقعيًا؛ ومن أغلق مداخل الشيطان وتوكل على الله لم يهَبْ أعداء الله بل هابوه."
+},
+{
+"s": "s8",
+"level": 2,
+"q": "﴿فَلَا تَخَافُوهُمْ وَخَافُونِ إِن كُنتُم مُّؤْمِنِينَ﴾ — ما الوقاية من تخويف الشيطان، وما شاهدها من سورة المائدة؟",
+"a": "الوقاية: استقرار الخوف من الله وحده في القلب، فهو من أعظم ما يعين على الإقدام والثبات. وشاهدها في قصة بني إسرائيل مع الجبارين ﴿قَالَ رَجُلَانِ مِنَ الَّذِينَ يَخَافُونَ أَنْعَمَ اللَّهُ عَلَيْهِمَا ادْخُلُوا عَلَيْهِمُ الْبَابَ﴾."
+},
+{
+"s": "s8",
+"level": 1,
+"q": "﴿إِنَّمَا نُمْلِي لَهُمْ لِيَزْدَادُوا إِثْمًا﴾ — كيف يُقرأ تنعّم الكفار وطولُ مهلتهم؟",
+"a": "على أنه استدراج وكيدٌ لا خير فيه ولا فلاح؛ فالمصيبة أنه سبحانه يريد ألّا يجعل لهم حظًا في الآخرة، وأن يزدادوا إثمًا فيزداد عذابهم. ونظيره ﴿أَيَحْسَبُونَ أَنَّمَا نُمِدُّهُم بِهِ مِن مَّالٍ وَبَنِينَ • نُسَارِعُ لَهُمْ فِي الْخَيْرَاتِ ۚ بَل لَّا يَشْعُرُونَ﴾."
+},
+{
+"s": "s8",
+"level": 2,
+"q": "ما فائدة عقيدة الاستدراج للمؤمنين حين يرون علوّ الكفار وشدة نكالهم؟",
+"a": "أنها تُسكّن غيظ قلوبهم؛ إذ يعلمون أن أحوال المشركين آيلةٌ إلى الشر والعذاب مهما بدت عليهم القوة والعافية، وأنهم لا يشعرون بمكر الله بهم."
+},
+{
+"s": "s8",
+"level": 2,
+"q": "﴿مَّا كَانَ اللَّهُ لِيَذَرَ الْمُؤْمِنِينَ عَلَىٰ مَا أَنتُمْ عَلَيْهِ حَتَّىٰ يَمِيزَ الْخَبِيثَ مِنَ الطَّيِّبِ﴾ — علامَ تدل صيغة ﴿ما كان الله﴾، وبمَ يقع التمييز؟",
+"a": "تدل على سنة من سنن الله، كما في ﴿وَمَا كَانَ رَبُّكَ لِيُهْلِكَ الْقُرَىٰ بِظُلْمٍ وَأَهْلُهَا مُصْلِحُونَ﴾. ويقع التمييز بالمحن والابتلاء لا بالاطلاع على الغيب؛ قال الطبري: «ولكنه يميز بينهم بالمحن والابتلاء كما ميّز بينهم بالبأساء يوم أحد»."
+},
+{
+"s": "s8",
+"level": 2,
+"q": "ما علاقة الولاء والبراء بمقصد التمييز بين الحق والباطل؟",
+"a": "أن قطع الولاء عن الكفار من حِكَمه ألّا يلتبس الحق بالباطل؛ ﴿وَالَّذِينَ كَفَرُوا بَعْضُهُمْ أَوْلِيَاءُ بَعْضٍ ۚ إِلَّا تَفْعَلُوهُ تَكُن فِتْنَةٌ فِي الْأَرْضِ وَفَسَادٌ كَبِيرٌ﴾. قال ابن كثير: الفتنة هنا التباس الأمر واختلاط المؤمن بالكافر."
+}
+];
+
+(function(){
+  var body=document.body, root=document.documentElement;
+  function S(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+  function G(k){try{return localStorage.getItem(k)}catch(e){return null}}
+
+  /* progress */
+  var prog=document.getElementById('prog');
+  function onScroll(){
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    prog.style.width=(h>0?(window.scrollY/h*100):0)+'%';
+    S(POSKEY, String(window.scrollY));
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+
+  /* night */
+  if(G('mq_night')==='1') body.classList.add('night');
+  document.getElementById('bNight').onclick=function(){
+    body.classList.toggle('night'); S('mq_night', body.classList.contains('night')?'1':'0');
+  };
+  /* font size */
+  var fs=parseInt(G('mq_fs')||'18',10); if(isNaN(fs))fs=18;
+  function applyFs(){root.style.setProperty('--fs',fs+'px');S('mq_fs',String(fs));}
+  applyFs();
+  document.getElementById('bPlus').onclick=function(){fs=Math.min(24,fs+1);applyFs()};
+  document.getElementById('bMinus').onclick=function(){fs=Math.max(14,fs-1);applyFs()};
+
+  /* toc */
+  var toc=document.getElementById('toc'), scrim=document.getElementById('scrim');
+  function closeToc(){toc.classList.remove('open');scrim.classList.remove('on')}
+  document.getElementById('bToc').onclick=function(){toc.classList.toggle('open');scrim.classList.toggle('on')};
+  scrim.onclick=closeToc;
+  toc.addEventListener('click',function(e){if(e.target.tagName==='A')closeToc()});
+
+  /* notes */
+  document.addEventListener('click',function(e){
+    var r=e.target.closest('sup.ref'); if(!r)return;
+    var n=document.getElementById(r.getAttribute('data-n')); if(!n)return;
+    document.querySelectorAll('aside.note.hl').forEach(function(x){if(x!==n)x.classList.remove('hl')});
+    document.querySelectorAll('sup.ref.on').forEach(function(x){if(x!==r)x.classList.remove('on')});
+    n.classList.toggle('hl'); r.classList.toggle('on');
+    if(window.matchMedia('(max-width:900px)').matches){
+      n.classList.toggle('open');
+      if(n.classList.contains('open')) n.scrollIntoView({block:'nearest'});
+    }
+  });
+
+  /* quiz */
+  var byS={};
+  QUIZ_DATA.forEach(function(q){(byS[q.sectionId]=byS[q.sectionId]||[]).push(q)});
+  document.querySelectorAll('.quizwrap').forEach(function(w){
+    var sid=w.getAttribute('data-section'), list=byS[sid]||[], done={}, right=0;
+    var head=document.createElement('h5');
+    head.innerHTML='<span>اختبر فهمك</span><span class="score" id="sc-'+sid+'">0 / '+list.length+'</span>';
+    w.appendChild(head);
+    list.forEach(function(q){
+      var d=document.createElement('div'); d.className='q'; d.setAttribute('data-qid',q.id);
+      var h=['<p class="qt">'+q.question+'</p>'];
+      q.options.forEach(function(o,i){h.push('<button type="button" class="opt" data-i="'+i+'">'+o+'</button>')});
+      h.push('<div class="expl" hidden>'+q.explanation+'</div>');
+      d.innerHTML=h.join(''); w.appendChild(d);
+    });
+    w.addEventListener('click',function(e){
+      var b=e.target.closest('.opt'); if(!b)return;
+      var d=b.closest('.q'), qid=d.getAttribute('data-qid');
+      var q=list.filter(function(x){return x.id===qid})[0]; if(!q)return;
+      var i=parseInt(b.getAttribute('data-i'),10);
+      d.querySelectorAll('.opt').forEach(function(x){x.classList.remove('good','bad')});
+      if(i===q.correctIndex){b.classList.add('good'); if(!done[qid]){done[qid]=1;right++;}}
+      else{b.classList.add('bad'); d.querySelectorAll('.opt')[q.correctIndex].classList.add('good'); done[qid]=done[qid]||0;}
+      d.querySelector('.expl').hidden=false;
+      document.getElementById('sc-'+sid).textContent=right+' / '+list.length;
+    });
+  });
+
+  /* cards */
+  var idx=0, filt='all', view=CARDS_DATA;
+  var front=document.getElementById('cFront'), back=document.getElementById('cBack'),
+      pos=document.getElementById('cPos'), card=document.getElementById('cCard');
+  function render(){
+    if(!view.length){front.textContent='لا توجد بطاقات في هذا القسم';back.textContent='';pos.textContent='0 / 0';return}
+    if(idx>=view.length)idx=0; if(idx<0)idx=view.length-1;
+    var c=view[idx];
+    front.innerHTML=c.q; back.innerHTML=c.a;
+    pos.textContent=(idx+1)+' / '+view.length;
+    card.classList.remove('flipped'); document.getElementById('faceBack').style.display='none';
+    document.getElementById('faceFront').style.display='flex';
+  }
+  card.onclick=function(){
+    var f=document.getElementById('faceFront'), b=document.getElementById('faceBack');
+    if(f.style.display==='none'){f.style.display='flex';b.style.display='none'}
+    else{f.style.display='none';b.style.display='flex'}
+  };
+  document.getElementById('cNext').onclick=function(e){e.stopPropagation();idx++;render()};
+  document.getElementById('cPrev').onclick=function(e){e.stopPropagation();idx--;render()};
+  document.querySelectorAll('.chip').forEach(function(ch){
+    ch.onclick=function(){
+      document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on')});
+      ch.classList.add('on'); filt=ch.getAttribute('data-f');
+      view = (filt==='all')?CARDS_DATA:CARDS_DATA.filter(function(c){return c.s===filt});
+      idx=0; render();
+    };
+  });
+  function strip(s){return String(s).replace(/<[^>]*>/g,'').replace(/\s+/g,' ').replace(/\t/g,' ').trim()}
+  document.getElementById('bTsv').onclick=function(){
+    var rows=CARDS_DATA.map(function(c){return strip(c.q)+'\t'+strip(c.a)});
+    var blob=new Blob(['\ufeff'+rows.join('\n')],{type:'text/tab-separated-values;charset=utf-8'});
+    var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=TSVNAME; a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href)},1500);
+  };
+  render();
+
+  /* restore scroll */
+  var p=G(POSKEY);
+  if(p){ window.requestAnimationFrame(function(){ window.scrollTo(0,parseInt(p,10)||0); }); }
+  onScroll();
+})();
+
+</script>
+<script type="module" src="../../../firebase-sync-manhaj.js"></script>
+<script src="../../../ilm-track.js"></script>
+<script src="../../../data.js"></script>
+<script src="../../../ilm-nav.js"></script>
+<script>
+(function(){
+  var box = document.getElementById('ilm-completion-box');
+  var cb = box ? box.querySelector('input[data-lecture-id]') : null;
+  if(!cb) return;
+  var lid = cb.getAttribute('data-lecture-id');
+  function render(done){
+    cb.checked = done;
+    box.classList.toggle('done', done);
+  }
+  if(window.IlmTrack){
+    window.IlmTrack.ready.then(function(){ render(window.IlmTrack.isDone(lid)); });
+  }
+  cb.addEventListener('change', function(){
+    if(window.IlmTrack) window.IlmTrack.setDone(lid, cb.checked);
+    render(cb.checked);
+  });
+})();
+</script>
+<script src="../../../ilm-highlight.js" data-lecture-id="stage1_mu_alajat-al-quran_03"></script>
 </body>
 </html>
