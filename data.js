@@ -167,10 +167,10 @@ const SITE_DATA = {
           { id: "stage1_raqaeq-al-quran_04", n: 4, day: 30, title: "من 109 إلى 133", file: "lectures/04.html" },
           { id: "stage1_raqaeq-al-quran_05", n: 5, day: 31, title: "من 135 إلى النهاية", file: "lectures/05.html" }
         ]},
-        { key: "mu_alajat-al-quran", name: "معالجة القرآن لنفوس المصلحين", sheikh: "أحمد السيد", tags: ["المنهج_الإصلاحي"], lectures: [
-          { id: "stage1_mu_alajat-al-quran_01", n: 1, day: 35, title: "من بداية الكتاب إلى ص 31", file: "lectures/01.html" },
-          { id: "stage1_mu_alajat-al-quran_02", n: 2, day: 36, title: "من 32 إلى ص 58", file: "lectures/02.html" },
-          { id: "stage1_mu_alajat-al-quran_03", n: 3, day: 37, title: "من 59 إلى نهاية الكتاب", file: "lectures/03.html" }
+        { key: "mu_alajat-al-quran", name: "معالجة القرآن لنفوس المصلحين", sheikh: "أحمد بن يوسف السيد", tags: ["المنهج_الإصلاحي"], lectures: [
+          { id: "stage1_mu_alajat-al-quran_01", n: 1, day: 35, title: "التوطئة والمقاطع الأول إلى الثالث", file: "lectures/01.html" },
+          { id: "stage1_mu_alajat-al-quran_02", n: 2, day: 36, title: "المقطع الرابع", file: "lectures/02.html" },
+          { id: "stage1_mu_alajat-al-quran_03", n: 3, day: 37, title: "المقاطع الخامس إلى الثامن والخاتمة", file: "lectures/03.html" }
         ]}
       ],
       days: [
@@ -208,9 +208,9 @@ const SITE_DATA = {
         { day: 32, kind: "lecture", lectureId: "stage1_hadith_02", subjectKey: "hadith", subjectName: "مدخل إلى علم الحديث", title: "المجلس الأول (2/3)", link: "hadith/lectures/01.html?p=stage1_hadith_02" },
         { day: 33, kind: "lecture", lectureId: "stage1_hadith_03", subjectKey: "hadith", subjectName: "مدخل إلى علم الحديث", title: "المجلس الأول (3/3)", link: "hadith/lectures/01.html?p=stage1_hadith_03" },
         { day: 34, kind: "lecture", lectureId: "stage1_hadith_04", subjectKey: "hadith", subjectName: "مدخل إلى علم الحديث", title: "المجلس الثاني (1/2)", link: "hadith/lectures/02.html?p=stage1_hadith_04" },
-        { day: 35, kind: "lecture", lectureId: "stage1_mu_alajat-al-quran_01", subjectKey: "mu_alajat-al-quran", subjectName: "معالجة القرآن لنفوس المصلحين", title: "من بداية الكتاب إلى ص 31", link: "mu_alajat-al-quran/lectures/01.html" },
-        { day: 36, kind: "lecture", lectureId: "stage1_mu_alajat-al-quran_02", subjectKey: "mu_alajat-al-quran", subjectName: "معالجة القرآن لنفوس المصلحين", title: "من 32 إلى ص 58", link: "mu_alajat-al-quran/lectures/02.html" },
-        { day: 37, kind: "lecture", lectureId: "stage1_mu_alajat-al-quran_03", subjectKey: "mu_alajat-al-quran", subjectName: "معالجة القرآن لنفوس المصلحين", title: "من 59 إلى نهاية الكتاب", link: "mu_alajat-al-quran/lectures/03.html" },
+        { day: 35, kind: "lecture", lectureId: "stage1_mu_alajat-al-quran_01", subjectKey: "mu_alajat-al-quran", subjectName: "معالجة القرآن لنفوس المصلحين", title: "التوطئة والمقاطع الأول إلى الثالث", link: "mu_alajat-al-quran/lectures/01.html" },
+        { day: 36, kind: "lecture", lectureId: "stage1_mu_alajat-al-quran_02", subjectKey: "mu_alajat-al-quran", subjectName: "معالجة القرآن لنفوس المصلحين", title: "المقطع الرابع", link: "mu_alajat-al-quran/lectures/02.html" },
+        { day: 37, kind: "lecture", lectureId: "stage1_mu_alajat-al-quran_03", subjectKey: "mu_alajat-al-quran", subjectName: "معالجة القرآن لنفوس المصلحين", title: "المقاطع الخامس إلى الثامن والخاتمة", link: "mu_alajat-al-quran/lectures/03.html" },
         { day: 38, kind: "rest", id: "stage1_day_38", title: "استدراك وراحة" },
         { day: 39, kind: "lecture", lectureId: "stage1_hadith_05", subjectKey: "hadith", subjectName: "مدخل إلى علم الحديث", title: "المجلس الثاني (2/2)", link: "hadith/lectures/02.html?p=stage1_hadith_05" },
         { day: 40, kind: "lecture", lectureId: "stage1_riyad-al-saliheen_05", subjectKey: "riyad-al-saliheen", subjectName: "شرح رياض الصالحين", title: "باب التوبة 2", link: "riyad-al-saliheen/lectures/05.html" },
