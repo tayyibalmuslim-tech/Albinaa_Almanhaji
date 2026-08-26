@@ -1,0 +1,159 @@
+/* =========================================================
+   stage1-theme.css — هوية المرحلة الأولى
+   ---------------------------------------------------------
+   يُحمَّل بعد style.css في stage-1/index.html فقط.
+   كل القواعد هنا مقيَّدة بـ [data-stage-id="stage1"]، فلا تتسرّب
+   إلى المراحل الأخرى ولا إلى صفحات المحاضرات.
+
+   الفكرة: المرحلة التمهيدية أرضٌ خضراء هادئة؛ والمرحلة الأولى
+   هي أول خطوة في «البناء» فعلًا — فهويتها نُحاسية دافئة (brass)
+   على ورق أفتح، مع طابع معماري: خطوط أفقية، وترقيم بارز للأيام،
+   وشارة مرحلة ظاهرة.
+   ========================================================= */
+
+[data-stage-id="stage1"]{
+  /* ---- إعادة توجيه لوحة الهوية داخل المرحلة الأولى ---- */
+  --s1-brass:      #A86A1E;
+  --s1-brass-2:    #7E4E12;
+  --s1-brass-soft: #F7EEDD;
+  --s1-ink:        #1E1A12;
+  --s1-line:       #E8DFCC;
+  --s1-line-2:     #D8CBAE;
+  --s1-paper:      #FCFAF4;
+  --s1-surface:    #FFFDF7;
+
+  background:
+    radial-gradient(1100px 380px at 82% -140px, rgba(168,106,30,.07), transparent 62%),
+    var(--s1-paper);
+}
+
+/* ================= الترويسة ================= */
+[data-stage-id="stage1"] .stage-header{
+  background: var(--s1-surface);
+  border-color: var(--s1-line);
+  position: relative;
+  overflow: hidden;
+  padding-top: 30px;
+}
+/* شريط نُحاسي علوي يميّز المرحلة فورًا */
+[data-stage-id="stage1"] .stage-header::before{
+  content: "";
+  position: absolute; inset: 0 0 auto 0; height: 4px;
+  background: linear-gradient(90deg, var(--s1-brass), #D8A34A 45%, var(--s1-brass-2));
+}
+/* شارة "المرحلة ١" */
+[data-stage-id="stage1"] .stage-header::after{
+  content: "المرحلة ١";
+  position: absolute; top: 20px; left: 24px;
+  font-family: var(--f-display);
+  font-size: 11px; font-weight: 700; letter-spacing: .12em;
+  color: var(--s1-brass-2);
+  background: var(--s1-brass-soft);
+  border: 1px solid var(--s1-line-2);
+  border-radius: 999px;
+  padding: 4px 12px;
+  line-height: 1.6;
+}
+[data-stage-id="stage1"] .stage-header h1{
+  color: var(--s1-ink);
+  letter-spacing: -.01em;
+}
+[data-stage-id="stage1"] .stage-header h1::after{
+  content: "";
+  display: block;
+  width: 46px; height: 2px;
+  margin-top: 12px;
+  background: var(--s1-brass);
+  border-radius: 2px;
+}
+
+/* ================= فتات الخبز ================= */
+[data-stage-id="stage1"] .breadcrumbs a:hover{ color: var(--s1-brass-2); }
+[data-stage-id="stage1"] .breadcrumbs [aria-current="page"]{ color: var(--s1-brass-2); font-weight: 600; }
+
+/* ================= بطاقة الاستئناف ================= */
+[data-stage-id="stage1"] .continue-card{
+  background: var(--s1-surface);
+  border-color: var(--s1-line-2);
+}
+[data-stage-id="stage1"] .continue-card::before{
+  background: linear-gradient(180deg, var(--s1-brass), var(--s1-brass-2));
+  width: 5px;
+}
+
+/* ================= التبويبات ================= */
+[data-stage-id="stage1"] .tabs{
+  background: var(--s1-brass-soft);
+  border-radius: 12px;
+  padding: 4px;
+}
+[data-stage-id="stage1"] .tab-btn{ color: #8A7A5C; border-radius: 9px; }
+[data-stage-id="stage1"] .tab-btn:hover{ color: var(--s1-brass-2); }
+[data-stage-id="stage1"] .tab-btn.active{
+  background: var(--s1-surface);
+  color: var(--s1-brass-2);
+  box-shadow: 0 1px 3px rgba(126,78,18,.14);
+}
+
+/* ================= البطاقات عمومًا ================= */
+[data-stage-id="stage1"] .card,
+[data-stage-id="stage1"] .subject-card{
+  background: var(--s1-surface);
+  border-color: var(--s1-line);
+}
+[data-stage-id="stage1"] .card:hover,
+[data-stage-id="stage1"] .subject-card:hover{
+  border-color: var(--s1-line-2);
+  box-shadow: 0 6px 22px rgba(126,78,18,.07);
+}
+[data-stage-id="stage1"] .subject-card.is-complete{ border-color: rgba(168,106,30,.38); }
+[data-stage-id="stage1"] .subject-card.is-complete .progress-bar-fill{ background: var(--s1-brass); }
+
+/* ================= أشرطة التقدّم ================= */
+[data-stage-id="stage1"] .progress-bar-fill,
+[data-stage-id="stage1"] .stage-progress .progress-bar-fill{
+  background: linear-gradient(90deg, var(--s1-brass-2), var(--s1-brass));
+}
+
+/* ================= الأزرار ================= */
+[data-stage-id="stage1"] .btn{ background: var(--s1-brass); }
+[data-stage-id="stage1"] .btn:hover{ background: var(--s1-brass-2); }
+[data-stage-id="stage1"] .btn-outline{ background: transparent; color: var(--ink-2); }
+[data-stage-id="stage1"] .btn-outline:hover{ border-color: var(--s1-brass); color: var(--s1-brass-2); }
+
+/* ================= التركيز والتحديد ================= */
+[data-stage-id="stage1"] ::selection{ background: var(--s1-brass); color: #fff; }
+[data-stage-id="stage1"] :focus-visible{ outline-color: var(--s1-brass); }
+
+/* ================= جدول الأيام: طابع معماري ================= */
+[data-stage-id="stage1"] [data-stage-days] .day-row,
+[data-stage-id="stage1"] [data-stage-days] .day-card,
+[data-stage-id="stage1"] [data-stage-days] li{
+  border-color: var(--s1-line);
+}
+/* رقم اليوم يبرز نُحاسيًّا */
+[data-stage-id="stage1"] .day-num,
+[data-stage-id="stage1"] .day-index,
+[data-stage-id="stage1"] .day-badge{
+  color: var(--s1-brass-2);
+  background: var(--s1-brass-soft);
+  border-color: var(--s1-line-2);
+  font-family: var(--f-display);
+  font-weight: 700;
+}
+
+/* ================= الشارات ================= */
+[data-stage-id="stage1"] .badge,
+[data-stage-id="stage1"] .chip,
+[data-stage-id="stage1"] .pill{
+  border-color: var(--s1-line-2);
+}
+
+@media (max-width: 640px){
+  [data-stage-id="stage1"] .stage-header::after{
+    position: static;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  [data-stage-id="stage1"] .stage-header{ padding-top: 24px; }
+}
