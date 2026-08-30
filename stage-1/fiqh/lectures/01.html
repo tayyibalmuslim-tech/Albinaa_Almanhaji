@@ -249,6 +249,21 @@
 @media (max-width:640px){ .quiz-block{padding:16px;} }
 </style>
 
+
+<style id="ilm-sem-css">
+/* ===== الطبقة الدلالية للألوان — آلية العمل 5.3 / بند 5-ب =====
+   أخضر = آية | أحمر = عَلَم (عريض للعلماء والصحابة)
+   الحديث لا يُشتق من «…» بل من الكلاس .hadith وحده (بند 5-ب/4) */
+:root{--sem-aya:#14532d;--sem-name:#8f1d21;--sem-hadith:#5b2d90}
+[data-theme="night"],html.dark,body.dark,.dark,body.night{
+  --sem-aya:#7ddba4;--sem-name:#f0a0a3;--sem-hadith:#c4a2f0}
+.sem-aya{color:var(--sem-aya)}
+.sem-name{color:var(--sem-name)}
+.sem-scholar{font-weight:700}
+.quran,.aya,.ayah,.ayat,.quran *{color:var(--sem-aya)}
+.hadith,.hadith *{color:var(--sem-hadith)}
+@media print{.sem-aya,.sem-name{color:#000}.sem-scholar{font-weight:700}}
+</style>
 </head>
 <body class="" data-page="lecture" data-lecture-id="stage1_fiqh_01">
   <div class="page">
@@ -263,7 +278,7 @@
       </label>
     </header>
 
-    <div class="fq-wrap">
+    <div class="fq-wrap" data-ilm-highlight-zone>
 
       <div class="fq-banner">
         <h2>تعريف الفقه، فضله، وبداية مرحلة التشريع</h2>
@@ -975,8 +990,11 @@ function downloadAnkiDeck() {
 </script>
 
   <script type="module" src="../../../firebase-sync-manhaj.js"></script>
+  <script src="../../../ilm-track.js"></script>
   <script src="../../../data.js"></script>
-  <script src="../../../script.js"></script>
+  <script src="../../../ilm-nav.js"></script>
+  <script src="../../../ilm-highlight.js" data-lecture-id="stage1_fiqh_01"></script>
+  <script src="../../../ilm-semantic.js" data-hadith="off"></script>
 
 <script>
 window.quizData = {
