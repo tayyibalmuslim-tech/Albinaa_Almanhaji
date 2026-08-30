@@ -124,17 +124,17 @@ a{color:var(--accent-d)}
   margin:24px 0;padding:26px 28px;border-radius:16px;
   background:linear-gradient(180deg,var(--paper) 0%,var(--bg) 100%);
   border:1px solid var(--line2);border-top:3px solid var(--sc);
-  font-family:'Amiri',serif;font-size:1.42rem;line-height:2.5;text-align:justify;color:var(--ink)
+  font-family:'Amiri',serif;font-size:1.42rem;line-height:2.5;text-align:right;color:var(--ink)
 }
 .ayat .bsm{display:block;text-align:center;font-size:1.15rem;color:var(--sc);margin-bottom:14px}
 .ayat .n{color:var(--gold);font-size:.9em}
 
 /* ---------- fawaid ---------- */
 .fawaid{list-style:none;margin:22px 0 0;padding:0;counter-reset:fd}
-.faida{position:relative;margin:0 0 20px;padding:2px 0 2px 0;text-align:justify}
+.faida{position:relative;margin:0 0 20px;padding:2px 0 2px 0;text-align:right}
 .faida .fnum{display:inline-block;font-weight:700;color:var(--sc);font-size:.95em;margin-inline-end:6px}
 .faida p{margin:0 0 10px}
-.prose p{margin:0 0 14px;text-align:justify}
+.prose p{margin:0 0 14px;text-align:right}
 .subpoints{margin:8px 0 8px;padding-inline-start:20px}
 .subpoints li{margin-bottom:6px}
 .inq{font-family:'Amiri',serif;font-size:1.12em;color:var(--accent-d);line-height:2.1}
@@ -256,6 +256,25 @@ footer .sep{color:var(--gold);letter-spacing:.4em;display:block;margin-bottom:10
   .maqta{break-inside:avoid-page}
   .hero{background:none;color:#000;border-bottom:2px solid #000}
 }
+</style>
+
+<style id="ilm-sem-css">
+/* ===== الطبقة الدلالية للألوان — آلية العمل 5.3 / بند 5-ب =====
+   أخضر = آية | بنفسجي = حديث | أحمر = عَلَم (عريض للعلماء والصحابة) */
+:root{--sem-aya:#14532d;--sem-hadith:#5b2d90;--sem-name:#8f1d21}
+[data-theme="night"],html.dark,body.dark,.dark,body.night{
+  --sem-aya:#7ddba4;--sem-hadith:#c4a2f0;--sem-name:#f0a0a3}
+.sem-aya{color:var(--sem-aya)}
+.sem-hadith{color:var(--sem-hadith)}
+.sem-name{color:var(--sem-name)}
+.sem-scholar{font-weight:700}
+/* بلوكات نصّها كله وحي: يلوّنها الـCSS كاملة، ويتجاهلها السكريبت */
+.ayat,.ayat *,.aya,.aya *,.quran,.quran *,.dark .aya{color:var(--sem-aya)}
+.hadith,.hadith *{color:var(--sem-hadith)}
+/* .ayah يسبقها «قوله تعالى» فلا تُلوَّن كاملة — السكريبت يلوّن ما بين القوسين */
+/* بند 6: الـ justify استُبدل بـ right في موضعه الأصلي من CSS الملف،
+   فلا حاجة لقاعدة عامة هنا قد تكسر عناصر متمركزة عمدًا. */
+@media print{.sem-aya,.sem-hadith,.sem-name{color:#000}.sem-scholar{font-weight:700}}
 </style>
 </head>
 <body data-lecture-id="stage1_anwar-al-anbiya_01">
@@ -1261,5 +1280,6 @@ layoutNotes(); prog();
 })();
 </script>
 <script src="../../../ilm-highlight.js" data-lecture-id="stage1_anwar-al-anbiya_01"></script>
+<script src="../../../ilm-semantic.js"></script>
 </body>
 </html>
