@@ -262,6 +262,21 @@ footer{background:#162026;color:#7C8C8F;padding:30px 0;text-align:center;font-fa
 @media (max-width:640px){ .quiz-block{padding:16px;} }
 </style>
 
+
+<style id="ilm-sem-css">
+/* ===== الطبقة الدلالية للألوان — آلية العمل 5.3 / بند 5-ب =====
+   أخضر = آية | أحمر = عَلَم (عريض للعلماء والصحابة)
+   الأحاديث معطّلة هنا: «…» في تفريغ المحاضرات تُستعمل لأسماء الكتب
+   وكلام الشيخ لا للحديث، فتلوينها بنفسجيًا خطأ دلالي. */
+:root{--sem-aya:#14532d;--sem-name:#8f1d21}
+[data-theme="night"],html.dark,body.dark,.dark,body.night{
+  --sem-aya:#7ddba4;--sem-name:#f0a0a3}
+.sem-aya{color:var(--sem-aya)}
+.sem-name{color:var(--sem-name)}
+.sem-scholar{font-weight:700}
+.quran,.aya,.ayah,.ayat,.quran *{color:var(--sem-aya)}
+@media print{.sem-aya,.sem-name{color:#000}.sem-scholar{font-weight:700}}
+</style>
 </head>
 <body data-lecture-id="stage1_riyad-al-saliheen_05">
 <style id="ilm-completion-style">
@@ -1289,5 +1304,6 @@ window.quizData = {
 })();
 </script>
 <script src="../../../ilm-highlight.js" data-lecture-id="stage1_riyad-al-saliheen_05"></script>
+<script src="../../../ilm-semantic.js" data-hadith="off"></script>
 </body>
 </html>
