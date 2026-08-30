@@ -148,6 +148,17 @@
 
   /* ============ 3. التطبيق ============ */
 
+  /* اصطلاح «…» يختلف بين المسارين: في الكتب هو الحديث، وفي تفريغ المحاضرات
+     يُستعمل لأسماء الكتب وكلام الشيخ («المحرر في علوم القرآن»، «حياكم الله»).
+     فتلوينه بنفسجيًا هناك خطأ دلالي. الوضع يُضبط من وسم السكريبت:
+       <script src="…/ilm-semantic.js" data-hadith="off"></script>  */
+  function hadithEnabled() {
+    var s = document.currentScript ||
+            document.querySelector('script[src*="ilm-semantic.js"]');
+    return !(s && s.getAttribute('data-hadith') === 'off');
+  }
+  var HADITH_ON = hadithEnabled();
+
   var running = false;
 
   function pass(root, re, cls, splitter) {
@@ -167,7 +178,7 @@
          بعد تغليف الآية بـ .sem-aya يستثنيها SKIP_CLOSEST من الجولات التالية،
          فيبقى الاسم داخل الآية أخضر ولا يُلوَّن بالأحمر. */
       pass(root, RE_AYA, 'sem-aya', split);
-      pass(root, RE_HADITH, 'sem-hadith', split);
+      if (HADITH_ON) pass(root, RE_HADITH, 'sem-hadith', split);
       pass(root, RE_SCHOLAR, 'sem-name sem-scholar', splitNames);
       pass(root, RE_FIGURE, 'sem-name', splitNames);
     } catch (e) {
