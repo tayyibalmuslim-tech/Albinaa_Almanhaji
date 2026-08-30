@@ -32,11 +32,31 @@
     'عكرمة', 'طاوس', 'الضحاك', 'السدي', 'مقاتل', 'أحمد السيد'
   ];
 
-  /* أعلام أخرى: أنبياء وشخصيات ← أحمر بلا تعريض */
+  /* أنبياء ورسل ← أحمر + عريض (بطلب صريح من مازن، إضافة إلى بند 5-ب).
+     مقسَّمون فئتين بعد مراجعة فعلية لكل حالة في ملفات المشروع (لا تخمين):
+
+     PROPHETS_SAFE: نادرًا ما يشترك اسمها مع عالِم/راوٍ مشهور، فيكفيها
+     الاستبعاد العام (بند أ أدناه: سورة/نسب/رقم آية).
+
+     PROPHETS_GATED: أسماء اتضح من القراءة الفعلية أنها في الغالب ليست
+     أنبياء في هذا المشروع تحديدًا: «يحيى» و«سليمان» و«داود» و«إسحاق»
+     كانت 0% أو تكاد نبيًّا (كلها رواة حديث وفقهاء: يحيى بن معين،
+     سليمان بن يسار، داود الظاهري، إسحاق بن راهويه)، و«يوسف»/«هارون»
+     غالبها كذلك (يوسف الغفيص، أبو يوسف، هارون الرشيد)، و«محمد» أغلبها
+     جزء من اسم عالم (محمد الطاهر بن عاشور، محمد بن الحسن). فهذه الفئة
+     لا تُلوَّن إلا حيث تصرّح قرينة نبوة قريبة (بند ب أدناه). */
+  var PROPHETS_SAFE = [
+    'إبراهيم', 'إسماعيل', 'يعقوب', 'عيسى', 'زكريا', 'نوح', 'هود',
+    'شعيب', 'لوط', 'أيوب', 'إدريس', 'ذو الكفل', 'اليسع', 'آدم', 'موسى'
+  ];
+  var PROPHETS_GATED = [
+    'يحيى', 'سليمان', 'داود', 'إسحاق', 'يوسف', 'هارون', 'يونس', 'محمد'
+  ];
+
+  /* شخصيات أخرى مذكورة بالاسم (غير أنبياء وغير علماء) ← أحمر بلا تعريض.
+     ملاحظة: فرعون والنمرود وهامان وأبو لهب وأبو جهل وأبو سفيان وقارون
+     ليسوا أنبياء ولا صحابة، فلا يُعرَّضون رغم كونهم أعلامًا. */
   var FIGURES = [
-    'إبراهيم', 'إسماعيل', 'إسحاق', 'يعقوب', 'يوسف', 'موسى', 'هارون',
-    'عيسى', 'زكريا', 'يحيى', 'نوح', 'هود', 'شعيب', 'لوط', 'يونس',
-    'داود', 'سليمان', 'أيوب', 'إدريس', 'ذو الكفل', 'اليسع', 'آدم',
     'مريم', 'سارة', 'هاجر', 'آسية', 'بلقيس', 'خديجة', 'عائشة', 'فاطمة',
     'فرعون', 'النمرود', 'نمرود', 'قارون', 'هامان', 'أبي لهب', 'أبو لهب',
     'أبي جهل', 'أبو جهل', 'أبي سفيان', 'أبو سفيان', 'جبريل', 'ميكائيل',
@@ -51,6 +71,9 @@
   function byLen(a, b) { return b.length - a.length; }
 
   var AR = '\u0621-\u064A';
+  var DIAC = '\u064B-\u065F\u0670';           // تشكيل يُتجاوز عند فحص السياق
+  var AR_OR_DIAC = AR + DIAC;
+
   /* حدّ الكلمة العربية: بداية النص أو حرف غير عربي، ثم بادئة عطف/جر ملتصقة
      اختيارية (و ف ل ب ك) لأن «وابن تيمية» و«بالطبري» شائعتان، ثم الاسم،
      على ألا يتبعه حرف عربي (يمنع مطابقة «ابن كثير» داخل «ابن كثيرا»).
@@ -63,9 +86,34 @@
     );
   }
   var RE_SCHOLAR = nameRe(SCHOLARS);
+  var RE_PROPHET_SAFE = nameRe(PROPHETS_SAFE);
+  var RE_PROPHET_GATED = nameRe(PROPHETS_GATED);
   var RE_FIGURE = nameRe(FIGURES);
   /* القوس القرآني وحده لا يُستعمل لغير الآية، فالتقاطه آمن. */
   var RE_AYA = /﴿[\s\S]*?﴾/g;
+
+  /* ===== فحوص السياق (بند 5-ب/3: عند الالتباس لا تُلوَّن) =====
+     ثبتت الحاجة إليها من قراءة فعلية لكل حالة تلوين في ملفات المشروع،
+     لا من التخمين — راجع سجل التغيير في آلية العمل 5.4. */
+
+  /* أ) استبعاد عام يسري على كل الأعلام مهما كانت فئتها:
+        - «سورة يونس»، «سورة هود»، «سورة مريم»: اسم سورة لا شخص.
+        - «يحيى بن معين»، «بن سليمان»، «أبو داود»: نسب أو كنية لشخص آخر.
+        - «هود ١٠٦»، «يونس ٩٠»: رقم آية بعد اسم السورة في التوثيق. */
+  var CTX_BEFORE_BLOCK = /(?:سورة|بن|ابن|أبو|أبي)[\s\u064B-\u065F]{0,3}$/;
+  var CTX_AFTER_BLOCK = /^[\s\u064B-\u065F]{0,3}(?:بن\b|[٠-٩])/;
+
+  /* ب) شرط إضافي لفئة PROPHETS_GATED فقط: لا يُلوَّن الاسم إلا بقرينة
+        نبوة صريحة قريبة، قبله أو بعده. */
+  var CTX_PROPHET_AFTER = /^[\s\u064B-\u065F]{0,3}(?:عليه السلام|عليهما السلام|عليهم السلام|صلى الله عليه وسلم|ﷺ)/;
+  var CTX_PROPHET_BEFORE = /(?:نبي الله|نبيّ الله|نبيه|نبيّه|نبينا|نبيّنا|رسول الله)[\s\u064B-\u065F]{0,3}$/;
+
+  function contextOk(before, after, gated) {
+    if (CTX_BEFORE_BLOCK.test(before)) return false;
+    if (CTX_AFTER_BLOCK.test(after)) return false;
+    if (!gated) return true;
+    return CTX_PROPHET_AFTER.test(after) || CTX_PROPHET_BEFORE.test(before);
+  }
 
   /* ============ 2. أدوات DOM ============ */
 
@@ -117,14 +165,18 @@
     return parts;
   }
 
-  /* الأعلام: م1 = ما قبل، م2 = بادئة ملتصقة تبقى بلا لون، م3 = الاسم */
-  function splitNames(text, re, cls) {
+  /* الأعلام: م1 = ما قبل، م2 = بادئة ملتصقة تبقى بلا لون، م3 = الاسم.
+     gated=true يفرض شرط قرينة النبوة (فحص ب) إضافة إلى الاستبعاد العام. */
+  function splitNames(text, re, cls, gated) {
     var parts = [], last = 0, m;
     re.lastIndex = 0;
     while ((m = re.exec(text)) !== null) {
       var name = m[3];
       if (FORBIDDEN.test(name)) continue;
       var start = m.index + m[1].length + m[2].length;
+      var before = text.slice(Math.max(0, m.index - 20), m.index + m[1].length);
+      var after = text.slice(start + name.length, start + name.length + 30);
+      if (!contextOk(before, after, gated)) continue;
       if (start > last) parts.push({ text: text.slice(last, start) });
       parts.push({ text: name, cls: cls });
       last = start + name.length;
@@ -159,11 +211,11 @@
 
   var running = false;
 
-  function pass(root, re, cls, splitter) {
+  function pass(root, re, cls, splitter, gated) {
     var nodes = collectTextNodes(root);
     for (var i = 0; i < nodes.length; i++) {
       var t = nodes[i].nodeValue;
-      var parts = splitter(t, re, cls);
+      var parts = splitter(t, re, cls, gated);
       if (parts) replaceNode(nodes[i], parts);
     }
   }
@@ -176,8 +228,10 @@
          بعد تغليف الآية بـ .sem-aya يستثنيها SKIP_CLOSEST من الجولات التالية،
          فيبقى الاسم داخل الآية أخضر ولا يُلوَّن بالأحمر. */
       pass(root, RE_AYA, 'sem-aya', split);
-      pass(root, RE_SCHOLAR, 'sem-name sem-scholar', splitNames);
-      pass(root, RE_FIGURE, 'sem-name', splitNames);
+      pass(root, RE_SCHOLAR, 'sem-name sem-scholar', splitNames, false);
+      pass(root, RE_PROPHET_SAFE, 'sem-name sem-scholar', splitNames, false);
+      pass(root, RE_PROPHET_GATED, 'sem-name sem-scholar', splitNames, true);
+      pass(root, RE_FIGURE, 'sem-name', splitNames, false);
     } catch (e) {
       /* الطبقة تجميلية: أي خطأ لا يجوز أن يعطّل الصفحة */
       if (window.console) console.warn('ilm-semantic:', e);
