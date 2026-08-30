@@ -64,8 +64,8 @@
   }
   var RE_SCHOLAR = nameRe(SCHOLARS);
   var RE_FIGURE = nameRe(FIGURES);
+  /* القوس القرآني وحده لا يُستعمل لغير الآية، فالتقاطه آمن. */
   var RE_AYA = /﴿[\s\S]*?﴾/g;
-  var RE_HADITH = /«[\s\S]*?»/g;
 
   /* ============ 2. أدوات DOM ============ */
 
@@ -148,16 +148,14 @@
 
   /* ============ 3. التطبيق ============ */
 
-  /* اصطلاح «…» يختلف بين المسارين: في الكتب هو الحديث، وفي تفريغ المحاضرات
-     يُستعمل لأسماء الكتب وكلام الشيخ («المحرر في علوم القرآن»، «حياكم الله»).
-     فتلوينه بنفسجيًا هناك خطأ دلالي. الوضع يُضبط من وسم السكريبت:
-       <script src="…/ilm-semantic.js" data-hadith="off"></script>  */
-  function hadithEnabled() {
-    var s = document.currentScript ||
-            document.querySelector('script[src*="ilm-semantic.js"]');
-    return !(s && s.getAttribute('data-hadith') === 'off');
-  }
-  var HADITH_ON = hadithEnabled();
+  /* «…» لا يدلّ على الحديث، لا في الكتب ولا في المحاضرات.
+     الإحصاء الفعلي على كتب المرحلة الأولى: من 431 استعمالًا، 45 فقط حديث (10%).
+     والباقي أسماء كتب ومصطلحات (359)، ونقول عن مفسّرين (17)،
+     وأقوال شخصيات — منها قول النمرود «أنا أُحيي وأميت» (10).
+     فتلوين ما بين القوسين بلون الحديث يجعل قول الكافر المحتجَّ عليه
+     في صورة كلام النبي ﷺ، وهو أفدح ما يقع فيه التلوين الدلالي.
+     لذلك: لا يُلوَّن الحديث إلا حيث نصّ بانى الملف عليه بالكلاس .hadith،
+     ويتولّى ذلك الـCSS. (بند 5-ب/3: عند الالتباس لا تلوّن) */
 
   var running = false;
 
@@ -178,7 +176,6 @@
          بعد تغليف الآية بـ .sem-aya يستثنيها SKIP_CLOSEST من الجولات التالية،
          فيبقى الاسم داخل الآية أخضر ولا يُلوَّن بالأحمر. */
       pass(root, RE_AYA, 'sem-aya', split);
-      if (HADITH_ON) pass(root, RE_HADITH, 'sem-hadith', split);
       pass(root, RE_SCHOLAR, 'sem-name sem-scholar', splitNames);
       pass(root, RE_FIGURE, 'sem-name', splitNames);
     } catch (e) {
