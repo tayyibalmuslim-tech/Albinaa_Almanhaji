@@ -59,7 +59,7 @@ button{font-family:inherit;cursor:pointer}
 .para{display:flex;gap:28px;align-items:flex-start;margin-left:-296px}
 .para__main{flex:1 1 auto;min-width:0}
 .para__notes{flex:0 0 268px;padding-top:6px}
-.prose p{margin:0 0 1.05em;text-align:justify;hyphens:auto}
+.prose p{margin:0 0 1.05em;text-align:right;hyphens:auto}
 .prose>p,.para__main{max-width:820px}
 
 .booknav{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;font-family:'Reem Kufi',sans-serif;font-size:12.5px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line)}
@@ -186,6 +186,25 @@ body.dark .dl{color:#121714}
   .note{display:block;font-size:9.5pt;border:none;border-right:2px solid #999;box-shadow:none;margin:6px 0 10px}
   .box,.summary,.aya{break-inside:avoid;box-shadow:none}
 }
+</style>
+
+<style id="ilm-sem-css">
+/* ===== الطبقة الدلالية للألوان — آلية العمل 5.3 / بند 5-ب =====
+   أخضر = آية | بنفسجي = حديث | أحمر = عَلَم (عريض للعلماء والصحابة) */
+:root{--sem-aya:#14532d;--sem-hadith:#5b2d90;--sem-name:#8f1d21}
+[data-theme="night"],html.dark,body.dark,.dark,body.night{
+  --sem-aya:#7ddba4;--sem-hadith:#c4a2f0;--sem-name:#f0a0a3}
+.sem-aya{color:var(--sem-aya)}
+.sem-hadith{color:var(--sem-hadith)}
+.sem-name{color:var(--sem-name)}
+.sem-scholar{font-weight:700}
+/* بلوكات نصّها كله وحي: يلوّنها الـCSS كاملة، ويتجاهلها السكريبت */
+.ayat,.ayat *,.aya,.aya *,.quran,.quran *,.dark .aya{color:var(--sem-aya)}
+.hadith,.hadith *{color:var(--sem-hadith)}
+/* .ayah يسبقها «قوله تعالى» فلا تُلوَّن كاملة — السكريبت يلوّن ما بين القوسين */
+/* بند 6: الـ justify استُبدل بـ right في موضعه الأصلي من CSS الملف،
+   فلا حاجة لقاعدة عامة هنا قد تكسر عناصر متمركزة عمدًا. */
+@media print{.sem-aya,.sem-hadith,.sem-name{color:#000}.sem-scholar{font-weight:700}}
 </style>
 </head>
 <body data-lecture-id="stage1_raqaeq-al-quran_03">
@@ -978,6 +997,7 @@ document.addEventListener("click",e=>{
 })();
 </script>
 <script src="../../../ilm-highlight.js" data-lecture-id="stage1_raqaeq-al-quran_03"></script>
+<script src="../../../ilm-semantic.js"></script>
 
 </body>
 </html>
