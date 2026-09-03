@@ -1372,8 +1372,14 @@ document.addEventListener("click",e=>{
   $("#cardIn").onclick=()=>cardEl.classList.toggle("flip");
   $("#nextC").onclick=()=>{idx=(idx+1)%view.length;draw()};
   $("#prevC").onclick=()=>{idx=(idx-1+view.length)%view.length;draw()};
-  $("#dl").onclick=()=>{
-    const tsv=CARDS_DATA.map(c=>c.f.replace(/\t/g," ")+"\t"+c.b.replace(/\t/g," ")).join("\n");
+  
+/* ==== تاجات Anki الهرمية — آلية العمل 9-ط ==== */
+var ANKI_TAG_BASE="المرحلة الأولى::رقائق القرآن::من 109 إلى 133";
+var ANKI_SEC={"s1":"خمسة مشاهد من واقع التهاون","s2":"صلاة الجماعة تحت وقع السهام","s3":"صلاة المنافق","s4":"لماذا شُرّعت الصلاة فوق سبع سماوات","s5":"سهرٌ لا تذكره كتب النفس","s6":"تتجافى جنوبهم","s7":"ليلنا وقاعدة تفسير التمثيل","s8":"واقعة الكاتب والمنافق يصلّي","s9":"فأعقبهم نفاقًا","s10":"هل يمكن تعيين المنافق","s11":"شهادة حذيفة","s12":"تسابيح الكهول وسرّ الرضا","s13":"عالَمٌ يعجّ بالتسبيح","s14":"منزلة التسبيح مجموعةً"};
+function ankiTag(c){var n=ANKI_SEC[c.s]||""; return (ANKI_TAG_BASE+(n?"::"+n:"")).replace(/\s+/g,"\u00A0");}
+
+$("#dl").onclick=()=>{
+    const tsv="#separator:tab\n#html:true\n#tags column:3\n"+CARDS_DATA.map(c=>c.f.replace(/\t/g," ")+"\t"+c.b.replace(/\t/g," ")+"\t"+ankiTag(c)).join("\n");
     const blob=new Blob(["\uFEFF"+tsv],{type:"text/tab-separated-values;charset=utf-8"});
     const a=document.createElement("a");
     a.href=URL.createObjectURL(blob); a.download="رقائق_القرآن_4_السجود_بين_السهام.tsv";
