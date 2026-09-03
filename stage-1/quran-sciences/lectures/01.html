@@ -1513,10 +1513,16 @@ document.getElementById("filters").addEventListener("click",e=>{
   idx=0; showingAnswer=false; render();
 });
 
+
+/* ==== تاجات Anki الهرمية — آلية العمل 9-ط ==== */
+var ANKI_TAG_BASE="المرحلة الأولى::مدخل إلى علوم القرآن::المدخل إلى علوم القرآن والتفسير";
+var ANKI_SEC={"1":"التأسيس","2":"المكتبة","3":"الأهمية والتحديات","4":"التفسير عملياً"};
+function ankiTag(c){var n=ANKI_SEC[c.ax]||""; return (ANKI_TAG_BASE+(n?"::"+n:"")).replace(/\s+/g,"\u00A0");}
+
 function downloadAnki(){
   const clean = s => String(s).replace(/\t/g," ").replace(/\r?\n/g," ").trim();
-  const lines = CARDS.map(c => clean(c.q)+"\t"+clean(c.a));
-  const blob = new Blob(["\uFEFF"+lines.join("\n")], {type:"text/tab-separated-values;charset=utf-8"});
+  const lines = CARDS.map(c => clean(c.q)+"\t"+clean(c.a)+"\t"+ankiTag(c));
+  const blob = new Blob(["\uFEFF"+"#separator:tab\n#html:true\n#tags column:3\n"+lines.join("\n")], {type:"text/tab-separated-values;charset=utf-8"});
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href=url; a.download="المدخل_إلى_علوم_القرآن_والتفسير_أحمد_السيد.tsv";
