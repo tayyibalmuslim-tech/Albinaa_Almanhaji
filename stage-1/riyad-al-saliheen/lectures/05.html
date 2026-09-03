@@ -905,8 +905,14 @@ document.addEventListener('keydown',e=>{
   if(e.key==='ArrowLeft'){cur=(cur+1)%view.length;render();}
   if(e.key==='ArrowRight'){cur=(cur-1+view.length)%view.length;render();}
 });
+
+/* ==== تاجات Anki الهرمية — آلية العمل 9-ط ==== */
+var ANKI_TAG_BASE="المرحلة الأولى::شرح رياض الصالحين::باب التوبة 3";
+var ANKI_SEC={"1":"زاوية المجالس","2":"المرأة الجهنية","3":"فقه الخطأ","4":"أحد وتبوك","5":"مساحة الاجتهاد","6":"معنى الحدود","7":"وادي الذهب","8":"قاتل ومقتول"};
+function ankiTag(c){var n=ANKI_SEC[c.s]||""; return (ANKI_TAG_BASE+(n?"::"+n:"")).replace(/\s+/g,"\u00A0");}
+
 $('dl').onclick=()=>{
-  const tsv=CARDS.map(c=>c.q.replace(/\t/g,' ')+'\t'+c.a.replace(/\t/g,' ')).join('\n');
+  const tsv="#separator:tab\n#html:true\n#tags column:3\n"+CARDS.map(c=>c.q.replace(/\t/g,' ')+'\t'+c.a.replace(/\t/g,' ')+'\t'+ankiTag(c)).join('\n');
   const blob=new Blob(['\uFEFF'+tsv],{type:'text/tab-separated-values;charset=utf-8'});
   const a=document.createElement('a');
   a.href=URL.createObjectURL(blob);
