@@ -1708,9 +1708,15 @@ document.addEventListener("keydown", function(e){
 
 function clean(t){ return String(t).replace(/\t/g," ").replace(/\r?\n/g," ").trim(); }
 
+
+/* ==== تاجات Anki الهرمية — آلية العمل 9-ط ==== */
+var ANKI_TAG_BASE="المرحلة الأولى::مدخل إلى علم الحديث::المجلس الأول";
+var ANKI_SEC={"1":"المفتاح والأقسام","2":"التأصيل النبوي","3":"عناية النبي","4":"عصر الصحابة","5":"عصر التابعين","6":"الحفظ والكتابة","7":"الموطأ والتصنيف","8":"نشأة النقد","9":"الكتب الستة"};
+function ankiTag(c){var n=ANKI_SEC[c.s]||""; return (ANKI_TAG_BASE+(n?"::"+n:"")).replace(/\s+/g,"\u00A0");}
+
 function downloadTSV(){
-  const lines = CARDS.map(function(c){ return clean(c.q) + "\t" + clean(c.a); });
-  const blob = new Blob(["\uFEFF" + lines.join("\n")], {type:"text/tab-separated-values;charset=utf-8"});
+  const lines = CARDS.map(function(c){ return clean(c.q) + "\t" + clean(c.a) + "\t" + ankiTag(c); });
+  const blob = new Blob(["\uFEFF" + "#separator:tab\n#html:true\n#tags column:3\n" + lines.join("\n")], {type:"text/tab-separated-values;charset=utf-8"});
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
