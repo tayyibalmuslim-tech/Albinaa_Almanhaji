@@ -1122,9 +1122,15 @@ const CARDS_DATA=[
     };
   });
   function strip(s){return String(s).replace(/<[^>]*>/g,'').replace(/\s+/g,' ').replace(/\t/g,' ').trim()}
-  document.getElementById('bTsv').onclick=function(){
-    var rows=CARDS_DATA.map(function(c){return strip(c.q)+'\t'+strip(c.a)});
-    var blob=new Blob(['\ufeff'+rows.join('\n')],{type:'text/tab-separated-values;charset=utf-8'});
+  
+/* ==== تاجات Anki الهرمية — آلية العمل 9-ط ==== */
+var ANKI_TAG_BASE="المرحلة الأولى::معالجة القرآن لنفوس المصلحين::التوطئة والمقاطع 1-3";
+var ANKI_SEC={"s0":"التوطئة","s1":"المقطع الأول","s2":"المقطع الثاني","s3":"المقطع الثالث"};
+function ankiTag(c){var n=ANKI_SEC[c.s]||""; return (ANKI_TAG_BASE+(n?"::"+n:"")).replace(/\s+/g,"\u00A0");}
+
+document.getElementById('bTsv').onclick=function(){
+    var rows=CARDS_DATA.map(function(c){return strip(c.q)+'\t'+strip(c.a)+'\t'+ankiTag(c)});
+    var blob=new Blob(['\ufeff'+"#separator:tab\n#html:true\n#tags column:3\n"+rows.join('\n')],{type:'text/tab-separated-values;charset=utf-8'});
     var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=TSVNAME; a.click();
     setTimeout(function(){URL.revokeObjectURL(a.href)},1500);
   };
