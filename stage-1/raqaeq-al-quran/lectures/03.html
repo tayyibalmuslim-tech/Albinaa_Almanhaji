@@ -921,8 +921,14 @@ document.addEventListener("click",e=>{
   $("#cardIn").onclick=()=>cardEl.classList.toggle("flip");
   $("#nextC").onclick=()=>{idx=(idx+1)%view.length;draw()};
   $("#prevC").onclick=()=>{idx=(idx-1+view.length)%view.length;draw()};
-  $("#dl").onclick=()=>{
-    const tsv=CARDS_DATA.map(c=>c.f.replace(/\t/g," ")+"\t"+c.b.replace(/\t/g," ")).join("\n");
+  
+/* ==== تاجات Anki الهرمية — آلية العمل 9-ط ==== */
+var ANKI_TAG_BASE="المرحلة الأولى::رقائق القرآن::من 54 إلى 78";
+var ANKI_SEC={"s1":"حين تفضُل الصخرةُ القلب","s2":"آثار القسوة","s3":"القسوة عقوبةً وسببُها","s4":"الصورة مجموعةً والدواء","s5":"مشهدان بينهما مئة دقيقة","s6":"غضبٌ على دقائق وبرودٌ عن ركن","s7":"المشهد تحت سراج القرآن"};
+function ankiTag(c){var n=ANKI_SEC[c.s]||""; return (ANKI_TAG_BASE+(n?"::"+n:"")).replace(/\s+/g,"\u00A0");}
+
+$("#dl").onclick=()=>{
+    const tsv="#separator:tab\n#html:true\n#tags column:3\n"+CARDS_DATA.map(c=>c.f.replace(/\t/g," ")+"\t"+c.b.replace(/\t/g," ")+"\t"+ankiTag(c)).join("\n");
     const blob=new Blob(["\uFEFF"+tsv],{type:"text/tab-separated-values;charset=utf-8"});
     const a=document.createElement("a");
     a.href=URL.createObjectURL(blob); a.download="رقائق_القرآن_3_فضل_الصخور_والساعة_الخامسة.tsv";
