@@ -1495,8 +1495,8 @@ var CARDS_DATA=[
 {s:"s6",q:"ما الكتاب المركزي المرشّح في توحيد المعرفة والإثبات؟",a:"«شرح العقيدة الطحاوية» لابن أبي العزّ الحنفي — مع التنبيه أنه قد يصعب على المبتدئ في القراءة الذاتية."},
 {s:"s6",q:"ما اسم شرح الشيخ سلطان العميري على العقيدة الواسطية المطبوع؟",a:"«العقود الذهبية على مقاصد العقيدة الواسطية» — في مجلدين، عن دار مدارج."},
 {s:"s6",q:"ما الكتابان المرشّحان في باب القصد والطلب وما يضادّه؟",a:"«الشرك ومظاهره» لمبارك الميلي (من تلاميذ ابن باديس)، و«الأدلة العقلية النقلية على أصول الاعتقاد» لسعود العريفي."},
-{s:"s6",q:"ماذا رشّح الشيخ في أعمال القلوب؟",a:"مختصرات ومهذَّبات «مدارج السالكين» لابن القيم — وأشار إلى مختصر صادر عن دار ابن الجوزي لم يقرأه بعد."},
-{s:"s6",q:"ما الرسالة التي وصفها الشيخ بأنها مركزية جدًّا في تأسيس النظر العقدي الصحيح؟",a:"«الرسالة الحموية» لابن تيمية — في المجلد الخامس تقريبًا من مجموع الفتاوى."}
+{s:"s6",q:"ما الكتاب المرجع في أعمال القلوب الذي يُوصى بمختصراته لطالب العلم المبتدئ؟",a:"«مدارج السالكين» لابن القيم، ويُدخَل إليه عبر مختصراته ومهذَّباته."},
+{s:"s6",q:"ما رسالة ابن تيمية المركزية في تأسيس النظر العقدي الصحيح؟ وأين تُوجد؟",a:"«الرسالة الحموية» لابن تيمية — في المجلد الخامس تقريبًا من مجموع الفتاوى."}
 ];
 
 /* ================= الفهرس والتقدّم ================= */
@@ -1627,11 +1627,17 @@ var CARDS_DATA=[
   document.getElementById("next").onclick=function(){idx=(idx+1)%list.length;render()};
   document.getElementById("prev").onclick=function(){idx=(idx-1+list.length)%list.length;render()};
 
-  document.getElementById("dl").onclick=function(){
+  
+/* ==== تاجات Anki الهرمية — آلية العمل 9-ط ==== */
+var ANKI_TAG_BASE="المرحلة الأولى::مدخل إلى علم العقيدة::محاضرة كاملة";
+var ANKI_SEC={"s1":"التمهيد","s2":"التسميات","s3":"الموضوعات","s4":"الطوائف","s5":"القواعد","s6":"المنهجية"};
+function ankiTag(c){var n=ANKI_SEC[c.s]||""; return (ANKI_TAG_BASE+(n?"::"+n:"")).replace(/\s+/g,"\u00A0");}
+
+document.getElementById("dl").onclick=function(){
     var rows=CARDS_DATA.map(function(c){
-      return c.q.replace(/\t/g," ")+"\t"+c.a.replace(/\t/g," ");
+      return c.q.replace(/\t/g," ")+"\t"+c.a.replace(/\t/g," ")+"\t"+ankiTag(c);
     }).join("\n");
-    var blob=new Blob(["\uFEFF"+rows],{type:"text/tab-separated-values;charset=utf-8"});
+    var blob=new Blob(["\uFEFF"+"#separator:tab\n#html:true\n#tags column:3\n"+rows],{type:"text/tab-separated-values;charset=utf-8"});
     var a=document.createElement("a");
     a.href=URL.createObjectURL(blob);
     a.download="مداخل_العلوم_مدخل_علم_العقيدة.tsv";
