@@ -1,40 +1,976 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>القبس الوهاج — من ص 7 إلى 27 - المرحلة التمهيدية</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="../../../style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>القبس الوهاج — الإهداء والمقدمة والتمهيد والباب الأول (ص ٧–٢٧)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brand:#3a3f8c; --brand-2:#575ea8; --brand-3:#2a2d68;
+  --bg:#fbfaf7; --surface:#ffffff; --surface-2:#f4f2ee;
+  --ink:#23252c; --ink-soft:#4a4e58; --line:#e2ded6;
+  --s1:#2a2d68; --s2:#3a3f8c; --s3:#4a52a5; --s4:#5c64b8; --s5:#343d7e; --s6:#414a96; --s7:#2f3873;
+  /* الطبقة الدلالية — بند 5-ب (محجوزة، لا تُستعمل للزخرفة) */
+  --sem-aya:#14532d; --sem-hadith:#5b2d90; --sem-sahabi:#8a5a00; --sem-scholar:#8f1d21;
+  /* ألوان أنواع الهامش — بند 7-ج/أ */
+  --n-tawthiq:#0f6b6b; --n-mustalah:#6b4f3a; --n-tarjama:#1e3a5f; --n-idah:#4b5563;
+  --n-rabt:#1d6fa5; --n-tashih:#b45309; --n-siyaq:#5b6b1f;
+  --fs:17.5px; --radius:10px;
+}
+[data-theme="night"]{
+  --bg:#14161c; --surface:#1b1e26; --surface-2:#232733; --ink:#e8e6e1; --ink-soft:#b3b7c2; --line:#333846;
+  --brand:#98a0ea; --brand-2:#aab1f0; --brand-3:#c3c8f7;
+  --s1:#8f98e0; --s2:#98a0ea; --s3:#a7aef0; --s4:#b6bcf5; --s5:#939ce6; --s6:#9ea6ec; --s7:#8a93dd;
+  --sem-aya:#7ddba4; --sem-hadith:#c4a2f0; --sem-sahabi:#e0b355; --sem-scholar:#f0a0a3;
+  --n-tawthiq:#5fc7c7; --n-mustalah:#c4a184; --n-tarjama:#8fb4de; --n-idah:#a8adb8;
+  --n-rabt:#77b9e6; --n-tashih:#f0a94b; --n-siyaq:#b0c161;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Cairo',system-ui,sans-serif;
+  font-size:var(--fs);line-height:1.95;text-align:right;-webkit-text-size-adjust:100%}
+h1,h2,h3,h4,.ttl{font-family:'Reem Kufi','Cairo',sans-serif;line-height:1.5;margin:0}
+a{color:var(--brand);text-decoration:none}
+/* ===== شريط التقدم ===== */
+#prog{position:fixed;top:0;right:0;height:4px;width:0;background:linear-gradient(90deg,var(--brand-2),var(--brand));z-index:60}
+/* ===== شريط التنقّل ===== */
+.topbar{position:sticky;top:0;z-index:50;background:var(--surface);border-bottom:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:8px 14px}
+.topbar select{font-family:inherit;font-size:14px;padding:7px 10px;border:1px solid var(--line);
+  border-radius:8px;background:var(--surface-2);color:var(--ink);max-width:min(55vw,340px)}
+.btn{font-family:inherit;font-size:14px;min-height:38px;padding:7px 12px;border:1px solid var(--line);
+  border-radius:8px;background:var(--surface-2);color:var(--ink);cursor:pointer}
+.btn:hover{border-color:var(--brand)}
+.btn[disabled]{opacity:.4;cursor:not-allowed}
+.spacer{flex:1}
+/* ===== التخطيط: المتن يمين، الهامش والفهرس يسار ===== */
+.wrap{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:26px;
+  max-width:1280px;margin:0 auto;padding:22px 16px 80px;direction:rtl}
+.main{grid-column:2;min-width:0;max-width:780px;margin-inline-start:auto}
+.side{grid-column:1;min-width:0}
+.toc{position:sticky;top:64px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:12px 14px;max-height:calc(100vh - 110px);overflow:auto}
+.toc h4{font-size:15px;color:var(--brand);margin-bottom:8px}
+.toc ol{list-style:none;margin:0;padding:0;font-size:14px}
+.toc ol ol{padding-inline-start:12px;border-inline-start:2px solid var(--line);margin:4px 0 8px}
+.toc li{margin:3px 0}
+.toc a{color:var(--ink-soft);display:block;padding:2px 4px;border-radius:6px}
+.toc a:hover,.toc a.on{color:var(--brand);background:var(--surface-2)}
+/* ===== الرأس ===== */
+.hero{background:linear-gradient(135deg,var(--s1),var(--s3));color:#fff;border-radius:14px;padding:26px 22px;margin-bottom:18px}
+[data-theme="night"] .hero{background:linear-gradient(135deg,#232a5e,#343d7e);color:#eceaff}
+.hero .kicker{font-size:13px;opacity:.85;letter-spacing:.5px}
+.hero h1{font-size:30px;margin:6px 0 10px}
+.hero .meta{font-size:14px;opacity:.92;line-height:1.9}
+.ai-warn{background:#fff7e6;border:1px solid #f0c987;color:#6b4a10;border-radius:10px;
+  padding:10px 14px;font-size:13.5px;margin-bottom:14px}
+[data-theme="night"] .ai-warn{background:#2e2717;border-color:#6b5322;color:#e6cf9b}
+.layer-key{background:var(--surface);border:1px dashed var(--line);border-radius:10px;
+  padding:10px 14px;font-size:13.5px;color:var(--ink-soft);margin-bottom:18px}
+.layer-key b{color:var(--ink)}
+/* ===== المقاطع ===== */
+.sec{margin:34px 0 0;scroll-margin-top:70px}
+.sec>h2{font-size:28px;color:var(--acc,var(--brand));padding-inline-start:12px;
+  border-inline-start:6px solid var(--acc,var(--brand));margin-bottom:6px}
+.sec .range{font-size:13px;color:var(--ink-soft);margin:0 0 14px}
+.sticky-head{position:sticky;top:53px;z-index:40;background:var(--bg);border-bottom:1px solid var(--line);
+  font-size:13px;color:var(--acc,var(--brand));padding:6px 2px;margin-bottom:10px;font-family:'Reem Kufi',sans-serif}
+h3{font-size:22px;color:var(--acc,var(--brand));margin:26px 0 8px;scroll-margin-top:70px}
+h4{font-size:19px;color:var(--ink);margin:18px 0 6px}
+.gen-head{position:relative}
+.gen-head::after{content:'عنوان تنظيمي';position:absolute;inset-inline-end:0;top:8px;font-size:12px;
+  font-family:'Cairo',sans-serif;color:var(--ink-soft);opacity:.6;letter-spacing:.3px}
+p{margin:0 0 14px;text-align:right}
+.lead>p:first-of-type::first-line{font-weight:600;color:var(--brand-3)}
+/* ===== بلوكات مسار الكتب ===== */
+.aya-block{background:rgba(20,83,45,.06);border-inline-start:4px solid var(--sem-aya);
+  border-radius:8px;padding:14px 16px;margin:16px 0}
+[data-theme="night"] .aya-block{background:rgba(125,219,164,.08)}
+.aya{font-family:'Amiri',serif;font-size:1.32em;line-height:2.35;color:var(--sem-aya);display:block}
+.aya-ref{font-size:.62em;color:var(--ink-soft);font-family:'Cairo',sans-serif;vertical-align:middle}
+.hadith-block{background:rgba(91,45,144,.05);border-inline-start:4px solid var(--sem-hadith);
+  border-radius:8px;padding:14px 16px;margin:16px 0}
+[data-theme="night"] .hadith-block{background:rgba(196,162,240,.08)}
+.hadith-block .lbl{font-family:'Reem Kufi',sans-serif;font-size:14px;color:var(--sem-hadith);display:block;margin-bottom:6px}
+.naql-block{background:var(--surface-2);border-inline-start:4px solid var(--brand-2);border-radius:8px;padding:14px 16px;margin:16px 0}
+.naql-block .who{display:inline-block;font-size:13px;background:var(--brand);color:#fff;
+  border-radius:20px;padding:2px 12px;margin-bottom:8px;font-family:'Reem Kufi',sans-serif}
+.faida{margin:18px 0;padding-inline-start:4px}
+.faida-head{display:flex;gap:10px;align-items:baseline;margin-bottom:6px}
+.faida-num{flex:0 0 auto;min-width:30px;height:30px;border-radius:50%;background:var(--acc,var(--brand));
+  color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-family:'Reem Kufi',sans-serif}
+.faida-ttl{font-family:'Reem Kufi',sans-serif;font-size:18px;color:var(--acc,var(--brand))}
+.divider{text-align:center;color:var(--line);margin:26px 0;font-size:20px;letter-spacing:8px}
+.takeaway{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--acc,var(--brand));
+  border-radius:var(--radius);padding:16px 18px;margin:24px 0}
+.takeaway h4{color:var(--acc,var(--brand));margin:0 0 8px;font-size:17px}
+.takeaway ul{margin:0;padding-inline-start:20px}
+.takeaway li{margin:6px 0}
+.tag-add{display:inline-block;font-size:12px;background:var(--surface-2);color:var(--ink-soft);
+  border:1px solid var(--line);border-radius:20px;padding:1px 9px;margin-inline-start:6px;font-family:'Cairo',sans-serif}
+/* حواشي المؤلف (من الكتاب) */
+.book-fn{border-top:1px solid var(--line);margin-top:22px;padding-top:10px;font-size:14.5px;color:var(--ink-soft)}
+.book-fn .lbl{font-family:'Reem Kufi',sans-serif;font-size:13px;color:var(--ink);display:block;margin-bottom:4px}
+.book-fn ol{margin:0;padding-inline-start:20px}
+.book-fn li{margin:3px 0}
+sup.fnr{color:var(--ink-soft);font-size:.68em}
+/* ===== الهامش ===== */
+.nmark{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;
+  background:var(--nc,var(--brand));color:#fff;font-size:12px;cursor:pointer;vertical-align:super;
+  margin:0 2px;font-family:'Cairo',sans-serif;border:none;line-height:1}
+.note{display:block;font-family:'Cairo',sans-serif;font-size:14.5px;line-height:1.8;color:var(--ink-soft);
+  background:var(--surface);border-inline-start:3px solid var(--nc,var(--brand));border-radius:8px;
+  padding:9px 12px;margin:10px 0 14px}
+.note .nt{display:block;font-size:12px;color:var(--nc,var(--brand));margin-bottom:2px;letter-spacing:.3px}
+.note--tawthiq{--nc:var(--n-tawthiq)} .note--mustalah{--nc:var(--n-mustalah)}
+.note--tarjama{--nc:var(--n-tarjama)} .note--idah{--nc:var(--n-idah)}
+.note--rabt{--nc:var(--n-rabt)} .note--tashih{--nc:var(--n-tashih)} .note--siyaq{--nc:var(--n-siyaq)}
+.note.flash{box-shadow:0 0 0 3px rgba(58,63,140,.25)}
+/* ===== الطبقة الدلالية ===== */
+.sem-aya{color:var(--sem-aya)}
+.sem-hadith{color:var(--sem-hadith)}
+.sem-name{color:var(--sem-scholar)}
+.sem-name.sem-scholar{color:var(--sem-scholar);font-weight:700}
+.sem-name.sem-sahabi{color:var(--sem-sahabi);font-weight:700}
+/* ===== الأسئلة التفاعلية ===== */
+.quiz{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;margin:26px 0}
+.quiz h4{font-size:16px;color:var(--acc,var(--brand));margin:0 0 4px}
+.quiz .score{font-size:12.5px;color:var(--ink-soft);margin-bottom:10px}
+.q{margin:14px 0}
+.q .qt{font-weight:600;margin-bottom:8px}
+.opt{display:block;width:100%;text-align:right;font-family:inherit;font-size:15px;min-height:44px;
+  padding:10px 14px;margin:6px 0;border:1px solid var(--line);border-radius:9px;background:var(--surface-2);
+  color:var(--ink);cursor:pointer;line-height:1.6;white-space:normal}
+.opt:hover{border-color:var(--brand)}
+.opt.ok{background:rgba(20,83,45,.1);border-color:#2f7a4d;font-weight:600}
+.opt.no{background:rgba(143,29,33,.08);border-color:#b05257}
+.expl{font-size:14px;color:var(--ink-soft);background:var(--surface-2);border-radius:8px;padding:9px 12px;margin-top:8px}
+/* ===== البطاقات ===== */
+.cards{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;margin:40px 0 0}
+.cards h3{margin-top:0}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 14px}
+.filters button{font-family:inherit;font-size:13px;padding:6px 12px;border-radius:20px;border:1px solid var(--line);
+  background:var(--surface-2);color:var(--ink-soft);cursor:pointer;min-height:36px}
+.filters button.on{background:var(--brand);color:#fff;border-color:var(--brand)}
+.card{border:1px solid var(--line);border-radius:12px;background:var(--surface-2);padding:22px 18px;
+  min-height:180px;display:flex;align-items:center;justify-content:center;text-align:center;cursor:pointer;line-height:2}
+.card .front{font-weight:600}
+.card .back{color:var(--brand-3);font-weight:600}
+[data-theme="night"] .card .back{color:var(--brand-2)}
+.cnav{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:12px;flex-wrap:wrap}
+.cnav span{font-size:13px;color:var(--ink-soft)}
+/* ===== الاستجابة ===== */
+@media (max-width:900px){
+  .wrap{grid-template-columns:1fr;padding:14px 12px 70px}
+  .main{grid-column:1;max-width:100%}
+  .side{grid-column:1;order:-1}
+  .toc{position:static;max-height:260px}
+  .note{display:none}
+  .note.open{display:block}
+  body{font-size:16.5px}
+  .hero h1{font-size:24px}
+  .sec>h2{font-size:23px}
+  h3{font-size:19px}
+}
+@media (min-width:901px){ .note{display:block} }
+@media print{
+  .topbar,.side,.quiz,.cards,#prog,.ai-warn{display:none!important}
+  body{background:#fff;color:#000;font-size:12pt}
+  .note{display:block;font-size:10pt;border:0;border-top:1px dotted #999;background:none}
+  .nmark{background:none;color:#000;border:1px solid #000}
+  .wrap{display:block;padding:0}
+}
+</style>
 </head>
-<body class="" data-page="lecture" data-lecture-id="stage0_qabas-wahhaj_01">
-  <div class="page">
-    <nav class="breadcrumbs"><a href="../../../index.html">الرئيسية</a><span class="sep">/</span><a href="../../index.html">المرحلة التمهيدية</a><span class="sep">/</span><a href="../index.html">القبس الوهاج (مختصر شرح المنهاج)</a><span class="sep">/</span><span aria-current="page">القبس الوهاج — من ص 7 إلى 27</span></nav>
+<body data-lecture-id="stage0_qabas-wahhaj_01">
+<div id="prog"></div>
 
-      <header class="lecture-header">
-        <h1>القبس الوهاج — من ص 7 إلى 27</h1>
-        <p class="lecture-meta">المادة: القبس الوهاج (مختصر شرح المنهاج) &nbsp;|&nbsp; الشيخ: محمد شميس &nbsp;|&nbsp; اليوم 4</p>
-        <label class="checkbox-line lecture-checkbox">
-          <input type="checkbox" data-lecture-id="stage0_qabas-wahhaj_01">
-          <span>إتمام هذه المحاضرة</span>
-        </label>
-      </header>
+<nav class="topbar">
+  <button class="btn" id="prev" disabled>◀ السابق</button>
+  <select id="jump" aria-label="الانتقال إلى ملف آخر من الكتاب">
+    <option value="01.html" selected>١ — من ص ٧ إلى ٢٧</option>
+    <option value="02.html">٢ — من ص ٢٨ إلى ٤٥</option>
+    <option value="03.html">٣ — من ص ٤٦ إلى ٦٧</option>
+    <option value="04.html">٤ — من ص ٦٨ إلى ٩٢</option>
+    <option value="05.html">٥ — من ص ٩٣ إلى ١١١</option>
+    <option value="06.html">٦ — من ص ١١٢ إلى ١٣٦</option>
+    <option value="07.html">٧ — من ص ١٣٧ إلى ١٦١</option>
+    <option value="08.html">٨ — من ص ١٦٢ إلى ١٨١</option>
+    <option value="09.html">٩ — من ص ١٨٢ إلى ٢٠٤</option>
+    <option value="10.html">١٠ — من ص ٢٠٥ إلى ٢٢٤</option>
+    <option value="11.html">١١ — من ص ٢٢٥ إلى نهاية الكتاب</option>
+  </select>
+  <button class="btn" id="next">التالي ▶</button>
+  <span class="spacer"></span>
+  <button class="btn" id="fsm" title="تصغير الخط">أ−</button>
+  <button class="btn" id="fsp" title="تكبير الخط">أ+</button>
+  <button class="btn" id="thm" title="وضع القراءة الليلي">🌙</button>
+</nav>
 
-      <div class="lecture-placeholder">
-        <p class="placeholder-hint">سيتم إضافة المحاضرة هنا لاحقًا (رابط يوتيوب / فيديو / ملف صوتي / PDF / نص المحاضرة / ملاحظاتي)</p>
+<style id="ilm-completion-style">
+  #ilm-completion-box{display:flex;align-items:center;gap:10px;max-width:780px;
+    margin:18px auto 0;padding:12px 18px;background:var(--surface);
+    border:1px solid var(--line);border-radius:var(--radius);
+    font-family:'Cairo',system-ui,sans-serif;direction:rtl;cursor:pointer;
+    user-select:none;transition:background .15s,border-color .15s}
+  #ilm-completion-box:hover{border-color:var(--brand)}
+  #ilm-completion-box.done{border-color:var(--brand);background:var(--surface-2)}
+  #ilm-completion-box input{width:18px;height:18px;accent-color:var(--brand);cursor:pointer;flex-shrink:0}
+  #ilm-completion-box span{font-size:14.5px;font-weight:600;color:var(--ink)}
+  #ilm-completion-box.done span{color:var(--brand)}
+  .ilm-nav-bar{max-width:780px}
+</style>
+<label id="ilm-completion-box">
+  <input type="checkbox" data-lecture-id="stage0_qabas-wahhaj_01">
+  <span>تحديد هذه المحاضرة كمكتملة</span>
+</label>
+
+<div class="wrap">
+  <aside class="side">
+    <nav class="toc" id="toc">
+      <h4>فهرس الملف</h4>
+      <ol id="toclist"></ol>
+    </nav>
+  </aside>
+
+  <main class="main" data-ilm-highlight-zone>
+    <header class="hero">
+      <div class="kicker">المرحلة التمهيدية · الملف ١ من ١١</div>
+      <h1>القبس الوهاج في تلخيص شرح المنهاج</h1>
+      <div class="meta">
+        الإهداء · المقدمة · تمهيد بين يدي الشرح · الباب الأول<br>
+        من ص ٧ إلى ص ٢٧ &nbsp;|&nbsp; تأليف: مُحمد شُميس &nbsp;|&nbsp; تلخيص شرح الشيخ أحمد بن يوسف السيد لمتن «المنهاج من ميراث النبوة»
+      </div>
+    </header>
+
+    <div class="ai-warn">
+      ⚠️ هذا الملف أُعدّ بمساعدة الذكاء الاصطناعي في الإخراج والهوامش والأسئلة والبطاقات، وقد يحتوي أخطاء — يُرجى المراجعة قبل الاعتماد عليه.
+    </div>
+
+    <div class="layer-key">
+      <b>كيف تقرأ هذه الصفحة:</b> النص الأسود المتصل هو <b>كلام المؤلف كما هو في الكتاب حرفيًا</b>. وكل ما ظهر في العمود الجانبي بعلامة ملوّنة (أو تحت الفقرة في الهاتف) هو <b>هامش من إعداد الصفحة وليس من الكتاب</b>. أما «حواشي المؤلف» أسفل كل مقطع فهي حواشي الكتاب نفسه. والألوان دلالة ثابتة: <span class="sem-aya">الآية خضراء</span>، <span class="sem-hadith">الحديث بنفسجي</span>، <span class="sem-name sem-sahabi">الأنبياء والصحابة كهرماني</span>، <span class="sem-name sem-scholar">العلماء أحمر عريض</span>، <span class="sem-name">وباقي الأعلام أحمر عادي</span>.
+    </div>
+    <!-- ===================== المقطع 1 ===================== -->
+    <section class="sec" id="s1" style="--acc:var(--s1)">
+      <div class="sticky-head">المقطع الأول · الإهداء والمقدمة</div>
+      <h2>الإهداء والمقدمة</h2>
+      <p class="range">ص ٧ – ص ١٠</p>
+
+      <h3 id="s1a">الإهــداء</h3>
+      <div class="naql-block">
+        <p>إلى شباب الأمة المستبشرين بنهضة أمتهم<br>
+        إلى المقبلين في وقت الإدبار<button class="nmark note--mustalah" data-n="n1">١</button><br>
+        إلى من هجر اللذائذ والرفاهية وأقبل على العمل لدين الله<br>
+        إلى السائرين على منهاج النبيين<br>
+        أبشروا، فقد سلكتم طريقًا لا خسارة فيه</p>
+      </div>
+      <aside class="note note--mustalah" id="n1"><span class="nt">تعريف مصطلح</span>وقت الإدبار: زمن انصراف الناس عن الدين وتراجع الأمة، يقابله «الإقبال». والمعنى: من أقبل حين أدبر غيره.</aside>
+
+      <h3 id="s1b">مقدمة</h3>
+      <div class="lead">
+      <p>بسم الله ولا حول ولا قوة إلا به</p>
+      <p>حمدًا لمن امتنّ علينا بنعمة الدين، وحفظ لنا كتابه من تحريف المبطلين، وجعل فيه الآيات والبراهين التي تصلح بها أحوال الناس في كل وقت وحين، فلا تبطل مضامينه، ولا تبلى قوانينه مهما طالت الأيام والسنين.</p>
+      <p>والصلاة والسلام على مَن أفديه بأبي وأمي ونفسي رسول الله ﷺ، لم يترك شيئًا من الدين إلا وبيّنه أفضل التبيين، وأرشدنا لما فيه صلاح أحوالنا مهما تقلبت الأحوال وطالت السنين، حفظ الله لنا سنته من كذب الكذابين، وأقام لها من ينشرها من الصادقين العاملين، فانتشرت في أقطار المعمورة نورًا يضيء الدرب للسالكين.</p>
+      <h4 class="gen-head">كفاية الكتاب والسنة لقيام الدين</h4>
+      <p>أما بعد: فإن من أجلّ نعم الله على هذه الأمة أن حفظ لها الكتاب الذي أنزله عليها، وسنة نبيّه ﷺ الذي أرسله إليها، وجعل في هذين النورين الغنية والكفاية لقيام الدين، الذي به تصلح أحوال العالمين، ومهما ابتغى العالمون أن تصلح أحوالهم دون أن يكون هذان النوران مرجعيتهم فلن تصلح، ومهما ابتغى المصلحون القيام بأمتهم دون الانطلاق من هذين الأصلين فلن تقوم لهم قائمة، فبكتاب الله وسنة نبيه ﷺ نجاتنا وعصمتنا، وقيام أمر ديننا ودنيانا.</p>
+      <h4 class="gen-head">التربية على تعظيم الوحي</h4>
+      <p>ولذلك كانت تربية شباب الإسلام – الذين بهم تكون نهضة هذه الأمة – على تعظيم كتاب الله وسنة نبيه ﷺ، والانطلاق منهما، والاحتكام إليهما؛ عين السداد، لا سيما إذا كانت هذه التربية على محكمات الشريعة<button class="nmark note--mustalah" data-n="n2">٢</button> وأولوياتها قبل فروعها وتفصيلاتها.</p>
+      <aside class="note note--mustalah" id="n2"><span class="nt">تعريف مصطلح</span>محكمات الشريعة: أصولها وقواطعها التي لا تحتمل التأويل ولا يسع المسلم جهلها، في مقابل الفروع والجزئيات التي يقع فيها الخلاف.</aside>
+      <h4 class="gen-head">فئة أقبلت في وقت الإدبار</h4>
+      <p>وفي هذا الزمن الذي كثر فيه اللهو والفساد عند كثير من شبابِ المسلمين، وتسلل اليأس والإحباط إلى ميدان المصلحين العاملين؛ كان هناك من شباب الإسلام مَن وفقه الله تعالى للالتفات إلى نفسه وأمته، فنفضوا عنهم غبار الكسل وتنكبوا سبيل التافهين، وانطلقوا في بناء أنفسهم رجاء أن يكونوا لهذا الدين من العاملين الباذلين، طلقوا اليأس وفارقوا مقاعد المحبطين، وأقبلوا للنهضة بأمتهم مستبشرين غير متوانين.</p>
+      <h4 class="gen-head">من أين جاء متن «المنهاج من ميراث النبوة»</h4>
+      <p>ولما كان هذا حال فئة من الشباب أقبلت في وقت الإدبار، ولم يختاروا مع كثرة الثغور الفرار؛ توجب على مصلحي هذه الأمة أن يدلوهم على الطريق الواضح الذي يسلكونه، أي: المنهاج الذي يتبعونه في سيرهم،</p>
+      <p>ومن هنا جاء متن «المنهاج من ميراث النبوة» لشيخنا وأستاذنا <span class="sem-name sem-scholar">أحمد السيد</span><button class="nmark note--tarjama" data-n="n3">٣</button> – حفظه الله من بين يديه ومن خلفه – ليكون منهاجًا – أي: طريقًا واضحًا – لهذه الثلة من الشباب التي تسعى أن تستقيم على أمر ربها، وأن تعمل لنصرة دينها، لكنّ هذا المنهاج ليس كأيّ منهاج، وإنما هو منهاج مستمد من ميراث النبوة، أي: من كتاب الله تعالى، وسنة نبيه ﷺ، وهذا يجعل لهذا المنهاج قيمة عظيمة، فعظمة هذا المتن، وقيمته العليا ليست لمكانة مؤلفه – وإن كانت له في نفوس شباب الإسلام المكانة الكبرى – وإنما لما تضمنه من الآيات والأحاديث التي هي ميراث النبوة، فأنعم بمنهاج مستمد من ميراث خاتم الأنبياء ﷺ.</p>
+      <aside class="note note--tarjama" id="n3"><span class="nt">ترجمة عَلَم</span><span class="sem-name sem-scholar">أحمد بن يوسف السيد</span>: داعية ومعلّم سعودي معاصر، مؤسس مشروع «البناء المنهجي»، ومؤلف متن «المنهاج من ميراث النبوة» وشارحه.</aside>
+      <h4 class="gen-head">قَبول المتن بين شباب الإسلام</h4>
+      <p>وقد كتب الله الكريم لمتن «المنهاج من ميراث النبوة» القَبول بين شباب الإسلام، فحفظه في السنوات الأخيرة الآلاف، واعتنوا بشرحه، وكان له الأثر الكبير على كثير منهم في الاستقامة الشخصية والبوصلة الإصلاحية.</p>
+      <h4 class="gen-head">كيف وُلد هذا التلخيص</h4>
+      <p>وقد شرح هذا المتنَ مؤلفُه شيخنا <span class="sem-name sem-scholar">أحمد بن يوسف السيّد</span> – أعيذه بالله من شر الحاسدين – في سلسلة مرئية بلغت واحدًا وثلاثين مقطعًا، فشرح الله صدري لتلخيص هذا الشرح وتهذيبه لمقاصد أردتها أسردها عليك في التمهيد الذي سيكون بين يدي الشرح،</p>
+      <p>وشرعت في تلخيصه والعناية به حتى يسر الله إتمام ذلك، فجاء هذا الكتاب الذي بين يديك، وقد أسميته بـ«القبس الوهاج في تلخيص شرح المنهاج»<button class="nmark note--tashih" data-n="n4">٤</button>، وأضفت لهذا الشرح بيانًا للكلمات الغريبة الموجودة في هذا المتن، فقد جمعت ما يزيد عن مائة وخمسين كلمة من الآيات والأحاديث، وبيّنت معانيها من كتب التفسير، وشروح الأحاديث، والمعاجم، من كتب الأقدمين والمعاصرين.</p>
+      <aside class="note note--tashih" id="n4"><span class="nt">تنبيه</span>هذا هو الاسم الذي أثبته المؤلف لكتابه في مقدمته: «في <b>تلخيص</b> شرح المنهاج». والمتداول أحيانًا «في مختصر شرح المنهاج»، والمثبَت في الكتاب هو الأصل.</aside>
+      <h4 class="gen-head">أمور التمهيد الستة</h4>
+      <p>وقدمت بين يدي الشرح بتمهيد تضمن ستة أمور، وهي:</p>
+      <p>أوّلًا: شرح عنوان المتن.<br>
+      ثانيًا: السياق الذي أُلّف فيه المتن.<br>
+      ثالثًا: مقاصد تأليف متن المنهاج.<br>
+      رابعًا: أهمية متن المنهاج.<br>
+      خامسًا: شروح متن المنهاج.<br>
+      سادسًا: عملي في شرح المنهاج.</p>
+      <h4 class="gen-head">خاتمة المقدمة ودعاء المؤلف</h4>
+      <p>وأخيرًا: إن وُفّقت في كتابة هذا الملخص، وفي تقريب هذا الشرح؛ فإني أقر وأعترف بأن الفضل لله ربي ومولاي، فما من نعمة بي إلا منه، بمحض فضله وكرمه، أحمده وأشكره كما يحب ويرضى، وأستغفره من تقصيري وتفريطي.</p>
+      <p>وأسأله بفضله وكرمه أن يكتب لهذا الملخص القبول بين المسلمين، وأن يبارك به، وأن ينفع به المسلمين.</p>
+      <p>وأسأله أن يغفر لي ولوالديّ وشيخي، وأن يعتق رقابنا من النيران بفضله وكرمه.</p>
+      <p>وكتبه الفقير إلى الله المستغني به: <span class="sem-name sem-scholar">مُحمد شُميس</span><br>
+      ٥/ ٨/ ١٤٤٥ هـ<br>
+      ١٥/ ٢/ ٢٠٢٤ م</p>
       </div>
 
-      <div class="lecture-nav">
-        <a href="../index.html" class="btn btn-outline">الرجوع إلى المادة</a>
-        <a href="../../index.html" class="btn btn-outline">الرجوع إلى المرحلة</a>
+      <div class="quiz" data-sec="s1"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>الكتاب ليس متنًا أصليًا، بل <b>تلخيص لشرح</b>: محمد شُميس لخّص شرح أحمد بن يوسف السيد لمتنه «المنهاج من ميراث النبوة».</li>
+          <li>الأصل المشروح سلسلة مرئية في واحد وثلاثين مقطعًا، والاسم المثبَت للتلخيص: «القبس الوهاج في تلخيص شرح المنهاج».</li>
+          <li>قيمة المتن عند الملخِّص ليست لمكانة مؤلفه، بل لما تضمّنه من آيات وأحاديث هي ميراث النبوة.</li>
+          <li>شرط التربية السديدة على تعظيم الوحي: أن تبدأ بمحكمات الشريعة وأولوياتها قبل الفروع والتفصيلات.</li>
+          <li>زاد المؤلف على الشرح بيان ما يزيد على مائة وخمسين كلمة غريبة من آيات المتن وأحاديثه.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 2 ===================== -->
+    <section class="sec" id="s2" style="--acc:var(--s2)">
+      <div class="sticky-head">المقطع الثاني · التمهيد (١): العنوان والسياق</div>
+      <h2>تمهيد بين يدي الشرح — عنوان المتن وسياقه</h2>
+      <p class="range">ص ١١ – ص ١٢</p>
+
+      <h3 id="s2a">أوّلًا: بيان عنوان المتن</h3>
+      <div class="lead">
+      <p>كنت أتأمل عنوان متن «المنهاج من ميراث النبوة» فرأيت أن عنوانه دالٌّ على مضمونه دلالة مطابقة، وفهم هذا العنوان سيعين على فهم المقصود من وضع هذا المتن؛ لذلك أحببت البدء بشرح العنوان شرحًا مختصرًا، أبيِّن فيه معنى كلمة «المنهاج»، ومعنى «ميراث النبوة»، ثم بيان العنوان «المنهاج من ميراث النبوة» كاملًا.</p>
       </div>
 
-      <div data-lecture-nav-extra></div>
+      <div class="faida">
+        <div class="faida-head"><span class="faida-num">١</span><span class="faida-ttl gen-head">معنى «المنهاج» في اللغة</span></div>
+        <div class="naql-block">
+          <span class="who"><span class="sem-name sem-scholar">ابن منظور</span></span><button class="nmark note--tarjama" data-n="n5">٥</button>
+          <p>«والمِنهاجُ: الطريقُ الواضِحُ. واسْتَنْهَجَ الطريقُ: صَارَ نَهْجًا، وَفِي حَدِيثِ <span class="sem-name sem-sahabi">الْعَبَّاسِ</span>: <span class="sem-hadith">«لَمْ يَمُتْ رسولُ الله ﷺ حَتَّى تَرَكَكُم عَلَى طريقٍ ناهِجةٍ»</span>، أي: واضحةٍ بَيِّنَةٍ»<sup class="fnr">(١)</sup></p>
+        </div>
+        <div class="aya-block">
+          <span class="aya">﴿لِكُلࣲّ جَعَلۡنَا مِنكُمۡ شِرۡعَةࣰ وَمِنۡهَاجࣰا﴾ <span class="aya-ref">[المائدة ٤٨]</span></span>
+        </div>
+        <p>أي: طريقًا واضحًا.</p>
+      </div>
+      <aside class="note note--tarjama" id="n5"><span class="nt">ترجمة عَلَم</span><span class="sem-name sem-scholar">ابن منظور</span> (ت ٧١١هـ): محمد بن مكرم الإفريقي، صاحب «لسان العرب»، أوسع معاجم العربية وأشهرها.</aside>
 
-  </div>
-  <script type="module" src="../../../firebase-sync-manhaj.js"></script>
-  <script src="../../../data.js"></script>
-  <script src="../../../script.js"></script>
+      <div class="faida">
+        <div class="faida-head"><span class="faida-num">٢</span><span class="faida-ttl gen-head">معنى «ميراث النبوة»</span></div>
+        <div class="lead">
+        <p>الميراث: ما يتركه الإنسان لورثته من أموال وحقوق، وهذا يتعلق بعموم الناس، أما ميراث النبوة فمختلف، ولا يراد به ما يتركه الإنسان من الأموال ونحوها، فإن ما يتركونه من هذه الأمور يكون صدقة، كما جاء في الصحيحين عن <span class="sem-name sem-sahabi">أبي بكر</span> ﵁ عن النبيّ ﷺ قال:</p>
+        </div>
+        <div class="hadith-block"><span class="lbl">حديث نبوي</span><p><span class="sem-hadith">«لا نُورَثُ، مَا تَرَكْنَا صَدَقَةٌ»</span><sup class="fnr">(٢)</sup></p></div>
+        <p>فما المقصود إذن بميراث النبوة؟ جاء بيان ذلك في حديث <span class="sem-name sem-sahabi">أبي الدرداء</span><button class="nmark note--tarjama" data-n="n6">٦</button> ﵁ عن النبيّ ﷺ قال:</p>
+        <div class="hadith-block"><span class="lbl">حديث نبوي</span><p><span class="sem-hadith">«إِنَّ الْعُلَمَاءَ وَرَثَةُ الْأَنْبِيَاءِ، إِنَّ الْأَنْبِيَاءَ لَمْ يُوَرِّثُوا دِينَارًا وَلَا دِرْهَمًا، إِنَّمَا وَرَّثُوا الْعِلْمَ، فَمَنْ أَخَذَ بِهِ أَخَذَ بِحَظٍّ وَافِرٍ»</span><sup class="fnr">(٣)</sup></p></div>
+        <p>فهذا هو ميراث الأنبياء، كتاب الله وسنة رسوله ﷺ هي الميراث الذي تركه النبيّ ﷺ لهذه الأمة.</p>
+      </div>
+      <aside class="note note--tarjama" id="n6"><span class="nt">ترجمة عَلَم</span><span class="sem-name sem-sahabi">أبو الدرداء</span> عويمر بن زيد الأنصاري ﵁: صحابي جليل، من فقهاء الصحابة وحكمائهم، وولي قضاء دمشق.</aside>
+
+      <div class="faida">
+        <div class="faida-head"><span class="faida-num">٣</span><span class="faida-ttl gen-head">المعنى المركّب للعنوان</span></div>
+        <p>المنهاج من ميراث النبوة: الطريق الواضح المستمدة معالمه من العلم الموروث عن النبيّ ﷺ.</p>
+        <p>وبفهم هذا العنوان ندرك المقصد الذي وُضع لأجله هذا المتن، فالمراد منه أن يكشف عن الطريق الواضح للمسلم الذي يريد الاستقامة على أمر ربه ونصرة دين الله تعالى.</p>
+      </div>
+
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>لسان العرب: (٢/ ٣٨٣).</li>
+        <li>رواه البخاري: (٦٧٢٥)، ومسلم (١٧٩٥).</li>
+        <li>أخرجه الترمذي (٢٦٨٢)، وأبو داود (٣٦٤١)، وابن ماجه (٢٢٣).</li></ol>
+      </div>
+
+      <h3 id="s2b">ثانيًا: السياق الذي أُلّف فيه المتن</h3>
+      <div class="lead">
+      <p>ذكر المؤلف حفظه الله في مقدمة كتابه أن تأليف هذا المتن منه جاء ضمن سياق يُقدّم فيه المؤلف مجموعة من المواد المتعلقة بـ«المنهج الإصلاحي»، وهذا المتن يأتي ليشكّل «الثقافة المعيارية للمصلحين»<button class="nmark note--mustalah" data-n="n7">٧</button>، أي: القضايا والموضوعات التي ينبغي أن تكون مشتركة بين المصلحين والعاملين مهما اختلف اتجاهاتهم وتنوعت وسائلهم.</p>
+      </div>
+      <aside class="note note--mustalah" id="n7"><span class="nt">تعريف مصطلح</span>الثقافة المعيارية: الأرضية المشتركة التي يُقاس عليها ويُحتكم إليها عند اختلاف الاتجاهات والوسائل، فهي «المعيار» لا «التفصيل».</aside>
+      <p>وكثير من آيات وأحاديث هذا المتن شرحها الشيخ بشكل مختلف عما في هذا الشرح في مواد متنوعة له، ومتابعة هذه المواد مما يُعين على فهم الرؤية الإصلاحية بشكل أعمق عند شيخنا <span class="sem-name sem-scholar">أحمد السيد</span>، ومن هذه المواد:</p>
+      <p>١- كتاب «بوصلة المصلح».<br>
+      ٢- كتاب «السنن الإلهية وأثرها في فهم الواقع والعمل الإصلاحي».<br>
+      ٣- سلسلة «مركزيات الإصلاح».<br>
+      ٤- سلسلة «السيرة النبوية للمصلحين».<br>
+      ٥- سلسلة «صناعة المربي».<br>
+      ٦- سلسلة «معالجة القرآن لنفوس المصلحين».</p>
+      <p>فهذه المواد أحسبها مكملة لشرح المنهاج من ميراث النبوة، وبمتابعتها كلها تتكون الصورة الكاملة للرؤية الإصلاحية لشيخنا <span class="sem-name sem-scholar">أحمد السيد</span> وفقه الله.</p>
+
+      <div class="quiz" data-sec="s2"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>«المنهاج» في اللغة: الطريق الواضح البيّن، ودليله اللغوي من «لسان العرب» والقرآن.</li>
+          <li>«ميراث النبوة» ليس مالًا — فالأنبياء لا يورّثون المال، وما تركوه صدقة — بل هو <b>العلم</b>: الكتاب والسنة.</li>
+          <li>فمعنى العنوان مركّبًا: الطريق الواضح المستمدة معالمه من العلم الموروث عن النبي ﷺ.</li>
+          <li>مقصد المتن: كشف الطريق لمن أراد الاستقامة على أمر ربه ونصرة دين الله.</li>
+          <li>سياق التأليف: أن يكون المتن «الثقافة المعيارية للمصلحين»، أي القدر المشترك بينهم مهما تنوعت اتجاهاتهم.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 3 ===================== -->
+    <section class="sec" id="s3" style="--acc:var(--s3)">
+      <div class="sticky-head">المقطع الثالث · التمهيد (٢): المقاصد والأهمية</div>
+      <h2>مقاصد تأليف المتن وأهميته</h2>
+      <p class="range">ص ١٣ – ص ١٥</p>
+
+      <h3 id="s3a">ثالثًا: مقاصد تأليف متن المنهاج</h3>
+      <div class="lead">
+      <p>حين ألّف شيخنا سدده الله متن المنهاج كانت له مقاصد متعددة من تأليفه، من أبرزها ثلاثة مقاصد:</p>
+      </div>
+
+      <div class="faida">
+        <div class="faida-head"><span class="faida-num">١</span><span class="faida-ttl gen-head">إبراز مركزيات الشريعة ومعالجة خلل الواقع</span></div>
+        <p>إبراز كثير من مركزيات الشريعة<button class="nmark note--mustalah" data-n="n8">٨</button> وأولوياتها، وكان هذا الإبراز يصحبه نظر بعينين:</p>
+        <p>• عين على الشريعة التي عظمت هذه الأمور المركزية، ثم تربية المصلحين على مثل هذه المعاني، لأن التربية الصحيحة تكون بالتربية على المحكمات وأصول الدين قبل الدخول في جزئياته، ومن أعظم صور الاختلال في التربية اليوم: أن يتجاوز الطالب بنفسه أو يتجاوز به شيخه هذه المحكمات وتتم التربية على أمور ليست هي أولى ما يأخذه المتربي في بداية الطريق، وهذه آفة منتشرة ليس هنا مقام الحديث عنها بتفصيل، لكن مما يؤسف أن كثيرًا من الشباب تمت تربيتهم على الصراعات والقيل والقال دون أن تتم تربيتهم على محكمات الدين وأصوله، والخوف بعد سنوات من تصدر هؤلاء للناس وتعليمهم وهم قد تربوا هذه التربية المنحرفة، والله المستعان.</p>
+        <p>• عين على الواقع وما فيه من خلل متعلق بهذه المركزيات، فيكون القصد من إبرازها كذلك معالجة الخلل الموجود في الواقع.</p>
+      </div>
+      <aside class="note note--mustalah" id="n8"><span class="nt">تعريف مصطلح</span>مركزيات الشريعة: القضايا الكبرى التي تدور عليها الشريعة ويُبنى عليها غيرها، كمرجعية الوحي والتزكية ومركزية العمل — في مقابل الجزئيات والفروع.</aside>
+
+      <div class="faida">
+        <div class="faida-head"><span class="faida-num">٢</span><span class="faida-ttl gen-head">أن يكون المتن زادًا للاستقامة والإصلاح</span></div>
+        <p>أن يكون هذا المتن زادًا للمسلم الذي يسعى لتحقيق غايتين اثنتين:</p>
+        <p>• الاستقامة والثبات أمام ما يعرض له من الابتلاءات، ومن فتن الشهوات والشبهات.</p>
+        <p>• الإصلاح والدعوة إلى الله والعمل لدينه، ففي هذا الكتاب مجموعة من الأبواب التي لا يستغني عنها مريد الإصلاح، كوضوح المرجعية، وضبط الأفهام على معايير الوحي، وفضل الإصلاح، وبيان صفات المصلحين، وغير ذلك من الموضوعات، ومن المسلمات عندنا: أن في كتاب الله وسنة رسوله ﷺ الكفاية التامة لما تحتاجه الأمة من أمور الإصلاح والدعوة، ولا يمكن أن يأتي على الأمة زمان تمر فيه بابتلاءات ومشكلات ثم لا يكون في الوحي المخرج من هذه الأزمات.</p>
+      </div>
+
+      <div class="faida">
+        <div class="faida-head"><span class="faida-num">٣</span><span class="faida-ttl gen-head">تعزيز مرجعية الوحي تطبيقيًا</span></div>
+        <p>تعزيز مرجعية الوحي في نفوس المتربين من الناحية التطبيقية:</p>
+        <p>فإن تعزيز مرجعية الوحي يكون من خلال طريقين:</p>
+        <p>الأول: طريق نظري.<br>الثاني: طريق تطبيقي.</p>
+        <p>ومن الوسائل في هذا الطريق: استجلاب النصوص في مختلف الأبواب التي يحتاجها المسلم من أمور دينه، سواء في استقامته الشخصية، أو في مسيرته الدعوية، حتى تظهر له شمولية الشريعة، ويصل لدرجة الاستغناء بها عن غيرها، وأن تكون هي الحاكمة لما دونها من المرجعيات.</p>
+      </div>
+
+      <h3 id="s3b">رابعًا: أهمية متن المنهاج</h3>
+      <div class="lead">
+      <p>في المقدمة التي سبق ذكرها وفي الحديث عن مقاصد تأليف هذا المتن كشفت عن شيء من أهميته بشكل غير مباشر، وهنا سأذكر نقطة واحدة بإيجاز عن أهمية هذا المتن، وهي:</p>
+      </div>
+      <h4 class="gen-head">اتفاق المعلومات واختلاف الاتجاهات</h4>
+      <p>أننا نلاحظ في واقعنا اليوم أن طلاب العلم ذوي المدرسة الواحدة يشتركون في بنائهم العلمي، لكنهم يتفرقون إلى اتجاهات متضاربة ومتناقضة مع أن المعلومات التي تلقوها متقاربة بشكل كبير جدًا، وعند التأمل في الأسباب المؤدية لذلك سنجد أن لكل اتجاه إطارًا<button class="nmark note--idah" data-n="n9">٩</button> يحكم المعلومات الجزئية ويوجهها، لذلك وإن اتفقت المعلومات فإن العمل في الواقع وتوجيه هذه المعلومات فيه اختلاف لاختلاف هذا الإطار، والإطار يتكون من مكونات متعددة، منها:</p>
+      <aside class="note note--idah" id="n9"><span class="nt">إيضاح</span>«الإطار» هنا ليس معلومة جديدة تُضاف إلى المعلومات، بل هو ما يرتّبها ويوجّهها — ولذلك يتفق اثنان في المحفوظ ويفترقان في العمل.</aside>
+      <p>١- الغايات والمقاصد التي يتربى عليها الطلاب.<br>
+      ٢- تحديد الأعداء.</p>
+      <p>ومن خلال هذا الإطار يتم توجيه آلاف المعلومات الجزئية التي يتلقاها الطالب، وهذا الإطار إما أن يكون آراء واجتهادات شخصية، أو أن يكون مستمدًا من مرجعية الوحي<sup class="fnr">(١)</sup>.</p>
+      <h4 class="gen-head">الشاهد على أهمية متن المنهاج</h4>
+      <p>أنه متن جُمعت فيه الأولويات والغايات الصحيحة التي ينبغي أن يُربّى عليها طلاب العلم، فكان بذلك إطارًا لمن تربى عليه يحكم كثيرًا من المعلومات الجزئية عند المتربي، وميزة هذا الإطار: أنه مستمد من كتاب الله وسنة رسوله ﷺ.</p>
+
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>انظر: محاضرة «مركزية الوعي» من سلسلة «مركزيات الإصلاح» للشيخ <span class="sem-name sem-scholar">أحمد السيد</span>.</li></ol>
+      </div>
+
+      <div class="quiz" data-sec="s3"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>مقاصد التأليف ثلاثة: إبراز المركزيات، وجعل المتن زادًا للاستقامة والإصلاح، وتعزيز مرجعية الوحي تطبيقيًا.</li>
+          <li>إبراز المركزيات بعينين: عين على الشريعة (تربية على المحكمات قبل الجزئيات)، وعين على الواقع (معالجة خلله).</li>
+          <li>أعظم صور الاختلال التربوي: تجاوز المحكمات إلى ما ليس أولى في بداية الطريق — كالتربية على الصراعات والقيل والقال.</li>
+          <li>التعزيز التطبيقي وسيلتُه استجلاب النصوص في كل باب حتى تظهر شمولية الشريعة ويُستغنى بها عن غيرها.</li>
+          <li>أهمية المتن أنه يصنع «الإطار» الذي يحكم المعلومات الجزئية — وميزته أن إطاره مستمد من الوحي لا من الاجتهادات الشخصية.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 4 ===================== -->
+    <section class="sec" id="s4" style="--acc:var(--s4)">
+      <div class="sticky-head">المقطع الرابع · التمهيد (٣): الشروح وعمل الملخِّص</div>
+      <h2>شروح المتن وعمل الملخِّص</h2>
+      <p class="range">ص ١٥ – ص ١٨</p>
+
+      <h3 id="s4a">خامسًا: شروح متن المنهاج</h3>
+      <div class="lead">
+      <p>للشيخ <span class="sem-name sem-scholar">أحمد السيد</span> وفقه الله ثلاثة شروح على متن «المنهاج من ميراث النبوة»، اكتمل اثنان منها، والثالث لم يكتمل، ولكلّ واحد من هذه الشروح ميزة تختلف عن غيره، وفيما يلي حديث مختصر عن كلّ شرح من هذه الشروح:</p>
+      </div>
+
+      <h4>الشرح الأول: «الشرح المطول»</h4>
+      <p>وهو الشرح الذي بين أيدينا، فيه شرح الشيخ هذا المتن في واحد وثلاثين مقطعًا، شرح فيه جميع الأبواب.<button class="nmark note--rabt" data-n="n10">١٠</button></p>
+      <aside class="note note--rabt" id="n10"><span class="nt">ربط داخلي</span>هذا هو الشرح الذي تقرأ تلخيصه في هذا الملف وما بعده — فكل «الفوائد» الآتية في الأبواب مأخوذة منه.</aside>
+      <p>وكانت طريقته: شرح عنوان الباب، وبيان أهميته شرعًا وواقعًا – وإن كان لم يفعل ذلك في جميع الأبواب –، ثم يشرع الشيخ في شرح الآيات والأحاديث.</p>
+      <p>وكان هذا الشرح شرحًا متوسطًا أحسبه يميل إلى الاختصار، فتسميتي له بـ«المطول» تسمية نِسْبِيَّةٌ مقارنةً بغيره، وما زال هذا المتن يحتمل مزيدًا من التفصيل والشرح على ما ذكره شيخنا وفقه الله في هذا الشرح، وقد شرعت من قريب في كتابة شرح موسع على هذا المتن، وأسأل الله التوفيق والسداد فيه.</p>
+      <p>ويحسن التنبيه هنا أن الشيخ حفظه الله في شرحه هذا كان تركيزه في استنباط الفوائد من النصوص على الفوائد التي توافق المقاصد التي وضع الشيخ الكتاب لأجلها، فَجُلُّ فوائد الشرح كانت فوائد تربوية، ومنهجية، وإصلاحية<button class="nmark note--idah" data-n="n11">١١</button>، ولا يتطرق الشيخ – في الغالب – للجوانب الفقهية ونحوها في الاستنباط من الآيات والأحاديث.</p>
+      <aside class="note note--idah" id="n11"><span class="nt">إيضاح</span>هذا القيد مهم عند القراءة: غياب الاستنباط الفقهي من آية أو حديث هنا ليس إغفالًا، بل اختيار يوافق مقصد الكتاب.</aside>
+
+      <h4>الشرح الثاني: «مقاصد متن المنهاج»</h4>
+      <p>هذا الشرح جاء في محاضرتين مطوّلتين، وفيها كان حديث الشيخ مقاصديًا عن المتن، ولم يكن المقصود الإلمام التفصيلي بما في الكتاب.</p>
+      <p>وطريقته في ذلك: أنه يقف في كل باب ثلاث وقفات مقاصدية:</p>
+      <p>١- وقفة عامة مع عنوان الباب.<br>
+      ٢- وقفة عامة مع الآيات الواردة في الباب.<br>
+      ٣- وقفة عامة مع الأحاديث الواردة في الباب.</p>
+      <p>وهذا الشرح فيه فوائد ومعانٍ لا يغني عنها ما ورد في الشرح المطول، لذلك يُنصح به حتى لمن سمع الشرح المطوّل.</p>
+
+      <h4>الشرح الثالث: «المنهاج من ميراث النبوة للجيل الصاعد»</h4>
+      <p>شرح فيه الشيخ عشرة أبواب، ولم يكمل المتن، والأبواب التي شرحها لم يشرح فيها كلّ الأحاديث، وإنما انتقى من الكتاب بعض النصوص، وكان هذا الشرح مقدّمًا لشباب الجيل الصاعد، لذلك كان بلغة سهلة، ولم يتعمّق الشيخ بشرح كثير من المعاني التي تضمنتها النصوص.</p>
+
+      <h3 id="s4b">سادسًا: عملي في شرح المنهاج</h3>
+      <div class="lead">
+      <p>عملي في هذا الشرح يمكن حصره في ثلاثة أمور:</p>
+      </div>
+      <p><b>الأول:</b> اختصار الشرح اختصارًا يميل إلى الطول، فقد حرصت ألاّ يفوتني من كلام الشيخ وفقه الله أفكار أساسية، لذلك لم يكن هناك حذف لأفكار من هذا الشرح، وإنما هو اختصار لها في نقاط مركَّزة تَسْهُلُ مراجعتُها وتكرارها بين الحين والآخر، وقد كانت كثير من الأفكار يمكن بسطها وشرحها أكثر مما وُجد في الملخص، لكنني لم أُرد الخروج عن شرح الشيخ وفقه الله، ولم أرد الزيادة عليه، ولعل الله ييسر كتابة شرح مستقل على هذا المتن يكون فيه بسط للأفكار وتوسع فيها أكثر مما ورد هنا.</p>
+      <h4 class="gen-head">بيان الغريب ومعالجة ما لم يُشرح</h4>
+      <p><b>الثاني:</b> بيان الكلمات الغريبة في المتن، فقد يسر الله تعالى لي جمع ما يزيد عن مائة وخمسين كلمة من الكلمات الغريبة في آيات وأحاديث هذا المتن، وبيّنت معناها من كتب التفسير وشروح الحديث، والمعاجم، حتى يسهل على القارئ فهم الكلام الذي يقرؤه.</p>
+      <p><b>الثالث:</b> توجد بعض الآيات والأحاديث القليلة لم يشرحها الشيخ وفقه الله، وهي تنقسم إلى قسمين:</p>
+      <p>١- ما شرحه في سلسلة «مقاصد متن المنهاج»، فأتيت بكلامه من هذا الشرح ولخصته هنا.<br>
+      ٢- ما لم يشرحه الشيخ في كلا الشرحين، وهذا تركته دون تعليق عليه.</p>
+
+      <div class="quiz" data-sec="s4"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>للمتن ثلاثة شروح: «الشرح المطول» (٣١ مقطعًا، كامل)، و«مقاصد متن المنهاج» (محاضرتان، مقاصدي)، و«للجيل الصاعد» (عشرة أبواب، غير مكتمل).</li>
+          <li>هذا الكتاب تلخيص للشرح الأول، و«المطول» تسمية نسبية لا وصف للبسط الحقيقي.</li>
+          <li>فوائد الشرح تربوية ومنهجية وإصلاحية، ولا يتطرق الشيخ غالبًا للاستنباط الفقهي.</li>
+          <li>عمل الملخِّص ثلاثة: اختصار بلا حذف للأفكار، وبيان الغريب، ومعالجة ما لم يُشرح بالنقل من «المقاصد» أو تركه.</li>
+          <li>«مقاصد متن المنهاج» لا يُستغنى عنه ولو سمع القارئ الشرح المطول.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 5 ===================== -->
+    <section class="sec" id="s5" style="--acc:var(--s5)">
+      <div class="sticky-head">المقطع الخامس · الباب الأول: الفوائد</div>
+      <h2>الباب الأول — فوائد العنوان</h2>
+      <p class="range">ص ١٩</p>
+
+      <div class="naql-block">
+        <p style="font-family:'Amiri',serif;font-size:1.2em;line-height:2.2;text-align:center">بَابٌ فِي مَرْجِعِيَّةِ الْوَحْيِ وَشُمُولِيَّتِهِ<br>وَمَرْكَزِيَّةِ التَّسْلِيمِ للهِ وَلِرَسُولِهِ ﷺ</p>
+      </div>
+
+      <h3 id="s5a">الْفَوَائِد</h3>
+      <div class="lead">
+      <div class="faida">
+        <div class="faida-head"><span class="faida-num">١</span><span class="faida-ttl gen-head">حدّ المرجعية ومرجعية الوحي</span></div>
+        <p><b>الْفَائِدَةُ الْأُولَى:</b> معنى المرجعية: ما يرجع إليه الإنسان.</p>
+        <p>ومرجعية الوحي: ما يرجع إليه الإنسان من كتاب الله وسنة رسوله ﷺ ليهتدي بما فيها ويصدر عنها ويتحاكم إليها ويقدّمها على غيرها.</p>
+      </div>
+      </div>
+
+      <div class="faida">
+        <div class="faida-head"><span class="faida-num">٢</span><span class="faida-ttl gen-head">أربعة أمور في عنوان الباب</span></div>
+        <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> يحتوي هذا العنوان على أربعة أمور:</p>
+        <p>١- بيان أن الوحي مرجعية للإنسان المؤمن.<br>
+        ٢- وصف المرجعية بالشمولية.<button class="nmark note--mustalah" data-n="n13">١٣</button><br>
+        ٣- الدعوة إلى التسليم لله ورسوله ﷺ.<br>
+        ٤- بيان مركزية التسليم في الشريعة.</p>
+      </div>
+      <aside class="note note--mustalah" id="n13"><span class="nt">تعريف مصطلح</span>الشمولية: أن مرجعية الوحي لا تختص ببابٍ دون باب — لا بالعبادات وحدها ولا بالفرد وحده — بل تشمل شؤون الدين والدنيا كلها.</aside>
+
+      <div class="faida">
+        <div class="faida-head"><span class="faida-num">٣</span><span class="faida-ttl gen-head">خمسة مطلوبات تجاه مرجعية الوحي</span></div>
+        <p><b>الْفَائِدَةُ الثَّالِثَةُ:</b> هناك خمسة أمور مطلوبة منا تجاه مرجعية الوحي، وهي:</p>
+        <p>١- «التعظيم». &nbsp;&nbsp; ٢- «التسليم».<br>
+        ٣- «التحكيم». &nbsp;&nbsp; ٤- «التقديم».<br>
+        ٥- «الاستغناء والاستبشار».</p>
+      </div>
+
+      <div class="faida">
+        <div class="faida-head"><span class="faida-num">٤</span><span class="faida-ttl gen-head">أعظم ثمرة التمسك بالوحي</span></div>
+        <p><b>الْفَائِدَةُ الرَّابِعَةُ:</b> أعظم ثمرة يخرج بها الإنسان المسلم بتمسّكه بالوحي: الهداية، وأن يعيش على نور من الله، ونحن اليوم نرى من الأمم من وصل إلى درجات من التقدم المادي لكنهم في المقابل وصلوا إلى درجة عالية من الانحطاط الأخلاقي؛ لأنهم فقدوا النور من الله تعالى.</p>
+      </div>
+
+      <div class="quiz" data-sec="s5"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>المرجعية: ما يرجع إليه الإنسان. ومرجعية الوحي تتحقق بأربعة: الاهتداء، والصدور، والتحاكم، والتقديم.</li>
+          <li>عنوان الباب يجمع أربعة أمور: إثبات المرجعية، ووصفها بالشمولية، والدعوة إلى التسليم، وبيان مركزيته.</li>
+          <li>المطلوب منا تجاه المرجعية خمسة: التعظيم، والتسليم، والتحكيم، والتقديم، والاستغناء والاستبشار.</li>
+          <li>أعظم ثمرة التمسك بالوحي: الهداية والعيش على نور من الله.</li>
+          <li>الشاهد الواقعي: تقدّم مادي مع انحطاط أخلاقي — دليل على أن فقد النور لا يعوّضه التقدم.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 6 ===================== -->
+    <section class="sec" id="s6" style="--acc:var(--s6)">
+      <div class="sticky-head">المقطع السادس · الباب الأول: الآيات</div>
+      <h2>الباب الأول — الآيات</h2>
+      <p class="range">ص ٢٠ – ص ٢٣</p>
+
+      <h3 id="s6a">الآية الأولى</h3>
+      <div class="aya-block"><span class="aya">﴿فَإِن تَنَـٰزَعۡتُمۡ فِی شَیۡءࣲ فَرُدُّوهُ إِلَى ٱللَّهِ وَٱلرَّسُولِ﴾ <span class="aya-ref">[النساء ٥٩]</span></span></div>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> المطلوب تجاه تعامل المؤمن مع مرجعية الوحي:</p>
+      </div>
+      <p>١- تقديم هذه المرجعية على غيرها.<br>
+      ٢- تحكيم مرجعية الوحي عند التنازع.</p>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> لهذه الآية تتمة، وهي: قول الله تعالى:</p>
+      <div class="aya-block"><span class="aya">﴿یَـٰۤأَیُّهَا ٱلَّذِینَ ءَامَنُوۤا۟ أَطِیعُوا۟ ٱللَّهَ وَأَطِیعُوا۟ ٱلرَّسُولَ وَأُو۟لِی ٱلۡأَمۡرِ مِنكُمۡۖ فَإِن تَنَـٰزَعۡتُمۡ فِی شَیۡءࣲ فَرُدُّوهُ إِلَى ٱللَّهِ وَٱلرَّسُولِ إِن كُنتُمۡ تُؤۡمِنُونَ بِٱللَّهِ وَٱلۡیَوۡمِ ٱلۡـَٔاخِرِۚ ذَ ٰ⁠لِكَ خَیۡرࣱ وَأَحۡسَنُ تَأۡوِیلًا﴾ <span class="aya-ref">[النساء ٥٩]</span></span></div>
+      <p>وفيها فوائد، منها:</p>
+      <p>١- أن في قول الله: <span class="sem-aya">﴿إِن كُنتُمۡ تُؤۡمِنُونَ بِٱللَّهِ وَٱلۡیَوۡمِ ٱلۡـَٔاخِرِ﴾</span> دلالةً على أن وجود الإيمان يلزم منه اعتبار مرجعية الوحي عند التنازع، ويدل كذلك أن من لا يعتبر مرجعية الوحي عند التنازع ففي إيمانه خلل.<button class="nmark note--idah" data-n="n14">١٤</button></p>
+      <aside class="note note--idah" id="n14"><span class="nt">إيضاح</span>وجه الدلالة: ربطُ الردّ إلى الله والرسول بشرط الإيمان، فصار التحاكم عند التنازع علامةً على الإيمان لا كمالًا زائدًا عليه.</aside>
+      <p>٢- أجمع العلماء على أنّ المراد بـ«الردّ إلى الله» الردّ إلى كتابه، والمراد بـ«الردّ إلى الرسول» الردّ إلى شخصه في حياته، وإلى سنّته بعد وفاته ﷺ.</p>
+
+      <h3 id="s6b">الآية الثانية</h3>
+      <div class="aya-block"><span class="aya">﴿وَإِنَّهُۥ لَكِتَـٰبٌ عَزِیزࣱ ۝ لَّا یَأۡتِیهِ ٱلۡبَـٰطِلُ مِنۢ بَیۡنِ یَدَیۡهِ وَلَا مِنۡ خَلۡفِهِۦ﴾ <span class="aya-ref">[فصلت ٤١ – ٤٢]</span></span></div>
+      <p>مما يدخل تحت صور العزّة القرآنية:</p>
+      <p>١- «أنه لا يؤتى بمثله».<br>
+      ٢- «أنه في مكانة أعلى من التحريف والتبديل».<br>
+      ٣- «أن حججه تَغلب ولا تُغلب».</p>
+
+      <h3 id="s6c">الآية الثالثة</h3>
+      <div class="aya-block"><span class="aya">﴿وَكَذَ ٰ⁠لِكَ أَنزَلۡنَـٰهُ حُكۡمًا عَرَبِیࣰّا﴾ <span class="aya-ref">[الرعد ٣٧]</span></span></div>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> ذكر المفسرون في قوله: <span class="sem-aya">﴿حُكۡمًا﴾</span> عدة أوجه، منها:</p>
+      </div>
+      <p>١- «الحكمة».<br>
+      ٢- «الإحكام والإتقان».<br>
+      ٣- «الحاكمية»، أي: أنه حاكم.</p>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> يقول الله تعالى في تتمة الآية:</p>
+      <div class="aya-block"><span class="aya">﴿وَلَىِٕنِ ٱتَّبَعۡتَ أَهۡوَاۤءَهُم بَعۡدَ مَا جَاۤءَكَ مِنَ ٱلۡعِلۡمِ مَا لَكَ مِنَ ٱللَّهِ مِن وَلِیࣲّ وَلَا وَاقࣲ﴾ <span class="aya-ref">[الرعد ٣٧]</span></span></div>
+      <p>والمراد بـ«العلم» هنا: الوحي، فيُلاحَظ في الآية: المقابلةُ بين الحق وبين ما يخُالفه، ووصفُ ما يخالفه بأنّه «الهوى»، فـ«العلم» هو الحق وما سواه هو «الهوى»، وهذا من أعظم ما يجعل الإنسان يستمسك بمقتضى الوحي.<button class="nmark note--idah" data-n="n15">١٥</button></p>
+      <aside class="note note--idah" id="n15"><span class="nt">إيضاح</span>القسمة في الآية ثنائية لا ثالث لها: علمٌ (وحي) أو هوى. فكل ما خرج عن الوحي فهو داخل في «الهوى» ولو تسمّى باسم آخر.</aside>
+
+      <h3 id="s6d">الآية الرابعة</h3>
+      <div class="aya-block"><span class="aya">﴿وَمَن لَّمۡ یَحۡكُم بِمَاۤ أَنزَلَ ٱللَّهُ فَأُو۟لَـٰۤىِٕكَ هُمُ ٱلۡكَـٰفِرُونَ﴾ <span class="aya-ref">[المائدة ٤٤]</span></span></div>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> في هذه الآية التعظيم الواضح لمرجعية الوحي بحيث صار متعلقًا بالإيمان والكفر.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> تحكيم الوحي من قضايا الإسلام الكبرى، فإن الله تبارك وتعالى لم يُنزل الوحي ليُهمَّش أو ليُستبدل بغيره بل ليكون مهيمنًا وحاكمًا على الناس.</p>
+      <p><b>الْفَائِدَةُ الثَّالِثَةُ:</b> من أعظم ما تُبتلى به الأمة الإسلامية: أن يُحال بينها وبين الحكم بكتاب الله وسنة رسوله ﷺ.</p>
+
+      <h3 id="s6e">الآية الخامسة</h3>
+      <div class="aya-block"><span class="aya">﴿فَلَا وَرَبِّكَ لَا یُؤۡمِنُونَ حَتَّىٰ یُحَكِّمُوكَ فِیمَا شَجَرَ بَیۡنَهُمۡ ثُمَّ لَا یَجِدُوا۟ فِیۤ أَنفُسِهِمۡ حَرَجࣰا مِّمَّا قَضَیۡتَ وَیُسَلِّمُوا۟ تَسۡلِیمࣰا﴾ <span class="aya-ref">[النساء ٦٥]</span></span></div>
+      <p>هذه أوضح آية في كتاب الله تعالى في قضية «التسليم» لمرجعية الوحي، وخاصة للسنة النبوية.</p>
+
+      <h3 id="s6f">الآية السادسة</h3>
+      <div class="aya-block"><span class="aya">﴿وَمَا كَانَ لِمُؤۡمِنࣲ وَلَا مُؤۡمِنَةٍ إِذَا قَضَى ٱللَّهُ وَرَسُولُهُۥۤ أَمۡرًا أَن یَكُونَ لَهُمُ ٱلۡخِیَرَةُ مِنۡ أَمۡرِهِمۡ﴾ <span class="aya-ref">[الأحزاب ٣٦]</span></span></div>
+      <p>هذه الآية عامة تشمل كلّ ما قضاه الله أو رسوله ﷺ، فقوله: <span class="sem-aya">﴿أَمۡرًا﴾</span> يشمل كلّ الأمور.</p>
+
+      <div class="quiz" data-sec="s6"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>آية النساء ٥٩ تجمع المطلوبين: تقديم المرجعية وتحكيمها عند التنازع، وتربط ذلك بشرط الإيمان.</li>
+          <li>الردّ إلى الله = الردّ إلى كتابه، والردّ إلى الرسول = إلى شخصه حيًّا وإلى سنته بعد وفاته — بإجماع العلماء.</li>
+          <li>عزّة القرآن ثلاث صور: لا يؤتى بمثله، وأعلى من التحريف، وحججه تَغلب ولا تُغلب.</li>
+          <li>«حُكْمًا عربيًّا» فيه ثلاثة أوجه: الحكمة، والإحكام والإتقان، والحاكمية. والمقابل للعلم (الوحي) هو الهوى ولا ثالث.</li>
+          <li>المائدة ٤٤ تجعل التحكيم متعلقًا بالإيمان والكفر، والنساء ٦٥ أوضح آيات التسليم، والأحزاب ٣٦ تعمّ كل أمر قضاه الله ورسوله.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 7 ===================== -->
+    <section class="sec" id="s7" style="--acc:var(--s7)">
+      <div class="sticky-head">المقطع السابع · الباب الأول: الأحاديث</div>
+      <h2>الباب الأول — الأحاديث</h2>
+      <p class="range">ص ٢٤ – ص ٢٧</p>
+
+      <h3 id="s7a">الحديث الأول</h3>
+      <div class="hadith-block"><span class="lbl">عن <span class="sem-name sem-sahabi">زَيْدِ بْنِ أَرْقَمَ</span> ﵁<button class="nmark note--tarjama" data-n="n16">١٦</button></span>
+        <p>أَنَّ النَّبِيَّ ﷺ قَالَ عَنِ الْقُرْآنِ: <span class="sem-hadith">«كِتَابُ اللهِ ﷻ، هُوَ حَبْلُ اللهِ<sup class="fnr">(١)</sup>، مَنِ اتَّبَعَهُ كَانَ عَلَى الْهُدَى، وَمَنْ تَرَكَهُ كَانَ عَلَى ضَلَالَةٍ»</span><sup class="fnr">(٢)</sup></p>
+      </div>
+      <aside class="note note--tarjama" id="n16"><span class="nt">ترجمة عَلَم</span><span class="sem-name sem-sahabi">زيد بن أرقم</span> ﵁: صحابي أنصاري، شهد مع النبي ﷺ غزوات كثيرة، وهو راوي حديث غدير خم.</aside>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> المراد بـ«الحبل»: العهد.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> في هذا الحديث دلالة على أنّ من أعظم ثمرات اتّباع مرجعية الوحي: الهداية.</p>
+
+      <h3 id="s7b">الحديث الثاني</h3>
+      <div class="hadith-block"><span class="lbl">عن <span class="sem-name sem-sahabi">أَبِي رَافِعٍ</span> ﵁</span>
+        <p>عَنِ النَّبِيِّ ﷺ قَالَ: <span class="sem-hadith">«لَا أُلْفِيَنَّ<sup class="fnr">(٣)</sup> أَحَدَكُمْ مُتَّكِئًا عَلَى أَرِيكَتِهِ<sup class="fnr">(٤)</sup> يَأْتِيهِ أَمْرٌ مِمَّا أَمَرْتُ بِهِ أَوْ نَهَيْتُ عَنْهُ فَيَقُولُ: لَا أَدْرِي، مَا وَجَدْنَا فِي كِتَابِ اللهِ اتَّبَعْنَاهُ»</span><sup class="fnr">(٥)</sup></p>
+      </div>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> في هذا الحديث إخبار بظهور مَن ينكر السنة ويدَّعي الاستغناء بالقرآن، وإخبار النبي ﷺ بذلك مع ظهور طائفة يدّعون الاستغناء بالقرآن مما يزيد اليقين بالسنة.<button class="nmark note--idah" data-n="n17">١٧</button></p>
+      </div>
+      <aside class="note note--idah" id="n17"><span class="nt">إيضاح</span>وجه زيادة اليقين: وقوع ما أخبر به النبي ﷺ قبل وقوعه دليل على صدق نبوّته، فينقلب الاحتجاج بالقرآن وحده حجةً على أصحابه.</aside>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> في هذا الحديث تحذير من الفتن المستقبلية للصحابة؛ حتى يكون عندهم استعداد لما يطرأ من الفتن، وهذا التحذير ليس خاصًّا بالصحابة.</p>
+
+      <h3 id="s7c">الحديث الثالث</h3>
+      <div class="hadith-block"><span class="lbl">عن <span class="sem-name sem-sahabi">أَبِي هُرَيْرَةَ</span> ﵁</span>
+        <p>عَنِ النَّبِيِّ ﷺ قَالَ: <span class="sem-hadith">«مَنْ أَطَاعَنِي فَقَدْ أَطَاعَ اللهَ، وَمَنْ عَصَانِي فَقَدْ عَصَى اللهَ»</span><sup class="fnr">(٦)</sup></p>
+      </div>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> يكرر كثيرٌ من منكري السنة النبوية أن طاعة الرسول ﷺ من الشرك بالله تعالى، وقد غفلوا أن طاعتنا لرسول الله ﷺ إنما هي طاعة لله رب العالمين، كما قال الله تعالى:</p>
+      </div>
+      <div class="aya-block"><span class="aya">﴿مَّن یُطِعِ ٱلرَّسُولَ فَقَدۡ أَطَاعَ ٱللَّهَ﴾ <span class="aya-ref">[النساء ٨٠]</span></span></div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> في هذا الحديث توحيد لله تعالى، وأنّ اتّباع النبي ﷺ إنما هو تعظيم لمن أرسله.</p>
+
+      <h3 id="s7d">الحديث الرابع</h3>
+      <div class="hadith-block"><span class="lbl">عن <span class="sem-name sem-sahabi">جَابِرِ بْنِ عَبْدِ اللهِ</span> ﵄</span>
+        <p>قَالَ: كَانَ رَسُولُ اللهِ ﷺ يَقُولُ فِي الْخُطْبَةِ: <span class="sem-hadith">«أَمَّا بَعْدُ: فَإِنَّ خَيْرَ الْحَدِيثِ كِتَابُ اللهِ وَخَيْرَ الْهَدْيِ هَدْيُ مُحَمَّدٍ، وَشَرُّ الْأُمُورِ مُحْدَثَاتُهَا، وَكُلُّ بِدْعَةٍ ضَلَالَةٌ»</span><sup class="fnr">(٧)</sup></p>
+      </div>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> في هذا الحديث دلالة على الاستغناء بالوحي عن غيره.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> مما ننازع به منكري السنة النبوية أن السنة جاءت بتعظيم القرآن وليس بمفارقته ومباعدته كما يزعمون.</p>
+
+      <h3 id="s7e">الحديث الخامس</h3>
+      <div class="hadith-block"><span class="lbl">عن <span class="sem-name sem-sahabi">أَبِي هُرَيْرَةَ</span> ﵁</span>
+        <p>قَالَ: <span class="sem-hadith">«لَـمَّا نَزَلَتْ عَلَى رَسُولِ اللهِ ﷺ:</span></p>
+        <div class="aya-block"><span class="aya">﴿لِّلَّهِ مَا فِی ٱلسَّمَـٰوَ ٰ⁠تِ وَمَا فِی ٱلۡأَرۡضِۗ وَإِن تُبۡدُوا۟ مَا فِیۤ أَنفُسِكُمۡ أَوۡ تُخۡفُوهُ یُحَاسِبۡكُم بِهِ ٱللَّهُۖ فَیَغۡفِرُ لِمَن یَشَاۤءُ وَیُعَذِّبُ مَن یَشَاۤءُۗ وَٱللَّهُ عَلَىٰ كُلِّ شَیۡءࣲ قَدِیرࣱ﴾ <span class="aya-ref">[البقرة ٢٨٤]</span></span></div>
+        <p><span class="sem-hadith">قَالَ: فاشتد ذلك على أصحاب رسول الله ﷺ، فأتوا رسول الله ﷺ ثُمَّ بَرَكُوا عَلَى الرُّكَبِ فَقَالُوا: أَيْ رَسُولَ اللهِ كُلِّفْنَا مِنَ الْأَعْمَالِ مَا نُطِيقُ الصَّلَاةَ وَالصِّيَامَ وَالْجِهَادَ وَالصَّدَقَةَ، وَقَدْ أُنْزِلَتْ عَلَيْكَ هَذِهِ الْآيَةُ وَلَا نُطِيقُهَا.</span></p>
+        <p><span class="sem-hadith">قَالَ رَسُولُ اللهِ ﷺ: «أَتُرِيدُونَ أَنْ تَقُولُوا كَمَا قَالَ أَهْلُ الْكِتَابَيْنِ مِنْ قَبْلِكُمْ: سَمِعْنَا وَعَصَيْنَا؟ بَلْ قُولُوا: سَمِعْنَا وَأَطَعْنَا غُفْرَانَكَ رَبَّنَا وَإِلَيْكَ الْمَصِيرُ».</span></p>
+        <p><span class="sem-hadith">قَالُوا: سَمِعْنَا وَأَطَعْنَا غُفْرَانَكَ رَبَّنَا وَإِلَيْكَ الْمَصِيرُ، فَلَمَّا اقْتَرَأَهَا الْقَوْمُ ذَلَّتْ بِهَا أَلْسِنَتُهُمْ فَأَنْزَلَ اللهُ فِي إِثْرِهَا:</span></p>
+        <div class="aya-block"><span class="aya">﴿ءَامَنَ ٱلرَّسُولُ بِمَاۤ أُنزِلَ إِلَیۡهِ مِن رَّبِّهِۦ وَٱلۡمُؤۡمِنُونَۚ كُلٌّ ءَامَنَ بِٱللَّهِ وَمَلَـٰۤىِٕكَتِهِۦ وَكُتُبِهِۦ وَرُسُلِهِۦ لَا نُفَرِّقُ بَیۡنَ أَحَدࣲ مِّن رُّسُلِهِۦۚ وَقَالُوا۟ سَمِعۡنَا وَأَطَعۡنَاۖ غُفۡرَانَكَ رَبَّنَا وَإِلَیۡكَ ٱلۡمَصِیرُ﴾ <span class="aya-ref">[البقرة ٢٨٥]</span></span></div>
+        <p><span class="sem-hadith">فَلَمَّا فَعَلُوا ذَلِكَ نَسَخَهَا اللهُ تَعَالَى فَأَنْزَلَ اللهُ:</span><button class="nmark note--idah" data-n="n18">١٨</button></p>
+        <div class="aya-block"><span class="aya">﴿لَا یُكَلِّفُ ٱللَّهُ نَفۡسًا إِلَّا وُسۡعَهَاۚ لَهَا مَا كَسَبَتۡ وَعَلَیۡهَا مَا ٱكۡتَسَبَتۡۗ رَبَّنَا لَا تُؤَاخِذۡنَاۤ إِن نَّسِینَاۤ أَوۡ أَخۡطَأۡنَا﴾ <span class="aya-ref">[البقرة ٢٨٦]</span></span></div>
+        <p><span class="sem-hadith">قال: «نَعَمْ».</span></p>
+        <div class="aya-block"><span class="aya">﴿رَبَّنَا وَلَا تَحۡمِلۡ عَلَیۡنَاۤ إِصۡرࣰا<sup class="fnr">(٨)</sup> كَمَا حَمَلۡتَهُۥ عَلَى ٱلَّذِینَ مِن قَبۡلِنَا﴾</span></div>
+        <p><span class="sem-hadith">قَالَ: «نَعَمْ».</span></p>
+        <div class="aya-block"><span class="aya">﴿رَبَّنَا وَلَا تُحَمِّلۡنَا مَا لَا طَاقَةَ لَنَا بِهِۦ﴾</span></div>
+        <p><span class="sem-hadith">قال: «نَعَمْ».</span></p>
+        <div class="aya-block"><span class="aya">﴿وَٱعۡفُ عَنَّا وَٱغۡفِرۡ لَنَا وَٱرۡحَمۡنَاۤۚ أَنتَ مَوۡلَىٰنَا فَٱنصُرۡنَا عَلَى ٱلۡقَوۡمِ ٱلۡكَـٰفِرِینَ﴾</span></div>
+        <p><span class="sem-hadith">قال: «نَعَمْ»</span><sup class="fnr">(٩)</sup></p>
+      </div>
+      <aside class="note note--idah" id="n18"><span class="nt">إيضاح</span>«نسخها» هنا منصبّ على ما شقّ عليهم من المؤاخذة بحديث النفس في آية ٢٨٤، لا على الآية جملةً — وتمام البيان في كتب التفسير.</aside>
+
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> كان الصحابة ﵃ يتلقون القرآن تلقيًا خاصًا، فإنهم كانوا يستشعرون أن الآيات التي تنزل إنما هي كلام الله تعالى، وإذا أردنا أن نقتدي بأصحاب رسول الله ﷺ فمن أول ما ينبغي أن يحصل في سبيل ذلك: أن يُجعل لآيات كتاب الله تعالى من التعظيم ما كان عندهم.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> في قوله ﷺ: <span class="sem-hadith">«أَتُرِيدُونَ أَنْ تَقُولُوا كَمَا قَالَ أَهْلُ الْكِتَابَيْنِ مِنْ قَبْلِكُمْ: سَمِعْنَا وَعَصَيْنَا؟»</span> دلالة على أنّ من أخطر صور التشبّه بأهل الكتاب: عدم الانقياد والتسليم لمرجعية الوحي.</p>
+      <p><b>الْفَائِدَةُ الثَّالِثَةُ:</b> قد يُشرّع الله تبارك وتعالى بعض الأحكام لاختبار التسليم، أو يذكر من الحِكَم في بعض الأحكام أن فيها اختبارًا للتسليم، كما في قوله تعالى:</p>
+      <div class="aya-block"><span class="aya">﴿وَمَا جَعَلۡنَا ٱلۡقِبۡلَةَ ٱلَّتِی كُنتَ عَلَیۡهَاۤ إِلَّا لِنَعۡلَمَ مَن یَتَّبِعُ ٱلرَّسُولَ مِمَّن یَنقَلِبُ عَلَىٰ عَقِبَیۡهِۚ وَإِن كَانَتۡ لَكَبِیرَةً إِلَّا عَلَى ٱلَّذِینَ هَدَى ٱللَّهُ﴾ <span class="aya-ref">[البقرة ١٤٣]</span></span></div>
+
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>حبل الله: دينه وعهده.</li>
+        <li>أخرجه مسلم (٢٤٠٨).</li>
+        <li>لا ألفين: لا أجد وألقى.</li>
+        <li>الأريكة: كُلّ ما اتُّكئ عليه من سرير، أو فراش، أو منصة.</li>
+        <li>أخرجه أبو داود (٤٦٠٥)، والترمذي (٢٦٦٣).</li>
+        <li>أخرجه البخاري (٧١٣٧)، ومسلم (١٨٣٥).</li>
+        <li>أخرجه مسلم (٨٦٧).</li>
+        <li>الإصر: العهد، أي: لا تحمّلنا عهدًا نعجز عن القيام به.</li>
+        <li>أخرجه مسلم (١٢٥).</li></ol>
+      </div>
+
+      <div class="quiz" data-sec="s7"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>حديث زيد بن أرقم: القرآن حبل الله (أي عهده)، واتّباعه هدى وتركه ضلالة — فثمرة المرجعية الهداية.</li>
+          <li>حديث أبي رافع: إخبارٌ مسبق بظهور من يستغني بالقرآن عن السنة، ووقوعُه يزيد اليقين بالسنة لا العكس.</li>
+          <li>حديث أبي هريرة: طاعة الرسول ﷺ عين طاعة الله لا شركًا معه، وشاهده النساء ٨٠.</li>
+          <li>حديث جابر: خير الحديث كتاب الله وخير الهدي هدي محمد ﷺ — دلالة على الاستغناء بالوحي.</li>
+          <li>حديث «سمعنا وأطعنا»: أخطر صور التشبّه بأهل الكتاب ترك الانقياد، وقد يُشرَّع الحكم ابتلاءً لاختبار التسليم.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== بطاقات المراجعة ===================== -->
+    <section class="cards" id="anki">
+      <h3 style="color:var(--brand)">بطاقات المراجعة (Anki)</h3>
+      <p style="font-size:14px;color:var(--ink-soft);margin:0">بطاقات مستقلة عن الصفحة: كل بطاقة مفهومة بعد شهور بلا رجوع للكتاب. اضغط البطاقة لقلبها.</p>
+      <div class="filters" id="cfilters"></div>
+      <div class="card" id="card"><div id="cface" class="front">—</div></div>
+      <div class="cnav">
+        <button class="btn" id="cprev">◀ السابقة</button>
+        <span id="cpos">٠ / ٠</span>
+        <button class="btn" id="cnext">التالية ▶</button>
+        <button class="btn" id="cdl">⬇ تحميل TSV</button>
+      </div>
+    </section>
+</main>
+</div>
+
+<div id="ilm-custom-nav"></div>
+
+<script>
+/* ===== بيانات الأسئلة التفاعلية ===== */
+const QUIZ_DATA=[
+{id:"q1",sectionId:"s1",question:"ما الاسم الذي أثبته المؤلف لكتابه في مقدمته؟",options:["القبس الوهاج في تلخيص شرح المنهاج","القبس الوهاج في مختصر شرح المنهاج","المنهاج من ميراث النبوة","بوصلة المصلح"],correctIndex:0,explanation:"المثبَت في المقدمة: «في تلخيص شرح المنهاج»، و«المنهاج من ميراث النبوة» هو المتن الأصل لا التلخيص."},
+{id:"q2",sectionId:"s1",question:"علامَ بنى الملخِّص قيمة متن «المنهاج» العليا؟",options:["مكانة مؤلفه بين شباب الإسلام","ما تضمّنه من الآيات والأحاديث","كثرة من حفظه في السنوات الأخيرة","جِدّة أسلوبه وسهولة حفظه"],correctIndex:1,explanation:"نصّ على أن العظمة ليست لمكانة المؤلف — مع إقراره بمكانته — بل لما تضمنه من ميراث النبوة."},
+{id:"q3",sectionId:"s2",question:"ما حدّ «المنهاج» في اللغة عند ابن منظور؟",options:["الطريق الواضح","العهد الموثّق","العلم الموروث","الشريعة الخاصة بكل أمة"],correctIndex:0,explanation:"«والمِنهاجُ: الطريقُ الواضِحُ»، ويوافقه تفسير ﴿وَمِنْهَاجًا﴾ بالطريق الواضح. و«العهد» تفسير الحبل لا المنهاج."},
+{id:"q4",sectionId:"s2",question:"لماذا لم يكن ميراث النبوة مالًا؟",options:["لأن الأنبياء لم يملكوا مالًا","لأن ما تركوه صدقة لا يورَث","لأن المال يفنى والعلم يبقى","لأن ورثتهم تنازلوا عنه"],correctIndex:1,explanation:"العلة منصوصة في الحديث: «لا نُورَثُ، مَا تَرَكْنَا صَدَقَةٌ» — لا استحسانًا عقليًا."},
+{id:"q5",sectionId:"s3",question:"ما «العينان» اللتان صحبتا إبراز مركزيات الشريعة؟",options:["عين على الشريعة وعين على الواقع","عين على النص وعين على اللغة","عين على الفرد وعين على الأمة","عين على الماضي وعين على المستقبل"],correctIndex:0,explanation:"الأولى: تعظيم الشريعة لهذه المركزيات والتربية عليها. والثانية: ما في الواقع من خلل متعلق بها."},
+{id:"q6",sectionId:"s3",question:"لماذا يفترق طلاب المدرسة الواحدة إلى اتجاهات متضاربة مع تقارب معلوماتهم؟",options:["اختلاف شيوخهم","اختلاف «الإطار» الذي يحكم المعلومات ويوجّهها","نقص المحفوظ عند بعضهم","اختلاف بلدانهم"],correctIndex:1,explanation:"الإطار (ومنه الغايات وتحديد الأعداء) يوجّه آلاف المعلومات الجزئية، فيفترق العمل مع اتفاق المعلومات."},
+{id:"q7",sectionId:"s4",question:"كم شرحًا للشيخ على المتن، وما حال الثالث؟",options:["شرحان، والثاني لم يكتمل","ثلاثة، اكتمل اثنان والثالث لم يكتمل","ثلاثة كلها مكتملة","أربعة، اكتمل ثلاثة"],correctIndex:1,explanation:"الثالث «للجيل الصاعد» شرح فيه عشرة أبواب ولم يكمل المتن."},
+{id:"q8",sectionId:"s4",question:"لماذا كانت تسمية الشرح الأول بـ«المطول» تسمية نسبية؟",options:["لأنه أطول شرح كُتب على المتن مطلقًا","لأنه في نفسه متوسط يميل إلى الاختصار، و«المطول» بالمقارنة بغيره","لأنه استوعب الجوانب الفقهية","لأنه جاء في واحد وثلاثين مقطعًا"],correctIndex:1,explanation:"نصّ على أن المتن ما زال يحتمل مزيدًا من التفصيل، وأنه شرع في شرح موسّع."},
+{id:"q9",sectionId:"s5",question:"أيّ هذه ليس من الأمور الخمسة المطلوبة تجاه مرجعية الوحي؟",options:["التعظيم","التحكيم","التأويل","الاستغناء والاستبشار"],correctIndex:2,explanation:"الخمسة: التعظيم، التسليم، التحكيم، التقديم، الاستغناء والاستبشار."},
+{id:"q10",sectionId:"s5",question:"بأي شيء يتحقق حدّ «مرجعية الوحي» كما قُرّر في الباب؟",options:["الاهتداء بها وحده","الاهتداء والصدور والتحاكم والتقديم","التحاكم إليها عند النزاع وحده","تعظيمها في القلب"],correctIndex:1,explanation:"الحدّ جمع أربعة أفعال، فمن أخذ ببعضها دون بعض لم تتم له المرجعية."},
+{id:"q11",sectionId:"s6",question:"ما وجه الدلالة في ختم آية النساء بـ﴿إِن كُنتُمۡ تُؤۡمِنُونَ بِٱللَّهِ وَٱلۡیَوۡمِ ٱلۡـَٔاخِرِ﴾؟",options:["أن الردّ عند التنازع كمال مستحب","أن وجود الإيمان يلزم منه الردّ، فمن لم يفعل ففي إيمانه خلل","أن الخطاب خاص بأهل زمن النزول","أن الردّ إلى الرسول انقطع بوفاته"],correctIndex:1,explanation:"رُبط الردّ بشرط الإيمان، فصار علامةً عليه لا زيادةً على أصله."},
+{id:"q12",sectionId:"s6",question:"ما المقابل لـ«العلم» في تتمة آية الرعد؟",options:["الجهل","الهوى","الظن","التقليد"],correctIndex:1,explanation:"﴿أَهْوَاءَهُم... بَعْدَ مَا جَاءَكَ مِنَ الْعِلْمِ﴾ فالقسمة ثنائية: وحيٌ أو هوى."},
+{id:"q13",sectionId:"s7",question:"ما الذي يفيده وقوعُ إخبار النبي ﷺ عمّن يستغني بالقرآن عن السنة؟",options:["يزيد الشك في الأسانيد","يزيد اليقين بالسنة لأن الخبر وقع كما أُخبر","يوجب ترك مجادلتهم","ينسخ حجية السنة"],correctIndex:1,explanation:"وقوع الخبر قبل وقوعه دليل نبوّة، فينقلب الاحتجاج حجةً على أصحابه."},
+{id:"q14",sectionId:"s7",question:"ما صورة التشبّه بأهل الكتاب التي حذّر منها النبي ﷺ في حديث «سمعنا وأطعنا»؟",options:["التشبّه في اللباس","قول «سمعنا وعصينا»: ترك الانقياد والتسليم","الاختلاف في القبلة","كثرة السؤال"],correctIndex:1,explanation:"وجّههم إلى «سمعنا وأطعنا»، فكان ترك الانقياد أخطر صور التشبّه."}
+];
+
+/* ===== بيانات بطاقات Anki ===== */
+const SEC_NAMES={s1:"المقدمة",s2:"التمهيد - العنوان والسياق",s3:"التمهيد - المقاصد والأهمية",s4:"التمهيد - الشروح وعمل الملخص",s5:"الباب الأول - الفوائد",s6:"الباب الأول - الآيات",s7:"الباب الأول - الأحاديث"};
+const CARDS_DATA=[
+{id:"c1",sectionId:"s1",level:1,anchor:"كتاب «القبس الوهاج»",front:"كتاب «القبس الوهاج في تلخيص شرح المنهاج»: ما الذي يلخّصه بالضبط، ومن صاحب الأصل ومن صاحب التلخيص؟",back:"يلخّص «الشرح المطول» للشيخ أحمد بن يوسف السيد على متنه «المنهاج من ميراث النبوة»، والتلخيص لمُحمد شُميس."},
+{id:"c2",sectionId:"s1",level:1,anchor:"مقدمة القبس الوهاج",front:"في مقدمة «القبس الوهاج»: علامَ بُنيت عظمة متن «المنهاج» وقيمته العليا؟",back:"لا على مكانة مؤلفه، بل على ما تضمّنه من الآيات والأحاديث التي هي ميراث النبوة."},
+{id:"c3",sectionId:"s1",level:2,anchor:"قاعدة كفاية الوحي في مقدمة القبس الوهاج",front:"ما القاعدة التي قرّرها صاحب «القبس الوهاج» في كفاية الكتاب والسنة لقيام الدين؟",back:"أن فيهما الغنية والكفاية لقيام الدين؛ فلا تصلح أحوال العالمين، ولا تقوم للمصلحين قائمة، إلا بالانطلاق منهما والاحتكام إليهما."},
+{id:"c4",sectionId:"s1",level:2,anchor:"شرط التربية على تعظيم الوحي",front:"ما الشرط الذي اشترطه صاحب «القبس الوهاج» ليكون تعظيمُ الوحي تربيةً سديدة لشباب الإسلام؟",back:"أن تكون التربية على محكمات الشريعة وأولوياتها قبل فروعها وتفصيلاتها."},
+{id:"c5",sectionId:"s1",level:6,anchor:"الشرح المطول لأحمد السيد",front:"كم مقطعًا بلغت السلسلة المرئية التي شرح بها أحمد بن يوسف السيد متن «المنهاج من ميراث النبوة»؟",back:"واحد وثلاثون مقطعًا، شرح فيها جميع الأبواب."},
+{id:"c6",sectionId:"s2",level:2,anchor:"«المنهاج» في لسان العرب",front:"ما حدّ «المِنهاج» في اللغة كما نقله صاحب «القبس الوهاج» عن ابن منظور؟",back:"الطريق الواضح. ومنه: «واسْتَنْهَجَ الطريقُ: صَارَ نَهْجًا»، أي: واضحًا بيّنًا."},
+{id:"c7",sectionId:"s2",level:3,anchor:"﴿لِكُلٍّ جَعَلْنَا مِنكُمْ شِرْعَةً وَمِنْهَاجًا﴾ [المائدة ٤٨]",front:"﴿لِكُلٍّ جَعَلْنَا مِنكُمْ شِرْعَةً وَمِنْهَاجًا﴾ — ما وجه الاستدلال بها على معنى «المنهاج»؟",back:"فُسّرت «منهاجًا» بالطريق الواضح، فوافق الاستعمالُ القرآني الحدَّ اللغوي."},
+{id:"c8",sectionId:"s2",level:3,anchor:"«لا نُورَثُ، مَا تَرَكْنَا صَدَقَةٌ»",front:"قوله ﷺ: «لا نُورَثُ، مَا تَرَكْنَا صَدَقَةٌ» — ما الذي ينفيه عن ميراث النبوة؟",back:"ينفي أن يكون ميراث الأنبياء مالًا وحقوقًا كميراث سائر الناس؛ فما تركوه صدقة لا يورَث."},
+{id:"c9",sectionId:"s2",level:3,anchor:"«إِنَّ الْعُلَمَاءَ وَرَثَةُ الْأَنْبِيَاءِ»",front:"قوله ﷺ: «إِنَّ الْعُلَمَاءَ وَرَثَةُ الْأَنْبِيَاءِ... إِنَّمَا وَرَّثُوا الْعِلْمَ» — ماذا يحدّد في ميراث النبوة؟",back:"أن الميراث هو العلم: كتاب الله وسنة رسوله ﷺ، وهو ما تركه النبي ﷺ لهذه الأمة."},
+{id:"c10",sectionId:"s2",level:1,anchor:"عنوان «المنهاج من ميراث النبوة»",front:"ما المعنى المركّب لعنوان «المنهاج من ميراث النبوة»؟",back:"الطريق الواضح المستمدة معالمه من العلم الموروث عن النبي ﷺ."},
+{id:"c11",sectionId:"s2",level:2,anchor:"«الثقافة المعيارية للمصلحين»",front:"ما المراد بمصطلح «الثقافة المعيارية للمصلحين» في سياق تأليف متن المنهاج؟",back:"القضايا والموضوعات التي ينبغي أن تكون مشتركة بين المصلحين والعاملين مهما اختلفت اتجاهاتهم وتنوعت وسائلهم."},
+{id:"c12",sectionId:"s3",level:1,anchor:"مقاصد تأليف متن المنهاج",front:"ما المقاصد الثلاثة الأبرز في تأليف متن «المنهاج من ميراث النبوة»؟",back:"إبراز مركزيات الشريعة وأولوياتها، وأن يكون زادًا للاستقامة والإصلاح، وتعزيز مرجعية الوحي من الناحية التطبيقية."},
+{id:"c13",sectionId:"s3",level:2,anchor:"«النظر بعينين» في إبراز المركزيات",front:"ما العينان اللتان صحبتا إبراز مركزيات الشريعة في متن المنهاج؟",back:"عين على الشريعة التي عظّمت هذه المركزيات (فيُربّى المصلحون عليها)، وعين على الواقع وما فيه من خلل متعلق بها (فيُعالَج)."},
+{id:"c14",sectionId:"s3",level:2,anchor:"الاختلال في التربية عند صاحب القبس الوهاج",front:"ما أعظم صور الاختلال في التربية اليوم كما قُرّر في تمهيد «القبس الوهاج»؟",back:"تجاوز المحكمات وأصول الدين إلى ما ليس أولى ما يأخذه المتربي في بداية الطريق؛ كالتربية على الصراعات والقيل والقال."},
+{id:"c15",sectionId:"s3",level:2,anchor:"طريقا تعزيز مرجعية الوحي",front:"ما طريقا تعزيز مرجعية الوحي، وما وسيلة الطريق التطبيقي؟",back:"طريق نظري وطريق تطبيقي؛ ووسيلة التطبيقي استجلاب النصوص في مختلف الأبواب حتى تظهر شمولية الشريعة ويُستغنى بها عن غيرها."},
+{id:"c16",sectionId:"s3",level:1,anchor:"«الإطار» في بيان أهمية متن المنهاج",front:"ما «الإطار» الذي عُلّل به افتراق طلاب المدرسة الواحدة، وما ميزة إطار متن المنهاج؟",back:"الإطار: ما يحكم المعلومات الجزئية ويوجّهها، ومن مكوّناته الغايات والمقاصد وتحديد الأعداء. وميزة إطار المتن أنه مستمد من الكتاب والسنة لا من آراء واجتهادات شخصية."},
+{id:"c17",sectionId:"s4",level:1,anchor:"شروح متن المنهاج",front:"كم شرحًا لأحمد السيد على متن «المنهاج»، وما اسم كل واحد وحاله؟",back:"ثلاثة: «الشرح المطول» (٣١ مقطعًا، كامل)، و«مقاصد متن المنهاج» (محاضرتان، كامل)، و«المنهاج من ميراث النبوة للجيل الصاعد» (عشرة أبواب، لم يكتمل)."},
+{id:"c18",sectionId:"s4",level:4,anchor:"تسمية «الشرح المطول»",front:"لماذا كانت تسمية «الشرح المطول» تسمية نسبية عند الملخِّص؟",back:"لأنه في نفسه شرح متوسط يميل إلى الاختصار، وإنما سُمّي بذلك بالمقارنة بالشرحين الآخرين؛ والمتن ما زال يحتمل مزيدًا من التفصيل."},
+{id:"c19",sectionId:"s4",level:2,anchor:"نوع فوائد الشرح المطول",front:"ما نوع الفوائد الغالبة في «الشرح المطول»، وما الذي لا يتطرق إليه غالبًا؟",back:"جُلّها فوائد تربوية ومنهجية وإصلاحية توافق مقاصد الكتاب؛ ولا يتطرق غالبًا للجوانب الفقهية ونحوها في الاستنباط."},
+{id:"c20",sectionId:"s4",level:2,anchor:"عمل الملخِّص في القبس الوهاج",front:"ما الأمور الثلاثة التي حصر فيها صاحب «القبس الوهاج» عمله؟",back:"اختصار الشرح بلا حذف للأفكار، وبيان الكلمات الغريبة (أكثر من مائة وخمسين كلمة)، ومعالجة ما لم يشرحه الشيخ بنقله من «مقاصد متن المنهاج» أو تركه بلا تعليق."},
+{id:"c21",sectionId:"s5",level:2,anchor:"حدّ المرجعية ومرجعية الوحي",front:"ما حدّ «المرجعية»، وما حدّ «مرجعية الوحي» في الباب الأول من المنهاج؟",back:"المرجعية: ما يرجع إليه الإنسان. ومرجعية الوحي: ما يرجع إليه من كتاب الله وسنة رسوله ﷺ ليهتدي بما فيها، ويصدر عنها، ويتحاكم إليها، ويقدّمها على غيرها."},
+{id:"c22",sectionId:"s5",level:1,anchor:"المطلوب تجاه مرجعية الوحي",front:"ما الأمور الخمسة المطلوبة من المسلم تجاه مرجعية الوحي؟",back:"التعظيم، والتسليم، والتحكيم، والتقديم، والاستغناء والاستبشار."},
+{id:"c23",sectionId:"s5",level:1,anchor:"عنوان الباب الأول من المنهاج",front:"عنوان «باب في مرجعية الوحي وشموليته ومركزية التسليم لله ولرسوله ﷺ» — ما الأمور الأربعة التي يحتويها؟",back:"بيان أن الوحي مرجعية للمؤمن، ووصف هذه المرجعية بالشمولية، والدعوة إلى التسليم لله ورسوله، وبيان مركزية التسليم في الشريعة."},
+{id:"c24",sectionId:"s5",level:2,anchor:"ثمرة التمسك بالوحي",front:"ما أعظم ثمرة يخرج بها المسلم بتمسّكه بالوحي؟",back:"الهداية، وأن يعيش على نور من الله تعالى."},
+{id:"c25",sectionId:"s5",level:4,anchor:"التقدم المادي والانحطاط الأخلاقي",front:"ما الشاهد الواقعي الذي ذُكر على أن التقدم المادي لا يعوّض فقد نور الوحي؟",back:"أمم بلغت درجات عالية من التقدم المادي وهي في المقابل في درجة عالية من الانحطاط الأخلاقي؛ لأنها فقدت النور من الله."},
+{id:"c26",sectionId:"s6",level:3,anchor:"﴿فَإِن تَنَازَعْتُمْ فِي شَيْءٍ فَرُدُّوهُ إِلَى اللَّهِ وَالرَّسُولِ﴾ [النساء ٥٩]",front:"﴿فَإِن تَنَازَعْتُمْ فِي شَيْءٍ فَرُدُّوهُ إِلَى اللَّهِ وَالرَّسُولِ﴾ — ما المطلوبان في تعامل المؤمن مع مرجعية الوحي؟",back:"تقديم هذه المرجعية على غيرها، وتحكيمها عند التنازع."},
+{id:"c27",sectionId:"s6",level:3,anchor:"﴿إِن كُنتُمْ تُؤْمِنُونَ بِاللَّهِ وَالْيَوْمِ الْآخِرِ﴾ [النساء ٥٩]",front:"﴿إِن كُنتُمْ تُؤْمِنُونَ بِاللَّهِ وَالْيَوْمِ الْآخِرِ﴾ في آخر آية التنازع — ما وجه دلالتها؟",back:"أن وجود الإيمان يلزم منه اعتبار مرجعية الوحي عند التنازع، ويدل كذلك على أن من لم يعتبرها ففي إيمانه خلل."},
+{id:"c28",sectionId:"s6",level:4,anchor:"إجماع العلماء في «الردّ إلى الله والرسول»",front:"ما الذي أجمع عليه العلماء في تفسير «الردّ إلى الله» و«الردّ إلى الرسول»؟",back:"الردّ إلى الله: الردّ إلى كتابه. والردّ إلى الرسول: الردّ إلى شخصه في حياته، وإلى سنّته بعد وفاته ﷺ."},
+{id:"c29",sectionId:"s6",level:2,anchor:"﴿وَإِنَّهُ لَكِتَابٌ عَزِيزٌ﴾ [فصلت ٤١]",front:"﴿وَإِنَّهُ لَكِتَابٌ عَزِيزٌ﴾ — ما صور «العزّة القرآنية» المذكورة تحتها؟",back:"أنه لا يؤتى بمثله، وأنه في مكانة أعلى من التحريف والتبديل، وأن حججه تَغلب ولا تُغلب."},
+{id:"c30",sectionId:"s6",level:3,anchor:"﴿وَكَذَٰلِكَ أَنزَلْنَاهُ حُكْمًا عَرَبِيًّا﴾ [الرعد ٣٧]",front:"﴿وَكَذَٰلِكَ أَنزَلْنَاهُ حُكْمًا عَرَبِيًّا﴾ — ما أوجه المفسرين في «حُكْمًا»؟",back:"الحكمة، والإحكام والإتقان، والحاكمية أي أنه حاكم."},
+{id:"c31",sectionId:"s6",level:3,anchor:"﴿وَلَئِنِ اتَّبَعْتَ أَهْوَاءَهُم بَعْدَ مَا جَاءَكَ مِنَ الْعِلْمِ﴾ [الرعد ٣٧]",front:"في تتمة آية الرعد: ما القسمة التي تفيدها المقابلة بين «العلم» و«الهوى»؟",back:"«العلم» هو الوحي وهو الحق، وما سواه هو الهوى — فالقسمة ثنائية لا ثالث لها، وهذا من أعظم ما يحمل على الاستمساك بالوحي."},
+{id:"c32",sectionId:"s6",level:4,anchor:"[النساء ٦٥] و[الأحزاب ٣٦] في باب المرجعية",front:"ما الفرق بين مقصد الاستدلال بآية ﴿فَلَا وَرَبِّكَ لَا يُؤْمِنُونَ...﴾ وآية ﴿وَمَا كَانَ لِمُؤْمِنٍ وَلَا مُؤْمِنَةٍ...﴾ في هذا الباب؟",back:"الأولى أوضح آية في قضية «التسليم» لمرجعية الوحي وخاصة للسنة. والثانية عامة تشمل كل ما قضاه الله أو رسوله، لعموم ﴿أَمْرًا﴾."},
+{id:"c33",sectionId:"s7",level:3,anchor:"«كِتَابُ اللهِ... هُوَ حَبْلُ اللهِ»",front:"«كِتَابُ اللهِ، هُوَ حَبْلُ اللهِ، مَنِ اتَّبَعَهُ كَانَ عَلَى الْهُدَى، وَمَنْ تَرَكَهُ كَانَ عَلَى ضَلَالَةٍ» — ما المراد بـ«الحبل»، وما الفائدة الكبرى؟",back:"«الحبل»: العهد. والفائدة: أن من أعظم ثمرات اتّباع مرجعية الوحي الهداية."},
+{id:"c34",sectionId:"s7",level:3,anchor:"«لَا أُلْفِيَنَّ أَحَدَكُمْ مُتَّكِئًا عَلَى أَرِيكَتِهِ»",front:"«لَا أُلْفِيَنَّ أَحَدَكُمْ مُتَّكِئًا عَلَى أَرِيكَتِهِ... مَا وَجَدْنَا فِي كِتَابِ اللهِ اتَّبَعْنَاهُ» — ما الذي يفيده وقوعُ هذا الخبر؟",back:"إخبار بظهور من ينكر السنة ويدّعي الاستغناء بالقرآن؛ ووقوعُه كما أخبر ﷺ مما يزيد اليقين بالسنة."},
+{id:"c35",sectionId:"s7",level:4,anchor:"التحذير النبوي من الفتن المستقبلية",front:"تحذير النبي ﷺ الصحابةَ من الفتن المستقبلية: هل هو خاصّ بهم؟ ولماذا حذّرهم؟",back:"ليس خاصًّا بالصحابة. وحذّرهم ليكون عندهم استعداد لما يطرأ من الفتن."},
+{id:"c36",sectionId:"s7",level:3,anchor:"«مَنْ أَطَاعَنِي فَقَدْ أَطَاعَ اللهَ»",front:"«مَنْ أَطَاعَنِي فَقَدْ أَطَاعَ اللهَ» مع ﴿مَّن يُطِعِ الرَّسُولَ فَقَدْ أَطَاعَ اللَّهَ﴾ — بماذا يُردّ بهما على من زعم أن طاعة الرسول ﷺ شرك؟",back:"بأن طاعتنا لرسول الله ﷺ هي عين طاعة الله رب العالمين، واتّباعه تعظيم لمن أرسله، لا شرك معه."},
+{id:"c37",sectionId:"s7",level:3,anchor:"«خَيْرَ الْحَدِيثِ كِتَابُ اللهِ وَخَيْرَ الْهَدْيِ هَدْيُ مُحَمَّدٍ»",front:"«أَمَّا بَعْدُ: فَإِنَّ خَيْرَ الْحَدِيثِ كِتَابُ اللهِ وَخَيْرَ الْهَدْيِ هَدْيُ مُحَمَّدٍ» — ما وجه دلالته في باب المرجعية؟",back:"دلالة على الاستغناء بالوحي عن غيره؛ وفيه أن السنة جاءت بتعظيم القرآن لا بمفارقته ومباعدته."},
+{id:"c38",sectionId:"s7",level:5,anchor:"قصة نزول ﴿وَإِن تُبْدُوا مَا فِي أَنفُسِكُمْ﴾ [البقرة ٢٨٤]",front:"لما نزلت ﴿وَإِن تُبْدُوا مَا فِي أَنفُسِكُمْ أَوْ تُخْفُوهُ يُحَاسِبْكُم بِهِ اللَّهُ﴾ فبرك الصحابة على الركب — ما العبرة، وما المفصل الحاسم في القصة؟",back:"العبرة: تعظيمهم للوحي وتلقّيهم الخاص له. والمفصل: أن النبي ﷺ وجّههم إلى «سمعنا وأطعنا» بدل «سمعنا وعصينا»، فلما قالوها وذلّت بها ألسنتهم نزل الفرج والتخفيف."},
+{id:"c39",sectionId:"s7",level:3,anchor:"﴿وَمَا جَعَلْنَا الْقِبْلَةَ الَّتِي كُنتَ عَلَيْهَا إِلَّا لِنَعْلَمَ...﴾ [البقرة ١٤٣]",front:"﴿وَمَا جَعَلْنَا الْقِبْلَةَ الَّتِي كُنتَ عَلَيْهَا إِلَّا لِنَعْلَمَ مَن يَتَّبِعُ الرَّسُولَ مِمَّن يَنقَلِبُ عَلَىٰ عَقِبَيْهِ﴾ — ما القاعدة المستخرجة منها؟",back:"أن الله قد يشرّع بعض الأحكام لاختبار التسليم، أو يذكر من حِكَم الحكم أن فيه اختبارًا للتسليم والانقياد."}
+];
+
+/* ===== أدوات ===== */
+const $=(s,c)=>(c||document).querySelector(s), $$=(s,c)=>[...(c||document).querySelectorAll(s)];
+const AR=n=>String(n).replace(/\d/g,d=>"٠١٢٣٤٥٦٧٨٩"[d]);
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+
+/* ===== الفهرس الجانبي ===== */
+(function(){
+  const list=$("#toclist");
+  $$(".sec").forEach(sec=>{
+    const h2=$("h2",sec); if(!h2) return;
+    const li=document.createElement("li");
+    li.innerHTML='<a href="#'+sec.id+'">'+h2.textContent+'</a>';
+    const subs=$$("h3[id]",sec);
+    if(subs.length){
+      const ol=document.createElement("ol");
+      subs.forEach(h=>{const s=document.createElement("li");s.innerHTML='<a href="#'+h.id+'">'+h.textContent+'</a>';ol.appendChild(s)});
+      li.appendChild(ol);
+    }
+    list.appendChild(li);
+  });
+  const li=document.createElement("li");
+  li.innerHTML='<a href="#anki">بطاقات المراجعة</a>'; list.appendChild(li);
+})();
+
+/* ===== الأسئلة التفاعلية ===== */
+(function(){
+  $$(".quiz").forEach(box=>{
+    const sid=box.dataset.sec, qs=QUIZ_DATA.filter(q=>q.sectionId===sid), host=$(".qs",box);
+    host.innerHTML=qs.map(q=>'<div class="q" data-q="'+q.id+'"><div class="qt">'+q.question+'</div>'+
+      q.options.map((o,i)=>'<button class="opt" data-i="'+i+'">'+o+'</button>').join("")+
+      '<div class="expl" hidden></div></div>').join("");
+    $(".score",box).textContent="النتيجة: ٠ / "+AR(qs.length);
+  });
+  document.addEventListener("click",e=>{
+    const btn=e.target.closest(".opt"); if(!btn) return;
+    const qEl=btn.closest(".q"), box=btn.closest(".quiz");
+    const q=QUIZ_DATA.find(x=>x.id===qEl.dataset.q); if(!q) return;
+    const i=+btn.dataset.i, ok=i===q.correctIndex;
+    $$(".opt",qEl).forEach(b=>b.classList.remove("ok","no"));
+    btn.classList.add(ok?"ok":"no");
+    if(ok) $$(".opt",qEl)[q.correctIndex].classList.add("ok");
+    const ex=$(".expl",qEl); ex.hidden=false; ex.textContent=(ok?"صحيح. ":"غير صحيح. ")+q.explanation;
+    if(ok) qEl.dataset.done="1";
+    const qs=QUIZ_DATA.filter(x=>x.sectionId===box.dataset.sec);
+    $(".score",box).textContent="النتيجة: "+AR($$('.q[data-done="1"]',box).length)+" / "+AR(qs.length);
+  });
+})();
+
+/* ===== بطاقات المراجعة ===== */
+(function(){
+  let filter="all", idx=0, flipped=false;
+  const fbox=$("#cfilters"), card=$("#card"), face=$("#cface"), pos=$("#cpos");
+  const keys=["all"].concat(Object.keys(SEC_NAMES));
+  fbox.innerHTML=keys.map(k=>'<button data-f="'+k+'"'+(k==="all"?' class="on"':'')+'>'+(k==="all"?"الكل":SEC_NAMES[k])+'</button>').join("");
+  const list=()=>filter==="all"?CARDS_DATA:CARDS_DATA.filter(c=>c.sectionId===filter);
+  function draw(){
+    const L=list(); if(!L.length){face.textContent="—";pos.textContent="٠ / ٠";return}
+    if(idx>=L.length) idx=0; if(idx<0) idx=L.length-1;
+    const c=L[idx];
+    face.className=flipped?"back":"front";
+    face.textContent=flipped?c.back:c.front;
+    pos.textContent=AR(idx+1)+" / "+AR(L.length);
+  }
+  fbox.addEventListener("click",e=>{const b=e.target.closest("button[data-f]");if(!b)return;
+    $$("button",fbox).forEach(x=>x.classList.remove("on"));b.classList.add("on");filter=b.dataset.f;idx=0;flipped=false;draw()});
+  card.addEventListener("click",()=>{flipped=!flipped;draw()});
+  $("#cnext").addEventListener("click",()=>{idx++;flipped=false;draw()});
+  $("#cprev").addEventListener("click",()=>{idx--;flipped=false;draw()});
+  $("#cdl").addEventListener("click",()=>{
+    const nb=s=>s.replace(/ /g,"\u00A0");
+    const base=nb("المرحلة التمهيدية")+"::"+nb("القبس الوهاج")+"::";
+    const rows=CARDS_DATA.map(c=>[c.front.replace(/\t/g," "),c.back.replace(/\t/g," "),base+nb(SEC_NAMES[c.sectionId])].join("\t"));
+    const blob=new Blob(["\uFEFF"+rows.join("\n")],{type:"text/tab-separated-values;charset=utf-8"});
+    const a=document.createElement("a");a.href=URL.createObjectURL(blob);
+    a.download="القبس_الوهاج_01_بطاقات.tsv";a.click();URL.revokeObjectURL(a.href);
+  });
+  draw();
+})();
+
+/* ===== الهامش: فتح/طي على الشاشات الصغيرة، وإبراز على الكبيرة ===== */
+document.addEventListener("click",e=>{
+  const m=e.target.closest(".nmark"); if(!m) return;
+  const n=document.getElementById(m.dataset.n); if(!n) return;
+  if(window.matchMedia("(max-width:900px)").matches){ n.classList.toggle("open"); if(n.classList.contains("open")) n.scrollIntoView({block:"nearest"}); }
+  else { $$(".note.flash").forEach(x=>x.classList.remove("flash")); n.classList.add("flash"); n.scrollIntoView({block:"nearest"}); setTimeout(()=>n.classList.remove("flash"),1400); }
+});
+
+/* ===== شريط التنقل والتحكم ===== */
+(function(){
+  $("#jump").addEventListener("change",e=>{location.href=e.target.value});
+  $("#next").addEventListener("click",()=>{location.href="02.html"});
+  let fs=parseFloat(store.get("qw_fs")||"17.5");
+  const apply=()=>{document.documentElement.style.setProperty("--fs",fs+"px");store.set("qw_fs",fs)};
+  if(store.get("qw_fs")) apply();
+  $("#fsp").addEventListener("click",()=>{fs=Math.min(fs+1,24);apply()});
+  $("#fsm").addEventListener("click",()=>{fs=Math.max(fs-1,15);apply()});
+  const thm=$("#thm");
+  const setT=t=>{document.documentElement.setAttribute("data-theme",t);thm.textContent=t==="night"?"☀️":"🌙";store.set("qw_theme",t)};
+  setT(store.get("qw_theme")||"day");
+  thm.addEventListener("click",()=>setT(document.documentElement.getAttribute("data-theme")==="night"?"day":"night"));
+})();
+
+/* ===== شريط التقدم + تتبع الموضع + تظليل الفهرس ===== */
+(function(){
+  const QW_POS_KEY="qw_pos_"+(location.pathname.split("/").pop()||"01.html");
+  const bar=$("#prog"), links=$$("#toclist a"), secs=$$(".sec");
+  let t=0;
+  function onScroll(){
+    const h=document.documentElement.scrollHeight-window.innerHeight;
+    bar.style.width=(h>0?(window.scrollY/h)*100:0)+"%";
+    let cur=null; secs.forEach(s=>{ if(s.getBoundingClientRect().top<=120) cur=s.id });
+    links.forEach(a=>a.classList.toggle("on",cur&&a.getAttribute("href")==="#"+cur));
+    clearTimeout(t); t=setTimeout(()=>store.set(QW_POS_KEY,String(window.scrollY)),400);
+  }
+  window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
+  const y=parseInt(store.get(QW_POS_KEY)||"0",10);
+  if(y>200 && !location.hash) window.scrollTo(0,y);
+})();
+</script>
+
+<script type="module" src="../../../firebase-sync-manhaj.js"></script>
+<script src="../../../ilm-track.js"></script>
+<script src="../../../data.js"></script>
+<script src="../../../ilm-nav.js"></script>
+<script>
+(function(){
+  var box = document.getElementById('ilm-completion-box');
+  var cb  = box ? box.querySelector('input[data-lecture-id]') : null;
+  if(!cb) return;
+  var lid = cb.getAttribute('data-lecture-id');
+  function render(done){ cb.checked = done; box.classList.toggle('done', done); }
+  if(window.IlmTrack){
+    window.IlmTrack.ready.then(function(){ render(window.IlmTrack.isDone(lid)); });
+  }
+  cb.addEventListener('change', function(){
+    if(window.IlmTrack) window.IlmTrack.setDone(lid, cb.checked);
+    render(cb.checked);
+  });
+})();
+</script>
+<script src="../../../ilm-highlight.js" data-lecture-id="stage0_qabas-wahhaj_01"></script>
+<script src="../../../ilm-semantic.js" data-hadith="off"></script>
 </body>
 </html>
