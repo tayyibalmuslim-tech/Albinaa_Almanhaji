@@ -46,11 +46,11 @@ a{color:var(--brand);text-decoration:none}
 .btn:hover{border-color:var(--brand)}
 .btn[disabled]{opacity:.4;cursor:not-allowed}
 .spacer{flex:1}
-/* ===== التخطيط: المتن يمين، الهامش والفهرس يسار ===== */
-.wrap{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:26px;
+/* ===== التخطيط: المتن يمين، الفهرس يسار ===== */
+.wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:26px;
   max-width:1280px;margin:0 auto;padding:22px 16px 80px;direction:rtl}
-.main{grid-column:2;min-width:0;max-width:780px;margin-inline-start:auto}
-.side{grid-column:1;min-width:0}
+.main{grid-column:1;min-width:0;max-width:780px;margin-inline-start:auto}
+.side{grid-column:2;min-width:0}
 .toc{position:sticky;top:64px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
   padding:12px 14px;max-height:calc(100vh - 110px);overflow:auto}
 .toc h4{font-size:15px;color:var(--brand);margin-bottom:8px}
