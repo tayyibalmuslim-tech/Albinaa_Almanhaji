@@ -178,11 +178,49 @@ function escapeHtml(str) {
 }
 
 /* ---------------- إيجاد المحاضرة التالية غير المكتملة ---------------- */
+function stageLectureEntries(stage) {
+  if (!stage) return [];
+  const entries = [];
+  (stage.subjects || []).forEach((subject, subjectOrder) => {
+    (subject.lectures || []).forEach((lecture, lectureOrder) => {
+      entries.push({
+        kind: 'lecture',
+        day: Number(lecture.day) || 9999,
+        lectureId: lecture.id,
+        subjectKey: subject.key,
+        subjectName: subject.name,
+        title: lecture.title,
+        link: subject.key + '/' + lecture.file,
+        _subjectOrder: subjectOrder,
+        _lectureOrder: lectureOrder
+      });
+    });
+  });
+  return entries.sort((a, b) =>
+    a.day - b.day ||
+    a._subjectOrder - b._subjectOrder ||
+    a._lectureOrder - b._lectureOrder
+  );
+}
+
+function stageTimelineEntries(stage) {
+  if (!stage) return [];
+  const base = (stage.days || []).map((d, i) => Object.assign({ _order: i }, d));
+  const seenLectureIds = new Set(base.filter(d => d.kind === 'lecture').map(d => d.lectureId));
+  const missingLectures = stageLectureEntries(stage)
+    .filter(d => !seenLectureIds.has(d.lectureId))
+    .map((d, i) => Object.assign({ _order: 10000 + i, _autoAdded: true }, d));
+
+  return base.concat(missingLectures).sort((a, b) =>
+    Number(a.day || 9999) - Number(b.day || 9999) ||
+    a._order - b._order
+  );
+}
+
 function findNextLecture(stageId) {
   const stage = getStage(stageId);
   if (!stage) return null;
-  const lectureDays = stage.days.filter(d => d.kind === 'lecture').sort((a, b) => a.day - b.day);
-  const next = lectureDays.find(d => !isDone(d.lectureId));
+  const next = stageLectureEntries(stage).find(d => !isDone(d.lectureId));
   return next || null;
 }
 
@@ -579,7 +617,8 @@ function renderStagePage() {
   // تبويب الأيام
   const daysEl = document.querySelector(`[data-stage-days="${stageId}"]`);
   if (daysEl) {
-    daysEl.innerHTML = `<ul class="days-list">` + stage.days.map(d => {
+    const timeline = stageTimelineEntries(stage);
+    daysEl.innerHTML = `<ul class="days-list">` + timeline.map(d => {
       if (d.kind === 'lecture') {
         const done = isDone(d.lectureId);
         const checked = done ? 'checked' : '';
@@ -703,51 +742,44 @@ function lectureNavHtml(lectureId, slot) {
   if (!owner) return '';
   const { stage, subject, lecture } = owner;
 
-  /* السابق/التالي = اليوم السابق/التالي في جدول المرحلة (عبر كل المواد) */
-  // أيام المحاضرات فقط — تُتخطّى أيام الراحة والامتحان (لا روابط لها)
-  const days = (stage.days || [])
-    .filter(d => d.kind === 'lecture' && d.link && d.lectureId)
-    .sort((a, b) => a.day - b.day);
-  const dayPos = days.findIndex(d => d.lectureId === lectureId);
-  const prevDay = dayPos > 0 ? days[dayPos - 1] : null;
-  const nextDay = dayPos !== -1 && dayPos < days.length - 1 ? days[dayPos + 1] : null;
+  // مصدر الحقيقة هنا هو قائمة المحاضرات نفسها، لا جدول الأيام؛
+  // بهذا لا تختفي أي محاضرة من السابق/التالي لو نُسيت في days.
+  const sequence = stageLectureEntries(stage);
+  const pos = sequence.findIndex(d => d.lectureId === lectureId);
+  const prevDay = pos > 0 ? sequence[pos - 1] : null;
+  const nextDay = pos !== -1 && pos < sequence.length - 1 ? sequence[pos + 1] : null;
 
-  /* روابط days نسبية لجذر المرحلة، والصفحة داخل subject/lectures/ */
   const toStage = '../../';
   const dayBtn = (d, dir) => {
     if (!d) {
-      return `<span class="btn btn-outline lecture-nav-adjacent is-disabled" aria-disabled="true">${
-        dir === 'prev' ? '→ لا يوجد يوم سابق' : 'لا يوجد يوم تالٍ ←'}</span>`;
+      return `<span class="btn btn-outline lecture-nav-adjacent is-disabled" aria-disabled="true">${dir === 'prev' ? '→ بداية المرحلة' : 'نهاية المرحلة ←'}</span>`;
     }
-    const r = dir === 'prev' ? '→ ' : '';
-    const l = dir === 'next' ? ' ←' : '';
     const other = d.subjectKey !== subject.key;
-    const subjLine = d.subjectName
-      ? `<span class="lecture-nav-subj${other ? ' is-other' : ''}">${other ? '⇄ ' : ''}${escapeHtml(d.subjectName)}</span>`
-      : '';
     return `<a class="btn btn-outline lecture-nav-adjacent" href="${escapeHtml(toStage + d.link)}">`
-      + `<span class="lecture-nav-day">${r}اليوم ${d.day}${l}</span>`
-      + `<span class="lecture-nav-ttl">${escapeHtml(d.title)}</span>${subjLine}</a>`;
+      + `<span class="lecture-nav-day">${dir === 'prev' ? '→ السابق' : 'التالي ←'} · اليوم ${d.day}</span>`
+      + `<span class="lecture-nav-ttl">${escapeHtml(d.title)}</span>`
+      + (d.subjectName ? `<span class="lecture-nav-subj${other ? ' is-other' : ''}">${escapeHtml(d.subjectName)}</span>` : '')
+      + `</a>`;
   };
 
-  /* القائمة المنسدلة = محاضرات نفس المادة */
-  const orderedLectures = subject.lectures.slice().sort((a, b) => a.day - b.day);
+  const orderedLectures = subject.lectures.slice().sort((a, b) => a.day - b.day || a.n - b.n);
   const optionsHtml = orderedLectures.map(l =>
     `<option value="${escapeHtml('../' + l.file)}" ${l.id === lecture.id ? 'selected' : ''}>${l.n}. ${escapeHtml(l.title)}</option>`
   ).join('');
 
   return `
-    <div class="lecture-nav-extra">
+    <div class="lecture-nav-extra" aria-label="التنقل بين المحاضرات">
       <div class="lecture-nav-adjacent-row">
         ${dayBtn(prevDay, 'prev')}
         ${dayBtn(nextDay, 'next')}
       </div>
+      ${orderedLectures.length > 1 ? `
       <div class="lecture-nav-jump">
-        <label for="lecture-jump-select-${slot}">الانتقال إلى محاضرة أخرى من «${escapeHtml(subject.name)}»:</label>
+        <label for="lecture-jump-select-${slot}">محاضرات «${escapeHtml(subject.name)}»</label>
         <select id="lecture-jump-select-${slot}" class="lecture-jump-select">
           ${optionsHtml}
         </select>
-      </div>
+      </div>` : ''}
     </div>
   `;
 }
