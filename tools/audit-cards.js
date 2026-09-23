@@ -15,12 +15,12 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const vm = require('node:vm');
 
 /* ============ معايير البند 9 ============ */
 const MIN_CARDS = 20;          // 9-ح: النزول عن 20 مؤشر تفريط
 const LOW_CARDS = 25;          // النطاق الموصى به للمحاضرة
-const MAX_CARDS = 40;          // 9-ح: تجاوز الأعلى مؤشر تفتيت (50 للكتب)
-const MAX_CARDS_BOOK = 50;
+// ملاحظات(1): لا سقف عددي؛ يحكم الاختيارَ استقلالُ الفائدة وعدمُ التكرار.
 const SHORT_FRONT = 40;        // 11: عدّ كل وجه أمامي أقصر من ~40 حرفًا
 const QUOTA_L12_MIN = 0.40;    // 9-ز
 const QUOTA_NAMES_MAX = 0.15;
@@ -31,7 +31,7 @@ const REF_SESSION = [
   'ذكر الشيخ', 'ذكرها الشيخ', 'قال الشيخ', 'أشار الشيخ', 'رشّح الشيخ', 'وصفها الشيخ',
   'بحسب الشيخ', 'بحسب شرح الشيخ', 'كما شرحه الشيخ', 'كما فصّلها الشيخ', 'ضربه الشيخ',
   'في المحاضرة', 'هذه المحاضرة', 'بحسب المحاضرة', 'المحاضر', 'في الدرس', 'هذا الدرس',
-  'في هذا اللقاء', 'في اللقاء السابق', 'في اللقاء الماضي', 'في الحلقة', 'في هذا المقطع', 'في هذا الملف',
+  'في هذا اللقاء', 'في اللقاء السابق', 'في اللقاء الماضي', 'في هذه الحلقة', 'في هذا المقطع', 'في هذا الملف',
   'ما المثال الذي ضربه', 'ما الآية التي استدل بها'
 ];
 /* 9-د/أولًا: أسئلة الحفظ */
@@ -77,19 +77,19 @@ function sliceArray(src, from) {
 }
 
 function extractCards(src) {
-  const m = /(?:const|let|var)\s+(CARDS_DATA|CARDS)\s*=\s*\[/.exec(src);
+  const m = /(?:const|let|var)\s+(CARDS_DATA|CARDS|ankiCards)\s*=\s*\[/.exec(src);
   if (!m) return null;
   const arr = sliceArray(src, m.index + m[0].length - 1);
   if (!arr) return null;
-  try { return { name: m[1], data: new Function('return (' + arr + ')')() }; }
+  try { return { name: m[1], data: vm.runInNewContext('(' + arr + ')', Object.create(null), {timeout: 1000}) }; }
   catch (e) { return { name: m[1], error: e.message }; }
 }
 
-/* البطاقات في المشروع تستعمل صيغتين: {q,a} و{f,b} */
-const front = c => strip(c.q !== undefined ? c.q : c.f);
-const back  = c => strip(c.a !== undefined ? c.a : c.b);
-const frontRaw = c => String((c.q !== undefined ? c.q : c.f) || '');
-const backRaw  = c => String((c.a !== undefined ? c.a : c.b) || '');
+/* جميع صيغ البيانات القائمة، مع تشخيص الصيغ القديمة عند الفحص. */
+const frontRaw = c => String((c.front ?? c.q ?? c.f ?? c[0]) ?? '');
+const backRaw = c => String((c.back ?? c.a ?? c.b ?? c[1]) ?? '');
+const front = c => strip(frontRaw(c));
+const back = c => strip(backRaw(c));
 
 /* ============ الفحص ============ */
 function auditFile(file) {
@@ -102,23 +102,24 @@ function auditFile(file) {
   const D = got.data;
   r.cards = D.length;
   const isBook = /aside class="note"/.test(src);      // مسار الكتب (بند 7-ج)
-  const cap = isBook ? MAX_CARDS_BOOK : MAX_CARDS;
   r.track = isBook ? 'كتاب' : 'محاضرة';
 
   /* 9-ح: العدد */
   if (D.length < MIN_CARDS) r.fail.push(`العدد ${D.length} < ${MIN_CARDS} (تفريط — 9-ح)`);
   else if (D.length < LOW_CARDS) r.warn.push(`العدد ${D.length} دون النطاق ${LOW_CARDS}`);
-  if (D.length > cap) r.fail.push(`العدد ${D.length} > ${cap} (تفتيت — 9-ح)`);
+  if (got.name !== 'CARDS_DATA') r.fail.push('مصدر البطاقات يجب أن يكون CARDS_DATA');
 
   /* 9-ط: الحقول */
-  const keys = new Set(); D.forEach(c => Object.keys(c).forEach(k => keys.add(k)));
-  if (!keys.has('level')) r.fail.push('حقل level مفقود (9-ط)');
-  if (!keys.has('anchor')) r.warn.push('حقل anchor مفقود (9-ط)');
+  D.forEach((c, i) => {
+    if (!Number.isInteger(c.level) || c.level < 1 || c.level > 6) r.fail.push(`بطاقة #${i+1}: level مفقود أو غير صالح`);
+    if (!strip(c.anchor)) r.fail.push(`بطاقة #${i+1}: anchor مفقود`);
+    if (typeof c.tags !== 'string' || c.tags.split('::').length < 3 || /[ \t\r\n]/.test(c.tags)) r.fail.push(`بطاقة #${i+1}: Tags هرمي مفقود أو يحتوي مسافة عادية`);
+  });
 
   /* 9-ط: التصدير */
-  const dl = /\.map\([\s\S]{0,400}?\\t[\s\S]{0,400}?\)/.test(src);
+  const dl = /#separator:tab/.test(src) && /#tags column:3/.test(src);
   if (!/ankiTag|Tags|tags column/.test(src)) r.fail.push('التصدير بلا عمود Tags هرمي (9-ط)');
-  if (/\bDeck\b/.test(src)) r.fail.push('التصدير يحوي عمود Deck (ممنوع — 9-ط)');
+  if (/#deck:|#columns:[^\n]*Deck/.test(src)) r.fail.push('التصدير يحوي عمود Deck (ممنوع — 9-ط)');
   if (!/\\uFEFF|\\ufeff/.test(src)) r.warn.push('لم يُعثر على BOM في التصدير');
   if (!dl) r.warn.push('لم يُعثر على بنية بناء الـTSV');
 
@@ -127,13 +128,13 @@ function auditFile(file) {
   const seen = new Map(), badRef = [], badMem = [];
   D.forEach((c, i) => {
     const f = front(c), b = back(c);
-    if (!f || !b) r.fail.push(`بطاقة #${i}: وجه فارغ`);
+    if (!f || !b) r.fail.push(`بطاقة #${i+1}: وجه فارغ`);
     if (f.length < SHORT_FRONT) nShort++;
-    for (const w of REF_SESSION) if (f.includes(w) || b.includes(w)) { nRef++; badRef.push(`#${i} «${w}»`); break; }
-    for (const w of MEMORIZE) if (f.includes(w)) { nMem++; badMem.push(`#${i} «${w}»`); break; }
+    for (const w of REF_SESSION) if (f.includes(w) || b.includes(w)) { nRef++; badRef.push(`#${i+1} «${w}»`); break; }
+    for (const w of MEMORIZE) if (f.includes(w)) { nMem++; badMem.push(`#${i+1} «${w}»`); break; }
     for (const w of DANGLING) if (f.includes(w)) { nDangling++; break; }
     /* 9-د/ثانيًا: إحضار النص شرط */
-    if (/(الآية|الآيات|آية|الحديث|حديث)/.test(f) && !hasText(frontRaw(c)) && !hasText(backRaw(c))) nNoText++;
+    if (/(هذه الآية|هذا الحديث|قوله تعالى|قول النبي|دلالة الآية|دلالة الحديث)/.test(f) && !hasText(frontRaw(c)) && !hasText(backRaw(c))) nNoText++;
     const k = f.replace(/\s/g, '');
     if (seen.has(k)) nDup++; else seen.set(k, i);
   });
@@ -145,18 +146,19 @@ function auditFile(file) {
   if (nNoText) r.warn.push(`${nNoText} بطاقة تُحيل إلى آية/حديث بلا إحضار نصه (9-د)`);
 
   /* 9-ز: الحصص — تُحسب فقط عند وجود level */
-  if (keys.has('level')) {
+  if (D.length) {
     const n = D.length, cnt = l => D.filter(c => c.level === l).length;
     const p12 = (cnt(1) + cnt(2)) / n, pn = cnt(6) / n, ps = cnt(5) / n;
     r.quota = { L12: +(p12 * 100).toFixed(0), names: +(pn * 100).toFixed(0), stories: +(ps * 100).toFixed(0) };
     if (p12 < QUOTA_L12_MIN) r.fail.push(`المستويان 1+2 = ${r.quota.L12}% < 40% (9-ز)`);
     if (pn > QUOTA_NAMES_MAX) r.fail.push(`الأعلام والتواريخ = ${r.quota.names}% > 15% (9-ز)`);
-    if (ps > QUOTA_STORY_MAX) r.warn.push(`القصص = ${r.quota.stories}% > 20% (9-ز)`);
+    if (ps > QUOTA_STORY_MAX) r.fail.push(`القصص = ${r.quota.stories}% > 20% (9-ز)`);
   }
   return r;
 }
 
 /* ============ التشغيل ============ */
+function main() {
 const args = process.argv.slice(2);
 const asJson = args.includes('--json');
 const root = args.find(a => !a.startsWith('--')) || path.join(__dirname, '..');
@@ -178,4 +180,7 @@ if (asJson) {
   }
   console.log(`\nالنتيجة: ${results.length - failed.length}/${results.length} ملفًا بلا مخالفة حاسمة.`);
 }
-process.exit(failed.length ? 1 : 0);
+process.exitCode = failed.length ? 1 : 0;
+}
+if (require.main === module) main();
+module.exports = { extractCards, auditFile, front, back };
