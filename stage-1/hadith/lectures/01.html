@@ -1630,6 +1630,27 @@ const CARDS_DATA = [
  {"s": 9, "q": "أي القرون أهمّ في نشأة علوم الحديث؟", "a": "القرنان الثاني والثالث الهجريان؛ فيهما نشأ العلم وتأسس وبلغ الذروة، وما بعدهما يدور في فلكهما.", "level": 1, "anchor": "القرنان الثاني والثالث في نشأة علوم الحديث", "tags": "المرحلة الأولى::مدخل الحديث::ملف 01::المقطع 9"}
 ];
 
+// Show only the scheduled part; keep all original source content unchanged.
+(function () {
+  const parts = {"stage1_hadith_01": [1, 2, 3], "stage1_hadith_02": [4, 5, 6], "stage1_hadith_03": [7, 8, 9]};
+  const requested = new URLSearchParams(location.search).get('p');
+  const current = Object.prototype.hasOwnProperty.call(parts, requested)
+    ? requested : Object.keys(parts)[0];
+  const sections = parts[current];
+  document.querySelectorAll('main section.sec').forEach(function (section) {
+    if (!sections.includes(Number(section.id.slice(1)))) section.remove();
+  });
+  document.querySelectorAll('.toc-list a[href^="#s"]').forEach(function (link) {
+    if (!sections.includes(Number(link.getAttribute('href').slice(2)))) link.closest('li').remove();
+  });
+  for (let i = CARDS_DATA.length - 1; i >= 0; i--) {
+    if (!sections.includes(CARDS_DATA[i].s)) CARDS_DATA.splice(i, 1);
+  }
+  for (let i = SECTIONS.length - 1; i >= 0; i--) {
+    if (!sections.includes(SECTIONS[i].id)) SECTIONS.splice(i, 1);
+  }
+})();
+
 // Anki: one source for the on-page cards and the three-column TSV.
 function buildAnkiTSV() {
   function plain(value) {
@@ -2105,7 +2126,7 @@ window.quizData = {
   #ilm-parts .ip-btn.ip-current.ip-done::after{ content:" ✓"; }
 </style>
 <div id="ilm-parts">
-  <div class="ip-title">هذه المحاضرة موزّعة على 3 أيام في الجدول — المحتوى واحد كامل، وعلامة الإنجاز مستقلة لكل يوم:</div>
+  <div class="ip-title">هذه المحاضرة موزّعة على 3 أيام في الجدول — يُعرض محتوى الجزء المحدد فقط، وعلامة الإنجاز مستقلة لكل يوم:</div>
   <div class="ip-row"><a class="ip-btn" data-pid="stage1_hadith_01" href="01.html?p=stage1_hadith_01">الجزء 1/3 — اليوم 29</a><a class="ip-btn" data-pid="stage1_hadith_02" href="01.html?p=stage1_hadith_02">الجزء 2/3 — اليوم 32</a><a class="ip-btn" data-pid="stage1_hadith_03" href="01.html?p=stage1_hadith_03">الجزء 3/3 — اليوم 33</a></div>
 </div>
 
