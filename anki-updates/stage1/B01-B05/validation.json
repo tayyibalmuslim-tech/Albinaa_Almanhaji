@@ -1,0 +1,67 @@
+{
+  "runtime": [
+    {
+      "file": "stage-1/hadith/lectures/01.html",
+      "before": 48,
+      "after": 109,
+      "parts": [
+        21,
+        28,
+        60
+      ],
+      "inline_scripts": "pass",
+      "unchanged_noncard_content": "pass",
+      "runtime_export": "pass"
+    },
+    {
+      "file": "stage-1/hadith/lectures/02.html",
+      "before": 47,
+      "after": 77,
+      "parts": [
+        38,
+        39
+      ],
+      "inline_scripts": "pass",
+      "unchanged_noncard_content": "pass",
+      "runtime_export": "pass"
+    }
+  ],
+  "central_audit": {
+    "scanned": 2,
+    "withCards": 2,
+    "failed": 0,
+    "results": [
+      {
+        "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/hadith/lectures/01.html",
+        "cards": 109,
+        "fail": [],
+        "warn": [
+          "12 وجهًا أماميًا أقصر من 40 حرفًا — راجع اختبار الاستقلال (9-أ)"
+        ],
+        "track": "محاضرة",
+        "quota": {
+          "L12": 62,
+          "names": 8,
+          "stories": 1
+        }
+      },
+      {
+        "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/hadith/lectures/02.html",
+        "cards": 77,
+        "fail": [],
+        "warn": [
+          "6 وجهًا أماميًا أقصر من 40 حرفًا — راجع اختبار الاستقلال (9-أ)"
+        ],
+        "track": "محاضرة",
+        "quota": {
+          "L12": 64,
+          "names": 12,
+          "stories": 0
+        }
+      }
+    ]
+  },
+  "new_cards": 91,
+  "revised_cards": 10,
+  "old_cards_deleted": 0
+}
