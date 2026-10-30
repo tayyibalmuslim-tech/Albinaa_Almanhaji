@@ -1,0 +1,255 @@
+{
+  "central_audits": [
+    {
+      "scanned": 1,
+      "withCards": 1,
+      "failed": 0,
+      "results": [
+        {
+          "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/nahw/lectures/01.html",
+          "cards": 34,
+          "fail": [],
+          "warn": [],
+          "track": "محاضرة",
+          "quota": {
+            "L12": 53,
+            "names": 3,
+            "stories": 3
+          }
+        }
+      ]
+    },
+    {
+      "scanned": 1,
+      "withCards": 1,
+      "failed": 0,
+      "results": [
+        {
+          "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/sharaya-wasael-maqasid/lectures/01.html",
+          "cards": 29,
+          "fail": [],
+          "warn": [],
+          "track": "محاضرة",
+          "quota": {
+            "L12": 79,
+            "names": 0,
+            "stories": 0
+          }
+        }
+      ]
+    },
+    {
+      "scanned": 4,
+      "withCards": 4,
+      "failed": 0,
+      "results": [
+        {
+          "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/anwar-al-anbiya/lectures/01.html",
+          "cards": 45,
+          "fail": [],
+          "warn": [],
+          "track": "محاضرة",
+          "quota": {
+            "L12": 47,
+            "names": 0,
+            "stories": 4
+          }
+        },
+        {
+          "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/anwar-al-anbiya/lectures/02.html",
+          "cards": 33,
+          "fail": [],
+          "warn": [],
+          "track": "محاضرة",
+          "quota": {
+            "L12": 70,
+            "names": 0,
+            "stories": 6
+          }
+        },
+        {
+          "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/anwar-al-anbiya/lectures/03.html",
+          "cards": 41,
+          "fail": [],
+          "warn": [],
+          "track": "محاضرة",
+          "quota": {
+            "L12": 41,
+            "names": 0,
+            "stories": 5
+          }
+        },
+        {
+          "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/anwar-al-anbiya/lectures/04.html",
+          "cards": 38,
+          "fail": [],
+          "warn": [],
+          "track": "محاضرة",
+          "quota": {
+            "L12": 45,
+            "names": 0,
+            "stories": 8
+          }
+        }
+      ]
+    }
+  ],
+  "runtime": [
+    {
+      "batch_id": "B25",
+      "file": "stage-1/nahw/lectures/01.html",
+      "before": 30,
+      "after": 34,
+      "export_rows": 34,
+      "interactive_questions": 20,
+      "all_inline_syntax": "pass",
+      "actual_exporter": "pass",
+      "all_cards_reachable_and_flippable": "pass",
+      "noncard_content_identical": true,
+      "environment": "Node VM with minimal DOM mocks; no visual browser test claimed"
+    },
+    {
+      "batch_id": "B26",
+      "file": "stage-1/sharaya-wasael-maqasid/lectures/01.html",
+      "before": 25,
+      "after": 29,
+      "export_rows": 29,
+      "interactive_questions": 18,
+      "all_inline_syntax": "pass",
+      "actual_exporter": "pass",
+      "all_cards_reachable_and_flippable": "pass",
+      "noncard_content_identical": true,
+      "environment": "Node VM with minimal DOM mocks; no visual browser test claimed"
+    },
+    {
+      "batch_id": "B27",
+      "file": "stage-1/anwar-al-anbiya/lectures/03.html",
+      "before": 32,
+      "after": 41,
+      "export_rows": 41,
+      "interactive_questions": 10,
+      "all_inline_syntax": "pass",
+      "actual_exporter": "pass",
+      "all_cards_reachable_and_flippable": "pass",
+      "noncard_content_identical": true,
+      "environment": "Node VM with minimal DOM mocks; no visual browser test claimed"
+    },
+    {
+      "batch_id": "B28",
+      "file": "stage-1/anwar-al-anbiya/lectures/04.html",
+      "before": 32,
+      "after": 38,
+      "export_rows": 38,
+      "interactive_questions": 11,
+      "all_inline_syntax": "pass",
+      "actual_exporter": "pass",
+      "all_cards_reachable_and_flippable": "pass",
+      "noncard_content_identical": true,
+      "environment": "Node VM with minimal DOM mocks; no visual browser test claimed"
+    },
+    {
+      "batch_id": "B29",
+      "file": "stage-1/anwar-al-anbiya/lectures/01.html",
+      "before": 28,
+      "after": 45,
+      "export_rows": 45,
+      "interactive_questions": 10,
+      "all_inline_syntax": "pass",
+      "actual_exporter": "pass",
+      "all_cards_reachable_and_flippable": "pass",
+      "noncard_content_identical": true,
+      "environment": "Node VM with minimal DOM mocks; no visual browser test claimed"
+    },
+    {
+      "batch_id": "B30",
+      "file": "stage-1/anwar-al-anbiya/lectures/02.html",
+      "before": 25,
+      "after": 33,
+      "export_rows": 33,
+      "interactive_questions": 13,
+      "all_inline_syntax": "pass",
+      "actual_exporter": "pass",
+      "all_cards_reachable_and_flippable": "pass",
+      "noncard_content_identical": true,
+      "environment": "Node VM with minimal DOM mocks; no visual browser test claimed"
+    }
+  ],
+  "dom_counts": {
+    "B25": {
+      "sections": 11,
+      "notes": 0,
+      "duplicate_ids": 0
+    },
+    "B26": {
+      "sections": 7,
+      "notes": 0,
+      "duplicate_ids": 0
+    },
+    "B27": {
+      "sections": 5,
+      "notes": 25,
+      "duplicate_ids": 0
+    },
+    "B28": {
+      "sections": 6,
+      "notes": 25,
+      "duplicate_ids": 0
+    },
+    "B29": {
+      "sections": 5,
+      "notes": 29,
+      "duplicate_ids": 0
+    },
+    "B30": {
+      "sections": 7,
+      "notes": 25,
+      "duplicate_ids": 0
+    }
+  },
+  "new_cards": 48,
+  "revised_cards": 27,
+  "cards": 220,
+  "old_cards_deleted": 0,
+  "source_references": [
+    {
+      "url": "https://quran.ksu.edu.sa/tafseer/saadi/sura9-aya114.html",
+      "use": "وعد إبراهيم بالاستغفار قُيد بما جاء لاحقًا في القصة، لا يعمم بمعزل عن تمام النص."
+    },
+    {
+      "url": "https://quran.ksu.edu.sa/tafseer/katheer/sura62-aya5.html",
+      "use": "نص مثل حمل الأسفار ووجه التحذير من عدم العمل بالعلم؛ المتن يحيل إلى المثل دون إيراد نصه كاملًا."
+    },
+    {
+      "url": "https://islamweb.net/ar/library/content/99/7/",
+      "use": "الموافقات، المقدمة الرابعة: وظيفة أصول الفقه وصلتها بالفروع والآداب وما يعين عليهما."
+    },
+    {
+      "url": "https://quran.ksu.edu.sa/tafseer/katheer/sura26-aya67.html",
+      "use": "التدبر والاعتبار في نجاة موسى وغرق فرعون، وشاهد إن في ذلك لآية."
+    },
+    {
+      "url": "https://www.islamweb.net/ar/library/content/99/375/",
+      "use": "الموافقات في أدوات الاجتهاد واللغة؛ العربية شرط أساسي وليست وحدها جميع شروط النظر."
+    }
+  ],
+  "existing_overlap_flags": [
+    {
+      "file": "stage-1/anwar-al-anbiya/lectures/04.html",
+      "baseline_ids": [
+        "stage-1/anwar-al-anbiya/lectures/04.html#14",
+        "stage-1/anwar-al-anbiya/lectures/04.html#32"
+      ],
+      "reason": "تقارب قديم في تقديم العلم بالله على التكليف والعبادة؛ محفوظ الآن لمراجعة الدمج عند فحص ملف أنكي الشخصي."
+    }
+  ],
+  "discarded_duplicate_drafts": [
+    "تجديد العلم قد يكون حذفًا: مغطى في بطاقة الشاطبي القديمة B26#21.",
+    "هداية الأنبياء وكونهم قدوة: مغطى في بطاقات محور الكتاب ونسبة الحجة إلى الله."
+  ],
+  "scope_notes": [
+    "B25 وB26 محاضرتان؛ B27–B30 كتاب نصي له هوامش تنظيمية، لا تعاد صياغة متنه.",
+    "ترتيب أنوار الأنبياء 03 ثم 04 ثم 01 ثم 02؛ لم يغير ترقيمه أو data.js.",
+    "تفاصيل قصص تأسيس النحو وتعميمات أعمار اللغات ليست حقائق عددية للحفظ.",
+    "لا تتحول وعود الأنبياء الخاصة إلى ضمان فردي لكل مشروع أو نتيجة سياسية أو موعد زمني."
+  ]
+}
