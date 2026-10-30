@@ -145,17 +145,7 @@ const SITE_DATA = {
           { id: "stage1_riyad-al-saliheen_03", n: 3, day: 20, title: "باب التوبة 1", file: "lectures/03.html" },
           { id: "stage1_riyad-al-saliheen_04", n: 4, day: 27, title: "باب التوبة 1", file: "lectures/04.html" },
           { id: "stage1_riyad-al-saliheen_05", n: 5, day: 40, title: "باب التوبة 2", file: "lectures/05.html" },
-          { id: "stage1_riyad-al-saliheen_06", n: 6, day: 41, title: "باب التوبة 3", file: "lectures/06.html" },
-          { id: "stage1_riyad-al-saliheen_07", n: 7, day: 9, title: "باب الصبر 1", file: "lectures/07.html" },
-          { id: "stage1_riyad-al-saliheen_08", n: 8, day: 10, title: "باب الصبر 2", file: "lectures/08.html" },
-          { id: "stage1_riyad-al-saliheen_09", n: 9, day: 16, title: "باب الصبر 3", file: "lectures/09.html" },
-          { id: "stage1_riyad-al-saliheen_10", n: 10, day: 24, title: "باب الصبر 4", file: "lectures/10.html" },
-          { id: "stage1_riyad-al-saliheen_11", n: 11, day: 31, title: "باب الصبر 5", file: "lectures/11.html" },
-          { id: "stage1_riyad-al-saliheen_12", n: 12, day: 37, title: "باب الصبر 6", file: "lectures/12.html" },
-          { id: "stage1_riyad-al-saliheen_13", n: 13, day: 47, title: "باب الصدق", file: "lectures/13.html" },
-          { id: "stage1_riyad-al-saliheen_14", n: 14, day: 55, title: "باب المراقبة 1", file: "lectures/14.html" },
-          { id: "stage1_riyad-al-saliheen_15", n: 15, day: 62, title: "باب المراقبة 2", file: "lectures/15.html" },
-          { id: "stage1_riyad-al-saliheen_16", n: 16, day: 69, title: "باب المراقبة 3", file: "lectures/16.html" }
+          { id: "stage1_riyad-al-saliheen_06", n: 6, day: 41, title: "باب التوبة 3", file: "lectures/06.html" }
         ]},
         { key: "sharaya-wasael-maqasid", name: "العلوم الشرعية بين الوسائل والمقاصد", sheikh: "أحمد السيد", tags: ["علم_شرعي", "تزكية"], lectures: [
           { id: "stage1_sharaya-wasael-maqasid_01", n: 1, day: 18, title: "محاضرة كاملة", file: "lectures/01.html" }
@@ -223,12 +213,25 @@ const SITE_DATA = {
         { day: 47, kind: "rest", id: "stage1_day_47", title: "استدراك وراحة" },
         { day: 48, kind: "exam", id: "stage1_day_48", title: "اختبار المرحلة" }
       ],
-      totalLectures: 45
+      totalLectures: 35
     },
     stage2: {
       id: "stage2",
       name: "المرحلة الثانية",
       subjects: [
+        // Legacy stage1 IDs are preserved to retain saved completion and annotations.
+        { key: "riyad-al-saliheen", name: "شرح رياض الصالحين", sheikh: "غير محدد حاليًا", tags: ["المنهج_الإصلاحي", "التزكية", "علم_شرعي"], lectures: [
+          { id: "stage1_riyad-al-saliheen_07", n: 7, day: 9, title: "باب الصبر 1", file: "lectures/07.html" },
+          { id: "stage1_riyad-al-saliheen_08", n: 8, day: 10, title: "باب الصبر 2", file: "lectures/08.html" },
+          { id: "stage1_riyad-al-saliheen_09", n: 9, day: 16, title: "باب الصبر 3", file: "lectures/09.html" },
+          { id: "stage1_riyad-al-saliheen_10", n: 10, day: 24, title: "باب الصبر 4", file: "lectures/10.html" },
+          { id: "stage1_riyad-al-saliheen_11", n: 11, day: 31, title: "باب الصبر 5", file: "lectures/11.html" },
+          { id: "stage1_riyad-al-saliheen_12", n: 12, day: 37, title: "باب الصبر 6", file: "lectures/12.html" },
+          { id: "stage1_riyad-al-saliheen_13", n: 13, day: 47, title: "باب الصدق", file: "lectures/13.html" },
+          { id: "stage1_riyad-al-saliheen_14", n: 14, day: 55, title: "باب المراقبة 1", file: "lectures/14.html" },
+          { id: "stage1_riyad-al-saliheen_15", n: 15, day: 62, title: "باب المراقبة 2", file: "lectures/15.html" },
+          { id: "stage1_riyad-al-saliheen_16", n: 16, day: 69, title: "باب المراقبة 3", file: "lectures/16.html" }
+        ]},
         { key: "aqeedah2", name: "الحقيبة الشرعية (العقيدة)", sheikh: "أحمد السيد", tags: ["علم_شرعي", "عقيدة"], lectures: [
           { id: "stage2_aqeedah2_01", n: 1, day: 1, title: "الحقيبة الشرعية (العقيدة) 1", file: "lectures/01.html" },
           { id: "stage2_aqeedah2_02", n: 2, day: 2, title: "الحقيبة الشرعية (العقيدة) 2", file: "lectures/02.html" },
@@ -401,7 +404,7 @@ const SITE_DATA = {
         { day: 80, kind: "exam", id: "stage2_day_80", title: "الامتحان الثاني على النصف الثاني للمرحلة الثانية" },
         { day: 81, kind: "exam", id: "stage2_day_81", title: "الامتحان النهائي على المرحلة الثانية" }
       ],
-      totalLectures: 61
+      totalLectures: 71
     },
   }
 };
