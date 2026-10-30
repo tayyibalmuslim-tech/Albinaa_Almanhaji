@@ -1,0 +1,189 @@
+{
+  "central_audit": {
+    "scanned": 16,
+    "withCards": 5,
+    "failed": 0,
+    "results": [
+      {
+        "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/riyad-al-saliheen/lectures/01.html",
+        "cards": 34,
+        "fail": [],
+        "warn": [],
+        "track": "محاضرة",
+        "quota": {
+          "L12": 44,
+          "names": 3,
+          "stories": 6
+        }
+      },
+      {
+        "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/riyad-al-saliheen/lectures/02.html",
+        "cards": 37,
+        "fail": [],
+        "warn": [],
+        "track": "محاضرة",
+        "quota": {
+          "L12": 59,
+          "names": 0,
+          "stories": 8
+        }
+      },
+      {
+        "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/riyad-al-saliheen/lectures/03.html",
+        "cards": 37,
+        "fail": [],
+        "warn": [
+          "2 وجهًا أماميًا أقصر من 40 حرفًا — راجع اختبار الاستقلال (9-أ)"
+        ],
+        "track": "محاضرة",
+        "quota": {
+          "L12": 68,
+          "names": 0,
+          "stories": 0
+        }
+      },
+      {
+        "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/riyad-al-saliheen/lectures/04.html",
+        "cards": 62,
+        "fail": [],
+        "warn": [],
+        "track": "محاضرة",
+        "quota": {
+          "L12": 60,
+          "names": 0,
+          "stories": 5
+        }
+      },
+      {
+        "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/riyad-al-saliheen/lectures/05.html",
+        "cards": 42,
+        "fail": [],
+        "warn": [
+          "1 وجهًا أماميًا أقصر من 40 حرفًا — راجع اختبار الاستقلال (9-أ)"
+        ],
+        "track": "محاضرة",
+        "quota": {
+          "L12": 52,
+          "names": 2,
+          "stories": 0
+        }
+      }
+    ]
+  },
+  "runtime": [
+    {
+      "file": "stage-1/riyad-al-saliheen/lectures/01.html",
+      "before": 27,
+      "after": 34,
+      "export_rows": 34,
+      "unchanged_noncard_content": "pass",
+      "inline_syntax": "pass",
+      "ui_render_flip_filters": "pass"
+    },
+    {
+      "file": "stage-1/riyad-al-saliheen/lectures/02.html",
+      "before": 25,
+      "after": 37,
+      "export_rows": 37,
+      "unchanged_noncard_content": "pass",
+      "inline_syntax": "pass",
+      "ui_render_flip_filters": "pass"
+    },
+    {
+      "file": "stage-1/riyad-al-saliheen/lectures/03.html",
+      "before": 25,
+      "after": 37,
+      "export_rows": 37,
+      "unchanged_noncard_content": "pass",
+      "inline_syntax": "pass",
+      "ui_render_flip_filters": "pass"
+    },
+    {
+      "file": "stage-1/riyad-al-saliheen/lectures/04.html",
+      "before": 30,
+      "after": 62,
+      "export_rows": 62,
+      "unchanged_noncard_content": "pass",
+      "inline_syntax": "pass",
+      "ui_render_flip_filters": "pass"
+    },
+    {
+      "file": "stage-1/riyad-al-saliheen/lectures/05.html",
+      "before": 28,
+      "after": 42,
+      "export_rows": 42,
+      "unchanged_noncard_content": "pass",
+      "inline_syntax": "pass",
+      "ui_render_flip_filters": "pass"
+    }
+  ],
+  "new_cards": 77,
+  "revised_cards": 16,
+  "old_cards_deleted": 0,
+  "old_overlap_flags": [
+    {
+      "file": "stage-1/riyad-al-saliheen/lectures/01.html",
+      "baseline_ids": [
+        "stage-1/riyad-al-saliheen/lectures/01.html#14",
+        "stage-1/riyad-al-saliheen/lectures/01.html#21"
+      ],
+      "reason": "تقارب قديم في فائدة البعث على النيات؛ يحتفظ بهما الآن ولا يحذف سجل مراجعة المستخدم تلقائيًا."
+    },
+    {
+      "file": "stage-1/riyad-al-saliheen/lectures/03.html",
+      "baseline_ids": [
+        "stage-1/riyad-al-saliheen/lectures/03.html#12",
+        "stage-1/riyad-al-saliheen/lectures/03.html#13"
+      ],
+      "reason": "تقارب قديم في القدوة العملية ووراثة النبي؛ مراجعة دمجهما تؤجل للمطابقة بملف المستخدم."
+    }
+  ],
+  "discarded_duplicate_drafts": [
+    {
+      "q": "في قصة دنانير يزيد: «لك ما نويت يا يزيد» — هل يتوقف ثواب الصدقة دائمًا على تحقق عين النتيجة التي قصدها المتصدق؟",
+      "reason": "الفائدة مغطاة بمعناها في بطاقة قديمة؛ لا تضاف إعادة صياغة مستقلة."
+    },
+    {
+      "q": "في وصية سعد: «أن تذر ورثتك أغنياء خير من أن تذرهم عالة يتكففون الناس» — كيف يضبط هذا التعليل الحماسة للصدقة؟",
+      "reason": "الفائدة مغطاة بمعناها في بطاقة قديمة؛ لا تضاف إعادة صياغة مستقلة."
+    },
+    {
+      "q": "كيف جمعت وصية العالم «فاعبد الله معهم، ولا ترجع إلى أرضك» بين فعل بديل وترك سبب للمعصية؟",
+      "reason": "الفائدة مغطاة بمعناها في بطاقة قديمة؛ لا تضاف إعادة صياغة مستقلة."
+    },
+    {
+      "q": "لماذا لم تكن قدرة كعب على الجدل وصنع العذر طريق نجاته؟",
+      "reason": "الفائدة مغطاة بمعناها في بطاقة قديمة؛ لا تضاف إعادة صياغة مستقلة."
+    },
+    {
+      "q": "كيف يجتمع رد الخطأ مع بقاء وصف محبة الله ورسوله لبعض من وقع في المعصية؟",
+      "reason": "الفائدة مغطاة بمعناها في بطاقة قديمة؛ لا تضاف إعادة صياغة مستقلة."
+    },
+    {
+      "q": "هل حسن الغيرة يبرر الفرح بأن يقع شخص في ذنب ليظهر تطبيق الشريعة عليه؟",
+      "reason": "الفائدة مغطاة بمعناها في بطاقة قديمة؛ لا تضاف إعادة صياغة مستقلة."
+    }
+  ],
+  "dom_counts": {
+    "1": {
+      "h2": 10,
+      "quiz_boxes": 9
+    },
+    "2": {
+      "h2": 10,
+      "quiz_boxes": 7
+    },
+    "3": {
+      "h2": 8,
+      "quiz_boxes": 7
+    },
+    "4": {
+      "h2": 10,
+      "quiz_boxes": 9
+    },
+    "5": {
+      "h2": 9,
+      "quiz_boxes": 8
+    }
+  }
+}
