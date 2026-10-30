@@ -1,0 +1,133 @@
+{
+  "central_audits": [
+    {
+      "scanned": 1,
+      "withCards": 1,
+      "failed": 0,
+      "results": [
+        {
+          "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/aqeedah/lectures/01.html",
+          "cards": 72,
+          "fail": [],
+          "warn": [
+            "6 وجهًا أماميًا أقصر من 40 حرفًا — راجع اختبار الاستقلال (9-أ)"
+          ],
+          "track": "محاضرة",
+          "quota": {
+            "L12": 58,
+            "names": 8,
+            "stories": 0
+          }
+        }
+      ]
+    },
+    {
+      "scanned": 1,
+      "withCards": 1,
+      "failed": 0,
+      "results": [
+        {
+          "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/quran-sciences/lectures/01.html",
+          "cards": 81,
+          "fail": [],
+          "warn": [
+            "11 وجهًا أماميًا أقصر من 40 حرفًا — راجع اختبار الاستقلال (9-أ)"
+          ],
+          "track": "محاضرة",
+          "quota": {
+            "L12": 75,
+            "names": 4,
+            "stories": 0
+          }
+        }
+      ]
+    }
+  ],
+  "runtime": [
+    {
+      "file": "stage-1/aqeedah/lectures/01.html",
+      "before": 35,
+      "after": 72,
+      "export_rows": 72,
+      "interactive_questions": 21,
+      "groups": {
+        "s1": 9,
+        "s2": 15,
+        "s3": 6,
+        "s4": 20,
+        "s5": 15,
+        "s6": 7
+      },
+      "noncard_content_identical": true,
+      "all_inline_syntax": "pass",
+      "actual_exporter": "pass",
+      "all_cards_reachable_and_flippable": "pass",
+      "part_links": "not_applicable",
+      "environment": "Node VM with minimal DOM mocks; no visual browser test claimed"
+    },
+    {
+      "file": "stage-1/quran-sciences/lectures/01.html",
+      "before": 60,
+      "after": 81,
+      "export_rows": 81,
+      "interactive_questions": 0,
+      "groups": {
+        "1": 20,
+        "2": 13,
+        "3": 15,
+        "4": 33
+      },
+      "noncard_content_identical": true,
+      "all_inline_syntax": "pass",
+      "actual_exporter": "pass",
+      "all_cards_reachable_and_flippable": "pass",
+      "part_links": "prose_scoped_cards_and_download_shared_as_before",
+      "environment": "Node VM with minimal DOM mocks; no visual browser test claimed"
+    }
+  ],
+  "content_sections": 15,
+  "notes": 6,
+  "interactive_questions": 21,
+  "cards": 153,
+  "new_cards": 58,
+  "revised_cards": 22,
+  "old_cards_deleted": 0,
+  "source_references": [
+    {
+      "url": "https://quran.ksu.edu.sa/tafseer/tabary/sura81-aya29.html",
+      "use": "شاهد الجمع بين مشيئة العبد ومشيئة الله؛ أُحضر نص التكوير 29 تكملة للشاهد 28 الوارد في المتن."
+    },
+    {
+      "url": "https://quran.ksu.edu.sa/tafseer/katheer/sura52-aya35.html",
+      "use": "وجه الاستدلال من أم خلقوا من غير شيء."
+    },
+    {
+      "url": "https://www.islamweb.net/ar/library/content/113/176/",
+      "use": "متن الواسطية في عدم سلب صاحب الكبيرة أصل الإيمان؛ لا مجرد إهمال أثر الذنب."
+    },
+    {
+      "url": "https://www.islamweb.net/amp/ar/library/content/22/1411/",
+      "use": "كلام ابن تيمية عن اختلاف التنوع ووحدة المسمى مع تنوع الصفات في الصراط المستقيم."
+    },
+    {
+      "url": "https://www.islamweb.org/ar/library/content/67/30/",
+      "use": "البرهان: اصطلاحات الوجوه والنظائر؛ لا يجعل العرض التعليمي التعريف الوحيد المتفق عليه."
+    },
+    {
+      "url": "https://www.islamweb.net/amp/ar/library/content/49/41/",
+      "use": "مثال مباشر من تفسير ابن كثير يورد الإسناد؛ تصحيح إطلاق «بلا أسانيد»."
+    }
+  ],
+  "reviewed_warnings": "17 سؤالًا قديمًا دون 40 حرفًا لها موضوع مسمى واضح؛ لا أسئلة جديدة قصيرة أو إحالة بلا مرساة.",
+  "discarded_duplicate_drafts": [
+    "مناهج الأنبياء تدخل في البطاقة الجديدة عن تاريخ العقيدة قبل البعثة.",
+    "كون إعجاز القرآن عقديًا مع تصنيفه في علوم القرآن مغطى بالبطاقة القديمة 16.",
+    "اتباع السلف عملي ونظري مغطى قديمًا مع شاهد القلب الجديد."
+  ],
+  "source_limitations": [
+    "التحفظ في نسبة أثر ناظروهم بالعلم محفوظ.",
+    "لا يعمم وصف الإلحاد أو إنكار الوحي على كل فرد تحت عنوان فكري.",
+    "ملف علوم القرآن لا يتضمن اختبارًا تفاعليًا في المصدر؛ لم ينشأ اختبار جديد في مهمة استكمال Anki.",
+    "روابط الجزء في علوم القرآن تغير المتن الظاهر، والبطاقات والتصدير مشتركة كما في الأصل؛ ملفات الدفعات المرفقة تفصل الإضافات حسب المحور."
+  ]
+}
