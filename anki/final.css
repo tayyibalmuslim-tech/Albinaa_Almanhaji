@@ -1,0 +1,120 @@
+/* ===== anki/final.css — قسم mz- (آلية العمل 5.11 — 9-م و9-ص) =====
+   منسوخ حرفيًا من «reference_cards_5.11» في مشروع تلخيص المحاضرات.
+   هذا هو التنسيق الذي تعرض به صفحاتُ المحاضرات البطاقاتِ المولَّدة بـ ilm-anki.js،
+   وهو نفسه ما يُلصق في نوع الملاحظة «أساسي» في Anki بعد قسم legacy.
+   قسم legacy (bm2/bm3) يعيش في نوع الملاحظة ولا تحتاجه الصفحات. لا يُعدَّل هنا إلا مع المرجع. */
+.mz-calm{--mz-title:#293c35;--mz-ink:#33423c;--mz-accent:#296257;--mz-sub:#66766f;--mz-line:#e1e0d8;--mz-b1:#e9f3ef;--mz-b1bd:#cfe3da;--mz-b2:#f5f5f1;--mz-b2bd:#e1e0d8;--mz-b2lab:#7d6338;--mz-alert:#f5f0e4;--mz-alertbd:#e6dcc4;--mz-alertlab:#7d6338;--mz-icon:url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%23000%22%20stroke-width=%221.8%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20d=%22M4%2019.5A2.5%202.5%200%200%201%206.5%2017H20%22/%3E%3Cpath%20d=%22M6.5%202H20v20H6.5A2.5%202.5%200%200%201%204%2019.5v-15A2.5%202.5%200%200%201%206.5%202z%22/%3E%3C/svg%3E");--mz-warn:url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%23000%22%20stroke-width=%221.8%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20d=%22M10.3%203.9%201.8%2018a2%202%200%200%200%201.7%203h17a2%202%200%200%200%201.7-3L13.7%203.9a2%202%200%200%200-3.4%200z%22/%3E%3Cpath%20d=%22M12%209v4M12%2017h.01%22/%3E%3C/svg%3E");--mz-aya:#edf5ed;--mz-ayabar:#2f7a4f;--mz-ayaink:#14532d;--mz-ayalab:#2c6a43;--mz-had:#f1ecf8;--mz-hadbar:#7d52b5;--mz-hadink:#5b2d90;--mz-hadlab:#5b2d90}
+.mz-compare{--mz-title:#273e5d;--mz-ink:#2f3f55;--mz-accent:#47668c;--mz-sub:#62748b;--mz-line:#d8e1ec;--mz-b1:#e9f1ed;--mz-b1bd:#c9dcd2;--mz-b1lab:#2c6a55;--mz-b2:#f5eee7;--mz-b2bd:#e5d6c6;--mz-b2lab:#9a5a2a;--mz-alert:#eff3f9;--mz-alertbd:#d3dded;--mz-alertlab:#273e5d;--mz-icon:url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%23000%22%20stroke-width=%221.8%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20d=%22M12%203v18M6%2021h12M5%206h14%22/%3E%3Cpath%20d=%22M5%206l-3%207a3%203%200%200%200%206%200L5%206zM19%206l-3%207a3%203%200%200%200%206%200l-3-7z%22/%3E%3C/svg%3E");--mz-warn:url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%23000%22%20stroke-width=%221.8%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20d=%22M10.3%203.9%201.8%2018a2%202%200%200%200%201.7%203h17a2%202%200%200%200%201.7-3L13.7%203.9a2%202%200%200%200-3.4%200z%22/%3E%3Cpath%20d=%22M12%209v4M12%2017h.01%22/%3E%3C/svg%3E");--mz-aya:#edf5ed;--mz-ayabar:#2f7a4f;--mz-ayaink:#14532d;--mz-ayalab:#2c6a43;--mz-had:#f1ecf8;--mz-hadbar:#7d52b5;--mz-hadink:#5b2d90;--mz-hadlab:#5b2d90}
+.mz-quran{--mz-title:#3a3426;--mz-ink:#3a3426;--mz-accent:#7a6030;--mz-sub:#7a7060;--mz-line:#dfd9c8;--mz-b1:#f0ede5;--mz-b1bd:#dfd9c8;--mz-b2:#f0ede5;--mz-b2bd:#dfd9c8;--mz-b2lab:#7a6030;--mz-alert:#f6f1e2;--mz-alertbd:#e6dcc0;--mz-alertlab:#7a6030;--mz-icon:url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%23000%22%20stroke-width=%221.8%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20d=%22M2%203h6a4%204%200%200%201%204%204v14a3%203%200%200%200-3-3H2z%22/%3E%3Cpath%20d=%22M22%203h-6a4%204%200%200%200-4%204v14a3%203%200%200%201%203-3h7z%22/%3E%3C/svg%3E");--mz-warn:url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%23000%22%20stroke-width=%221.8%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20d=%22M10.3%203.9%201.8%2018a2%202%200%200%200%201.7%203h17a2%202%200%200%200%201.7-3L13.7%203.9a2%202%200%200%200-3.4%200z%22/%3E%3Cpath%20d=%22M12%209v4M12%2017h.01%22/%3E%3C/svg%3E");--mz-aya:#edf5ed;--mz-ayabar:#2f7a4f;--mz-ayaink:#14532d;--mz-ayalab:#2c6a43;--mz-had:#f1ecf8;--mz-hadbar:#7d52b5;--mz-hadink:#5b2d90;--mz-hadlab:#5b2d90}
+.mz-method{--mz-title:#332d49;--mz-ink:#3a3550;--mz-accent:#605785;--mz-sub:#6e6890;--mz-line:#e0dcec;--mz-b1:#f2f0f9;--mz-b1bd:#e0dcec;--mz-b2:#e8e5f4;--mz-b2bd:#d5cfe8;--mz-b2lab:#605785;--mz-alert:#f4f0e6;--mz-alertbd:#e6dcc0;--mz-alertlab:#7a6030;--mz-step:#e8e5f4;--mz-conn:#9891b4;--mz-num:#605785;--mz-numink:#ffffff;--mz-err:#f7ebe5;--mz-errbd:#ecd2c3;--mz-errlab:#995531;--mz-ex:#f5f3fb;--mz-exbd:#e0dcec;--mz-res:#2c6a55;--mz-icon:url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%23000%22%20stroke-width=%221.8%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpolygon%20points=%2212%202%202%207%2012%2012%2022%207%2012%202%22/%3E%3Cpolyline%20points=%222%2017%2012%2022%2022%2017%22/%3E%3Cpolyline%20points=%222%2012%2012%2017%2022%2012%22/%3E%3C/svg%3E");--mz-warn:url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22%23000%22%20stroke-width=%221.8%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%3E%3Cpath%20d=%22M10.3%203.9%201.8%2018a2%202%200%200%200%201.7%203h17a2%202%200%200%200%201.7-3L13.7%203.9a2%202%200%200%200-3.4%200z%22/%3E%3Cpath%20d=%22M12%209v4M12%2017h.01%22/%3E%3C/svg%3E");--mz-aya:#edf5ed;--mz-ayabar:#2f7a4f;--mz-ayaink:#14532d;--mz-ayalab:#2c6a43;--mz-had:#f1ecf8;--mz-hadbar:#7d52b5;--mz-hadink:#5b2d90;--mz-hadlab:#5b2d90}
+.sem-aya{color:#14532d}
+.sem-hadith{color:#5b2d90}
+.sem-sahabi{color:#8a5a00;font-weight:700}
+.sem-scholar{color:#8f1d21;font-weight:700}
+.sem-name{color:#8f1d21}
+
+.mz-v{font-family:'Amiri','Noto Naskh Arabic','Traditional Arabic',serif;font-weight:700;font-size:1.15em;line-height:2}
+.mz-ref{font-weight:400;font-size:.8em;opacity:.85}
+.sem-aya,.sem-hadith{font-weight:700}
+
+/* ---- frame-level helpers (scoped to mz- content only; the legacy frame is untouched) ---- */
+.mz-face,.mz-ans{direction:rtl;text-align:right;font-family:'Cairo','Noto Sans Arabic','Segoe UI',Tahoma,sans-serif;color:var(--mz-ink);line-height:1.95;font-size:18px;overflow-wrap:break-word;word-break:normal;white-space:normal}
+.mz-face *,.mz-ans *{box-sizing:border-box}
+.mz-face p,.mz-ans p{margin:0}
+
+/* ---- head: subject (with icon) on one side, lecture on the other, thin divider ---- */
+.mz-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:0 0 12px;margin:0 0 16px;border-bottom:1px solid var(--mz-line)}
+.mz-subject{display:flex;align-items:center;font-size:14.5px;font-weight:800;color:var(--mz-accent);line-height:1.5}
+.mz-kicker{font-size:12.5px;font-weight:600;color:var(--mz-sub);line-height:1.5}
+.mz-ico{display:inline-block;width:22px;height:22px;margin-left:9px;flex:0 0 22px}
+@supports ((-webkit-mask-image:url(x)) or (mask-image:url(x))){
+  .mz-ico{background-color:var(--mz-accent);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain;-webkit-mask-image:var(--mz-icon);mask-image:var(--mz-icon)}
+}
+
+/* ---- question ---- */
+.mz-label{font-size:12.5px;font-weight:700;color:var(--mz-sub);margin:0 0 4px;line-height:1.6}
+.mz-q{font-size:22px;line-height:1.95;font-weight:700;color:var(--mz-title);margin:0}
+.mz-q .mz-qt{margin:0 0 4px}
+.mz-quran .mz-q,.mz-quran.mz-ans{text-align:right}
+
+/* ---- boxes ---- */
+.mz-ans{margin:0}
+.mz-box{margin:0 0 12px;padding:13px 18px 14px;border:1px solid var(--mz-b1bd);border-radius:14px;background:var(--mz-b1);font-weight:400}
+.mz-box:last-child{margin-bottom:0}
+.mz-box[data-label]:before{content:attr(data-label);display:block;font-size:13px;font-weight:800;color:var(--mz-accent);margin:0 0 4px;line-height:1.7}
+.mz-b-excl,.mz-b-wajh{background:var(--mz-b2);border-color:var(--mz-b2bd)}
+.mz-b-excl[data-label]:before,.mz-b-wajh[data-label]:before{color:var(--mz-b2lab)}
+.mz-q .mz-box{margin:8px 0 10px;font-size:18px;color:var(--mz-ink)}
+.mz-em{font-weight:800;color:var(--mz-title)}
+
+/* alert-like boxes: the label is an inline lead ("تنبيه مهم:") */
+.mz-b-alert,.mz-b-exc{background:var(--mz-alert);border-color:var(--mz-alertbd)}
+.mz-b-alert[data-label]:before,.mz-b-exc[data-label]:before{display:inline;margin:0;font-size:inherit;color:var(--mz-alertlab);content:attr(data-label) ": "}
+.mz-b-exc[data-label]:before{content:attr(data-label) ": "}
+.mz-b-err{background:var(--mz-err);border-color:var(--mz-errbd)}
+.mz-b-err[data-label]:before{color:var(--mz-errlab);display:inline;margin:0;font-size:inherit;content:attr(data-label) ": "}
+.mz-b-nolabel[data-label]:before{display:none}
+@supports ((-webkit-mask-image:url(x)) or (mask-image:url(x))){
+  .mz-b-err.mz-b-nolabel[data-label]:before{content:"";display:inline-block;width:18px;height:18px;margin:0 0 0 8px;vertical-align:-3px;background-color:var(--mz-errlab);-webkit-mask:var(--mz-warn) center/contain no-repeat;mask:var(--mz-warn) center/contain no-repeat}
+}
+
+/* ---- Quran / hadith boxes ---- */
+.mz-b-aya,.mz-b-hadith{text-align:center;padding:12px 18px 14px}
+.mz-b-aya{background:var(--mz-aya);border-color:var(--mz-aya);border-right:4px solid var(--mz-ayabar)}
+.mz-b-hadith{background:var(--mz-had);border-color:var(--mz-had);border-right:4px solid var(--mz-hadbar)}
+.mz-b-aya[data-label]:before{color:var(--mz-ayalab);text-align:right}
+.mz-b-hadith[data-label]:before{color:var(--mz-hadlab);text-align:right}
+.mz-lead{display:block;font-size:16px;font-weight:600;color:var(--mz-ink);text-align:right;margin:0 0 2px;line-height:1.8}
+.mz-aya,.mz-had{display:block;font-family:'Amiri','Noto Naskh Arabic','Traditional Arabic',serif;font-size:26px;line-height:2.05;font-weight:400;text-align:center}
+.mz-aya{color:var(--mz-ayaink)}
+.mz-had{color:var(--mz-hadink);font-size:23px}
+.mz-ref{display:block;font-size:13px;color:var(--mz-sub);margin-top:2px}
+
+/* ---- comparison columns (flex-wrap, no gap for old WebView) ---- */
+.mz-cols{display:flex;flex-wrap:wrap;margin:0 -6px 6px}
+.mz-col{flex:1 1 220px;min-width:0;margin:0 6px 12px;padding:13px 16px 14px;border:1px solid var(--mz-b1bd);border-radius:14px;background:var(--mz-b1)}
+.mz-col2{background:var(--mz-b2);border-color:var(--mz-b2bd)}
+.mz-col[data-label]:before{content:attr(data-label);display:block;font-size:14.5px;font-weight:800;padding:0 0 7px;margin:0 0 8px;color:var(--mz-b1lab);border-bottom:1px solid var(--mz-b1bd)}
+.mz-col2[data-label]:before{color:var(--mz-b2lab);border-bottom-color:var(--mz-b2bd)}
+
+/* ---- numbered path (steps / stages) ---- */
+.mz-steps{margin:0 0 12px;padding:0}
+.mz-steps-cap{font-size:13px;font-weight:800;color:var(--mz-accent);margin:0 0 8px}
+.mz-step{display:flex;align-items:flex-start;padding:12px 14px;border-radius:14px;background:var(--mz-step);border:1px solid var(--mz-b2bd)}
+.mz-step-n{flex:0 0 34px;width:34px;height:34px;margin-left:12px;border-radius:50%;background:var(--mz-num);color:var(--mz-numink);font-weight:800;font-size:16px;line-height:34px;text-align:center}
+.mz-step-b{flex:1 1 auto;min-width:0}
+.mz-step-t{font-weight:800;color:var(--mz-title);line-height:1.8}
+.mz-step-d{margin-top:2px;line-height:1.9}
+.mz-steps-list{counter-reset:mzstep}
+.mz-steps-list .mz-step{counter-increment:mzstep;margin:0 0 10px}
+.mz-steps-list .mz-step:last-child{margin-bottom:0}
+.mz-steps-list .mz-step-n:before{content:counter(mzstep)}
+.mz-arrow{height:20px;padding:5px 15px 0 0;line-height:0}
+.mz-arrow:before{content:"";display:inline-block;width:0;height:0;border-right:6px solid transparent;border-left:6px solid transparent;border-top:9px solid var(--mz-conn);margin-right:5px}
+
+/* ---- application rows ---- */
+.mz-ex-intro{font-size:16px;font-weight:600;color:var(--mz-ink);margin:2px 0 8px}
+.mz-ex-intro[data-label]:before{content:attr(data-label);display:block;font-size:13px;font-weight:800;color:var(--mz-accent);margin:0 0 2px}
+.mz-ex{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;margin:0 0 8px;padding:10px 16px;border-radius:14px;background:var(--mz-ex);border:1px solid var(--mz-exbd)}
+.mz-ex-s{flex:1 1 200px;min-width:0;padding-left:12px}
+.mz-ex-r{flex:0 0 auto;font-weight:800;color:var(--mz-res);text-align:left}
+.mz-conj{opacity:.65}
+
+/* ---- phones ---- */
+@media (max-width:580px){
+  .mz-q{font-size:20px}
+  .mz-face,.mz-ans{font-size:17px}
+  .mz-box{padding:12px 14px 13px}
+  .mz-aya{font-size:23px}
+  .mz-had{font-size:21px}
+  .mz-col{flex-basis:100%}
+}
+
+/* ---- 5.10–5.11: محور السؤال، والجواب المباشر، والإضافة التحريرية، ورابط المصدر (anki/anki-css-5.11.css) ---- */
+.mz-focus{color:var(--mz-accent);font-weight:800;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
+.mz-box.mz-core{font-weight:700;color:var(--mz-title)}
+.mz-corelead{font-weight:800;color:var(--mz-title)}
+.mz-b-edit{background:#f4f4f4;border:1px dashed #b9b9b9}
+.mz-b-edit[data-label]:before{color:#5f5f5f}
+.mz-srcl{margin-top:10px;text-align:left;font-size:12.5px}
+.mz-srcl a{color:var(--mz-sub);text-decoration:none;border-bottom:1px dotted var(--mz-sub)}
