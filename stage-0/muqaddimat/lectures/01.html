@@ -1,40 +1,942 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>فتعلمنا الإيمان - المرحلة التمهيدية</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="../../../style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فتعلمنا الإيمان — البناء المنهجي · المرحلة التمهيدية · مقدمات تمهيدية · المحاضرة 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;900&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* ===== هوية «سماء التفكر»: ليلٌ نجمي في الغلاف، ورقٌ عاجي في المتن =====
+   لكل حقيقة لونها الدلالي:
+   1 العلم بالله = نيلي · 2 الإيمان بالنبي ﷺ = زمردي · 3 العبودية = عنّابي
+   4 اليوم الآخر = بنفسجي رمادي · 5 الثمرات = زعفراني */
+:root{
+  --bg:#faf7f0; --paper:#fffdf8; --ink:#1f2433; --muted:#5d6273; --line:#e3dccb;
+  --night:#141c38; --night2:#263463; --star:#f3d58a;
+  --c1:#2b3a75; --c1s:#e8ebf6;
+  --c2:#1d6b5b; --c2s:#e3f1ec;
+  --c3:#8a2e3b; --c3s:#f6e6e8;
+  --c4:#5a4a7c; --c4s:#ece8f4;
+  --c5:#9a6a12; --c5s:#f8efd9;
+  --fix:#a3471c; --fixs:#fbece3;
+  --add:#3d5a80; --adds:#e9eff7;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Cairo',system-ui,sans-serif;font-size:17px;line-height:2}
+a{color:var(--c1)}
+.wrap{max-width:860px;margin:0 auto;padding:0 18px}
+
+/* شريط علوي */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(20,28,56,.96);backdrop-filter:blur(6px);color:#fff}
+.topbar-in{max-width:980px;margin:0 auto;padding:8px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.tb-title{font-family:'Reem Kufi',sans-serif;font-size:15px;color:var(--star)}
+.tb-title span{color:#cfd6ee;font-family:'Cairo';font-size:13px}
+.tb-links{display:flex;gap:4px;flex-wrap:wrap}
+.tb-links a{color:#e6e9f5;text-decoration:none;font-size:12.5px;padding:3px 9px;border-radius:999px;border:1px solid rgba(255,255,255,.18)}
+.tb-links a:hover{background:rgba(243,213,138,.18)}
+.progress{height:3px;background:var(--star);width:0;transition:width .1s}
+
+/* الغلاف */
+.cover{position:relative;overflow:hidden;color:#fff;text-align:center;padding:56px 18px 46px;
+  background:
+   radial-gradient(1.5px 1.5px at 12% 22%,#fff 50%,transparent 51%),
+   radial-gradient(1px 1px at 28% 68%,#fff 50%,transparent 51%),
+   radial-gradient(1.5px 1.5px at 44% 14%,#f3d58a 50%,transparent 51%),
+   radial-gradient(1px 1px at 63% 40%,#fff 50%,transparent 51%),
+   radial-gradient(2px 2px at 78% 18%,#fff 50%,transparent 51%),
+   radial-gradient(1px 1px at 88% 62%,#f3d58a 50%,transparent 51%),
+   radial-gradient(1px 1px at 6% 80%,#fff 50%,transparent 51%),
+   radial-gradient(1.5px 1.5px at 52% 84%,#fff 50%,transparent 51%),
+   radial-gradient(1px 1px at 35% 38%,#fff 50%,transparent 51%),
+   radial-gradient(1px 1px at 94% 88%,#fff 50%,transparent 51%),
+   radial-gradient(ellipse at 50% 120%,#3b4c8a 0%,transparent 60%),
+   linear-gradient(180deg,var(--night) 0%,var(--night2) 100%)}
+.kicker{font-family:'Reem Kufi',sans-serif;color:var(--star);letter-spacing:.5px;font-size:15px}
+.series{font-size:13.5px;color:#c6cde6;margin-top:4px}
+.cover h1{font-family:'Amiri',serif;font-size:clamp(38px,7vw,60px);margin:14px 0 6px;line-height:1.3}
+.cover h2{font-weight:400;font-size:clamp(15px,2.4vw,18px);color:#dfe4f4;max-width:680px;margin:0 auto;line-height:1.9}
+.orn{display:flex;align-items:center;justify-content:center;gap:12px;margin:20px auto;color:var(--star);max-width:320px}
+.orn i{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--star),transparent)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:12px}
+.chip{font-size:12.5px;padding:4px 12px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22)}
+.btn-dl{margin-top:20px;font-family:'Cairo';font-weight:700;font-size:14px;padding:10px 22px;border-radius:999px;border:0;background:var(--star);color:var(--night);cursor:pointer}
+.btn-dl:hover{filter:brightness(1.06)}
+
+/* الفيديو */
+details.video{margin:22px 0;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:10px 16px}
+details.video summary{cursor:pointer;font-weight:700;color:var(--c1)}
+.vid{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;margin-top:10px}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* الفهرس */
+nav.toc{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px 22px;margin:26px 0}
+nav.toc h3{margin:0 0 6px;font-family:'Reem Kufi';color:var(--night);font-size:18px}
+nav.toc ol{list-style:none;margin:0;padding:0}
+nav.toc li{line-height:1.9}
+nav.toc li a{text-decoration:none;color:var(--ink)}
+nav.toc li.l a{font-weight:700}
+nav.toc li.l b{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;color:#fff;font-size:12px;margin-left:6px}
+nav.toc li.sub{padding-right:32px;font-size:15px}
+nav.toc li.sub a{color:var(--muted)}
+nav.toc li.sub a::before{content:"◦ ";color:var(--line)}
+
+/* الأقسام */
+section.part{margin:46px 0 30px}
+.sec-head{display:flex;gap:14px;align-items:center;border-radius:16px;padding:16px 20px;color:#fff;margin-bottom:18px}
+.sec-head .num{font-family:'Reem Kufi';font-size:34px;line-height:1;opacity:.9}
+.sec-head .t small{display:block;font-size:12.5px;opacity:.85;letter-spacing:.3px}
+.sec-head .t h2{margin:0;font-family:'Amiri',serif;font-size:clamp(24px,4vw,30px);line-height:1.4}
+.p1 .sec-head{background:linear-gradient(135deg,var(--c1),#3e51a0)}
+.p2 .sec-head{background:linear-gradient(135deg,var(--c2),#2a8a75)}
+.p3 .sec-head{background:linear-gradient(135deg,var(--c3),#ad4352)}
+.p4 .sec-head{background:linear-gradient(135deg,var(--c4),#7663a0)}
+.p0 .sec-head{background:linear-gradient(135deg,var(--night),var(--night2))}
+.p5 .sec-head{background:linear-gradient(135deg,var(--c5),#bf8a25)}
+h3.sub{font-family:'Amiri',serif;font-size:23px;margin:30px 0 8px;padding-right:12px;border-right:4px solid var(--line)}
+.p1 h3.sub{border-color:var(--c1);color:var(--c1)}
+.p2 h3.sub{border-color:var(--c2);color:var(--c2)}
+.p3 h3.sub{border-color:var(--c3);color:var(--c3)}
+.p4 h3.sub{border-color:var(--c4);color:var(--c4)}
+.p5 h3.sub{border-color:var(--c5);color:var(--c5)}
+.p0 h3.sub{border-color:var(--night2);color:var(--night2)}
+h4.mini{font-size:16.5px;margin:20px 0 4px;color:var(--ink)}
+p{margin:8px 0}
+.lead{font-size:18px}
+ul.pl,ol.pl{margin:6px 0;padding-right:22px}
+ul.pl li,ol.pl li{margin:3px 0}
+blockquote.q{font-family:'Amiri',serif;font-size:21px;line-height:2;background:var(--paper);border:1px solid var(--line);border-right:4px solid var(--c2);border-radius:10px;margin:12px 0;padding:10px 18px}
+blockquote.q .ref{display:block;font-family:'Cairo';font-size:13px;color:var(--muted)}
+.aya{font-family:'Amiri',serif;font-size:1.12em}
+
+/* الصناديق */
+.box{border-radius:12px;padding:12px 16px;margin:16px 0;border:1px solid var(--line);background:var(--paper)}
+.box .tag{display:inline-block;font-size:12px;font-weight:700;padding:1px 10px;border-radius:999px;margin-bottom:4px}
+.box.key{border-color:#d9c48d;background:#fdf7e6}
+.box.key .tag{background:#e9d495;color:#4c3b07}
+.box.def{border-color:#b9c3e6;background:var(--c1s)}
+.box.def .tag{background:var(--c1);color:#fff}
+.box.fixb{border-color:#eab89c;background:var(--fixs)}
+.box.fixb .tag{background:var(--fix);color:#fff}
+.box.addb{border-color:#b8c8de;background:var(--adds)}
+.box.addb .tag{background:var(--add);color:#fff}
+.box.story{border-color:#d7c1c5;background:#fbf3f4}
+.box.story .tag{background:var(--c3);color:#fff}
+.box.warn{border-color:#e7c27d;background:#fff6e2}
+.box.warn .tag{background:#b7791f;color:#fff}
+
+/* سلاسل وخرائط */
+.chain{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;margin:14px 0}
+.chain span{padding:6px 16px;border-radius:999px;background:var(--c2s);color:var(--c2);font-weight:700;border:1px solid #b9dccf}
+.chain i{font-style:normal;color:var(--muted)}
+.four{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:16px 0}
+.four div{border-radius:12px;padding:12px 14px;color:#fff;font-weight:700;line-height:1.6}
+.four small{display:block;font-weight:400;opacity:.9;font-size:13px}
+.four .f1{background:var(--c1)}.four .f2{background:var(--c2)}.four .f3{background:var(--c3)}.four .f4{background:var(--c4)}
+
+.map{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px;margin:18px 0}
+.map .root{display:block;width:max-content;max-width:100%;margin:0 auto 14px;padding:8px 22px;border-radius:12px;background:var(--c1);color:#fff;font-weight:900;text-align:center}
+.map .branches{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.map .br{border:1px solid var(--line);border-top:4px solid var(--c3);border-radius:10px;padding:10px;text-align:center;background:#fff}
+.map .br b{display:block;color:var(--c3);font-size:16px}
+.map .br .arr{color:var(--muted);font-size:13px;margin:2px 0}
+.map .br .res{display:inline-block;margin:2px;padding:2px 10px;border-radius:999px;background:var(--c3s);font-size:13.5px}
+.map .foot{text-align:center;color:var(--muted);font-size:13.5px;margin-top:10px}
+
+.tbl-wrap{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;background:var(--paper);font-size:15px}
+th,td{border:1px solid var(--line);padding:8px 10px;vertical-align:top}
+th{background:var(--night);color:#fff;font-weight:700}
+td.aya{font-family:'Amiri',serif;font-size:18px}
+
+.takeaway{border-radius:14px;padding:14px 18px;margin:22px 0;background:var(--night);color:#eef1fa}
+.takeaway b{color:var(--star)}
+
+/* أسئلة تثبيت الفهم */
+.quiz-block{background:linear-gradient(160deg,#1b2447,#2a3769);color:#eef1fa;border-radius:16px;padding:20px 22px;margin:26px 0}
+.quiz-block-title{font-family:'Reem Kufi';color:var(--star);font-size:18px;margin-bottom:10px}
+.quiz-item{margin-bottom:18px;padding-bottom:14px;border-bottom:1px dashed rgba(255,255,255,.18)}
+.quiz-item:last-child{margin-bottom:0;border-bottom:0;padding-bottom:0}
+.quiz-q{font-weight:700;margin:0 0 8px}
+.quiz-options{display:flex;flex-direction:column;gap:8px}
+.quiz-opt{text-align:right;font-family:'Cairo';font-size:15px;padding:8px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#fff;cursor:pointer;line-height:1.7}
+.quiz-opt:hover{background:rgba(243,213,138,.14)}
+.quiz-opt.correct{background:rgba(64,160,110,.35);border-color:#7fd1a4}
+.quiz-opt.correct::after{content:" ✓";color:#a9f0c8}
+.quiz-opt.wrong{background:rgba(190,70,60,.35);border-color:#f0a59b}
+.quiz-opt.wrong::after{content:" ✕";color:#ffc2b9}
+.quiz-opt.disabled{pointer-events:none}
+.quiz-feedback,.quiz-answer{display:none;margin-top:8px;padding:8px 12px;border-radius:10px;background:rgba(243,213,138,.12);border-right:3px solid var(--star);font-size:15px}
+.quiz-feedback.show,.quiz-answer.show{display:block}
+.quiz-reflect-q{font-weight:700;margin:0 0 6px}
+.quiz-reveal-btn{font-family:'Cairo';font-size:13.5px;padding:5px 14px;border-radius:999px;border:1px solid var(--star);background:transparent;color:var(--star);cursor:pointer}
+.quiz-reveal-btn:hover{background:rgba(243,213,138,.15)}
+
+/* البطاقات */
+#anki{background:linear-gradient(180deg,var(--night),var(--night2));color:#fff;padding:44px 0 50px;margin-top:40px}
+#anki h2{font-family:'Amiri',serif;font-size:32px;text-align:center;margin:0}
+#anki .sub{text-align:center;color:#c6cde6;font-size:14px;margin:4px 0 16px}
+.filters{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:18px}
+.filters button{font-family:'Cairo';font-size:13px;padding:5px 12px;border-radius:999px;border:1.5px solid rgba(255,255,255,.3);background:transparent;color:#fff;cursor:pointer}
+.filters button.on{background:var(--star);color:var(--night);border-color:var(--star)!important;font-weight:700}
+.flip{perspective:1400px;max-width:680px;margin:0 auto;cursor:pointer;min-height:260px}
+.flip-in{position:relative;width:100%;min-height:260px;transition:transform .55s;transform-style:preserve-3d}
+.flip.on .flip-in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:22px 24px;display:flex;flex-direction:column;justify-content:center;background:var(--paper);color:var(--ink);box-shadow:0 10px 30px rgba(0,0,0,.3);overflow:auto}
+.face.back{transform:rotateY(180deg);background:#fdf7e6}
+.face .lbl{font-family:'Reem Kufi';font-size:13px;color:var(--muted);margin-bottom:6px}
+.face .lvl{position:absolute;top:12px;left:16px;font-size:11.5px;padding:1px 9px;border-radius:999px;background:var(--c1s);color:var(--c1)}
+.face .txt{font-size:18px;line-height:1.95}
+.face .hint{margin-top:10px;font-size:12px;color:var(--muted)}
+.ctrl{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:18px}
+.ctrl button{font-size:20px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;cursor:pointer}
+.counter{font-family:'Reem Kufi';color:var(--star)}
+.dl{display:block;margin:20px auto 0;font-family:'Cairo';font-weight:700;padding:10px 24px;border-radius:999px;border:0;background:var(--star);color:var(--night);cursor:pointer}
+.tagline{text-align:center;font-size:12px;color:#aab3d4;margin-top:8px;direction:rtl}
+
+footer{text-align:center;color:var(--muted);font-size:13.5px;padding:26px 16px 80px;line-height:1.9}
+
+@media (max-width:640px){
+  body{font-size:16px}
+  .sec-head{padding:12px 14px}
+  .sec-head .num{font-size:26px}
+  blockquote.q{font-size:19px}
+  .face .txt{font-size:16.5px}
+  .flip,.flip-in{min-height:320px}
+}
+@media print{.topbar,.btn-dl,#anki,.quiz-block,details.video{display:none}}
+</style>
+
+<style id="ilm-sem-css">
+/* ===== الطبقة الدلالية للألوان — آلية العمل 5.3 / بند 5-ب =====
+   أخضر = آية | أحمر = عَلَم (عريض للعلماء والصحابة)
+   الأحاديث معطّلة: «…» تُستعمل هنا أيضًا لأسماء الكتب. */
+:root{--sem-aya:#23733f;--sem-name:#8f1d21}
+.sem-aya{color:var(--sem-aya)}
+.sem-name{color:var(--sem-name)}
+.sem-scholar{font-weight:700}
+.quran,.aya,.ayah,.ayat,.quran *{color:var(--sem-aya)}
+@media print{.sem-aya,.sem-name{color:#000}.sem-scholar{font-weight:700}}
+</style>
 </head>
-<body class="" data-page="lecture" data-lecture-id="stage0_muqaddimat_01">
-  <div class="page">
-    <nav class="breadcrumbs"><a href="../../../index.html">الرئيسية</a><span class="sep">/</span><a href="../../index.html">المرحلة التمهيدية</a><span class="sep">/</span><a href="../index.html">مقدمات تمهيدية</a><span class="sep">/</span><span aria-current="page">فتعلمنا الإيمان</span></nav>
+<body data-lecture-id="stage0_muqaddimat_01">
+<div style="background:#FFF3CD;border-bottom:2px solid #E0A800;color:#664D03;padding:10px 16px;font-family:'Tajawal','Cairo',sans-serif;font-size:13.5px;line-height:1.7;text-align:center;direction:rtl" role="note">
+⚠️ <strong>تنبيه:</strong> هذا المحتوى تم إعداده بمساعدة الذكاء الاصطناعي بالاعتماد على تفريغ المحاضرة، وقد يحتوي على أخطاء، يُرجى المراجعة والتحقق خاصة في المسائل العلمية والنقول وتخريج الأحاديث.
+</div>
+<style id="ilm-completion-style">
+  #ilm-completion-box{
+    display:flex; align-items:center; gap:10px;
+    max-width:640px; margin:16px auto 0; padding:12px 18px;
+    background:#fffdf8; border:1px solid #e3dccb; border-radius:12px;
+    font-family:'Tajawal','Cairo',sans-serif; direction:rtl;
+    cursor:pointer; user-select:none; transition:background .15s, border-color .15s;
+  }
+  #ilm-completion-box:hover{ border-color:#c99a3a; }
+  #ilm-completion-box.done{ background:#e8ebf6; border-color:#2b3a75; }
+  #ilm-completion-box input{ width:18px; height:18px; accent-color:#2b3a75; cursor:pointer; flex-shrink:0; }
+  #ilm-completion-box span{ font-size:14.5px; font-weight:600; color:#1f2433; }
+  #ilm-completion-box.done span{ color:#2b3a75; }
+</style>
+<label id="ilm-completion-box">
+  <input type="checkbox" data-lecture-id="stage0_muqaddimat_01">
+  <span>تحديد هذه المحاضرة كمكتملة</span>
+</label>
 
-      <header class="lecture-header">
-        <h1>فتعلمنا الإيمان</h1>
-        <p class="lecture-meta">المادة: مقدمات تمهيدية &nbsp;|&nbsp; الشيخ: أحمد السيد &nbsp;|&nbsp; اليوم 1</p>
-        <label class="checkbox-line lecture-checkbox">
-          <input type="checkbox" data-lecture-id="stage0_muqaddimat_01">
-          <span>إتمام هذه المحاضرة</span>
-        </label>
-      </header>
-
-      <div class="lecture-video-embed" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin:20px 0;">
-        <iframe src="https://www.youtube.com/embed/kAilDgzTOiI" title="فتعلمنا الإيمان" style="position:absolute;top:0;right:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-      </div>
-
-      <div class="lecture-nav">
-        <a href="../index.html" class="btn btn-outline">الرجوع إلى المادة</a>
-        <a href="../../index.html" class="btn btn-outline">الرجوع إلى المرحلة</a>
-      </div>
-
-      <div data-lecture-nav-extra></div>
-
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="tb-title">فتعلمنا الإيمان <span>· مقدمات تمهيدية — المحاضرة 1</span></div>
+    <div class="tb-links">
+      <a href="#intro">المدخل</a>
+      <a href="#h1">العلم بالله</a>
+      <a href="#h2">النبي ﷺ</a>
+      <a href="#h3">العبودية</a>
+      <a href="#h4">اليوم الآخر</a>
+      <a href="#h5">الثمرات</a>
+      <a href="#anki">البطاقات</a>
+    </div>
   </div>
-  <script type="module" src="../../../firebase-sync-manhaj.js"></script>
-  <script src="../../../data.js"></script>
-  <script src="../../../script.js"></script>
+  <div class="progress" id="prog"></div>
+</div>
+
+<header class="cover">
+  <div class="kicker">البناء المنهجي · المستوى الأول · المرحلة التمهيدية</div>
+  <div class="series">مادة «مقدمات تمهيدية» — المحاضرة 1 (اليوم 1) · الشيخ أحمد السيد</div>
+  <h1>فتعلمنا الإيمان</h1>
+  <h2>أربع حقائق إيمانية كبرى يتربى عليها الشاب قبل القرآن، حتى تنزل آياته على قلبٍ مستعدٍّ للهداية</h2>
+  <div class="orn"><i></i><b>✦</b><i></i></div>
+  <div class="chips">
+    <span class="chip">١ · العلم بالله</span>
+    <span class="chip">٢ · الإيمان بالنبي ﷺ</span>
+    <span class="chip">٣ · العبودية</span>
+    <span class="chip">٤ · اليوم الآخر</span>
+    <span class="chip" id="cards-chip">بطاقات المراجعة</span>
+  </div>
+  <button class="btn-dl" onclick="dl()">⬇ تحميل بطاقات Anki (TSV)</button>
+</header>
+
+<main class="wrap" data-ilm-highlight-zone>
+
+  <details class="video">
+    <summary>▶ شاهد المحاضرة أولًا — ثم اقرأ الملف بعدها (لا تقرأ أثناء الاستماع)</summary>
+    <div class="vid"><iframe src="https://www.youtube.com/embed/kAilDgzTOiI" title="فتعلمنا الإيمان" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+  </details>
+
+  <nav class="toc">
+    <h3>محتويات الملف</h3>
+    <ol>
+      <li class="l"><a href="#intro"><b style="background:var(--night)">✦</b>المدخل: ما الإيمان الذي يُتعلَّم؟</a></li>
+      <li class="sub"><a href="#t-jundub">أثر جندب · القرآن لا ينتفع به كل أحد</a></li>
+      <li class="l"><a href="#h1"><b style="background:var(--c1)">١</b>الحقيقة الأولى: العلم بالله</a></li>
+      <li class="sub"><a href="#t-ashraf">لماذا هو أشرف العلوم؟</a></li>
+      <li class="sub"><a href="#t-wasail">كيف نتعرف على الله؟ القرآن والتفكر</a></li>
+      <li class="l"><a href="#h2"><b style="background:var(--c2)">٢</b>الحقيقة الثانية: الإيمان بالنبي ﷺ</a></li>
+      <li class="sub"><a href="#t-sira">السيرة والسنة</a></li>
+      <li class="l"><a href="#h3"><b style="background:var(--c3)">٣</b>الحقيقة الثالثة: العبودية لله</a></li>
+      <li class="sub"><a href="#t-asas">أولًا: أساسها العلم بالله (خريطة الثمرات)</a></li>
+      <li class="sub"><a href="#t-yaqin">اليقين: الصخرة التي تتكسر عليها الفتن</a></li>
+      <li class="sub"><a href="#t-mahal">ثانيًا: محلها الأساسي القلب</a></li>
+      <li class="sub"><a href="#t-arkan">ثالثًا: ركنا العبودية</a></li>
+      <li class="l"><a href="#h4"><b style="background:var(--c4)">٤</b>الحقيقة الرابعة: الإيمان باليوم الآخر</a></li>
+      <li class="l"><a href="#h5"><b style="background:var(--c5)">✦</b>الثمرات والوصايا الختامية</a></li>
+      <li class="l"><a href="#anki"><b style="background:var(--night2)">❈</b>بطاقات المراجعة</a></li>
+    </ol>
+  </nav>
+
+<!-- ==================== المدخل ==================== -->
+<section class="part p0" id="intro">
+  <div class="sec-head"><div class="num">✦</div><div class="t"><small>المدخل</small><h2>ما الإيمان الذي يُتعلَّم؟</h2></div></div>
+
+  <p class="lead">هذا الدرس من أهم الدروس؛ لأنه متعلق بالمسيرة التعبدية للإنسان طول حياته، فيحتاج إلى أقصى درجات التركيز، وإلى إحسان النية في تلقيه.</p>
+
+  <h3 class="sub" id="t-jundub">أثر جندب رضي الله عنه</h3>
+  <blockquote class="q">«كنا غلمانًا حَزاوِرة عند رسول الله ﷺ، فتعلمنا الإيمان قبل أن نتعلم القرآن، ثم تعلمنا القرآن فازددنا به إيمانًا»<span class="ref">حَزاوِرة: قاربوا سن البلوغ — أي «الجيل الصاعد» باصطلاحنا</span></blockquote>
+  <div class="box addb"><span class="tag">إضافة: التخريج</span><p>الأثر أخرجه ابن ماجه في المقدمة (رقم 61) عن جندب بن عبد الله رضي الله عنه بلفظ: «كنا مع النبي ﷺ ونحن فتيان حزاورة…»، وصححه الألباني.</p></div>
+
+  <p>صحابيٌّ يحكي ما كان يفعله النبي ﷺ مع الجيل الصاعد: كانوا يتعلمون <strong>الإيمان</strong> أولًا. والسؤال الذي ينبغي أن يخطر لك: القرآن معروف، والعلوم الشرعية معروفة؛ فما هذا <strong>الإيمان الذي يُتعلَّم</strong>؟</p>
+  <p>هذا هو موضوع اللقاء: الإيمان الذي ينبغي أن يتربى عليه الشاب حتى <strong>يتلقى القرآن بقلب مؤمن</strong>.</p>
+
+  <h3 class="sub">القرآن لا ينتفع به كل أحد</h3>
+  <p>القرآن ينتفع به من كان قلبه مستعدًّا للانتفاع به، والدليل أن الله وصف الذين يهتدون به بصفات معينة:</p>
+  <blockquote class="q">﴿ذَٰلِكَ الْكِتَابُ لَا رَيْبَ ۛ فِيهِ ۛ هُدًى لِّلْمُتَّقِينَ ۝ الَّذِينَ يُؤْمِنُونَ بِالْغَيْبِ وَيُقِيمُونَ الصَّلَاةَ…﴾<span class="ref">البقرة: 2–3</span></blockquote>
+  <p>ومن الآيات الدالة على المعنى نفسه:</p>
+  <ul class="pl">
+    <li><span class="aya">﴿إِنَّمَا تُنذِرُ الَّذِينَ يَخْشَوْنَ رَبَّهُم بِالْغَيْبِ﴾</span> [فاطر: 18]</li>
+    <li><span class="aya">﴿سَيَذَّكَّرُ مَن يَخْشَىٰ﴾</span> [الأعلى: 10]</li>
+    <li><span class="aya">﴿وَمَا يَتَذَكَّرُ إِلَّا مَن يُنِيبُ﴾</span> [غافر: 13]</li>
+  </ul>
+
+  <div class="box key"><span class="tag">الفكرة المركزية</span><p>هناك صفات وأعمال تحت اسم «الإيمان»، من تمثّلها انتفع بكل حقائق الدين: بالقرآن والسنة والصلاة وسائر العبادات، وأخذ بطريق يوصله إلى الجنة بإذن الله. و<strong>فرقٌ كبير</strong> بين من يقرأ القرآن ويحفظه وقد تشرّب قلبه هذه المعاني، وبين من يقرؤه وقلبه لم يتشربها.</p></div>
+
+  <p>وهذه المعاني أربع، كل واحدة منها <strong>أصل من أصول الإيمان</strong>، ويُرجى أن تكون داخلة في قول جندب «فتعلمنا الإيمان» — وإلا فالإيمان شُعَب واسعة:</p>
+  <div class="four">
+    <div class="f1">١ · العلم بالله<small>الأساس الذي تنبني عليه البقية</small></div>
+    <div class="f2">٢ · الإيمان بالنبي ﷺ<small>أكمل الهدي والقدوة</small></div>
+    <div class="f3">٣ · العبودية لله<small>الاستسلام والانقياد والذل مع المحبة</small></div>
+    <div class="f4">٤ · الإيمان باليوم الآخر<small>البعث والحساب والجزاء</small></div>
+  </div>
+</section>
+
+<!-- ==================== الحقيقة 1 ==================== -->
+<section class="part p1" id="h1">
+  <div class="sec-head"><div class="num">١</div><div class="t"><small>الحقيقة الإيمانية الأولى</small><h2>العلم بالله: أن تتعرف على خالقك</h2></div></div>
+
+  <p>أنت موجود في هذه الحياة، ووجودك أمر مشاهَد محسوس. ثم تعلم أن الله هو الذي خلقك: لم يخلقك والدك، ولم توجدك والدتك، ولا الطبيب، ولا أحد في الدنيا؛ بل لا يستطيع أحد أن يخلق ذبابة، فضلًا عن كائن بشري كان صغيرًا في بطن أمه ثم نما شيئًا فشيئًا حتى صار رجلًا، أو صارت المرأة أُمًّا.</p>
+  <p>هذا الخالق العظيم الذي أوجدك يجب أن تتعرف عليه: على <strong>أسمائه وصفاته وجلاله وعظمته</strong>.</p>
+
+  <h3 class="sub" id="t-ashraf">لماذا العلم بالله أشرف العلوم؟</h3>
+  <p>لا يوجد علم أشرف من العلم بالله: لا الهندسة ولا الطب ولا التقنية، بل ولا العلوم الشرعية التخصصية كمصطلح الحديث واللغة العربية. والدليل جواب سؤالين:</p>
+
+  <h4 class="mini">الدليل الأول: ما أعظم آية في القرآن؟</h4>
+  <p>آية الكرسي. وما موضوعها؟ <strong>الحديث عن الله</strong>. فالنتيجة: أن الحديث عن الله أشرف ما يمكن الحديث عنه، وأشرف الحقائق.</p>
+  <div class="box addb"><span class="tag">إضافة</span><p>كون آية الكرسي أعظم آية ثابت في صحيح مسلم (رقم 810) من حديث أُبيّ بن كعب رضي الله عنه. وقد بدأ السؤال في الدرس بلفظ «أعظم سورة» ثم استُدرك إلى «أعظم آية»؛ وأما <strong>أعظم سورة</strong> فهي الفاتحة كما في صحيح البخاري (رقم 4474) من حديث أبي سعيد بن المعلّى رضي الله عنه.</p></div>
+
+  <h4 class="mini">الدليل الثاني: ما السورة التي تعدل ثلث القرآن؟</h4>
+  <p><span class="aya">﴿قُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ﴾</span> — وما فيها؟ الحديث عن الله. ولو سُئل أحد قبل أن يعرف هذه المعلومة لربما ظن أنها البقرة لطولها وكثرة موضوعاتها.</p>
+
+  <div class="box story"><span class="tag">القصة كاملة</span>
+    <p>قال النبي ﷺ لأصحابه: <strong>«احشدوا، فإني سأقرأ عليكم ثلث القرآن»</strong> — أي اجتمعوا.</p>
+    <p>فاجتمع الصحابة وتهيؤوا لسماع ثلث القرآن؛ أي إنهم توقعوا أن يقرأ عليهم قرابة عشرة أجزاء.</p>
+    <p>فخرج النبي ﷺ فقرأ: ﴿قُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ﴾، ثم دخل إلى بيته.</p>
+    <p>فلما دخل ظن الصحابة أنه تذكّر شيئًا أو انشغل بأمر فدخل البيت؛ فهم ما زالوا مستعدين لسماع ثلث القرآن.</p>
+    <p>فقال لهم النبي ﷺ: <strong>إن هذه السورة تعدل ثلث القرآن</strong>.</p>
+  </div>
+  <div class="box addb"><span class="tag">إضافة: التخريج</span><p>الحديث في صحيح مسلم (رقم 812) من حديث أبي هريرة رضي الله عنه، وفيه أنه ﷺ خرج إليهم بعد دخوله فقال: «إني قلت لكم: سأقرأ عليكم ثلث القرآن، ألا إنها تعدل ثلث القرآن».</p></div>
+
+  <div class="takeaway">من هذين الدليلين: <b>أعظم العلوم هو العلم بالله</b>. وتذكّر أنك لا تتعرف على شيء بعيد عنك؛ بل على ربك الذي خلقك وسوّاك وأحياك، ثم سيميتك ثم سيحييك. فالحديث عن الله أساس العلوم وأساس الحقائق وأشرف ما يتأسس عليه الإنسان.</div>
+
+  <h3 class="sub" id="t-wasail">كيف نتعرف على الله؟</h3>
+
+  <h4 class="mini">الوسيلة الأولى — وهي الأهم: القرآن، قراءةَ من يتدبر ليعرف ربه</h4>
+  <p>في كل صفحة من صفحات القرآن حديث عن الله؛ فاقرأ القرآن وأنت تركّز على التعرف على إلهك وخالقك.</p>
+  <p><strong>مثال عملي يومي — الفاتحة:</strong> لا تقرأها قراءة من يريد أن ينتهي من الفرض، بل قراءة <strong>العبد الذي يتكلم مع سيده</strong>، يتعرف عليه ويعترف له؛ ثم بعد أن تثني على الله تُقرّ: <span class="aya">﴿إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ﴾</span>.</p>
+  <p>والدافع إلى ذلك أنه ثبت في الحديث الصحيح أن الله يرد على العبد إذا قرأ الفاتحة؛ فإذا أردت أن يرد الله على دعائك واعترافك فليكن حضور قلبك هو الأساس:</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>يقول العبد</th><th>يقول الله تعالى</th></tr>
+    <tr><td class="aya">﴿الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ﴾</td><td>«حمدني عبدي»</td></tr>
+    <tr><td class="aya">﴿الرَّحْمَٰنِ الرَّحِيمِ﴾</td><td>«أثنى عليّ عبدي»</td></tr>
+    <tr><td class="aya">﴿مَالِكِ يَوْمِ الدِّينِ﴾</td><td>«مجّدني عبدي»</td></tr>
+  </table></div>
+  <div class="box addb"><span class="tag">إضافة: التخريج</span><p>حديث «قسمتُ الصلاة بيني وبين عبدي نصفين…» في صحيح مسلم (رقم 395) من حديث أبي هريرة رضي الله عنه.</p></div>
+
+  <h4 class="mini">الوسيلة الثانية: التفكر في عظمة الله من خلال مخلوقاته</h4>
+  <ul class="pl">
+    <li><strong>في نفسك أولًا:</strong> لو خرج جهاز جديد من أعظم الشركات التقنية يتكلم ويقفز ويطير ويفعل العجائب، لاجتمعنا عليه نتأمله ونفتحه ونسأل: من صنعه؟ ومتى؟ ولمدحت الشركة نفسها مدحًا لا نهاية له. ومع ذلك <strong>لا يوجد جهاز في الدنيا فيه من العجب والعظمة ما في خلق الإنسان</strong>؛ لكن الإنسان كثيرًا ما يغفل عن التفكر في هذا.</li>
+    <li><strong>في السماوات:</strong> متى آخر مرة نظرت إلى السماء ليلًا بعيدًا عن الأضواء وتأملت النجوم؟ هذا المنظر يؤثر في النفس كثيرًا حين تتفكر في عظمته وجلاله.</li>
+    <li><strong>في الحيوانات والطعام:</strong> تأكل كل يوم بيضًا ودجاجًا ولحمًا وخضروات — كيف صارت مناسبة لأجسامنا فائدةً وطعمًا؟ هل جئنا إلى الأرض فوجدناها صدفة؟ بل <strong>الله هو الذي خلقها وسخّرها</strong>.</li>
+  </ul>
+  <p>والله يذم الذين يرون هذه الآيات ثم لا يتفكرون فيها ولا يؤمنون:</p>
+  <blockquote class="q">﴿وَكَأَيِّن مِّنْ آيَةٍ فِي السَّمَاوَاتِ وَالْأَرْضِ يَمُرُّونَ عَلَيْهَا وَهُمْ عَنْهَا مُعْرِضُونَ﴾<span class="ref">يوسف: 105 — «كأيّن» تفيد التكثير: آيات كثيرة جدًّا يمرون عليها معرضين. فلا تكن مثلهم.</span></blockquote>
+  <blockquote class="q">﴿وَجَعَلْنَا السَّمَاءَ سَقْفًا مَّحْفُوظًا ۖ وَهُمْ عَنْ آيَاتِهَا مُعْرِضُونَ﴾<span class="ref">الأنبياء: 32 — السماء فيها آيات، والله يصف أناسًا معرضين عنها</span></blockquote>
+  <blockquote class="q">﴿سَنُرِيهِمْ آيَاتِنَا فِي الْآفَاقِ وَفِي أَنفُسِهِمْ حَتَّىٰ يَتَبَيَّنَ لَهُمْ أَنَّهُ الْحَقُّ﴾<span class="ref">فصلت: 53 — مجالا التفكر: الأنفس والآفاق</span></blockquote>
+
+  <div class="box key"><span class="tag">موقع هذه الحقيقة</span><p>العلم بالله هو <strong>الحقيقة الكبرى</strong>، وهو المؤثر والأساس الذي تنبني عليه الحقائق الثلاث الأخرى.</p></div>
+
+  <div class="quiz-block" data-quiz="s1"></div>
+</section>
+
+<!-- ==================== الحقيقة 2 ==================== -->
+<section class="part p2" id="h2">
+  <div class="sec-head"><div class="num">٢</div><div class="t"><small>الحقيقة الإيمانية الثانية</small><h2>الإيمان بالنبي ﷺ</h2></div></div>
+
+  <p>أن تؤمن وتتربى وتُديم التذكّر بأن هذا النبي الكريم:</p>
+  <ul class="pl">
+    <li>هو <strong>رسول الله</strong>، المبعوث إلينا وإلى الناس كافة، و<strong>خاتم النبيين</strong>.</li>
+    <li>وأن ما جاء به من الدين والهدي — سواء ما عمله أو ما بلّغه — هو <strong>أكمل الهدي</strong>؛ فلا منهج ولا طريق ولا وسيلة أفضل ولا أكمل من هديه ﷺ.</li>
+    <li>وأنه <strong>القدوة</strong> الذي يجب أن يُقتدى به.</li>
+    <li>وأن <strong>الميراث الحق</strong> الذي ينبغي الاعتناء به هو ميراثه عليه الصلاة والسلام.</li>
+  </ul>
+  <p>وهذا الإيمان من أعظم الحقائق الإيمانية التي يجب أن نذكّر بها أنفسنا، وهو يقود بطبيعة الحال إلى:</p>
+  <div class="chain"><span>إيمان</span><i>←</i><span>محبة</span><i>←</i><span>اتباع</span></div>
+
+  <h3 class="sub" id="t-sira">كيف نحقق هذه الحقيقة؟</h3>
+  <h4 class="mini">الأمر الأول: النظر في سيرته ﷺ والاهتمام بها، مستحضرًا ثلاثة أمور</h4>
+  <ol class="pl">
+    <li>أنك تقرأ سيرة <strong>أفضل الخلق</strong>.</li>
+    <li>أن الهدي الوارد عنه في هذه السيرة هو <strong>أكمل الهدي</strong>.</li>
+    <li>أنك تقرأ سيرة <strong>قدوتك</strong> الذي تقتدي به ﷺ.</li>
+  </ol>
+  <h4 class="mini">الأمر الثاني: العلم بسنته من خلال الأحاديث</h4>
+  <p>كان العلماء من زمن بعيد يعتنون في تربية الجيل الصاعد بتحفيظه أحاديث معيّنة — لا كل الأحاديث — ينبغي أن يُربّى عليها. ومن الكتب المعينة على ذلك:</p>
+  <ul class="pl">
+    <li><strong>الأربعون النووية</strong>: من الكتب المشهورة التي يحسن بالطلاب العناية بها.</li>
+    <li><strong>«المنهاج من ميراث النبوة»</strong> للشيخ أحمد السيد: جمع فيه 170 حديثًا راعى فيها شباب الجيل الصاعد في سياق تنميتهم الإيمانية.</li>
+  </ul>
+
+  <div class="quiz-block" data-quiz="s2"></div>
+</section>
+
+<!-- ==================== الحقيقة 3 ==================== -->
+<section class="part p3" id="h3">
+  <div class="sec-head"><div class="num">٣</div><div class="t"><small>الحقيقة الإيمانية الثالثة — وهي الأوسع تفصيلًا</small><h2>العبودية لله سبحانه</h2></div></div>
+
+  <p>العبودية تأتي <strong>بعد العلم بالله</strong>. ومفتاح الدخول في الإسلام والجنة: «أشهد أن لا إله إلا الله، وأشهد أن محمدًا رسول الله».</p>
+  <div class="box key"><span class="tag">ربط الحقائق بالشهادتين</span>
+    <ul class="pl">
+      <li>«محمد رسول الله» ← الحقيقة الثانية.</li>
+      <li>«لا إله إلا الله» ← <strong>لا تكتمل بالحقيقة الأولى وحدها</strong> (العلم بالله)، بل بالحقيقتين معًا: العلم بالله <strong>+</strong> العبودية له.</li>
+    </ul>
+  </div>
+
+  <h3 class="sub">ما حقيقة العبودية؟</h3>
+  <p>من الأجوبة الصحيحة: فعل ما أمر الله به وترك ما نهى عنه، والتعظيم، والإخلاص، والإقرار بما وصف به نفسه، والصيام، والصلة بالله. لكن <strong>أساسها</strong>:</p>
+  <div class="box def"><span class="tag">تعريف</span>
+    <p><strong>العبودية:</strong> الاستسلام والانقياد والخضوع والذل لله، مع الرغبة والمحبة له سبحانه. ومن مجموع هذه الحقائق تتكون العبودية.</p>
+    <ul class="pl">
+      <li><strong>الانقياد:</strong> حين يذكر الله لنا طريقًا معينًا ويأمرنا بحقائق معينة، فيستعد قلبك ليستجيب لأمر الله، ويسير على طريقه، وينطلق فيه.</li>
+      <li><strong>الاستسلام:</strong> أن يُسلِّم الإنسان لله في <strong>أوامره</strong>، وفي <strong>قضائه وقدره</strong>.</li>
+      <li><strong>الخضوع والذل:</strong> مقرونَين بالمحبة لله، لا ذلًّا مجردًا.</li>
+    </ul>
+  </div>
+  <p>وتفصيل العبودية في ثلاث نقاط:</p>
+
+  <h3 class="sub" id="t-asas">النقطة الأولى: أساس العبودية العلم بالله</h3>
+  <p>العلم بالله يؤدي إلى أن يعبد الإنسان ربه، وتتفرع عنه عبوديات كبرى:</p>
+
+  <div class="map">
+    <span class="root">العلم بالله</span>
+    <div class="branches">
+      <div class="br"><b>المحبة</b><div class="arr">تقود إلى ↓</div><span class="res">الانقياد والعمل</span><span class="res">الإنابة</span></div>
+      <div class="br"><b>الخشية</b><div class="arr">تقود إلى ↓</div><span class="res">الذل والانكسار</span><span class="res">التقوى: ترك الذنوب</span></div>
+      <div class="br"><b>التعظيم</b><div class="arr">والخشية من لُبّه</div></div>
+      <div class="br"><b>اليقين</b><div class="arr">يقود إلى ↓</div><span class="res">الصبر</span><span class="res">التوكل</span></div>
+      <div class="br"><b>حسن الظن بالله</b><div class="arr">من معرفة أنه رحيم شكور كريم بَرّ</div></div>
+    </div>
+    <div class="foot">كل ما في هذه الخريطة <strong>عبودية</strong>؛ فالعبودية اسم جامع لهذه العبادات كلها — والعلم بالله أساسها من حيث إنه يولّدها.</div>
+  </div>
+
+  <h4 class="mini">١) العلم بالله ← المحبة</h4>
+  <p>لا تستطيع أن تحب الله قبل أن تتعرف عليه. والمحبة لله من أعظم صور العبودية؛ فلا تظن أن العبودية مجرد أداء الفرائض العملية؛ بل <strong>محلها الأساسي القلب</strong>، ثم يأمر القلبُ الجوارحَ أن تستجيب لما فيه من المعاني الإيمانية.</p>
+  <p>فإذا كنت تحب الله ثم وجدت الله يأمرك بأمر فلم تفعله، فمعنى ذلك أن <strong>الخلل في المحبة</strong>:</p>
+  <blockquote class="q">تعصي الإلهَ وأنت تُظهر حبَّه … هذا مُحالٌ في القياس بديعُ<br>لو كان حبُّك صادقًا لأطعتَه … إنّ المحبَّ لمن يحبُّ مطيعُ<span class="ref">البيت الأول أُنشد في الدرس، والثاني تتمته</span></blockquote>
+  <div class="box addb"><span class="tag">إضافة</span><p>البيتان يُنسبان إلى محمود الورّاق، ويُنسبان كذلك إلى الإمام الشافعي، ويُروى عجز الأول: «هذا لعمري في القياس شنيعُ» — وفي الدرس تردد بين الروايتين.</p></div>
+  <p>ومن أشرف الأعمال التي تنتج عن المحبة: <strong>الإنابة</strong> (وسيأتي تعريفها في ركني العبودية).</p>
+
+  <h4 class="mini">٢) العلم بالله ← الخشية</h4>
+  <p>الخشية والخوف من الله من أهم معاني العبودية، والعلم يقود إليها:</p>
+  <blockquote class="q">﴿إِنَّمَا يَخْشَى اللَّهَ مِنْ عِبَادِهِ الْعُلَمَاءُ﴾<span class="ref">فاطر: 28</span></blockquote>
+  <p>وللخشية نتيجتان:</p>
+  <ul class="pl">
+    <li><strong>الذل والانكسار:</strong> لأنك تعلم من هو الله بعظمته وجلاله وكبريائه وعزته.</li>
+    <li><strong>التقوى:</strong> وهي المحاذرة والكف عن الذنوب والمعاصي.</li>
+  </ul>
+  <div class="box key"><span class="tag">قاعدة سلوكية</span><p>من أراد أن يترك الذنوب والمعاصي فطريقها الأساسي <strong>الخشية</strong>؛ ومن أراد أن يحصّل الخشية فطريقها الأساسي <strong>العلم بالله</strong>.</p></div>
+
+  <p><strong>تأمّل يورث الخشية — عظمة الكون:</strong> حين تتأمل السماوات والنجوم وعظمة هذا الكون ومساحته الهائلة، ثم تعلم أن هذا كله سيُطوى بيمين الله يوم القيامة:</p>
+  <blockquote class="q">﴿وَمَا قَدَرُوا اللَّهَ حَقَّ قَدْرِهِ وَالْأَرْضُ جَمِيعًا قَبْضَتُهُ يَوْمَ الْقِيَامَةِ وَالسَّمَاوَاتُ مَطْوِيَّاتٌ بِيَمِينِهِ﴾<span class="ref">الزمر: 67</span></blockquote>
+  <ul class="pl">
+    <li>الضوء يقطع نحو 300 ألف كيلومتر في الثانية.</li>
+    <li>الشمس تبعد عنا نحو <strong>ثماني دقائق ضوئية</strong> فقط.</li>
+    <li>أقرب نجم إلينا خارج المجموعة الشمسية يبعد نحو <strong>أربع سنوات ضوئية</strong>، وسائر نجوم مجرتنا أبعد من ذلك بكثير، والكون فيه ملايين المجرات غير مجرتنا.</li>
+  </ul>
+  <p>هذه المسافات الهائلة كلها يطويها الله يوم القيامة بيمينه؛ فالله عظيم يستحق أن يُخشى.</p>
+  <div class="box fixb"><span class="tag">تصحيح الحساب الفلكي</span>
+    <p>في التفريغ: «في الدقيقة يكون 30,000 كم»، ثم في حساب السنة: «بعدين 30 عشان يصير شهر، بعدين 354 عشان يصير سنة».</p>
+    <p><strong>الصواب:</strong> 300,000 كم/ث × 60 = <strong>18 مليون كم في الدقيقة</strong>؛ ثم × 60 ≈ 1.08 مليار كم في الساعة؛ ثم × 24 ≈ 26 مليار كم في اليوم؛ ثم يُضرب في عدد أيام السنة (نحو 365 يومًا) — لا في 30 ثم في 354 معًا، فذلك تكرار. فالسنة الضوئية ≈ <strong>9.46 تريليون كم</strong>، وأقرب نجم (قنطورس الأقرب) ≈ 4.24 سنة ضوئية ≈ <strong>40 تريليون كم</strong>. والشمس على بعد نحو 8 دقائق و20 ثانية ضوئية. والمعنى المراد في الدرس صحيح تمامًا، بل الأرقام الصحيحة أبلغ في الدلالة على العظمة.</p>
+  </div>
+
+  <h4 class="mini">٣) العلم بالله ← التعظيم</h4>
+  <p>التعظيم من العبوديات الكبرى، ومن أهم ما ينتج عن العلم وعن الخشية؛ والخشية أصلًا من لُبّ التعظيم.</p>
+
+  <h4 class="mini" id="t-yaqin">٤) العلم بالله وبدينه وشريعته ← اليقين</h4>
+  <p>«اليقين» أربعة أحرف (ي ق ي ن)، وهي <strong>أعظم كنز</strong> يمكن أن يحصّله الإنسان في هذه الدنيا: أن يعيش موقنًا بحقائق الدين:</p>
+  <ul class="pl">
+    <li>موقنًا بأن الله حق: خالقه ورازقه ومدبّره.</li>
+    <li>موقنًا بأن النبي ﷺ حق.</li>
+    <li>موقنًا بأن أشرف ما يعيش الإنسان لأجله هو العبودية لله.</li>
+    <li>موقنًا بالآخرة والرجوع إلى الله.</li>
+    <li>موقنًا بأن الله يكون مع أوليائه: مع من يصبر ويتقي ويتوكل عليه — <strong>اليقين بمعية الله لحمَلة دينه ورسالته</strong>.</li>
+  </ul>
+  <p><strong>واليقين يُنتج الصبر والتوكل:</strong> تتوكل على الله حين توقن أنه حق وأنه سيكون معك، وتصبر أمام الشدائد والابتلاءات لأنك توقن أن لقاء الله حق وثوابه حق والجنة حق. والأمور الصغيرة قد يصبر عليها الإنسان بلا يقين كبير، أما <strong>الشدائد الكبرى والابتلاءات العظيمة</strong> فلا يثبت فيها إلا اليقين.</p>
+
+  <div class="box story"><span class="tag">القصة: سحرة فرعون</span>
+    <p>هدّدهم فرعون بتقطيع أيديهم وأرجلهم من خلاف، فصبروا. فما الذي صبّرهم؟</p>
+    <p>الدليل على أنه <strong>اليقين</strong>: أن الشيء الوحيد الذي تغيّر أنهم رأوا بأعينهم الدليل الواضح على أن موسى رسول من عند الله؛ حين أكلت عصا موسى حبالهم وعصيّهم.</p>
+    <p>وهم أصحاب خبرة وصنعة في السحر، فعرفوا يقينًا أن هذا ليس سحرًا.</p>
+    <p>فسقطت كل الصور والإغراءات الفرعونية أمام <strong>صخرة اليقين</strong>.</p>
+  </div>
+
+  <div class="takeaway"><b>اليقين هو الصخرة</b> التي تتكسر عليها أنواع الفتن والشهوات والإغراءات والتحديات والابتلاءات. ومن لا يملك هذه الصخرة في قلبه فأي سهم يُوجَّه إليه — إذا كان من يد قوية — يُسقطه مباشرة.</div>
+  <p>ولذلك رأينا شبابًا ألحدوا، ورأينا شبابًا لم يُلحدوا بألسنتهم لكنهم في الحقيقة يعيشون حياة من لا يؤمن بالآخرة: إذا قلت له «اتق الله» لم يبالِ؛ يسرق ويشرب ويظلم ويتعدى، ولا يؤدي لله حقًّا: لا صلاة ولا زكاة ولا صيام، فإذا سألته قال: «الحمد لله، أنا مسلم».</p>
+
+  <h3 class="sub" id="t-mahal">النقطة الثانية: محل العبودية الأساسي القلب</h3>
+  <p>محلها <strong>الأساسي</strong> — لا الوحيد — هو القلب، ثم يتبعه البدن واللسان في أنواع العبوديات والأعمال.</p>
+  <div class="box warn"><span class="tag">اعتراض وجوابه</span>
+    <p><strong>الاعتراض:</strong> أساس العبودية اللسان لا القلب، بدليل أن أول ما يدخل به الإنسان الإسلام هو <strong>نطق الشهادة</strong>.</p>
+    <p><strong>الجواب:</strong> تأمّل اسمها: «<strong>شهادة</strong>». حين يُطلب منك أن تقول الحق فيما رأيت فتقول «أشهد أنه حصل كذا» — فكلمة «أشهد» تدل على شيء قبلها: <strong>العلم واليقين</strong>. والقرآن يربط بين الشهادة والعلم:</p>
+    <ul class="pl">
+      <li><span class="aya">﴿وَمَا شَهِدْنَا إِلَّا بِمَا عَلِمْنَا﴾</span> [يوسف: 81]</li>
+      <li><span class="aya">﴿فَاعْلَمْ أَنَّهُ لَا إِلَٰهَ إِلَّا اللَّهُ﴾</span> [محمد: 19]</li>
+    </ul>
+    <p>فالشهادة ليست كلمة باللسان فقط، بل إخبار عن علم ويقين في القلب.</p>
+  </div>
+  <p><strong>تطبيق عملي في التشهد:</strong> حين تقول في التحيات «أشهد أن لا إله إلا الله، وأشهد أن محمدًا عبده ورسوله» أخرجها من صميم قلبك، وقدّمها كشهادة وأنت تعلم ما تقول. تخيّل رجلًا يقف عند القاضي فيقول «أشهد أن فلانًا سارق» مستعجلًا بلا تثبّت! فلا يصح أن نسرد الشهادة في الصلاة سردًا سريعًا؛ قلها بهدوء وأنت تتفكر في معانيها.</p>
+  <div class="box def"><span class="tag">قاعدة</span><p><strong>الإيمان قول باللسان، واعتقاد بالجَنان، وعمل بالجوارح والأركان</strong>؛ ثلاثة، وأساسها القلب. فلو قال أحد: «قلبي مليء بالإيمان بالله ومحبته، وعندي يقين لا شك فيه» وهو لا يصلي، قيل له: فرّطتَ في ركن من أركان الإيمان، وهو <strong>ركن العمل</strong>.</p></div>
+  <div class="box addb"><span class="tag">إضافة توضيحية</span><p>استشهد أحد الحاضرين بآية الأعراب: <span class="aya">﴿قَالَتِ الْأَعْرَابُ آمَنَّا ۖ قُل لَّمْ تُؤْمِنُوا وَلَٰكِن قُولُوا أَسْلَمْنَا وَلَمَّا يَدْخُلِ الْإِيمَانُ فِي قُلُوبِكُمْ﴾</span> [الحجرات: 14]؛ وهي شاهد على أن الإيمان محله القلب، لكن المقصود في الجواب أوضح وأخص: دلالة لفظ «الشهادة» نفسه على العلم.</p></div>
+
+  <h3 class="sub" id="t-arkan">النقطة الثالثة: ركنا العبودية</h3>
+  <p>العبودية لله بشكل عام لها ركنان مجموعان في آية من الفاتحة:</p>
+  <blockquote class="q">﴿إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ﴾<span class="ref">الفاتحة: 5</span></blockquote>
+  <div class="tbl-wrap"><table>
+    <tr><th>الركن</th><th>مما يدخل تحته</th></tr>
+    <tr><td><strong>العبادة</strong> — ﴿إِيَّاكَ نَعْبُدُ﴾</td><td>الإخلاص، الإنابة (من أهم ما يدخل تحتها)، المحبة</td></tr>
+    <tr><td><strong>الاستعانة</strong> — ﴿وَإِيَّاكَ نَسْتَعِينُ﴾</td><td>التوكل، الدعاء (حين تطلب من الله شيئًا)</td></tr>
+  </table></div>
+  <p>وجاءت آيات تجمع الركنين بغير هذا اللفظ:</p>
+  <ul class="pl">
+    <li><span class="aya">﴿فَاعْبُدْهُ وَتَوَكَّلْ عَلَيْهِ﴾</span> [هود: 123] — «فاعبده» = إياك نعبد، «وتوكل عليه» = إياك نستعين.</li>
+    <li><span class="aya">﴿عَلَيْهِ تَوَكَّلْتُ وَإِلَيْهِ أُنِيبُ﴾</span> [هود: 88، الشورى: 10] — «توكلت» = إياك نستعين، «أُنيب» = إياك نعبد.</li>
+  </ul>
+  <div class="box fixb"><span class="tag">تصحيح نص الآية</span><p>في التفريغ: «قل هو ربي لا إله إلا هو عليه توكلت وإليه أنيب». <strong>والصواب</strong> أن آية الرعد (30) لفظها: <span class="aya">﴿قُلْ هُوَ رَبِّي لَا إِلَٰهَ إِلَّا هُوَ عَلَيْهِ تَوَكَّلْتُ وَإِلَيْهِ مَتَابِ﴾</span>، وأما «عليه توكلت وإليه أنيب» فهي في هود (88): <span class="aya">﴿وَمَا تَوْفِيقِي إِلَّا بِاللَّهِ ۚ عَلَيْهِ تَوَكَّلْتُ وَإِلَيْهِ أُنِيبُ﴾</span>، وفي الشورى (10): <span class="aya">﴿ذَٰلِكُمُ اللَّهُ رَبِّي عَلَيْهِ تَوَكَّلْتُ وَإِلَيْهِ أُنِيبُ﴾</span>. والاستشهاد صحيح المعنى في كل المواضع (والمتاب: الرجوع والتوبة، وهو قريب من الإنابة).</p></div>
+  <p>وأما ﴿وَاسْتَعِينُوا بِالصَّبْرِ وَالصَّلَاةِ﴾ [البقرة: 45] فجواب جميل لكنه ليس دقيقًا في التمثيل للركنين.</p>
+  <div class="box def"><span class="tag">تعريف</span><p><strong>الإنابة:</strong> دوام الرجوع إلى الله سبحانه والإقبال عليه. وهي <strong>سرٌّ من أسرار العبودية العظيمة</strong>.</p></div>
+  <div class="box addb"><span class="tag">المحاضرة التالية في المادة</span><p>للشيخ محاضرة كاملة عن الإنابة بعنوان <strong>«القلب المنيب»</strong>، وقد أوصى بمشاهدتها بعد هذا الدرس مباشرة وجعلها إلزامية، وهي المحاضرة الثانية في مادة «مقدمات تمهيدية» (اليوم 2): <a href="02.html">الانتقال إلى «القلب المنيب» ←</a></p></div>
+
+  <div class="quiz-block" data-quiz="s3"></div>
+</section>
+
+<!-- ==================== الحقيقة 4 ==================== -->
+<section class="part p4" id="h4">
+  <div class="sec-head"><div class="num">٤</div><div class="t"><small>الحقيقة الإيمانية الرابعة</small><h2>الإيمان باليوم الآخر</h2></div></div>
+
+  <p>الإيمان بالجنة والنار، وبلقاء الله، وبأننا سنُبعث مرة أخرى، وبالحساب والجزاء. وهذا ركن أساسي وثيق؛ <strong>لن تستفيد من حقائق الدين والقرآن استفادة بالغة إذا لم تستحضره دائمًا</strong>.</p>
+  <div class="box key"><span class="tag">قاعدة</span><p><strong>بقدر خلو القلب من الإيمان باليوم الآخر، بقدر ما يبتعد الإنسان عن تطبيق ما أمر الله به.</strong></p></div>
+  <blockquote class="q">﴿أَرَأَيْتَ الَّذِي يُكَذِّبُ بِالدِّينِ ۝ فَذَٰلِكَ الَّذِي يَدُعُّ الْيَتِيمَ﴾<span class="ref">الماعون: 1–2 — يدفع اليتيم بعنف لأنه يكذّب بالدين، و«الدين» هنا: الجزاء</span></blockquote>
+
+  <h3 class="sub">لماذا ركزت السور المكية الأولى على اليوم الآخر؟</h3>
+  <p>كان التركيز في أول ما نزل من السور المكية على اليوم الآخر والجنة والنار والعذاب والثواب؛ لأن هذه الموضوعات — وهي حق في ذاتها — هي التي تجعل الإنسان يدرك أنه <strong>لا يعيش في الخلود</strong>، بل في حياة مؤقتة: لم تدم على من قبلنا، ولن تدوم لنا، ولن تدوم لمن بعدنا.</p>
+  <p>هذا العمر الذي تعيشه الآن عاشه من قبلك: طبقة آبائك كانوا مثلك في هذا العمر، وطبقة أجدادك، وأجدادهم، وأجداد أجدادهم. سِرْ حيث شئت في الأرض فسترى <strong>مقابر</strong>؛ وهذه المقابر لم تبدأ هكذا، بل هي نهاية مشوار أناس عاشوا وكبروا وتعلموا، وأرادوا أن يعيشوا حياة سعيدة رغيدة، وعاشوا أحوالًا مختلفة، ثم في الأخير ماتوا.</p>
+  <div class="takeaway">يقيننا أن <b>الموت ليس نهاية الطريق</b>، بل بداية الرحلة الأخروية؛ والدنيا فترة يسيرة جدًّا لا تُذكر أمام ما سيأتي. ومن لا يؤمن إيمانًا يقينيًّا جازمًا ويستحضر دائمًا لقاء الله وسؤاله عما عمل، فسيفرّط كثيرًا في حياته.</div>
+
+  <h3 class="sub">عظمة ذلك اليوم في القرآن</h3>
+  <p>من أعظم ما ينمّي الإيمان ويفيد القلب في تلقي حقائق القرآن: الإيمان بأن العبد سيُبعث ويقف بين يدي الله، وأن ذلك اليوم عظيم شديد:</p>
+  <blockquote class="q">﴿يَوْمَ تَرَوْنَهَا تَذْهَلُ كُلُّ مُرْضِعَةٍ عَمَّا أَرْضَعَتْ وَتَضَعُ كُلُّ ذَاتِ حَمْلٍ حَمْلَهَا وَتَرَى النَّاسَ سُكَارَىٰ وَمَا هُم بِسُكَارَىٰ وَلَٰكِنَّ عَذَابَ اللَّهِ شَدِيدٌ﴾<span class="ref">الحج: 2</span></blockquote>
+  <blockquote class="q">﴿وَلَا تَحْسَبَنَّ اللَّهَ غَافِلًا عَمَّا يَعْمَلُ الظَّالِمُونَ ۚ إِنَّمَا يُؤَخِّرُهُمْ لِيَوْمٍ تَشْخَصُ فِيهِ الْأَبْصَارُ ۝ مُهْطِعِينَ مُقْنِعِي رُءُوسِهِمْ لَا يَرْتَدُّ إِلَيْهِمْ طَرْفُهُمْ ۖ وَأَفْئِدَتُهُمْ هَوَاءٌ﴾<span class="ref">إبراهيم: 42–43</span></blockquote>
+
+  <h4 class="mini">من أسماء ذلك اليوم وألقابه</h4>
+  <div class="tbl-wrap"><table>
+    <tr><th>الاسم</th><th>الموضع</th></tr>
+    <tr><td>يوم التغابن</td><td>التغابن: 9</td></tr>
+    <tr><td>يوم الحسرة — ﴿وَأَنذِرْهُمْ يَوْمَ الْحَسْرَةِ﴾</td><td>مريم: 39</td></tr>
+    <tr><td>يوم الآزفة — ﴿وَأَنذِرْهُمْ يَوْمَ الْآزِفَةِ إِذِ الْقُلُوبُ لَدَى الْحَنَاجِرِ كَاظِمِينَ﴾</td><td>غافر: 18</td></tr>
+    <tr><td>يوم التلاق — ﴿لِيُنذِرَ يَوْمَ التَّلَاقِ﴾</td><td>غافر: 15</td></tr>
+    <tr><td>الطامة الكبرى — ﴿فَإِذَا جَاءَتِ الطَّامَّةُ الْكُبْرَىٰ﴾</td><td>النازعات: 34</td></tr>
+    <tr><td>الصاخّة — ﴿فَإِذَا جَاءَتِ الصَّاخَّةُ﴾</td><td>عبس: 33</td></tr>
+    <tr><td>يوم الفصل — ﴿هَٰذَا يَوْمُ الْفَصْلِ ۖ جَمَعْنَاكُمْ وَالْأَوَّلِينَ﴾</td><td>المرسلات: 38</td></tr>
+  </table></div>
+
+  <h4 class="mini">ومن مشاهده</h4>
+  <ul class="pl">
+    <li><span class="aya">﴿إِذَا السَّمَاءُ انشَقَّتْ ۝ وَأَذِنَتْ لِرَبِّهَا وَحُقَّتْ ۝ وَإِذَا الْأَرْضُ مُدَّتْ ۝ وَأَلْقَتْ مَا فِيهَا وَتَخَلَّتْ﴾</span> [الانشقاق: 1–4]</li>
+    <li><span class="aya">﴿إِذَا السَّمَاءُ انفَطَرَتْ ۝ وَإِذَا الْكَوَاكِبُ انتَثَرَتْ ۝ وَإِذَا الْبِحَارُ فُجِّرَتْ ۝ وَإِذَا الْقُبُورُ بُعْثِرَتْ ۝ عَلِمَتْ نَفْسٌ مَّا قَدَّمَتْ وَأَخَّرَتْ﴾</span> [الانفطار: 1–5]</li>
+    <li><span class="aya">﴿إِذَا الشَّمْسُ كُوِّرَتْ ۝ وَإِذَا النُّجُومُ انكَدَرَتْ ۝ وَإِذَا الْجِبَالُ سُيِّرَتْ…﴾</span> إلى <span class="aya">﴿وَإِذَا الْمَوْءُودَةُ سُئِلَتْ ۝ بِأَيِّ ذَنبٍ قُتِلَتْ… ۝ وَإِذَا الْجَنَّةُ أُزْلِفَتْ ۝ عَلِمَتْ نَفْسٌ مَّا أَحْضَرَتْ﴾</span> [التكوير: 1–14]</li>
+    <li>تكرار <span class="aya">﴿وَيْلٌ يَوْمَئِذٍ لِّلْمُكَذِّبِينَ﴾</span> في المرسلات، ومعه <span class="aya">﴿هَٰذَا يَوْمُ لَا يَنطِقُونَ ۝ وَلَا يُؤْذَنُ لَهُمْ فَيَعْتَذِرُونَ﴾</span> و<span class="aya">﴿فَإِن كَانَ لَكُمْ كَيْدٌ فَكِيدُونِ﴾</span>.</li>
+    <li><span class="aya">﴿كَلَّا إِذَا دُكَّتِ الْأَرْضُ دَكًّا دَكًّا ۝ وَجَاءَ رَبُّكَ وَالْمَلَكُ صَفًّا صَفًّا ۝ وَجِيءَ يَوْمَئِذٍ بِجَهَنَّمَ﴾</span> [الفجر: 21–23] — تأتي جهنم تجرّها الملائكة؛ شيء عظيم وهول. وهذه أمور كلها حق وستحصل.</li>
+  </ul>
+  <p>في ذلك اليوم يندم الإنسان على تفريطه: <span class="aya">﴿أَن تَقُولَ نَفْسٌ يَا حَسْرَتَىٰ عَلَىٰ مَا فَرَّطتُ فِي جَنبِ اللَّهِ﴾</span> [الزمر: 56]، ويفرح ويسعد من اتبع ما أمر الله به.</p>
+
+  <div class="box key"><span class="tag">الدين ليس صعبًا</span><p>الدين الذي يريد الله منا أن نتبعه لننجو به <strong>ليس صعبًا من حيث كثرة التفاصيل</strong>؛ أساسه هذه المعاني: العبودية لله، الاستسلام، الذل، الانقياد، الخشية، التقوى، الاتباع، التضرع، التوكل، الدعاء. ثم تلتزم بالفرائض وتؤديها على وجهها: إذا صليت فصلِّ صلاة من يحب ربه ويخشاه ويريد منه أن يهديه ويسدده.</p></div>
+
+  <div class="quiz-block" data-quiz="s4"></div>
+</section>
+
+<!-- ==================== الثمرات ==================== -->
+<section class="part p5" id="h5">
+  <div class="sec-head"><div class="num">✦</div><div class="t"><small>نتيجة الحقائق الأربع</small><h2>الثمرات والوصايا الختامية</h2></div></div>
+
+  <h3 class="sub">الثمرة الأولى: لماذا نعيش؟</h3>
+  <p>أهم ما يعيش الإنسان لأجله: أن <strong>يحقق العبودية لله</strong>، و<strong>ينجو من عذابه في الآخرة</strong>، و<strong>ينال ثوابه في الجنة</strong>.</p>
+
+  <h3 class="sub">الثمرة الثانية: أعظم مطلب هو الهداية</h3>
+  <p>أعظم ما يطلبه الإنسان من ربه: أن يهديه إليه وإلى ما يحب. ولذلك كان الدعاء المفروض في كل صلاة: <span class="aya">﴿اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ﴾</span> — أشرف وأهم دعاء يمكن أن تدعو به في حياتك.</p>
+  <p>ولما أوصى النبي ﷺ علي بن أبي طالب رضي الله عنه بدعاء قال له: <strong>«قل: اللهم اهدني وسدّدني»</strong> (صحيح مسلم، رقم 2725).</p>
+
+  <h3 class="sub">الثمرة الثالثة: أن تتغير نظرتك إلى القرآن</h3>
+  <p>وهي الأساس الذي بدأ به الدرس: «فتعلمنا الإيمان قبل أن نتعلم القرآن، ثم تعلمنا القرآن فازددنا به إيمانًا». أن تستفيد من القرآن استفادة من يتعلم ما يريده الله فيهتدي به.</p>
+  <div class="takeaway"><b>أعظم إنجاز تحققه تجاه القرآن ليس الحفظ ولا القراءات</b> — وهي أشياء جيدة ممتازة — بل أن <b>تهتدي به</b>؛ لأن الله أنزله لنهتدي به: ﴿ذَٰلِكَ الْكِتَابُ لَا رَيْبَ ۛ فِيهِ ۛ هُدًى لِّلْمُتَّقِينَ﴾، و﴿إِنَّ هَٰذَا الْقُرْآنَ يَهْدِي لِلَّتِي هِيَ أَقْوَمُ﴾ [الإسراء: 9].</div>
+
+  <h4 class="mini">أعِد قراءة أول البقرة بعين الحقائق الأربع</h4>
+  <div class="tbl-wrap"><table>
+    <tr><th>الآية</th><th>ما تستحضره</th></tr>
+    <tr><td class="aya">﴿هُدًى لِّلْمُتَّقِينَ﴾</td><td>العبودية المؤسسة على العلم بالله (الخشية والتقوى)</td></tr>
+    <tr><td class="aya">﴿الَّذِينَ يُؤْمِنُونَ بِالْغَيْبِ﴾</td><td>الإيمان باليوم الآخر (وسائر الغيب)</td></tr>
+    <tr><td class="aya">﴿وَيُقِيمُونَ الصَّلَاةَ وَمِمَّا رَزَقْنَاهُمْ يُنفِقُونَ﴾</td><td>العبودية العملية</td></tr>
+    <tr><td class="aya">﴿وَالَّذِينَ يُؤْمِنُونَ بِمَا أُنزِلَ إِلَيْكَ وَمَا أُنزِلَ مِن قَبْلِكَ﴾</td><td>الإيمان بالنبي ﷺ وما أُنزل إليه</td></tr>
+    <tr><td class="aya">﴿وَبِالْآخِرَةِ هُمْ يُوقِنُونَ﴾</td><td>اليوم الآخر + اليقين</td></tr>
+    <tr><td class="aya">﴿أُولَٰئِكَ عَلَىٰ هُدًى مِّن رَّبِّهِمْ ۖ وَأُولَٰئِكَ هُمُ الْمُفْلِحُونَ﴾</td><td>الثمرة: الهداية والفلاح</td></tr>
+  </table></div>
+
+  <h4 class="mini">مقارنة: أيهما أفضل؟</h4>
+  <ul class="pl">
+    <li><strong>الأول:</strong> أتم حفظ القرآن، وأخذ القراءات وعنده إجازة؛ لكن غاية ما حققه أنه صار قارئًا متقنًا جميل الصوت، وتركيزه دائمًا في كيفية الأداء الصحيح. (ليس مرائيًا، بل إنسان عادي.)</li>
+    <li><strong>الثاني:</strong> لم يحفظ إلى أن مات إلا عشرة أجزاء، لكنه إذا قرأ القرآن قرأه قراءة من يريد أن يهتدي به.</li>
+  </ul>
+  <p>الجواب: <strong>الثاني أفضل</strong>. فلا تكن قراءتك قراءة من أعظم أمانيه أن يأخذ إجازة، أو أن يتخرج حافظًا فقط؛ فهذه أهداف شريفة، لكنها ليست الأشرف والأعلى.</p>
+
+  <h3 class="sub">وصايا ختامية</h3>
+  <ul class="pl">
+    <li><strong>ارفعوا هممكم</strong> وانظروا إلى الآفاق العليا.</li>
+    <li><strong>الجيل الصاعد مُبتلى</strong> في هذه المرحلة بكثرة التفاهات من حوله، وكثرة المعاصي والذنوب والفتن؛ فيحتاج إلى الصبر.</li>
+    <li><strong>أحسنوا الظن بالله:</strong> من يتمسك بدينه ويستقيم ويتعبد لله ويتذلل له ويشكره على نعمه — وأكبرها نعمة الهداية — فإن الله يشكر له سعيه. فمن نتائج العلم بالله أن تعلم أنه رحيم، شكور، كريم، بَرّ؛ فليست الخشية وحدها ثمرة العلم بالله، بل المحبة وحسن الظن أيضًا.</li>
+    <li><strong>استبشروا:</strong> من صبر واستقام مخلصًا لله فليستبشر، ولا يشعر أنه محروم؛ بل ليكن أعظم المسرورين في الحياة بأن الله وفقه ليعبده ويعظّم كتابه ويستقيم على أمره.</li>
+    <li><strong>لا تستعلِ على الناس:</strong> المستقيم لا يشعر أنه البطل الذي حقق كل شيء وأن الناس أغبياء حقراء؛ بل ينظر إليهم بعين الرحمة ويرجو لهم من الخير ما رزقه الله. وحين يعلّم أو يدعو أو ينكر منكرًا فليس القصد مجرد إقامة الحجة على الآخرين ليدخلوا النار، بل <strong>الرحمة بهم</strong>: <span class="aya">﴿وَمَا أَرْسَلْنَاكَ إِلَّا رَحْمَةً لِّلْعَالَمِينَ﴾</span> [الأنبياء: 107]، ومن أعظم صور الرحمة الدلالة على طريق الجنة والتحذير من طريق النار.</li>
+  </ul>
+
+  <div class="box story"><span class="tag">القصة: إنقاذ من النار</span>
+    <p>ذهب النبي ﷺ إلى يهوديٍّ حضرته الوفاة.</p>
+    <p>فلم يكن أول همّه السؤال عن علاجه أو غير ذلك؛ بل أهم شيء — إذا كان سيموت — أن ينجو من النار، فدعاه إلى الإسلام.</p>
+    <p>فأسلم، فقال النبي ﷺ: <strong>«الحمد لله الذي أنقذه بي من النار»</strong>.</p>
+    <p>هذه هي الرحمة للعالمين.</p>
+  </div>
+  <div class="box fixb"><span class="tag">تصحيح وتخريج</span><p>في الدرس: «جاره اليهودي». <strong>والذي في الحديث الصحيح</strong> أنه <strong>غلام يهودي كان يخدم النبي ﷺ</strong> فمرض، فأتاه يعوده، فقعد عند رأسه فقال له: «أسلم»، فنظر إلى أبيه وهو عنده فقال له: أطع أبا القاسم ﷺ، فأسلم، فخرج النبي ﷺ وهو يقول: «الحمد لله الذي أنقذه من النار» — صحيح البخاري (رقم 1356) من حديث أنس رضي الله عنه. ولفظ «أنقذه بي من النار» في رواية أبي داود.</p></div>
+
+  <div class="box key"><span class="tag">خاتمة</span><p>لا يزال في الموضوع حديث كثير؛ لأنه أساس الدين الذي ينشأ عليه الشاب المسلم. نسأل الله أن يبارك في هذا القليل وأن ينفعنا به.</p></div>
+
+  <div class="quiz-block" data-quiz="s5"></div>
+</section>
+
+</main>
+
+<!-- ==================== البطاقات ==================== -->
+<div id="anki">
+  <div class="wrap">
+    <h2>بطاقات المراجعة</h2>
+    <p class="sub">راجعها بعد يومين من دراسة الملف · اضغط البطاقة لقلبها · ← → للتنقل · المسافة للقلب</p>
+    <div class="filters" id="filters"></div>
+    <div class="flip" id="flip" onclick="this.classList.toggle('on')">
+      <div class="flip-in">
+        <div class="face front">
+          <span class="lvl" id="lvl"></span>
+          <div class="lbl">السؤال</div>
+          <div class="txt" id="q"></div>
+          <div class="hint">اضغط للقلب</div>
+        </div>
+        <div class="face back">
+          <div class="lbl">الجواب</div>
+          <div class="txt" id="a"></div>
+        </div>
+      </div>
+    </div>
+    <div class="ctrl">
+      <button onclick="go(1)" aria-label="التالي">←</button>
+      <div class="counter" id="counter"></div>
+      <button onclick="go(-1)" aria-label="السابق">→</button>
+    </div>
+    <button class="dl" onclick="dl()">⬇ تحميل ملف Anki (TSV)</button>
+    <div class="tagline" id="tagline"></div>
+  </div>
+</div>
+
+<footer>
+  <b>فتعلمنا الإيمان — مقدمات تمهيدية · المحاضرة 1</b><br>
+  البناء المنهجي · المستوى الأول · المرحلة التمهيدية · اليوم 1<br>
+  الشيخ أحمد السيد · ملف دراسي شخصي مبني على تفريغ المحاضرة
+</footer>
+
+<script>
+const SECTIONS = {
+  1:{name:"العلم بالله", color:"#2b3a75"},
+  2:{name:"الإيمان بالنبي ﷺ", color:"#1d6b5b"},
+  3:{name:"العبودية", color:"#8a2e3b"},
+  4:{name:"اليوم الآخر", color:"#5a4a7c"},
+  5:{name:"الثمرات", color:"#9a6a12"}
+};
+const LEVELS = {1:"الفكرة المركزية",2:"قاعدة / تعريف",3:"دليل ووجهه",4:"فرق وتمييز",5:"قصة وعبرة",6:"أعلام وكتب"};
+
+const CARDS_DATA = [
+ {"s":1,"q":"ما الغاية من تعلّم الإيمان قبل القرآن، كما في أثر جندب: «تعلمنا الإيمان قبل أن نتعلم القرآن، ثم تعلمنا القرآن فازددنا به إيمانًا»؟","a":"أن يتلقى المتعلم القرآن بقلب مؤمن مستعد للانتفاع به؛ فالقرآن لا ينتفع به كل أحد، فإذا نزلت آياته على قلب مؤمن عابد لله ازداد بها إيمانًا وهداية.","level":1,"anchor":"أثر جندب — الإيمان قبل القرآن","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":1,"q":"ما الدليل القرآني على أن الانتفاع بالقرآن مشروط بصفات في القارئ لا يحصل لكل أحد؟","a":"﴿ذَٰلِكَ الْكِتَابُ لَا رَيْبَ فِيهِ هُدًى لِّلْمُتَّقِينَ﴾ ثم وصف المتقين بالإيمان بالغيب وإقامة الصلاة؛ ومثلها ﴿إِنَّمَا تُنذِرُ الَّذِينَ يَخْشَوْنَ رَبَّهُم بِالْغَيْبِ﴾ و﴿سَيَذَّكَّرُ مَن يَخْشَىٰ﴾ و﴿وَمَا يَتَذَكَّرُ إِلَّا مَن يُنِيبُ﴾.","level":3,"anchor":"القرآن لا ينتفع به كل أحد","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":1,"q":"ما الحقائق الإيمانية الأربع الكبرى التي يتربى عليها الشاب ليتلقى القرآن بقلب مؤمن، وأيها الأساس الذي تنبني عليه البقية؟","a":"العلم بالله، والإيمان بالنبي ﷺ، والعبودية لله، والإيمان باليوم الآخر. والأساس الذي تنبني عليه الثلاث الأخرى وتتأثر به: العلم بالله.","level":1,"anchor":"الحقائق الأربع","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":1,"q":"لماذا يُعدّ العلم بالله أشرف العلوم، فوق الطب والهندسة بل فوق العلوم الشرعية التخصصية كمصطلح الحديث واللغة؟","a":"لأن موضوعه الله الخالق نفسه، وأنت تتعرف فيه على ربك الذي خلقك وسوّاك وأحياك ثم يميتك ثم يحييك؛ ودليل شرفه أن أعظم آية (آية الكرسي) والسورة التي تعدل ثلث القرآن (الإخلاص) موضوعهما الحديث عن الله.","level":2,"anchor":"شرف العلم بالله","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":1,"q":"آية الكرسي أعظم آية في القرآن، و﴿قُلْ هُوَ اللَّهُ أَحَدٌ﴾ تعدل ثلثه — ما الذي يُستنبط من اجتماع هذين الفضلين؟","a":"أن موضوع كلٍّ منهما الحديث عن الله؛ فالحديث عن الله أشرف ما يمكن الحديث عنه، والعلم بالله أعظم العلوم وأجلّ المعاني.","level":3,"anchor":"آية الكرسي وسورة الإخلاص","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":1,"q":"قال النبي ﷺ لأصحابه: «احشدوا فإني سأقرأ عليكم ثلث القرآن» — ماذا فعل بعدها، وماذا ظن الصحابة، وما العبرة؟","a":"اجتمعوا متهيئين لسماع قدر كبير يقارب عشرة أجزاء، فخرج فقرأ سورة الإخلاص ثم دخل بيته، فظنوا أنه عرض له أمر شغله، ثم أخبرهم أنها تعدل ثلث القرآن. والعبرة: قِصَر السورة مع عِظَم قدرها لأنها خالصة في الحديث عن الله.","level":5,"anchor":"قصة «احشدوا» — مسلم 812","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":1,"q":"ما الوسيلتان الأساسيتان لتحصيل العلم بالله، وأيهما الأهم؟","a":"الأولى وهي الأهم: قراءة القرآن قراءة تدبر بقصد التعرف على الله، ففي كل صفحة منه حديث عنه. والثانية: التفكر في عظمة الله من خلال مخلوقاته في النفس والآفاق.","level":2,"anchor":"وسائل التعرف على الله","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":1,"q":"كيف تتحول قراءة الفاتحة في الصلاة من أداءٍ للفرض إلى وسيلة للتعرف على الله، وما الحديث الذي يبعث على ذلك؟","a":"بأن يقرأها قراءة العبد المخاطِب لسيده، المعترف له، الحاضر القلب. والباعث حديث مسلم أن الله يرد على العبد آيةً آية: ﴿الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ﴾ «حمدني عبدي»، ﴿الرَّحْمَٰنِ الرَّحِيمِ﴾ «أثنى عليّ عبدي»، ﴿مَالِكِ يَوْمِ الدِّينِ﴾ «مجّدني عبدي».","level":3,"anchor":"الفاتحة حوار مع الله — مسلم 395","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":1,"q":"الناس يجتمعون متعجبين حول جهاز تقني جديد مدهش — فلماذا يُعدّ ترك التفكر في خلق الإنسان نفسه غفلةً كبيرة؟","a":"لأنه لا يوجد جهاز في الدنيا فيه من العجب والعظمة ما في خلق الإنسان، ومع ذلك يغفل عنه؛ ولذلك يبدأ التفكر بالنفس أولًا ثم ينتقل إلى الآفاق.","level":3,"anchor":"التفكر في النفس أولًا","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":1,"q":"﴿وَكَأَيِّن مِّنْ آيَةٍ فِي السَّمَاوَاتِ وَالْأَرْضِ يَمُرُّونَ عَلَيْهَا وَهُمْ عَنْهَا مُعْرِضُونَ﴾ — ما دلالة «كأيّن»، وما الذي تذمه الآية؟","a":"«كأيّن» تفيد التكثير؛ والآية تذم من يمر على آيات الله الكثيرة في السماوات والأرض ثم لا يتفكر فيها ولا يؤمن، والمطلوب ألا تكون مثلهم. ونظيرها ﴿وَجَعَلْنَا السَّمَاءَ سَقْفًا مَّحْفُوظًا ۖ وَهُمْ عَنْ آيَاتِهَا مُعْرِضُونَ﴾.","level":3,"anchor":"ذم المعرضين عن الآيات","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":1,"q":"البيض والدجاج واللحم والخضروات التي نأكلها كل يوم — كيف يكون التفكر فيها طريقًا إلى معرفة الله؟","a":"بالسؤال: من جعلها مناسبة لأجسامنا في فائدتها وطعمها؟ لم نجدها في الأرض صدفة؛ بل الله هو الذي خلقها وسخّرها لنا.","level":3,"anchor":"التفكر في الطعام","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":1,"q":"﴿سَنُرِيهِمْ آيَاتِنَا فِي الْآفَاقِ وَفِي أَنفُسِهِمْ حَتَّىٰ يَتَبَيَّنَ لَهُمْ أَنَّهُ الْحَقُّ﴾ — ما المجالان اللذان تحددهما الآية للتفكر الموصل إلى معرفة الله؟","a":"مجال الأنفس (خلق الإنسان نفسه) ومجال الآفاق (السماوات والنجوم والأرض والحيوان والنبات).","level":2,"anchor":"مجالا التفكر","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+
+ {"s":2,"q":"ما مضمون الإيمان بالنبي ﷺ الذي ينبغي أن يُديم المسلم تذكّره؟","a":"أنه رسول الله المبعوث إلى الناس كافة وخاتم النبيين، وأن ما جاء به عملًا وبلاغًا هو أكمل الهدي فلا منهج أفضل منه، وأنه القدوة الواجب الاقتداء بها، وأن ميراثه هو الميراث الحق الجدير بالعناية.","level":1,"anchor":"مضمون الإيمان بالنبي ﷺ","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":2,"q":"ما السلسلة التي يقود إليها الإيمان بالنبي ﷺ في القلب والسلوك؟","a":"إيمان ← محبة ← اتباع.","level":2,"anchor":"إيمان فمحبة فاتباع","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":2,"q":"ما الوسيلتان العمليتان لتحقيق حقيقة الإيمان بالنبي ﷺ في نفس الشاب؟","a":"الأولى: النظر في سيرته ﷺ والعناية بها. والثانية: العلم بسنته من خلال حفظ أحاديث مختارة يُربّى عليها الجيل الصاعد.","level":2,"anchor":"تحقيق الإيمان بالنبي ﷺ","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":2,"q":"ما الأمور الثلاثة التي ينبغي استحضارها عند قراءة السيرة النبوية؟","a":"أنك تقرأ سيرة أفضل الخلق؛ وأن الهدي الوارد فيها هو أكمل الهدي؛ وأنك تقرأ سيرة قدوتك الذي تقتدي به ﷺ.","level":2,"anchor":"استحضارات قراءة السيرة","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":2,"q":"ما الكتابان المقترحان لحفظ أحاديث مختارة يتربى عليها الجيل الصاعد إيمانيًّا؟","a":"«الأربعون النووية»؛ و«المنهاج من ميراث النبوة» للشيخ أحمد السيد، وفيه 170 حديثًا روعي فيها التنمية الإيمانية للشباب.","level":6,"anchor":"كتب حفظ الأحاديث","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+
+ {"s":3,"q":"لماذا لا تكتمل «لا إله إلا الله» بالعلم بالله وحده، وما الذي يكملها؟","a":"لأنها تتضمن معرفة الله وإفراده بالعبودية معًا؛ فلا تكتمل إلا بالحقيقتين: العلم بالله والعبودية له. أما «محمد رسول الله» فتتعلق بحقيقة الإيمان بالنبي ﷺ.","level":1,"anchor":"الحقائق والشهادتان","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":3,"q":"ما أساس العبودية لله في حقيقتها، بعيدًا عن تعداد العبادات التفصيلية؟","a":"الاستسلام والانقياد والخضوع والذل لله، مع الرغبة والمحبة له؛ ومن مجموع هذه المعاني تتكون العبودية.","level":2,"anchor":"تعريف العبودية","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":3,"q":"في حقيقة العبودية: ما الفرق بين معنى «الانقياد» ومعنى «الاستسلام»؟","a":"الانقياد: استعداد القلب للاستجابة لأمر الله والسير على طريقه والانطلاق فيه. والاستسلام: أن يسلّم الإنسان لله في أوامره، وفي قضائه وقدره.","level":4,"anchor":"الانقياد والاستسلام","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":3,"q":"إذا كانت المحبة والخشية والتقوى كلها عبوديات، فبأي معنى يكون العلم بالله «أساس» العبودية؟","a":"العبودية اسم جامع لهذه العبادات كلها، والعلم بالله هو الذي يولّدها ويؤدي إليها؛ فلا يحب الله ولا يخشاه ولا يعظمه ولا يوقن به إلا من عرفه.","level":1,"anchor":"العلم أساس العبودية","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":3,"q":"ما العبوديات القلبية الكبرى التي تتفرع عن العلم بالله مباشرة؟","a":"المحبة، والخشية، والتعظيم، واليقين — ومعها حسن الظن بالله لمعرفة أنه رحيم شكور كريم بَرّ.","level":2,"anchor":"ثمرات العلم بالله","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":3,"q":"إلامَ تقود محبة الله في سلوك العبد، وما أشرف عمل يتولد عنها؟","a":"تقود إلى الانقياد والعمل والاتباع، ومن أشرف ما يتولد عنها الإنابة: دوام الرجوع إلى الله والإقبال عليه.","level":2,"anchor":"المحبة وثمرتها","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":3,"q":"«تعصي الإلهَ وأنت تُظهر حبَّه … هذا مُحالٌ في القياس بديعُ» — ما القاعدة التي يقررها البيت في العلاقة بين المحبة والطاعة؟","a":"أن محل العبودية الأساسي القلب، ثم يأمر القلبُ الجوارحَ بمقتضى ما فيه؛ فمن ادعى محبة الله ثم ترك أمره فالخلل في المحبة نفسها، لأن المحب لمن يحب مطيع.","level":3,"anchor":"بيت «تعصي الإله»","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":3,"q":"﴿إِنَّمَا يَخْشَى اللَّهَ مِنْ عِبَادِهِ الْعُلَمَاءُ﴾ — على أي علاقة تدل الآية بين العلم بالله والخشية؟","a":"على أن العلم بالله يورث الخشية منه؛ فالعلماء هم الذين يخشونه، وبقدر المعرفة تكون الخشية.","level":3,"anchor":"العلم يورث الخشية","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":3,"q":"ما النتيجتان اللتان تثمرهما خشية الله في القلب والسلوك؟","a":"الأولى: الذل والانكسار بين يدي الله لعلمه بعظمته وجلاله وكبريائه وعزته. والثانية: التقوى، وهي المحاذرة والكف عن الذنوب والمعاصي.","level":2,"anchor":"ثمرتا الخشية","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":3,"q":"من أراد أن يترك الذنوب والمعاصي فما طريقه الأساسي، وما الطريق إلى هذا الطريق نفسه؟","a":"طريقه الأساسي الخشية؛ وطريق تحصيل الخشية العلم بالله.","level":2,"anchor":"طريق ترك الذنوب","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":3,"q":"﴿وَالْأَرْضُ جَمِيعًا قَبْضَتُهُ يَوْمَ الْقِيَامَةِ وَالسَّمَاوَاتُ مَطْوِيَّاتٌ بِيَمِينِهِ﴾ — كيف يورث استحضار سعة الكون خشية الله؟","a":"الشمس على بعد نحو 8 دقائق ضوئية، وأقرب نجم على نحو 4 سنوات ضوئية، وفي الكون ملايين المجرات؛ ثم كل ذلك يطويه الله بيمينه يوم القيامة، فيعلم العبد أن الله عظيم يستحق أن يُخشى.","level":3,"anchor":"عظمة الكون وطيّ السماوات","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":3,"q":"لماذا وُصف اليقين بأنه «الصخرة» التي تتكسر عليها الفتن، وما حال من فقده؟","a":"لأن من أيقن بحقائق الدين ثبت أمام الفتن والشهوات والإغراءات والتحديات والابتلاءات. ومن لم يملك هذه الصخرة في قلبه أسقطه أول سهم قوي يوجَّه إليه.","level":1,"anchor":"صخرة اليقين","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":3,"q":"ما الحقائق التي ينبغي أن يعيش المسلم موقنًا بها حتى يحصّل كنز اليقين؟","a":"أن الله حق خالقه ورازقه ومدبره؛ وأن النبي ﷺ حق؛ وأن أشرف ما يُعاش لأجله العبودية لله؛ والآخرة والرجوع إلى الله؛ ومعية الله لأوليائه الصابرين المتقين المتوكلين وحملة دينه.","level":2,"anchor":"متعلَّقات اليقين","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":3,"q":"ما الذي يُنتجه اليقين، ولماذا تشتد الحاجة إليه في الشدائد الكبرى دون الصغيرة؟","a":"يُنتج الصبر والتوكل. والأمور الصغيرة قد يصبر عليها الإنسان بلا يقين كبير، أما الابتلاءات العظيمة فلا يثبت فيها إلا من أيقن أن لقاء الله حق وثوابه حق والجنة حق، وأن الله معه.","level":2,"anchor":"اليقين يثمر الصبر والتوكل","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":3,"q":"سحرة فرعون صبروا على التهديد بتقطيع الأيدي والأرجل من خلاف — ما الدليل على أن الذي ثبّتهم هو اليقين؟","a":"أن الشيء الوحيد الذي تغيّر أنهم رأوا بأعينهم عصا موسى تأكل حبالهم وعصيهم، وهم أهل الصنعة فعرفوا يقينًا أن هذا ليس سحرًا؛ فسقطت إغراءات فرعون وتهديداته أمام صخرة اليقين.","level":5,"anchor":"سحرة فرعون","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":3,"q":"ما صورة فاقد اليقين الذي لم يُلحد بلسانه؟","a":"يعيش حياة من لا يؤمن بالآخرة: لا يبالي إذا قيل له اتق الله، يسرق ويظلم ويتعدى ولا يؤدي لله حقًّا من صلاة أو زكاة أو صيام، فإذا سُئل قال: الحمد لله أنا مسلم.","level":4,"anchor":"إلحاد السلوك","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":3,"q":"ما المحل الأساسي للعبودية، وهل هي مختصة به؟ وما تعريف الإيمان الذي يوضح ذلك؟","a":"محلها الأساسي القلب، ثم يتبعه اللسان والجوارح، فليست مختصة به. والإيمان: قول باللسان، واعتقاد بالجَنان، وعمل بالجوارح والأركان — وأساس الثلاثة القلب.","level":2,"anchor":"محل العبودية","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":3,"q":"إذا كان أول ما يدخل به المرء الإسلام نطق الشهادة باللسان، فكيف يكون أساس العبودية القلب لا اللسان؟","a":"لأنها «شهادة»، والشهادة لا تكون إلا عن علم ويقين سابق: ﴿وَمَا شَهِدْنَا إِلَّا بِمَا عَلِمْنَا﴾ و﴿فَاعْلَمْ أَنَّهُ لَا إِلَٰهَ إِلَّا اللَّهُ﴾؛ فهي إخبار عما استقر في القلب، لا مجرد لفظ.","level":4,"anchor":"دلالة لفظ الشهادة","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":3,"q":"من قال: «قلبي مليء بالإيمان بالله ومحبته وعندي يقين لا شك فيه» وهو لا يصلي — ما الحكم على دعواه من جهة أركان الإيمان؟","a":"أنه فرّط في ركن من أركان الإيمان وهو ركن العمل؛ فالإيمان قول واعتقاد وعمل، لا اعتقاد قلبي مجرد.","level":4,"anchor":"دعوى الإيمان بلا عمل","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":3,"q":"ما ركنا العبودية لله اللذان يجمعهما قوله تعالى ﴿إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ﴾؟","a":"العبادة (﴿إِيَّاكَ نَعْبُدُ﴾) والاستعانة (﴿وَإِيَّاكَ نَسْتَعِينُ﴾)؛ فالعبودية لله تتكون منهما معًا.","level":1,"anchor":"ركنا العبودية","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":3,"q":"ما الذي يدخل تحت ركن «العبادة» وما الذي يدخل تحت ركن «الاستعانة» من العبادات التفصيلية؟","a":"تحت العبادة: الإخلاص، والإنابة، والمحبة. وتحت الاستعانة: التوكل، والدعاء (طلب الشيء من الله).","level":2,"anchor":"مفردات الركنين","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":3,"q":"﴿فَاعْبُدْهُ وَتَوَكَّلْ عَلَيْهِ﴾ و﴿عَلَيْهِ تَوَكَّلْتُ وَإِلَيْهِ أُنِيبُ﴾ — كيف تعبّر كل آية عن ركني العبودية؟","a":"«فاعبده» و«أنيب» = إياك نعبد؛ و«وتوكل عليه» و«توكلت» = إياك نستعين.","level":3,"anchor":"آيات الركنين","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":3,"q":"ما تعريف الإنابة، وما منزلتها من العبودية؟","a":"الإنابة: دوام الرجوع إلى الله والإقبال عليه. وهي سرٌّ من أسرار العبودية العظيمة، ومن أشرف ثمرات المحبة، وتدخل تحت ركن العبادة.","level":2,"anchor":"تعريف الإنابة","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+
+ {"s":4,"q":"ما العلاقة بين خلو القلب من الإيمان باليوم الآخر وبين الامتثال لأمر الله، وما شاهدها من سورة الماعون؟","a":"بقدر خلو القلب من الإيمان باليوم الآخر يبتعد الإنسان عن تطبيق ما أمر الله به؛ وشاهده ﴿أَرَأَيْتَ الَّذِي يُكَذِّبُ بِالدِّينِ ۝ فَذَٰلِكَ الَّذِي يَدُعُّ الْيَتِيمَ﴾، والدين هنا: الجزاء.","level":1,"anchor":"اليوم الآخر والامتثال","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":4,"q":"لماذا كان التركيز في أول السور المكية على اليوم الآخر والجنة والنار والثواب والعقاب؟","a":"لأن هذه الموضوعات — وهي حق في ذاتها — تجعل الإنسان يدرك أنه لا يعيش في الخلود، بل في حياة مؤقتة لم تدم لمن قبله ولن تدوم له ولا لمن بعده.","level":2,"anchor":"تركيز السور المكية","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":4,"q":"علامَ تدل المقابر المنتشرة في كل أرض، وما موقع الموت في تصور المؤمن؟","a":"كل مقبرة نهاية مشوار أناس عاشوا وتعلموا وأرادوا حياة رغيدة ثم ماتوا؛ والموت عند المؤمن ليس نهاية الطريق بل بداية الرحلة الأخروية، والدنيا فترة يسيرة لا تُذكر أمام الآخرة.","level":3,"anchor":"دلالة المقابر","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":4,"q":"عدّد ستة من أسماء يوم القيامة وألقابه الواردة في القرآن.","a":"يوم التغابن، يوم الحسرة، يوم الآزفة، يوم التلاق، الطامة الكبرى، الصاخّة — ومنها أيضًا يوم الفصل.","level":6,"anchor":"أسماء يوم القيامة","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":4,"q":"لماذا أكثر القرآن من أسماء يوم القيامة وأطال في عرض مشاهده كانشقاق السماء وتكوير الشمس والمجيء بجهنم؟","a":"لعظمة ذلك اليوم وشدة هوله، حتى يستحضره القلب دائمًا؛ فمن لم يستحضر لقاء الله وسؤاله فرّط كثيرًا في حياته.","level":4,"anchor":"كثرة الأسماء والمشاهد","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":4,"q":"هل الدين الذي يريد الله منا اتباعه صعب من جهة كثرة التفاصيل؟ وما أساسه؟","a":"لا؛ أساسه معانٍ قلبية: العبودية والاستسلام والذل والانقياد والخشية والتقوى والاتباع والتضرع والتوكل والدعاء، ثم أداء الفرائض على وجهها بقلب يحب ربه ويخشاه.","level":2,"anchor":"الدين في أساسه","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+
+ {"s":5,"q":"ما أهم ما يعيش الإنسان لأجله، وفق ثمرة الحقائق الإيمانية الأربع؟","a":"أن يحقق العبودية لله، وينجو من عذابه في الآخرة، وينال ثوابه في الجنة.","level":1,"anchor":"لماذا نعيش","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":5,"q":"ما أعظم مطلب يطلبه العبد من ربه، وما شاهده من الفرائض ومن وصية النبي ﷺ لعلي رضي الله عنه؟","a":"الهداية إلى الله وإلى ما يحب؛ وشاهده ﴿اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ﴾ المفروض في كل صلاة، ووصيته ﷺ لعلي: «قل: اللهم اهدني وسددني» (مسلم 2725).","level":1,"anchor":"الهداية أعظم مطلب","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":5,"q":"ما أعظم ثمرة يحققها المسلم من القرآن، مقارنة بالحفظ والقراءات والإجازة؟","a":"الاهتداء به؛ لأن الله أنزله لنهتدي به: ﴿هُدًى لِّلْمُتَّقِينَ﴾ و﴿إِنَّ هَٰذَا الْقُرْآنَ يَهْدِي لِلَّتِي هِيَ أَقْوَمُ﴾. أما الحفظ والقراءات والإجازة فأهداف شريفة لكنها ليست الأشرف والأعلى.","level":1,"anchor":"الاهتداء أعظم ثمرة","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":5,"q":"أيهما أفضل: من أتم الحفظ والقراءات والإجازة وغاية ما حققه الإتقان وحسن الصوت، أم من مات ولم يحفظ إلا عشرة أجزاء لكنه يقرأ ليهتدي؟","a":"الثاني؛ لأن مقصود القرآن الهداية، فمن قرأ ليهتدي حقق الغاية، ومن انحصر تركيزه في الأداء حقق وسيلة شريفة دون الغاية.","level":4,"anchor":"الحافظ المتقن والقارئ المهتدي","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":5,"q":"كيف تتوزع الحقائق الإيمانية الأربع على صفات المتقين في أول سورة البقرة؟","a":"﴿الْمُتَّقِينَ﴾ العبودية المؤسسة على العلم بالله؛ ﴿يُؤْمِنُونَ بِالْغَيْبِ﴾ الإيمان باليوم الآخر والغيب؛ ﴿يُقِيمُونَ الصَّلَاةَ… يُنفِقُونَ﴾ العبودية العملية؛ ﴿يُؤْمِنُونَ بِمَا أُنزِلَ إِلَيْكَ﴾ الإيمان بالنبي ﷺ؛ ﴿وَبِالْآخِرَةِ هُمْ يُوقِنُونَ﴾ اليوم الآخر واليقين؛ وثمرتها ﴿أُولَٰئِكَ عَلَىٰ هُدًى﴾.","level":3,"anchor":"البقرة 2–5 والحقائق الأربع","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":5,"q":"ليست الخشية وحدها ثمرة العلم بالله — فما الثمرة الأخرى التي تبعث المستقيم على الاستبشار وسط الفتن؟","a":"المحبة وحسن الظن بالله؛ لأنه رحيم شكور كريم بَرّ يشكر سعي من استقام مخلصًا، فلا يشعر المستقيم أنه محروم بل يكون من أعظم المسرورين بتوفيق الله له.","level":2,"anchor":"حسن الظن والاستبشار","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":5,"q":"ما الموقف الصحيح للمستقيم على دينه من الناس المقصّرين حوله، وما القصد الصحيح من الدعوة وإنكار المنكر؟","a":"ألا يستعلي عليهم ولا يحتقرهم، بل ينظر إليهم بعين الرحمة ويرجو لهم الخير؛ والقصد من الدعوة والإنكار الرحمة بهم لا مجرد إقامة الحجة عليهم، اقتداءً بقوله تعالى ﴿وَمَا أَرْسَلْنَاكَ إِلَّا رَحْمَةً لِّلْعَالَمِينَ﴾.","level":4,"anchor":"الرحمة لا الاستعلاء","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"},
+ {"s":5,"q":"عاد النبي ﷺ غلامًا يهوديًّا كان يخدمه وهو في مرض الموت فدعاه إلى الإسلام فأسلم — ماذا قال ﷺ، وما العبرة؟","a":"خرج وهو يقول: «الحمد لله الذي أنقذه من النار» (البخاري 1356). والعبرة: أن الدلالة على طريق الجنة والإنقاذ من النار من أعظم صور الرحمة، فقدّمها ﷺ على كل شيء.","level":5,"anchor":"الغلام اليهودي — البخاري 1356","tags":"البناء المنهجي::المستوى الأول::المرحلة التمهيدية::مقدمات تمهيدية::محاضرة 1"}
+];
+
+// Anki: مصدر واحد للبطاقات المعروضة وللـTSV ذي الأعمدة الثلاثة (بند 9-ط).
+function buildAnkiTSV() {
+  function plain(value) {
+    const el = document.createElement('div');
+    el.innerHTML = String(value == null ? '' : value);
+    return (el.textContent || '').replace(/[\t\r\n]+/g, ' ').trim();
+  }
+  return '\uFEFF#separator:tab\n#html:false\n#tags column:3\n' + CARDS_DATA.map(function(c) {
+    return [plain(c.q), plain(c.a), c.tags.replace(/\s/g, '\u00A0')].join('\t');
+  }).join('\n');
+}
+
+/* ---------- عرض البطاقات ---------- */
+let filter = 0, idx = 0;
+const view = () => filter ? CARDS_DATA.filter(c => c.s === filter) : CARDS_DATA;
+function render(){
+  const v = view();
+  if(!v.length) return;
+  if(idx >= v.length) idx = 0;
+  if(idx < 0) idx = v.length - 1;
+  document.getElementById('flip').classList.remove('on');
+  document.getElementById('q').textContent = v[idx].q;
+  document.getElementById('a').textContent = v[idx].a;
+  document.getElementById('lvl').textContent = 'أولوية ' + v[idx].level + ' · ' + LEVELS[v[idx].level];
+  document.getElementById('counter').textContent = (idx + 1) + ' / ' + v.length;
+}
+function go(d){ idx += d; render(); }
+function setFilter(n){
+  filter = n; idx = 0;
+  document.querySelectorAll('#filters button').forEach(b => b.classList.toggle('on', +b.dataset.f === n));
+  render();
+}
+(function(){
+  const box = document.getElementById('filters');
+  const mk = (n, label) => {
+    const b = document.createElement('button');
+    b.dataset.f = n; b.textContent = label;
+    if(n) b.style.borderColor = SECTIONS[n].color;
+    b.onclick = () => setFilter(n);
+    box.appendChild(b);
+  };
+  mk(0, 'الكل (' + CARDS_DATA.length + ')');
+  Object.keys(SECTIONS).forEach(k => { const n = +k; mk(n, SECTIONS[n].name + ' (' + CARDS_DATA.filter(c => c.s === n).length + ')'); });
+  document.querySelector('#filters button').classList.add('on');
+  document.getElementById('cards-chip').textContent = CARDS_DATA.length + ' بطاقة مراجعة';
+  document.getElementById('tagline').textContent = 'الوسم: ' + CARDS_DATA[0].tags;
+  render();
+})();
+
+/* ---------- التحميل ---------- */
+function dl(){
+  const blob = new Blob([buildAnkiTSV()], {type:'text/tab-separated-values;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'بطاقات_البناء_المنهجي_التمهيدية_مقدمات_تمهيدية_م01.tsv';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+
+/* ---------- لوحة المفاتيح + شريط التقدم ---------- */
+document.addEventListener('keydown', e => {
+  const t = e.target && e.target.tagName;
+  if(t === 'INPUT' || t === 'TEXTAREA') return;
+  if(e.key === 'ArrowLeft') go(1);
+  if(e.key === 'ArrowRight') go(-1);
+  if(e.key === ' ' && document.getElementById('anki').getBoundingClientRect().top < innerHeight){ e.preventDefault(); document.getElementById('flip').classList.toggle('on'); }
+});
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  document.getElementById('prog').style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+});
+</script>
+
+<script>
+window.quizData = {
+ "s1": {"items": [
+  {"type":"mcq","q":"ما الدليلان على أن العلم بالله أشرف العلوم؟","options":["طول سورة البقرة وكثرة موضوعاتها","أن أعظم آية (آية الكرسي) والسورة التي تعدل ثلث القرآن (الإخلاص) موضوعهما الحديث عن الله","أن علماء الحديث قدّموه على مصطلح الحديث"],"correct":1,"feedback":"شرف الحديث بشرف المتحدَّث عنه؛ وأعظم ما في القرآن فضلًا جاء خالصًا في الحديث عن الله."},
+  {"type":"mcq","q":"ما الوسيلة الأهم للتعرف على الله؟","options":["قراءة القرآن قراءة تدبر بقصد التعرف عليه","حفظ أكبر قدر من القرآن بسرعة","دراسة الفلك"],"correct":0,"feedback":"في كل صفحة من القرآن حديث عن الله، والتفكر في المخلوقات وسيلة ثانية مكمّلة."},
+  {"type":"mcq","q":"ماذا تفيد «كأيّن» في ﴿وَكَأَيِّن مِّنْ آيَةٍ فِي السَّمَاوَاتِ وَالْأَرْضِ…﴾؟","options":["الاستفهام","التقليل","التكثير"],"correct":2,"feedback":"آيات كثيرة جدًّا يمرون عليها وهم عنها معرضون — والآية ذمٌّ لهذا الإعراض."},
+  {"type":"reflect","q":"اختر اليوم آية واحدة من الفاتحة، واكتب كيف ستغيّر طريقة قراءتها في صلاتك القادمة.","answer":"مثال: عند ﴿مَالِكِ يَوْمِ الدِّينِ﴾ أتوقف لحظة مستحضرًا أن الله يقول «مجّدني عبدي»، وأتذكر يوم الحساب، فأقرأ ﴿إِيَّاكَ نَعْبُدُ﴾ بعدها بقلب حاضر لا بلسان مستعجل."}
+ ]},
+ "s2": {"items": [
+  {"type":"mcq","q":"ما الترتيب الصحيح لما يقود إليه الإيمان بالنبي ﷺ؟","options":["اتباع ← محبة ← إيمان","إيمان ← محبة ← اتباع","محبة ← إيمان ← اتباع"],"correct":1,"feedback":"الإيمان بأنه أكمل الهدي يولّد المحبة، والمحبة الصادقة تثمر الاتباع."},
+  {"type":"mcq","q":"أيٌّ مما يلي ليس من الأمور الثلاثة المستحضَرة عند قراءة السيرة؟","options":["أنك تقرأ سيرة أفضل الخلق","أنك تقرأ سيرة قدوتك","أنك تقرأ تاريخًا للمتعة والمعلومات العامة"],"correct":2,"feedback":"الثلاثة: أفضل الخلق، أكمل الهدي، القدوة — فالسيرة منهج حياة لا تاريخ للتسلية."},
+  {"type":"reflect","q":"لماذا لا يكفي حب النبي ﷺ عاطفيًّا دون العلم بسيرته وسنته؟","answer":"لأن الاتباع يحتاج إلى معرفة ما يُتَّبع؛ فالسيرة تعرّفك بهديه وأحواله، والسنة تعرّفك بأقواله وتوجيهاته — وبدونهما تبقى المحبة بلا ترجمة عملية."}
+ ]},
+ "s3": {"items": [
+  {"type":"mcq","q":"لا إله إلا الله لا تكتمل إلا بحقيقتين معًا، هما:","options":["العلم بالله والعبودية له","الإيمان بالنبي واليوم الآخر","الصلاة والصيام"],"correct":0,"feedback":"العلم بالله وحده لا يكفي؛ فلا بد من إفراده بالعبودية."},
+  {"type":"mcq","q":"من أراد ترك الذنوب فطريقه الأساسي:","options":["كثرة الانشغال فقط","الخشية، وطريقها العلم بالله","العزلة التامة عن الناس"],"correct":1,"feedback":"العلم ← الخشية ← التقوى (الكف عن الذنوب)."},
+  {"type":"mcq","q":"ما الذي ثبّت سحرة فرعون أمام تهديده؟","options":["كثرة عددهم","خوفهم من موسى","اليقين بعدما رأوا بأعينهم ما ليس بسحر"],"correct":2,"feedback":"هم أهل الصنعة، فعرفوا يقينًا أن العصا ليست سحرًا؛ فسقطت الإغراءات أمام صخرة اليقين."},
+  {"type":"mcq","q":"«التوكل» و«الدعاء» يدخلان تحت أي ركن من ركني العبودية؟","options":["إياك نعبد","إياك نستعين","لا يدخلان تحت أي منهما"],"correct":1,"feedback":"الاستعانة: التوكل والدعاء. والعبادة: الإخلاص والإنابة والمحبة."},
+  {"type":"reflect","q":"بماذا تجيب من يقول: «أساس العبودية اللسان؛ لأن أول ما يدخل به المرء الإسلام نطق الشهادة»؟","answer":"تأمّل لفظ «الشهادة»: لا يشهد أحد إلا بما علم ﴿وَمَا شَهِدْنَا إِلَّا بِمَا عَلِمْنَا﴾، و﴿فَاعْلَمْ أَنَّهُ لَا إِلَٰهَ إِلَّا اللَّهُ﴾؛ فالنطق إخبار عن علم ويقين في القلب، فالقلب هو الأساس، ثم اللسان والجوارح تبع له وجزء من الإيمان."},
+  {"type":"reflect","q":"ارسم من ذاكرتك خريطة ما يتفرع عن العلم بالله، ثم قارنها بالخريطة في الملف.","answer":"العلم بالله ← المحبة (← الانقياد والإنابة) · الخشية (← الذل والانكسار، والتقوى) · التعظيم · اليقين (← الصبر والتوكل) · حسن الظن بالله."}
+ ]},
+ "s4": {"items": [
+  {"type":"mcq","q":"ما معنى «الدين» في ﴿أَرَأَيْتَ الَّذِي يُكَذِّبُ بِالدِّينِ﴾؟","options":["الشريعة","الجزاء","القرض"],"correct":1,"feedback":"من كذّب بالجزاء دعّ اليتيم؛ فبقدر خلو القلب من الإيمان باليوم الآخر يبتعد عن الامتثال."},
+  {"type":"mcq","q":"لماذا ركزت السور المكية الأولى على اليوم الآخر؟","options":["لأن المسلمين كانوا يعرفون الأحكام مسبقًا","لتُشعر الإنسان أنه في حياة مؤقتة لا خلود فيها","لأن الأحكام لم تكن مهمة"],"correct":1,"feedback":"إدراك قِصَر الحياة وحتمية اللقاء هو ما يجعل القلب يستجيب لبقية الدين."},
+  {"type":"reflect","q":"ما الذي تغيّره في يومك لو استحضرت أن «الموت بداية الرحلة لا نهايتها»؟","answer":"إجابة شخصية؛ ومن أمثلتها: إعادة ترتيب الأولويات بحيث يُقدَّم ما ينفع في الآخرة، والمبادرة بالتوبة، وتقليل الوقت الضائع في التفاهات، ومحاسبة النفس قبل النوم."}
+ ]},
+ "s5": {"items": [
+  {"type":"mcq","q":"ما أعظم ثمرة يحققها المسلم من القرآن؟","options":["الحصول على الإجازة","إتقان القراءات وحسن الصوت","الاهتداء به"],"correct":2,"feedback":"الحفظ والقراءات أهداف شريفة، لكن الغاية التي أُنزل لها القرآن هي الهداية."},
+  {"type":"mcq","q":"ما الدعاء الذي أوصى به النبي ﷺ عليًّا رضي الله عنه؟","options":["اللهم اهدني وسددني","اللهم ارزقني","اللهم اغفر لي"],"correct":0,"feedback":"صحيح مسلم (2725) — والهداية أعظم مطلب، ولذلك فُرض ﴿اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ﴾ في كل ركعة."},
+  {"type":"reflect","q":"كيف يجمع المستقيم بين الاعتزاز بالحق وعدم الاستعلاء على الناس؟","answer":"يعتز بأن الله وفقه للهداية فيشكره ويستبشر، ويرى أنها محض فضل لا بطولة منه؛ فينظر إلى المقصّرين بعين الرحمة ويرجو لهم الخير، ويدعوهم ليُنقذهم لا ليُقيم عليهم الحجة فقط — كما فعل ﷺ مع الغلام اليهودي."}
+ ]}
+};
+
+/* ===== تثبيت الفهم: محرك الرندر (يعمل فورًا قبل فهرسة التظليل) ===== */
+(function(){
+  document.querySelectorAll('.quiz-block[data-quiz]').forEach(function(container){
+    var data = (window.quizData || {})[container.getAttribute('data-quiz')];
+    if(!data || container.dataset.rendered) return;
+    container.dataset.rendered = '1';
+    var title = document.createElement('div');
+    title.className = 'quiz-block-title';
+    title.textContent = '✦ تثبيت الفهم';
+    container.appendChild(title);
+    data.items.forEach(function(item){
+      var itemEl = document.createElement('div');
+      itemEl.className = 'quiz-item';
+      if(item.type === 'mcq'){
+        var qEl = document.createElement('p'); qEl.className = 'quiz-q'; qEl.textContent = item.q; itemEl.appendChild(qEl);
+        var opts = document.createElement('div'); opts.className = 'quiz-options';
+        var fb = document.createElement('div'); fb.className = 'quiz-feedback'; fb.textContent = item.feedback || '';
+        item.options.forEach(function(t, i){
+          var b = document.createElement('button'); b.type = 'button'; b.className = 'quiz-opt'; b.textContent = t;
+          b.addEventListener('click', function(){
+            var all = opts.querySelectorAll('.quiz-opt');
+            all.forEach(function(x){ x.classList.add('disabled'); });
+            if(i === item.correct){ b.classList.add('correct'); }
+            else { b.classList.add('wrong'); if(all[item.correct]) all[item.correct].classList.add('correct'); }
+            fb.classList.add('show');
+          });
+          opts.appendChild(b);
+        });
+        itemEl.appendChild(opts); itemEl.appendChild(fb);
+      } else {
+        var q = document.createElement('p'); q.className = 'quiz-reflect-q'; q.textContent = '💭 ' + item.q; itemEl.appendChild(q);
+        var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'quiz-reveal-btn'; btn.textContent = 'إظهار الإجابة';
+        var ans = document.createElement('div'); ans.className = 'quiz-answer'; ans.textContent = item.answer;
+        btn.addEventListener('click', function(){
+          ans.classList.toggle('show');
+          btn.textContent = ans.classList.contains('show') ? 'إخفاء الإجابة' : 'إظهار الإجابة';
+        });
+        itemEl.appendChild(btn); itemEl.appendChild(ans);
+      }
+      container.appendChild(itemEl);
+    });
+  });
+})();
+</script>
+
+<script type="module" src="../../../firebase-sync-manhaj.js"></script>
+<script src="../../../ilm-track.js"></script>
+<script src="../../../data.js"></script>
+<script src="../../../ilm-nav.js"></script>
+<script>
+(function(){
+  var box = document.getElementById('ilm-completion-box');
+  var cb = box ? box.querySelector('input[data-lecture-id]') : null;
+  if(!cb) return;
+  var lid = cb.getAttribute('data-lecture-id');
+  function render(done){ cb.checked = done; box.classList.toggle('done', done); }
+  if(window.IlmTrack){
+    window.IlmTrack.ready.then(function(){ render(window.IlmTrack.isDone(lid)); });
+  }
+  cb.addEventListener('change', function(){
+    if(window.IlmTrack) window.IlmTrack.setDone(lid, cb.checked);
+    render(cb.checked);
+  });
+})();
+</script>
+<script src="../../../ilm-highlight.js" data-lecture-id="stage0_muqaddimat_01"></script>
+<script src="../../../ilm-semantic.js" data-hadith="off"></script>
 </body>
 </html>
