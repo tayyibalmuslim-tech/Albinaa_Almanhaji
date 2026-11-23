@@ -231,6 +231,16 @@ body .ilm-nav-bar .inv-jump label{color:var(--muted)}
 body .ilm-nav-bar select{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:10px;min-height:44px;font-family:'Cairo',sans-serif}
 body .ilm-nav-bar select:focus{border-color:var(--c1);box-shadow:0 0 0 3px var(--c1s)}
 @media(max-width:620px){body .ilm-nav-bar{margin:14px 12px}body .ilm-nav-bar .inv-link{text-align:right}}
+/* الشريط العلوي: مدمج في الصفحة — سطر واحد صغير تحت الغلاف */
+body .ilm-nav-top{max-width:none;margin:0;padding:0;background:none;border:0;border-radius:0}
+body .ilm-nav-top:before,body .ilm-nav-top .inv-jump,body .ilm-nav-top .inv-subj{display:none}
+body .ilm-nav-top .inv-row{display:flex;justify-content:space-between;gap:8px}
+body .ilm-nav-top .inv-link,body .ilm-nav-top .inv-disabled{flex:0 1 auto;flex-direction:row;align-items:center;gap:6px;min-height:36px;padding:4px 14px;border:1px solid var(--line);border-radius:999px;background:var(--paper);font-size:13.5px}
+body .ilm-nav-top .inv-link{border-right-width:1px}
+body .ilm-nav-top .inv-ttl{font-family:'Cairo',sans-serif;font-size:13.5px;font-weight:700}
+body .ilm-nav-top .inv-day{font-size:12px}
+body .ilm-nav-top .inv-disabled{opacity:.6;font-size:12.5px}
+@media(max-width:620px){body .ilm-nav-top{margin:0}body .ilm-nav-top .inv-row{display:flex}}
 @media print{.topbar,#anki,.qz,details.video,.dl{display:none}}
 </style>
 
@@ -286,6 +296,7 @@ body .ilm-nav-bar select:focus{border-color:var(--c1);box-shadow:0 0 0 3px var(-
 </header>
 
 <div class="wrap">
+  <div id="nav-top-slot" style="margin-top:14px"></div>
   <div class="srcbar"><span>نوع المادة: تفريغ محاضرة</span><span>المسار: محاضرات (إعادة تنظيم بلا حذف)</span><span id="cards-count">بطاقات المراجعة</span></div>
   <details class="video">
     <summary>▶ استمع للمحاضرة أولًا، ثم اقرأ الملف بعدها (لا تقرأ أثناء الاستماع)</summary>
@@ -1219,6 +1230,7 @@ window.addEventListener('scroll', function(){
 })();
 </script>
 <script src="../../../ilm-nav.js"></script>
+<script>(function(){function mv(){var t=document.querySelector('.ilm-nav-top'),slot=document.getElementById('nav-top-slot');if(t&&slot)slot.appendChild(t);}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mv);else mv();})();</script>
 <script>
 (function(){
   var box = document.getElementById('ilm-completion-box');
