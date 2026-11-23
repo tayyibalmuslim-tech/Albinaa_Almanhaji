@@ -33,7 +33,7 @@ a{color:var(--c1)}
 
 /* شريط علوي */
 .topbar{position:sticky;top:0;z-index:50;background:rgba(20,28,56,.97);color:#fff}
-.topbar-in{max-width:980px;margin:0 auto;padding:7px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.topbar-in{max-width:1180px;margin:0 auto;padding:7px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .tb-title{font-family:'Reem Kufi',sans-serif;font-size:15px;color:var(--star)}
 .tb-links{display:flex;gap:4px;flex-wrap:wrap}
 .tb-links a{color:#e6e9f5;text-decoration:none;font-size:12.5px;padding:3px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.2)}
@@ -231,16 +231,24 @@ body .ilm-nav-bar .inv-jump label{color:var(--muted)}
 body .ilm-nav-bar select{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:10px;min-height:44px;font-family:'Cairo',sans-serif}
 body .ilm-nav-bar select:focus{border-color:var(--c1);box-shadow:0 0 0 3px var(--c1s)}
 @media(max-width:620px){body .ilm-nav-bar{margin:14px 12px}body .ilm-nav-bar .inv-link{text-align:right}}
-/* الشريط العلوي: مدمج في الصفحة — سطر واحد صغير تحت الغلاف */
-body .ilm-nav-top{max-width:none;margin:0;padding:0;background:none;border:0;border-radius:0}
-body .ilm-nav-top:before,body .ilm-nav-top .inv-jump,body .ilm-nav-top .inv-subj{display:none}
-body .ilm-nav-top .inv-row{display:flex;justify-content:space-between;gap:8px}
-body .ilm-nav-top .inv-link,body .ilm-nav-top .inv-disabled{flex:0 1 auto;flex-direction:row;align-items:center;gap:6px;min-height:36px;padding:4px 14px;border:1px solid var(--line);border-radius:999px;background:var(--paper);font-size:13.5px}
-body .ilm-nav-top .inv-link{border-right-width:1px}
-body .ilm-nav-top .inv-ttl{font-family:'Cairo',sans-serif;font-size:13.5px;font-weight:700}
-body .ilm-nav-top .inv-day{font-size:12px}
-body .ilm-nav-top .inv-disabled{opacity:.6;font-size:12.5px}
-@media(max-width:620px){body .ilm-nav-top{margin:0}body .ilm-nav-top .inv-row{display:flex}}
+/* تنبيه الذكاء الاصطناعي: شريط رفيع بهوية الصفحة */
+.ai-note{background:var(--night);color:#e9dcb3;font-size:12.5px;line-height:1.7;text-align:center;padding:6px 14px;border-bottom:1px solid rgba(243,213,138,.25)}
+/* صندوق الإتمام: مدمج في المتن تحت الغلاف */
+#ilm-completion-box{display:flex;align-items:center;gap:10px;margin:18px 0 0;padding:10px 16px;background:var(--paper);border:1px solid var(--line);border-right:4px solid var(--c1);border-radius:12px;cursor:pointer;user-select:none;font-weight:700}
+#ilm-completion-box input{width:18px;height:18px;accent-color:var(--c1);cursor:pointer;flex-shrink:0}
+#ilm-completion-box span{font-size:14.5px;color:var(--ink)}
+#ilm-completion-box.done{background:var(--c1s);border-color:var(--c1)}
+#ilm-completion-box.done span:after{content:" ✓";color:var(--c1)}
+/* السابق/التالي داخل الفهرس المثبت */
+#nav-top-slot{flex:0 0 auto;display:inline-flex;margin-inline-start:6px}
+body .ilm-nav-top{max-width:none;margin:0;padding:0;background:none;border:0;border-radius:0;box-shadow:none;color:#fff}
+body .ilm-nav-top:before,body .ilm-nav-top .inv-jump,body .ilm-nav-top .inv-subj,body .ilm-nav-top .inv-disabled{display:none}
+body .ilm-nav-top .inv-row{display:flex;gap:6px}
+body .ilm-nav-top .inv-link{flex-direction:row;align-items:center;gap:6px;min-height:30px;padding:2px 12px;border:1px solid var(--star);border-radius:999px;background:rgba(243,213,138,.1);color:var(--star);text-align:center}
+body .ilm-nav-top .inv-link:hover{background:rgba(243,213,138,.22);transform:none}
+body .ilm-nav-top .inv-day{color:var(--star);font-size:12px}
+body .ilm-nav-top .inv-ttl{color:#fff;font-family:'Cairo',sans-serif;font-size:12.5px;font-weight:700}
+@media(max-width:620px){body .ilm-nav-top .inv-ttl{display:none}body .ilm-nav-top .inv-row{display:flex}}
 @media print{.topbar,#anki,.qz,details.video,.dl{display:none}}
 </style>
 
@@ -257,19 +265,9 @@ body .ilm-nav-top .inv-disabled{opacity:.6;font-size:12.5px}
 </style>
 </head>
 <body data-lecture-id="stage0_muqaddimat_01">
-<div style="background:#FFF3CD;border-bottom:2px solid #E0A800;color:#664D03;padding:10px 16px;font-family:'Cairo',sans-serif;font-size:13.5px;line-height:1.7;text-align:center;direction:rtl" role="note">
-⚠️ أُعدّ هذا المحتوى بمساعدة الذكاء الاصطناعي، وقد يحتوي أخطاء، ويُرجى مراجعته.
-</div>
-<style id="ilm-completion-style">
-  #ilm-completion-box{display:flex;align-items:center;gap:10px;max-width:640px;margin:16px auto 0;padding:12px 18px;background:#fffefa;border:1px solid #e4dfd2;border-radius:12px;font-family:'Cairo',sans-serif;direction:rtl;cursor:pointer;user-select:none}
-  #ilm-completion-box.done{background:#e9ecf7;border-color:#2b3a75}
-  #ilm-completion-box input{width:18px;height:18px;accent-color:#2b3a75;cursor:pointer;flex-shrink:0}
-  #ilm-completion-box span{font-size:14.5px;font-weight:600;color:#1f2433}
-</style>
-<label id="ilm-completion-box">
-  <input type="checkbox" data-lecture-id="stage0_muqaddimat_01">
-  <span>تحديد هذه المحاضرة كمكتملة</span>
-</label>
+<div class="ai-note" role="note">⚠️ أُعدّ هذا المحتوى بمساعدة الذكاء الاصطناعي، وقد يحتوي أخطاء، ويُرجى مراجعته.</div>
+
+
 
 <div class="topbar">
   <div class="topbar-in">
@@ -282,6 +280,7 @@ body .ilm-nav-top .inv-disabled{opacity:.6;font-size:12.5px}
       <a href="#s4">اليوم الآخر</a>
       <a href="#s5">الثمرات</a>
       <a href="#anki">البطاقات</a>
+      <span id="nav-top-slot"></span>
     </div>
   </div>
   <div class="progress" id="prog"></div>
@@ -296,7 +295,10 @@ body .ilm-nav-top .inv-disabled{opacity:.6;font-size:12.5px}
 </header>
 
 <div class="wrap">
-  <div id="nav-top-slot" style="margin-top:14px"></div>
+  <label id="ilm-completion-box">
+    <input type="checkbox" data-lecture-id="stage0_muqaddimat_01">
+    <span>تحديد هذه المحاضرة كمكتملة</span>
+  </label>
   <div class="srcbar"><span>نوع المادة: تفريغ محاضرة</span><span>المسار: محاضرات (إعادة تنظيم بلا حذف)</span><span id="cards-count">بطاقات المراجعة</span></div>
   <details class="video">
     <summary>▶ استمع للمحاضرة أولًا، ثم اقرأ الملف بعدها (لا تقرأ أثناء الاستماع)</summary>
