@@ -213,7 +213,10 @@ const SITE_DATA = {
         { day: 45, kind: "rest", id: "stage1_day_45", title: "استدراك وراحة" },
         { day: 46, kind: "rest", id: "stage1_day_46", title: "استدراك وراحة" },
         { day: 47, kind: "rest", id: "stage1_day_47", title: "استدراك وراحة" },
-        { day: 48, kind: "exam", id: "stage1_day_48", title: "اختبار المرحلة" }
+        { day: 48, kind: "exam", id: "stage1_day_48", title: "الاختبار الأول على المرحلة · 1 من 4", link: "exams/01.html" },
+        { day: 49, kind: "exam", id: "stage1_day_49", title: "الاختبار الثاني على المرحلة · 2 من 4", link: "exams/02.html" },
+        { day: 50, kind: "exam", id: "stage1_day_50", title: "الاختبار الثالث على المرحلة · 3 من 4", link: "exams/03.html" },
+        { day: 51, kind: "exam", id: "stage1_day_51", title: "الاختبار الرابع على المرحلة · 4 من 4", link: "exams/04.html" }
       ],
       totalLectures: 35
     },

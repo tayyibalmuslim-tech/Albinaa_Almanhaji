@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اختبارات المرحلة الأولى - منهجي في طلب العلم</title>
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="exam.css">
+  <style>
+    .ex-list{ display: grid; gap: 12px; }
+    .ex-item{
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md);
+      padding: 16px 18px;
+    }
+    .ex-item .no{
+      width: 42px; height: 42px; border-radius: 12px; flex-shrink: 0;
+      display: grid; place-items: center; font-family: var(--f-mono); font-weight: 600; font-size: 17px;
+      background: var(--clay-wash); color: var(--clay);
+    }
+    .ex-item .info{ flex: 1; min-width: 180px; }
+    .ex-item h2{ font-size: 16px; font-weight: 600; }
+    .ex-item .st{ font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+    .ex-item .st b{ font-family: var(--f-mono); color: var(--green); }
+    .ex-item.done .no{ background: var(--green-wash); color: var(--green); }
+  </style>
+</head>
+<body data-page="exams-index">
+  <div class="page exam-page">
+    <nav class="breadcrumbs"><a href="../../index.html">الرئيسية</a><span class="sep">/</span><a href="../index.html">المرحلة الأولى</a><span class="sep">/</span><span aria-current="page">اختبارات المرحلة</span></nav>
+
+    <header class="ex-head">
+      <div class="eyebrow">المرحلة الأولى · نهاية المرحلة</div>
+      <h1>اختبارات المرحلة الأولى</h1>
+      <p class="ex-sub">أربعة اختبارات شاملة على مواد المرحلة كلها (الأيام 48 إلى 51)، كل اختبار 50 سؤالًا.</p>
+      <div class="ex-meta">
+        <span class="ex-chip">صح/خطأ <b>20</b></span>
+        <span class="ex-chip">اختيار <b>20</b></span>
+        <span class="ex-chip">مقالي <b>10</b></span>
+        <span class="ex-chip"><span class="lvl lvl-1">متوسط 50%</span></span>
+        <span class="ex-chip"><span class="lvl lvl-2">صعب 30%</span></span>
+        <span class="ex-chip"><span class="lvl lvl-3">صعب جدًا 20%</span></span>
+      </div>
+    </header>
+
+    <div class="ex-notice"><strong>تنبيه:</strong> الأسئلة وإجاباتها النموذجية أُعدّت بمساعدة الذكاء الاصطناعي اعتمادًا على ملخصات محاضرات المرحلة، وقد تحتوي على أخطاء؛ فراجعها على المحاضرات نفسها.</div>
+
+    <div class="ex-list" id="ex-list"></div>
+
+    <div class="ex-foot"><a class="btn btn-outline" href="../index.html">الرجوع إلى المرحلة</a></div>
+  </div>
+  <script>
+    (function () {
+      var ORD = ['الأول', 'الثاني', 'الثالث', 'الرابع'];
+      var html = '';
+      for (var n = 1; n <= 4; n++) {
+        var st = null;
+        try { st = JSON.parse(localStorage.getItem('manhaj_exam_stage1_0' + n)); } catch (e) {}
+        var status = 'لم يبدأ بعد', done = false;
+        if (st && st.done) {
+          done = true;
+          status = 'تم التصحيح' + (st.score != null ? ' · النتيجة <b>' + st.score + '/' + (st.total || 50) + '</b>' : '');
+        } else if (st && st.ans && (Object.keys(st.ans).length || Object.keys(st.txt || {}).length)) {
+          status = 'بدأته ولم تصحّحه بعد';
+        }
+        html += '<div class="ex-item' + (done ? ' done' : '') + '">' +
+          '<span class="no">' + n + '</span>' +
+          '<div class="info"><h2>الاختبار ' + ORD[n - 1] + ' على المرحلة الأولى</h2>' +
+          '<div class="st">اليوم ' + (47 + n) + ' · ' + status + '</div></div>' +
+          '<a class="btn btn-sm' + (done ? ' btn-outline' : '') + '" href="0' + n + '.html">' + (done ? 'مراجعة النتيجة' : 'ابدأ الاختبار') + '</a></div>';
+      }
+      document.getElementById('ex-list').innerHTML = html;
+    })();
+  </script>
+</body>
+</html>

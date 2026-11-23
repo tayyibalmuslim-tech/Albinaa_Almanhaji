@@ -644,7 +644,9 @@ function renderStagePage() {
         <li class="day-item ${cls} ${dDone ? 'is-done' : ''}">
           <div class="day-item-main">
             <span class="day-num">اليوم ${d.day}</span>
-            <div class="day-title">${escapeHtml(d.title)}</div>
+            ${d.link
+              ? `<a class="day-title" href="${escapeHtml(d.link)}">${escapeHtml(d.title)}</a>`
+              : `<div class="day-title">${escapeHtml(d.title)}</div>`}
           </div>
           <label class="checkbox-line">
             <input type="checkbox" data-day-id="${d.id}" ${checked}>
