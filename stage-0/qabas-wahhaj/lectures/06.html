@@ -1,40 +1,1332 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>القبس الوهاج — من ص 112 إلى 136 - المرحلة التمهيدية</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="../../../style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>القبس الوهاج — الباب الثاني عشر (تتمته) · الباب الثالث عشر: اتباع هدي الأنبياء · الباب الرابع عشر · الباب الخامس عشر (ص ١١٢ إلى ١٣٦)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../anki/final.css">
+<style>
+/* ===== هوية «سماء التفكر» — مطابقة لمقدمات تمهيدية/01: غلاف ليلي نجمي، ومتن عاجي هادئ =====
+   ألوان المقاطع بعيدة عن الألوان الدلالية المحجوزة (5-ب). */
+:root{
+  --bg:#faf8f3; --surface:#fffefa; --surface-2:#f3f0e8; --ink:#1f2433; --ink-soft:#596074; --line:#e4dfd2;
+  --night:#141c38; --night2:#263463; --star:#f3d58a; --goldbg:#f7efd9; --goldbd:#e3d3a6;
+  --brand:#263463; --brand-2:#3b4c8a; --brand-3:#141c38;
+  --s1:#2b3a75; --s2:#106a7a; --s3:#4b4f63; --s4:#6b4f3a; --s5:#1f2a4f; --s6:#2b3a75; --s7:#106a7a;
+  --s8:#4b4f63; --s9:#6b4f3a; --s10:#1f2a4f; --s11:#2b3a75; --s12:#106a7a;
+  --sem-aya:#14532d; --sem-hadith:#5b2d90; --sem-sahabi:#8a5a00; --sem-scholar:#8f1d21;
+  --n-tawthiq:#0f6b6b; --n-mustalah:#6b4f3a; --n-tarjama:#1e3a5f; --n-idah:#4b5563;
+  --n-rabt:#1d6fa5; --n-tashih:#b45309; --n-siyaq:#5b6b1f;
+  --fs:17.5px; --radius:12px; --tbh:52px; --main:780px;
+}
+[data-theme="night"]{
+  --bg:#10131f; --surface:#171b2b; --surface-2:#1f2436; --ink:#e8e6e1; --ink-soft:#b3b7c2; --line:#2d3348;
+  --goldbg:#2a2516; --goldbd:#5e4f27;
+  --brand:#aab4f0; --brand-2:#c3c8f7; --brand-3:#dfe3ff;
+  --s1:#8f9be6; --s2:#5fc0cf; --s3:#aeb3c8; --s4:#d2a988; --s5:#9aa6e8; --s6:#8f9be6; --s7:#5fc0cf;
+  --s8:#aeb3c8; --s9:#d2a988; --s10:#9aa6e8; --s11:#8f9be6; --s12:#5fc0cf;
+  --sem-aya:#91e3b3; --sem-hadith:#c4a2f0; --sem-sahabi:#e0b355; --sem-scholar:#f0a0a3;
+  --n-tawthiq:#5fc7c7; --n-mustalah:#c4a184; --n-tarjama:#8fb4de; --n-idah:#a8adb8;
+  --n-rabt:#77b9e6; --n-tashih:#f0a94b; --n-siyaq:#b0c161;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Cairo',system-ui,sans-serif;
+  font-size:var(--fs);line-height:1.95;text-align:right;-webkit-text-size-adjust:100%}
+h1,h2,h3,h4{line-height:1.5;margin:0}
+a{color:var(--brand);text-decoration:none}
+
+/* ===== تنبيه الذكاء الاصطناعي: شريط رفيع ===== */
+.ai-note{background:var(--night);color:#e9dcb3;font-size:12.5px;line-height:1.7;text-align:center;
+  padding:6px 14px;border-bottom:1px solid rgba(243,213,138,.25)}
+
+/* ===== الشريط العلوي ===== */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(20,28,56,.97);color:#fff}
+.topbar-in{max-width:1180px;margin:0 auto;padding:7px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.tb-title{font-family:'Reem Kufi',sans-serif;font-size:15px;color:var(--star);white-space:nowrap}
+.tb-links{display:flex;gap:4px;flex-wrap:nowrap;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none}
+.tb-links::-webkit-scrollbar{display:none}
+.tb-links a{color:#e6e9f5;text-decoration:none;font-size:12.5px;padding:3px 10px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.2);white-space:nowrap}
+.tb-links a:hover,.tb-links a.on{background:rgba(243,213,138,.18);border-color:rgba(243,213,138,.55)}
+.tb-tools{display:flex;gap:4px}
+.tb-btn{font-family:'Cairo',sans-serif;font-size:12.5px;min-height:30px;padding:2px 10px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.25);background:transparent;color:#e6e9f5;cursor:pointer}
+.tb-btn:hover{background:rgba(243,213,138,.18)}
+.tb-toc{border-color:var(--star);color:var(--star);font-weight:700}
+.progress{height:3px;background:var(--star);width:0}
+#nav-top-slot{flex:0 0 auto;display:inline-flex}
+body .ilm-nav-top{max-width:none;margin:0;padding:0;background:none;border:0;border-radius:0;box-shadow:none;color:#fff}
+body .ilm-nav-top:before,body .ilm-nav-top .inv-jump,body .ilm-nav-top .inv-subj,body .ilm-nav-top .inv-disabled{display:none}
+body .ilm-nav-top .inv-row{display:flex;gap:6px}
+body .ilm-nav-top .inv-link{flex-direction:row;align-items:center;gap:6px;min-height:30px;padding:2px 12px;
+  border:1px solid var(--star);border-radius:999px;background:rgba(243,213,138,.1);color:var(--star);text-align:center;box-shadow:none}
+body .ilm-nav-top .inv-link:hover{background:rgba(243,213,138,.22);transform:none}
+body .ilm-nav-top .inv-day{color:var(--star);font-size:12px}
+body .ilm-nav-top .inv-ttl{color:#fff;font-family:'Cairo',sans-serif;font-size:12.5px;font-weight:700}
+@media (max-width:1499px){body .ilm-nav-top .inv-ttl{display:none}}
+
+/* ===== الفهرس المنزلق (زر جانبي للفتح والإغلاق) ===== */
+.side{position:fixed;top:0;right:0;bottom:0;z-index:70;width:min(340px,88vw);
+  transform:translateX(105%);transition:transform .25s ease;visibility:hidden}
+.side.open{transform:none;visibility:visible}
+.toc{height:100%;overflow:auto;background:var(--surface);border-left:1px solid var(--line);
+  box-shadow:-10px 0 30px rgba(20,28,56,.18);padding:0 18px 30px}
+.toc-head{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;gap:8px;
+  background:var(--night);color:var(--star);margin:0 -18px 10px;padding:12px 18px}
+.toc-head h4{font-family:'Reem Kufi',sans-serif;font-size:17px;color:var(--star)}
+.toc-x{width:34px;height:34px;border-radius:50%;border:1px solid rgba(243,213,138,.5);background:transparent;color:var(--star);cursor:pointer;font-size:15px}
+.toc ol{list-style:none;margin:0;padding:0;font-size:15px}
+.toc ol ol{padding-inline-start:14px;border-inline-start:2px solid var(--line);margin:2px 0 8px;font-size:14px}
+.toc li{margin:2px 0}
+.toc a{display:block;color:var(--ink);padding:4px 8px;border-radius:8px;line-height:1.7}
+.toc>ol>li>a{font-weight:700}
+.toc ol ol a{color:var(--ink-soft);font-weight:400}
+.toc a:hover,.toc a.on{background:var(--goldbg);color:var(--night2)}
+[data-theme="night"] .toc a:hover,[data-theme="night"] .toc a.on{color:var(--star)}
+.toc-tab{position:fixed;top:50%;right:0;z-index:60;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;
+  padding:12px 7px;border:1px solid rgba(243,213,138,.55);border-right:0;border-radius:12px 0 0 12px;
+  background:var(--night);color:var(--star);font-family:'Cairo',sans-serif;font-size:13px;font-weight:700;cursor:pointer;
+  box-shadow:-3px 3px 14px rgba(20,28,56,.25)}
+.toc-tab span{writing-mode:vertical-rl}
+body.toc-open .toc-tab{opacity:0;pointer-events:none}
+.toc-back{position:fixed;inset:0;z-index:65;background:rgba(20,28,56,.35)}
+
+/* ===== التخطيط: المتن في الوسط، والهوامش في العمود الجانبي ===== */
+.wrap{max-width:1180px;margin:0 auto;padding:18px 18px 80px}
+.main{position:relative;max-width:var(--main);margin:0 auto;min-width:0}
+#ilm-completion-box{display:flex;align-items:center;gap:10px;max-width:var(--main);margin:18px auto 0;padding:10px 16px;
+  background:var(--surface);border:1px solid var(--line);border-right:4px solid var(--s1);border-radius:12px;cursor:pointer;user-select:none}
+#ilm-completion-box input{width:18px;height:18px;accent-color:var(--s1);cursor:pointer;flex-shrink:0}
+#ilm-completion-box span{font-size:14.5px;color:var(--ink)}
+#ilm-completion-box.done{background:var(--goldbg);border-color:var(--goldbd)}
+#ilm-completion-box.done span:after{content:" ✓";color:var(--s1)}
+body .ilm-nav-bar:not(.ilm-nav-top){max-width:var(--main);margin:18px auto;padding:14px 16px;background:var(--surface);border:1px solid var(--line);
+  border-radius:16px;box-shadow:none;font-family:'Cairo',sans-serif;color:var(--ink)}
+body .ilm-nav-bar:not(.ilm-nav-top):before{color:var(--ink-soft);font-size:12.5px;font-weight:700;margin-bottom:10px}
+body .ilm-nav-bar:not(.ilm-nav-top) .inv-link{background:var(--surface);border:1px solid var(--line);border-right:4px solid var(--s1);border-radius:12px;color:var(--ink);padding:10px 14px;min-height:44px;box-shadow:none}
+body .ilm-nav-bar:not(.ilm-nav-top) .inv-link:hover{background:var(--goldbg);transform:none}
+body .ilm-nav-bar:not(.ilm-nav-top) .inv-day{color:var(--s1);font-size:12px;font-weight:800}
+body .ilm-nav-bar:not(.ilm-nav-top) .inv-ttl{color:var(--ink);font-family:'Amiri',serif;font-size:18px;line-height:1.5}
+body .ilm-nav-bar:not(.ilm-nav-top) .inv-subj{color:var(--ink-soft)}
+body .ilm-nav-bar:not(.ilm-nav-top) .inv-disabled{background:transparent;border:1px dashed var(--line);color:#a3a7b3;border-radius:12px;min-height:44px}
+body .ilm-nav-bar:not(.ilm-nav-top) select{background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:10px;min-height:44px;font-family:'Cairo',sans-serif}
+.wrap>.ilm-export-section{max-width:var(--main);margin:30px auto 0}
+
+/* ===== الغلاف (داخل المتن) ===== */
+.hero{color:#fff;text-align:center;border-radius:20px;padding:46px 22px 38px;margin:4px 0 18px;
+  background:
+   radial-gradient(1.5px 1.5px at 12% 22%,#fff 50%,transparent 51%),
+   radial-gradient(1px 1px at 28% 68%,#fff 50%,transparent 51%),
+   radial-gradient(1.5px 1.5px at 44% 14%,#f3d58a 50%,transparent 51%),
+   radial-gradient(1px 1px at 63% 40%,#fff 50%,transparent 51%),
+   radial-gradient(2px 2px at 78% 18%,#fff 50%,transparent 51%),
+   radial-gradient(1px 1px at 88% 62%,#f3d58a 50%,transparent 51%),
+   radial-gradient(1px 1px at 6% 80%,#fff 50%,transparent 51%),
+   radial-gradient(1.5px 1.5px at 52% 84%,#fff 50%,transparent 51%),
+   radial-gradient(ellipse at 50% 120%,#3b4c8a 0%,transparent 60%),
+   linear-gradient(180deg,var(--night) 0%,var(--night2) 100%)}
+.hero .kicker{font-family:'Reem Kufi',sans-serif;color:var(--star);font-size:15px}
+.hero h1{font-family:'Amiri',serif;font-size:clamp(32px,5.5vw,42px);margin:12px 0 8px;line-height:1.35;color:#fff}
+.hero .meta{font-size:15px;color:#dfe4f4;max-width:640px;margin:0 auto;line-height:1.9}
+.hero .meta:after{content:"✦";display:block;color:var(--star);margin-top:14px;
+  background:linear-gradient(90deg,transparent 20%,rgba(243,213,138,.6) 21%,rgba(243,213,138,.6) 44%,transparent 45%,transparent 55%,rgba(243,213,138,.6) 56%,rgba(243,213,138,.6) 79%,transparent 80%) center/100% 1px no-repeat}
+.main>.ai-warn{display:none}
+.layer-key{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 18px;
+  font-size:14px;color:var(--ink-soft);margin:0 0 22px;line-height:1.95}
+.layer-key b{color:var(--ink)}
+
+/* ===== المقاطع ===== */
+.sec{margin:46px 0 0;scroll-margin-top:calc(var(--tbh) + 14px)}
+.sec>h2{font-family:'Amiri',serif;font-size:clamp(25px,4vw,31px);font-weight:700;line-height:1.45;color:#fff;
+  border-radius:16px;padding:14px 20px;margin-bottom:8px;
+  background:var(--acc,var(--s1));background-image:linear-gradient(135deg,rgba(20,28,56,.25),rgba(255,255,255,.10))}
+[data-theme="night"] .sec>h2{color:#10131f}
+.sec .range{font-size:13px;color:var(--ink-soft);margin:0 0 14px}
+.sticky-head{position:sticky;top:var(--tbh);z-index:40;background:var(--bg);border-bottom:1px solid var(--line);
+  font-size:13px;color:var(--acc,var(--brand));padding:6px 2px;margin-bottom:12px;font-family:'Reem Kufi',sans-serif}
+h3{font-family:'Amiri',serif;font-size:24px;color:var(--acc,var(--brand));margin:30px 0 8px;padding-right:12px;
+  border-right:4px solid var(--acc,var(--brand));scroll-margin-top:calc(var(--tbh) + 50px)}
+h4{font-size:19px;color:var(--ink);margin:20px 0 6px;font-weight:700}
+.gen-head{position:relative}
+.gen-head::after{content:'عنوان تنظيمي';position:absolute;inset-inline-end:0;top:6px;font-size:11.5px;font-weight:400;
+  color:var(--ink-soft);opacity:.65}
+p{margin:0 0 14px;text-align:right}
+.lead>p:first-of-type::first-line{font-weight:600;color:var(--night2)}
+[data-theme="night"] .lead>p:first-of-type::first-line{color:var(--star)}
+
+/* ===== بلوكات مسار الكتب ===== */
+.aya-block{background:var(--surface);border:1px solid var(--line);border-right:4px solid var(--sem-aya);
+  border-radius:12px;padding:12px 18px;margin:16px 0}
+.aya{font-family:'Amiri',serif;font-size:1.3em;line-height:2.3;color:var(--sem-aya);display:block}
+.aya-ref{font-size:.6em;color:var(--ink-soft);font-family:'Cairo',sans-serif;vertical-align:middle}
+.hadith-block{background:var(--surface);border:1px solid var(--line);border-right:4px solid var(--sem-hadith);
+  border-radius:12px;padding:12px 18px;margin:16px 0}
+.hadith-block .lbl{font-family:'Reem Kufi',sans-serif;font-size:13.5px;color:var(--sem-hadith);display:block;margin-bottom:6px}
+.naql-block{background:var(--goldbg);border:1px solid var(--goldbd);border-right:4px solid #7a6324;border-radius:12px;padding:12px 18px;margin:16px 0}
+.naql-block .who{display:inline-block;font-size:12.5px;font-weight:800;background:#7a6324;color:#fff;
+  border-radius:999px;padding:1px 12px;margin-bottom:8px}
+.faida{margin:18px 0;padding-inline-start:4px}
+.faida-head{display:flex;gap:10px;align-items:baseline;margin-bottom:6px}
+.faida-num{flex:0 0 auto;min-width:30px;height:30px;border-radius:50%;background:var(--acc,var(--brand));
+  color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-family:'Reem Kufi',sans-serif}
+.faida-ttl{font-family:'Reem Kufi',sans-serif;font-size:18px;color:var(--acc,var(--brand))}
+.divider{text-align:center;color:var(--goldbd);margin:28px 0;font-size:20px;letter-spacing:8px}
+.tag-add{display:inline-block;font-size:12px;background:var(--surface-2);color:var(--ink-soft);
+  border:1px solid var(--line);border-radius:999px;padding:1px 9px;margin-inline-start:6px}
+
+/* الخلاصة */
+.takeaway{border-radius:14px;padding:14px 18px;margin:24px 0;background:var(--night);color:#eef1fa}
+.takeaway h4{font-family:'Reem Kufi',sans-serif;color:var(--star);font-size:16px;margin:0 0 6px}
+.takeaway ul{margin:0;padding-inline-start:22px}
+.takeaway li{margin:4px 0}
+.takeaway .sem-aya{color:#a8e6c1}
+.takeaway .sem-name{color:#f3b0b2}
+.takeaway .sem-name.sem-sahabi{color:var(--star)}
+
+/* حواشي المؤلف (من الكتاب) */
+.book-fn{border-top:1px solid var(--line);margin-top:22px;padding-top:10px;font-size:14.5px;color:var(--ink-soft)}
+.book-fn .lbl{font-family:'Reem Kufi',sans-serif;font-size:13px;color:var(--ink);display:block;margin-bottom:4px}
+.book-fn ol{margin:0;padding-inline-start:20px;list-style:arabic-indic}
+.book-fn li{margin:3px 0}
+sup.fnr{color:var(--ink-soft);font-size:.68em}
+
+/* ===== الهوامش: عمود جانبي على الشاشات الواسعة، وتُفتح بالضغط على الرقم فيما دونها ===== */
+.nmark{display:inline-flex;align-items:center;justify-content:center;width:21px;height:21px;border-radius:50%;
+  background:var(--nc,var(--brand));color:#fff;font-size:12px;cursor:pointer;vertical-align:super;
+  margin:0 2px;font-family:'Cairo',sans-serif;border:none;line-height:1}
+.note{display:none;font-family:'Cairo',sans-serif;font-size:14px;line-height:1.85;color:var(--ink-soft);
+  background:var(--surface);border:1px solid var(--line);border-right:3px solid var(--nc,var(--brand));border-radius:10px;
+  padding:9px 12px;margin:10px 0 14px}
+.note.open{display:block}
+.note .nt{display:block;font-size:11.5px;font-weight:800;color:var(--nc,var(--brand));margin-bottom:2px}
+.note--tawthiq{--nc:var(--n-tawthiq)} .note--mustalah{--nc:var(--n-mustalah)}
+.note--tarjama{--nc:var(--n-tarjama)} .note--idah{--nc:var(--n-idah)}
+.note--rabt{--nc:var(--n-rabt)} .note--tashih{--nc:var(--n-tashih)} .note--siyaq{--nc:var(--n-siyaq)}
+.note.flash{box-shadow:0 0 0 3px rgba(243,213,138,.7)}
+@media (min-width:1340px){
+  .main .note{display:block;position:absolute;inset-inline-start:calc(100% + 26px);
+    width:min(290px,calc((100vw - var(--main))/2 - 50px));margin:0;font-size:13.5px;
+    box-shadow:0 3px 12px rgba(20,28,56,.06)}
+  .main .note:before{content:"";position:absolute;top:14px;inset-inline-start:-27px;width:22px;border-top:1px dashed var(--line)}
+}
+
+/* ===== الطبقة الدلالية ===== */
+.sem-aya{color:var(--sem-aya);font-family:'Amiri','Noto Naskh Arabic',serif;font-size:1.08em}
+.sem-hadith{color:var(--sem-hadith)}
+.sem-name{color:var(--sem-scholar)}
+.sem-name.sem-scholar{color:var(--sem-scholar);font-weight:700}
+.sem-name.sem-sahabi{color:var(--sem-sahabi);font-weight:700}
+
+/* ===== الأسئلة التفاعلية ===== */
+.quiz{background:#f2f3f8;border:1px solid #dadded;border-radius:16px;padding:16px 18px;margin:26px 0}
+[data-theme="night"] .quiz{background:var(--surface-2);border-color:var(--line)}
+.quiz h4{font-family:'Reem Kufi',sans-serif;font-size:17px;color:var(--night2);margin:0 0 4px}
+[data-theme="night"] .quiz h4{color:var(--star)}
+.quiz .score{display:inline-block;font-size:13px;font-weight:800;color:var(--night2);background:var(--surface);border:1px solid #dadded;border-radius:999px;padding:1px 12px;margin-bottom:6px}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0}
+.q .qt{font-weight:800;margin-bottom:8px}
+.opt{display:block;width:100%;text-align:right;font-family:'Cairo',sans-serif;font-size:15.5px;min-height:44px;line-height:1.7;
+  padding:8px 14px;margin:6px 0;border:1px solid #cfd3e3;border-radius:10px;background:var(--bg);color:var(--ink);cursor:pointer;white-space:normal}
+.opt:hover{border-color:var(--night2)}
+.opt.ok{background:#e4f1e7;border-color:#7fb38f}
+.opt.no{background:#f8e7e4;border-color:#d79b90}
+[data-theme="night"] .opt.ok{background:#1d3a28} [data-theme="night"] .opt.no{background:#3a1f1d}
+.expl{font-size:15px;color:var(--ink);background:var(--goldbg);border-radius:10px;padding:8px 12px;margin-top:6px}
+
+/* ===== البطاقات ===== */
+.cards{background:linear-gradient(180deg,var(--night),var(--night2));color:#fff;border-radius:20px;padding:30px 20px 34px;margin:46px 0 0}
+.cards h3{font-family:'Amiri',serif;font-size:30px;text-align:center;margin:0;padding:0;border:0;color:#fff!important}
+.cards>p{text-align:center;color:#c6cde6!important}
+.filters{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:12px 0 16px}
+.filters button{font-family:'Cairo',sans-serif;font-size:13px;min-height:34px;padding:4px 12px;border-radius:999px;
+  border:1.5px solid rgba(255,255,255,.3);background:transparent;color:#fff;cursor:pointer}
+.filters button.on{background:var(--star);color:var(--night);border-color:var(--star);font-weight:800}
+.ak{max-width:720px;margin:0 auto;overflow-wrap:break-word;background:#fff;border-radius:18px;padding:22px 24px;color:#26352e;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);cursor:pointer}
+.ak .deckcap{font-size:12px;color:#66766f;margin-bottom:10px;border-bottom:1px dashed #e1e0d8;padding-bottom:6px;overflow-wrap:anywhere}
+.ak .ak-back{display:none;margin-top:16px;padding-top:16px;border-top:1px solid #e1e0d8}
+.ak.on .ak-back{display:block}
+.ak .hint{margin-top:10px;font-size:12.5px;color:#66766f;text-align:center}
+.ak.on .hint{display:none}
+.cnav{display:flex;gap:10px;align-items:center;justify-content:center;margin-top:16px;flex-wrap:wrap}
+.cnav span{font-family:'Reem Kufi',sans-serif;color:var(--star)}
+.btn{font-family:'Cairo',sans-serif;font-size:14px;min-height:40px;padding:6px 14px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;cursor:pointer}
+.btn:hover{background:rgba(255,255,255,.16)}
+#cdl{background:var(--star);color:var(--night);border:0;font-weight:800}
+
+/* ===== الاستجابة ===== */
+@media (max-width:900px){
+  .wrap{padding:12px 12px 70px}
+  #ilm-completion-box{margin:14px 12px 0}
+  body .ilm-nav-bar:not(.ilm-nav-top){margin:14px 12px}
+  body{font-size:calc(var(--fs) - 1px)}
+  .hero{padding:34px 16px 28px;border-radius:16px}
+  h3{font-size:21px}
+  .tb-title{font-size:13.5px}
+}
+@media (max-width:640px){
+  .topbar-in{padding:6px 10px;gap:6px}
+  .tb-title{display:none}
+  #nav-top-slot{margin-inline-start:auto}
+  .tb-links{order:5;flex-basis:100%;padding-bottom:2px}
+  body .ilm-nav-top .inv-ttl{display:none}
+  .toc-tab{padding:8px 3px;font-size:11px;top:auto;bottom:22%;transform:none;opacity:.92}
+  .ak{padding:16px 14px}
+}
+@media print{
+  .topbar,.toc-tab,.side,.toc-back,.quiz,.cards,.ai-note{display:none!important}
+  body{background:#fff;color:#000;font-size:12pt}
+  .main .note,.note{display:block!important;position:static!important;width:auto!important;font-size:10pt;border:0;border-top:1px dotted #999;background:none;box-shadow:none}
+  .nmark{background:none;color:#000;border:1px solid #000}
+  .hero{background:none;color:#000}
+  .hero h1,.hero .meta{color:#000}
+}
+
+/* ===== إضافات القالب: فهرس بعناصر div، وعنوان البطاقات ===== */
+.toc-i{margin:2px 0}
+.toc-i>a{font-weight:700}
+.toc-sub{padding-inline-start:14px;border-inline-start:2px solid var(--line);margin:2px 0 8px;font-size:14px}
+.toc-sub a{color:var(--ink-soft);font-weight:400}
+#toclist>a{font-weight:700}
+.cards .ttl{font-family:'Amiri',serif;font-size:30px;text-align:center;color:#fff!important}
+.cards .sub{text-align:center;font-size:14px;color:#c6cde6;margin:4px 0 0}
+
+</style>
 </head>
-<body class="" data-page="lecture" data-lecture-id="stage0_qabas-wahhaj_06">
-  <div class="page">
-    <nav class="breadcrumbs"><a href="../../../index.html">الرئيسية</a><span class="sep">/</span><a href="../../index.html">المرحلة التمهيدية</a><span class="sep">/</span><a href="../index.html">القبس الوهاج (مختصر شرح المنهاج)</a><span class="sep">/</span><span aria-current="page">القبس الوهاج — من ص 112 إلى 136</span></nav>
-
-      <header class="lecture-header">
-        <h1>القبس الوهاج — من ص 112 إلى 136</h1>
-        <p class="lecture-meta">المادة: القبس الوهاج (مختصر شرح المنهاج) &nbsp;|&nbsp; الشيخ: محمد شميس &nbsp;|&nbsp; اليوم 12</p>
-        <label class="checkbox-line lecture-checkbox">
-          <input type="checkbox" data-lecture-id="stage0_qabas-wahhaj_06">
-          <span>إتمام هذه المحاضرة</span>
-        </label>
-      </header>
-
-      <div class="lecture-placeholder">
-        <p class="placeholder-hint">سيتم إضافة المحاضرة هنا لاحقًا (رابط يوتيوب / فيديو / ملف صوتي / PDF / نص المحاضرة / ملاحظاتي)</p>
-      </div>
-
-      <div class="lecture-nav">
-        <a href="../index.html" class="btn btn-outline">الرجوع إلى المادة</a>
-        <a href="../../index.html" class="btn btn-outline">الرجوع إلى المرحلة</a>
-      </div>
-
-      <div data-lecture-nav-extra></div>
-
+<body data-lecture-id="stage0_qabas-wahhaj_06">
+<div class="ai-note" role="note">⚠️ أُعدّ هذا المحتوى بمساعدة الذكاء الاصطناعي، وقد يحتوي أخطاء، ويُرجى مراجعته.</div>
+<div class="topbar" id="topbar">
+  <div class="topbar-in">
+    <button class="tb-btn tb-toc" id="tocBtn" type="button" aria-controls="toc" aria-expanded="false" title="فتح الفهرس وإغلاقه">☰ الفهرس</button>
+    <div class="tb-title">القبس الوهاج · الملف ٦ — ص ١١٢–١٣٦</div>
+    <div class="tb-links">
+      <a href="#s1">الباب الثاني عشر</a>
+      <a href="#s2">الباب الثالث عشر</a>
+      <a href="#s6">الباب الرابع عشر</a>
+      <a href="#s10">الباب الخامس عشر</a>
+      <a href="#anki">البطاقات</a>
+    </div>
+    <span id="nav-top-slot"></span>
+    <div class="tb-tools">
+      <button class="tb-btn" id="fsm" type="button" title="تصغير الخط">أ−</button>
+      <button class="tb-btn" id="fsp" type="button" title="تكبير الخط">أ+</button>
+      <button class="tb-btn" id="thm" type="button" title="وضع القراءة الليلي">🌙</button>
+    </div>
   </div>
-  <script type="module" src="../../../firebase-sync-manhaj.js"></script>
-  <script src="../../../data.js"></script>
-  <script src="../../../script.js"></script>
+  <div class="progress" id="prog"></div>
+</div>
+<button class="toc-tab" id="tocTab" type="button" aria-controls="toc" aria-expanded="false" title="فتح الفهرس">☰<span>الفهرس</span></button>
+<div class="toc-back" id="tocBack" hidden></div>
+
+<label id="ilm-completion-box">
+  <input type="checkbox" data-lecture-id="stage0_qabas-wahhaj_06">
+  <span>تحديد هذه المحاضرة كمكتملة</span>
+</label>
+
+<div class="wrap">
+  <aside class="side">
+    <nav class="toc" id="toc" aria-label="فهرس الملف">
+      <div class="toc-head"><h4>فهرس الملف</h4><button class="toc-x" id="tocX" type="button" aria-label="إغلاق الفهرس">✕</button></div>
+      <div id="toclist"></div>
+    </nav>
+  </aside>
+
+  <main class="main" data-ilm-highlight-zone>
+    <header class="hero">
+      <div class="kicker">المرحلة التمهيدية · الملف ٦ من ١١</div>
+      <h1>القبس الوهاج في تلخيص شرح المنهاج</h1>
+      <div class="meta">
+        الباب الثاني عشر (تتمته) · الباب الثالث عشر: اتباع هدي الأنبياء · الباب الرابع عشر · الباب الخامس عشر<br>
+        من ص ١١٢ إلى ١٣٦ &nbsp;|&nbsp; تأليف: مُحمد شُميس &nbsp;|&nbsp; تلخيص شرح الشيخ أحمد بن يوسف السيد لمتن «المنهاج من ميراث النبوة»
+      </div>
+    </header>
+
+    <div class="ai-warn">
+      ⚠️ أُعدّ هذا المحتوى بمساعدة الذكاء الاصطناعي، وقد يحتوي أخطاء، ويُرجى مراجعته. (المتن منقول من الكتاب، والهوامش والأسئلة والخلاصات والبطاقات إضافة.)
+    </div>
+
+    <div class="layer-key">
+      <b>كيف تقرأ هذه الصفحة:</b> النص الأسود المتصل هو <b>كلام المؤلف كما هو في الكتاب حرفيًا</b>. وكل ما ظهر في العمود الجانبي بعلامة ملوّنة (أو تحت الفقرة في الهاتف) هو <b>هامش من إعداد الصفحة وليس من الكتاب</b>. أما «حواشي المؤلف» أسفل كل مقطع فهي حواشي الكتاب نفسه. والألوان دلالة ثابتة: <span class="sem-aya">الآية خضراء</span>، <span class="sem-hadith">الحديث بنفسجي</span>، <span class="sem-name sem-sahabi">الأنبياء والصحابة كهرماني</span>، <span class="sem-name sem-scholar">العلماء أحمر عريض</span>، <span class="sem-name">وباقي الأعلام أحمر عادي</span>.
+    </div>
+
+    <!-- ===================== المقطع 1 ===================== -->
+    <section class="sec" id="s1" style="--acc:var(--s1)">
+      <div class="sticky-head">المقطع الأول · الباب الثاني عشر: الحديث الخامس</div>
+      <h2>الباب الثاني عشر — الحديث الخامس: مثل المؤمنين في توادّهم</h2>
+      <p class="range">ص ١١٢</p>
+
+      <h3 id="s1a">الحديث الخامس</h3>
+      <div class="hadith-block"><span class="lbl">عَنِ النُّعْمَانِ بْنِ بَشِيرٍ ﵄ قَالَ: قَالَ رَسُولُ اللهِ ﷺ:</span>
+        <p><span class="sem-hadith">«مَثَلُ الْمُؤْمِنِينَ فِي تَوَادِّهِمْ وَتَرَاحُمِهِمْ وَتَعَاطُفِهِمْ مَثَلُ الْجَسَدِ، إِذَا اشْتَكَى مِنْهُ عُضْوٌ تَدَاعَى لَهُ سَائِرُ الْجَسَدِ بِالسَّهَرِ وَالْحُمَّى»<sup class="fnr">(١)</sup>.</span></p>
+      </div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> في الحديث تأسيس لمسؤولية الفرد المسلم في العمل للإسلام، ونصرة المسلمين، والتعاطف مع قضاياهم، وموجب هذا التعاطف: الأخوّة الإيمانية.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> التعاطف مع قضايا الأمة ليس اختراعًا حزبيًّا، ولا مبدأً حَرَكيًّا، وإنما هو هدي نبوي متّصل بالعقيدة، وكما أن الخلل في باب من أبواب العقيدة؛ كـ«الأسماء والصفات»، و«الإيمان والقدر» يعتبر خللًا مشكلًا يستحق المعالجة؛ فكذلك الخلل في «الولاء للمؤمنين».</p>
+      <p><b>الْفَائِدَةُ الثَّالِثَةُ:</b> من المنكرات العظمى في هذا الزمن: محاربة مفهوم «الأخوة الإيمانية، والانتماء للأمة الإسلامية، ونصرة قضايا المسلمين»، وعليه؛ فإن من أولويات الإصلاح في هذه المرحلة: المحافظة على مبدأ «الأخوة الإيمانية»، و«الولاء للمؤمنين»، وعدم الاستسلام لهذه الحرب التي تُشوّه بها هذه المفاهيم.<button class="nmark note--rabt" data-n="n1">١</button></p>
+      <aside class="note note--rabt" id="n1"><span class="nt">ربط داخلي</span>يردّ هذا على ما ذكره المؤلف في فوائد عنوان الباب (الملف ٥): من يرمي الداعين إلى المسؤولية العامة بـ«الحركية» و«السياسة»؛ فالحديث يجعلها هديًا نبويًّا متصلًا بالعقيدة.</aside>
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>أخرجه <span class="sem-name sem-scholar">البخاري</span> (٦٠١١)، ومسلم (٢٥٨٦).</li></ol>
+      </div>
+
+      <div class="quiz" data-sec="s1"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>حديث «مثل المؤمنين في توادّهم»: تأسيس لمسؤولية الفرد في العمل للإسلام ونصرة المسلمين، وموجبه الأخوة الإيمانية.</li>
+          <li>التعاطف مع قضايا الأمة ليس اختراعًا حزبيًّا ولا مبدأً حركيًّا، بل هدي نبوي متصل بالعقيدة.</li>
+          <li>الخلل في «الولاء للمؤمنين» كالخلل في الأسماء والصفات والإيمان والقدر: يستحق المعالجة.</li>
+          <li>من المنكرات العظمى اليوم محاربة مفهوم الأخوة الإيمانية، ومن أولويات الإصلاح المحافظة عليه.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 2 ===================== -->
+    <section class="sec" id="s2" style="--acc:var(--s2)">
+      <div class="sticky-head">المقطع الثاني · الباب الثالث عشر: العنوان والآيتان ١–٢</div>
+      <h2>الباب الثالث عشر — عنوان الباب والآيتان (١–٢)</h2>
+      <p class="range">ص ١١٣ – ص ١١٤</p>
+
+      <h3 id="s2a">الباب الثالث عشر</h3>
+      <div class="naql-block"><p>بَابٌ فِي مَرْكَزِيَّةِ اتِّبَاعِ هَدْيِ الْأَنْبِيَاءِ، وَأَهَمِّيَّتِهِ لِلْمُصْلِحِ فِي عِبَادَتِهِ وَدَعْوَتِهِ وَصَبْرِهِ</p></div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p>الاعتناء بما جاء عن الأنبياء عليهم صلوات الله وسلامه من أهم ما ينبغي أن يعتني به أيّ إنسان يؤمّل أن يكون في المستقبل مصلحًا نافعًا.</p>
+      </div>
+      <h4>الآيات</h4>
+      <h3 id="s2b">الآية الأولى</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿وَكُلّٗا نَّقُصُّ عَلَيۡكَ مِنۡ أَنۢبَآءِ ٱلرُّسُلِ مَا نُثَبِّتُ بِهِۦ فُؤَادَكَۚ وَجَآءَكَ فِي هَٰذِهِ ٱلۡحَقُّ وَمَوۡعِظَةٞ وَذِكۡرَىٰ لِلۡمُؤۡمِنِينَ﴾ <span class="aya-ref">[هود: ١٢٠]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> في هذه الآية يبيّن الله لنبيّه ﷺ أنه يقصّ عليه من أنباء ما سبق ليثبت به فؤاده؛ لأنه رسول كما كانت الرسل من قبله، وتعرّض لما تعرّضوا له، وأُصيب بما أُصيبوا به من البلاء والشدّة والتكذيب والاستهزاء، فإن في اقتدائه بمَن قبله من الرسل والأنبياء ومعرفة أخبارهم ما يُثبّت فؤاده.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> الخطاب في الآية ليس خاصًّا بالنبي ﷺ وإنما هو يشمل مَن اتّبعه من أمّته ممن يسير على طريقه في الدعوة والإصلاح، فإنه يناله من المكذّبين والمستهزئين وأعداء الحق ما ينال الأنبياء، وعليه؛ فإنه يحتاج إلى تثبيت كما احتاج الأنبياء من قبله، واتّباعُ قصص الأنبياء ومعرفة أحوالهم واتّباعهم من أهم ما يكون به تثبيت الفؤاد؛ لذلك كان اتّباع هدي الأنبياء مركزيًّا للإنسان المصلح.</p>
+      <h3 id="s2c">الآية الثانية</h3>
+      <div class="aya-block"><span class="aya">﴿فَٱصۡبِرۡ كَمَا صَبَرَ أُوْلُواْ ٱلۡعَزۡمِ مِنَ ٱلرُّسُلِ وَلَا تَسۡتَعۡجِل لَّهُمۡۚ كَأَنَّهُمۡ يَوۡمَ يَرَوۡنَ مَا يُوعَدُونَ لَمۡ يَلۡبَثُوٓاْ إِلَّا سَاعَةٗ مِّن نَّهَارِۭۚ بَلَٰغٞۚ فَهَلۡ يُهۡلَكُ إِلَّا ٱلۡقَوۡمُ ٱلۡفَٰسِقُونَ﴾ <span class="aya-ref">[الأحقاف: ٣٥]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> في هذه الآية أمر لرسوله ﷺ بالصبر، وبيّن له أن هذا الصبر ليس بداية في سنة الله بالنسبة للمرسلين والأنبياء، فقد كان الأنبياء من قبله يصبرون.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> في الآية خطاب وإيناس لمَن جاء بعد النبي ﷺ ممن يسير على طريق الأنبياء والمرسلين بأن يصبر كما صبر أولو العزم من الرسل.<button class="nmark note--mustalah" data-n="n2">٢</button></p>
+      <aside class="note note--mustalah" id="n2"><span class="nt">تعريف مصطلح</span>«أولو العزم من الرسل»: أصحاب الجِدّ والصبر والثبات، والمشهور أنهم خمسة: نوح، وإبراهيم، وموسى، وعيسى، ومحمد ﷺ، وقد جُمعوا في قوله تعالى: <span class="sem-aya">﴿وَإِذۡ أَخَذۡنَا مِنَ ٱلنَّبِيِّـۧنَ مِيثَٰقَهُمۡ وَمِنكَ وَمِن نُّوحٖ وَإِبۡرَٰهِيمَ وَمُوسَىٰ وَعِيسَى ٱبۡنِ مَرۡيَمَۖ﴾</span> <span class="aya-ref">[الأحزاب: ٧]</span>.</aside>
+      <div class="quiz" data-sec="s2"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>الاعتناء بما جاء عن الأنبياء من أهم ما يعتني به من يؤمّل أن يكون مصلحًا نافعًا.</li>
+          <li>آية هود: قصّ الله على نبيه أنباء الرسل ليثبّت فؤاده؛ لأنه أُصيب بما أُصيبوا به.</li>
+          <li>الخطاب يشمل من سار على طريقه في الدعوة، فيحتاج إلى التثبيت، واتباع قصص الأنبياء من أهم ما يُثبّت به الفؤاد.</li>
+          <li>آية الأحقاف: الصبر ليس بداية في سنة الله للمرسلين، وفيها إيناس لمن بعدهم أن يصبروا كما صبر أولو العزم.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 3 ===================== -->
+    <section class="sec" id="s3" style="--acc:var(--s3)">
+      <div class="sticky-head">المقطع الثالث · الباب الثالث عشر: الآيات ٣–٥</div>
+      <h2>الباب الثالث عشر — الآيات (٣–٥)</h2>
+      <p class="range">ص ١١٤ – ص ١١٦</p>
+
+      <h3 id="s3a">الآية الثالثة</h3>
+      <div class="aya-block"><span class="aya">﴿قُلۡ هَٰذِهِۦ سَبِيلِيٓ أَدۡعُوٓاْ إِلَى ٱللَّهِۚ عَلَىٰ بَصِيرَةٍ أَنَا۠ وَمَنِ ٱتَّبَعَنِيۖ وَسُبۡحَٰنَ ٱللَّهِ وَمَآ أَنَا۠ مِنَ ٱلۡمُشۡرِكِينَ﴾ <span class="aya-ref">[يوسف: ١٠٨]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> هذه الآية من الآيات المهمة جدًّا في تتبع هدي الأنبياء والمرسلين؛ لأن فيها ذكرًا لأتباع النبي ﷺ.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> «الدعوة إلى الله» هي المعلم الأساسي في السبيل الذي سار عليه النبي ﷺ، والصفة المميّزة للداعي إلى الله في هذا السبيل: أنّه على بصيرة.</p>
+      <p><b>الْفَائِدَةُ الثَّالِثَةُ:</b> في الآية دلالة على أهمية أن يكون المصلح على بصيرة، وهي: الحجّة والوضوح واليقين، فلا بد أن يمتلك المصلحُ الحجة، وأن يكون على يقين، وأن يكون على بيّنة من أمره، لأنه لا يستطيع الصبر على ما يُصيبه إذا لم يكن موقنًا أنه يسير على الطريق الصحيح؛ لذلك فإننا نجد أن من جملة ما يُخاطب الله به أنبياءه في الوحي ما يُثبّت يقينهم ويقويّ إيمانهم، ومن ذلك:</p>
+      <p>قول الله تعالى: <span class="sem-aya">﴿وَكَذَٰلِكَ نُرِيٓ إِبۡرَٰهِيمَ مَلَكُوتَ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِ وَلِيَكُونَ مِنَ ٱلۡمُوقِنِينَ﴾</span> <span class="aya-ref">[الأنعام: ٧٥]</span>.</p>
+      <p>وقال لموسى عليه السلام في بداية رسالته: <span class="sem-aya">﴿لِنُرِيَكَ مِنۡ ءَايَٰتِنَا ٱلۡكُبۡرَى﴾</span> <span class="aya-ref">[طه: ٢٣]</span>.</p>
+      <p>وقال في شأن محمد ﷺ بعد أن عرج به إلى السماء: <span class="sem-aya">﴿لَقَدۡ رَأَىٰ مِنۡ ءَايَٰتِ رَبِّهِ ٱلۡكُبۡرَىٰٓ﴾</span> <span class="aya-ref">[النجم: ١٨]</span>.<button class="nmark note--idah" data-n="n3">٣</button></p>
+      <aside class="note note--idah" id="n3"><span class="nt">إيضاح</span>ربط المؤلف بين «البصيرة» و«الصبر»: فاليقين هو الذي يُمكّن الداعي من الصبر؛ ولهذا كانت الآيات الثلاث في إراءة الأنبياء آياتِ الله الكبرى مقدِّمةً لتحمّل أعباء الرسالة.</aside>
+      <h3 id="s3b">الآية الرابعة</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿أُوْلَـٰٓئِكَ ٱلَّذِينَ هَدَى ٱللَّهُۖ فَبِهُدَىٰهُمُ ٱقۡتَدِهۡۗ قُل لَّآ أَسۡـَٔلُكُمۡ عَلَيۡهِ أَجۡرًاۖ إِنۡ هُوَ إِلَّا ذِكۡرَىٰ لِلۡعَٰلَمِينَ﴾ <span class="aya-ref">[الأنعام: ٩٠]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> هذه الآية عظيمة جدًّا في بيان أهمية هدي الأنبياء، فقد أمر الله نبيّه محمدًا ﷺ بالاقتداء بهديهم.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> في الآية دلالة على أنّ الأنبياء - وهم من هم - إنما هداهم الله، وهذا يُبيّن قيمة الهداية.</p>
+      <p><b>الْفَائِدَةُ الثَّالِثَةُ:</b> هذه الآية مركزية في بيان أهمية معرفة هدي الأنبياء؛ لأن الاقتداء بهم لا يكون إلا بعد معرفة هديهم.<button class="nmark note--siyaq" data-n="n4">٤</button></p>
+      <aside class="note note--siyaq" id="n4"><span class="nt">سياق تاريخي</span>جاءت الآية بعد ذكر ثمانية عشر نبيًّا في سورة الأنعام (الآيات ٨٣–٨٦)؛ فـ<span class="sem-aya">﴿أُوْلَـٰٓئِكَ﴾</span> إشارة إليهم جميعًا.</aside>
+      <h3 id="s3c">الآية الخامسة</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿قُلۡ إِنَّنِي هَدَىٰنِي رَبِّيٓ إِلَىٰ صِرَٰطٖ مُّسۡتَقِيمٖ دِينٗا قِيَمٗا<sup class="fnr">(١)</sup> مِّلَّةَ إِبۡرَٰهِيمَ حَنِيفٗاۚ وَمَا كَانَ مِنَ ٱلۡمُشۡرِكِينَ﴾ <span class="aya-ref">[الأنعام: ١٦١]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p>النبي ﷺ كان يستحضر الأنبياء في دعوته وطريقه، وفي الآية أمر له بأن يبين أنه على ملة إبراهيم، وهذا الاستحضار من النبي ﷺ لإبراهيم عليه السلام وأنه على دينه وملّته من أعظم ما يُبيّن قيمة استحضار هدي الأنبياء والمرسلين، ومَن بعد النبي ﷺ أولى بالاستحضار.</p>
+      </div>
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>دينًا قيمًا: قائمًا بأمر الدنيا والآخرة.</li></ol>
+      </div>
+
+      <div class="quiz" data-sec="s3"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>آية يوسف: الدعوة إلى الله المعلم الأساسي في سبيل النبي ﷺ، والصفة المميزة للداعي أنه على بصيرة.</li>
+          <li>البصيرة: الحجة والوضوح واليقين، ولا يصبر المصلح على ما يصيبه إلا إذا كان موقنًا بطريقه.</li>
+          <li>من خطاب الله لأنبيائه ما يثبّت يقينهم: ملكوت السماوات لإبراهيم، والآيات الكبرى لموسى، وما رآه محمد ﷺ في المعراج.</li>
+          <li>آية الأنعام ٩٠: أمر الله نبيه بالاقتداء بهدي الأنبياء، والاقتداء لا يكون إلا بعد معرفة هديهم.</li>
+          <li>آية الأنعام ١٦١: استحضار النبي ﷺ ملة إبراهيم، ومن بعده أولى بالاستحضار.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 4 ===================== -->
+    <section class="sec" id="s4" style="--acc:var(--s4)">
+      <div class="sticky-head">المقطع الرابع · الباب الثالث عشر: الحديثان ١–٢</div>
+      <h2>الباب الثالث عشر — الحديثان (١–٢): التصبّر بالأنبياء</h2>
+      <p class="range">ص ١١٦ – ص ١١٨</p>
+
+      <h4>الأحاديث</h4>
+      <h3 id="s4a">الحديث الأول</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ عَبْدِ اللهِ بْنِ مَسْعُودٍ ﵁ قَالَ:</span>
+        <p><span class="sem-hadith">كَأَنِّي أَنْظُرُ إِلَى النَّبِيِّ ﷺ يَحْكِي نَبِيًّا<sup class="fnr">(١)</sup> مِنَ الْأَنْبِيَاءِ ضَرَبَهُ قَوْمُهُ فَأَدْمَوْهُ، وَهُوَ يَمْسَحُ الدَّمَ عَنْ وَجْهِهِ وَيَقُولُ: «اللَّهُمَّ اغْفِرْ لِقَوْمِي؛ فَإِنَّهُمْ لَا يَعْلَمُونَ»<sup class="fnr">(٢)</sup>.</span></p>
+      </div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> هذا الحديث يبيّن أنّ النبي ﷺ في حياته التفصيلية كان يستحضر هدي الأنبياء والمرسلين، ثم يتصبّر من خلال هذا الاستحضار.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> الذي يريد أن يسير على هدي النبي ﷺ، ويكون ممن يريد أن يُعلي من شأن هذه الأمة، وله دور في رفع كلمة الله، وفي نصرة هذا الدين؛ لا بدّ أن يكون دائم الاستحضار لما تعرّض له النبي ﷺ والأنبياء قبله، حتى إذا مرّ بمواقف الشدة والابتلاء والصعوبة يتذكّر هذا الهدي للأنبياء؛ فيستمد منه بإذن الله الصبر والثبات، وما يُقال الآن إنما هو كلام نظري، وقلّة من الناس الذين يستطيعون تحويل هذا الكلام إلى واقع تطبيقي عند نزول الشدائد بهم، فليس من السهل استحضار الحقائق في أوقات الشدائد.</p>
+      <h3 id="s4b">الحديث الثاني</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ عَبْدِ اللهِ بْنِ مَسْعُودٍ ﵁ قَالَ:</span>
+        <p><span class="sem-hadith">قَسَمَ النَّبِيُّ ﷺ قَسْمًا فَقَالَ رَجُلٌ: إِنَّ هَذِهِ لَقِسْمَةٌ مَا أُرِيدَ بِهَا وَجْهُ اللهِ. فَأَتَيْتُ النَّبِيَّ ﷺ فَأَخْبَرْتُهُ فَغَضِبَ حَتَّى رَأَيْتُ الْغَضَبَ فِي وَجْهِهِ، ثُمَّ قَالَ: «يَرْحَمُ اللهُ مُوسَى قَدْ أُوذِيَ بِأَكْثَرَ مِنْ هَذَا فَصَبَرَ»<sup class="fnr">(٣)</sup>.</span></p>
+      </div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> في هذا الحديث ميدان آخر استحضر به النبي ﷺ وقت الشدة ما كان عليه إخوانه من الأنبياء قبله.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> النبي ﷺ قد ابتُلي بأنواع الابتلاءات، من المشركين، ومن المنافقين، ومن جهل الأعراب، بل حتى من بعض الصالحين من أصحابه، فمنهم من فرّ يوم أُحُد، ومنهم من عصاه فنزل من على الجبل يوم أُحُد، وابتُلي ﷺ بالأمراض، وفي هذا الحديث أُوذي النبي ﷺ من بعض مَن ينتسبون إليه ممن ليسوا على طريقه، باتهامه بأمانته، وهذا قد يكون من أشد الابتلاءات التي تعرّض لها النبي ﷺ، لأن التشكيك بالأمانة من أكثر ما يؤلم ذوي الأمانة، ففي هذا الإيذاء مما صبّر النبيَّ ﷺ استحضارُه لأخيه موسى عليه السلام الذي أوذي بأكثر من هذا فصبر.<button class="nmark note--siyaq" data-n="n5">٥</button></p>
+      <aside class="note note--siyaq" id="n5"><span class="nt">سياق تاريخي</span>كانت هذه القسمة قسمةَ غنائم حنين، آثر فيها النبي ﷺ أناسًا من المؤلّفة قلوبهم، فقال الرجل مقالته.</aside>
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>يحكي نبيًّا: من المحاكاة، وهي المشابهة.</li>
+        <li>أخرجه <span class="sem-name sem-scholar">البخاري</span> (٣٤٧٧)، ومسلم (١٧٩٢).</li>
+        <li>أخرجه <span class="sem-name sem-scholar">البخاري</span> (٣٤٠٥)، ومسلم (١٠٦٢).</li></ol>
+      </div>
+
+      <div class="quiz" data-sec="s4"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>حديث «اللهم اغفر لقومي»: كان النبي ﷺ يستحضر هدي الأنبياء في حياته التفصيلية ويتصبّر به.</li>
+          <li>من يريد أن يكون له دور في نصرة الدين لا بد أن يستحضر ما تعرّض له الأنبياء؛ فيستمد منه الصبر والثبات.</li>
+          <li>استحضار الحقائق في أوقات الشدائد ليس سهلًا، وقلة من يحوّل الكلام النظري إلى واقع تطبيقي.</li>
+          <li>حديث القسمة: ابتُلي النبي ﷺ حتى بالتشكيك في أمانته، فصبّره استحضاره لموسى الذي أوذي بأكثر من هذا فصبر.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 5 ===================== -->
+    <section class="sec" id="s5" style="--acc:var(--s5)">
+      <div class="sticky-head">المقطع الخامس · الباب الثالث عشر: الحديث الثالث</div>
+      <h2>الباب الثالث عشر — الحديث الثالث: أحب الصيام والقيام</h2>
+      <p class="range">ص ١١٨ – ص ١١٩</p>
+
+      <h3 id="s5a">الحديث الثالث</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ عَبْدِ اللهِ بْنِ عَمْرٍو ﵄ قَالَ: قَالَ لِي رَسُولُ اللهِ ﷺ:</span>
+        <p><span class="sem-hadith">«أَحَبُّ الصِّيَامِ إِلَى اللهِ صِيَامُ دَاوُدَ؛ كَانَ يَصُومُ يَوْمًا وَيُفْطِرُ يَوْمًا، وَأَحَبُّ الصَّلَاةِ إِلَى اللهِ صَلَاةُ دَاوُدَ؛ كَانَ يَنَامُ نِصْفَ اللَّيْلِ وَيَقُومُ ثُلُثَهُ وَيَنَامُ سُدُسَهُ»<sup class="fnr">(١)</sup>.</span></p>
+      </div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> هذا الحديث يبيّن أهمية هدي الأنبياء في عبادتهم، ففيه يبيّن النبيُّ ﷺ هديَ نبي من الأنبياء قبله، ويدعو لاتّباع هدي ذاك النبي في هذه العبادة الواردة في الحديث.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> لو أن إنسانًا صام كل الأيام باستثناء الأعياد؛ فإنه يلقى الله بصيام أكثر، وتعب أكثر، وأجر أقل ممن يصوم صيام داود، ومن كان يقوم الليل من العشاء إلى الفجر منذ بلوغه إلى أن يموت؛ فإنه سيلقى الله بتعب أكثر، وسجود أكثر، وقراءة للقرآن أكثر، وأجر أقل ممن يقوم كقيام نبي الله داود؛ لأن الشأن ليس في التعب والكثرة، وإنما في موافقة الأحب إلى الله، والذي يُعلم عن طريق أنبيائه عليهم صلوات الله وسلامه.</p>
+      <p><b>الْفَائِدَةُ الثَّالِثَةُ:</b> سبب هذا الحديث: أن <span class="sem-name sem-sahabi">عبد الله بن عمرو بن العاص</span> ﵄ كان ممن فتح الله عليه في العبادة وكان شابًّا، فإن قوة الدفعة الإيمانية والنفثة الروحية التي كانت بوجود النبي ﷺ تجعل الناس ينطلقون انطلاقة هائلة سريعة، وهذه الانطلاقة تحتاج إلى ضبط، ففي زمن النبي ﷺ كان التخوّف من الزيادة من التعبد، وليس من القلّة، وهذا يبين المقدار الإيماني الكبير الذي كان يتلقاه الصحابة، ومن هؤلاء الصحابة: <span class="sem-name sem-sahabi">عبد الله بن عمرو بن العاص</span> ﵄، فقد كان يختم القرآن كل ليلة، ويصوم كلّ يوم، فسمع النبيُّ ﷺ بذلك فوجّهه؛ لأنه كان ينظر بعينيه إلى المستقبل البعيد، فهو يريد منه أن يتعبّد اللهَ بعبادة يسير عليها بعد عقود كما يسير عليها اليوم، والنبي ﷺ يُحِب - وحبّه فرع عن حب الله - العبادةَ الثابتة المستمرة التي يُواظب عليها في كلّ الأحوال.<button class="nmark note--siyaq" data-n="n6">٦</button></p>
+      <aside class="note note--siyaq" id="n6"><span class="nt">سياق تاريخي</span>وقد كبر <span class="sem-name sem-sahabi">عبد الله</span> ﵁ فكان يقول: «يا ليتني قبلتُ رخصة النبي ﷺ»، أخرجه <span class="sem-name sem-scholar">البخاري</span> (١٩٧٥)؛ وهو شاهد لنظر النبي ﷺ إلى «المستقبل البعيد».</aside>
+      <p><b>الْفَائِدَةُ الرَّابِعَةُ:</b> من عظمة هذا الدين وكماله أن النبي ﷺ كان يوجه أصحابه للاستقامة من بداية الطريق.</p>
+      <p><b>الْفَائِدَةُ الْخَامِسَةُ:</b> حين وجه النبيُّ ﷺ <span class="sem-name sem-sahabi">عبد الله</span> في هذا الموقف وجهه باستحضار هدي نبيّ من الأنبياء؛ فجعله ل<span class="sem-name sem-sahabi">عبد الله بن عمرو</span> أنموذجًا ومعيارًا؛ لأن المؤمن يحتاج إلى هدي الأنبياء في مختلف شؤونه، وهذا من الخير العميم الذي قد ينال الإنسان المؤمن، ومن الوسائل التي تعزز من قيمة هدي الأنبياء بالنسبة للإنسان المؤمن: العناية بكتاب الله وسنة رسول الله ﷺ.</p>
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>أخرجه <span class="sem-name sem-scholar">البخاري</span> (٣٤٢٠)، ومسلم (١١٥٩).</li></ol>
+      </div>
+
+      <div class="quiz" data-sec="s5"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>حديث صيام داود وقيامه: بيان أهمية هدي الأنبياء في العبادة والدعوة لاتباعه.</li>
+          <li>من صام الدهر أو قام الليل كله يلقى الله بتعب أكثر وأجر أقل؛ فالشأن في موافقة الأحب إلى الله لا في الكثرة.</li>
+          <li>سبب الحديث: انطلاقة <span class="sem-name sem-sahabi">عبد الله بن عمرو</span> في العبادة، وكان التخوّف في زمن النبي ﷺ من الزيادة لا من القلة.</li>
+          <li>النبي ﷺ ينظر إلى المستقبل البعيد، ويحب العبادة الثابتة المستمرة.</li>
+          <li>من كمال الدين توجيه الأصحاب للاستقامة من بداية الطريق، وجعل هدي الأنبياء أنموذجًا ومعيارًا.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 6 ===================== -->
+    <section class="sec" id="s6" style="--acc:var(--s6)">
+      <div class="sticky-head">المقطع السادس · الباب الرابع عشر: العنوان والآيتان ١–٢</div>
+      <h2>الباب الرابع عشر — عنوان الباب والآيات (١–٢)</h2>
+      <p class="range">ص ١٢٠ – ص ١٢١</p>
+
+      <h3 id="s6a">الباب الرابع عشر</h3>
+      <div class="naql-block"><p>بَابُ فَضْلِ الْإِصْلَاحِ وَالدَّعْوَةِ إِلَى اللهِ تَعَالَى، وَأَهَمِّيَّةِ الْأَمْرِ بِالْمَعْرُوفِ وَالنَّهْيِ عَنِ الْمُنْكَرِ</p></div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> هذا الباب له ارتباط بباب «تحمل الفرد مسؤولية التكليف تجاه نفسه وغيره» لأن الذي يحرك النفس أمران:</p>
+      </div>
+      <p>• الشعور بالمسؤولية.<br>
+      • الرغبة بالعمل من خلال ذكر فضائله، أو ترهيب من خلال التحذير من تركه.</p>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> معرفة فضائل الإصلاح والدعوة إلى الله تعالى من جملة المثبتات على الطريق، لأن الذي يسير وهو مستحضر الأجر والفضل يهون عليه ما يعترض الطريق من عقبات.</p>
+      <h4>الآيات</h4>
+      <h3 id="s6b">الآية الأولى</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿وَمَنۡ أَحۡسَنُ قَوۡلٗا مِّمَّن دَعَآ إِلَى ٱللَّهِ وَعَمِلَ صَٰلِحٗا وَقَالَ إِنَّنِي مِنَ ٱلۡمُسۡلِمِينَ﴾ <span class="aya-ref">[فصلت: ٣٣]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> الدعوة إلى الله من مقامات القدوة في الدين والإمامة فيه، فهي من الوسائل التي يكون الإنسان فيها قدوة في الخير.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> الدعوة إلى الله ليست مختصّة بدعوة غير المسلمين للإسلام، وإنما يدخل فيها: الحثّ على الخير، بالأمر بعبادة الله بجميع أنواعها، والزجر عما نهى الله عنه، ومجادلة أعداء الله بالتي هي أحسن، وغير ذلك من الصور.</p>
+      <p><b>الْفَائِدَةُ الثَّالِثَةُ:</b> قوله: <span class="sem-aya">﴿وَقَالَ إِنَّنِي مِنَ ٱلۡمُسۡلِمِينَ﴾</span> صورة من صور الاعتزاز، والتي قد يكون الإنسان فيها قدوة بعمله، فهذه الآية تبيّن طرفي الاقتداء: القولي والفعلي.<button class="nmark note--idah" data-n="n7">٧</button></p>
+      <aside class="note note--idah" id="n7"><span class="nt">إيضاح</span>طرفا الاقتداء في الآية: <span class="sem-aya">﴿دَعَآ إِلَى ٱللَّهِ﴾</span> (القول)، و<span class="sem-aya">﴿وَعَمِلَ صَٰلِحٗا﴾</span> (الفعل)، ثم <span class="sem-aya">﴿وَقَالَ إِنَّنِي مِنَ ٱلۡمُسۡلِمِينَ﴾</span> إعلانٌ للانتماء واعتزاز به.</aside>
+      <h3 id="s6c">الآية الثانية</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿وَجَعَلۡنَا مِنۡهُمۡ أَئِمَّةٗ يَهۡدُونَ بِأَمۡرِنَا لَمَّا صَبَرُواْۖ وَكَانُواْ بِـَٔايَٰتِنَا يُوقِنُونَ﴾ <span class="aya-ref">[السجدة: ٢٤]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> في الآية بيان للطريق الموصل للإمامة في الدين، وهو: الصبر واليقين.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> قال الشيخ <span class="sem-name sem-scholar">السعدي</span> ﵀ في تفسيره: «وإنما نالوا هذه الدرجة العالية بالصبر على التعلم والتعليم، والدعوة إلى الله، والأذى في سبيله، وكفّوا أنفسهم عن جماحها في المعاصي، واسترسالها في الشهوات، <span class="sem-aya">﴿وَكَانُواْ بِـَٔايَٰتِنَا يُوقِنُونَ﴾</span> أي: وصلوا في الإيمان بآيات الله إلى درجة اليقين، وهو العلم التام الموجب للعمل»<sup class="fnr">(١)</sup>.<button class="nmark note--tarjama" data-n="n8">٨</button></p>
+      <aside class="note note--tarjama" id="n8"><span class="nt">ترجمة عَلَم</span><span class="sem-name sem-scholar">السعدي</span>: عبد الرحمن بن ناصر <span class="sem-name sem-scholar">السعدي</span> (ت ١٣٧٦هـ)، عالم نجدي، صاحب «تيسير الكريم الرحمن في تفسير كلام المنان».</aside>
+      <p><b>الْفَائِدَةُ الثَّالِثَةُ:</b> في الآية بيان لدور الأئمة والمرجعية التي يرجعون إليها، وذلك بقوله: <span class="sem-aya">﴿يَهۡدُونَ بِأَمۡرِنَا﴾</span>، فالدور الأساسي لأئمة الدين: هداية الخلق.</p>
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>تفسير <span class="sem-name sem-scholar">السعدي</span>: (١/ ٦٥٦).</li></ol>
+      </div>
+
+      <div class="quiz" data-sec="s6"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>الباب الرابع عشر مرتبط بباب المسؤولية الفردية؛ لأن الذي يحرك النفس أمران: الشعور بالمسؤولية، والترغيب أو الترهيب.</li>
+          <li>معرفة فضائل الإصلاح والدعوة من المثبتات على الطريق؛ فمستحضر الأجر تهون عليه العقبات.</li>
+          <li>آية فصلت: الدعوة إلى الله من مقامات القدوة والإمامة، وليست مختصة بدعوة غير المسلمين.</li>
+          <li><span class="sem-aya">﴿وَقَالَ إِنَّنِي مِنَ ٱلۡمُسۡلِمِينَ﴾</span> صورة اعتزاز، والآية تبيّن طرفي الاقتداء: القولي والفعلي.</li>
+          <li>آية السجدة: الطريق إلى الإمامة في الدين الصبر واليقين، ودور الأئمة الأساسي هداية الخلق.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 7 ===================== -->
+    <section class="sec" id="s7" style="--acc:var(--s7)">
+      <div class="sticky-head">المقطع السابع · الباب الرابع عشر: الآيات ٣–٨</div>
+      <h2>الباب الرابع عشر — الآيات (٣–٨)</h2>
+      <p class="range">ص ١٢٢ – ص ١٢٣</p>
+
+      <h3 id="s7a">الآية الثالثة</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿وَٱجۡعَلۡنَا لِلۡمُتَّقِينَ إِمَامًا﴾ <span class="aya-ref">[الفرقان: ٧٤]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p>قال الشيخ <span class="sem-name sem-scholar">السعدي</span> ﵀ في تفسيره: «أي: أوصلنا يا ربنا إلى هذه الدرجة العالية، درجة الصديقين والكُمَّل من عباد الله الصالحين وهي درجة الإمامة في الدين وأن يكونوا قدوة للمتقين في أقوالهم وأفعالهم يقتدى بأفعالهم، ويطمئن لأقوالهم ويسير أهل الخير خلفهم فيهدون ويهتدون، ومن المعلوم أن الدعاء ببلوغ شيء دعاء بما لا يتم إلا به، وهذه الدرجة -درجة الإمامة في الدين- لا تتم إلا بالصبر واليقين كما قال تعالى: <span class="sem-aya">﴿وَجَعَلۡنَا مِنۡهُمۡ أَئِمَّةٗ يَهۡدُونَ بِأَمۡرِنَا لَمَّا صَبَرُواْۖ وَكَانُواْ بِـَٔايَٰتِنَا يُوقِنُونَ﴾</span> فهذا الدعاء يستلزم من الأعمال والصبر على طاعة الله وعن معصيته وأقداره المؤلمة ومن العلم التام الذي يوصل صاحبه إلى درجة اليقين، خيرًا كثيرًا وعطاءً جزيلًا وأن يكونوا في أعلى ما يمكن من درجات الخلق بعد الرسل»<sup class="fnr">(١)</sup>.<button class="nmark note--rabt" data-n="n9">٩</button></p>
+      </div>
+      <aside class="note note--rabt" id="n9"><span class="nt">ربط داخلي</span>جمع <span class="sem-name sem-scholar">السعدي</span> بين آيتي الفرقان والسجدة: الدعاء بالإمامة في الفرقان دعاءٌ بأسبابها التي ذكرتها السجدة، وهي الصبر واليقين.</aside>
+      <h3 id="s7b">الآية الرابعة</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿وَلَٰكِن كُونُواْ رَبَّـٰنِيِّـۧنَ﴾ <span class="aya-ref">[آل عمران: ٧٩]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p>قال الإمام <span class="sem-name sem-scholar">الطبري</span> ﵀ في تفسيره: «ولكن يقول لهم: كونوا أيها الناس سادة الناس وقادتهم في أمر دينهم ودنياهم، ربَّانيِّين بتعليمكم إياهم كتاب الله وما فيه من حلال وحرام وفرض وندب وسائر ما حواه من معاني أمور دينهم، وبتلاوتكم إياه ودراستكموه»<sup class="fnr">(٢)</sup>.<button class="nmark note--siyaq" data-n="n10">١٠</button></p>
+      </div>
+      <aside class="note note--siyaq" id="n10"><span class="nt">سياق تاريخي</span>تمام الآية: <span class="sem-aya">﴿بِمَا كُنتُمۡ تُعَلِّمُونَ ٱلۡكِتَٰبَ وَبِمَا كُنتُمۡ تَدۡرُسُونَ﴾</span>، وعليه بنى <span class="sem-name sem-scholar">الطبري</span> قوله: «بتعليمكم إياهم... وبتلاوتكم إياه ودراستكموه».</aside>
+      <h3 id="s7c">الآية الخامسة</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿كُنتُمۡ خَيۡرَ أُمَّةٍ أُخۡرِجَتۡ لِلنَّاسِ تَأۡمُرُونَ بِٱلۡمَعۡرُوفِ وَتَنۡهَوۡنَ عَنِ ٱلۡمُنكَرِ وَتُؤۡمِنُونَ بِٱللَّهِۗ وَلَوۡ ءَامَنَ أَهۡلُ ٱلۡكِتَٰبِ لَكَانَ خَيۡرٗا لَّهُمۚ مِّنۡهُمُ ٱلۡمُؤۡمِنُونَ وَأَكۡثَرُهُمُ ٱلۡفَٰسِقُونَ﴾ <span class="aya-ref">[آل عمران: ١١٠]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p>هذه الآية تدل على خيرية هذه الأمة، وأوّل صفة ذكرت تابعة لخيرية هذه الأمة: الأمر بالمعروف والنهي عن المنكر.</p>
+      </div>
+      <h3 id="s7d">الآية السادسة والسابعة والثامنة</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿يَٰبُنَيَّ أَقِمِ ٱلصَّلَوٰةَ وَأۡمُرۡ بِٱلۡمَعۡرُوفِ وَٱنۡهَ عَنِ ٱلۡمُنكَرِ وَٱصۡبِرۡ عَلَىٰ مَآ أَصَابَكَۖ إِنَّ ذَٰلِكَ مِنۡ عَزۡمِ ٱلۡأُمُورِ﴾ <span class="aya-ref">[لقمان: ١٧]</span></span>.</div>
+      <div class="aya-block"><span class="aya">وقال الله تعالى: ﴿فَلَمَّا نَسُواْ مَا ذُكِّرُواْ بِهِۦٓ أَنجَيۡنَا ٱلَّذِينَ يَنۡهَوۡنَ عَنِ ٱلسُّوٓءِ وَأَخَذۡنَا ٱلَّذِينَ ظَلَمُواْ بِعَذَابِۭ بَـِٔيسِۭ<sup class="fnr">(٣)</sup> بِمَا كَانُواْ يَفۡسُقُونَ﴾ <span class="aya-ref">[الأعراف: ١٦٥]</span></span>.</div>
+      <div class="aya-block"><span class="aya">وقال جلّ وعلا: ﴿فَلَوۡلَا كَانَ مِنَ ٱلۡقُرُونِ مِن قَبۡلِكُمۡ أُوْلُواْ بَقِيَّةٖ يَنۡهَوۡنَ عَنِ ٱلۡفَسَادِ فِي ٱلۡأَرۡضِ إِلَّا قَلِيلٗا مِّمَّنۡ أَنجَيۡنَا مِنۡهُمۡۗ﴾ <span class="aya-ref">[هود: ١١٦]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p>من فضل الأمر بالمعروف والنهي عن المنكر: أنه سبب للنجاة من العذاب.</p>
+      </div>
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>تفسير <span class="sem-name sem-scholar">السعدي</span>: (١/ ٥٨٧).</li>
+        <li>تفسير <span class="sem-name sem-scholar">الطبري</span>: (٥/ ٥٣٣).</li>
+        <li>بئيس: شديد.</li></ol>
+      </div>
+
+      <div class="quiz" data-sec="s7"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>آية الفرقان عند <span class="sem-name sem-scholar">السعدي</span>: دعاء ببلوغ درجة الإمامة في الدين، والدعاء ببلوغ شيء دعاء بما لا يتم إلا به.</li>
+          <li>الإمامة في الدين لا تتم إلا بالصبر واليقين، فالدعاء بها يستلزم أعمالًا وصبرًا وعلمًا تامًّا.</li>
+          <li>الربانيون عند <span class="sem-name sem-scholar">الطبري</span>: سادة الناس وقادتهم في أمر دينهم ودنياهم بتعليمهم كتاب الله وتلاوته ودراسته.</li>
+          <li>آية آل عمران: أول صفة ذُكرت تابعة لخيرية الأمة الأمر بالمعروف والنهي عن المنكر.</li>
+          <li>آيات لقمان والأعراف وهود: الأمر بالمعروف والنهي عن المنكر سبب للنجاة من العذاب.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 8 ===================== -->
+    <section class="sec" id="s8" style="--acc:var(--s1)">
+      <div class="sticky-head">المقطع الثامن · الباب الرابع عشر: الحديثان ١–٢</div>
+      <h2>الباب الرابع عشر — الحديثان (١–٢): من دعا إلى هدى</h2>
+      <p class="range">ص ١٢٤</p>
+
+      <h4>الأحاديث</h4>
+      <h3 id="s8a">الحديث الأول</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ أَبِي هُرَيْرَةَ ﵁ أَنَّ رَسُولَ اللهِ ﷺ قَالَ:</span>
+        <p><span class="sem-hadith">«مَنْ دَعَا إِلَى هُدًى كَانَ لَهُ مِنَ الْأَجْرِ مِثْلُ أُجُورِ مَنْ تَبِعَهُ لَا يَنْقُصُ ذَلِكَ مِنْ أُجُورِهِمْ شَيْئًا، وَمَنْ دَعَا إِلَى ضَلَالَةٍ كَانَ عَلَيْهِ مِنَ الْإِثْمِ مِثْلُ آثَامِ مَنْ تَبِعَهُ لَا يَنْقُصُ ذَلِكَ مِنْ آثَامِهِمْ شَيْئًا»<sup class="fnr">(١)</sup>.</span></p>
+      </div>
+      <h3 id="s8b">الحديث الثاني</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ جَرِيرٍ ﵁ قَالَ: قَالَ رَسُولُ اللهِ ﷺ:</span>
+        <p><span class="sem-hadith">«مَنْ سَنَّ فِي الْإِسْلَامِ سُنَّةً حَسَنَةً فَلَهُ أَجْرُهَا وَأَجْرُ مَنْ عَمِلَ بِهَا بَعْدَهُ مِنْ غَيْرِ أَنْ يَنْقُصَ مِنْ أُجُورِهِمْ شَيْءٌ، وَمَنْ سَنَّ فِي الْإِسْلَامِ سُنَّةً سَيِّئَةً كَانَ عَلَيْهِ وِزْرُهَا وَوِزْرُ مَنْ عَمِلَ بِهَا مِنْ بَعْدِهِ مِنْ غَيْرِ أَنْ يَنْقُصَ مِنْ أَوْزَارِهِمْ شَيْءٌ»<sup class="fnr">(٢)</sup>.</span><button class="nmark note--siyaq" data-n="n11">١١</button></p>
+      </div>
+      <aside class="note note--siyaq" id="n11"><span class="nt">سياق تاريخي</span>قال النبي ﷺ حديث جرير ﵁ لما جاءه قوم من مُضَر مجتابي النِّمار عليهم أثر الفاقة، فحثّ على الصدقة، فجاء رجل من الأنصار بصُرّة، ثم تتابع الناس؛ فكان «السنّ الحسن» هنا: السبق إلى خير مشروع يُقتدى به فيه.</aside>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> هذان الحديثان يفتحان للمسلم أُفُقًا في أن يكون قدوة في الدين، ولو لم يكن واسع العلم، فقد تكون القدوة بأن يوفّق اللهُ العبد لسنّ سُنّةٍ في الخير مما جاء به رسول الله ﷺ.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> في الحديثين حث عظيم للدعوة إلى الخير؛ وتبيين عِظم الأجر المترتب على ذلك.</p>
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>أخرجه مسلم (٢٦٧٤).</li>
+        <li>أخرجه مسلم (١٠١٧).</li></ol>
+      </div>
+
+      <div class="quiz" data-sec="s8"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>حديث «من دعا إلى هدى»: للداعي مثل أجور من تبعه، وعلى الداعي إلى ضلالة مثل آثام من تبعه.</li>
+          <li>حديث «من سنّ في الإسلام سنة حسنة»: له أجرها وأجر من عمل بها بعده دون نقص من أجورهم.</li>
+          <li>الحديثان يفتحان أفقًا لأن يكون المسلم قدوة في الدين ولو لم يكن واسع العلم، بسنّ سنة في الخير مما جاء به النبي ﷺ.</li>
+          <li>فيهما حث عظيم على الدعوة إلى الخير وبيان عِظم أجرها.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 9 ===================== -->
+    <section class="sec" id="s9" style="--acc:var(--s2)">
+      <div class="sticky-head">المقطع التاسع · الباب الرابع عشر: الحديثان ٣–٤</div>
+      <h2>الباب الرابع عشر — الحديثان (٣–٤): قبض العلم، والراية يوم خيبر</h2>
+      <p class="range">ص ١٢٥ – ص ١٢٦</p>
+
+      <h3 id="s9a">الحديث الثالث</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ عَبْدِ اللهِ بْنِ عَمْرِو بْنِ الْعَاصِ ﵄ قَالَ: سَمِعْتُ رَسُولَ اللهِ ﷺ يَقُولُ:</span>
+        <p><span class="sem-hadith">«إِنَّ اللهَ لَا يَقْبِضُ الْعِلْمَ انْتِزَاعًا يَنْتَزِعُهُ مِنَ الْعِبَادِ، وَلَكِنْ يَقْبِضُ الْعِلْمَ بِقَبْضِ الْعُلَمَاءِ، حَتَّى إِذَا لَمْ يُبْقِ عَالِمًا اتَّخَذَ النَّاسُ رُؤُوسًا جُهَّالًا، فَسُئِلُوا فَأَفْتَوْا بِغَيْرِ عِلْمٍ فَضَلُّوا وَأَضَلُّوا»<sup class="fnr">(١)</sup>.</span></p>
+      </div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> هذا الحديث يبين قيمة العلماء ومكانة العلماء من جهة كونهم صمامَ أمانٍ للأُمّة، فمنزلة العلماء منزلة خطيرة، وفيها حماية لشأن الدين، وينبغي لصاحب هذه المنزلة أن يخاف أن يكون ممّن ذمّهم النبي ﷺ بقوله: <span class="sem-hadith">«فَضَلُّوا وَأَضَلُّوا»</span>.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> في الحديث دلالة على أن الناس من شأنهم اتّخاذ رؤوس في الدين، سواء أكانوا رؤوسًا من أهل العلم أو من أهل الجهل.</p>
+      <p><b>الْفَائِدَةُ الثَّالِثَةُ:</b> في الحديث بيان لفتنة من الفتن التي قد تحصل للأمة الإسلامية، وهي: حالة غياب العلم، ثم يبيّن ﷺ أنّ غياب العلم لا يكون بأن يُنزع كمعلومات، وإنما يكون بقبض حملته.</p>
+      <p><b>الْفَائِدَةُ الرَّابِعَةُ:</b> هذا الحديث له ارتباط بالأحاديث التي ذُكرت قبله؛ ففيه: أن العالم يُفتح له من باب الأجور أنّه مهتدٍ بنفسه، وهادٍ لغيره، وفيه من الجهة الأخرى: أن الرؤوس الجُهَّال ضالون بأنفسهم، ولغيرهم.<button class="nmark note--rabt" data-n="n12">١٢</button></p>
+      <aside class="note note--rabt" id="n12"><span class="nt">ربط داخلي</span>المقابلة بين «فضلّوا وأضلّوا» هنا و«من دعا إلى هدى... ومن دعا إلى ضلالة» قبله: أثر الرأس في الدين متعدٍّ إلى غيره في الحالين، أجرًا أو وزرًا.</aside>
+      <h3 id="s9b">الحديث الرابع</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ سَهْلِ بْنِ سَعْدٍ ﵁ أَنَّ رَسُولَ اللهِ ﷺ قَالَ يَوْمَ خَيْبَرَ:</span>
+        <p><span class="sem-hadith">«لَأُعْطِيَنَّ هَذِهِ الرَّايَةَ غَدًا رَجُلًا يَفْتَحُ اللهُ عَلَى يَدَيْهِ يُحِبُّ اللهَ وَرَسُولَهُ وَيُحِبُّهُ اللهُ وَرَسُولُهُ»، قَالَ: فَبَاتَ النَّاسُ يَدُوكُونَ لَيْلَتَهُمْ<sup class="fnr">(٢)</sup> أَيُّهُمْ يُعْطَاهَا، فَلَمَّا أَصْبَحَ النَّاسُ غَدَوْا عَلَى رَسُولِ اللهِ ﷺ كُلُّهُمْ يَرْجُو أَنْ يُعْطَاهَا، فَقَالَ: «أَيْنَ عَلِيُّ بْنُ أَبِي طَالِبٍ؟»، فَقِيلَ: هُوَ يَا رَسُولَ اللهِ يَشْتَكِي عَيْنَيْهِ، قَالَ: فَأَرْسَلُوا إِلَيْهِ فَأُتِيَ بِهِ،</span></p>
+        <p><span class="sem-hadith">فَبَصَقَ رَسُولُ اللهِ ﷺ فِي عَيْنَيْهِ وَدَعَا لَهُ فَبَرَأَ حَتَّى كَأَنْ لَمْ يَكُنْ بِهِ وَجَعٌ، فَأَعْطَاهُ الرَّايَةَ فَقَالَ عَلِيٌّ: يَا رَسُولَ اللهِ أُقَاتِلُهُمْ حَتَّى يَكُونُوا مِثْلَنَا؟، فَقَالَ: «انْفُذْ عَلَى رِسْلِكَ<sup class="fnr">(٣)</sup> حَتَّى تَنْزِلَ بِسَاحَتِهِمْ، ثُمَّ ادْعُهُمْ إِلَى الْإِسْلَامِ وَأَخْبِرْهُمْ بِمَا يَجِبُ عَلَيْهِمْ مِنْ حَقِّ اللهِ فِيهِ، فَوَاللهِ لَأَنْ يَهْدِيَ اللهُ بِكَ رَجُلًا وَاحِدًا خَيْرٌ لَكَ مِنْ أَنْ يَكُونَ لَكَ حُمْرُ النَّعَمِ»<sup class="fnr">(٤)</sup>.</span><button class="nmark note--mustalah" data-n="n13">١٣</button></p>
+      </div>
+      <aside class="note note--mustalah" id="n13"><span class="nt">تعريف مصطلح</span>«حُمْر النَّعَم»: الإبل الحمراء، وكانت أنفس أموال العرب وأعزّها عندهم؛ فضُرب بها المثل في نفاسة الشيء.</aside>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p>الدعوة إلى الله تعالى تجارة رابحة، وقد يُفتح على الإنسان حتى إنه لينام في فراشه وأجوره تجري عليه، وتُكتب له في صحائف أعماله، حتى إذا مات تجري عليه الحسنات وهو في قبره.</p>
+      </div>
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>أخرجه <span class="sem-name sem-scholar">البخاري</span> (١٠٠)، ومسلم (٢٦٧٣).</li>
+        <li>يدوكون ليلتهم: أي: باتوا في اختلاط واختلاف.</li>
+        <li>انفذ على رسلك: امضِ لوجهك مترفّقًا متثبّتًا.</li>
+        <li>أخرجه <span class="sem-name sem-scholar">البخاري</span> (٤٢١٠)، ومسلم (٢٤٠٦).</li></ol>
+      </div>
+
+      <div class="quiz" data-sec="s9"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>حديث قبض العلم: العلماء صمام أمان للأمة، ومنزلتهم خطيرة، وعلى صاحبها أن يخاف من «فضلّوا وأضلّوا».</li>
+          <li>من شأن الناس اتخاذ رؤوس في الدين، علماء كانوا أو جهّالًا.</li>
+          <li>غياب العلم لا يكون بنزعه كمعلومات، وإنما بقبض حملته.</li>
+          <li>العالم مهتدٍ بنفسه هادٍ لغيره، والرؤوس الجهال ضالون بأنفسهم ولغيرهم.</li>
+          <li>حديث الراية: «لأن يهدي الله بك رجلًا واحدًا خير لك من حمر النعم»؛ فالدعوة تجارة رابحة تجري أجورها حتى بعد الموت.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 10 ===================== -->
+    <section class="sec" id="s10" style="--acc:var(--s3)">
+      <div class="sticky-head">المقطع العاشر · الباب الخامس عشر: العنوان والآيتان ١–٢</div>
+      <h2>الباب الخامس عشر — عنوان الباب والآيتان (١–٢)</h2>
+      <p class="range">ص ١٢٧ – ص ١٢٩</p>
+
+      <h3 id="s10a">الباب الخامس عشر</h3>
+      <div class="naql-block"><p>بَابٌ فِي صِفَاتِ الْمُصْلِحِينَ، وَمَا يَنْبَغِي أَنْ يَكُونَ عَلَيْهِ الْعَامِلُونَ لِلْإِسْلَامِ</p></div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p>بعد ذكر فضل الدعوة إلى الله تعالى يأتي في هذا الباب حديث عن الصفات التي ينبغي أن يكون عليها المصلح.</p>
+      </div>
+      <h4>الآيات</h4>
+      <h3 id="s10b">الآية الأولى</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ مَن يَرۡتَدَّ مِنكُمۡ عَن دِينِهِۦ فَسَوۡفَ يَأۡتِي ٱللَّهُ بِقَوۡمٖ يُحِبُّهُمۡ وَيُحِبُّونَهُۥٓ أَذِلَّةٍ عَلَى ٱلۡمُؤۡمِنِينَ أَعِزَّةٍ عَلَى ٱلۡكَٰفِرِينَ يُجَٰهِدُونَ فِي سَبِيلِ ٱللَّهِ وَلَا يَخَافُونَ لَوۡمَةَ لَآئِمٖۚ﴾ <span class="aya-ref">[المائدة: ٥٤]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> مِن سنن الله تعالى: أنّه يعلّق نصرة دينه على وجود مَن يحمله من البشر، وهؤلاء البشر يمدّهم اللهُ بمدد من عنده إذا اتّصفوا بصفات معيّنة، فالشأن في تطلّب هذه الصفات، التي إذا وُجدت واستقام عليها المصلحون سيأتيهم المدد من ربّهم.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> من أهم صفات المصلحين: «محبة الله تعالى»، فلا ينبغي أن يُظنّ أن إعداد المصلحين يكون بمجرّد الإعداد الظاهري من مهارات وأدوات؛ فإن هذا من الوهم، ومن أوّل الصفات التي ينبغي أن يتلبّس بها المصلحون، وقد ذكرها الله تعالى في هذه الآية، هي: المحبة لله، وهي عمل باطني.</p>
+      <p><b>الْفَائِدَةُ الثَّالِثَةُ:</b> من صفات المصلحين: أنهم «أذلة على المؤمنين» و«أعزة على الكافرين»، فيتّصف المصلح بالرحمة واللين وخفض الجناح والذلة؛ إذا كان الطرف الآخر من المؤمنين، وهو نفسه يتصف بالعزة والشدّة على الكافرين، وموجب هذا التنوع في الصفات: أنهم يحبون الله ويحبهم، فالدافع لمحبة المؤمنين واللين لهم: الاشتراك في معنى محبة الله، والدافع للعزة على الكافرين والشدة عليهم: مضادتهم لمحبة الله تعالى.</p>
+      <p><b>الْفَائِدَةُ الرَّابِعَةُ:</b> لأن هؤلاء العاملين الذين ذكرهم الله يحبون الله، ويقدّمون هذه المحبة على كلّ شيء؛ تهون عليهم أنفسهم؛ فتتحقق الصفتان اللتان في آخر الآية، وهما: «الجهاد في سبيل الله»، و«عدم خوفهم في الله لومة لائم».</p>
+      <p><b>الْفَائِدَةُ الْخَامِسَةُ:</b> إذا كانت «محبة العبد لله» تقوده لنصرة دين الله، والتضحية في سبيله، والصبر على الشدائد؛ فإن هذا مقياس على أن المحبة تسير على الطريق الصحيح، أما إذا كانت «محبة العبد لله» تعزل العبد عن العمل لدين الله، والصبر على الشدائد؛ فإن هذا مقياس على وجود إشكال في هذه المحبّة.<button class="nmark note--idah" data-n="n14">١٤</button></p>
+      <aside class="note note--idah" id="n14"><span class="nt">إيضاح</span>ترتيب الصفات في الآية سلسلة: المحبة (أصلٌ باطن) ← الذلة للمؤمنين والعزة على الكافرين (أثرها في التعامل) ← الجهاد وعدم الخوف من اللوم (أثرها في البذل)؛ وعليه بنى المؤلف أن المحبة الصحيحة تُعرف بثمرتها.</aside>
+      <h3 id="s10c">الآية الثانية</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿مُّحَمَّدٞ رَّسُولُ ٱللَّهِۚ وَٱلَّذِينَ مَعَهُۥٓ أَشِدَّآءُ عَلَى ٱلۡكُفَّارِ رُحَمَآءُ بَيۡنَهُمۡۖ تَرَىٰهُمۡ رُكَّعٗا سُجَّدٗا يَبۡتَغُونَ فَضۡلٗا مِّنَ ٱللَّهِ وَرِضۡوَٰنٗاۖ سِيمَاهُمۡ<sup class="fnr">(١)</sup> فِي وُجُوهِهِم مِّنۡ أَثَرِ ٱلسُّجُودِۚ﴾ <span class="aya-ref">[الفتح: ٢٩]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> «الصلاة» من أعظم شعارات المحبّين، فكأن الشعور الذي يخرج من القلب في محبة الله؛ لا يحتويه - عمليًا - إلّا السجود؛ لذلك فإن للمحبين صلةً خاصة بـ«الصلاة».</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> قوله تعالى: <span class="sem-aya">﴿تَرَىٰهُمۡ رُكَّعٗا سُجَّدٗا﴾</span> لا ينحصر بالفرائض، فهم حيثما أردت أن تراهم ركعًا سجدًا رأيتهم.<button class="nmark note--rabt" data-n="n15">١٥</button></p>
+      <aside class="note note--rabt" id="n15"><span class="nt">ربط داخلي</span>آية الفتح وصفٌ واقعي لما في آية المائدة: <span class="sem-aya">﴿أَشِدَّآءُ عَلَى ٱلۡكُفَّارِ رُحَمَآءُ بَيۡنَهُمۡۖ﴾</span> هي <span class="sem-aya">﴿أَذِلَّةٍ عَلَى ٱلۡمُؤۡمِنِينَ أَعِزَّةٍ عَلَى ٱلۡكَٰفِرِينَ﴾</span> متحققة في الصحابة.</aside>
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>سيماهم: علامتهم.</li></ol>
+      </div>
+
+      <div class="quiz" data-sec="s10"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>الباب الخامس عشر: بعد فضل الدعوة يأتي الحديث عن صفات المصلح.</li>
+          <li>من سنن الله تعليق نصرة دينه على من يحمله من البشر، والمدد يأتي لمن اتصف بصفات معينة.</li>
+          <li>أول صفات المصلحين محبة الله، وهي عمل باطني، وإعدادهم ليس مهارات ظاهرة فقط.</li>
+          <li>الذلة للمؤمنين والعزة على الكافرين موجبها محبة الله، والمحبة تُهوّن النفس فيتحقق الجهاد وعدم خوف اللوم.</li>
+          <li>المحبة التي تقود إلى النصرة والتضحية صحيحة، والتي تعزل عن العمل فيها إشكال.</li>
+          <li>آية الفتح: الصلاة من أعظم شعارات المحبين، و<span class="sem-aya">﴿تَرَىٰهُمۡ رُكَّعٗا سُجَّدٗا﴾</span> لا تنحصر بالفرائض.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 11 ===================== -->
+    <section class="sec" id="s11" style="--acc:var(--s4)">
+      <div class="sticky-head">المقطع الحادي عشر · الباب الخامس عشر: الآيات ٣–١١</div>
+      <h2>الباب الخامس عشر — الآيات (٣–١١): القوة والأمانة والعلم والصبر والربانية</h2>
+      <p class="range">ص ١٢٩ – ص ١٣٢</p>
+
+      <h3 id="s11a">الآية الثالثة</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿إِنَّ خَيۡرَ مَنِ ٱسۡتَـٔۡجَرۡتَ ٱلۡقَوِيُّ ٱلۡأَمِينُ﴾ <span class="aya-ref">[القصص: ٢٦]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> من أهم صفات المصلحين «القوة»، وأهم ما يدخل في هذه الصفة: القوة المعنوية أوّلًا، ثم القوة المادية بما يناسب كلّ حالة.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> تأتي صفة القوة في الوحي ويدخل فيها معانٍ متعددةٌ، ومن ذلك:</p>
+      <p>١- القوة في العمل، وذلك كما ورد في الآية.<br>
+      ٢- القوة البدنية، كما قال الله تعالى عن طالوت: <span class="sem-aya">﴿إِنَّ ٱللَّهَ ٱصۡطَفَىٰهُ عَلَيۡكُمۡ وَزَادَهُۥ بَسۡطَةٗ<sup class="fnr">(١)</sup> فِي ٱلۡعِلۡمِ وَٱلۡجِسۡمِۖ﴾</span> <span class="aya-ref">[البقرة: ٢٤٧]</span>.<br>
+      ٣- القوة المطلقة كما سيأتي في هذا الباب.</p>
+      <h3 id="s11b">الآية الرابعة</h3>
+      <div class="aya-block"><span class="aya">قال سبحانه على لسان يوسف عليه الصلاة والسلام: ﴿قَالَ ٱجۡعَلۡنِي عَلَىٰ خَزَآئِنِ ٱلۡأَرۡضِ<sup class="fnr">(٢)</sup>ۖ إِنِّي حَفِيظٌ عَلِيمٞ﴾ <span class="aya-ref">[يوسف: ٥٥]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> قوله: <span class="sem-aya">﴿حَفِيظٌ﴾</span> يشير إلى صفة «الأمانة»، والتي ينبغي أن تكون متوفرة في القائم على الجانب المالي.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> قوله: <span class="sem-aya">﴿عَلِيمٞ﴾</span> يُشير إلى صفة «العلم»، والمراد به هنا: العلم بالثغر الذي سيقوم عليه.<button class="nmark note--idah" data-n="n16">١٦</button></p>
+      <aside class="note note--idah" id="n16"><span class="nt">إيضاح</span>يلتقي الوصفان <span class="sem-aya">﴿حَفِيظٌ عَلِيمٞ﴾</span> مع <span class="sem-aya">﴿ٱلۡقَوِيُّ ٱلۡأَمِينُ﴾</span> في الآية قبلها: الأمانة شرط في الحالين، والكفاءة تختلف بحسب الثغر؛ قوة في العمل لموسى، وعلم بالثغر ليوسف عليهما السلام.</aside>
+      <h3 id="s11c">الآية الخامسة</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿إِنَّ ٱللَّهَ ٱصۡطَفَىٰهُ عَلَيۡكُمۡ وَزَادَهُۥ بَسۡطَةٗ فِي ٱلۡعِلۡمِ وَٱلۡجِسۡمِۖ﴾ <span class="aya-ref">[البقرة: ٢٤٧]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p>هذه الآية تشير إلى صفتي «القوة» و«العلم».</p>
+      </div>
+      <h3 id="s11d">الآية السادسة</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿وَكَأَيِّن<sup class="fnr">(٣)</sup> مِّن نَّبِيّٖ قَٰتَلَ مَعَهُۥ رِبِّيُّونَ<sup class="fnr">(٤)</sup> كَثِيرٞ فَمَا وَهَنُواْ<sup class="fnr">(٥)</sup> لِمَآ أَصَابَهُمۡ فِي سَبِيلِ ٱللَّهِ وَمَا ضَعُفُواْ وَمَا ٱسۡتَكَانُواْ<sup class="fnr">(٦)</sup>ۗ وَٱللَّهُ يُحِبُّ ٱلصَّـٰبِرِينَ﴾ <span class="aya-ref">[آل عمران: ١٤٦]</span></span>.</div>
+      <div class="lead">
+      <p>و قبل ذكر الفوائد لا بد من التنبيه إلى أن هذه الآيات جاءت في سياق الحديث عن غزوة أُحد، وفي سياق إشاعة وفاة النبي ﷺ وما حصل من تشتت، وفرار من البعض.</p>
+      </div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> في الآية تنبيه إلى أهمية استحضار واستذكار قصص الثابتين والمصلحين قبلنا، واستجلاب هذه القصص عند الأزمات والحوادث؛ فإن هذه القصص من أعظم ما يُعين على الثبات، قال الله تعالى: <span class="sem-aya">﴿وَكُلّٗا نَّقُصُّ عَلَيۡكَ مِنۡ أَنۢبَآءِ ٱلرُّسُلِ مَا نُثَبِّتُ بِهِۦ فُؤَادَكَۚ﴾</span> <span class="aya-ref">[هود: ١٢٠]</span>.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> الصفات المذكورة في الآية من الثبات والصمود والصبر ينبغي تطبيقها.</p>
+      <h3 id="s11e">الآية السابعة</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿وَجَعَلۡنَا مِنۡهُمۡ أَئِمَّةٗ يَهۡدُونَ بِأَمۡرِنَا لَمَّا صَبَرُواْۖ وَكَانُواْ بِـَٔايَٰتِنَا يُوقِنُونَ﴾ <span class="aya-ref">[السجدة: ٢٤]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> في الآية إشارة إلى أنّ وصول المؤمنين إلى حالة الإمامة في الدين لا يمكن أن يكون بلا صبر.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> مَن ظنّ أنه سيسير في طريق الأنبياء والمصلحين، ويكون مؤثّرًا في واقعه، ويكون سببًا في نهضة المسلمين؛ ثم لا يصاحب الصبر؛ فهو واهم.</p>
+      <h3 id="s11f">الآية الثامنة</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿وَلَٰكِن كُونُواْ رَبَّـٰنِيِّـۧنَ بِمَا كُنتُمۡ تُعَلِّمُونَ ٱلۡكِتَٰبَ وَبِمَا كُنتُمۡ تَدۡرُسُونَ﴾ <span class="aya-ref">[آل عمران: ٧٩]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> هذا الخطاب في الآية موجّه للمؤمنين، وهي من أدلّ الآيات على أهمية «صناعة المصلحين»، وأن هذه القضية منهج للأنبياء.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> «الربانية» في الآية فيها تجاوز لثبات الشخص في نفسه؛ لأن الربانية هنا مأخوذة من «الرَّبَّان» وهو الذي يقود، قال الإمام أبو جعفر <span class="sem-name sem-scholar">الطبري</span> ﵀: «فمعنى الآية: ولكن يقول لهم: كونوا أيها الناس سادة الناس وقادتهم في أمر دينهم ودنياهم، ربَّانيِّين بتعليمكم إياهم كتاب الله وما فيه من حلال وحرام وفرض وندب وسائر ما حواه من معاني أمور دينهم، وبتلاوتكم إياه ودراستكموه»<sup class="fnr">(٧)</sup>.</p>
+      <p><b>الْفَائِدَةُ الثَّالِثَةُ:</b> الوسيلة المذكورة في الآية للربانية هي: «اعتماد مرجعية الوحي»، قال صديق حسن خان ﵀: «فدلت الآية على أنّ العلم والتعليم والدراسة توجب كون الإنسان ربانيًا، فمن اشتغل بها لا لهذا المقصود فقد ضاع علمه وخاب سعيه»<sup class="fnr">(٨)</sup>.<button class="nmark note--tarjama" data-n="n17">١٧</button><button class="nmark note--idah" data-n="n18">١٨</button></p>
+      <aside class="note note--tarjama" id="n17"><span class="nt">ترجمة عَلَم</span>صدّيق حسن خان القِنَّوجي (ت ١٣٠٧هـ): عالم هندي، صاحب «فتح البيان في مقاصد القرآن» في التفسير.</aside>
+      <h3 id="s11g">الآية التاسعة والعاشرة والحادية عشرة</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿مِّنَ ٱلۡمُؤۡمِنِينَ رِجَالٞ صَدَقُواْ مَا عَٰهَدُواْ ٱللَّهَ عَلَيۡهِۖ فَمِنۡهُم مَّن قَضَىٰ نَحۡبَهُۥ وَمِنۡهُم مَّن يَنتَظِرُۖ وَمَا بَدَّلُواْ تَبۡدِيلٗا﴾ <span class="aya-ref">[الأحزاب: ٢٣]</span></span>.</div>
+      <div class="aya-block"><span class="aya">وقال سبحانه: ﴿فَٱصۡبِرۡ كَمَا صَبَرَ أُوْلُواْ ٱلۡعَزۡمِ مِنَ ٱلرُّسُلِ وَلَا تَسۡتَعۡجِل لَّهُمۡۚ﴾ <span class="aya-ref">[الأحقاف: ٣٥]</span></span>.</div>
+      <div class="aya-block"><span class="aya">وقال سبحانه: ﴿قَالَ ٱلَّذِينَ يَظُنُّونَ<sup class="fnr">(٩)</sup> أَنَّهُم مُّلَٰقُواْ ٱللَّهِ كَم مِّن فِئَةٖ قَلِيلَةٍ غَلَبَتۡ فِئَةٗ كَثِيرَةَۢ بِإِذۡنِ ٱللَّهِۗ وَٱللَّهُ مَعَ ٱلصَّـٰبِرِينَ﴾ <span class="aya-ref">[البقرة: ٢٤٩]</span></span>.</div>
+      <aside class="note note--idah" id="n18"><span class="nt">إيضاح</span>لم يذكر المؤلف فوائد لهذه الآيات الثلاث، ويجمعها معنى الآيتين قبلها: الصدق في العهد والثبات عليه، والصبر، واليقين بلقاء الله.</aside>
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>بسطة: سعة.</li>
+        <li>خزائن الأرض: أي: خزائن أرض مصر.</li>
+        <li>كأين: كثير.</li>
+        <li>ربيون: جموع كثيرة.</li>
+        <li>وهنوا: ضعفوا.</li>
+        <li>استكانوا: خشعوا وذلوا.</li>
+        <li>تفسير <span class="sem-name sem-scholar">الطبري</span>: (٥/ ٥٣٣).</li>
+        <li>فتح البيان في مقاصد القرآن: (٢/ ٢٧٣).</li>
+        <li>يظنون: يوقنون.</li></ol>
+      </div>
+
+      <div class="quiz" data-sec="s11"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>آية القصص: من أهم صفات المصلحين «القوة»: المعنوية أولًا ثم المادية بما يناسب الحال.</li>
+          <li>القوة في الوحي معانٍ: قوة في العمل، وقوة بدنية كطالوت، وقوة مطلقة.</li>
+          <li>آية يوسف: <span class="sem-aya">﴿حَفِيظٌ﴾</span> الأمانة للقائم على المال، و<span class="sem-aya">﴿عَلِيمٞ﴾</span> العلم بالثغر الذي سيقوم عليه.</li>
+          <li>آية آل عمران ١٤٦ في سياق أحد: استحضار قصص الثابتين قبلنا عند الأزمات من أعظم ما يعين على الثبات.</li>
+          <li>لا إمامة في الدين بلا صبر، ومن ظن السير في طريق الأنبياء بلا صبر فهو واهم.</li>
+          <li>الربانية من «الرَّبَّان» الذي يقود، ووسيلتها اعتماد مرجعية الوحي علمًا وتعليمًا ودراسة.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 12 ===================== -->
+    <section class="sec" id="s12" style="--acc:var(--s5)">
+      <div class="sticky-head">المقطع الثاني عشر · الباب الخامس عشر: الحديثان ١–٢</div>
+      <h2>الباب الخامس عشر — الحديثان (١–٢): الأمين والطائفة الظاهرة</h2>
+      <p class="range">ص ١٣٣ – ص ١٣٤</p>
+
+      <h4>الأحاديث</h4>
+      <h3 id="s12a">الحديث الأول</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ حُذَيْفَةَ بْنِ الْيَمَانِ ﵁ قَالَ:</span>
+        <p><span class="sem-hadith">جَاءَ الْعَاقِبُ وَالسَّيِّدُ صَاحِبَا نَجْرَانَ إِلَى رَسُولِ اللهِ ﷺ يُرِيدَانِ أَنْ يُلَاعِنَاهُ، قَالَ: فَقَالَ أَحَدُهُمَا لِصَاحِبِهِ: لَا تَفْعَلْ فَوَاللهِ لَئِنْ كَانَ نَبِيًّا فَلَاعَنَّا لَا نُفْلِحُ نَحْنُ وَلَا عَقِبُنَا<sup class="fnr">(١)</sup> مِنْ بَعْدِنَا، قَالَا: إِنَّا نُعْطِيكَ مَا سَأَلْتَنَا، وَابْعَثْ مَعَنَا رَجُلًا أَمِينًا وَلَا تَبْعَثْ مَعَنَا إِلَّا أَمِينًا. فَقَالَ: «لَأَبْعَثَنَّ مَعَكُمْ رَجُلًا أَمِينًا حَقَّ أَمِينٍ»، فَاسْتَشْرَفَ لَهُ<sup class="fnr">(٢)</sup> أَصْحَابُ رَسُولِ اللهِ ﷺ، فَقَالَ: «قُمْ يَا أَبَا عُبَيْدَةَ بْنَ الْجَرَّاحِ»، فَلَمَّا قَامَ قَالَ رَسُولُ اللهِ ﷺ: «هَذَا أَمِينُ هَذِهِ الْأُمَّةِ»<sup class="fnr">(٣)</sup>.</span><button class="nmark note--siyaq" data-n="n19">١٩</button></p>
+      </div>
+      <aside class="note note--siyaq" id="n19"><span class="nt">سياق تاريخي</span>«يريدان أن يلاعناه»: أي المباهلة التي نزل فيها قوله تعالى: <span class="sem-aya">﴿فَقُلۡ تَعَالَوۡاْ نَدۡعُ أَبۡنَآءَنَا وَأَبۡنَآءَكُمۡ...ثُمَّ نَبۡتَهِلۡ فَنَجۡعَل لَّعۡنَتَ ٱللَّهِ عَلَى ٱلۡكَٰذِبِينَ﴾</span> <span class="aya-ref">[آل عمران: ٦١]</span>.</aside>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> في الحديث إبراز لصفة من الصفات التي تُرشّح وترجّح بعض المصلحين على غيرهم، وهي: «الأمانة».</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> اللافت للانتباه في سيرة النبي ﷺ أنّه كان ملاحظًا ومنتبهًا لصفات أصحابه، وبالتالي كان يُكلّف ويُرشّح بناء على ما يعلمه من صفات أصحابه، ومتى ما فُقد هذا المعنى في السياقات التربوية؛ فَقَدْ فُقِدَ رُكنٌ أساسي من أركان بناء المصلحين وتفعيلهم.</p>
+      <h3 id="s12b">الحديث الثاني</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ مُعَاوِيَةَ ﵁ قَالَ: سَمِعْتُ رَسُولَ اللهِ ﷺ يَقُولُ:</span>
+        <p><span class="sem-hadith">«لَا تَزَالُ طَائِفَةٌ مِنْ أُمَّتِي قَائِمَةً بِأَمْرِ اللهِ لَا يَضُرُّهُمْ مَنْ خَذَلَهُمْ أَوْ خَالَفَهُمْ حَتَّى يَأْتِيَ أَمْرُ اللهِ وَهُمْ ظَاهِرُونَ عَلَى النَّاسِ<sup class="fnr">(٤)</sup>»<sup class="fnr">(٥)</sup>.</span></p>
+      </div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> هذا الحديث من المبشرات في أنّ هذه الأمة لن يُقضى عليها، وسيبقى فيها من يقوم بأمر الله.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> البشرى التي في الحديث لا تعني عدم وجود أزمات ونكبات، وإنما يبشّر أنّ مع وجود النكبات والأزمات وحالات الضعف؛ سيكون في هذه الأمة مَن هو ثابت على دينه، قائم بأمر الله.</p>
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>عقبنا: أبناؤنا.</li>
+        <li>فاستشرف له: أي: تطلعوا للولاية، ورغبوا فيها.</li>
+        <li>أخرجه <span class="sem-name sem-scholar">البخاري</span> (٤٣٨٠)، ومسلم (٢٤٢٠).</li>
+        <li>ظاهرون على الناس: غالبون على الناس متعالون عليهم.</li>
+        <li>أخرجه <span class="sem-name sem-scholar">البخاري</span> (٣٦٤١)، ومسلم (١٠٣٧).</li></ol>
+      </div>
+
+      <div class="quiz" data-sec="s12"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>حديث «هذا أمين هذه الأمة»: الأمانة من الصفات التي ترشّح بعض المصلحين وترجّحهم على غيرهم.</li>
+          <li>كان النبي ﷺ منتبهًا لصفات أصحابه يكلّف ويرشّح بناءً عليها، وفقد هذا في التربية فقدٌ لركن أساسي من بناء المصلحين.</li>
+          <li>حديث الطائفة الظاهرة: من المبشرات أن الأمة لن يُقضى عليها، وسيبقى فيها من يقوم بأمر الله.</li>
+          <li>البشرى لا تعني انعدام الأزمات، بل وجود الثابتين القائمين بأمر الله معها.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 13 ===================== -->
+    <section class="sec" id="s13" style="--acc:var(--s6)">
+      <div class="sticky-head">المقطع الثالث عشر · الباب الخامس عشر: الأحاديث ٣–٥</div>
+      <h2>الباب الخامس عشر — الأحاديث (٣–٥): القوة والعمل بالعلم والدربة</h2>
+      <p class="range">ص ١٣٤ – ص ١٣٦</p>
+
+      <h3 id="s13a">الحديث الثالث</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ أَبِي هُرَيْرَةَ ﵁ قَالَ: قَالَ رَسُولُ اللهِ ﷺ:</span>
+        <p><span class="sem-hadith">«الْمُؤْمِنُ الْقَوِيُّ خَيْرٌ وَأَحَبُّ إِلَى اللهِ مِنَ الْمُؤْمِنِ الضَّعِيفِ، وَفِي كُلٍّ خَيْرٌ»<sup class="fnr">(١)</sup>.</span></p>
+      </div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p>قال الإمام <span class="sem-name sem-scholar">النووي</span> ﵀: «والمرادُ بالقوّة هنا: عزيمةُ النَّفسِ والقريحة في أمور الآخرة؛ فيكون صاحبُ هذا الوصفِ أكثرَ إقداماً على العدوِّ في الجهاد، وأسرعَ خروجاً إليه وذهاباً في طلبه، وأشدَّ عزيمة في الأمر بالمعروف والنَّهي عن المنكر والصَّبرِ على الأذى في كلِّ ذلك واحتمالِ المشاقِّ في ذات الله تعالى، وأرغبَ في الصَّلاة والصَّوم والأذكار وسائرِ العبادات، وأنشطَ طلباً لها ومحافظةً عليها»<sup class="fnr">(٢)</sup>.<button class="nmark note--rabt" data-n="n20">٢٠</button></p>
+      </div>
+      <aside class="note note--rabt" id="n20"><span class="nt">ربط داخلي</span>هذه هي «القوة المطلقة» التي وعد المؤلف بذكرها في فوائد آية القصص: عزيمة النفس في أمور الآخرة، لا مجرد القوة البدنية.</aside>
+      <h3 id="s13b">الحديث الرابع</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ أُسَامَةَ ﵁ أَنَّ رَسُولَ اللهِ ﷺ قَالَ:</span>
+        <p><span class="sem-hadith">«يُجَاءُ بِالرَّجُلِ يَوْمَ الْقِيَامَةِ فَيُلْقَى فِي النَّارِ، فَتَنْدَلِقُ أَقْتَابُهُ<sup class="fnr">(٣)</sup> فِي النَّارِ فَيَدُورُ كَمَا يَدُورُ الْحِمَارُ بِرَحَاهُ، فَيَجْتَمِعُ أَهْلُ النَّارِ عَلَيْهِ فَيَقُولُونَ: أَيْ فُلَانُ مَا شَأْنُكَ؟ أَلَيْسَ كُنْتَ تَأْمُرُنَا بِالْمَعْرُوفِ وَتَنْهَى عَنِ الْمُنْكَرِ؟ قَالَ: كُنْتُ آمُرُكُمْ بِالْمَعْرُوفِ وَلَا آتِيهِ وَأَنْهَاكُمْ عَنِ الْمُنْكَرِ وَآتِيهِ»<sup class="fnr">(٤)</sup>.</span></p>
+      </div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> في الحديث إبراز لصفة من أهم الصفات التي ينبغي أن يكون عليها المصلحون، وهي: «العمل بالعلم».</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> ذِكْرُ الجنة والنار والدار الآخرة، هو الذي أرّق الصالحين على مرّ التاريخ، بل إنّ الله تعالى قال في كتابه عن الصالحين الذين يقومون الليل: <span class="sem-aya">﴿تَتَجَافَىٰ جُنُوبُهُمۡ عَنِ ٱلۡمَضَاجِعِ يَدۡعُونَ رَبَّهُمۡ خَوۡفٗا وَطَمَعٗا﴾</span> <span class="aya-ref">[السجدة: ١٦]</span>، وقال سبحانه: <span class="sem-aya">﴿أَمَّنۡ هُوَ قَٰنِتٌ ءَانَآءَ ٱلَّيۡلِ سَاجِدٗا وَقَآئِمٗا يَحۡذَرُ ٱلۡأٓخِرَةَ وَيَرۡجُواْ رَحۡمَةَ رَبِّهِۦۗ﴾</span> <span class="aya-ref">[الزمر: ٩]</span>، فالخوف من عذاب الله من أهمّ ما يُحرّك الأنام، ويكون رادعًا لهم عن الذنوب والآثام.<button class="nmark note--rabt" data-n="n21">٢١</button></p>
+      <aside class="note note--rabt" id="n21"><span class="nt">ربط داخلي</span>يلتقي هذا بآية هود في الباب الثامن (الملف ٤): <span class="sem-aya">﴿وَمَآ أُرِيدُ أَنۡ أُخَالِفَكُمۡ إِلَىٰ مَآ أَنۡهَىٰكُمۡ عَنۡهُۚ﴾</span>؛ فالمصلح أول العاملين بما يدعو إليه.</aside>
+      <h3 id="s13c">الحديث الخامس</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ أَبِي هُرَيْرَةَ ﵁ عَنِ النَّبِيِّ ﷺ قَالَ:</span>
+        <p><span class="sem-hadith">«مَا بَعَثَ اللهُ نَبِيًّا إِلَّا رَعَى الْغَنَمَ». فَقَالَ أَصْحَابُهُ: وَأَنْتَ؟ فَقَالَ: «نَعَمْ، كُنْتُ أَرْعَاهَا عَلَى قَرَارِيطَ<sup class="fnr">(٥)</sup> لِأَهْلِ مَكَّةَ»<sup class="fnr">(٦)</sup><sup class="fnr">(٧)</sup>.</span></p>
+      </div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> اشترك الأنبياء في أن قدّر الله عليهم رعاية الغنم، لأن في هذه الرعاية تدريبًا على معانٍ يُحتاج إليها في سياسة الناس.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> هذا الحديث يدل على أهمية الدربة والتجربة للمصلحين في طريقهم.</p>
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>أخرجه مسلم (٢٦٦٤).</li>
+        <li>المنهاج (١٦/ ٢١٥).</li>
+        <li>تندلق أقتابه: تخرج أمعاؤه.</li>
+        <li>أخرجه <span class="sem-name sem-scholar">البخاري</span> (٣٢٦٧)، ومسلم (٢٩٨٩).</li>
+        <li>قراريط: موضع في مكة.</li>
+        <li>أخرجه <span class="sem-name sem-scholar">البخاري</span> (٢٢٦٢).</li>
+        <li>قال الإمام <span class="sem-name sem-scholar">ابن حجر</span> ﵀: (قال العلماء: الحكمة في إلهام الأنبياء من رعي الغنم قبل النبوة أن يحصل لهم التمرن برعيها على ما يكلفونه من القيام بأمر أمتهم، ولأن في مخالطتها ما يحصل لهم الحلم والشفقة؛ لأنهم إذا صبروا على رعيها وجمعها بعد تفرقها في المرعى ونقلها من مسرح إلى مسرح، ودفع عدوها من سبع وغيره كالسارق، وعلموا اختلاف طباعها، وشدة تفرقها مع ضعفها، واحتياجها إلى المعاهدة؛ ألفوا من ذلك الصبر على الأمة، وعرفوا اختلاف طباعها وتفاوت عقولها، فجبروا كسرها، ورفقوا بضعيفها، وأحسنوا التعاهد لها؛ فيكون تحملهم لمشقة ذلك أسهل مما لو كلفوا القيام بذلك من أول وهلة، لما يحصل لهم من التدريج على ذلك برعي الغنم، وخُصّت الغنم بذلك لكونها أضعف من غيرها؛ ولأن تفرقها أكثر من تفرق الإبل والبقر لإمكان ضبط الإبل والبقر بالربط دونها في العادة المألوفة، ومع أكثرية تفرقها فهي أسرع انقيادًا من غيرها) فتح الباري (٤/ ٤٤١).</li></ol>
+      </div>
+
+      <div class="quiz" data-sec="s13"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>«المؤمن القوي خير وأحب إلى الله»: القوة عند <span class="sem-name sem-scholar">النووي</span> عزيمة النفس والقريحة في أمور الآخرة.</li>
+          <li>صاحب هذه القوة أكثر إقدامًا وأشد عزيمة في الأمر والنهي والصبر، وأرغب في العبادات وأنشط فيها.</li>
+          <li>حديث تندلق أقتابه: من أهم صفات المصلحين العمل بالعلم.</li>
+          <li>ذكر الجنة والنار أرّق الصالحين، والخوف من عذاب الله يحرّك الأنام ويردعهم.</li>
+          <li>حديث رعي الغنم: رعايتها تدريب على سياسة الناس، والحديث يدل على أهمية الدربة والتجربة للمصلحين.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+</main>
+</div>
+
+<!-- ===================== بطاقات المراجعة (خارج منطقة الهايلايت) ===================== -->
+<div class="wrap" style="padding-top:0">
+  <div class="main">
+    <section class="cards" id="anki">
+      <div class="ttl" style="font-size:22px;color:var(--brand)">بطاقات المراجعة (Anki)</div>
+      <div class="sub">بطاقات مستقلة عن الصفحة: كل بطاقة مفهومة بعد شهور بلا رجوع للكتاب. اضغط البطاقة لقلبها. <span id="cards-count"></span></div>
+      <div class="filters" id="filters"></div>
+      <div class="ak" id="ak" tabindex="0">
+        <div class="deckcap" id="ak-deck"></div>
+        <div id="ak-front"></div>
+        <div class="ak-back" id="ak-back"></div>
+        <div class="hint">اضغط لإظهار الإجابة</div>
+      </div>
+      <div class="cnav">
+        <button class="btn" type="button" id="ak-prev">◀ السابقة</button>
+        <span id="ak-counter">٠ / ٠</span>
+        <button class="btn" type="button" id="ak-next">التالية ▶</button>
+        <button class="btn" type="button" id="ak-dl">⬇ تحميل ملف Anki (TSV)</button>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div id="ilm-custom-nav"></div>
+
+<script>
+const QUIZ_DATA = [
+ {"id": "q1", "sectionId": "s1", "question": "ما موجب التعاطف مع قضايا المسلمين في حديث «مثل المؤمنين في توادهم»؟", "options": ["المصلحة المشتركة", "الأخوّة الإيمانية", "الانتماء الحزبي", "القرابة والنسب"], "correctIndex": 1, "explanation": "«وموجب هذا التعاطف: الأخوّة الإيمانية»."},
+ {"id": "q2", "sectionId": "s1", "question": "شخص يرى نصرة قضايا المسلمين «مبدأً حركيًّا» لا شأن للعقيدة به. بمَ يرد عليه المؤلف؟", "options": ["هو محق في ذلك", "التعاطف مع قضايا الأمة هدي نبوي متصل بالعقيدة، والخلل فيه كالخلل في أبواب العقيدة الأخرى", "المسألة سياسية بحتة", "التعاطف مستحب لا علاقة له بالعقيدة"], "correctIndex": 1, "explanation": "«ليس اختراعًا حزبيًّا، ولا مبدأً حركيًّا، وإنما هو هدي نبوي متّصل بالعقيدة»."},
+ {"id": "q3", "sectionId": "s2", "question": "لماذا قصّ الله على نبيه ﷺ أنباء الرسل كما في آية هود ١٢٠؟", "options": ["للتسلية فقط", "ليثبّت به فؤاده؛ لأنه أُصيب بما أُصيبوا به", "لتعليمه التاريخ", "للرد على أهل الكتاب"], "correctIndex": 1, "explanation": "«فإن في اقتدائه بمن قبله من الرسل والأنبياء ومعرفة أخبارهم ما يُثبّت فؤاده»."},
+ {"id": "q4", "sectionId": "s3", "question": "ما الصفة المميّزة للداعي إلى الله في آية ﴿قُلۡ هَٰذِهِۦ سَبِيلِيٓ﴾؟", "options": ["كثرة الأتباع", "أنه على بصيرة: حجة ووضوح ويقين", "الفصاحة", "قوة الجدال"], "correctIndex": 1, "explanation": "«والصفة المميّزة للداعي إلى الله في هذا السبيل: أنّه على بصيرة»."},
+ {"id": "q5", "sectionId": "s3", "question": "لماذا كانت آية ﴿فَبِهُدَىٰهُمُ ٱقۡتَدِهۡۗ﴾ مركزية في بيان أهمية معرفة هدي الأنبياء؟", "options": ["لأنها أول آية في الأنعام", "لأن الاقتداء بهم لا يكون إلا بعد معرفة هديهم", "لأنها خاصة بإبراهيم", "لأنها نزلت في المدينة"], "correctIndex": 1, "explanation": "نصّ الفائدة الثالثة من فوائد الآية الرابعة."},
+ {"id": "q6", "sectionId": "s4", "question": "ما الذي صبّر النبي ﷺ حين اتُّهم في قسمته: «إن هذه لقسمة ما أريد بها وجه الله»؟", "options": ["دعاؤه على القائل", "استحضاره لأخيه موسى الذي أوذي بأكثر من هذا فصبر", "عتابه لأصحابه", "انصرافه عن القسمة"], "correctIndex": 1, "explanation": "«يرحم الله موسى قد أوذي بأكثر من هذا فصبر»."},
+ {"id": "q7", "sectionId": "s5", "question": "رجل صام الدهر إلا الأعياد. كيف يلقى الله مقارنة بمن صام صيام داود؟", "options": ["بأجر أكثر", "بصيام أكثر وتعب أكثر وأجر أقل", "بأجر مساوٍ", "لا يُقبل صومه"], "correctIndex": 1, "explanation": "«لأن الشأن ليس في التعب والكثرة، وإنما في موافقة الأحب إلى الله»."},
+ {"id": "q8", "sectionId": "s5", "question": "ما الذي كان يُتخوَّف منه في زمن النبي ﷺ في شأن العبادة؟", "options": ["القلة منها", "الزيادة من التعبد", "الرياء", "ترك الجماعة"], "correctIndex": 1, "explanation": "«ففي زمن النبي ﷺ كان التخوّف من الزيادة من التعبد، وليس من القلّة»."},
+ {"id": "q9", "sectionId": "s6", "question": "ما الأمران اللذان يحركان النفس ويربطان باب الدعوة بباب المسؤولية الفردية؟", "options": ["المال والجاه", "الشعور بالمسؤولية، والترغيب بذكر الفضائل أو الترهيب من الترك", "الخوف من الناس والطمع فيهم", "العلم والقدرة"], "correctIndex": 1, "explanation": "نصّ الفائدة الأولى من فوائد الباب الرابع عشر."},
+ {"id": "q10", "sectionId": "s6", "question": "ما الطريق الموصل للإمامة في الدين في آية السجدة ٢٤؟", "options": ["كثرة العلم وحده", "الصبر واليقين", "المال والسلطان", "النسب"], "correctIndex": 1, "explanation": "﴿لَمَّا صَبَرُواْۖ وَكَانُواْ بِـَٔايَٰتِنَا يُوقِنُونَ﴾."},
+ {"id": "q11", "sectionId": "s7", "question": "ما الذي يستلزمه الدعاء ﴿وَٱجۡعَلۡنَا لِلۡمُتَّقِينَ إِمَامًا﴾ عند السعدي؟", "options": ["لا يستلزم شيئًا", "الأعمال والصبر والعلم التام الموصل إلى اليقين؛ لأن الدعاء ببلوغ شيء دعاء بما لا يتم إلا به", "طلب الرئاسة", "ترك الناس"], "correctIndex": 1, "explanation": "«ومن المعلوم أن الدعاء ببلوغ شيء دعاء بما لا يتم إلا به»."},
+ {"id": "q12", "sectionId": "s8", "question": "طالب علمه قليل يظن أنه لا يمكن أن يكون قدوة. بمَ يفتح له حديثا «من دعا إلى هدى» و«من سنّ سنة حسنة» الأفق؟", "options": ["لا يكون قدوة إلا العالم", "قد تكون القدوة بأن يوفّقه الله لسنّ سنة في الخير مما جاء به النبي ﷺ", "بالشهرة", "بالمال"], "correctIndex": 1, "explanation": "«ولو لم يكن واسع العلم، فقد تكون القدوة بأن يوفّق اللهُ العبد لسنّ سُنّةٍ في الخير»."},
+ {"id": "q13", "sectionId": "s9", "question": "كيف يغيب العلم كما في حديث «إن الله لا يقبض العلم انتزاعًا»؟", "options": ["بنزعه من الصدور كمعلومات", "بقبض حملته العلماء", "بضياع الكتب", "بقلة المدارس"], "correctIndex": 1, "explanation": "«غياب العلم لا يكون بأن يُنزع كمعلومات، وإنما يكون بقبض حملته»."},
+ {"id": "q14", "sectionId": "s10", "question": "ما أول الصفات التي ينبغي أن يتلبّس بها المصلحون كما في آية المائدة ٥٤؟", "options": ["المهارات والأدوات", "المحبة لله، وهي عمل باطني", "الفصاحة", "كثرة الأتباع"], "correctIndex": 1, "explanation": "«فلا ينبغي أن يُظنّ أن إعداد المصلحين يكون بمجرّد الإعداد الظاهري... ومن أوّل الصفات... المحبة لله»."},
+ {"id": "q15", "sectionId": "s10", "question": "محبةٌ لله تعزل صاحبها عن العمل لدين الله والصبر على الشدائد. ما حكم المؤلف عليها؟", "options": ["هي المحبة الكاملة", "مقياس على وجود إشكال في هذه المحبة", "هي محبة الخاصة", "لا علاقة للمحبة بالعمل"], "correctIndex": 1, "explanation": "نصّ الفائدة الخامسة من فوائد آية المائدة."},
+ {"id": "q16", "sectionId": "s11", "question": "ما الذي يشير إليه قول يوسف عليه السلام: ﴿إِنِّي حَفِيظٌ عَلِيمٞ﴾؟", "options": ["القوة والشجاعة", "الأمانة للقائم على المال، والعلم بالثغر الذي سيقوم عليه", "الفصاحة والبيان", "النسب والجاه"], "correctIndex": 1, "explanation": "نصّ فائدتي الآية الرابعة."},
+ {"id": "q17", "sectionId": "s11", "question": "ما معنى «الربانية» في ﴿كُونُواْ رَبَّـٰنِيِّـۧنَ﴾ بحسب المؤلف؟", "options": ["العزلة للعبادة", "مأخوذة من «الرَّبَّان» الذي يقود؛ ففيها تجاوز لثبات الشخص في نفسه", "كثرة الذكر", "الزهد في الدنيا"], "correctIndex": 1, "explanation": "«لأن الربانية هنا مأخوذة من الرَّبَّان، وهو الذي يقود»."},
+ {"id": "q18", "sectionId": "s12", "question": "ما الصفة التي رجّحت أبا عبيدة ﵁ في حديث أهل نجران؟", "options": ["الشجاعة", "الأمانة", "العلم", "السبق إلى الإسلام"], "correctIndex": 1, "explanation": "«هذا أمين هذه الأمة»."},
+ {"id": "q19", "sectionId": "s12", "question": "هل تعني بشرى «لا تزال طائفة من أمتي قائمة بأمر الله» عدم وجود أزمات ونكبات؟", "options": ["نعم، لا أزمات", "لا، بل مع وجود النكبات والضعف سيكون في الأمة من هو ثابت قائم بأمر الله", "تعني زوال الأعداء", "تعني أن الأمة لا تخطئ"], "correctIndex": 1, "explanation": "نصّ الفائدة الثانية من حديث معاوية."},
+ {"id": "q20", "sectionId": "s13", "question": "ما المراد بالقوة في «المؤمن القوي خير» عند النووي؟", "options": ["قوة البدن", "عزيمة النفس والقريحة في أمور الآخرة", "كثرة المال", "كثرة الأتباع"], "correctIndex": 1, "explanation": "«والمراد بالقوة هنا: عزيمة النفس والقريحة في أمور الآخرة»."},
+ {"id": "q21", "sectionId": "s13", "question": "لماذا اشترك الأنبياء في رعي الغنم كما في فوائد الحديث الخامس؟", "options": ["للكسب فقط", "لأن فيها تدريبًا على معانٍ يحتاج إليها في سياسة الناس", "لأنها مهنة قومهم", "اتفاقًا بلا حكمة"], "correctIndex": 1, "explanation": "«لأن في هذه الرعاية تدريبًا على معانٍ يُحتاج إليها في سياسة الناس»."}
+];
+
+/* ===== CARDS_DATA — بطاقات Anki (9-ط) · يولّدها ويصدّرها ilm-anki.js ===== */
+const CARDS_DATA = [
+ {"id": "c01", "sectionId": "s1", "level": 1, "anchor": "«مثل المؤمنين في توادهم»", "pattern": "quran", "q": "«مَثَلُ الْمُؤْمِنِينَ فِي تَوَادِّهِمْ وَتَرَاحُمِهِمْ وَتَعَاطُفِهِمْ مَثَلُ الْجَسَدِ...» — ما الذي يؤسسه الحديث، وما موجبه؟", "a": "يؤسس لمسؤولية الفرد المسلم في العمل للإسلام ونصرة المسلمين والتعاطف مع قضاياهم. وموجب هذا التعاطف: الأخوّة الإيمانية.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "في الحديث تأسيس لمسؤولية الفرد المسلم"},
+ {"id": "c02", "sectionId": "s1", "level": 2, "anchor": "التعاطف هدي نبوي متصل بالعقيدة", "pattern": "calm", "q": "هل التعاطف مع قضايا الأمة اختراع حزبي أو مبدأ حركي؟", "a": "لا، وإنما هو هدي نبوي متصل بالعقيدة. وكما أن الخلل في الأسماء والصفات أو الإيمان والقدر خلل يستحق المعالجة، فكذلك الخلل في «الولاء للمؤمنين».", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "التعاطف مع قضايا الأمة ليس اختراعًا حزبيًّا"},
+ {"id": "c03", "sectionId": "s1", "level": 2, "anchor": "من أولويات الإصلاح اليوم", "pattern": "calm", "q": "ما المنكر العظيم الذي ذكره المؤلف في هذا الزمن، وما أولوية الإصلاح المقابلة له؟", "a": "محاربة مفهوم الأخوة الإيمانية والانتماء للأمة ونصرة قضايا المسلمين. والأولوية: المحافظة على مبدأ الأخوة الإيمانية والولاء للمؤمنين، وعدم الاستسلام للحرب التي تشوّه هذه المفاهيم.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "من المنكرات العظمى في هذا الزمن"},
+ {"id": "c04", "sectionId": "s2", "level": 1, "anchor": "هود ١٢٠: تثبيت الفؤاد بأنباء الرسل", "pattern": "quran", "q": "﴿وَكُلّٗا نَّقُصُّ عَلَيۡكَ مِنۡ أَنۢبَآءِ ٱلرُّسُلِ مَا نُثَبِّتُ بِهِۦ فُؤَادَكَۚ﴾ [هود: ١٢٠]\nلماذا يحتاج المصلح بعد النبي ﷺ إلى هذا التثبيت؟", "a": "لأن الخطاب يشمل من اتبعه ممن يسير على طريقه في الدعوة والإصلاح، فيناله من المكذبين والمستهزئين ما ينال الأنبياء. واتباع قصص الأنبياء ومعرفة أحوالهم من أهم ما يكون به تثبيت الفؤاد.", "blocks": [{"type": "ans", "s": "لأن الخطاب", "e": "ينال الأنبياء.", "core": true}, {"type": "wajh", "s": "واتباع قصص", "e": "تثبيت الفؤاد."}], "marks": [], "review": "", "src": "الخطاب في الآية ليس خاصًّا بالنبي ﷺ"},
+ {"id": "c05", "sectionId": "s2", "level": 2, "anchor": "الأحقاف ٣٥: صبر أولي العزم", "pattern": "quran", "q": "﴿فَٱصۡبِرۡ كَمَا صَبَرَ أُوْلُواْ ٱلۡعَزۡمِ مِنَ ٱلرُّسُلِ﴾ [الأحقاف: ٣٥]\nما الذي تبيّنه الآية عن الصبر، وما الخطاب فيها لمن بعد النبي ﷺ؟", "a": "أن الصبر ليس بداية في سنة الله للمرسلين، فقد كان الأنبياء قبله يصبرون. وفيها إيناس لمن سار على طريقهم بعده أن يصبر كما صبر أولو العزم.", "blocks": [{"type": "ans", "s": "أن الصبر", "e": "قبله يصبرون.", "core": true}, {"type": "wajh", "s": "وفيها إيناس", "e": "أولو العزم."}], "marks": [], "review": "", "src": "في هذه الآية أمر لرسوله ﷺ بالصبر"},
+ {"id": "c06", "sectionId": "s2", "level": 2, "anchor": "الاعتناء بما جاء عن الأنبياء", "pattern": "calm", "q": "ما منزلة الاعتناء بما جاء عن الأنبياء لمن يؤمّل أن يكون مصلحًا؟", "a": "هو من أهم ما ينبغي أن يعتني به أي إنسان يؤمّل أن يكون في المستقبل مصلحًا نافعًا.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "الاعتناء بما جاء عن الأنبياء عليهم صلوات الله"},
+ {"id": "c07", "sectionId": "s3", "level": 1, "anchor": "يوسف ١٠٨: الدعوة على بصيرة", "pattern": "quran", "q": "﴿قُلۡ هَٰذِهِۦ سَبِيلِيٓ أَدۡعُوٓاْ إِلَى ٱللَّهِۚ عَلَىٰ بَصِيرَةٍ أَنَا۠ وَمَنِ ٱتَّبَعَنِيۖ﴾ [يوسف: ١٠٨]\nما المعلم الأساسي في سبيل النبي ﷺ، وما معنى البصيرة؟", "a": "الدعوة إلى الله هي المعلم الأساسي. والبصيرة: الحجة والوضوح واليقين.", "blocks": [{"type": "ans", "all": true, "core": true}], "marks": [], "review": "", "src": "«الدعوة إلى الله» هي المعلم الأساسي"},
+ {"id": "c08", "sectionId": "s3", "level": 2, "anchor": "لماذا يحتاج المصلح إلى اليقين", "pattern": "calm", "q": "لماذا لا بد أن يكون المصلح على يقين وبيّنة من أمره؟", "a": "لأنه لا يستطيع الصبر على ما يصيبه إذا لم يكن موقنًا أنه يسير على الطريق الصحيح. ولذلك كان من خطاب الله لأنبيائه ما يثبّت يقينهم، كإراءة إبراهيم ملكوت السماوات والأرض.", "blocks": [{"type": "ans", "s": "لأنه لا", "e": "الطريق الصحيح.", "core": true}, {"type": "ans", "s": "ولذلك كان", "e": "السماوات والأرض.", "nolabel": true}], "marks": [], "review": "", "src": "لأنه لا يستطيع الصبر على ما يُصيبه"},
+ {"id": "c09", "sectionId": "s3", "level": 1, "anchor": "الأنعام ٩٠: ﴿فَبِهُدَىٰهُمُ ٱقۡتَدِهۡۗ﴾", "pattern": "quran", "q": "﴿أُوْلَـٰٓئِكَ ٱلَّذِينَ هَدَى ٱللَّهُۖ فَبِهُدَىٰهُمُ ٱقۡتَدِهۡۗ﴾ [الأنعام: ٩٠]\nما دلالتها على أهمية هدي الأنبياء، ولماذا كانت مركزية؟", "a": "أمر الله نبيه ﷺ بالاقتداء بهدي الأنبياء، وفيها أن الأنبياء إنما هداهم الله وهذا يبين قيمة الهداية. وهي مركزية لأن الاقتداء بهم لا يكون إلا بعد معرفة هديهم.", "blocks": [{"type": "ans", "s": "أمر الله", "e": "قيمة الهداية.", "core": true}, {"type": "wajh", "s": "وهي مركزية", "e": "معرفة هديهم."}], "marks": [], "review": "", "src": "هذه الآية عظيمة جدًّا في بيان أهمية هدي الأنبياء"},
+ {"id": "c10", "sectionId": "s3", "level": 3, "anchor": "الأنعام ١٦١: ملة إبراهيم", "pattern": "quran", "q": "﴿قُلۡ إِنَّنِي هَدَىٰنِي رَبِّيٓ إِلَىٰ صِرَٰطٖ مُّسۡتَقِيمٖ دِينٗا قِيَمٗا مِّلَّةَ إِبۡرَٰهِيمَ حَنِيفٗاۚ﴾ [الأنعام: ١٦١]\nما الذي تبيّنه من قيمة استحضار هدي الأنبياء؟", "a": "أن النبي ﷺ كان يستحضر الأنبياء في دعوته وطريقه، وأُمر أن يبيّن أنه على ملة إبراهيم. فمن بعد النبي ﷺ أولى بالاستحضار.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "النبي ﷺ كان يستحضر الأنبياء في دعوته"},
+ {"id": "c11", "sectionId": "s4", "level": 2, "anchor": "«اللهم اغفر لقومي فإنهم لا يعلمون»", "pattern": "quran", "q": "حكى النبي ﷺ نبيًّا ضربه قومه فأدموه وهو يمسح الدم عن وجهه ويقول: «اللَّهُمَّ اغْفِرْ لِقَوْمِي؛ فَإِنَّهُمْ لَا يَعْلَمُونَ» — ما الذي يبيّنه الحديث؟", "a": "أن النبي ﷺ في حياته التفصيلية كان يستحضر هدي الأنبياء والمرسلين، ثم يتصبّر من خلال هذا الاستحضار.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "هذا الحديث يبيّن أنّ النبي ﷺ في حياته التفصيلية"},
+ {"id": "c12", "sectionId": "s4", "level": 2, "anchor": "دوام الاستحضار عند الشدائد", "pattern": "calm", "q": "ما الذي يحتاجه من يريد أن يكون له دور في رفع كلمة الله ونصرة الدين، ولماذا هو صعب؟", "a": "أن يكون دائم الاستحضار لما تعرّض له النبي ﷺ والأنبياء قبله؛ فيستمد منه الصبر والثبات عند الشدائد. وهو صعب لأن قلة من الناس يحوّلون هذا الكلام النظري إلى واقع عند نزول الشدائد.", "blocks": [{"type": "ans", "s": "أن يكون", "e": "والأنبياء قبله؛", "core": true}, {"type": "ans", "s": "فيستمد منه", "e": "نزول الشدائد.", "nolabel": true}], "marks": [], "review": "", "src": "الذي يريد أن يسير على هدي النبي ﷺ"},
+ {"id": "c13", "sectionId": "s4", "level": 1, "anchor": "«يرحم الله موسى»", "pattern": "quran", "q": "قال رجل في قسمة للنبي ﷺ: «إن هذه لقسمة ما أريد بها وجه الله»، فقال ﷺ: «يَرْحَمُ اللهُ مُوسَى قَدْ أُوذِيَ بِأَكْثَرَ مِنْ هَذَا فَصَبَرَ» — لماذا عدّ المؤلف هذا من أشد الابتلاءات؟", "a": "لأنه أوذي من بعض من ينتسبون إليه باتهامه بأمانته، والتشكيك بالأمانة من أكثر ما يؤلم ذوي الأمانة. ومما صبّره استحضاره لأخيه موسى.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "وفي هذا الحديث أُوذي النبي ﷺ من بعض"},
+ {"id": "c14", "sectionId": "s5", "level": 1, "anchor": "أحب الصيام والقيام: صيام داود وقيامه", "pattern": "quran", "q": "«أَحَبُّ الصِّيَامِ إِلَى اللهِ صِيَامُ دَاوُدَ... وَأَحَبُّ الصَّلَاةِ إِلَى اللهِ صَلَاةُ دَاوُدَ» — كيف كان صيام داود وقيامه؟", "a": "كان يصوم يومًا ويفطر يومًا. وكان ينام نصف الليل ويقوم ثلثه وينام سدسه.", "blocks": [{"type": "ans", "all": true, "core": true}], "marks": [], "review": "", "src": "كَانَ يَصُومُ يَوْمًا وَيُفْطِرُ يَوْمًا"},
+ {"id": "c15", "sectionId": "s5", "level": 1, "anchor": "الشأن في موافقة الأحب", "pattern": "calm", "q": "من صام الدهر أو قام الليل كله يلقى الله بتعب أكثر وأجر أقل ممن وافق هدي داود. لماذا؟", "a": "لأن الشأن ليس في التعب والكثرة، وإنما في موافقة الأحب إلى الله، والذي يُعلم عن طريق أنبيائه.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "لأن الشأن ليس في التعب والكثرة"},
+ {"id": "c16", "sectionId": "s5", "level": 2, "anchor": "نظر النبي ﷺ إلى المستقبل البعيد", "pattern": "calm", "q": "لماذا وجّه النبي ﷺ عبد الله بن عمرو حين كان يختم القرآن كل ليلة ويصوم كل يوم؟", "a": "لأنه كان ينظر إلى المستقبل البعيد، فيريد منه عبادة يسير عليها بعد عقود كما يسير عليها اليوم. والنبي ﷺ يحب العبادة الثابتة المستمرة التي يُواظب عليها في كل الأحوال.", "blocks": [{"type": "ans", "s": "لأنه كان", "e": "عليها اليوم.", "core": true}, {"type": "ans", "s": "والنبي ﷺ", "e": "كل الأحوال.", "nolabel": true}], "marks": [], "review": "", "src": "فسمع النبيُّ ﷺ بذلك فوجّهه"},
+ {"id": "c17", "sectionId": "s5", "level": 3, "anchor": "هدي الأنبياء أنموذج ومعيار", "pattern": "calm", "q": "بمَ وجّه النبي ﷺ عبد الله بن عمرو، وما الوسيلة التي تعزّز قيمة هدي الأنبياء عند المؤمن؟", "a": "وجّهه باستحضار هدي نبي من الأنبياء فجعله له أنموذجًا ومعيارًا. ومن وسائل تعزيز قيمة هدي الأنبياء: العناية بكتاب الله وسنة رسوله ﷺ.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "حين وجه النبيُّ ﷺ عبد الله في هذا الموقف"},
+ {"id": "c18", "sectionId": "s6", "level": 2, "anchor": "ارتباط باب الدعوة بباب المسؤولية", "pattern": "compare", "q": "لماذا ارتبط باب فضل الإصلاح والدعوة بباب تحمّل الفرد المسؤولية؟", "a": "لأن الذي يحرك النفس أمران: الشعور بالمسؤولية، والرغبة بالعمل من خلال ذكر فضائله أو الترهيب من خلال التحذير من تركه.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "هذا الباب له ارتباط بباب «تحمل الفرد مسؤولية"},
+ {"id": "c19", "sectionId": "s6", "level": 2, "anchor": "فضائل الدعوة من المثبتات", "pattern": "calm", "q": "لماذا كانت معرفة فضائل الإصلاح والدعوة من المثبتات على الطريق؟", "a": "لأن الذي يسير وهو مستحضر الأجر والفضل يهون عليه ما يعترض الطريق من عقبات.", "blocks": [{"type": "ans", "all": true, "core": true}], "marks": [], "review": "", "src": "معرفة فضائل الإصلاح والدعوة إلى الله تعالى من جملة"},
+ {"id": "c20", "sectionId": "s6", "level": 1, "anchor": "فصلت ٣٣: الدعوة مقام قدوة", "pattern": "quran", "q": "﴿وَمَنۡ أَحۡسَنُ قَوۡلٗا مِّمَّن دَعَآ إِلَى ٱللَّهِ وَعَمِلَ صَٰلِحٗا وَقَالَ إِنَّنِي مِنَ ٱلۡمُسۡلِمِينَ﴾ [فصلت: ٣٣]\nهل الدعوة مختصة بدعوة غير المسلمين، وما طرفا الاقتداء في الآية؟", "a": "ليست مختصة بها، بل يدخل فيها الحث على الخير بالأمر بعبادة الله، والزجر عما نهى عنه، ومجادلة أعداء الله بالتي هي أحسن. والآية تبيّن طرفي الاقتداء: القولي والفعلي.", "blocks": [{"type": "ans", "s": "ليست مختصة", "e": "بعبادة الله،", "core": true}, {"type": "wajh", "s": "والزجر عما", "e": "القولي والفعلي."}], "marks": [], "review": "", "src": "الدعوة إلى الله ليست مختصّة بدعوة غير المسلمين"},
+ {"id": "c21", "sectionId": "s6", "level": 1, "anchor": "السجدة ٢٤: طريق الإمامة في الدين", "pattern": "quran", "q": "﴿وَجَعَلۡنَا مِنۡهُمۡ أَئِمَّةٗ يَهۡدُونَ بِأَمۡرِنَا لَمَّا صَبَرُواْۖ وَكَانُواْ بِـَٔايَٰتِنَا يُوقِنُونَ﴾ [السجدة: ٢٤]\nما الطريق الموصل للإمامة في الدين، وما الدور الأساسي لأئمة الدين؟", "a": "الطريق: الصبر واليقين. والدور الأساسي لأئمة الدين: هداية الخلق، كما في قوله: ﴿يَهۡدُونَ بِأَمۡرِنَا﴾.", "blocks": [{"type": "ans", "all": true, "core": true}], "marks": [], "review": "", "src": "في الآية بيان للطريق الموصل للإمامة في الدين"},
+ {"id": "c22", "sectionId": "s7", "level": 2, "anchor": "الفرقان ٧٤ عند السعدي", "pattern": "quran", "q": "﴿وَٱجۡعَلۡنَا لِلۡمُتَّقِينَ إِمَامًا﴾ [الفرقان: ٧٤]\nما الدرجة التي يُدعى ببلوغها، وما الذي يستلزمه هذا الدعاء عند السعدي؟", "a": "درجة الإمامة في الدين: أن يكونوا قدوة للمتقين في أقوالهم وأفعالهم. ويستلزم الأعمال والصبر على الطاعة وعن المعصية وعلى الأقدار، والعلم التام الموصل إلى اليقين؛ لأن الدعاء ببلوغ شيء دعاء بما لا يتم إلا به.", "blocks": [{"type": "ans", "s": "درجة الإمامة", "e": "في الدين:", "core": true}, {"type": "wajh", "s": "أن يكونوا", "e": "إلا به."}], "marks": [], "review": "", "src": "قال الشيخ السعدي ﵀ في تفسيره: «أي: أوصلنا"},
+ {"id": "c23", "sectionId": "s7", "level": 2, "anchor": "الربانيون عند الطبري", "pattern": "quran", "q": "﴿وَلَٰكِن كُونُواْ رَبَّـٰنِيِّـۧنَ﴾ [آل عمران: ٧٩]\nما معنى الربانيين عند الطبري؟", "a": "سادة الناس وقادتهم في أمر دينهم ودنياهم، بتعليمهم إياهم كتاب الله وما فيه من حلال وحرام وفرض وندب، وبتلاوتهم إياه ودراستهم له.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "كونوا أيها الناس سادة الناس وقادتهم"},
+ {"id": "c24", "sectionId": "s7", "level": 1, "anchor": "الأمر بالمعروف: أول صفات الخيرية وسبب النجاة", "pattern": "quran", "q": "﴿كُنتُمۡ خَيۡرَ أُمَّةٍ أُخۡرِجَتۡ لِلنَّاسِ تَأۡمُرُونَ بِٱلۡمَعۡرُوفِ...﴾ مع آيات لقمان والأعراف وهود — ما الذي تقرّره من فضل الأمر بالمعروف والنهي عن المنكر؟", "a": "أنه أول صفة ذُكرت تابعة لخيرية هذه الأمة. وأنه سبب للنجاة من العذاب.", "blocks": [{"type": "ans", "all": true, "core": true}], "marks": [], "review": "", "src": "هذه الآية تدل على خيرية هذه الأمة"},
+ {"id": "c25", "sectionId": "s8", "level": 1, "anchor": "«من دعا إلى هدى»", "pattern": "quran", "q": "«مَنْ دَعَا إِلَى هُدًى كَانَ لَهُ مِنَ الْأَجْرِ مِثْلُ أُجُورِ مَنْ تَبِعَهُ...» و«مَنْ سَنَّ فِي الْإِسْلَامِ سُنَّةً حَسَنَةً...» — ما الأفق الذي يفتحه الحديثان للمسلم؟", "a": "أن يكون قدوة في الدين ولو لم يكن واسع العلم؛ فقد تكون القدوة بأن يوفّقه الله لسنّ سنة في الخير مما جاء به النبي ﷺ. وفيهما حث عظيم على الدعوة إلى الخير وبيان عظم أجرها.", "blocks": [{"type": "ans", "s": "أن يكون", "e": "واسع العلم؛", "core": true}, {"type": "wajh", "s": "فقد تكون", "e": "عظم أجرها."}], "marks": [], "review": "", "src": "هذان الحديثان يفتحان للمسلم أُفُقًا"},
+ {"id": "c26", "sectionId": "s8", "level": 3, "anchor": "الوجه المقابل: الدعوة إلى ضلالة", "pattern": "quran", "q": "ما جزاء من دعا إلى ضلالة أو سنّ في الإسلام سنة سيئة؟", "a": "عليه من الإثم مثل آثام من تبعه، وعليه وزرها ووزر من عمل بها من بعده، من غير أن ينقص من أوزارهم شيء.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "وَمَنْ دَعَا إِلَى ضَلَالَةٍ كَانَ عَلَيْهِ"},
+ {"id": "c27", "sectionId": "s9", "level": 1, "anchor": "«إن الله لا يقبض العلم انتزاعًا»", "pattern": "quran", "q": "«إِنَّ اللهَ لَا يَقْبِضُ الْعِلْمَ انْتِزَاعًا... وَلَكِنْ يَقْبِضُ الْعِلْمَ بِقَبْضِ الْعُلَمَاءِ» — كيف يغيب العلم، وما مكانة العلماء التي يبيّنها الحديث؟", "a": "لا يغيب بأن يُنزع كمعلومات، وإنما بقبض حملته. والعلماء صمام أمان للأمة، ومنزلتهم خطيرة فيها حماية لشأن الدين.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "غياب العلم لا يكون بأن يُنزع كمعلومات"},
+ {"id": "c28", "sectionId": "s9", "level": 2, "anchor": "الناس يتخذون رؤوسًا", "pattern": "calm", "q": "ما الذي يدل عليه قوله ﷺ: «اتَّخَذَ النَّاسُ رُؤُوسًا جُهَّالًا» من شأن الناس، وما الذي ينبغي أن يخافه صاحب منزلة العلم؟", "a": "أن من شأن الناس اتخاذ رؤوس في الدين، علماء كانوا أو جهّالًا. وينبغي لصاحب المنزلة أن يخاف أن يكون ممن ذمّهم النبي ﷺ بقوله: «فضلّوا وأضلّوا».", "blocks": [{"type": "ans", "s": "أن من", "e": "أو جهّالًا.", "core": true}, {"type": "ans", "s": "وينبغي لصاحب", "e": "«فضلّوا وأضلّوا».", "nolabel": true}], "marks": [], "review": "", "src": "في الحديث دلالة على أن الناس من شأنهم"},
+ {"id": "c29", "sectionId": "s9", "level": 1, "anchor": "«لأن يهدي الله بك رجلًا واحدًا»", "pattern": "quran", "q": "قال ﷺ لعلي يوم خيبر: «فَوَاللهِ لَأَنْ يَهْدِيَ اللهُ بِكَ رَجُلًا وَاحِدًا خَيْرٌ لَكَ مِنْ أَنْ يَكُونَ لَكَ حُمْرُ النَّعَمِ» — ما الفائدة التي ذكرها المؤلف؟", "a": "الدعوة إلى الله تجارة رابحة، وقد يُفتح على الإنسان حتى إنه لينام في فراشه وأجوره تجري عليه، حتى إذا مات تجري عليه الحسنات وهو في قبره.", "blocks": [{"type": "ans", "s": "الدعوة إلى", "e": "تجارة رابحة،", "core": true}, {"type": "wajh", "s": "وقد يُفتح", "e": "في قبره."}], "marks": [], "review": "", "src": "الدعوة إلى الله تعالى تجارة رابحة"},
+ {"id": "c30", "sectionId": "s9", "level": 6, "anchor": "غريب حديث الراية", "pattern": "calm", "q": "ما معنى «يدوكون ليلتهم» و«انفذ على رسلك»؟", "a": "يدوكون ليلتهم: باتوا في اختلاط واختلاف. وانفذ على رسلك: امض لوجهك مترفّقًا متثبّتًا.", "blocks": [{"type": "def", "all": true, "core": true}], "marks": [], "review": "", "src": "يدوكون ليلتهم: أي: باتوا"},
+ {"id": "c31", "sectionId": "s10", "level": 1, "anchor": "سنة الله في نصرة دينه", "pattern": "calm", "q": "ما سنة الله التي يقررها المؤلف في نصرة دينه، وفيمَ يكون الشأن إذن؟", "a": "أنه يعلّق نصرة دينه على وجود من يحمله من البشر، ويمدّهم بمدد من عنده إذا اتصفوا بصفات معيّنة. فالشأن في تطلّب هذه الصفات.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "مِن سنن الله تعالى: أنّه يعلّق نصرة دينه"},
+ {"id": "c32", "sectionId": "s10", "level": 1, "anchor": "محبة الله أول صفات المصلحين", "pattern": "quran", "q": "﴿فَسَوۡفَ يَأۡتِي ٱللَّهُ بِقَوۡمٖ يُحِبُّهُمۡ وَيُحِبُّونَهُۥٓ﴾ [المائدة: ٥٤]\nما الوهم الذي يحذّر منه المؤلف في إعداد المصلحين، وما أول صفاتهم؟", "a": "الوهم: أن يُظن أن إعداد المصلحين يكون بمجرد الإعداد الظاهري من مهارات وأدوات. وأول صفاتهم: المحبة لله، وهي عمل باطني.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "من أهم صفات المصلحين: «محبة الله تعالى»"},
+ {"id": "c33", "sectionId": "s10", "level": 2, "anchor": "أذلة على المؤمنين أعزة على الكافرين", "pattern": "compare", "q": "ما موجب اجتماع اللين للمؤمنين والشدة على الكافرين في المصلح؟", "a": "أنهم يحبون الله ويحبهم. فالدافع للين للمؤمنين: الاشتراك في معنى محبة الله. والدافع للعزة على الكافرين: مضادتهم لمحبة الله.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "وموجب هذا التنوع في الصفات"},
+ {"id": "c34", "sectionId": "s10", "level": 2, "anchor": "مقياس صحة المحبة", "pattern": "compare", "q": "كيف يُعرف أن محبة العبد لله تسير على الطريق الصحيح؟", "a": "إذا قادته لنصرة دين الله والتضحية في سبيله والصبر على الشدائد فهي صحيحة. وإذا عزلته عن العمل لدين الله والصبر على الشدائد ففيها إشكال.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "إذا كانت «محبة العبد لله» تقوده لنصرة"},
+ {"id": "c35", "sectionId": "s10", "level": 2, "anchor": "الفتح ٢٩: الصلاة شعار المحبين", "pattern": "quran", "q": "﴿تَرَىٰهُمۡ رُكَّعٗا سُجَّدٗا يَبۡتَغُونَ فَضۡلٗا مِّنَ ٱللَّهِ وَرِضۡوَٰنٗاۖ﴾ [الفتح: ٢٩]\nما الذي تبيّنه الآية عن المحبين؟", "a": "أن الصلاة من أعظم شعارات المحبين؛ فكأن شعور المحبة لا يحتويه عمليًا إلا السجود. وقوله ﴿تَرَىٰهُمۡ رُكَّعٗا سُجَّدٗا﴾ لا ينحصر بالفرائض، فحيثما أردت أن تراهم ركعًا سجدًا رأيتهم.", "blocks": [{"type": "ans", "s": "أن الصلاة", "e": "شعارات المحبين؛", "core": true}, {"type": "wajh", "s": "فكأن شعور", "e": "سجدًا رأيتهم."}], "marks": [], "review": "", "src": "«الصلاة» من أعظم شعارات المحبّين"},
+ {"id": "c36", "sectionId": "s11", "level": 1, "anchor": "القصص ٢٦: ﴿ٱلۡقَوِيُّ ٱلۡأَمِينُ﴾", "pattern": "quran", "q": "﴿إِنَّ خَيۡرَ مَنِ ٱسۡتَـٔۡجَرۡتَ ٱلۡقَوِيُّ ٱلۡأَمِينُ﴾ [القصص: ٢٦]\nما أهم ما يدخل في صفة القوة، وما معانيها في الوحي؟", "a": "القوة المعنوية أولًا، ثم القوة المادية بما يناسب كل حالة. ومعانيها في الوحي: القوة في العمل، والقوة البدنية كطالوت، والقوة المطلقة.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "من أهم صفات المصلحين «القوة»"},
+ {"id": "c37", "sectionId": "s11", "level": 2, "anchor": "يوسف ٥٥: ﴿حَفِيظٌ عَلِيمٞ﴾", "pattern": "quran", "q": "﴿قَالَ ٱجۡعَلۡنِي عَلَىٰ خَزَآئِنِ ٱلۡأَرۡضِۖ إِنِّي حَفِيظٌ عَلِيمٞ﴾ [يوسف: ٥٥]\nإلامَ يشير الوصفان؟", "a": "﴿حَفِيظٌ﴾ يشير إلى الأمانة التي ينبغي أن تتوفر في القائم على الجانب المالي. و﴿عَلِيمٞ﴾ يشير إلى العلم، والمراد به العلم بالثغر الذي سيقوم عليه.", "blocks": [{"type": "cols", "parts": [{"s": "﴿حَفِيظٌ﴾ يشير", "e": "الجانب المالي."}, {"s": "و﴿عَلِيمٞ﴾ يشير", "e": "سيقوم عليه."}]}], "marks": [], "review": "", "src": "قوله: ﴿حَفِيظٌ﴾ يشير إلى صفة «الأمانة»"},
+ {"id": "c38", "sectionId": "s11", "level": 2, "anchor": "آل عمران ١٤٦: قصص الثابتين عند الأزمات", "pattern": "quran", "q": "﴿وَكَأَيِّن مِّن نَّبِيّٖ قَٰتَلَ مَعَهُۥ رِبِّيُّونَ كَثِيرٞ فَمَا وَهَنُواْ...﴾ [آل عمران: ١٤٦]\nفي أي سياق نزلت، وما التنبيه الذي فيها؟", "a": "في سياق غزوة أحد وإشاعة وفاة النبي ﷺ وما حصل من تشتت وفرار من البعض. وفيها تنبيه إلى أهمية استحضار قصص الثابتين والمصلحين قبلنا عند الأزمات؛ فإنها من أعظم ما يعين على الثبات.", "blocks": [{"type": "ans", "s": "في سياق", "e": "من البعض.", "core": true}, {"type": "wajh", "s": "وفيها تنبيه", "e": "على الثبات."}], "marks": [], "review": "", "src": "في الآية تنبيه إلى أهمية استحضار واستذكار"},
+ {"id": "c39", "sectionId": "s11", "level": 1, "anchor": "لا إمامة بلا صبر", "pattern": "calm", "q": "ما حكم من ظن أنه سيسير في طريق الأنبياء ويكون مؤثرًا في واقعه وسببًا في نهضة المسلمين ثم لا يصاحب الصبر؟", "a": "فهو واهم؛ لأن وصول المؤمنين إلى الإمامة في الدين لا يمكن أن يكون بلا صبر.", "blocks": [{"type": "ans", "all": true, "core": true}], "marks": [], "review": "", "src": "مَن ظنّ أنه سيسير في طريق الأنبياء"},
+ {"id": "c40", "sectionId": "s11", "level": 2, "anchor": "الربانية: صناعة المصلحين", "pattern": "quran", "q": "﴿وَلَٰكِن كُونُواْ رَبَّـٰنِيِّـۧنَ بِمَا كُنتُمۡ تُعَلِّمُونَ ٱلۡكِتَٰبَ وَبِمَا كُنتُمۡ تَدۡرُسُونَ﴾ [آل عمران: ٧٩]\nما الذي تدل عليه في «صناعة المصلحين»، وما وسيلة الربانية فيها؟", "a": "هي من أدل الآيات على أهمية صناعة المصلحين، وأنها منهج للأنبياء؛ لأن الربانية من «الرَّبَّان» الذي يقود. ووسيلتها: اعتماد مرجعية الوحي بالعلم والتعليم والدراسة.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "هذا الخطاب في الآية موجّه للمؤمنين"},
+ {"id": "c41", "sectionId": "s12", "level": 1, "anchor": "«هذا أمين هذه الأمة»", "pattern": "quran", "q": "قال ﷺ لأهل نجران: «لَأَبْعَثَنَّ مَعَكُمْ رَجُلًا أَمِينًا حَقَّ أَمِينٍ»، ثم قال لأبي عبيدة: «هَذَا أَمِينُ هَذِهِ الْأُمَّةِ» — ما الصفة التي يبرزها الحديث، وما اللافت في سيرة النبي ﷺ؟", "a": "الأمانة، وهي صفة ترشّح بعض المصلحين وترجّحهم على غيرهم. واللافت أنه كان ملاحظًا لصفات أصحابه، يكلّف ويرشّح بناءً عليها.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "في الحديث إبراز لصفة من الصفات التي تُرشّح"},
+ {"id": "c42", "sectionId": "s12", "level": 2, "anchor": "فقد ملاحظة الصفات في التربية", "pattern": "calm", "q": "ما أثر فقد ملاحظة صفات المتربين والترشيح بناءً عليها في السياقات التربوية؟", "a": "يُفقد ركن أساسي من أركان بناء المصلحين وتفعيلهم.", "blocks": [{"type": "ans", "all": true, "core": true}], "marks": [], "review": "", "src": "ومتى ما فُقد هذا المعنى في السياقات التربوية"},
+ {"id": "c43", "sectionId": "s12", "level": 1, "anchor": "الطائفة القائمة بأمر الله", "pattern": "quran", "q": "«لَا تَزَالُ طَائِفَةٌ مِنْ أُمَّتِي قَائِمَةً بِأَمْرِ اللهِ لَا يَضُرُّهُمْ مَنْ خَذَلَهُمْ أَوْ خَالَفَهُمْ» — ما البشرى فيه، وهل تعني عدم وجود الأزمات؟", "a": "البشرى أن هذه الأمة لن يُقضى عليها، وسيبقى فيها من يقوم بأمر الله. ولا تعني عدم وجود الأزمات، وإنما أن مع النكبات وحالات الضعف سيكون فيها من هو ثابت قائم بأمر الله.", "blocks": [{"type": "ans", "s": "البشرى أن", "e": "بأمر الله.", "core": true}, {"type": "wajh", "s": "ولا تعني", "e": "بأمر الله."}], "marks": [], "review": "", "src": "هذا الحديث من المبشرات في أنّ هذه الأمة"},
+ {"id": "c44", "sectionId": "s13", "level": 1, "anchor": "«المؤمن القوي خير» والقوة عند النووي", "pattern": "quran", "q": "«الْمُؤْمِنُ الْقَوِيُّ خَيْرٌ وَأَحَبُّ إِلَى اللهِ مِنَ الْمُؤْمِنِ الضَّعِيفِ، وَفِي كُلٍّ خَيْرٌ» — ما المراد بالقوة عند النووي؟", "a": "عزيمة النفس والقريحة في أمور الآخرة؛ فيكون صاحبها أكثر إقدامًا في الجهاد، وأشد عزيمة في الأمر بالمعروف والنهي عن المنكر والصبر على الأذى، وأرغب في العبادات وأنشط طلبًا لها.", "blocks": [{"type": "ans", "s": "عزيمة النفس", "e": "أمور الآخرة؛", "core": true}, {"type": "wajh", "s": "فيكون صاحبها", "e": "طلبًا لها."}], "marks": [], "review": "", "src": "والمرادُ بالقوّة هنا: عزيمةُ النَّفسِ"},
+ {"id": "c45", "sectionId": "s13", "level": 1, "anchor": "العمل بالعلم: حديث تندلق أقتابه", "pattern": "quran", "q": "«كُنْتُ آمُرُكُمْ بِالْمَعْرُوفِ وَلَا آتِيهِ، وَأَنْهَاكُمْ عَنِ الْمُنْكَرِ وَآتِيهِ» — ما الصفة التي يبرزها الحديث في المصلحين؟", "a": "العمل بالعلم.", "blocks": [{"type": "ans", "all": true, "core": true}], "marks": [], "review": "", "src": "في الحديث إبراز لصفة من أهم الصفات التي ينبغي"},
+ {"id": "c46", "sectionId": "s13", "level": 3, "anchor": "ذكر الآخرة يؤرّق الصالحين", "pattern": "calm", "q": "ما الذي أرّق الصالحين على مر التاريخ، وما أثر الخوف من عذاب الله؟", "a": "ذكر الجنة والنار والدار الآخرة، كما في ﴿تَتَجَافَىٰ جُنُوبُهُمۡ عَنِ ٱلۡمَضَاجِعِ﴾. والخوف من عذاب الله من أهم ما يحرّك الأنام، ويكون رادعًا لهم عن الذنوب والآثام.", "blocks": [{"type": "ans", "s": "ذكر الجنة", "e": "عَنِ ٱلۡمَضَاجِعِ﴾.", "core": true}, {"type": "ans", "s": "والخوف من", "e": "الذنوب والآثام.", "nolabel": true}], "marks": [], "review": "", "src": "ذِكْرُ الجنة والنار والدار الآخرة، هو الذي"},
+ {"id": "c47", "sectionId": "s13", "level": 2, "anchor": "رعي الأنبياء الغنم", "pattern": "quran", "q": "«مَا بَعَثَ اللهُ نَبِيًّا إِلَّا رَعَى الْغَنَمَ»، فقال أصحابه: وأنت؟ قال: «نَعَمْ، كُنْتُ أَرْعَاهَا عَلَى قَرَارِيطَ لِأَهْلِ مَكَّةَ» — ما الحكمة، وما دلالة الحديث للمصلحين؟", "a": "أن في رعاية الغنم تدريبًا على معانٍ يُحتاج إليها في سياسة الناس. والحديث يدل على أهمية الدربة والتجربة للمصلحين في طريقهم.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "اشترك الأنبياء في أن قدّر الله عليهم رعاية"}
+];
+
+/* ===== أدوات ===== */
+const $=(s,c)=>(c||document).querySelector(s), $$=(s,c)=>[...(c||document).querySelectorAll(s)];
+const AR=n=>String(n).replace(/\d/g,d=>"٠١٢٣٤٥٦٧٨٩"[d]);
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const SEC_NAMES={"s1": "الباب الثاني عشر: الحديث الخامس", "s2": "الباب الثالث عشر: العنوان والآيتان ١–٢", "s3": "الباب الثالث عشر: الآيات ٣–٥", "s4": "الباب الثالث عشر: الحديثان ١–٢", "s5": "الباب الثالث عشر: الحديث الثالث", "s6": "الباب الرابع عشر: العنوان والآيتان ١–٢", "s7": "الباب الرابع عشر: الآيات ٣–٨", "s8": "الباب الرابع عشر: الحديثان ١–٢", "s9": "الباب الرابع عشر: الحديثان ٣–٤", "s10": "الباب الخامس عشر: العنوان والآيتان ١–٢", "s11": "الباب الخامس عشر: الآيات ٣–١١", "s12": "الباب الخامس عشر: الحديثان ١–٢", "s13": "الباب الخامس عشر: الأحاديث ٣–٥"};
+
+/* ===== الفهرس الجانبي (بعناصر div/a حتى لا يدخل في فهرسة الهايلايت) ===== */
+(function(){
+  const list=$("#toclist");
+  $$(".sec").forEach(sec=>{
+    const h2=$("h2",sec); if(!h2) return;
+    const box=document.createElement("div"); box.className="toc-i";
+    box.innerHTML='<a href="#'+sec.id+'">'+h2.textContent+'</a>';
+    const subs=$$("h3[id]",sec);
+    if(subs.length){
+      const sub=document.createElement("div"); sub.className="toc-sub";
+      subs.forEach(h=>{const a=document.createElement("a");a.href="#"+h.id;a.textContent=h.textContent;sub.appendChild(a)});
+      box.appendChild(sub);
+    }
+    list.appendChild(box);
+  });
+  const a=document.createElement("a"); a.href="#anki"; a.textContent="بطاقات المراجعة"; list.appendChild(a);
+})();
+
+/* ===== الأسئلة التفاعلية ===== */
+(function(){
+  $$(".quiz").forEach(box=>{
+    const sid=box.dataset.sec, qs=QUIZ_DATA.filter(q=>q.sectionId===sid), host=$(".qs",box);
+    host.innerHTML=qs.map(q=>'<div class="q" data-q="'+q.id+'"><div class="qt">'+q.question+'</div>'+
+      q.options.map((o,i)=>'<button class="opt" data-i="'+i+'">'+o+'</button>').join("")+
+      '<div class="expl" hidden></div></div>').join("");
+    $(".score",box).textContent="النتيجة: ٠ / "+AR(qs.length);
+  });
+  document.addEventListener("click",e=>{
+    const btn=e.target.closest(".opt"); if(!btn) return;
+    const qEl=btn.closest(".q"), box=btn.closest(".quiz");
+    const q=QUIZ_DATA.find(x=>x.id===qEl.dataset.q); if(!q) return;
+    const i=+btn.dataset.i, ok=i===q.correctIndex;
+    $$(".opt",qEl).forEach(b=>b.classList.remove("ok","no"));
+    btn.classList.add(ok?"ok":"no");
+    if(ok) $$(".opt",qEl)[q.correctIndex].classList.add("ok");
+    const ex=$(".expl",qEl); ex.hidden=false; ex.textContent=(ok?"صحيح. ":"غير صحيح. ")+q.explanation;
+    if(ok) qEl.dataset.done="1";
+    const qs=QUIZ_DATA.filter(x=>x.sectionId===box.dataset.sec);
+    $(".score",box).textContent="النتيجة: "+AR($$('.q[data-done="1"]',box).length)+" / "+AR(qs.length);
+  });
+})();
+
+/* ===== الهامش: فتح/طي على الشاشات الصغيرة، وإبراز على الكبيرة ===== */
+document.addEventListener("click",e=>{
+  const m=e.target.closest(".nmark"); if(!m) return;
+  const n=document.getElementById(m.dataset.n); if(!n) return;
+  if(window.matchMedia("(max-width:1339px)").matches){ n.classList.toggle("open"); if(n.classList.contains("open")) n.scrollIntoView({block:"nearest"}); }
+  else { $$(".note.flash").forEach(x=>x.classList.remove("flash")); n.classList.add("flash"); n.scrollIntoView({block:"nearest"}); setTimeout(()=>n.classList.remove("flash"),1400); }
+});
+
+/* ===== شريط التنقل والتحكم ===== */
+(function(){
+  let fs=parseFloat(store.get("qw_fs")||"17.5");
+  const apply=()=>{document.documentElement.style.setProperty("--fs",fs+"px");store.set("qw_fs",fs)};
+  if(store.get("qw_fs")) apply();
+  $("#fsp").addEventListener("click",()=>{fs=Math.min(fs+1,24);apply()});
+  $("#fsm").addEventListener("click",()=>{fs=Math.max(fs-1,15);apply()});
+  const thm=$("#thm");
+  const setT=t=>{document.documentElement.setAttribute("data-theme",t);thm.textContent=t==="night"?"☀️":"🌙";store.set("qw_theme",t)};
+  setT(store.get("qw_theme")||"day");
+  thm.addEventListener("click",()=>setT(document.documentElement.getAttribute("data-theme")==="night"?"day":"night"));
+})();
+
+/* ===== شريط التقدم + تتبع الموضع + تظليل الفهرس ===== */
+(function(){
+  const QW_POS_KEY="qw_pos_06.html";
+  const bar=$("#prog"), links=$$("#toclist a"), secs=$$(".sec");
+  let t=0;
+  function onScroll(){
+    const h=document.documentElement.scrollHeight-window.innerHeight;
+    bar.style.width=(h>0?(window.scrollY/h)*100:0)+"%";
+    let cur=null; secs.forEach(s=>{ if(s.getBoundingClientRect().top<=120) cur=s.id });
+    links.forEach(a=>a.classList.toggle("on",cur&&a.getAttribute("href")==="#"+cur));
+    clearTimeout(t); t=setTimeout(()=>store.set(QW_POS_KEY,String(window.scrollY)),400);
+  }
+  window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
+  const y=parseInt(store.get(QW_POS_KEY)||"0",10);
+  if(y>200 && !location.hash) window.scrollTo(0,y);
+})();
+</script>
+
+<script type="module" src="../../../firebase-sync-manhaj.js"></script>
+<script src="../../../ilm-track.js"></script>
+<script src="../../../data.js"></script>
+<script src="../../../ilm-anki.js" data-lecture="06"></script>
+<script>
+/* ===== واجهة البطاقات: العرض والتصدير من ilm-anki.js وحدها (9-ص) ===== */
+(function(){
+  var filter='', idx=0, ak=document.getElementById('ak');
+  function view(){ return filter ? CARDS_DATA.filter(function(c){ return c.sectionId===filter; }) : CARDS_DATA; }
+  function render(){
+    var v=view(); if(!v.length) return;
+    if(idx>=v.length) idx=0; if(idx<0) idx=v.length-1;
+    var c=v[idx];
+    ak.classList.remove('on');
+    try{
+      document.getElementById('ak-deck').textContent='الرزمة: '+ILM_ANKI.deck(c)+' · '+ILM_ANKI.tags(c);
+      document.getElementById('ak-front').innerHTML=ILM_ANKI.front(c);
+      document.getElementById('ak-back').innerHTML=ILM_ANKI.back(c);
+    }catch(err){ document.getElementById('ak-front').textContent=err.message; }
+    document.getElementById('ak-counter').textContent=AR(idx+1)+' / '+AR(v.length);
+  }
+  function go(d){ idx+=d; render(); }
+  var fb=document.getElementById('filters');
+  function mk(key,label){
+    var b=document.createElement('button'); b.type='button'; b.textContent=label; b.dataset.f=key;
+    b.addEventListener('click',function(){ filter=key; idx=0; fb.querySelectorAll('button').forEach(function(x){ x.classList.toggle('on',x.dataset.f===key); }); render(); });
+    fb.appendChild(b); return b;
+  }
+  mk('','الكل ('+AR(CARDS_DATA.length)+')').classList.add('on');
+  Object.keys(SEC_NAMES).forEach(function(k){ var n=CARDS_DATA.filter(function(c){ return c.sectionId===k; }).length; if(n) mk(k,SEC_NAMES[k]+' ('+AR(n)+')'); });
+  ak.addEventListener('click',function(e){ if(e.target.closest('a')) return; ak.classList.toggle('on'); });
+  ak.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); ak.classList.toggle('on'); } });
+  document.getElementById('ak-next').addEventListener('click',function(){ go(1); });
+  document.getElementById('ak-prev').addEventListener('click',function(){ go(-1); });
+  document.getElementById('ak-dl').addEventListener('click',function(){ try{ ILM_ANKI.download(CARDS_DATA); }catch(err){ alert(err.message); } });
+  document.getElementById('cards-count').textContent='('+AR(CARDS_DATA.length)+' بطاقة)';
+  render();
+})();
+</script>
+<script src="../../../ilm-nav.js"></script>
+<script>
+(function(){
+  var box=document.getElementById('ilm-completion-box');
+  var cb=box?box.querySelector('input[data-lecture-id]'):null;
+  if(!cb) return;
+  var lid=cb.getAttribute('data-lecture-id');
+  function render(done){ cb.checked=done; box.classList.toggle('done',done); }
+  if(window.IlmTrack){ window.IlmTrack.ready.then(function(){ render(window.IlmTrack.isDone(lid)); }); }
+  cb.addEventListener('change',function(){ if(window.IlmTrack) window.IlmTrack.setDone(lid,cb.checked); render(cb.checked); });
+})();
+</script>
+<script>
+/* ===== هوية «سماء التفكر»: الشريط العلوي، والفهرس المنزلق، وعمود الهوامش =====
+   لا يضيف ولا يحذف أي عنصر داخل منطقة التظليل؛ يغيّر المواضع بالأنماط فقط (12-ب). */
+(function(){
+  var root = document.documentElement, tb = document.getElementById('topbar');
+  function setH(){ if(tb) root.style.setProperty('--tbh', tb.offsetHeight + 'px'); }
+
+  /* السابق/التالي من ilm-nav داخل الشريط العلوي، كما في «مقدمات تمهيدية» */
+  function moveNav(){
+    var t = document.querySelector('.ilm-nav-top'), slot = document.getElementById('nav-top-slot');
+    if(t && slot && !slot.contains(t)) slot.appendChild(t);
+    setH();
+  }
+
+  /* الفهرس المنزلق */
+  var side = document.querySelector('.side'), back = document.getElementById('tocBack');
+  function openToc(v){
+    if(!side) return;
+    side.classList.toggle('open', v);
+    document.body.classList.toggle('toc-open', v);
+    if(back) back.hidden = !v;
+    ['tocBtn','tocTab'].forEach(function(id){ var b = document.getElementById(id); if(b) b.setAttribute('aria-expanded', v ? 'true' : 'false'); });
+    if(v){ var on = side.querySelector('a.on'); if(on) on.scrollIntoView({block:'center'}); }
+  }
+  ['tocBtn','tocTab'].forEach(function(id){
+    var b = document.getElementById(id);
+    if(b) b.addEventListener('click', function(){ openToc(!side.classList.contains('open')); });
+  });
+  var x = document.getElementById('tocX'); if(x) x.addEventListener('click', function(){ openToc(false); });
+  if(back) back.addEventListener('click', function(){ openToc(false); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') openToc(false); });
+  if(side) side.addEventListener('click', function(e){ if(e.target.closest('a')) openToc(false); });
+
+  /* تظليل رابط المقطع الحالي في الشريط العلوي */
+  var chips = [].slice.call(document.querySelectorAll('.tb-links a'));
+  var secs = [].slice.call(document.querySelectorAll('.sec'));
+  function markChip(){
+    var cur = null, lim = (tb ? tb.offsetHeight : 60) + 40;
+    secs.forEach(function(s){ if(s.getBoundingClientRect().top <= lim) cur = s.id; });
+    chips.forEach(function(a){ a.classList.toggle('on', !!cur && a.getAttribute('href') === '#' + cur); });
+  }
+  window.addEventListener('scroll', markChip, {passive:true});
+
+  /* عمود الهوامش: كل هامش بمحاذاة رقمه في المتن، بلا تراكب */
+  var main = document.querySelector('.main'), wide = window.matchMedia('(min-width:1340px)');
+  function layoutNotes(){
+    if(!main) return;
+    var notes = [].slice.call(main.querySelectorAll('aside.note'));
+    notes.forEach(function(n){ n.style.top = ''; });
+    if(!wide.matches) return;
+    var base = main.getBoundingClientRect().top, last = -1e9;
+    notes.forEach(function(n){
+      var m = main.querySelector('.nmark[data-n="' + n.id + '"]');
+      var top = (m ? m.getBoundingClientRect().top : n.getBoundingClientRect().top) - base - 8;
+      if(top < last + 12) top = last + 12;
+      n.style.top = top + 'px';
+      last = top + n.offsetHeight;
+    });
+  }
+  var t = 0;
+  function relayout(){ clearTimeout(t); t = setTimeout(function(){ setH(); layoutNotes(); }, 60); }
+  window.addEventListener('resize', relayout);
+  if(wide.addEventListener) wide.addEventListener('change', relayout);
+  if(window.ResizeObserver && main) new ResizeObserver(relayout).observe(main);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(relayout);
+
+  function init(){ moveNav(); markChip(); layoutNotes(); }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+  window.addEventListener('load', function(){ moveNav(); relayout(); });
+})();
+
+</script>
+<script src="../../../ilm-highlight.js" data-lecture-id="stage0_qabas-wahhaj_06"></script>
+<script src="../../../ilm-semantic.js" data-hadith="off"></script>
 </body>
 </html>
