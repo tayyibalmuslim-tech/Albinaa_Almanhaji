@@ -9,22 +9,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../../anki/final.css">
 <style>
+/* ===== هوية «سماء التفكر» — مطابقة لمقدمات تمهيدية/01: غلاف ليلي نجمي، ومتن عاجي هادئ =====
+   ألوان المقاطع بعيدة عن الألوان الدلالية المحجوزة (5-ب). */
 :root{
-  --brand:#3a3f8c; --brand-2:#575ea8; --brand-3:#2a2d68;
-  --bg:#fbfaf7; --surface:#ffffff; --surface-2:#f4f2ee;
-  --ink:#23252c; --ink-soft:#4a4e58; --line:#e2ded6;
-  --s1:#2a2d68; --s2:#3a3f8c; --s3:#4a52a5; --s4:#5c64b8; --s5:#343d7e; --s6:#414a96; --s7:#2f3873;
-  /* الطبقة الدلالية — بند 5-ب (محجوزة، لا تُستعمل للزخرفة) */
+  --bg:#faf8f3; --surface:#fffefa; --surface-2:#f3f0e8; --ink:#1f2433; --ink-soft:#596074; --line:#e4dfd2;
+  --night:#141c38; --night2:#263463; --star:#f3d58a; --goldbg:#f7efd9; --goldbd:#e3d3a6;
+  --brand:#263463; --brand-2:#3b4c8a; --brand-3:#141c38;
+  --s1:#2b3a75; --s2:#106a7a; --s3:#4b4f63; --s4:#6b4f3a; --s5:#1f2a4f; --s6:#2b3a75; --s7:#106a7a;
+  --s8:#4b4f63; --s9:#6b4f3a; --s10:#1f2a4f; --s11:#2b3a75; --s12:#106a7a;
   --sem-aya:#14532d; --sem-hadith:#5b2d90; --sem-sahabi:#8a5a00; --sem-scholar:#8f1d21;
-  /* ألوان أنواع الهامش — بند 7-ج/أ */
   --n-tawthiq:#0f6b6b; --n-mustalah:#6b4f3a; --n-tarjama:#1e3a5f; --n-idah:#4b5563;
   --n-rabt:#1d6fa5; --n-tashih:#b45309; --n-siyaq:#5b6b1f;
-  --fs:17.5px; --radius:10px;
+  --fs:17.5px; --radius:12px; --tbh:52px; --main:780px;
 }
 [data-theme="night"]{
-  --bg:#14161c; --surface:#1b1e26; --surface-2:#232733; --ink:#e8e6e1; --ink-soft:#b3b7c2; --line:#333846;
-  --brand:#98a0ea; --brand-2:#aab1f0; --brand-3:#c3c8f7;
-  --s1:#8f98e0; --s2:#98a0ea; --s3:#a7aef0; --s4:#b6bcf5; --s5:#939ce6; --s6:#9ea6ec; --s7:#8a93dd;
+  --bg:#10131f; --surface:#171b2b; --surface-2:#1f2436; --ink:#e8e6e1; --ink-soft:#b3b7c2; --line:#2d3348;
+  --goldbg:#2a2516; --goldbd:#5e4f27;
+  --brand:#aab4f0; --brand-2:#c3c8f7; --brand-3:#dfe3ff;
+  --s1:#8f9be6; --s2:#5fc0cf; --s3:#aeb3c8; --s4:#d2a988; --s5:#9aa6e8; --s6:#8f9be6; --s7:#5fc0cf;
+  --s8:#aeb3c8; --s9:#d2a988; --s10:#9aa6e8; --s11:#8f9be6; --s12:#5fc0cf;
   --sem-aya:#91e3b3; --sem-hadith:#c4a2f0; --sem-sahabi:#e0b355; --sem-scholar:#f0a0a3;
   --n-tawthiq:#5fc7c7; --n-mustalah:#c4a184; --n-tarjama:#8fb4de; --n-idah:#a8adb8;
   --n-rabt:#77b9e6; --n-tashih:#f0a94b; --n-siyaq:#b0c161;
@@ -33,203 +36,287 @@
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:'Cairo',system-ui,sans-serif;
   font-size:var(--fs);line-height:1.95;text-align:right;-webkit-text-size-adjust:100%}
-h1,h2,h3,h4,.ttl{font-family:'Reem Kufi','Cairo',sans-serif;line-height:1.5;margin:0}
+h1,h2,h3,h4{line-height:1.5;margin:0}
 a{color:var(--brand);text-decoration:none}
-/* ===== شريط التقدم ===== */
-#prog{position:fixed;top:0;right:0;height:4px;width:0;background:linear-gradient(90deg,var(--brand-2),var(--brand));z-index:60}
-/* ===== شريط التنقّل ===== */
-.topbar{position:sticky;top:0;z-index:50;background:var(--surface);border-bottom:1px solid var(--line);
-  display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:8px 14px}
-.topbar select{font-family:inherit;font-size:14px;padding:7px 10px;border:1px solid var(--line);
-  border-radius:8px;background:var(--surface-2);color:var(--ink);max-width:min(55vw,340px)}
-.btn{font-family:inherit;font-size:14px;min-height:38px;padding:7px 12px;border:1px solid var(--line);
-  border-radius:8px;background:var(--surface-2);color:var(--ink);cursor:pointer}
-.btn:hover{border-color:var(--brand)}
-.btn[disabled]{opacity:.4;cursor:not-allowed}
-.spacer{flex:1}
-/* ===== التخطيط: المتن يمين، الفهرس يسار ===== */
-.wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:26px;
-  max-width:1280px;margin:0 auto;padding:22px 16px 80px;direction:rtl}
-.main{grid-column:1;min-width:0;max-width:780px;margin-inline-start:auto}
-.side{grid-column:2;min-width:0}
-.toc{position:sticky;top:64px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
-  padding:12px 14px;max-height:calc(100vh - 110px);overflow:auto}
-.toc h4{font-size:15px;color:var(--brand);margin-bottom:8px}
-.toc ol{list-style:none;margin:0;padding:0;font-size:14px}
-.toc ol ol{padding-inline-start:12px;border-inline-start:2px solid var(--line);margin:4px 0 8px}
-.toc li{margin:3px 0}
-.toc a{color:var(--ink-soft);display:block;padding:2px 4px;border-radius:6px}
-.toc a:hover,.toc a.on{color:var(--brand);background:var(--surface-2)}
-/* ===== الرأس ===== */
-.hero{background:linear-gradient(135deg,var(--s1),var(--s3));color:#fff;border-radius:14px;padding:26px 22px;margin-bottom:18px}
-[data-theme="night"] .hero{background:linear-gradient(135deg,#232a5e,#343d7e);color:#eceaff}
-.hero .kicker{font-size:13px;opacity:.85;letter-spacing:.5px}
-.hero h1{font-size:30px;margin:6px 0 10px}
-.hero .meta{font-size:14px;opacity:.92;line-height:1.9}
-.ai-warn{background:#fff7e6;border:1px solid #f0c987;color:#6b4a10;border-radius:10px;
-  padding:10px 14px;font-size:13.5px;margin-bottom:14px}
-[data-theme="night"] .ai-warn{background:#2e2717;border-color:#6b5322;color:#e6cf9b}
-.layer-key{background:var(--surface);border:1px dashed var(--line);border-radius:10px;
-  padding:10px 14px;font-size:13.5px;color:var(--ink-soft);margin-bottom:18px}
+
+/* ===== تنبيه الذكاء الاصطناعي: شريط رفيع ===== */
+.ai-note{background:var(--night);color:#e9dcb3;font-size:12.5px;line-height:1.7;text-align:center;
+  padding:6px 14px;border-bottom:1px solid rgba(243,213,138,.25)}
+
+/* ===== الشريط العلوي ===== */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(20,28,56,.97);color:#fff}
+.topbar-in{max-width:1180px;margin:0 auto;padding:7px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.tb-title{font-family:'Reem Kufi',sans-serif;font-size:15px;color:var(--star);white-space:nowrap}
+.tb-links{display:flex;gap:4px;flex-wrap:nowrap;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none}
+.tb-links::-webkit-scrollbar{display:none}
+.tb-links a{color:#e6e9f5;text-decoration:none;font-size:12.5px;padding:3px 10px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.2);white-space:nowrap}
+.tb-links a:hover,.tb-links a.on{background:rgba(243,213,138,.18);border-color:rgba(243,213,138,.55)}
+.tb-tools{display:flex;gap:4px}
+.tb-btn{font-family:'Cairo',sans-serif;font-size:12.5px;min-height:30px;padding:2px 10px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.25);background:transparent;color:#e6e9f5;cursor:pointer}
+.tb-btn:hover{background:rgba(243,213,138,.18)}
+.tb-toc{border-color:var(--star);color:var(--star);font-weight:700}
+.progress{height:3px;background:var(--star);width:0}
+#nav-top-slot{flex:0 0 auto;display:inline-flex}
+body .ilm-nav-top{max-width:none;margin:0;padding:0;background:none;border:0;border-radius:0;box-shadow:none;color:#fff}
+body .ilm-nav-top:before,body .ilm-nav-top .inv-jump,body .ilm-nav-top .inv-subj,body .ilm-nav-top .inv-disabled{display:none}
+body .ilm-nav-top .inv-row{display:flex;gap:6px}
+body .ilm-nav-top .inv-link{flex-direction:row;align-items:center;gap:6px;min-height:30px;padding:2px 12px;
+  border:1px solid var(--star);border-radius:999px;background:rgba(243,213,138,.1);color:var(--star);text-align:center;box-shadow:none}
+body .ilm-nav-top .inv-link:hover{background:rgba(243,213,138,.22);transform:none}
+body .ilm-nav-top .inv-day{color:var(--star);font-size:12px}
+body .ilm-nav-top .inv-ttl{color:#fff;font-family:'Cairo',sans-serif;font-size:12.5px;font-weight:700}
+@media (max-width:1499px){body .ilm-nav-top .inv-ttl{display:none}}
+
+/* ===== الفهرس المنزلق (زر جانبي للفتح والإغلاق) ===== */
+.side{position:fixed;top:0;right:0;bottom:0;z-index:70;width:min(340px,88vw);
+  transform:translateX(105%);transition:transform .25s ease;visibility:hidden}
+.side.open{transform:none;visibility:visible}
+.toc{height:100%;overflow:auto;background:var(--surface);border-left:1px solid var(--line);
+  box-shadow:-10px 0 30px rgba(20,28,56,.18);padding:0 18px 30px}
+.toc-head{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;gap:8px;
+  background:var(--night);color:var(--star);margin:0 -18px 10px;padding:12px 18px}
+.toc-head h4{font-family:'Reem Kufi',sans-serif;font-size:17px;color:var(--star)}
+.toc-x{width:34px;height:34px;border-radius:50%;border:1px solid rgba(243,213,138,.5);background:transparent;color:var(--star);cursor:pointer;font-size:15px}
+.toc ol{list-style:none;margin:0;padding:0;font-size:15px}
+.toc ol ol{padding-inline-start:14px;border-inline-start:2px solid var(--line);margin:2px 0 8px;font-size:14px}
+.toc li{margin:2px 0}
+.toc a{display:block;color:var(--ink);padding:4px 8px;border-radius:8px;line-height:1.7}
+.toc>ol>li>a{font-weight:700}
+.toc ol ol a{color:var(--ink-soft);font-weight:400}
+.toc a:hover,.toc a.on{background:var(--goldbg);color:var(--night2)}
+[data-theme="night"] .toc a:hover,[data-theme="night"] .toc a.on{color:var(--star)}
+.toc-tab{position:fixed;top:50%;right:0;z-index:60;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;
+  padding:12px 7px;border:1px solid rgba(243,213,138,.55);border-right:0;border-radius:12px 0 0 12px;
+  background:var(--night);color:var(--star);font-family:'Cairo',sans-serif;font-size:13px;font-weight:700;cursor:pointer;
+  box-shadow:-3px 3px 14px rgba(20,28,56,.25)}
+.toc-tab span{writing-mode:vertical-rl}
+body.toc-open .toc-tab{opacity:0;pointer-events:none}
+.toc-back{position:fixed;inset:0;z-index:65;background:rgba(20,28,56,.35)}
+
+/* ===== التخطيط: المتن في الوسط، والهوامش في العمود الجانبي ===== */
+.wrap{max-width:1180px;margin:0 auto;padding:18px 18px 80px}
+.main{position:relative;max-width:var(--main);margin:0 auto;min-width:0}
+#ilm-completion-box{display:flex;align-items:center;gap:10px;max-width:var(--main);margin:18px auto 0;padding:10px 16px;
+  background:var(--surface);border:1px solid var(--line);border-right:4px solid var(--s1);border-radius:12px;cursor:pointer;user-select:none}
+#ilm-completion-box input{width:18px;height:18px;accent-color:var(--s1);cursor:pointer;flex-shrink:0}
+#ilm-completion-box span{font-size:14.5px;color:var(--ink)}
+#ilm-completion-box.done{background:var(--goldbg);border-color:var(--goldbd)}
+#ilm-completion-box.done span:after{content:" ✓";color:var(--s1)}
+body .ilm-nav-bar:not(.ilm-nav-top){max-width:var(--main);margin:18px auto;padding:14px 16px;background:var(--surface);border:1px solid var(--line);
+  border-radius:16px;box-shadow:none;font-family:'Cairo',sans-serif;color:var(--ink)}
+body .ilm-nav-bar:not(.ilm-nav-top):before{color:var(--ink-soft);font-size:12.5px;font-weight:700;margin-bottom:10px}
+body .ilm-nav-bar:not(.ilm-nav-top) .inv-link{background:var(--surface);border:1px solid var(--line);border-right:4px solid var(--s1);border-radius:12px;color:var(--ink);padding:10px 14px;min-height:44px;box-shadow:none}
+body .ilm-nav-bar:not(.ilm-nav-top) .inv-link:hover{background:var(--goldbg);transform:none}
+body .ilm-nav-bar:not(.ilm-nav-top) .inv-day{color:var(--s1);font-size:12px;font-weight:800}
+body .ilm-nav-bar:not(.ilm-nav-top) .inv-ttl{color:var(--ink);font-family:'Amiri',serif;font-size:18px;line-height:1.5}
+body .ilm-nav-bar:not(.ilm-nav-top) .inv-subj{color:var(--ink-soft)}
+body .ilm-nav-bar:not(.ilm-nav-top) .inv-disabled{background:transparent;border:1px dashed var(--line);color:#a3a7b3;border-radius:12px;min-height:44px}
+body .ilm-nav-bar:not(.ilm-nav-top) select{background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:10px;min-height:44px;font-family:'Cairo',sans-serif}
+.wrap>.ilm-export-section{max-width:var(--main);margin:30px auto 0}
+
+/* ===== الغلاف (داخل المتن) ===== */
+.hero{color:#fff;text-align:center;border-radius:20px;padding:46px 22px 38px;margin:4px 0 18px;
+  background:
+   radial-gradient(1.5px 1.5px at 12% 22%,#fff 50%,transparent 51%),
+   radial-gradient(1px 1px at 28% 68%,#fff 50%,transparent 51%),
+   radial-gradient(1.5px 1.5px at 44% 14%,#f3d58a 50%,transparent 51%),
+   radial-gradient(1px 1px at 63% 40%,#fff 50%,transparent 51%),
+   radial-gradient(2px 2px at 78% 18%,#fff 50%,transparent 51%),
+   radial-gradient(1px 1px at 88% 62%,#f3d58a 50%,transparent 51%),
+   radial-gradient(1px 1px at 6% 80%,#fff 50%,transparent 51%),
+   radial-gradient(1.5px 1.5px at 52% 84%,#fff 50%,transparent 51%),
+   radial-gradient(ellipse at 50% 120%,#3b4c8a 0%,transparent 60%),
+   linear-gradient(180deg,var(--night) 0%,var(--night2) 100%)}
+.hero .kicker{font-family:'Reem Kufi',sans-serif;color:var(--star);font-size:15px}
+.hero h1{font-family:'Amiri',serif;font-size:clamp(32px,5.5vw,42px);margin:12px 0 8px;line-height:1.35;color:#fff}
+.hero .meta{font-size:15px;color:#dfe4f4;max-width:640px;margin:0 auto;line-height:1.9}
+.hero .meta:after{content:"✦";display:block;color:var(--star);margin-top:14px;
+  background:linear-gradient(90deg,transparent 20%,rgba(243,213,138,.6) 21%,rgba(243,213,138,.6) 44%,transparent 45%,transparent 55%,rgba(243,213,138,.6) 56%,rgba(243,213,138,.6) 79%,transparent 80%) center/100% 1px no-repeat}
+.main>.ai-warn{display:none}
+.layer-key{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 18px;
+  font-size:14px;color:var(--ink-soft);margin:0 0 22px;line-height:1.95}
 .layer-key b{color:var(--ink)}
+
 /* ===== المقاطع ===== */
-.sec{margin:34px 0 0;scroll-margin-top:70px}
-.sec>h2{font-size:28px;color:var(--acc,var(--brand));padding-inline-start:12px;
-  border-inline-start:6px solid var(--acc,var(--brand));margin-bottom:6px}
+.sec{margin:46px 0 0;scroll-margin-top:calc(var(--tbh) + 14px)}
+.sec>h2{font-family:'Amiri',serif;font-size:clamp(25px,4vw,31px);font-weight:700;line-height:1.45;color:#fff;
+  border-radius:16px;padding:14px 20px;margin-bottom:8px;
+  background:var(--acc,var(--s1));background-image:linear-gradient(135deg,rgba(20,28,56,.25),rgba(255,255,255,.10))}
+[data-theme="night"] .sec>h2{color:#10131f}
 .sec .range{font-size:13px;color:var(--ink-soft);margin:0 0 14px}
-.sticky-head{position:sticky;top:53px;z-index:40;background:var(--bg);border-bottom:1px solid var(--line);
-  font-size:13px;color:var(--acc,var(--brand));padding:6px 2px;margin-bottom:10px;font-family:'Reem Kufi',sans-serif}
-h3{font-size:22px;color:var(--acc,var(--brand));margin:26px 0 8px;scroll-margin-top:70px}
-h4{font-size:19px;color:var(--ink);margin:18px 0 6px}
+.sticky-head{position:sticky;top:var(--tbh);z-index:40;background:var(--bg);border-bottom:1px solid var(--line);
+  font-size:13px;color:var(--acc,var(--brand));padding:6px 2px;margin-bottom:12px;font-family:'Reem Kufi',sans-serif}
+h3{font-family:'Amiri',serif;font-size:24px;color:var(--acc,var(--brand));margin:30px 0 8px;padding-right:12px;
+  border-right:4px solid var(--acc,var(--brand));scroll-margin-top:calc(var(--tbh) + 50px)}
+h4{font-size:19px;color:var(--ink);margin:20px 0 6px;font-weight:700}
 .gen-head{position:relative}
-.gen-head::after{content:'عنوان تنظيمي';position:absolute;inset-inline-end:0;top:8px;font-size:12px;
-  font-family:'Cairo',sans-serif;color:var(--ink-soft);opacity:.6;letter-spacing:.3px}
+.gen-head::after{content:'عنوان تنظيمي';position:absolute;inset-inline-end:0;top:6px;font-size:11.5px;font-weight:400;
+  color:var(--ink-soft);opacity:.65}
 p{margin:0 0 14px;text-align:right}
-.lead>p:first-of-type::first-line{font-weight:600;color:var(--brand-3)}
+.lead>p:first-of-type::first-line{font-weight:600;color:var(--night2)}
+[data-theme="night"] .lead>p:first-of-type::first-line{color:var(--star)}
+
 /* ===== بلوكات مسار الكتب ===== */
-.aya-block{background:rgba(20,83,45,.06);border-inline-start:4px solid var(--sem-aya);
-  border-radius:8px;padding:14px 16px;margin:16px 0}
-[data-theme="night"] .aya-block{background:rgba(125,219,164,.08)}
-.aya{font-family:'Amiri',serif;font-size:1.32em;line-height:2.35;color:var(--sem-aya);display:block}
-.aya-ref{font-size:.62em;color:var(--ink-soft);font-family:'Cairo',sans-serif;vertical-align:middle}
-.hadith-block{background:rgba(91,45,144,.05);border-inline-start:4px solid var(--sem-hadith);
-  border-radius:8px;padding:14px 16px;margin:16px 0}
-[data-theme="night"] .hadith-block{background:rgba(196,162,240,.08)}
-.hadith-block .lbl{font-family:'Reem Kufi',sans-serif;font-size:14px;color:var(--sem-hadith);display:block;margin-bottom:6px}
-.naql-block{background:var(--surface-2);border-inline-start:4px solid var(--brand-2);border-radius:8px;padding:14px 16px;margin:16px 0}
-.naql-block .who{display:inline-block;font-size:13px;background:var(--brand);color:#fff;
-  border-radius:20px;padding:2px 12px;margin-bottom:8px;font-family:'Reem Kufi',sans-serif}
+.aya-block{background:var(--surface);border:1px solid var(--line);border-right:4px solid var(--sem-aya);
+  border-radius:12px;padding:12px 18px;margin:16px 0}
+.aya{font-family:'Amiri',serif;font-size:1.3em;line-height:2.3;color:var(--sem-aya);display:block}
+.aya-ref{font-size:.6em;color:var(--ink-soft);font-family:'Cairo',sans-serif;vertical-align:middle}
+.hadith-block{background:var(--surface);border:1px solid var(--line);border-right:4px solid var(--sem-hadith);
+  border-radius:12px;padding:12px 18px;margin:16px 0}
+.hadith-block .lbl{font-family:'Reem Kufi',sans-serif;font-size:13.5px;color:var(--sem-hadith);display:block;margin-bottom:6px}
+.naql-block{background:var(--goldbg);border:1px solid var(--goldbd);border-right:4px solid #7a6324;border-radius:12px;padding:12px 18px;margin:16px 0}
+.naql-block .who{display:inline-block;font-size:12.5px;font-weight:800;background:#7a6324;color:#fff;
+  border-radius:999px;padding:1px 12px;margin-bottom:8px}
 .faida{margin:18px 0;padding-inline-start:4px}
 .faida-head{display:flex;gap:10px;align-items:baseline;margin-bottom:6px}
 .faida-num{flex:0 0 auto;min-width:30px;height:30px;border-radius:50%;background:var(--acc,var(--brand));
   color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-family:'Reem Kufi',sans-serif}
 .faida-ttl{font-family:'Reem Kufi',sans-serif;font-size:18px;color:var(--acc,var(--brand))}
-.divider{text-align:center;color:var(--line);margin:26px 0;font-size:20px;letter-spacing:8px}
-.takeaway{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--acc,var(--brand));
-  border-radius:var(--radius);padding:16px 18px;margin:24px 0}
-.takeaway h4{color:var(--acc,var(--brand));margin:0 0 8px;font-size:17px}
-.takeaway ul{margin:0;padding-inline-start:20px}
-.takeaway li{margin:6px 0}
+.divider{text-align:center;color:var(--goldbd);margin:28px 0;font-size:20px;letter-spacing:8px}
 .tag-add{display:inline-block;font-size:12px;background:var(--surface-2);color:var(--ink-soft);
-  border:1px solid var(--line);border-radius:20px;padding:1px 9px;margin-inline-start:6px;font-family:'Cairo',sans-serif}
+  border:1px solid var(--line);border-radius:999px;padding:1px 9px;margin-inline-start:6px}
+
+/* الخلاصة */
+.takeaway{border-radius:14px;padding:14px 18px;margin:24px 0;background:var(--night);color:#eef1fa}
+.takeaway h4{font-family:'Reem Kufi',sans-serif;color:var(--star);font-size:16px;margin:0 0 6px}
+.takeaway ul{margin:0;padding-inline-start:22px}
+.takeaway li{margin:4px 0}
+.takeaway .sem-aya{color:#a8e6c1}
+.takeaway .sem-name{color:#f3b0b2}
+.takeaway .sem-name.sem-sahabi{color:var(--star)}
+
 /* حواشي المؤلف (من الكتاب) */
 .book-fn{border-top:1px solid var(--line);margin-top:22px;padding-top:10px;font-size:14.5px;color:var(--ink-soft)}
 .book-fn .lbl{font-family:'Reem Kufi',sans-serif;font-size:13px;color:var(--ink);display:block;margin-bottom:4px}
 .book-fn ol{margin:0;padding-inline-start:20px}
 .book-fn li{margin:3px 0}
 sup.fnr{color:var(--ink-soft);font-size:.68em}
-/* ===== الهامش ===== */
-.nmark{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;
+
+/* ===== الهوامش: عمود جانبي على الشاشات الواسعة، وتُفتح بالضغط على الرقم فيما دونها ===== */
+.nmark{display:inline-flex;align-items:center;justify-content:center;width:21px;height:21px;border-radius:50%;
   background:var(--nc,var(--brand));color:#fff;font-size:12px;cursor:pointer;vertical-align:super;
   margin:0 2px;font-family:'Cairo',sans-serif;border:none;line-height:1}
-.note{display:block;font-family:'Cairo',sans-serif;font-size:14.5px;line-height:1.8;color:var(--ink-soft);
-  background:var(--surface);border-inline-start:3px solid var(--nc,var(--brand));border-radius:8px;
+.note{display:none;font-family:'Cairo',sans-serif;font-size:14px;line-height:1.85;color:var(--ink-soft);
+  background:var(--surface);border:1px solid var(--line);border-right:3px solid var(--nc,var(--brand));border-radius:10px;
   padding:9px 12px;margin:10px 0 14px}
-.note .nt{display:block;font-size:12px;color:var(--nc,var(--brand));margin-bottom:2px;letter-spacing:.3px}
+.note.open{display:block}
+.note .nt{display:block;font-size:11.5px;font-weight:800;color:var(--nc,var(--brand));margin-bottom:2px}
 .note--tawthiq{--nc:var(--n-tawthiq)} .note--mustalah{--nc:var(--n-mustalah)}
 .note--tarjama{--nc:var(--n-tarjama)} .note--idah{--nc:var(--n-idah)}
 .note--rabt{--nc:var(--n-rabt)} .note--tashih{--nc:var(--n-tashih)} .note--siyaq{--nc:var(--n-siyaq)}
-.note.flash{box-shadow:0 0 0 3px rgba(58,63,140,.25)}
+.note.flash{box-shadow:0 0 0 3px rgba(243,213,138,.7)}
+@media (min-width:1340px){
+  .main .note{display:block;position:absolute;inset-inline-start:calc(100% + 26px);
+    width:min(290px,calc((100vw - var(--main))/2 - 50px));margin:0;font-size:13.5px;
+    box-shadow:0 3px 12px rgba(20,28,56,.06)}
+  .main .note:before{content:"";position:absolute;top:14px;inset-inline-start:-27px;width:22px;border-top:1px dashed var(--line)}
+}
+
 /* ===== الطبقة الدلالية ===== */
 .sem-aya{color:var(--sem-aya);font-family:'Amiri','Noto Naskh Arabic',serif;font-size:1.08em}
 .sem-hadith{color:var(--sem-hadith)}
 .sem-name{color:var(--sem-scholar)}
 .sem-name.sem-scholar{color:var(--sem-scholar);font-weight:700}
 .sem-name.sem-sahabi{color:var(--sem-sahabi);font-weight:700}
+
 /* ===== الأسئلة التفاعلية ===== */
-.quiz{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;margin:26px 0}
-.quiz h4{font-size:16px;color:var(--acc,var(--brand));margin:0 0 4px}
-.quiz .score{font-size:12.5px;color:var(--ink-soft);margin-bottom:10px}
-.q{margin:14px 0}
-.q .qt{font-weight:600;margin-bottom:8px}
-.opt{display:block;width:100%;text-align:right;font-family:inherit;font-size:15px;min-height:44px;
-  padding:10px 14px;margin:6px 0;border:1px solid var(--line);border-radius:9px;background:var(--surface-2);
-  color:var(--ink);cursor:pointer;line-height:1.6;white-space:normal}
-.opt:hover{border-color:var(--brand)}
-.opt.ok{background:rgba(20,83,45,.1);border-color:#2f7a4d;font-weight:600}
-.opt.no{background:rgba(143,29,33,.08);border-color:#b05257}
-.expl{font-size:14px;color:var(--ink-soft);background:var(--surface-2);border-radius:8px;padding:9px 12px;margin-top:8px}
+.quiz{background:#f2f3f8;border:1px solid #dadded;border-radius:16px;padding:16px 18px;margin:26px 0}
+[data-theme="night"] .quiz{background:var(--surface-2);border-color:var(--line)}
+.quiz h4{font-family:'Reem Kufi',sans-serif;font-size:17px;color:var(--night2);margin:0 0 4px}
+[data-theme="night"] .quiz h4{color:var(--star)}
+.quiz .score{display:inline-block;font-size:13px;font-weight:800;color:var(--night2);background:var(--surface);border:1px solid #dadded;border-radius:999px;padding:1px 12px;margin-bottom:6px}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0}
+.q .qt{font-weight:800;margin-bottom:8px}
+.opt{display:block;width:100%;text-align:right;font-family:'Cairo',sans-serif;font-size:15.5px;min-height:44px;line-height:1.7;
+  padding:8px 14px;margin:6px 0;border:1px solid #cfd3e3;border-radius:10px;background:var(--bg);color:var(--ink);cursor:pointer;white-space:normal}
+.opt:hover{border-color:var(--night2)}
+.opt.ok{background:#e4f1e7;border-color:#7fb38f}
+.opt.no{background:#f8e7e4;border-color:#d79b90}
+[data-theme="night"] .opt.ok{background:#1d3a28} [data-theme="night"] .opt.no{background:#3a1f1d}
+.expl{font-size:15px;color:var(--ink);background:var(--goldbg);border-radius:10px;padding:8px 12px;margin-top:6px}
+
 /* ===== البطاقات ===== */
-.cards{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;margin:40px 0 0}
-.cards h3{margin-top:0}
-.filters{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 14px}
-.filters button{font-family:inherit;font-size:13px;padding:6px 12px;border-radius:20px;border:1px solid var(--line);
-  background:var(--surface-2);color:var(--ink-soft);cursor:pointer;min-height:36px}
-.filters button.on{background:var(--brand);color:#fff;border-color:var(--brand)}
-.card{border:1px solid var(--line);border-radius:12px;background:var(--surface-2);padding:22px 18px;
-  min-height:180px;display:flex;align-items:center;justify-content:center;text-align:center;cursor:pointer;line-height:2}
-.card .front{font-weight:600}
-.card .back{color:var(--brand-3);font-weight:600}
-[data-theme="night"] .card .back{color:var(--brand-2)}
-.ak{max-width:740px;margin:0 auto;overflow-wrap:break-word;background:#fff;border-radius:16px;padding:20px 22px;color:#26352e;border:1px solid var(--line);box-shadow:0 6px 22px rgba(40,44,90,.10);cursor:pointer}
+.cards{background:linear-gradient(180deg,var(--night),var(--night2));color:#fff;border-radius:20px;padding:30px 20px 34px;margin:46px 0 0}
+.cards h3{font-family:'Amiri',serif;font-size:30px;text-align:center;margin:0;padding:0;border:0;color:#fff!important}
+.cards>p{text-align:center;color:#c6cde6!important}
+.filters{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:12px 0 16px}
+.filters button{font-family:'Cairo',sans-serif;font-size:13px;min-height:34px;padding:4px 12px;border-radius:999px;
+  border:1.5px solid rgba(255,255,255,.3);background:transparent;color:#fff;cursor:pointer}
+.filters button.on{background:var(--star);color:var(--night);border-color:var(--star);font-weight:800}
+.ak{max-width:720px;margin:0 auto;overflow-wrap:break-word;background:#fff;border-radius:18px;padding:22px 24px;color:#26352e;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);cursor:pointer}
 .ak .deckcap{font-size:12px;color:#66766f;margin-bottom:10px;border-bottom:1px dashed #e1e0d8;padding-bottom:6px;overflow-wrap:anywhere}
 .ak .ak-back{display:none;margin-top:16px;padding-top:16px;border-top:1px solid #e1e0d8}
 .ak.on .ak-back{display:block}
 .ak .hint{margin-top:10px;font-size:12.5px;color:#66766f;text-align:center}
 .ak.on .hint{display:none}
-.cnav{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:12px;flex-wrap:wrap}
-.cnav span{font-size:13px;color:var(--ink-soft)}
+.cnav{display:flex;gap:10px;align-items:center;justify-content:center;margin-top:16px;flex-wrap:wrap}
+.cnav span{font-family:'Reem Kufi',sans-serif;color:var(--star)}
+.btn{font-family:'Cairo',sans-serif;font-size:14px;min-height:40px;padding:6px 14px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;cursor:pointer}
+.btn:hover{background:rgba(255,255,255,.16)}
+#cdl{background:var(--star);color:var(--night);border:0;font-weight:800}
+
 /* ===== الاستجابة ===== */
 @media (max-width:900px){
-  .wrap{grid-template-columns:1fr;padding:14px 12px 70px}
-  .main{grid-column:1;max-width:100%}
-  .side{grid-column:1;order:-1}
-  .toc{position:static;max-height:260px}
-  .note{display:none}
-  .note.open{display:block}
-  body{font-size:16.5px}
-  .hero h1{font-size:24px}
-  .sec>h2{font-size:23px}
-  h3{font-size:19px}
+  .wrap{padding:12px 12px 70px}
+  #ilm-completion-box{margin:14px 12px 0}
+  body .ilm-nav-bar:not(.ilm-nav-top){margin:14px 12px}
+  body{font-size:calc(var(--fs) - 1px)}
+  .hero{padding:34px 16px 28px;border-radius:16px}
+  h3{font-size:21px}
+  .tb-title{font-size:13.5px}
 }
-@media (min-width:901px){ .note{display:block} }
+@media (max-width:640px){
+  .topbar-in{padding:6px 10px;gap:6px}
+  .tb-title{display:none}
+  #nav-top-slot{margin-inline-start:auto}
+  .tb-links{order:5;flex-basis:100%;padding-bottom:2px}
+  body .ilm-nav-top .inv-ttl{display:none}
+  .toc-tab{padding:8px 3px;font-size:11px;top:auto;bottom:22%;transform:none;opacity:.92}
+  .ak{padding:16px 14px}
+}
 @media print{
-  .topbar,.side,.quiz,.cards,#prog,.ai-warn{display:none!important}
+  .topbar,.toc-tab,.side,.toc-back,.quiz,.cards,.ai-note{display:none!important}
   body{background:#fff;color:#000;font-size:12pt}
-  .note{display:block;font-size:10pt;border:0;border-top:1px dotted #999;background:none}
+  .main .note,.note{display:block!important;position:static!important;width:auto!important;font-size:10pt;border:0;border-top:1px dotted #999;background:none;box-shadow:none}
   .nmark{background:none;color:#000;border:1px solid #000}
-  .wrap{display:block;padding:0}
+  .hero{background:none;color:#000}
+  .hero h1,.hero .meta{color:#000}
 }
+
 </style>
 </head>
 <body data-lecture-id="stage0_qabas-wahhaj_01">
-<div id="prog"></div>
+<div class="ai-note" role="note">⚠️ أُعدّ هذا المحتوى بمساعدة الذكاء الاصطناعي، وقد يحتوي أخطاء، ويُرجى مراجعته.</div>
+<div class="topbar" id="topbar">
+  <div class="topbar-in">
+    <button class="tb-btn tb-toc" id="tocBtn" type="button" aria-controls="toc" aria-expanded="false" title="فتح الفهرس وإغلاقه">☰ الفهرس</button>
+    <div class="tb-title">القبس الوهاج · الملف ١ — ص ٧–٢٧</div>
+    <div class="tb-links">
+      <a href="#s1">المقدمة</a>
+      <a href="#s2">العنوان والسياق</a>
+      <a href="#s3">المقاصد والأهمية</a>
+      <a href="#s4">الشروح</a>
+      <a href="#s5">الباب الأول</a>
+      <a href="#s6">الآيات</a>
+      <a href="#s7">الأحاديث</a>
+      <a href="#anki">البطاقات</a>
+    </div>
+    <span id="nav-top-slot"></span>
+    <div class="tb-tools">
+      <button class="tb-btn" id="fsm" type="button" title="تصغير الخط">أ−</button>
+      <button class="tb-btn" id="fsp" type="button" title="تكبير الخط">أ+</button>
+      <button class="tb-btn" id="thm" type="button" title="وضع القراءة الليلي">🌙</button>
+    </div>
+  </div>
+  <div class="progress" id="prog"></div>
+</div>
+<button class="toc-tab" id="tocTab" type="button" aria-controls="toc" aria-expanded="false" title="فتح الفهرس">☰<span>الفهرس</span></button>
+<div class="toc-back" id="tocBack" hidden></div>
 
-<nav class="topbar">
-  <button class="btn" id="prev" disabled>◀ السابق</button>
-  <select id="jump" aria-label="الانتقال إلى ملف آخر من الكتاب">
-    <option value="01.html" selected>١ — من ص ٧ إلى ٢٧</option>
-    <option value="02.html">٢ — من ص ٢٨ إلى ٤٥</option>
-    <option value="03.html">٣ — من ص ٤٦ إلى ٦٧</option>
-    <option value="04.html">٤ — من ص ٦٨ إلى ٩٢</option>
-    <option value="05.html">٥ — من ص ٩٣ إلى ١١١</option>
-    <option value="06.html">٦ — من ص ١١٢ إلى ١٣٦</option>
-    <option value="07.html">٧ — من ص ١٣٧ إلى ١٦١</option>
-    <option value="08.html">٨ — من ص ١٦٢ إلى ١٨١</option>
-    <option value="09.html">٩ — من ص ١٨٢ إلى ٢٠٤</option>
-    <option value="10.html">١٠ — من ص ٢٠٥ إلى ٢٢٤</option>
-    <option value="11.html">١١ — من ص ٢٢٥ إلى نهاية الكتاب</option>
-  </select>
-  <button class="btn" id="next">التالي ▶</button>
-  <span class="spacer"></span>
-  <button class="btn" id="fsm" title="تصغير الخط">أ−</button>
-  <button class="btn" id="fsp" title="تكبير الخط">أ+</button>
-  <button class="btn" id="thm" title="وضع القراءة الليلي">🌙</button>
-</nav>
-
-<style id="ilm-completion-style">
-  #ilm-completion-box{display:flex;align-items:center;gap:10px;max-width:780px;
-    margin:18px auto 0;padding:12px 18px;background:var(--surface);
-    border:1px solid var(--line);border-radius:var(--radius);
-    font-family:'Cairo',system-ui,sans-serif;direction:rtl;cursor:pointer;
-    user-select:none;transition:background .15s,border-color .15s}
-  #ilm-completion-box:hover{border-color:var(--brand)}
-  #ilm-completion-box.done{border-color:var(--brand);background:var(--surface-2)}
-  #ilm-completion-box input{width:18px;height:18px;accent-color:var(--brand);cursor:pointer;flex-shrink:0}
-  #ilm-completion-box span{font-size:14.5px;font-weight:600;color:var(--ink)}
-  #ilm-completion-box.done span{color:var(--brand)}
-  .ilm-nav-bar{max-width:780px}
-</style>
 <label id="ilm-completion-box">
   <input type="checkbox" data-lecture-id="stage0_qabas-wahhaj_01">
   <span>تحديد هذه المحاضرة كمكتملة</span>
@@ -237,8 +324,8 @@ sup.fnr{color:var(--ink-soft);font-size:.68em}
 
 <div class="wrap">
   <aside class="side">
-    <nav class="toc" id="toc">
-      <h4>فهرس الملف</h4>
+    <nav class="toc" id="toc" aria-label="فهرس الملف">
+      <div class="toc-head"><h4>فهرس الملف</h4><button class="toc-x" id="tocX" type="button" aria-label="إغلاق الفهرس">✕</button></div>
       <ol id="toclist"></ol>
     </nav>
   </aside>
@@ -894,14 +981,12 @@ const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},se
 document.addEventListener("click",e=>{
   const m=e.target.closest(".nmark"); if(!m) return;
   const n=document.getElementById(m.dataset.n); if(!n) return;
-  if(window.matchMedia("(max-width:900px)").matches){ n.classList.toggle("open"); if(n.classList.contains("open")) n.scrollIntoView({block:"nearest"}); }
+  if(window.matchMedia("(max-width:1339px)").matches){ n.classList.toggle("open"); if(n.classList.contains("open")) n.scrollIntoView({block:"nearest"}); }
   else { $$(".note.flash").forEach(x=>x.classList.remove("flash")); n.classList.add("flash"); n.scrollIntoView({block:"nearest"}); setTimeout(()=>n.classList.remove("flash"),1400); }
 });
 
 /* ===== شريط التنقل والتحكم ===== */
 (function(){
-  $("#jump").addEventListener("change",e=>{location.href=e.target.value});
-  $("#next").addEventListener("click",()=>{location.href="02.html"});
   let fs=parseFloat(store.get("qw_fs")||"17.5");
   const apply=()=>{document.documentElement.style.setProperty("--fs",fs+"px");store.set("qw_fs",fs)};
   if(store.get("qw_fs")) apply();
@@ -977,6 +1062,78 @@ document.addEventListener("click",e=>{
     render(cb.checked);
   });
 })();
+</script>
+<script>
+/* ===== هوية «سماء التفكر»: الشريط العلوي، والفهرس المنزلق، وعمود الهوامش =====
+   لا يضيف ولا يحذف أي عنصر داخل منطقة التظليل؛ يغيّر المواضع بالأنماط فقط (12-ب). */
+(function(){
+  var root = document.documentElement, tb = document.getElementById('topbar');
+  function setH(){ if(tb) root.style.setProperty('--tbh', tb.offsetHeight + 'px'); }
+
+  /* السابق/التالي من ilm-nav داخل الشريط العلوي، كما في «مقدمات تمهيدية» */
+  function moveNav(){
+    var t = document.querySelector('.ilm-nav-top'), slot = document.getElementById('nav-top-slot');
+    if(t && slot && !slot.contains(t)) slot.appendChild(t);
+    setH();
+  }
+
+  /* الفهرس المنزلق */
+  var side = document.querySelector('.side'), back = document.getElementById('tocBack');
+  function openToc(v){
+    if(!side) return;
+    side.classList.toggle('open', v);
+    document.body.classList.toggle('toc-open', v);
+    if(back) back.hidden = !v;
+    ['tocBtn','tocTab'].forEach(function(id){ var b = document.getElementById(id); if(b) b.setAttribute('aria-expanded', v ? 'true' : 'false'); });
+    if(v){ var on = side.querySelector('a.on'); if(on) on.scrollIntoView({block:'center'}); }
+  }
+  ['tocBtn','tocTab'].forEach(function(id){
+    var b = document.getElementById(id);
+    if(b) b.addEventListener('click', function(){ openToc(!side.classList.contains('open')); });
+  });
+  var x = document.getElementById('tocX'); if(x) x.addEventListener('click', function(){ openToc(false); });
+  if(back) back.addEventListener('click', function(){ openToc(false); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') openToc(false); });
+  if(side) side.addEventListener('click', function(e){ if(e.target.closest('a')) openToc(false); });
+
+  /* تظليل رابط المقطع الحالي في الشريط العلوي */
+  var chips = [].slice.call(document.querySelectorAll('.tb-links a'));
+  var secs = [].slice.call(document.querySelectorAll('.sec'));
+  function markChip(){
+    var cur = null, lim = (tb ? tb.offsetHeight : 60) + 40;
+    secs.forEach(function(s){ if(s.getBoundingClientRect().top <= lim) cur = s.id; });
+    chips.forEach(function(a){ a.classList.toggle('on', !!cur && a.getAttribute('href') === '#' + cur); });
+  }
+  window.addEventListener('scroll', markChip, {passive:true});
+
+  /* عمود الهوامش: كل هامش بمحاذاة رقمه في المتن، بلا تراكب */
+  var main = document.querySelector('.main'), wide = window.matchMedia('(min-width:1340px)');
+  function layoutNotes(){
+    if(!main) return;
+    var notes = [].slice.call(main.querySelectorAll('aside.note'));
+    notes.forEach(function(n){ n.style.top = ''; });
+    if(!wide.matches) return;
+    var base = main.getBoundingClientRect().top, last = -1e9;
+    notes.forEach(function(n){
+      var m = main.querySelector('.nmark[data-n="' + n.id + '"]');
+      var top = (m ? m.getBoundingClientRect().top : n.getBoundingClientRect().top) - base - 8;
+      if(top < last + 12) top = last + 12;
+      n.style.top = top + 'px';
+      last = top + n.offsetHeight;
+    });
+  }
+  var t = 0;
+  function relayout(){ clearTimeout(t); t = setTimeout(function(){ setH(); layoutNotes(); }, 60); }
+  window.addEventListener('resize', relayout);
+  if(wide.addEventListener) wide.addEventListener('change', relayout);
+  if(window.ResizeObserver && main) new ResizeObserver(relayout).observe(main);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(relayout);
+
+  function init(){ moveNav(); markChip(); layoutNotes(); }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+  window.addEventListener('load', function(){ moveNav(); relayout(); });
+})();
+
 </script>
 <script src="../../../ilm-highlight.js" data-lecture-id="stage0_qabas-wahhaj_01"></script>
 <script src="../../../ilm-semantic.js" data-hadith="off"></script>
