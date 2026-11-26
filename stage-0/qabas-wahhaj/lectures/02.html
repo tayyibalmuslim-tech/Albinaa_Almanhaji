@@ -1,40 +1,878 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>القبس الوهاج — من ص 28 إلى 45 - المرحلة التمهيدية</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="../../../style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>القبس الوهاج — الباب الثاني: تلقي القرآن على منهاج النبوة · الباب الثالث: تعظيم حدود الله (مطلعه) (ص ٢٨ إلى ٤٥)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../anki/final.css">
+<style>
+:root{
+  --brand:#3a3f8c; --brand-2:#575ea8; --brand-3:#2a2d68;
+  --bg:#fbfaf7; --surface:#ffffff; --surface-2:#f4f2ee;
+  --ink:#23252c; --ink-soft:#4a4e58; --line:#e2ded6;
+  --s1:#2a2d68; --s2:#3a3f8c; --s3:#4a52a5; --s4:#5c64b8; --s5:#343d7e; --s6:#414a96; --s7:#2f3873;
+  /* الطبقة الدلالية — بند 5-ب (محجوزة، لا تُستعمل للزخرفة) */
+  --sem-aya:#14532d; --sem-hadith:#5b2d90; --sem-sahabi:#8a5a00; --sem-scholar:#8f1d21;
+  /* ألوان أنواع الهامش — بند 7-ج/أ */
+  --n-tawthiq:#0f6b6b; --n-mustalah:#6b4f3a; --n-tarjama:#1e3a5f; --n-idah:#4b5563;
+  --n-rabt:#1d6fa5; --n-tashih:#b45309; --n-siyaq:#5b6b1f;
+  --fs:17.5px; --radius:10px;
+}
+[data-theme="night"]{
+  --bg:#14161c; --surface:#1b1e26; --surface-2:#232733; --ink:#e8e6e1; --ink-soft:#b3b7c2; --line:#333846;
+  --brand:#98a0ea; --brand-2:#aab1f0; --brand-3:#c3c8f7;
+  --s1:#8f98e0; --s2:#98a0ea; --s3:#a7aef0; --s4:#b6bcf5; --s5:#939ce6; --s6:#9ea6ec; --s7:#8a93dd;
+  --sem-aya:#91e3b3; --sem-hadith:#c4a2f0; --sem-sahabi:#e0b355; --sem-scholar:#f0a0a3;
+  --n-tawthiq:#5fc7c7; --n-mustalah:#c4a184; --n-tarjama:#8fb4de; --n-idah:#a8adb8;
+  --n-rabt:#77b9e6; --n-tashih:#f0a94b; --n-siyaq:#b0c161;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Cairo',system-ui,sans-serif;
+  font-size:var(--fs);line-height:1.95;text-align:right;-webkit-text-size-adjust:100%}
+h1,h2,h3,h4,.ttl{font-family:'Reem Kufi','Cairo',sans-serif;line-height:1.5;margin:0}
+a{color:var(--brand);text-decoration:none}
+/* ===== شريط التقدم ===== */
+#prog{position:fixed;top:0;right:0;height:4px;width:0;background:linear-gradient(90deg,var(--brand-2),var(--brand));z-index:60}
+/* ===== شريط التنقّل ===== */
+.topbar{position:sticky;top:0;z-index:50;background:var(--surface);border-bottom:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:8px 14px}
+.topbar select{font-family:inherit;font-size:14px;padding:7px 10px;border:1px solid var(--line);
+  border-radius:8px;background:var(--surface-2);color:var(--ink);max-width:min(55vw,340px)}
+.btn{font-family:inherit;font-size:14px;min-height:38px;padding:7px 12px;border:1px solid var(--line);
+  border-radius:8px;background:var(--surface-2);color:var(--ink);cursor:pointer}
+.btn:hover{border-color:var(--brand)}
+.btn[disabled]{opacity:.4;cursor:not-allowed}
+.spacer{flex:1}
+/* ===== التخطيط: المتن يمين، الفهرس يسار ===== */
+.wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);gap:26px;
+  max-width:1280px;margin:0 auto;padding:22px 16px 80px;direction:rtl}
+.main{grid-column:1;min-width:0;max-width:780px;margin-inline-start:auto}
+.side{grid-column:2;min-width:0}
+.toc{position:sticky;top:64px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:12px 14px;max-height:calc(100vh - 110px);overflow:auto}
+.toc h4{font-size:15px;color:var(--brand);margin-bottom:8px}
+.toc ol{list-style:none;margin:0;padding:0;font-size:14px}
+.toc ol ol{padding-inline-start:12px;border-inline-start:2px solid var(--line);margin:4px 0 8px}
+.toc li{margin:3px 0}
+.toc a{color:var(--ink-soft);display:block;padding:2px 4px;border-radius:6px}
+.toc a:hover,.toc a.on{color:var(--brand);background:var(--surface-2)}
+.toc-i{margin:3px 0;font-size:14px}
+.toc-sub{padding-inline-start:12px;border-inline-start:2px solid var(--line);margin:4px 0 8px;font-size:13.5px}
+#toclist>a{font-size:14px}
+/* ===== الرأس ===== */
+.hero{background:linear-gradient(135deg,var(--s1),var(--s3));color:#fff;border-radius:14px;padding:26px 22px;margin-bottom:18px}
+[data-theme="night"] .hero{background:linear-gradient(135deg,#232a5e,#343d7e);color:#eceaff}
+.hero .kicker{font-size:13px;opacity:.85;letter-spacing:.5px}
+.hero h1{font-size:30px;margin:6px 0 10px}
+.hero .meta{font-size:14px;opacity:.92;line-height:1.9}
+.ai-warn{background:#fff7e6;border:1px solid #f0c987;color:#6b4a10;border-radius:10px;
+  padding:10px 14px;font-size:13.5px;margin-bottom:14px}
+[data-theme="night"] .ai-warn{background:#2e2717;border-color:#6b5322;color:#e6cf9b}
+.layer-key{background:var(--surface);border:1px dashed var(--line);border-radius:10px;
+  padding:10px 14px;font-size:13.5px;color:var(--ink-soft);margin-bottom:18px}
+.layer-key b{color:var(--ink)}
+/* ===== المقاطع ===== */
+.sec{margin:34px 0 0;scroll-margin-top:70px}
+.sec>h2{font-size:28px;color:var(--acc,var(--brand));padding-inline-start:12px;
+  border-inline-start:6px solid var(--acc,var(--brand));margin-bottom:6px}
+.sec .range{font-size:13px;color:var(--ink-soft);margin:0 0 14px}
+.sticky-head{position:sticky;top:53px;z-index:40;background:var(--bg);border-bottom:1px solid var(--line);
+  font-size:13px;color:var(--acc,var(--brand));padding:6px 2px;margin-bottom:10px;font-family:'Reem Kufi',sans-serif}
+h3{font-size:22px;color:var(--acc,var(--brand));margin:26px 0 8px;scroll-margin-top:70px}
+h4{font-size:19px;color:var(--ink);margin:18px 0 6px}
+.gen-head{position:relative}
+.gen-head::after{content:'عنوان تنظيمي';position:absolute;inset-inline-end:0;top:8px;font-size:12px;
+  font-family:'Cairo',sans-serif;color:var(--ink-soft);opacity:.6;letter-spacing:.3px}
+p{margin:0 0 14px;text-align:right}
+.lead>p:first-of-type::first-line{font-weight:600;color:var(--brand-3)}
+/* ===== بلوكات مسار الكتب ===== */
+.aya-block{background:rgba(20,83,45,.06);border-inline-start:4px solid var(--sem-aya);
+  border-radius:8px;padding:14px 16px;margin:16px 0}
+[data-theme="night"] .aya-block{background:rgba(125,219,164,.08)}
+.aya{font-family:'Amiri',serif;font-size:1.32em;line-height:2.35;color:var(--sem-aya);display:block}
+.aya-ref{font-size:.62em;color:var(--ink-soft);font-family:'Cairo',sans-serif;vertical-align:middle}
+.hadith-block{background:rgba(91,45,144,.05);border-inline-start:4px solid var(--sem-hadith);
+  border-radius:8px;padding:14px 16px;margin:16px 0}
+[data-theme="night"] .hadith-block{background:rgba(196,162,240,.08)}
+.hadith-block .lbl{font-family:'Reem Kufi',sans-serif;font-size:14px;color:var(--sem-hadith);display:block;margin-bottom:6px}
+.naql-block{background:var(--surface-2);border-inline-start:4px solid var(--brand-2);border-radius:8px;padding:14px 16px;margin:16px 0}
+.naql-block .who{display:inline-block;font-size:13px;background:var(--brand);color:#fff;
+  border-radius:20px;padding:2px 12px;margin-bottom:8px;font-family:'Reem Kufi',sans-serif}
+.faida{margin:18px 0;padding-inline-start:4px}
+.faida-head{display:flex;gap:10px;align-items:baseline;margin-bottom:6px}
+.faida-num{flex:0 0 auto;min-width:30px;height:30px;border-radius:50%;background:var(--acc,var(--brand));
+  color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-family:'Reem Kufi',sans-serif}
+.faida-ttl{font-family:'Reem Kufi',sans-serif;font-size:18px;color:var(--acc,var(--brand))}
+.divider{text-align:center;color:var(--line);margin:26px 0;font-size:20px;letter-spacing:8px}
+.takeaway{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--acc,var(--brand));
+  border-radius:var(--radius);padding:16px 18px;margin:24px 0}
+.takeaway h4{color:var(--acc,var(--brand));margin:0 0 8px;font-size:17px}
+.takeaway ul{margin:0;padding-inline-start:20px}
+.takeaway li{margin:6px 0}
+.tag-add{display:inline-block;font-size:12px;background:var(--surface-2);color:var(--ink-soft);
+  border:1px solid var(--line);border-radius:20px;padding:1px 9px;margin-inline-start:6px;font-family:'Cairo',sans-serif}
+/* حواشي المؤلف (من الكتاب) */
+.book-fn{border-top:1px solid var(--line);margin-top:22px;padding-top:10px;font-size:14.5px;color:var(--ink-soft)}
+.book-fn .lbl{font-family:'Reem Kufi',sans-serif;font-size:13px;color:var(--ink);display:block;margin-bottom:4px}
+.book-fn ol{margin:0;padding-inline-start:20px;list-style:arabic-indic}
+.book-fn li{margin:3px 0}
+sup.fnr{color:var(--ink-soft);font-size:.68em}
+/* ===== الهامش ===== */
+.nmark{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;
+  background:var(--nc,var(--brand));color:#fff;font-size:12px;cursor:pointer;vertical-align:super;
+  margin:0 2px;font-family:'Cairo',sans-serif;border:none;line-height:1}
+.note{display:block;font-family:'Cairo',sans-serif;font-size:14.5px;line-height:1.8;color:var(--ink-soft);
+  background:var(--surface);border-inline-start:3px solid var(--nc,var(--brand));border-radius:8px;
+  padding:9px 12px;margin:10px 0 14px}
+.note .nt{display:block;font-size:12px;color:var(--nc,var(--brand));margin-bottom:2px;letter-spacing:.3px}
+.note--tawthiq{--nc:var(--n-tawthiq)} .note--mustalah{--nc:var(--n-mustalah)}
+.note--tarjama{--nc:var(--n-tarjama)} .note--idah{--nc:var(--n-idah)}
+.note--rabt{--nc:var(--n-rabt)} .note--tashih{--nc:var(--n-tashih)} .note--siyaq{--nc:var(--n-siyaq)}
+.note.flash{box-shadow:0 0 0 3px rgba(58,63,140,.25)}
+/* ===== الطبقة الدلالية ===== */
+.sem-aya{color:var(--sem-aya);font-family:'Amiri','Noto Naskh Arabic',serif;font-size:1.08em}
+.sem-hadith{color:var(--sem-hadith)}
+.sem-name{color:var(--sem-scholar)}
+.sem-name.sem-scholar{color:var(--sem-scholar);font-weight:700}
+.sem-name.sem-sahabi{color:var(--sem-sahabi);font-weight:700}
+/* ===== الأسئلة التفاعلية ===== */
+.quiz{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;margin:26px 0}
+.quiz h4{font-size:16px;color:var(--acc,var(--brand));margin:0 0 4px}
+.quiz .score{font-size:12.5px;color:var(--ink-soft);margin-bottom:10px}
+.q{margin:14px 0}
+.q .qt{font-weight:600;margin-bottom:8px}
+.opt{display:block;width:100%;text-align:right;font-family:inherit;font-size:15px;min-height:44px;
+  padding:10px 14px;margin:6px 0;border:1px solid var(--line);border-radius:9px;background:var(--surface-2);
+  color:var(--ink);cursor:pointer;line-height:1.6;white-space:normal}
+.opt:hover{border-color:var(--brand)}
+.opt.ok{background:rgba(20,83,45,.1);border-color:#2f7a4d;font-weight:600}
+.opt.no{background:rgba(143,29,33,.08);border-color:#b05257}
+.expl{font-size:14px;color:var(--ink-soft);background:var(--surface-2);border-radius:8px;padding:9px 12px;margin-top:8px}
+/* ===== البطاقات (ilm-anki.js — 9-ص) ===== */
+.cards{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;margin:40px 0 0}
+.cards h3{margin-top:0;color:var(--brand)}
+.cards .sub{font-size:14px;color:var(--ink-soft);margin:0}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 14px}
+.filters button{font-family:inherit;font-size:13px;padding:6px 12px;border-radius:20px;border:1px solid var(--line);
+  background:var(--surface-2);color:var(--ink-soft);cursor:pointer;min-height:36px}
+.filters button.on{background:var(--brand);color:#fff;border-color:var(--brand)}
+.ak{max-width:740px;margin:0 auto;overflow-wrap:break-word;background:#fff;border-radius:16px;padding:20px 22px;
+  color:#26352e;border:1px solid var(--line);box-shadow:0 6px 22px rgba(40,44,90,.10);cursor:pointer}
+.ak .deckcap{font-size:12px;color:#66766f;margin-bottom:10px;border-bottom:1px dashed #e1e0d8;padding-bottom:6px;overflow-wrap:anywhere}
+.ak .ak-back{display:none;margin-top:16px;padding-top:16px;border-top:1px solid #e1e0d8}
+.ak.on .ak-back{display:block}
+.ak .hint{margin-top:10px;font-size:12.5px;color:#66766f;text-align:center}
+.ak.on .hint{display:none}
+.cnav{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:12px;flex-wrap:wrap}
+.cnav span{font-size:13px;color:var(--ink-soft)}
+/* ===== الاستجابة ===== */
+@media (max-width:900px){
+  .wrap{grid-template-columns:1fr;padding:14px 12px 70px}
+  .main{grid-column:1;max-width:100%}
+  .side{grid-column:1;order:-1}
+  .toc{position:static;max-height:260px}
+  .note{display:none}
+  .note.open{display:block}
+  body{font-size:16.5px}
+  .hero h1{font-size:24px}
+  .sec>h2{font-size:23px}
+  h3{font-size:19px}
+}
+@media (min-width:901px){ .note{display:block} }
+@media print{
+  .topbar,.side,.quiz,.cards,#prog{display:none!important}
+  body{background:#fff;color:#000;font-size:12pt}
+  .note{display:block;font-size:10pt;border:0;border-top:1px dotted #999;background:none}
+  .nmark{background:none;color:#000;border:1px solid #000}
+  .wrap{display:block;padding:0}
+}
+
+</style>
 </head>
-<body class="" data-page="lecture" data-lecture-id="stage0_qabas-wahhaj_02">
-  <div class="page">
-    <nav class="breadcrumbs"><a href="../../../index.html">الرئيسية</a><span class="sep">/</span><a href="../../index.html">المرحلة التمهيدية</a><span class="sep">/</span><a href="../index.html">القبس الوهاج (مختصر شرح المنهاج)</a><span class="sep">/</span><span aria-current="page">القبس الوهاج — من ص 28 إلى 45</span></nav>
+<body data-lecture-id="stage0_qabas-wahhaj_02">
+<div id="prog"></div>
 
-      <header class="lecture-header">
-        <h1>القبس الوهاج — من ص 28 إلى 45</h1>
-        <p class="lecture-meta">المادة: القبس الوهاج (مختصر شرح المنهاج) &nbsp;|&nbsp; الشيخ: محمد شميس &nbsp;|&nbsp; اليوم 5</p>
-        <label class="checkbox-line lecture-checkbox">
-          <input type="checkbox" data-lecture-id="stage0_qabas-wahhaj_02">
-          <span>إتمام هذه المحاضرة</span>
-        </label>
-      </header>
+<nav class="topbar">
+  <button class="btn" id="prev">◀ السابق</button>
+  <select id="jump" aria-label="الانتقال إلى ملف آخر من الكتاب">
+    <option value="01.html">١ — من ص ٧ إلى ٢٧</option>
+    <option value="02.html" selected>٢ — من ص ٢٨ إلى ٤٥</option>
+    <option value="03.html">٣ — من ص ٤٦ إلى ٦٧</option>
+    <option value="04.html">٤ — من ص ٦٨ إلى ٩٢</option>
+    <option value="05.html">٥ — من ص ٩٣ إلى ١١١</option>
+    <option value="06.html">٦ — من ص ١١٢ إلى ١٣٦</option>
+    <option value="07.html">٧ — من ص ١٣٧ إلى ١٦١</option>
+    <option value="08.html">٨ — من ص ١٦٢ إلى ١٨١</option>
+    <option value="09.html">٩ — من ص ١٨٢ إلى ٢٠٤</option>
+    <option value="10.html">١٠ — من ص ٢٠٥ إلى ٢٢٤</option>
+    <option value="11.html">١١ — من ص ٢٢٥ إلى نهاية الكتاب</option>
+  </select>
+  <button class="btn" id="next">التالي ▶</button>
+  <span class="spacer"></span>
+  <button class="btn" id="fsm" title="تصغير الخط">أ−</button>
+  <button class="btn" id="fsp" title="تكبير الخط">أ+</button>
+  <button class="btn" id="thm" title="وضع القراءة الليلي">🌙</button>
+</nav>
 
-      <div class="lecture-placeholder">
-        <p class="placeholder-hint">سيتم إضافة المحاضرة هنا لاحقًا (رابط يوتيوب / فيديو / ملف صوتي / PDF / نص المحاضرة / ملاحظاتي)</p>
+<style id="ilm-completion-style">
+  #ilm-completion-box{display:flex;align-items:center;gap:10px;max-width:780px;
+    margin:18px auto 0;padding:12px 18px;background:var(--surface);
+    border:1px solid var(--line);border-radius:var(--radius);
+    font-family:'Cairo',system-ui,sans-serif;direction:rtl;cursor:pointer;
+    user-select:none;transition:background .15s,border-color .15s}
+  #ilm-completion-box:hover{border-color:var(--brand)}
+  #ilm-completion-box.done{border-color:var(--brand);background:var(--surface-2)}
+  #ilm-completion-box input{width:18px;height:18px;accent-color:var(--brand);cursor:pointer;flex-shrink:0}
+  #ilm-completion-box span{font-size:14.5px;font-weight:600;color:var(--ink)}
+  #ilm-completion-box.done span{color:var(--brand)}
+  .ilm-nav-bar{max-width:780px}
+</style>
+<label id="ilm-completion-box">
+  <input type="checkbox" data-lecture-id="stage0_qabas-wahhaj_02">
+  <span>تحديد هذه المحاضرة كمكتملة</span>
+</label>
+
+<div class="wrap">
+  <aside class="side">
+    <nav class="toc" id="toc">
+      <div class="ttl" style="font-size:15px;color:var(--brand);margin-bottom:8px">فهرس الملف</div>
+      <div id="toclist"></div>
+    </nav>
+  </aside>
+
+  <main class="main" data-ilm-highlight-zone>
+    <header class="hero">
+      <div class="kicker">المرحلة التمهيدية · الملف ٢ من ١١</div>
+      <h1>القبس الوهاج في تلخيص شرح المنهاج</h1>
+      <div class="meta">
+        الباب الثاني: تلقي القرآن على منهاج النبوة · الباب الثالث: تعظيم حدود الله (مطلعه)<br>
+        من ص ٢٨ إلى ٤٥ &nbsp;|&nbsp; تأليف: مُحمد شُميس &nbsp;|&nbsp; تلخيص شرح الشيخ أحمد بن يوسف السيد لمتن «المنهاج من ميراث النبوة»
+      </div>
+    </header>
+
+    <div class="ai-warn">
+      ⚠️ أُعدّ هذا المحتوى بمساعدة الذكاء الاصطناعي، وقد يحتوي أخطاء، ويُرجى مراجعته. (المتن منقول من الكتاب، والهوامش والأسئلة والخلاصات والبطاقات إضافة.)
+    </div>
+
+    <div class="layer-key">
+      <b>كيف تقرأ هذه الصفحة:</b> النص الأسود المتصل هو <b>كلام المؤلف كما هو في الكتاب حرفيًا</b>. وكل ما ظهر في العمود الجانبي بعلامة ملوّنة (أو تحت الفقرة في الهاتف) هو <b>هامش من إعداد الصفحة وليس من الكتاب</b>. أما «حواشي المؤلف» أسفل كل مقطع فهي حواشي الكتاب نفسه. والألوان دلالة ثابتة: <span class="sem-aya">الآية خضراء</span>، <span class="sem-hadith">الحديث بنفسجي</span>، <span class="sem-name sem-sahabi">الأنبياء والصحابة كهرماني</span>، <span class="sem-name sem-scholar">العلماء أحمر عريض</span>، <span class="sem-name">وباقي الأعلام أحمر عادي</span>.
+    </div>
+
+    <!-- ===================== المقطع 1 ===================== -->
+    <section class="sec" id="s1" style="--acc:var(--s1)">
+      <div class="sticky-head">المقطع الأول · الباب الثاني: العنوان</div>
+      <h2>الباب الثاني — عنوان الباب وفوائده العامة</h2>
+      <p class="range">ص ٢٨</p>
+
+      <h3 id="s1a">الباب الثاني</h3>
+      <div class="naql-block"><p>بَابٌ فِي تَلَقِّي الْقُرْآنِ عَلَى مِنْهَاجِ النُّبُوَّةِ، وَتَقْدِيمِ مَقْصَدِ الْعَمَلِ بِهِ وَتَدَبُّرِهِ وَالِاسْتِهْدَاءِ وَالِاسْتِغْنَاءِ بِهِ وَتَحْكِيمِهِ وَزِيَادَةِ الْإِيمَانِ بِهِ عَلَى غَيْرِ ذَلِكَ مِنَ الْمَقَاصِدِ الشَّرِيفَةِ</p></div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> الإصلاح المطلوب في واقعنا اليوم هو إصلاح جذري، وأحد الجذور المهمة في الإصلاح: «<b>الإصلاح في جذر تلقي القرآن</b>»، وفي هذا الباب جُمعت آيات وأحاديث تبيّن الموقف الصحيح الذي ينبغي أن يكون تُجاه القرآن من حيث ما تنبغي العناية به أكثر من غيره في تلقي القرآن، فهذا الباب يبيّن ما هي الجوانب التي ينبغي أن نعتني بها أكثر من غيرها في تلقي القرآن.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> هذه الآيات والأحاديث الواردة في الباب جاءت لإصلاح خلل في الواقع، وهذا الخلل هو: تضخيم جانب العناية بالحفظ على حساب فهم القرآن وتدبره والاستهداء به وغير ذلك من الأمور التي ستُذكر، فعند قراءتها ينبغي أن ينظر في الواقع، ثم يكون الإصلاح بحسب ما جاء في هذه الآيات والأحاديث.<button class="nmark note--idah" data-n="n1">١</button></p>
+      <aside class="note note--idah" id="n1"><span class="nt">إيضاح</span>ليس المقصود ذمّ الحفظ، بل ذمّ «تضخيمه على حساب» الفهم والتدبر والعمل؛ فالخلل في الميزان بين المقاصد لا في الحفظ نفسه.</aside>
+      <div class="quiz" data-sec="s1"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>الباب الثاني يعالج «جذر تلقي القرآن» بوصفه جذرًا من جذور الإصلاح.</li>
+          <li>الخلل الذي جاء الباب لإصلاحه: تضخيم الحفظ على حساب الفهم والتدبر والاستهداء.</li>
+          <li>الآيات والأحاديث تُقرأ مع النظر في الواقع، ثم يُبنى الإصلاح على ما دلّت عليه.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 2 ===================== -->
+    <section class="sec" id="s2" style="--acc:var(--s2)">
+      <div class="sticky-head">المقطع الثاني · الباب الثاني: الآيات ١–٦</div>
+      <h2>الباب الثاني — الآيات (١–٦)</h2>
+      <p class="range">ص ٢٩ – ص ٣١</p>
+
+      <h3 id="s2a">الآية الأولى</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿كِتَٰبٌ أَنزَلۡنَٰهُ إِلَيۡكَ مُبَٰرَكٞ لِّيَدَّبَّرُوٓاْ ءَايَٰتِهِۦ وَلِيَتَذَكَّرَ أُوْلُواْ ٱلۡأَلۡبَٰبِ﴾ <span class="aya-ref">[ص: ٢٩]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> في هذه الآية يُبيّن اللهُ تعالى أنّه أنزل القرآن؛ لتكون وسيلة التعامل الصحيحة معه هي: «التدبر»، ففي الآية بيان لمركزية مقصد التدبر، وأن كتاب الله أُنزل لأجل ذلك.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> من المقاصد التي أنزل الله القرآن لأجلها: «حصول التذكّر به»، أي: يحصل به الاتعاظ، وفي الآية بيان الطريق للوصول إلى هذا المقصد، وهو: «التدبر».</p>
+      <h3 id="s2b">الآية الثانية والثالثة</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿إِنَّمَا ٱلۡمُؤۡمِنُونَ ٱلَّذِينَ إِذَا ذُكِرَ ٱللَّهُ وَجِلَتۡ<sup class="fnr">(١)</sup> قُلُوبُهُمۡ وَإِذَا تُلِيَتۡ عَلَيۡهِمۡ ءَايَٰتُهُۥ زَادَتۡهُمۡ إِيمَٰنٗا وَعَلَىٰ رَبِّهِمۡ يَتَوَكَّلُونَ﴾ <span class="aya-ref">[الأنفال: ٢]</span></span>.</div>
+      <div class="aya-block"><span class="aya">وقال سبحانه: ﴿وَإِذَا مَآ أُنزِلَتۡ سُورَةٞ فَمِنۡهُم مَّن يَقُولُ أَيُّكُمۡ زَادَتۡهُ هَٰذِهِۦٓ إِيمَٰنٗاۚ فَأَمَّا ٱلَّذِينَ ءَامَنُواْ فَزَادَتۡهُمۡ إِيمَٰنٗا وَهُمۡ يَسۡتَبۡشِرُونَ﴾ <span class="aya-ref">[التوبة: ١٢٤]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> في هاتين الآيتين دلالة على أن من أعظم ما تحققه سور القرآن: «زيادة الإيمان».</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> المؤمنون حقًّا يُحسنون تلقي القرآن والتعامل معه على مقياس الوحي، ومن الأمور التي تدخل تحت هذا المقياس: «زيادة الإيمان بالقرآن»، فإذا كان الإنسان بقراءته للقرآن يزداد إيمانًا فإن هذا يدل على أنه يتلقى القرآن تلقيًا صحيحًا كما أراد الله تعالى.</p>
+      <p><b>الْفَائِدَةُ الثَّالِثَةُ:</b> إذا كان تلقي القرآن عند الإنسان في حالته الغالبة لا يؤدي إلى زيادة الإيمان؛ فإن هذا يدلّ على وجود نقص وإشكال في طبيعة التلقّي.</p>
+      <h3 id="s2c">الآية الرابعة</h3>
+      <div class="aya-block"><span class="aya">﴿وَلَقَدۡ يَسَّرۡنَا ٱلۡقُرۡءَانَ لِلذِّكۡرِ فَهَلۡ مِن مُّدَّكِرٖ﴾ <span class="aya-ref">[القمر: ٢٢]</span></span></div>
+      <p>والذكر المقصود هنا هو: التذكر والاعتبار والاتعاظ، كما قال الإمام <span class="sem-name sem-scholar">الطبري</span> ﵀: «للذكر: لمن أراد أن يتذكر، ويعتبر، ويتعظ».<button class="nmark note--tarjama" data-n="n2">٢</button></p>
+      <aside class="note note--tarjama" id="n2"><span class="nt">ترجمة عَلَم</span><span class="sem-name sem-scholar">الطبري</span>: محمد بن جرير <span class="sem-name sem-scholar">الطبري</span> (ت ٣١٠هـ)، إمام المفسرين، صاحب «جامع البيان عن تأويل آي القرآن».</aside>
+      <h4>الْفَوَائِدُ:</h4>
+      <p>في هذه الآية دلالة على أن تلقي القرآن بطريقة تقود إلى «التذكر» هو تلقٍّ بطريقة توافق مقاصد القرآن التي نزل لأجلها.</p>
+      <h3 id="s2d">الآية الخامسة</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿ٱللَّهُ نَزَّلَ أَحۡسَنَ ٱلۡحَدِيثِ كِتَٰبٗا مُّتَشَٰبِهٗا<sup class="fnr">(٢)</sup> مَّثَانِيَ<sup class="fnr">(٣)</sup> تَقۡشَعِرُّ مِنۡهُ جُلُودُ ٱلَّذِينَ يَخۡشَوۡنَ رَبَّهُمۡ ثُمَّ تَلِينُ جُلُودُهُمۡ وَقُلُوبُهُمۡ إِلَىٰ ذِكۡرِ ٱللَّهِۚ ذَٰلِكَ هُدَى ٱللَّهِ يَهۡدِي بِهِۦ مَن يَشَآءُۚ وَمَن يُضۡلِلِ ٱللَّهُ فَمَا لَهُۥ مِنۡ هَادٍ﴾ <span class="aya-ref">[الزمر: ٢٣]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <p>في الآية ذكر صورة من صور التفاعل الإيماني مع الآيات، وهي: «تقشعر الجلود»، وهي نتيجة لزيادة الإيمان، وهذا يدل أن الإنسان إذا قرأ القرآن وأحدث القرآن فيه خشوعًا؛ فإن هذا يعني أن هذا الإنسان يتلقى القرآن تلقيًا يزداد إيمانًا به.</p>
+      <h3 id="s2e">الآية السادسة</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿۞أَلَمۡ يَأۡنِ لِلَّذِينَ ءَامَنُوٓاْ أَن تَخۡشَعَ قُلُوبُهُمۡ لِذِكۡرِ ٱللَّهِ وَمَا نَزَلَ مِنَ ٱلۡحَقِّ وَلَا يَكُونُواْ كَٱلَّذِينَ أُوتُواْ ٱلۡكِتَٰبَ مِن قَبۡلُ فَطَالَ عَلَيۡهِمُ ٱلۡأَمَدُ فَقَسَتۡ قُلُوبُهُمۡۖ وَكَثِيرٞ مِّنۡهُمۡ فَٰسِقُونَ﴾ <span class="aya-ref">[الحديد: ١٦]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <p>في الآية دلالة على أن «خشوع القلب» مما ينبغي أن يتحقق من قراءة القرآن، وهذا راجع إلى زيادة الإيمان، فإن من أهم صور زيادة الإيمان: الخشوع.<button class="nmark note--rabt" data-n="n3">٣</button></p>
+      <aside class="note note--rabt" id="n3"><span class="nt">ربط داخلي</span>الآيات الثانية والثالثة والخامسة والسادسة تتلاقى على ثمرة واحدة: زيادة الإيمان، وصورها: الوجل، والاستبشار، واقشعرار الجلود، وخشوع القلب.</aside>
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>وجلت: فزعت، ورقّت، وخافت.</li>
+        <li>كتابًا متشابهًا: يشبه بعضه بعضًا، دون اختلاف وتضاد.</li>
+        <li>مثاني: تُثَنّى فيه الأنباء، والقصص، وذِكر الثواب والعقاب.</li></ol>
       </div>
 
-      <div class="lecture-nav">
-        <a href="../index.html" class="btn btn-outline">الرجوع إلى المادة</a>
-        <a href="../../index.html" class="btn btn-outline">الرجوع إلى المرحلة</a>
+      <div class="quiz" data-sec="s2"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>آية «ص»: القرآن أُنزل ليُتدبّر، والتدبّر طريق التذكّر.</li>
+          <li>الأنفال ٢ والتوبة ١٢٤: من أعظم ما تحققه سور القرآن زيادة الإيمان، وغيابها في الغالب علامة خلل في التلقي.</li>
+          <li>«للذكر» عند <span class="sem-name sem-scholar">الطبري</span>: لمن أراد أن يتذكر ويعتبر ويتعظ.</li>
+          <li>اقشعرار الجلود (الزمر ٢٣) وخشوع القلب (الحديد ١٦) صورتان من صور زيادة الإيمان بالقرآن.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 3 ===================== -->
+    <section class="sec" id="s3" style="--acc:var(--s3)">
+      <div class="sticky-head">المقطع الثالث · الباب الثاني: الآيات ٧–١٢</div>
+      <h2>الباب الثاني — الآيات (٧–١٢)</h2>
+      <p class="range">ص ٣٢ – ص ٣٥</p>
+
+      <h3 id="s3a">الآية السابعة</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿إِنَّ فِي هَٰذَا لَبَلَٰغٗا لِّقَوۡمٍ عَٰبِدِينَ﴾ <span class="aya-ref">[الأنبياء: ١٠٦]</span></span></div>
+      <p>قال الإمام <span class="sem-name sem-scholar">ابن كثير</span> ﵀: «أي: إن في هذا القرآن الذي أنزلناه على عبدنا محمد ﷺ لَبلاغًا، أي: لَمنفعةً وكفاية لقوم عابدين».</p>
+      <p>وقال الشيخ <span class="sem-name sem-scholar">ابن سعدي</span> ﵀: «أي: يتبلغون به في الوصول إلى ربهم».<button class="nmark note--tarjama" data-n="n4">٤</button></p>
+      <aside class="note note--tarjama" id="n4"><span class="nt">ترجمة عَلَم</span><span class="sem-name sem-scholar">ابن كثير</span>: إسماعيل بن عمر الدمشقي (ت ٧٧٤هـ)، صاحب «تفسير القرآن العظيم». و<span class="sem-name sem-scholar">ابن سعدي</span>: عبد الرحمن بن ناصر <span class="sem-name sem-scholar">السعدي</span> (ت ١٣٧٦هـ)، صاحب «تيسير الكريم الرحمن».</aside>
+      <h4>الْفَوَائِدُ:</h4>
+      <p>في الآية تبيين لمقصد من مقاصد القرآن، وهو: «<b>حصول الكفاية والاستغناء</b>»، ففي القرآن ما يكفي الإنسان لبيان المنهج الصحيح الذي يريد الله منه أن يسير عليه، وهذا لا يعني أن سنة النبيّ ﷺ ليست كذلك، وإنما يعني أن القرآن هو الأصل، وهذا المقصد لا يصل إليه الإنسان إلا إذا كان يتعامل مع القرآن تعامل مَن يستحضر ربّانيته، وعظمته، وشموليته، واحتياج الإنسان للعلم من خلاله.</p>
+      <h3 id="s3b">الآية الثامنة والتاسعة</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿إِنَّ هَٰذَا ٱلۡقُرۡءَانَ يَهۡدِي لِلَّتِي هِيَ أَقۡوَمُ﴾ <span class="aya-ref">[الإسراء: ٩]</span></span>.</div>
+      <div class="aya-block"><span class="aya">وقال: ﴿فَقَالُوٓاْ إِنَّا سَمِعۡنَا قُرۡءَانًا عَجَبٗا ۝ يَهۡدِيٓ إِلَى ٱلرُّشۡدِ فَـَٔامَنَّا بِهِۦ﴾ <span class="aya-ref">[الجن: ١-٢]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> في هاتين الآيتين ذكر لمقصد من مقاصد تلقي القرآن، وهو: «الاهتداء به».</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> موقف الجنّ من القرآن في الآية الثانية كان عجيبًا، فهم أدركوا الغاية التي ينبغي أن تُحقق من خلال القرآن.</p>
+      <p><b>الْفَائِدَةُ الثَّالِثَةُ:</b> في الآية الأولى دلالة على الاستغناء بكتاب الله تعالى؛ لأنه يهدي للتي هي أقوم.</p>
+      <p><b>الْفَائِدَةُ الرَّابِعَةُ:</b> هذه الآية تدل على عظمة مرجعية الوحي، وذلك أن من أعظم صور التعظيم: إدراك الجوانب العظيمة في هذا الكتاب، والتي منها: أنّه يهدي للتي هي أقوم.</p>
+      <p><b>الْفَائِدَةُ الْخَامِسَةُ:</b> إدراك أن القرآن جاء للهداية يجعل المتلقي للقرآن يتلقاه بعين المستهدي، والذي لا يُدرك هذا المعنى قد يقرأ القرآن لمقاصد أخرى غير مقصد طلب الهداية منه، وطلب الهداية من القرآن من المقاصد التي أنزل اللهُ تعالى القرآن لأجلها.</p>
+      <h3 id="s3c">الآية العاشرة</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿وَلَٰكِن كُونُواْ رَبَّـٰنِيِّـۧنَ بِمَا كُنتُمۡ تُعَلِّمُونَ ٱلۡكِتَٰبَ وَبِمَا كُنتُمۡ تَدۡرُسُونَ﴾ <span class="aya-ref">[آل عمران: ٧٩]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <p>في الآية ذكر لوسيلة وغاية، أما الغاية فهي: «الربانية»، وأما الوسيلة فهي: «تعلّم القرآن وتعليمه»، الوصول للربانية - وهي الغاية - يكون من خلال وسيلة تعلّم القرآن وتعليمه.<button class="nmark note--mustalah" data-n="n5">٥</button></p>
+      <aside class="note note--mustalah" id="n5"><span class="nt">تعريف مصطلح</span>الربّاني: المنسوب إلى الربّ، وهو العالم العامل المعلّم الذي يربّي الناس بصغار العلم قبل كباره؛ وهذا التفسير الأخير مأثور عن <span class="sem-name sem-sahabi">ابن عباس</span>.</aside>
+      <h3 id="s3d">الآية الحادية عشرة</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿فَلَا تُطِعِ ٱلۡكَٰفِرِينَ وَجَٰهِدۡهُم بِهِۦ جِهَادٗا كَبِيرٗا﴾ <span class="aya-ref">[الفرقان: ٥٢]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <p>في الآية دلالة على أنّ من مقاصد القرآن: «<b>مدافعة الباطل من خلاله</b>»، وهذا شيء ينبغي أن يستحضره المصلح الذي يعيش في مختلف الأزمان؛ لأن الخطاب الوارد في الآية ليس خاصًا بالنبي ﷺ، وإنما هو خطاب له ولورثته من بعده بأن يُجاهدوا الكفّار بالقرآن، ففي القرآن مضامين لبناء الحقّ وتوضيحه، ومضامين لهدم الباطل وتفكيكه، وفقه هاتين الدائرتين فقه عظيم، فإن الإنسان المصلح عندما ينظر إلى الواقع من حيث ما ينبغي أن يعمل ينظر إليه من هاتين العينين:</p>
+      <p>• «عين لدائرة الحق وبنائه وحملته»، فالمصلح عنده دائمًا أساس في مشاريعه متوجّه إلى هذه القضية، بغض النظر عمّا هو موجود من الباطل والمشكلات.<br>
+      • «وعين أخرى لدائرة الفساد والمشكلات، وحملة الباطل، ومضامينه».</p>
+      <p>والنظرُ بهاتين العينين يجعل المصلح يسير بطريقة متزنة، فجولة للحق في تقويته وبنائه ومضامينه ونشر علومه، وجولة على الباطل في تفتيته وتفكيكه ومحاربته ومدافعته، ومن القرآن تُستمد أهم مضامين المدافعة.<button class="nmark note--siyaq" data-n="n6">٦</button></p>
+      <aside class="note note--siyaq" id="n6"><span class="nt">سياق تاريخي</span>سورة الفرقان مكية، فالجهاد المأمور به فيها جهاد بالقرآن: بيانٌ وحجةٌ ومدافعة، قبل أن يُشرع جهاد السيف في المدينة. والضمير في <span class="sem-aya">﴿بِهِۦ﴾</span> عائد على القرآن عند جمهور المفسرين.</aside>
+      <h3 id="s3e">الآية الثانية عشرة</h3>
+      <div class="aya-block"><span class="aya">قال الله سبحانه: ﴿يَـٰٓأَيُّهَا ٱلنَّاسُ قَدۡ جَآءَتۡكُم مَّوۡعِظَةٞ مِّن رَّبِّكُمۡ وَشِفَآءٞ لِّمَا فِي ٱلصُّدُورِ وَهُدٗى وَرَحۡمَةٞ لِّلۡمُؤۡمِنِينَ﴾ <span class="aya-ref">[يونس: ٥٧]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> في هذه الآية ذِكر لمقصد آخر من مقاصد القرآن، وهو أن يكون «شفاء»، ووصف القرآن بأنه شفاء يُبيّن أن من الصفات الأساسية في القرآن كونه شفاء.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> الأصل في الشفاء المذكور بالآية أنه الشفاء المعنوي لما يكون في الصدور من التساؤلات والشكوك، والافتقار الفطري، ونحو ذلك مما يقع في النفوس.</p>
+      <p><b>الْفَائِدَةُ الثَّالِثَةُ:</b> من أعظم ما يُعين على تحقيق مقصد الشفاء: أن يُقرأ القرآن بعين المستهدي، فالهداية كلمة عامة تندرج تحتها صور، ومن هذه الصور: الهداية بشفاء التساؤلات والشكوك.</p>
+      <div class="quiz" data-sec="s3"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>مقاصد القرآن في هذه الآيات: الكفاية والاستغناء، والاهتداء، والربانية، ومدافعة الباطل، والشفاء.</li>
+          <li>الاستغناء بالقرآن لا ينفي السنة؛ بل يعني أن القرآن هو الأصل.</li>
+          <li>من أدرك أن القرآن للهداية قرأه «بعين المستهدي»، ومن غفل عن ذلك قرأه لمقاصد أخرى.</li>
+          <li>الربانية غاية، ووسيلتها تعلّم القرآن وتعليمه.</li>
+          <li>المصلح ينظر بعينين: عين لبناء الحق، وعين لتفكيك الباطل، ومن القرآن تُستمد أهم مضامين المدافعة.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 4 ===================== -->
+    <section class="sec" id="s4" style="--acc:var(--s4)">
+      <div class="sticky-head">المقطع الرابع · الباب الثاني: الأحاديث ١–٤</div>
+      <h2>الباب الثاني — الأحاديث (١–٤)</h2>
+      <p class="range">ص ٣٦ – ص ٣٨</p>
+
+      <h3 id="s4a">الحديث الأول</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ عَبْدِ اللهِ بْنِ عُمَرَ ﵄ قَالَ:</span>
+        <p><span class="sem-hadith">«لَقَدْ عِشْنَا بُرْهَةً<sup class="fnr">(١)</sup> مِنْ دَهْرِنَا وَأَحَدُنَا يُؤْتَى الْإِيمَانَ قَبْلَ الْقُرْآنِ، وَتَنْزِلُ السُّورَةُ عَلَى مُحَمَّدٍ ﷺ فَنَتَعَلَّمُ حَلَالَهَا وَحَرَامَهَا وَآمِرَهَا وَزَاجِرَهَا وَمَا يَنْبَغِي أَنْ يَقِفَ عِنْدَهُ مِنْهَا كَمَا تَعَلَّمُونَ أَنْتُمُ الْيَوْمَ الْقُرْآنَ، ثُمَّ لَقَدْ رَأَيْتُ الْيَوْمَ رِجَالًا يُؤْتَى أَحَدُهُمُ الْقُرْآنَ قَبْلَ الْإِيمَانِ، فَيَقْرَأُ مَا بَيْنَ فَاتِحَتِهِ إِلَى خَاتِمَتِهِ مَا يَدْرِي مَا آمِرُهُ وَلَا زَاجِرُهُ وَلَا مَا يَنْبَغِي أَنْ يَقِفَ عِنْدَهُ مِنْهُ، فَيَنْثُرُهُ نَثْرَ الدَّقَلِ<sup class="fnr">(٢)</sup>»<sup class="fnr">(٣)</sup>.</span></p>
+      </div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> تأتي الأحاديث لتكمل وتعزز وتبيّن ما سبق ذكره في الآيات، واستقراء ما ورد في الموضوعات الشرعية من الكتاب والسنة هو التعامل الأكمل مع الموضوعات، فهذه منهجية مهمة في فقه الدين كله.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> في هذا الحديث يذكر <span class="sem-name sem-sahabi">عبد الله بن عمر</span> ﵄ صورتين من صور تلقي القرآن: صورة كانت في زمن النبي ﷺ، وصورة كانت بعد زمنه، وكان <span class="sem-name sem-sahabi">عبد الله ابن عمر</span> ينتقد الصورة الثانية، ويبيّن أن الناس استسهلوا التعامل مع القرآن بينما لم يكن كذلك في زمن النبي ﷺ، فإن القرآن له شأنه الذي ينبغي أن يُستعدّ له به بأن يُدخل عليه بقلوب تعظّمه وتقدّره قد بُني فيها الإيمان، ومن هنا نخرج بنتيجة عملية، وهي: أن الدروس المتعلقة بالآخرة، والتعرف على الله، وأعمال القلوب من أوائل ما ينبغي أن يتلقاه الطلاب في حلقات التحفيظ.<button class="nmark note--idah" data-n="n7">٧</button></p>
+      <aside class="note note--idah" id="n7"><span class="nt">إيضاح</span>«نثر الدّقل»: تشبيه للقراءة السريعة بلا وقوف ولا تدبّر، كما يُنثر رديء التمر فيتساقط متفرّقًا لا يُعتنى به.</aside>
+      <p><b>الْفَائِدَةُ الثَّالِثَةُ:</b> من الآيات التي سبق ذكرها ويرتبط بها هذا الأثر: قول الله تعالى: <span class="sem-aya">﴿وَلَٰكِن كُونُواْ رَبَّـٰنِيِّـۧنَ بِمَا كُنتُمۡ تُعَلِّمُونَ ٱلۡكِتَٰبَ وَبِمَا كُنتُمۡ تَدۡرُسُونَ﴾</span> <span class="aya-ref">[آل عمران: ٧٩]</span>، فـ«الربانية» من المقاصد التي تتحقق من خلال القرآن، ومن وسائلها: دراسة الكتاب وتعليمه.</p>
+      <h3 id="s4b">الحديث الثاني</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ جُنْدُبِ بْنِ عَبْدِ اللهِ ﵁ قَالَ:</span>
+        <p><span class="sem-hadith">«كُنَّا مَعَ النَّبِيِّ ﷺ وَنَحْنُ فِتْيَانٌ حَزَاوِرَةٌ، فَتَعَلَّمْنَا الْإِيمَانَ قَبْلَ أَنْ نَتَعَلَّمَ الْقُرْآنَ، ثُمَّ تَعَلَّمْنَا الْقُرْآنَ فَازْدَدْنَا بِهِ إِيمَانًا»<sup class="fnr">(٤)</sup>.</span><button class="nmark note--mustalah" data-n="n8">٨</button></p>
+      </div>
+      <aside class="note note--mustalah" id="n8"><span class="nt">تعريف مصطلح</span>حَزاوِرة: جمع حَزْوَر وحَزَوَّر، وهو الغلام إذا اشتدّ وقارب البلوغ.</aside>
+      <h4>الْفَوَائِدُ:</h4>
+      <p>هذا الأثر يؤكّد ما سبق ذكره من قول الله تعالى: <span class="sem-aya">﴿إِنَّمَا ٱلۡمُؤۡمِنُونَ ٱلَّذِينَ إِذَا ذُكِرَ ٱللَّهُ وَجِلَتۡ قُلُوبُهُمۡ وَإِذَا تُلِيَتۡ عَلَيۡهِمۡ ءَايَٰتُهُۥ زَادَتۡهُمۡ إِيمَٰنٗا وَعَلَىٰ رَبِّهِمۡ يَتَوَكَّلُونَ﴾</span> <span class="aya-ref">[الأنفال: ٢]</span>، وقوله سبحانه: <span class="sem-aya">﴿وَإِذَا مَآ أُنزِلَتۡ سُورَةٞ فَمِنۡهُم مَّن يَقُولُ أَيُّكُمۡ زَادَتۡهُ هَٰذِهِۦٓ إِيمَٰنٗاۚ فَأَمَّا ٱلَّذِينَ ءَامَنُواْ فَزَادَتۡهُمۡ إِيمَٰنٗا وَهُمۡ يَسۡتَبۡشِرُونَ﴾</span> <span class="aya-ref">[التوبة: ١٢٤]</span>، فالنبي ﷺ كان يُشرف على قضية تلقي القرآن المحققة لزيادة الإيمان.</p>
+      <h3 id="s4c">الحديث الثالث</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ أَبِي هُرَيْرَةَ ﵁ قَالَ: قَالَ رَسُولُ اللهِ ﷺ:</span>
+        <p><span class="sem-hadith">«مَا اجْتَمَعَ قَوْمٌ فِي بَيْتٍ مِنْ بُيُوتِ اللهِ يَتْلُونَ كِتَابَ اللهِ وَيَتَدَارَسُونَهُ بَيْنَهُمْ؛ إِلَّا نَزَلَتْ عَلَيْهِمُ السَّكِينَةُ وَغَشِيَتْهُمُ الرَّحْمَةُ وَحَفَّتْهُمُ الْـمَلَائِكَةُ وَذَكَرَهُمُ اللهُ فِيمَنْ عِنْدَهُ»<sup class="fnr">(٥)</sup>.</span></p>
+      </div>
+      <h4>الْفَوَائِدُ:</h4>
+      <p>في هذا الحديث تأكيد على قضية مدارسة القرآن وتلاوته، وهذا من المهم جدًّا أن يُفقه ويوعى، ولا ينبغي الوقوف عند شِقّ التلاوة، وإنما يُشفع بشِقّ التدارس.</p>
+      <h3 id="s4d">الحديث الرابع</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ أَنَسِ بْنِ مَالِكٍ ﵁ قَالَ:</span>
+        <p><span class="sem-hadith">«جَاءَ نَاسٌ إِلَى النَّبِيِّ ﷺ، فَقَالُوا أَنِ ابْعَثْ مَعَنَا رِجَالًا يُعَلِّمُونَا الْقُرْآنَ وَالسُّنَّةَ، فَبَعَثَ إِلَيْهِمْ سَبْعِينَ رَجُلًا مِنَ الْأَنْصَارِ يُقَالُ لَهُمُ: الْقُرَّاءُ، فِيهِمْ خَالِي حَرَامٌ، يَقْرَؤُونَ الْقُرْآنَ وَيَتَدَارَسُونَ بِاللَّيْلِ يَتَعَلَّمُونَ، وَكَانُوا بِالنَّهَارِ يَجِيئُونَ بِالْـمَاءِ فَيَضَعُونَهُ فِي الْـمَسْجِدِ، وَيَحْتَطِبُونَ<sup class="fnr">(٦)</sup> فَيَبِيعُونَهُ وَيَشْتَرُونَ بِهِ الطَّعَامَ لِأَهْلِ الصُّفَّةِ وَلِلْفُقَرَاءِ»<sup class="fnr">(٧)</sup>.</span><button class="nmark note--siyaq" data-n="n9">٩</button></p>
+      </div>
+      <aside class="note note--siyaq" id="n9"><span class="nt">سياق تاريخي</span>هؤلاء السبعون هم قُرّاء «بئر معونة» (سنة ٤هـ)، وتتمة الحديث في مسلم أنهم قُتلوا غدرًا قبل أن يبلغوا المكان، و«حرام» هو حرام بن ملحان خال <span class="sem-name sem-sahabi">أنس</span> ﵁.</aside>
+      <h4>الْفَوَائِدُ:</h4>
+      <p>في هذا الحديث يصف <span class="sem-name sem-sahabi">أنس بن مالك</span> ﵁ مجموعة من خيار أصحاب رسول الله ﷺ، ممن استحقوا لقبًا لانشغالهم بالقرآن، وقد وصل بهم هذا الانشغال لدرجة أن يكون عُنصرًا من عناصر الهُوية لهؤلاء الأشخاص، وهذا كان موجودًا في زمن النبي ﷺ وبعده، والذين يذكرهم <span class="sem-name sem-sahabi">أنس</span> ﵁ في الحديث أعطاهم ارتباطُهم الدائم بالقرآن لقب «القراء»، وإذا نظرنا في طبيعة تعاملهم مع القرآن سنجد عندهم أمرًا أساسيًا، وهو: التدارس والتعلم؛ لذلك فإن إحياء مجالس تدبر القرآن والاستهداء به وتعلّمه من أعظم ما يكون من التصحيح في تلقي القرآن.</p>
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>برهة: المدة الطويلة من الزمن.</li>
+        <li>الدقل: رديء التمر ويابسه.</li>
+        <li>أخرجه الحاكم (١٠١)، والبيهقي (٥٣٥٥)، واللفظ له.</li>
+        <li>أخرجه ابن ماجه (٦١).</li>
+        <li>أخرجه مسلم (٢٦٩٩).</li>
+        <li>يحتطبون: يجمعون الحطب.</li>
+        <li>أخرجه مسلم (٦٧٧).</li></ol>
       </div>
 
-      <div data-lecture-nav-extra></div>
+      <div class="quiz" data-sec="s4"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
 
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>أثر <span class="sem-name sem-sahabi">ابن عمر</span>: صورتان للتلقي؛ إيمان قبل القرآن (الصحابة) وقرآن قبل الإيمان «يُنثر نثر الدقل» (من بعدهم).</li>
+          <li>النتيجة العملية: دروس الآخرة والتعرف على الله وأعمال القلوب من أوائل ما يُتلقى في حلقات التحفيظ.</li>
+          <li>أثر جندب: تعلّموا الإيمان أولًا، ثم القرآن فازدادوا به إيمانًا؛ والنبي ﷺ كان يُشرف على هذا التلقي.</li>
+          <li>حديث <span class="sem-name sem-sahabi">أبي هريرة</span>: لا يُوقف عند شق التلاوة، بل يُشفع بشق التدارس.</li>
+          <li>حديث <span class="sem-name sem-sahabi">أنس</span>: «القرّاء» لقبٌ صار هوية، وعماد تعاملهم مع القرآن التدارس والتعلّم.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 5 ===================== -->
+    <section class="sec" id="s5" style="--acc:var(--s5)">
+      <div class="sticky-head">المقطع الخامس · الباب الثاني: الأحاديث ٥–٩</div>
+      <h2>الباب الثاني — الأحاديث (٥–٩)</h2>
+      <p class="range">ص ٣٩ – ص ٤١</p>
+
+      <h3 id="s5a">الحديث الخامس</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ أَبِي عَبْدِ الرَّحْمَنِ السُّلَمِيِّ ﵀ قَالَ:</span>
+        <p><span class="sem-hadith">«حَدَّثَنَا مَنْ كَانَ يُقْرِئُنَا مِنْ أَصْحَابِ النَّبِيِّ ﷺ أَنَّهُمْ كَانُوا يَقْتَرِئُونَ مِنْ رَسُولِ اللهِ ﷺ عَشْرَ آيَاتٍ، فَلَا يَأْخُذُونَ فِي الْعَشْرِ الْأُخْرَى حَتَّى يَعْلَمُوا مَا فِي هَذِهِ مِنَ الْعِلْمِ وَالْعَمَلِ، قَالُوا: فَعَلِمْنَا الْعِلْمَ وَالْعَمَلَ»<sup class="fnr">(١)</sup>.</span><button class="nmark note--tarjama" data-n="n10">١٠</button></p>
+      </div>
+      <aside class="note note--tarjama" id="n10"><span class="nt">ترجمة عَلَم</span>أبو عبد الرحمن السُّلَمي: عبد الله بن حبيب (ت نحو ٧٤هـ)، تابعي، مقرئ الكوفة، أقرأ الناس القرآن في مسجدها أربعين سنة.</aside>
+      <h3 id="s5b">الحديث السادس</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ عَبْدِ اللهِ بْنِ مَسْعُودٍ ﵁ قَالَ:</span>
+        <p><span class="sem-hadith">«كَانَ الرَّجُلُ مِنَّا إِذَا تَعَلَّمَ عَشْرَ آيَاتٍ لَمْ يُجَاوِزْهُنَّ حَتَّى يَعْرِفَ مَعَانِيَهُنَّ وَالْعَمَلَ بِهِنَّ»<sup class="fnr">(٢)</sup>.</span></p>
+      </div>
+      <h4>الْفَوَائِدُ:</h4>
+      <p>هذان الحديثان واضحان ومركزيان في كيفية تلقي القرآن على زمن النبي ﷺ، وما ذُكر فيهما أنموذج بيّن ينبغي إعادة تفعيله وتحقيقه، والمعنى المركزي في النص: تعلّم العلم والعمل، وليس الوقوف على عدد الآيات.</p>
+      <h3 id="s5c">الحديث السابع</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ مَالِكٍ</span>
+        <p><span class="sem-hadith">أَنَّهُ بَلَغَهُ أَنَّ عَبْدَ اللهِ بْنَ عُمَرَ ﵄ مَكَثَ عَلَى سُورَةِ الْبَقَرَةِ ثَمَانِيَ سِنِينَ؛ يَتَعَلَّمُهَا<sup class="fnr">(٣)</sup>.</span></p>
+      </div>
+      <h4>الْفَوَائِدُ:</h4>
+      <p>هذا النص أخرجه <span class="sem-name sem-scholar">الإمام مالك</span> بعد ذكر الخوارج، وهذا الترتيب منه في الإخراج فيه فقه كبير شريف متقدم، فهو قد أخرج حديث الخوارج وفيه: <span class="sem-hadith">«يَقْرَؤُونَ الْقُرْآنَ وَلَا يُجَاوِزُ حَنَاجِرَهُمْ»</span>، وفي هذا مقارنة بين حالتين في تلقي القرآن، فالخوارج وإن أكثروا من تلاوة القرآن إلّا أنّهم لم يأخذوه على ما ينبغي أن يؤخذ، ولم يحققوا من خلاله ما ينبغي أن يُحقق، فالشأن كلّ الشأن ليس في كثرة التلاوة، وإنما في كيفية تلقي القرآن، ومعرفة الغايات التي ينبغي أن تصل إليها من خلاله.<button class="nmark note--tawthiq" data-n="n11">١١</button></p>
+      <aside class="note note--tawthiq" id="n11"><span class="nt">توثيق</span>الأثر في «الموطأ» (كتاب القرآن، باب ما جاء في القرآن)، ووقع عقب حديث <span class="sem-name sem-sahabi">أبي سعيد الخدري</span> في الخوارج: «يقرؤون القرآن ولا يجاوز حناجرهم».</aside>
+      <h3 id="s5d">الحديث الثامن</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ أَنَسٍ ﵁ قَالَ:</span>
+        <p><span class="sem-hadith">«كَانَ رَجُلٌ يَكْتُبُ بَيْنَ يَدَيْ رَسُولِ اللهِ ﷺ قَدْ قَرَأَ الْبَقَرَةَ وَآلَ عِمْرَانَ، وَكَانَ الرَّجُلُ إِذَا قَرَأَ الْبَقَرَةَ وَآلَ عِمْرَانَ يُعَدُّ فِينَا عَظِيمًا»<sup class="fnr">(٤)</sup>.</span></p>
+      </div>
+      <h4>الْفَوَائِدُ:</h4>
+      <p>هذا التلقي لهاتين السورتين الذي يدلّ على عظمة مَن فعله لم يكن مجرّد حفظ لهما، وإنما يدلّ على أنه تلقٍّ مرتبط بمتعلقات أخرى بحيث يكون الأخذ لهما يتضمن أنّ من أخذهما فقد أخذ الأداء، والعلم، والعمل الذي فيهما، وعليه؛ فصار الأخذ لهاتين السورتين له معنىً عظيمٌ جدًّا.</p>
+      <h3 id="s5e">الحديث التاسع</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ حُذَيْفَةَ ﵁ قَالَ:</span>
+        <p><span class="sem-hadith">«حَدَّثَنَا رَسُولُ اللهِ ﷺ حَدِيثَيْنِ، قَدْ رَأَيْتُ أَحَدَهُمَا وَأَنَا أَنْتَظِرُ الْآخَرَ. حَدَّثَنَا: «أَنَّ الْأَمَانَةَ نَزَلَتْ فِي جَذْرِ قُلُوبِ الرِّجَالِ<sup class="fnr">(٥)</sup>، ثُمَّ نَزَلَ الْقُرْآنُ فَعَلِمُوا مِنَ الْقُرْآنِ وَعَلِمُوا مِنَ السُّنَّةِ».</span></p>
+        <p><span class="sem-hadith">ثُمَّ حَدَّثَنَا عَنْ رَفْعِ الْأَمَانَةِ قَالَ: «يَنَامُ الرَّجُلُ النَّوْمَةَ فَتُقْبَضُ الْأَمَانَةُ مِنْ قَلْبِهِ فَيَظَلُّ أَثَرُهَا مِثْلَ الْوَكْتِ<sup class="fnr">(٦)</sup>، ثُمَّ يَنَامُ النَّوْمَةَ فَتُقْبَضُ الْأَمَانَةُ مِنْ قَلْبِهِ فَيَظَلُّ أَثَرُهَا مِثْلَ الْـمَجْلِ<sup class="fnr">(٧)</sup>، كَجَمْرٍ دَحْرَجْتَهُ عَلَى رِجْلِكَ فَنَفِطَ<sup class="fnr">(٨)</sup> فَتَرَاهُ مُنْتَبِرًا<sup class="fnr">(٩)</sup> وَلَيْسَ فِيهِ شَيْءٌ - ثُمَّ أَخَذَ حَصًى فَدَحْرَجَهُ عَلَى رِجْلِهِ -، فَيُصْبِحُ النَّاسُ يَتَبَايَعُونَ لَا يَكَادُ أَحَدٌ يُؤَدِّي الْأَمَانَةَ حَتَّى يُقَالَ: إِنَّ فِي بَنِي فُلَانٍ رَجُلًا أَمِينًا. حَتَّى يُقَالَ لِلرَّجُلِ: مَا أَجْلَدَهُ! مَا أَظْرَفَهُ<sup class="fnr">(١٠)</sup>! مَا أَعْقَلَهُ! وَمَا فِي قَلْبِهِ مِثْقَالُ حَبَّةٍ مِنْ خَرْدَلٍ مِنْ إِيمَانٍ».</span></p>
+        <p><span class="sem-hadith">وَلَقَدْ أَتَى عَلَيَّ زَمَانٌ وَمَا أُبَالِي أَيَّكُمْ بَايَعْتُ، لَئِنْ كَانَ مُسْلِمًا لَيَرُدَّنَّهُ عَلَيَّ دِينُهُ، وَلَئِنْ كَانَ نَصْرَانِيًّا أَوْ يَهُودِيًّا لَيَرُدَّنَّهُ عَلَيَّ سَاعِيهِ، وَأَمَّا الْيَوْمَ فَمَا كُنْتُ لِأُبَايِعَ مِنْكُمْ إِلَّا فُلَانًا وَفُلَانًا»<sup class="fnr">(١١)</sup>.</span></p>
+      </div>
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>أخرجه أحمد (٢٣٤٨٢).</li>
+        <li>أخرجه الحاكم (٢٠٦٦)، والبيهقي في الكبرى (٥٣٥٣)، و<span class="sem-name sem-scholar">الطبري</span> في تفسيره، واللفظ له.</li>
+        <li>أخرجه مالك (٥٤٦).</li>
+        <li>أخرجه أحمد (١٢٢١٦).</li>
+        <li>جذر قلوب الرجال: أي: في أصلها.</li>
+        <li>الوَكْت: الأثر في الشيء كالنقطة من غير لونه.</li>
+        <li>المَجْل: النفاخات التي تخرج في الأيدي مملوءة ماء.</li>
+        <li>فنفط: وَرِمَ.</li>
+        <li>منتبرًا: مرتفعًا.</li>
+        <li>ما أظرفه: ما أحسنه.</li>
+        <li>أخرجه <span class="sem-name sem-scholar">البخاري</span> (٦٤٩٧)، ومسلم (١٤٣).</li></ol>
+      </div>
+
+      <div class="quiz" data-sec="s5"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>حديثا السلمي و<span class="sem-name sem-sahabi">ابن مسعود</span>: عشر آيات لا تُجاوَز حتى يُعلم ما فيها من العلم والعمل.</li>
+          <li>المعنى المركزي: تعلّم العلم والعمل، لا الوقوف على عدد الآيات.</li>
+          <li>مالك أخرج أثر <span class="sem-name sem-sahabi">ابن عمر</span> (ثماني سنين على البقرة) بعد حديث الخوارج: مقارنة بين حالتين في التلقي.</li>
+          <li>الشأن ليس في كثرة التلاوة بل في كيفية التلقي ومعرفة غاياته.</li>
+          <li>من «قرأ» البقرة وآل عمران عُدّ عظيمًا؛ لأن الأخذ عندهم أداءٌ وعلمٌ وعمل.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 6 ===================== -->
+    <section class="sec" id="s6" style="--acc:var(--s6)">
+      <div class="sticky-head">المقطع السادس · الباب الثالث: العنوان</div>
+      <h2>الباب الثالث — عنوان الباب وفوائده العامة</h2>
+      <p class="range">ص ٤٢</p>
+
+      <h3 id="s6a">الباب الثالث</h3>
+      <div class="naql-block"><p>بَابُ تَعْظِيمِ حُدُودِ اللهِ وَالتَّحْذِيرِ مِنْ مُخَالَفَةِ أَمْرِهِ وَأَمْرِ رَسُولِهِ ﷺ</p></div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> هناك ترابط بين هذا الباب والباب الأول، ووجه ذلك: أن من الأمور المطلوبة منّا تجاه مرجعية الوحي: «التعظيم» وهذا الباب متّصل بمرجعية الوحي من جهة تعظيمها.<button class="nmark note--rabt" data-n="n12">١٢</button></p>
+      </div>
+      <aside class="note note--rabt" id="n12"><span class="nt">ربط داخلي</span>المطلوبات الخمسة تجاه مرجعية الوحي في الباب الأول (الملف ١): التعظيم، والتسليم، والتحكيم، والتقديم، والاستغناء والاستبشار؛ وهذا الباب تفصيل لأولها.</aside>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> مجالات تعظيم الوحي:</p>
+      <p>• تعظيم الله تعالى، <b>والمراد بذلك:</b> أنّ الوحي إنّما يُعظّم لأنّه من عند الله تبارك وتعالى، فتعظيم الوحي فرع عن تعظيم الله تبارك وتعالى؛ الذي أنزل هذا الوحي.<br>
+      • التعظيم المجمل للوحي، <b>والمراد بذلك:</b> أن يُعظّم الإنسانُ كتاب الله تعالى، وسنة نبيّه ﷺ.<br>
+      • التعظيم التفصيلي لما عظّمته الشريعة، <b>والمراد بذلك:</b> أن يُعظّم الإنسان ما عظّمته الشريعة، فهي لم تعطِ كُلّ ما جاء فيها درجة واحدة من التعظيم، وإنما ما جاء فيها على مراتب ودرجات، ومن أعظم الفقه في الدين: أن يكون تعظيم الإنسان للأحكام والأخبار الشرعية بقدر ما عظّمها الله ورسوله ﷺ.<button class="nmark note--idah" data-n="n13">١٣</button></p>
+      <aside class="note note--idah" id="n13"><span class="nt">إيضاح</span>الثالث هو الأدقّ: أن يتوافق سُلَّم التعظيم في قلب المسلم مع سُلَّم الشريعة نفسها، فلا يرفع فرعًا فوق أصل، ولا يهوّن ما عظّمه الوحي.</aside>
+      <p><b>الْفَائِدَةُ الثَّالِثَةُ:</b> أصناف الناس في التعامل مع الشريعة:</p>
+      <p>• صنف يمتثل لأوامر الشريعة، ويعظّمها تعظيمًا قلبيًا خاصًّا.<br>
+      • صنف يمتثل لأوامر الشريعة، ولا يكون في قلبه من التعظيم الخاص لها ما يكفي.<br>
+      • صنف لا يمتثل الشريعة ولا يُعظّمها.</p>
+      <div class="quiz" data-sec="s6"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>الباب الثالث موصول بالباب الأول: «التعظيم» أول المطلوبات تجاه مرجعية الوحي.</li>
+          <li>مجالات تعظيم الوحي ثلاثة: تعظيم الله الذي أنزله، والتعظيم المجمل للكتاب والسنة، والتعظيم التفصيلي لما عظّمته الشريعة.</li>
+          <li>من أعظم الفقه في الدين: أن يكون تعظيمك للأحكام والأخبار بقدر ما عظّمها الله ورسوله ﷺ.</li>
+          <li>أصناف الناس ثلاثة: ممتثل معظّم، وممتثل قليل التعظيم، ولا ممتثل ولا معظّم.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 7 ===================== -->
+    <section class="sec" id="s7" style="--acc:var(--s7)">
+      <div class="sticky-head">المقطع السابع · الباب الثالث: الآيات والحديث الأول</div>
+      <h2>الباب الثالث — الآيات (١–٣) والحديث الأول</h2>
+      <p class="range">ص ٤٣ – ص ٤٥</p>
+
+      <h3 id="s7a">الآية الأولى</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿ٱلَّذِينَ إِذَا ذُكِرَ ٱللَّهُ وَجِلَتۡ قُلُوبُهُمۡ وَإِذَا تُلِيَتۡ عَلَيۡهِمۡ ءَايَٰتُهُۥ زَادَتۡهُمۡ إِيمَٰنٗا﴾ <span class="aya-ref">[الأنفال: ٢]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> من أظهر علامات المؤمنين أنّهم إذا ذُكّروا بالله تذكروا، وإذا خوّفوا بالله خافوا.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> البوابة الأساسية للوصول إلى درجة الوجل من الله إذا ذُكر؛ هي: «العلم بالله»، وله سبيلان:</p>
+      <p>• تدبر كتاب الله تعالى.<br>
+      • تدبر مخلوقات الله تعالى.</p>
+      <p><b>الْفَائِدَةُ الثَّالِثَةُ:</b> وجَلُ القلب من الله تعالى يقتضي تعظيم حدوده، وبهذا تظهر علاقة الآية بالباب.</p>
+      <p><b>الْفَائِدَةُ الرَّابِعَةُ:</b> من أعظم صور علاقة المؤمن بالقرآن: تلمّس زيادة الإيمان بالقرآن.</p>
+      <h3 id="s7b">الآية الثانية</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿ذَٰلِكَۖ وَمَن يُعَظِّمۡ شَعَـٰٓئِرَ ٱللَّهِ فَإِنَّهَا مِن تَقۡوَى ٱلۡقُلُوبِ﴾ <span class="aya-ref">[الحج: ٣٢]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> تعظيم شعائر الله نتيجة للتقوى الكامنة في نفس المؤمن.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> عندما يتناول المفسرون معنى «الشعائر» فإن منهم من يحصرها في شعائر الحج، ومنهم مَن يعمّمها في الحجّ وغيره من أعلام الدين الظاهرة، والتي منها:</p>
+      <p>• شعائر مكانية؛ كالمسجد الحرام، والمسجد النبوي، ومسجد الأقصى.<br>
+      • شعائر زمانية؛ كشهر رمضان، وعشر ذي الحجة، ويوم النحر.<button class="nmark note--mustalah" data-n="n14">١٤</button></p>
+      <aside class="note note--mustalah" id="n14"><span class="nt">تعريف مصطلح</span>الشعائر: جمع شعيرة، وهي العلامة الظاهرة؛ فشعائر الله: أعلام دينه الظاهرة من الأمكنة والأزمنة والعبادات.</aside>
+      <h3 id="s7c">الآية الثالثة</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿فَلۡيَحۡذَرِ ٱلَّذِينَ يُخَالِفُونَ عَنۡ أَمۡرِهِۦٓ أَن تُصِيبَهُمۡ فِتۡنَةٌ<sup class="fnr">(١)</sup> أَوۡ يُصِيبَهُمۡ عَذَابٌ أَلِيمٌ﴾ <span class="aya-ref">[النور: ٦٣]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <p>فسّر العلماء «الفتنة» في الآية بأنها الشرك، وهذا لا يلزم منه أن تكون المخالفة بعينها كفرًا، لكنّ عقوبة مخالفة الأمر النبوي قد تكون بزيغ قلب المُخالف.<button class="nmark note--tawthiq" data-n="n15">١٥</button></p>
+      <aside class="note note--tawthiq" id="n15"><span class="nt">توثيق</span>تفسير الفتنة هنا بالشرك منقول عن <span class="sem-name sem-scholar">الإمام أحمد</span>، قال: «أتدري ما الفتنة؟ الفتنة: الشرك، لعلّه إذا ردّ بعض قوله أن يقع في قلبه شيء من الزيغ فيهلك».</aside>
+      <h4>الأحاديث</h4>
+      <h3 id="s7d">الحديث الأول</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ عَائِشَةَ ﵂</span>
+        <p><span class="sem-hadith">أَنَّ قُرَيْشًا أَهَمَّهُمْ شَأْنُ الْـمَرْأَةِ الْـمَخْزُومِيَّةِ الَّتِي سَرَقَتْ، فَقَالُوا: وَمَنْ يُكَلِّمُ فِيهَا رَسُولَ اللهِ ﷺ؟ فَقَالُوا: وَمَنْ يَجْتَرِئُ عَلَيْهِ إِلَّا أُسَامَةُ بْنُ زَيْدٍ حِبُّ رَسُولِ اللهِ ﷺ؟ فَكَلَّمَهُ أُسَامَةُ فَقَالَ رَسُولُ اللهِ ﷺ: «أَتَشْفَعُ فِي حَدٍّ مِنْ حُدُودِ اللهِ؟»، ثُمَّ قَامَ فَاخْتَطَبَ ثُمَّ قَالَ: «إِنَّمَا أَهْلَكَ الَّذِينَ قَبْلَكُمْ أَنَّهُمْ كَانُوا إِذَا سَرَقَ فِيهِمُ الشَّرِيفُ تَرَكُوهُ وَإِذَا سَرَقَ فِيهِمُ الضَّعِيفُ أَقَامُوا عَلَيْهِ الْـحَدَّ، وَايْمُ اللهِ<sup class="fnr">(٢)</sup> لَوْ أَنَّ فَاطِمَةَ بِنْتَ مُحَمَّدٍ سَرَقَتْ لَقَطَعْتُ يَدَهَا»<sup class="fnr">(٣)</sup>.</span></p>
+      </div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> من أعظم صور تعظيم ما نزَل فيه حدٌّ من عند الله تعالى أن يكون غير قابل للتعطيل بسبب الأنساب، أو الاعتبارات الشخصية أو الاجتماعية.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> في الحديث دلالة على أن من أعظم أسباب الهلاك: تعطيل حدود الله لاعتبارات شخصية، أو اجتماعية.</p>
+      <p><b>الْفَائِدَةُ الثَّالِثَةُ:</b> الأسلوب الذي استعمله النبي ﷺ في قوله ل<span class="sem-name sem-sahabi">أسامة</span>: <span class="sem-hadith">«أَتَشْفَعُ فِي حَدٍّ مِنْ حُدُودِ اللهِ؟»</span>، وصعوده على المنبر وذِكْره ما ذكر؛ يترك في نفوس الصحابة أثرًا في تعظيم حدود الله، وهذا ما ينبغي أن يكون في السياقات التربوية.</p>
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>فتنة: محنة، وشر، وعذاب.</li>
+        <li>وايم الله: لفظ من ألفاظ القسم.</li>
+        <li>أخرجه <span class="sem-name sem-scholar">البخاري</span> (٣٤٧٥)، ومسلم (١٦٨٨).</li></ol>
+      </div>
+
+      <div class="quiz" data-sec="s7"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>آية الأنفال: الوجل عند ذكر الله علامة الإيمان، وبوابته العلم بالله بسبيلين: تدبر الكتاب وتدبر المخلوقات.</li>
+          <li>الوجل يقتضي تعظيم الحدود، وبه تظهر علاقة الآية بالباب.</li>
+          <li>تعظيم الشعائر ثمرة التقوى، والشعائر عند من عمّمها مكانية وزمانية.</li>
+          <li>الفتنة في النور ٦٣ فُسّرت بالشرك، ولا يلزم أن تكون المخالفة بعينها كفرًا، لكن عقوبتها قد تكون زيغ القلب.</li>
+          <li>حديث المخزومية: الحد لا يُعطّل لنسب أو اعتبار، وتعطيله من أعظم أسباب الهلاك، وأسلوب النبي ﷺ ربّى الصحابة على التعظيم.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+</main>
+</div>
+
+<!-- ===================== بطاقات المراجعة (خارج منطقة الهايلايت) ===================== -->
+<div class="wrap" style="padding-top:0">
+  <div class="main">
+    <section class="cards" id="anki">
+      <div class="ttl" style="font-size:22px;color:var(--brand)">بطاقات المراجعة (Anki)</div>
+      <div class="sub">بطاقات مستقلة عن الصفحة: كل بطاقة مفهومة بعد شهور بلا رجوع للكتاب. اضغط البطاقة لقلبها. <span id="cards-count"></span></div>
+      <div class="filters" id="filters"></div>
+      <div class="ak" id="ak" tabindex="0">
+        <div class="deckcap" id="ak-deck"></div>
+        <div id="ak-front"></div>
+        <div class="ak-back" id="ak-back"></div>
+        <div class="hint">اضغط لإظهار الإجابة</div>
+      </div>
+      <div class="cnav">
+        <button class="btn" type="button" id="ak-prev">◀ السابقة</button>
+        <span id="ak-counter">٠ / ٠</span>
+        <button class="btn" type="button" id="ak-next">التالية ▶</button>
+        <button class="btn" type="button" id="ak-dl">⬇ تحميل ملف Anki (TSV)</button>
+      </div>
+    </section>
   </div>
-  <script type="module" src="../../../firebase-sync-manhaj.js"></script>
-  <script src="../../../data.js"></script>
-  <script src="../../../script.js"></script>
+  <div class="side"></div>
+</div>
+
+<div id="ilm-custom-nav"></div>
+
+<script>
+const QUIZ_DATA = [
+ {"id": "q1", "sectionId": "s1", "question": "ما الخلل الواقعي الذي جاءت آيات الباب الثاني وأحاديثه لإصلاحه؟", "options": ["ترك حفظ القرآن بالكلية", "تضخيم العناية بالحفظ على حساب الفهم والتدبر والاستهداء", "الاشتغال بالتفسير عن التلاوة", "كثرة الخلاف في القراءات"], "correctIndex": 1, "explanation": "نصّ المؤلف: «تضخيم جانب العناية بالحفظ على حساب فهم القرآن وتدبره والاستهداء به» — فالخلل في الميزان لا في الحفظ."},
+ {"id": "q2", "sectionId": "s2", "question": "إذا كان تلقي القرآن في الحالة الغالبة لا يؤدي إلى زيادة الإيمان، فعلامَ يدل ذلك؟", "options": ["على أن القارئ لم يحفظ القدر الكافي", "على أن زيادة الإيمان خاصة بأزمنة الطاعات", "على نقص وإشكال في طبيعة التلقي", "لا دلالة له"], "correctIndex": 2, "explanation": "زيادة الإيمان «مقياس» التلقي الصحيح؛ فغيابها في الغالب علامة خلل في التلقي."},
+ {"id": "q3", "sectionId": "s2", "question": "في ﴿لِّيَدَّبَّرُوٓاْ ءَايَٰتِهِۦ وَلِيَتَذَكَّرَ أُوْلُواْ ٱلۡأَلۡبَٰبِ﴾: ما العلاقة بين التدبر والتذكر؟", "options": ["التدبر هو الطريق للوصول إلى التذكر", "التذكر شرط سابق للتدبر", "هما لفظان بمعنى واحد", "لا علاقة بينهما"], "correctIndex": 0, "explanation": "الآية فيها «بيان الطريق للوصول إلى هذا المقصد، وهو: التدبر»."},
+ {"id": "q4", "sectionId": "s3", "question": "قول المؤلف في ﴿لَبَلَٰغٗا﴾: «حصول الكفاية والاستغناء» — ماذا يعني؟", "options": ["الاستغناء بالقرآن عن السنة", "الاكتفاء بالتلاوة عن التعلم", "أن القرآن هو الأصل، ولا يعني ذلك أن السنة ليست كذلك", "الاستغناء عن العلماء"], "correctIndex": 2, "explanation": "احترز المؤلف: «وهذا لا يعني أن سنة النبي ﷺ ليست كذلك، وإنما يعني أن القرآن هو الأصل»."},
+ {"id": "q5", "sectionId": "s3", "question": "مصلحٌ انشغل بتفكيك الشبهات ومحاربة الباطل وحده، وأهمل بناء الحق ونشر علومه. أي «العينين» أهمل؟", "options": ["عين دائرة الفساد والمشكلات", "عين دائرة الحق وبنائه وحملته", "لم يُهمل شيئًا", "عين الواقع"], "correctIndex": 1, "explanation": "النظر المتزن جولتان: جولة للحق في تقويته وبنائه، وجولة على الباطل في تفكيكه؛ وهذا أهمل الأولى."},
+ {"id": "q6", "sectionId": "s4", "question": "في أثر ابن عمر ﵄: أيّ الصورتين كان ينتقدها؟", "options": ["من يُؤتى الإيمان قبل القرآن", "من يُؤتى القرآن قبل الإيمان فيقرؤه لا يدري آمره ولا زاجره", "من يتعلم عشر آيات ثم يقف", "من يتدارس القرآن بالليل"], "correctIndex": 1, "explanation": "الثانية هي التي «ينثره نثر الدقل»، والمؤلف نصّ أنه كان ينتقد الصورة الثانية."},
+ {"id": "q7", "sectionId": "s4", "question": "بحسب حديث «يَتْلُونَ كِتَابَ اللهِ وَيَتَدَارَسُونَهُ بَيْنَهُمْ»: عند أي شيء لا ينبغي الوقوف؟", "options": ["عند شق التدارس", "عند الاجتماع في المساجد", "عند شق التلاوة", "عند ذكر الله"], "correctIndex": 2, "explanation": "«لا ينبغي الوقوف عند شِقّ التلاوة، وإنما يُشفع بشِقّ التدارس»."},
+ {"id": "q8", "sectionId": "s5", "question": "ما المعنى المركزي في حديثي أبي عبد الرحمن السلمي وابن مسعود ﵁ (العشر آيات)؟", "options": ["تعلّم العلم والعمل، لا الوقوف على عدد الآيات", "ألّا يُحفظ أكثر من عشر آيات في المجلس", "تقديم التفسير على الحفظ مطلقًا", "وجوب القراءة على شيخ"], "correctIndex": 0, "explanation": "صرّح المؤلف: «المعنى المركزي في النص: تعلّم العلم والعمل، وليس الوقوف على عدد الآيات»."},
+ {"id": "q9", "sectionId": "s5", "question": "لماذا أخرج الإمام مالك أثر ابن عمر (ثماني سنين على البقرة) بعد ذكر الخوارج؟", "options": ["لأن ابن عمر ناظر الخوارج", "لترتيب الأحاديث زمنيًا", "لبيان فضل سورة البقرة فقط", "للمقارنة بين حالتين في تلقي القرآن"], "correctIndex": 3, "explanation": "الخوارج أكثروا التلاوة و«لا يجاوز حناجرهم»، وابن عمر مكث على سورة يتعلمها؛ فالشأن في كيفية التلقي لا كثرة التلاوة."},
+ {"id": "q10", "sectionId": "s6", "question": "أيّ مجالات تعظيم الوحي معناه: أن يكون تعظيمك للأحكام والأخبار بقدر ما عظّمها الله ورسوله ﷺ؟", "options": ["تعظيم الله تعالى", "التعظيم المجمل للوحي", "التعظيم التفصيلي لما عظّمته الشريعة", "تعظيم العلماء"], "correctIndex": 2, "explanation": "الشريعة «لم تعطِ كل ما جاء فيها درجة واحدة من التعظيم»، والفقه أن يوافق تعظيمُك مراتبَها."},
+ {"id": "q11", "sectionId": "s6", "question": "رجل يمتثل الأوامر بانتظام لكنه لا يجد في قلبه من التعظيم الخاص لها ما يكفي. في أي الأصناف يقع؟", "options": ["الصنف الأول", "الصنف الثاني", "الصنف الثالث", "لا يدخل في الأصناف"], "correctIndex": 1, "explanation": "الثاني: «يمتثل لأوامر الشريعة، ولا يكون في قلبه من التعظيم الخاص لها ما يكفي»."},
+ {"id": "q12", "sectionId": "s7", "question": "هل يلزم من تفسير «الفتنة» في ﴿أَن تُصِيبَهُمۡ فِتۡنَةٌ﴾ بالشرك أن تكون المخالفة بعينها كفرًا؟", "options": ["نعم، كل مخالفة للأمر النبوي كفر", "لا يلزم، لكن عقوبة المخالفة قد تكون بزيغ القلب", "الآية لا علاقة لها بالمخالفة", "الفتنة هنا المال والولد"], "correctIndex": 1, "explanation": "نصّ المؤلف: «لا يلزم منه أن تكون المخالفة بعينها كفرًا، لكنّ عقوبة مخالفة الأمر النبوي قد تكون بزيغ قلب المخالف»."},
+ {"id": "q13", "sectionId": "s7", "question": "في حديث المخزومية: ما الذي جعله المؤلف من أعظم أسباب الهلاك؟", "options": ["كثرة السرقة في المجتمع", "قلة الشفعاء عند ولي الأمر", "تعطيل حدود الله لاعتبارات شخصية أو اجتماعية", "ترك الخطبة على المنبر"], "correctIndex": 2, "explanation": "«إِنَّمَا أَهْلَكَ الَّذِينَ قَبْلَكُمْ أَنَّهُمْ كَانُوا إِذَا سَرَقَ فِيهِمُ الشَّرِيفُ تَرَكُوهُ»."}
+];
+
+/* ===== CARDS_DATA — بطاقات Anki (9-ط) · يولّدها ويصدّرها ilm-anki.js ===== */
+const CARDS_DATA = [
+ {"id": "c01", "sectionId": "s1", "level": 1, "anchor": "الباب الثاني: تلقي القرآن", "pattern": "calm", "q": "باب «تلقي القرآن على منهاج النبوة» في متن المنهاج: ما «الجذر» الذي يعالجه من جذور الإصلاح، وما الخلل الواقعي الذي جاء لإصلاحه؟", "a": "جذر تلقي القرآن. والخلل: تضخيم جانب العناية بالحفظ على حساب فهم القرآن وتدبره والاستهداء به.", "blocks": [{"type": "ans", "all": true, "core": true}], "marks": [{"t": "focus", "w": "الخلل الواقعي"}], "review": "", "src": "الإصلاح المطلوب في واقعنا اليوم هو"},
+ {"id": "c02", "sectionId": "s1", "level": 2, "anchor": "قراءة آيات باب التلقي", "pattern": "calm", "q": "كيف ينبغي أن تُقرأ آيات وأحاديث باب «تلقي القرآن» حتى يتحقق بها الإصلاح؟", "a": "يُنظر عند قراءتها في الواقع، ثم يكون الإصلاح بحسب ما جاء في هذه الآيات والأحاديث.", "blocks": [{"type": "ans", "all": true, "core": true}], "marks": [{"t": "focus", "w": "كيف"}], "review": "", "src": "فعند قراءتها ينبغي أن ينظر في الواقع"},
+ {"id": "c03", "sectionId": "s2", "level": 3, "anchor": "ص ٢٩", "pattern": "quran", "q": "﴿كِتَٰبٌ أَنزَلۡنَٰهُ إِلَيۡكَ مُبَٰرَكٞ لِّيَدَّبَّرُوٓاْ ءَايَٰتِهِۦ وَلِيَتَذَكَّرَ أُوْلُواْ ٱلۡأَلۡبَٰبِ﴾ [ص: ٢٩]\nما المقصدان المذكوران فيها، وما العلاقة بينهما؟", "a": "التدبر والتذكّر. فالتدبر هو وسيلة التعامل الصحيحة مع القرآن، وهو الطريق للوصول إلى مقصد التذكّر، أي: الاتعاظ.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [{"t": "focus", "w": "العلاقة"}], "review": "", "src": "في هذه الآية يُبيّن اللهُ تعالى أنّه أنزل"},
+ {"id": "c04", "sectionId": "s2", "level": 1, "anchor": "مقياس التلقي الصحيح", "pattern": "calm", "q": "ما «المقياس» الذي يُعرف به أن الإنسان يتلقى القرآن تلقيًا صحيحًا كما أراد الله تعالى، وما دلالة غيابه في الغالب؟", "a": "زيادة الإيمان بالقرآن. فإن كان تلقيه في حالته الغالبة لا يؤدي إلى زيادة الإيمان دلّ ذلك على نقص وإشكال في طبيعة التلقي.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [{"t": "focus", "w": "المقياس"}], "review": "", "src": "المؤمنون حقًّا يُحسنون تلقي القرآن والتعامل معه"},
+ {"id": "c05", "sectionId": "s2", "level": 3, "anchor": "الأنفال ٢ · التوبة ١٢٤", "pattern": "quran", "q": "﴿إِنَّمَا ٱلۡمُؤۡمِنُونَ ٱلَّذِينَ إِذَا ذُكِرَ ٱللَّهُ وَجِلَتۡ قُلُوبُهُمۡ وَإِذَا تُلِيَتۡ عَلَيۡهِمۡ ءَايَٰتُهُۥ زَادَتۡهُمۡ إِيمَٰنٗا﴾ مع ﴿فَأَمَّا ٱلَّذِينَ ءَامَنُواْ فَزَادَتۡهُمۡ إِيمَٰنٗا﴾\nعلامَ تدل الآيتان من أثر سور القرآن؟", "a": "أن من أعظم ما تحققه سور القرآن: «زيادة الإيمان».", "blocks": [{"type": "ans", "all": true, "core": true}], "marks": [{"t": "focus", "w": "ما أثر"}], "review": "", "src": "في هاتين الآيتين دلالة على أن من أعظم"},
+ {"id": "c06", "sectionId": "s2", "level": 2, "anchor": "«وَجِلَتۡ» في الأنفال ٢", "pattern": "calm", "q": "ما معنى «وَجِلَتْ» في قوله تعالى: ﴿إِذَا ذُكِرَ ٱللَّهُ وَجِلَتۡ قُلُوبُهُمۡ﴾؟", "a": "فزعت، ورقّت، وخافت.", "blocks": [{"type": "def", "all": true, "core": true}], "marks": [{"t": "focus", "w": "معنى"}], "review": "", "src": "وجلت: فزعت، ورقّت، وخافت"},
+ {"id": "c07", "sectionId": "s2", "level": 3, "anchor": "القمر ٢٢", "pattern": "quran", "q": "﴿وَلَقَدۡ يَسَّرۡنَا ٱلۡقُرۡءَانَ لِلذِّكۡرِ فَهَلۡ مِن مُّدَّكِرٖ﴾\nما المقصود بـ«الذكر» فيها، وما وصف التلقي الذي يقود إليه؟", "a": "التذكر والاعتبار والاتعاظ. والتلقي الذي يقود إلى التذكر تلقٍّ بطريقة توافق مقاصد القرآن التي نزل لأجلها.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [{"t": "focus", "w": "الذكر"}], "review": "", "src": "والذكر المقصود هنا هو: التذكر والاعتبار والاتعاظ"},
+ {"id": "c08", "sectionId": "s2", "level": 6, "anchor": "قول الطبري في «للذكر»", "pattern": "calm", "q": "بماذا فسّر الإمام الطبري قوله تعالى: ﴿يَسَّرۡنَا ٱلۡقُرۡءَانَ لِلذِّكۡرِ﴾؟", "a": "«للذكر: لمن أراد أن يتذكر، ويعتبر، ويتعظ».", "blocks": [{"type": "ans", "all": true, "core": true}], "marks": [{"t": "focus", "w": "الطبري"}], "review": "", "src": "كما قال الإمام الطبري ﵀: «للذكر: لمن"},
+ {"id": "c09", "sectionId": "s2", "level": 3, "anchor": "الزمر ٢٣", "pattern": "quran", "q": "﴿تَقۡشَعِرُّ مِنۡهُ جُلُودُ ٱلَّذِينَ يَخۡشَوۡنَ رَبَّهُمۡ ثُمَّ تَلِينُ جُلُودُهُمۡ وَقُلُوبُهُمۡ إِلَىٰ ذِكۡرِ ٱللَّهِ﴾\nما صورة التفاعل الإيماني فيها، وعلامَ تدل إذا حصلت للقارئ؟", "a": "«تقشعر الجلود»، وهي نتيجة لزيادة الإيمان. فإذا أحدث القرآن في القارئ خشوعًا دلّ على أنه يتلقى القرآن تلقيًا يزداد إيمانًا به.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "في الآية ذكر صورة من صور التفاعل الإيماني"},
+ {"id": "c10", "sectionId": "s2", "level": 2, "anchor": "«متشابهًا» و«مثاني» في الزمر ٢٣", "pattern": "compare", "q": "﴿كِتَٰبٗا مُّتَشَٰبِهٗا مَّثَانِيَ﴾: ما الفرق بين معنى «مُتَشَٰبِهٗا» ومعنى «مَّثَانِيَ»؟", "a": "متشابهًا: يشبه بعضه بعضًا، دون اختلاف وتضاد. ومثاني: تُثَنّى فيه الأنباء، والقصص، وذِكر الثواب والعقاب.", "blocks": [{"type": "cols", "parts": [{"s": "متشابهًا: يشبه", "e": "اختلاف وتضاد."}, {"s": "ومثاني: تُثَنّى", "e": "الثواب والعقاب."}]}], "marks": [{"t": "focus", "w": "الفرق"}], "review": "", "src": "كتابًا متشابهًا: يشبه بعضه بعضًا، دون"},
+ {"id": "c11", "sectionId": "s2", "level": 3, "anchor": "الحديد ١٦", "pattern": "quran", "q": "﴿۞أَلَمۡ يَأۡنِ لِلَّذِينَ ءَامَنُوٓاْ أَن تَخۡشَعَ قُلُوبُهُمۡ لِذِكۡرِ ٱللَّهِ﴾\nما الذي ينبغي أن يتحقق من قراءة القرآن بدلالتها، وإلامَ يرجع؟", "a": "«خشوع القلب». وهو راجع إلى زيادة الإيمان؛ فإن من أهم صور زيادة الإيمان: الخشوع.", "blocks": [{"type": "ans", "all": true, "core": true}], "marks": [], "review": "", "src": "في الآية دلالة على أن «خشوع القلب»"},
+ {"id": "c12", "sectionId": "s3", "level": 3, "anchor": "الأنبياء ١٠٦", "pattern": "quran", "q": "﴿إِنَّ فِي هَٰذَا لَبَلَٰغٗا لِّقَوۡمٍ عَٰبِدِينَ﴾\nما مقصد القرآن الذي تبيّنه، وما معنى «البلاغ» عند ابن كثير؟", "a": "«حصول الكفاية والاستغناء». والبلاغ عند ابن كثير: المنفعة والكفاية لقوم عابدين.", "blocks": [{"type": "ans", "all": true, "core": true}], "marks": [{"t": "focus", "w": "مقصد"}], "review": "", "src": "في الآية تبيين لمقصد من مقاصد القرآن"},
+ {"id": "c13", "sectionId": "s3", "level": 4, "anchor": "الاستغناء بالقرآن والسنة", "pattern": "calm", "q": "تقرير أن في القرآن «الكفاية والاستغناء» لبيان المنهج الصحيح: هل يعني أن سنة النبي ﷺ ليست كذلك؟", "a": "لا؛ وإنما يعني أن القرآن هو الأصل.", "blocks": [{"type": "ans", "all": true, "core": true}], "marks": [{"t": "focus", "w": "هل يعني"}], "review": "", "src": "وهذا لا يعني أن سنة النبيّ ﷺ ليست"},
+ {"id": "c14", "sectionId": "s3", "level": 2, "anchor": "شرط الوصول إلى مقصد الكفاية", "pattern": "calm", "q": "متى يصل الإنسان إلى مقصد «الكفاية والاستغناء» بالقرآن؟", "a": "إذا كان يتعامل مع القرآن تعامل مَن يستحضر ربّانيته، وعظمته، وشموليته، واحتياج الإنسان للعلم من خلاله.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [{"t": "focus", "w": "متى"}], "review": "", "src": "وهذا المقصد لا يصل إليه الإنسان إلا"},
+ {"id": "c15", "sectionId": "s3", "level": 3, "anchor": "الإسراء ٩ · الجن ١–٢", "pattern": "quran", "q": "﴿إِنَّ هَٰذَا ٱلۡقُرۡءَانَ يَهۡدِي لِلَّتِي هِيَ أَقۡوَمُ﴾ و﴿فَقَالُوٓاْ إِنَّا سَمِعۡنَا قُرۡءَانًا عَجَبٗا ۝ يَهۡدِيٓ إِلَى ٱلرُّشۡدِ﴾\nما مقصد تلقي القرآن المذكور فيهما؟", "a": "«الاهتداء به».", "blocks": [{"type": "ans", "all": true, "core": true}], "marks": [{"t": "focus", "w": "مقصد"}], "review": "", "src": "في هاتين الآيتين ذكر لمقصد من مقاصد"},
+ {"id": "c16", "sectionId": "s3", "level": 4, "anchor": "موقف الجن من القرآن", "pattern": "quran", "q": "﴿إِنَّا سَمِعۡنَا قُرۡءَانًا عَجَبٗا ۝ يَهۡدِيٓ إِلَى ٱلرُّشۡدِ فَـَٔامَنَّا بِهِۦ﴾\nلماذا كان موقف الجن من القرآن عجيبًا؟", "a": "لأنهم أدركوا الغاية التي ينبغي أن تُحقق من خلال القرآن.", "blocks": [{"type": "ans", "all": true, "core": true}], "marks": [{"t": "focus", "w": "لماذا"}], "review": "", "src": "موقف الجنّ من القرآن في الآية الثانية"},
+ {"id": "c17", "sectionId": "s3", "level": 3, "anchor": "الإسراء ٩ ومرجعية الوحي", "pattern": "quran", "q": "﴿إِنَّ هَٰذَا ٱلۡقُرۡءَانَ يَهۡدِي لِلَّتِي هِيَ أَقۡوَمُ﴾\nعلى أي أمرين دلّت غير مقصد الاهتداء؟", "a": "على الاستغناء بكتاب الله تعالى، وعلى عظمة مرجعية الوحي. لأن من أعظم صور التعظيم إدراك الجوانب العظيمة في هذا الكتاب، والتي منها أنه يهدي للتي هي أقوم.", "blocks": [{"type": "ans", "s": "على الاستغناء", "e": "مرجعية الوحي.", "core": true}, {"type": "wajh", "s": "لأن من", "e": "هي أقوم."}], "marks": [{"t": "focus", "w": "أمرين"}], "review": "", "src": "في الآية الأولى دلالة على الاستغناء بكتاب"},
+ {"id": "c18", "sectionId": "s3", "level": 2, "anchor": "عين المستهدي", "pattern": "compare", "q": "ما الفرق بين متلقٍّ أدرك أن القرآن جاء للهداية، ومتلقٍّ لا يدرك هذا المعنى؟", "a": "الأول يتلقاه بعين المستهدي. والثاني قد يقرأ القرآن لمقاصد أخرى غير مقصد طلب الهداية منه.", "blocks": [{"type": "cols", "parts": [{"s": "الأول يتلقاه", "e": "بعين المستهدي."}, {"s": "والثاني قد", "e": "الهداية منه."}]}], "marks": [{"t": "focus", "w": "الفرق"}], "review": "", "src": "إدراك أن القرآن جاء للهداية يجعل المتلقي"},
+ {"id": "c19", "sectionId": "s3", "level": 1, "anchor": "آل عمران ٧٩", "pattern": "quran", "q": "﴿وَلَٰكِن كُونُواْ رَبَّـٰنِيِّـۧنَ بِمَا كُنتُمۡ تُعَلِّمُونَ ٱلۡكِتَٰبَ وَبِمَا كُنتُمۡ تَدۡرُسُونَ﴾\nما الغاية وما الوسيلة المذكورتان فيها؟", "a": "الغاية: «الربانية»، والوسيلة: «تعلّم القرآن وتعليمه». فالوصول للربانية يكون من خلال وسيلة تعلّم القرآن وتعليمه.", "blocks": [{"type": "ans", "all": true, "core": true}], "marks": [{"t": "focus", "w": "الغاية"}], "review": "", "src": "في الآية ذكر لوسيلة وغاية، أما الغاية"},
+ {"id": "c20", "sectionId": "s3", "level": 1, "anchor": "الفرقان ٥٢", "pattern": "quran", "q": "﴿فَلَا تُطِعِ ٱلۡكَٰفِرِينَ وَجَٰهِدۡهُم بِهِۦ جِهَادٗا كَبِيرٗا﴾\nما مقصد القرآن الذي تدل عليه، ولمن الخطاب فيها؟", "a": "«مدافعة الباطل من خلاله». والخطاب ليس خاصًا بالنبي ﷺ، وإنما هو له ولورثته من بعده بأن يُجاهدوا الكفار بالقرآن.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [{"t": "focus", "w": "لمن"}], "review": "", "src": "في الآية دلالة على أنّ من مقاصد"},
+ {"id": "c21", "sectionId": "s3", "level": 2, "anchor": "عينا المصلح", "pattern": "compare", "q": "استنباطًا من ﴿وَجَٰهِدۡهُم بِهِۦ﴾: ما «العينان» اللتان ينظر بهما المصلح إلى الواقع، وما ثمرة النظر بهما؟", "a": "عين لدائرة الحق وبنائه وحملته. وعين أخرى لدائرة الفساد والمشكلات وحملة الباطل ومضامينه. والنظر بهاتين العينين يجعل المصلح يسير بطريقة متزنة.", "blocks": [{"type": "cols", "parts": [{"s": "عين لدائرة", "e": "وبنائه وحملته."}, {"s": "وعين أخرى", "e": "الباطل ومضامينه."}]}, {"type": "alert", "s": "والنظر بهاتين", "e": "بطريقة متزنة."}], "marks": [{"t": "focus", "w": "العينان"}], "review": "", "src": "«عين لدائرة الحق وبنائه وحملته»، فالمصلح"},
+ {"id": "c22", "sectionId": "s3", "level": 3, "anchor": "يونس ٥٧", "pattern": "quran", "q": "﴿قَدۡ جَآءَتۡكُم مَّوۡعِظَةٞ مِّن رَّبِّكُمۡ وَشِفَآءٞ لِّمَا فِي ٱلصُّدُورِ﴾\nما الأصل في «الشفاء» المذكور فيها؟", "a": "الشفاء المعنوي لما يكون في الصدور من التساؤلات والشكوك، والافتقار الفطري، ونحو ذلك مما يقع في النفوس.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [{"t": "focus", "w": "الأصل"}], "review": "", "src": "الأصل في الشفاء المذكور بالآية أنه"},
+ {"id": "c23", "sectionId": "s3", "level": 2, "anchor": "ما يعين على مقصد الشفاء", "pattern": "calm", "q": "ما أعظم ما يُعين على تحقيق مقصد «الشفاء» بالقرآن؟", "a": "أن يُقرأ القرآن بعين المستهدي. فالهداية كلمة عامة تندرج تحتها صور، ومن هذه الصور: الهداية بشفاء التساؤلات والشكوك.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [{"t": "focus", "w": "يُعين"}], "review": "", "src": "من أعظم ما يُعين على تحقيق مقصد"},
+ {"id": "c24", "sectionId": "s4", "level": 2, "anchor": "منهجية الاستقراء", "pattern": "calm", "q": "ما المنهجية المهمة في فقه الدين كله التي نبّه عليها المؤلف عند الانتقال من آيات الباب إلى أحاديثه؟", "a": "استقراء ما ورد في الموضوعات الشرعية من الكتاب والسنة؛ فهو التعامل الأكمل مع الموضوعات، والأحاديث تأتي لتكمل وتعزز وتبيّن ما في الآيات.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [{"t": "focus", "w": "المنهجية"}], "review": "", "src": "تأتي الأحاديث لتكمل وتعزز وتبيّن ما سبق"},
+ {"id": "c25", "sectionId": "s4", "level": 3, "anchor": "أثر ابن عمر: «لقد عشنا برهة من دهرنا»", "pattern": "compare", "q": "أثر ابن عمر ﵄: «لَقَدْ عِشْنَا بُرْهَةً مِنْ دَهْرِنَا وَأَحَدُنَا يُؤْتَى الْإِيمَانَ قَبْلَ الْقُرْآنِ...» — ما الصورتان اللتان قابل بينهما في تلقي القرآن؟", "a": "صورة زمن النبي ﷺ: يُؤتى أحدهم الإيمان قبل القرآن، فيتعلمون حلال السورة وحرامها وآمرها وزاجرها. وصورة بعده: يُؤتى أحدهم القرآن قبل الإيمان، فيقرؤه لا يدري آمره ولا زاجره، وكان ابن عمر ينتقدها.", "blocks": [{"type": "cols", "parts": [{"s": "صورة زمن", "e": "وآمرها وزاجرها."}, {"s": "وصورة بعده:", "e": "عمر ينتقدها."}]}], "marks": [{"t": "focus", "w": "الصورتان"}], "review": "", "src": "يذكر عبد الله بن عمر ﵄ صورتين"},
+ {"id": "c26", "sectionId": "s4", "level": 1, "anchor": "النتيجة العملية من أثر ابن عمر", "pattern": "calm", "q": "ما النتيجة العملية التي استخرجها المؤلف من أثر ابن عمر في تلقي القرآن «قبل الإيمان»؟", "a": "أن دروس الآخرة والتعرف على الله وأعمال القلوب من أوائل ما يتلقاه طلاب حلقات التحفيظ. لأن القرآن ينبغي أن يُدخل عليه بقلوب تعظمه وتقدّره قد بُني فيها الإيمان.", "blocks": [{"type": "ans", "s": "أن دروس", "e": "حلقات التحفيظ.", "core": true}, {"type": "ans", "s": "لأن القرآن", "e": "فيها الإيمان.", "nolabel": true}], "marks": [{"t": "focus", "w": "النتيجة العملية"}], "review": "", "src": "ومن هنا نخرج بنتيجة عملية، وهي: أن"},
+ {"id": "c27", "sectionId": "s4", "level": 2, "anchor": "«نثر الدقل»", "pattern": "calm", "q": "ما معنى «الدقل» في قول ابن عمر عمّن يقرأ القرآن قبل الإيمان: «فَيَنْثُرُهُ نَثْرَ الدَّقَلِ»؟", "a": "رديء التمر ويابسه.", "blocks": [{"type": "def", "all": true, "core": true}], "marks": [{"t": "focus", "w": "الدقل"}], "review": "", "src": "الدقل: رديء التمر ويابسه"},
+ {"id": "c28", "sectionId": "s4", "level": 3, "anchor": "أثر جندب: «فتعلمنا الإيمان قبل أن نتعلم القرآن»", "pattern": "quran", "q": "أثر جندب ﵁: «فَتَعَلَّمْنَا الْإِيمَانَ قَبْلَ أَنْ نَتَعَلَّمَ الْقُرْآنَ، ثُمَّ تَعَلَّمْنَا الْقُرْآنَ فَازْدَدْنَا بِهِ إِيمَانًا» — ما الذي يؤكده، وماذا يفيد عن النبي ﷺ؟", "a": "يؤكد آيتي الأنفال ٢ والتوبة ١٢٤ في زيادة الإيمان بالقرآن. ويفيد أن النبي ﷺ كان يُشرف على قضية تلقي القرآن المحققة لزيادة الإيمان.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "هذا الأثر يؤكّد ما سبق ذكره من"},
+ {"id": "c29", "sectionId": "s4", "level": 3, "anchor": "حديث «يتلون كتاب الله ويتدارسونه بينهم»", "pattern": "quran", "q": "قوله ﷺ: «مَا اجْتَمَعَ قَوْمٌ فِي بَيْتٍ مِنْ بُيُوتِ اللهِ يَتْلُونَ كِتَابَ اللهِ وَيَتَدَارَسُونَهُ بَيْنَهُمْ...» — ما القضية التي يؤكدها، وعند أي شق لا يُوقف؟", "a": "يؤكد قضية مدارسة القرآن وتلاوته. فلا يُوقف عند شق التلاوة، وإنما يُشفع بشق التدارس.", "blocks": [{"type": "ans", "all": true, "core": true}], "marks": [{"t": "focus", "w": "عند أي شق"}], "review": "", "src": "في هذا الحديث تأكيد على قضية مدارسة"},
+ {"id": "c30", "sectionId": "s4", "level": 3, "anchor": "حديث أنس في «القرّاء»", "pattern": "quran", "q": "حديث أنس ﵁ في السبعين من الأنصار «يُقَالُ لَهُمُ: الْقُرَّاءُ... يَقْرَؤُونَ الْقُرْآنَ وَيَتَدَارَسُونَ بِاللَّيْلِ يَتَعَلَّمُونَ» — ما الذي أعطاهم هذا اللقب، وما الأمر الأساسي في تعاملهم مع القرآن؟", "a": "ارتباطهم الدائم بالقرآن حتى صار عنصرًا من عناصر هويتهم. والأمر الأساسي في تعاملهم معه: التدارس والتعلم.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [{"t": "focus", "w": "ما الذي أعطاهم"}], "review": "", "src": "في هذا الحديث يصف أنس بن مالك"},
+ {"id": "c31", "sectionId": "s4", "level": 2, "anchor": "أعظم التصحيح في تلقي القرآن", "pattern": "calm", "q": "ما الذي عدّه المؤلف «من أعظم ما يكون من التصحيح في تلقي القرآن» استنباطًا من حال القرّاء؟", "a": "إحياء مجالس تدبر القرآن والاستهداء به وتعلّمه.", "blocks": [{"type": "ans", "all": true, "core": true}], "marks": [], "review": "", "src": "لذلك فإن إحياء مجالس تدبر القرآن والاستهداء"},
+ {"id": "c32", "sectionId": "s5", "level": 1, "anchor": "حديثا العشر آيات", "pattern": "quran", "q": "«كَانُوا يَقْتَرِئُونَ مِنْ رَسُولِ اللهِ ﷺ عَشْرَ آيَاتٍ، فَلَا يَأْخُذُونَ فِي الْعَشْرِ الْأُخْرَى حَتَّى يَعْلَمُوا مَا فِي هَذِهِ مِنَ الْعِلْمِ وَالْعَمَلِ» — ما المعنى المركزي في هذا النص؟", "a": "تعلّم العلم والعمل، وليس الوقوف على عدد الآيات.", "blocks": [{"type": "ans", "all": true, "core": true}], "marks": [{"t": "focus", "w": "المعنى المركزي"}], "review": "", "src": "هذان الحديثان واضحان ومركزيان في كيفية تلقي"},
+ {"id": "c33", "sectionId": "s5", "level": 4, "anchor": "أثر ابن عمر بعد حديث الخوارج", "pattern": "calm", "q": "أثر ابن عمر ﵄ أنه «مَكَثَ عَلَى سُورَةِ الْبَقَرَةِ ثَمَانِيَ سِنِينَ؛ يَتَعَلَّمُهَا»: لماذا كان لإخراج الإمام مالك له بعد حديث الخوارج فقه كبير؟", "a": "لأن فيه مقارنة بين حالتين في تلقي القرآن. فالخوارج أكثروا من تلاوته ولم يأخذوه على ما ينبغي، فالشأن ليس في كثرة التلاوة وإنما في كيفية التلقي ومعرفة غاياته.", "blocks": [{"type": "ans", "s": "لأن فيه", "e": "تلقي القرآن.", "core": true}, {"type": "ans", "s": "فالخوارج أكثروا", "e": "ومعرفة غاياته.", "nolabel": true}], "marks": [{"t": "focus", "w": "لماذا"}], "review": "", "src": "هذا النص أخرجه الإمام مالك بعد ذكر"},
+ {"id": "c34", "sectionId": "s5", "level": 3, "anchor": "«يُعَدُّ فِينَا عَظِيمًا»", "pattern": "quran", "q": "قول أنس ﵁: «وَكَانَ الرَّجُلُ إِذَا قَرَأَ الْبَقَرَةَ وَآلَ عِمْرَانَ يُعَدُّ فِينَا عَظِيمًا» — لماذا كان يُعدّ عظيمًا؟", "a": "لأن أخذه لهما لم يكن مجرد حفظ، بل تلقٍّ يتضمن أخذ الأداء والعلم والعمل الذي فيهما.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [{"t": "focus", "w": "لماذا"}], "review": "", "src": "هذا التلقي لهاتين السورتين الذي يدلّ"},
+ {"id": "c35", "sectionId": "s5", "level": 3, "anchor": "حديث حذيفة: نزول الأمانة", "pattern": "quran", "q": "حديث حذيفة ﵁: «أَنَّ الْأَمَانَةَ نَزَلَتْ فِي جَذْرِ قُلُوبِ الرِّجَالِ...» — أين نزلت الأمانة، وماذا كان بعدها؟", "a": "نزلت في جذر قلوب الرجال، أي: في أصلها. ثم نزل القرآن فعلموا من القرآن وعلموا من السنة.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "أَنَّ الْأَمَانَةَ نَزَلَتْ فِي جَذْرِ قُلُوبِ"},
+ {"id": "c36", "sectionId": "s5", "level": 5, "anchor": "حديث حذيفة: رفع الأمانة", "pattern": "compare", "q": "في حديث حذيفة ﵁ عن رفع الأمانة: بماذا شُبّه أثرها بعد القبضة الأولى، وبماذا بعد الثانية؟", "a": "بعد الأولى: يظل أثرها مثل «الوكت»، وهو الأثر في الشيء كالنقطة من غير لونه. وبعد الثانية: مثل «المجل»، وهو النفاخات المملوءة ماء، كجمر دحرجته على رجلك فنفط.", "blocks": [{"type": "cols", "parts": [{"s": "بعد الأولى:", "e": "غير لونه."}, {"s": "وبعد الثانية:", "e": "رجلك فنفط."}]}], "marks": [{"t": "focus", "w": "وبماذا بعد الثانية"}], "review": "", "src": "يَنَامُ الرَّجُلُ النَّوْمَةَ فَتُقْبَضُ الْأَمَانَةُ مِنْ قَلْبِهِ"},
+ {"id": "c37", "sectionId": "s6", "level": 1, "anchor": "الباب الثالث والباب الأول", "pattern": "calm", "q": "ما وجه الترابط بين «باب تعظيم حدود الله» والباب الأول (مرجعية الوحي)؟", "a": "أن «التعظيم» من الأمور المطلوبة منّا تجاه مرجعية الوحي، فهذا الباب متصل بمرجعية الوحي من جهة تعظيمها.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [{"t": "focus", "w": "الترابط"}], "review": "", "src": "هناك ترابط بين هذا الباب والباب الأول"},
+ {"id": "c38", "sectionId": "s6", "level": 1, "anchor": "مجالات تعظيم الوحي", "pattern": "method", "q": "ما مجالات تعظيم الوحي الثلاثة؟", "a": "تعظيم الله تعالى. التعظيم المجمل للوحي. التعظيم التفصيلي لما عظّمته الشريعة.", "blocks": [{"type": "steps", "seq": false, "items": [{"s": "تعظيم الله", "e": "الله تعالى."}, {"s": "التعظيم المجمل", "e": "المجمل للوحي."}, {"s": "التعظيم التفصيلي", "e": "عظّمته الشريعة."}]}], "marks": [{"t": "focus", "w": "الثلاثة"}], "review": "", "src": "مجالات تعظيم الوحي"},
+ {"id": "c39", "sectionId": "s6", "level": 2, "anchor": "تعظيم الوحي فرع عن تعظيم الله", "pattern": "calm", "q": "لماذا كان تعظيم الوحي فرعًا عن تعظيم الله تعالى؟", "a": "لأن الوحي إنما يُعظَّم لأنه من عند الله تبارك وتعالى الذي أنزله.", "blocks": [{"type": "ans", "all": true, "core": true}], "marks": [{"t": "focus", "w": "لماذا"}], "review": "", "src": "أنّ الوحي إنّما يُعظّم لأنّه من عند"},
+ {"id": "c40", "sectionId": "s6", "level": 2, "anchor": "التعظيم التفصيلي", "pattern": "calm", "q": "ما المراد بـ«التعظيم التفصيلي لما عظّمته الشريعة»، وما الذي جعله المؤلف من أعظم الفقه في الدين؟", "a": "أن يُعظّم الإنسان ما عظّمته الشريعة على مراتبه ودرجاته. ومن أعظم الفقه: أن يكون تعظيم الإنسان للأحكام والأخبار الشرعية بقدر ما عظّمها الله ورسوله ﷺ.", "blocks": [{"type": "def", "all": true, "core": false}], "marks": [{"t": "focus", "w": "المراد"}], "review": "", "src": "التعظيم التفصيلي لما عظّمته الشريعة، والمراد بذلك"},
+ {"id": "c41", "sectionId": "s6", "level": 2, "anchor": "أصناف الناس مع الشريعة", "pattern": "method", "q": "ما أصناف الناس الثلاثة في التعامل مع الشريعة؟", "a": "صنف يمتثل لأوامرها ويعظّمها تعظيمًا قلبيًا خاصًّا. وصنف يمتثل لأوامرها ولا يكون في قلبه من التعظيم الخاص لها ما يكفي. وصنف لا يمتثلها ولا يعظّمها.", "blocks": [{"type": "steps", "seq": false, "items": [{"s": "صنف يمتثل", "e": "قلبيًا خاصًّا."}, {"s": "وصنف يمتثل", "e": "ما يكفي."}, {"s": "وصنف لا", "e": "ولا يعظّمها."}]}], "marks": [{"t": "focus", "w": "الثلاثة"}], "review": "", "src": "أصناف الناس في التعامل مع الشريعة"},
+ {"id": "c42", "sectionId": "s7", "level": 3, "anchor": "الأنفال ٢ في باب التعظيم", "pattern": "quran", "q": "﴿ٱلَّذِينَ إِذَا ذُكِرَ ٱللَّهُ وَجِلَتۡ قُلُوبُهُمۡ﴾\nما العلامة الظاهرة للمؤمنين فيها، وما وجه علاقتها بباب تعظيم حدود الله؟", "a": "أنهم إذا ذُكّروا بالله تذكروا، وإذا خُوّفوا بالله خافوا. ووجَل القلب من الله يقتضي تعظيم حدوده، وبهذا تظهر علاقة الآية بالباب.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [{"t": "focus", "w": "علاقتها"}], "review": "", "src": "من أظهر علامات المؤمنين أنّهم إذا ذُكّروا"},
+ {"id": "c43", "sectionId": "s7", "level": 2, "anchor": "بوابة الوجل من الله", "pattern": "method", "q": "ما البوابة الأساسية للوصول إلى درجة الوجل من الله إذا ذُكر، وما سبيلاها؟", "a": "العلم بالله. وله سبيلان: تدبر كتاب الله تعالى، وتدبر مخلوقات الله تعالى.", "blocks": [{"type": "rule", "all": true, "core": true}], "marks": [{"t": "focus", "w": "البوابة"}], "review": "", "src": "البوابة الأساسية للوصول إلى درجة الوجل"},
+ {"id": "c44", "sectionId": "s7", "level": 3, "anchor": "الحج ٣٢", "pattern": "quran", "q": "﴿ذَٰلِكَۖ وَمَن يُعَظِّمۡ شَعَـٰٓئِرَ ٱللَّهِ فَإِنَّهَا مِن تَقۡوَى ٱلۡقُلُوبِ﴾\nما علاقة تعظيم الشعائر بالتقوى فيها؟", "a": "تعظيم شعائر الله نتيجة للتقوى الكامنة في نفس المؤمن.", "blocks": [{"type": "ans", "all": true, "core": true}], "marks": [{"t": "focus", "w": "علاقة"}], "review": "", "src": "تعظيم شعائر الله نتيجة للتقوى الكامنة"},
+ {"id": "c45", "sectionId": "s7", "level": 4, "anchor": "معنى «الشعائر» عند المفسرين", "pattern": "compare", "q": "ما القولان في معنى «الشعائر» في ﴿وَمَن يُعَظِّمۡ شَعَـٰٓئِرَ ٱللَّهِ﴾؟", "a": "منهم من يحصرها في شعائر الحج. ومنهم من يعمّمها في الحج وغيره من أعلام الدين الظاهرة، كالشعائر المكانية والزمانية.", "blocks": [{"type": "cols", "parts": [{"s": "منهم من", "e": "شعائر الحج."}, {"s": "ومنهم من", "e": "المكانية والزمانية."}]}], "marks": [{"t": "focus", "w": "القولان"}], "review": "", "src": "عندما يتناول المفسرون معنى «الشعائر» فإن"},
+ {"id": "c46", "sectionId": "s7", "level": 4, "anchor": "النور ٦٣: الفتنة والمخالفة", "pattern": "quran", "q": "﴿فَلۡيَحۡذَرِ ٱلَّذِينَ يُخَالِفُونَ عَنۡ أَمۡرِهِۦٓ أَن تُصِيبَهُمۡ فِتۡنَةٌ﴾\nفُسّرت «الفتنة» بالشرك: فهل يلزم أن تكون المخالفة بعينها كفرًا؟", "a": "لا يلزم ذلك. لكنّ عقوبة مخالفة الأمر النبوي قد تكون بزيغ قلب المُخالف.", "blocks": [{"type": "ans", "all": true, "core": true}], "marks": [{"t": "focus", "w": "فهل يلزم"}], "review": "", "src": "فسّر العلماء «الفتنة» في الآية بأنها الشرك"},
+ {"id": "c47", "sectionId": "s7", "level": 3, "anchor": "حديث المخزومية: الحدود", "pattern": "quran", "q": "حديث المخزومية: «إِنَّمَا أَهْلَكَ الَّذِينَ قَبْلَكُمْ أَنَّهُمْ كَانُوا إِذَا سَرَقَ فِيهِمُ الشَّرِيفُ تَرَكُوهُ...» — ما أعظم صور تعظيم ما نزل فيه حد، وما سبب الهلاك المذكور؟", "a": "أن يكون غير قابل للتعطيل بسبب الأنساب أو الاعتبارات الشخصية أو الاجتماعية. ومن أعظم أسباب الهلاك: تعطيل حدود الله لهذه الاعتبارات.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "من أعظم صور تعظيم ما نزَل فيه"},
+ {"id": "c48", "sectionId": "s7", "level": 2, "anchor": "الأسلوب النبوي في تعظيم الحدود", "pattern": "calm", "q": "ما أثر قول النبي ﷺ لأسامة: «أَتَشْفَعُ فِي حَدٍّ مِنْ حُدُودِ اللهِ؟» وصعوده المنبر، وما الذي يُستفاد منه تربويًا؟", "a": "يترك في نفوس الصحابة أثرًا في تعظيم حدود الله. وهذا ما ينبغي أن يكون في السياقات التربوية.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [{"t": "focus", "w": "ما أثر"}], "review": "", "src": "الأسلوب الذي استعمله النبي ﷺ في قوله"}
+];
+
+/* ===== أدوات ===== */
+const $=(s,c)=>(c||document).querySelector(s), $$=(s,c)=>[...(c||document).querySelectorAll(s)];
+const AR=n=>String(n).replace(/\d/g,d=>"٠١٢٣٤٥٦٧٨٩"[d]);
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const SEC_NAMES={"s1": "الباب الثاني: العنوان", "s2": "الباب الثاني: الآيات ١–٦", "s3": "الباب الثاني: الآيات ٧–١٢", "s4": "الباب الثاني: الأحاديث ١–٤", "s5": "الباب الثاني: الأحاديث ٥–٩", "s6": "الباب الثالث: العنوان", "s7": "الباب الثالث: الآيات والحديث الأول"};
+
+/* ===== الفهرس الجانبي (بعناصر div/a حتى لا يدخل في فهرسة الهايلايت) ===== */
+(function(){
+  const list=$("#toclist");
+  $$(".sec").forEach(sec=>{
+    const h2=$("h2",sec); if(!h2) return;
+    const box=document.createElement("div"); box.className="toc-i";
+    box.innerHTML='<a href="#'+sec.id+'">'+h2.textContent+'</a>';
+    const subs=$$("h3[id]",sec);
+    if(subs.length){
+      const sub=document.createElement("div"); sub.className="toc-sub";
+      subs.forEach(h=>{const a=document.createElement("a");a.href="#"+h.id;a.textContent=h.textContent;sub.appendChild(a)});
+      box.appendChild(sub);
+    }
+    list.appendChild(box);
+  });
+  const a=document.createElement("a"); a.href="#anki"; a.textContent="بطاقات المراجعة"; list.appendChild(a);
+})();
+
+/* ===== الأسئلة التفاعلية ===== */
+(function(){
+  $$(".quiz").forEach(box=>{
+    const sid=box.dataset.sec, qs=QUIZ_DATA.filter(q=>q.sectionId===sid), host=$(".qs",box);
+    host.innerHTML=qs.map(q=>'<div class="q" data-q="'+q.id+'"><div class="qt">'+q.question+'</div>'+
+      q.options.map((o,i)=>'<button class="opt" data-i="'+i+'">'+o+'</button>').join("")+
+      '<div class="expl" hidden></div></div>').join("");
+    $(".score",box).textContent="النتيجة: ٠ / "+AR(qs.length);
+  });
+  document.addEventListener("click",e=>{
+    const btn=e.target.closest(".opt"); if(!btn) return;
+    const qEl=btn.closest(".q"), box=btn.closest(".quiz");
+    const q=QUIZ_DATA.find(x=>x.id===qEl.dataset.q); if(!q) return;
+    const i=+btn.dataset.i, ok=i===q.correctIndex;
+    $$(".opt",qEl).forEach(b=>b.classList.remove("ok","no"));
+    btn.classList.add(ok?"ok":"no");
+    if(ok) $$(".opt",qEl)[q.correctIndex].classList.add("ok");
+    const ex=$(".expl",qEl); ex.hidden=false; ex.textContent=(ok?"صحيح. ":"غير صحيح. ")+q.explanation;
+    if(ok) qEl.dataset.done="1";
+    const qs=QUIZ_DATA.filter(x=>x.sectionId===box.dataset.sec);
+    $(".score",box).textContent="النتيجة: "+AR($$('.q[data-done="1"]',box).length)+" / "+AR(qs.length);
+  });
+})();
+
+/* ===== الهامش: فتح/طي على الشاشات الصغيرة، وإبراز على الكبيرة ===== */
+document.addEventListener("click",e=>{
+  const m=e.target.closest(".nmark"); if(!m) return;
+  const n=document.getElementById(m.dataset.n); if(!n) return;
+  if(window.matchMedia("(max-width:900px)").matches){ n.classList.toggle("open"); if(n.classList.contains("open")) n.scrollIntoView({block:"nearest"}); }
+  else { $$(".note.flash").forEach(x=>x.classList.remove("flash")); n.classList.add("flash"); n.scrollIntoView({block:"nearest"}); setTimeout(()=>n.classList.remove("flash"),1400); }
+});
+
+/* ===== شريط التنقل والتحكم ===== */
+(function(){
+  $("#jump").addEventListener("change",e=>{location.href=e.target.value});
+  const P="01.html", N="03.html";
+  if(P) $("#prev").addEventListener("click",()=>{location.href=P});
+  if(N) $("#next").addEventListener("click",()=>{location.href=N});
+  let fs=parseFloat(store.get("qw_fs")||"17.5");
+  const apply=()=>{document.documentElement.style.setProperty("--fs",fs+"px");store.set("qw_fs",fs)};
+  if(store.get("qw_fs")) apply();
+  $("#fsp").addEventListener("click",()=>{fs=Math.min(fs+1,24);apply()});
+  $("#fsm").addEventListener("click",()=>{fs=Math.max(fs-1,15);apply()});
+  const thm=$("#thm");
+  const setT=t=>{document.documentElement.setAttribute("data-theme",t);thm.textContent=t==="night"?"☀️":"🌙";store.set("qw_theme",t)};
+  setT(store.get("qw_theme")||"day");
+  thm.addEventListener("click",()=>setT(document.documentElement.getAttribute("data-theme")==="night"?"day":"night"));
+})();
+
+/* ===== شريط التقدم + تتبع الموضع + تظليل الفهرس ===== */
+(function(){
+  const QW_POS_KEY="qw_pos_02.html";
+  const bar=$("#prog"), links=$$("#toclist a"), secs=$$(".sec");
+  let t=0;
+  function onScroll(){
+    const h=document.documentElement.scrollHeight-window.innerHeight;
+    bar.style.width=(h>0?(window.scrollY/h)*100:0)+"%";
+    let cur=null; secs.forEach(s=>{ if(s.getBoundingClientRect().top<=120) cur=s.id });
+    links.forEach(a=>a.classList.toggle("on",cur&&a.getAttribute("href")==="#"+cur));
+    clearTimeout(t); t=setTimeout(()=>store.set(QW_POS_KEY,String(window.scrollY)),400);
+  }
+  window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
+  const y=parseInt(store.get(QW_POS_KEY)||"0",10);
+  if(y>200 && !location.hash) window.scrollTo(0,y);
+})();
+</script>
+
+<script type="module" src="../../../firebase-sync-manhaj.js"></script>
+<script src="../../../ilm-track.js"></script>
+<script src="../../../data.js"></script>
+<script src="../../../ilm-anki.js" data-lecture="02"></script>
+<script>
+/* ===== واجهة البطاقات: العرض والتصدير من ilm-anki.js وحدها (9-ص) ===== */
+(function(){
+  var filter='', idx=0, ak=document.getElementById('ak');
+  function view(){ return filter ? CARDS_DATA.filter(function(c){ return c.sectionId===filter; }) : CARDS_DATA; }
+  function render(){
+    var v=view(); if(!v.length) return;
+    if(idx>=v.length) idx=0; if(idx<0) idx=v.length-1;
+    var c=v[idx];
+    ak.classList.remove('on');
+    try{
+      document.getElementById('ak-deck').textContent='الرزمة: '+ILM_ANKI.deck(c)+' · '+ILM_ANKI.tags(c);
+      document.getElementById('ak-front').innerHTML=ILM_ANKI.front(c);
+      document.getElementById('ak-back').innerHTML=ILM_ANKI.back(c);
+    }catch(err){ document.getElementById('ak-front').textContent=err.message; }
+    document.getElementById('ak-counter').textContent=AR(idx+1)+' / '+AR(v.length);
+  }
+  function go(d){ idx+=d; render(); }
+  var fb=document.getElementById('filters');
+  function mk(key,label){
+    var b=document.createElement('button'); b.type='button'; b.textContent=label; b.dataset.f=key;
+    b.addEventListener('click',function(){ filter=key; idx=0; fb.querySelectorAll('button').forEach(function(x){ x.classList.toggle('on',x.dataset.f===key); }); render(); });
+    fb.appendChild(b); return b;
+  }
+  mk('','الكل ('+AR(CARDS_DATA.length)+')').classList.add('on');
+  Object.keys(SEC_NAMES).forEach(function(k){ var n=CARDS_DATA.filter(function(c){ return c.sectionId===k; }).length; if(n) mk(k,SEC_NAMES[k]+' ('+AR(n)+')'); });
+  ak.addEventListener('click',function(e){ if(e.target.closest('a')) return; ak.classList.toggle('on'); });
+  ak.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); ak.classList.toggle('on'); } });
+  document.getElementById('ak-next').addEventListener('click',function(){ go(1); });
+  document.getElementById('ak-prev').addEventListener('click',function(){ go(-1); });
+  document.getElementById('ak-dl').addEventListener('click',function(){ try{ ILM_ANKI.download(CARDS_DATA); }catch(err){ alert(err.message); } });
+  document.getElementById('cards-count').textContent='('+AR(CARDS_DATA.length)+' بطاقة)';
+  render();
+})();
+</script>
+<script src="../../../ilm-nav.js"></script>
+<script>
+(function(){
+  var box=document.getElementById('ilm-completion-box');
+  var cb=box?box.querySelector('input[data-lecture-id]'):null;
+  if(!cb) return;
+  var lid=cb.getAttribute('data-lecture-id');
+  function render(done){ cb.checked=done; box.classList.toggle('done',done); }
+  if(window.IlmTrack){ window.IlmTrack.ready.then(function(){ render(window.IlmTrack.isDone(lid)); }); }
+  cb.addEventListener('change',function(){ if(window.IlmTrack) window.IlmTrack.setDone(lid,cb.checked); render(cb.checked); });
+})();
+</script>
+<script src="../../../ilm-highlight.js" data-lecture-id="stage0_qabas-wahhaj_02"></script>
+<script src="../../../ilm-semantic.js" data-hadith="off"></script>
 </body>
 </html>
