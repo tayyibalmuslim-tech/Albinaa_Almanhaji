@@ -1,40 +1,1161 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>القبس الوهاج — من ص 205 إلى 224 - المرحلة التمهيدية</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="../../../style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>القبس الوهاج — الباب الرابع والعشرون: الحذر من الفتن · الباب الخامس والعشرون: أسباب ضعف المسلمين · الباب السادس والعشرون: السنن الإلهية (ص ٢٠٥ إلى ٢٢٤)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../anki/final.css">
+<style>
+/* ===== هوية «سماء التفكر» — مطابقة لمقدمات تمهيدية/01: غلاف ليلي نجمي، ومتن عاجي هادئ =====
+   ألوان المقاطع بعيدة عن الألوان الدلالية المحجوزة (5-ب). */
+:root{
+  --bg:#faf8f3; --surface:#fffefa; --surface-2:#f3f0e8; --ink:#1f2433; --ink-soft:#596074; --line:#e4dfd2;
+  --night:#141c38; --night2:#263463; --star:#f3d58a; --goldbg:#f7efd9; --goldbd:#e3d3a6;
+  --brand:#263463; --brand-2:#3b4c8a; --brand-3:#141c38;
+  --s1:#2b3a75; --s2:#106a7a; --s3:#4b4f63; --s4:#6b4f3a; --s5:#1f2a4f; --s6:#2b3a75; --s7:#106a7a;
+  --s8:#4b4f63; --s9:#6b4f3a; --s10:#1f2a4f; --s11:#2b3a75; --s12:#106a7a;
+  --sem-aya:#14532d; --sem-hadith:#5b2d90; --sem-sahabi:#8a5a00; --sem-scholar:#8f1d21;
+  --n-tawthiq:#0f6b6b; --n-mustalah:#6b4f3a; --n-tarjama:#1e3a5f; --n-idah:#4b5563;
+  --n-rabt:#1d6fa5; --n-tashih:#b45309; --n-siyaq:#5b6b1f;
+  --fs:17.5px; --radius:12px; --tbh:52px; --main:780px;
+}
+[data-theme="night"]{
+  --bg:#10131f; --surface:#171b2b; --surface-2:#1f2436; --ink:#e8e6e1; --ink-soft:#b3b7c2; --line:#2d3348;
+  --goldbg:#2a2516; --goldbd:#5e4f27;
+  --brand:#aab4f0; --brand-2:#c3c8f7; --brand-3:#dfe3ff;
+  --s1:#8f9be6; --s2:#5fc0cf; --s3:#aeb3c8; --s4:#d2a988; --s5:#9aa6e8; --s6:#8f9be6; --s7:#5fc0cf;
+  --s8:#aeb3c8; --s9:#d2a988; --s10:#9aa6e8; --s11:#8f9be6; --s12:#5fc0cf;
+  --sem-aya:#91e3b3; --sem-hadith:#c4a2f0; --sem-sahabi:#e0b355; --sem-scholar:#f0a0a3;
+  --n-tawthiq:#5fc7c7; --n-mustalah:#c4a184; --n-tarjama:#8fb4de; --n-idah:#a8adb8;
+  --n-rabt:#77b9e6; --n-tashih:#f0a94b; --n-siyaq:#b0c161;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Cairo',system-ui,sans-serif;
+  font-size:var(--fs);line-height:1.95;text-align:right;-webkit-text-size-adjust:100%}
+h1,h2,h3,h4{line-height:1.5;margin:0}
+a{color:var(--brand);text-decoration:none}
+
+/* ===== تنبيه الذكاء الاصطناعي: شريط رفيع ===== */
+.ai-note{background:var(--night);color:#e9dcb3;font-size:12.5px;line-height:1.7;text-align:center;
+  padding:6px 14px;border-bottom:1px solid rgba(243,213,138,.25)}
+
+/* ===== الشريط العلوي ===== */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(20,28,56,.97);color:#fff}
+.topbar-in{max-width:1180px;margin:0 auto;padding:7px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.tb-title{font-family:'Reem Kufi',sans-serif;font-size:15px;color:var(--star);white-space:nowrap}
+.tb-links{display:flex;gap:4px;flex-wrap:nowrap;flex:1;min-width:0;overflow-x:auto;scrollbar-width:none}
+.tb-links::-webkit-scrollbar{display:none}
+.tb-links a{color:#e6e9f5;text-decoration:none;font-size:12.5px;padding:3px 10px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.2);white-space:nowrap}
+.tb-links a:hover,.tb-links a.on{background:rgba(243,213,138,.18);border-color:rgba(243,213,138,.55)}
+.tb-tools{display:flex;gap:4px}
+.tb-btn{font-family:'Cairo',sans-serif;font-size:12.5px;min-height:30px;padding:2px 10px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.25);background:transparent;color:#e6e9f5;cursor:pointer}
+.tb-btn:hover{background:rgba(243,213,138,.18)}
+.tb-toc{border-color:var(--star);color:var(--star);font-weight:700}
+.progress{height:3px;background:var(--star);width:0}
+#nav-top-slot{flex:0 0 auto;display:inline-flex}
+body .ilm-nav-top{max-width:none;margin:0;padding:0;background:none;border:0;border-radius:0;box-shadow:none;color:#fff}
+body .ilm-nav-top:before,body .ilm-nav-top .inv-jump,body .ilm-nav-top .inv-subj,body .ilm-nav-top .inv-disabled{display:none}
+body .ilm-nav-top .inv-row{display:flex;gap:6px}
+body .ilm-nav-top .inv-link{flex-direction:row;align-items:center;gap:6px;min-height:30px;padding:2px 12px;
+  border:1px solid var(--star);border-radius:999px;background:rgba(243,213,138,.1);color:var(--star);text-align:center;box-shadow:none}
+body .ilm-nav-top .inv-link:hover{background:rgba(243,213,138,.22);transform:none}
+body .ilm-nav-top .inv-day{color:var(--star);font-size:12px}
+body .ilm-nav-top .inv-ttl{color:#fff;font-family:'Cairo',sans-serif;font-size:12.5px;font-weight:700}
+@media (max-width:1499px){body .ilm-nav-top .inv-ttl{display:none}}
+
+/* ===== الفهرس المنزلق (زر جانبي للفتح والإغلاق) ===== */
+.side{position:fixed;top:0;right:0;bottom:0;z-index:70;width:min(340px,88vw);
+  transform:translateX(105%);transition:transform .25s ease;visibility:hidden}
+.side.open{transform:none;visibility:visible}
+.toc{height:100%;overflow:auto;background:var(--surface);border-left:1px solid var(--line);
+  box-shadow:-10px 0 30px rgba(20,28,56,.18);padding:0 18px 30px}
+.toc-head{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;gap:8px;
+  background:var(--night);color:var(--star);margin:0 -18px 10px;padding:12px 18px}
+.toc-head h4{font-family:'Reem Kufi',sans-serif;font-size:17px;color:var(--star)}
+.toc-x{width:34px;height:34px;border-radius:50%;border:1px solid rgba(243,213,138,.5);background:transparent;color:var(--star);cursor:pointer;font-size:15px}
+.toc ol{list-style:none;margin:0;padding:0;font-size:15px}
+.toc ol ol{padding-inline-start:14px;border-inline-start:2px solid var(--line);margin:2px 0 8px;font-size:14px}
+.toc li{margin:2px 0}
+.toc a{display:block;color:var(--ink);padding:4px 8px;border-radius:8px;line-height:1.7}
+.toc>ol>li>a{font-weight:700}
+.toc ol ol a{color:var(--ink-soft);font-weight:400}
+.toc a:hover,.toc a.on{background:var(--goldbg);color:var(--night2)}
+[data-theme="night"] .toc a:hover,[data-theme="night"] .toc a.on{color:var(--star)}
+.toc-tab{position:fixed;top:50%;right:0;z-index:60;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;
+  padding:12px 7px;border:1px solid rgba(243,213,138,.55);border-right:0;border-radius:12px 0 0 12px;
+  background:var(--night);color:var(--star);font-family:'Cairo',sans-serif;font-size:13px;font-weight:700;cursor:pointer;
+  box-shadow:-3px 3px 14px rgba(20,28,56,.25)}
+.toc-tab span{writing-mode:vertical-rl}
+body.toc-open .toc-tab{opacity:0;pointer-events:none}
+.toc-back{position:fixed;inset:0;z-index:65;background:rgba(20,28,56,.35)}
+
+/* ===== التخطيط: المتن في الوسط، والهوامش في العمود الجانبي ===== */
+.wrap{max-width:1180px;margin:0 auto;padding:18px 18px 80px}
+.main{position:relative;max-width:var(--main);margin:0 auto;min-width:0}
+#ilm-completion-box{display:flex;align-items:center;gap:10px;max-width:var(--main);margin:18px auto 0;padding:10px 16px;
+  background:var(--surface);border:1px solid var(--line);border-right:4px solid var(--s1);border-radius:12px;cursor:pointer;user-select:none}
+#ilm-completion-box input{width:18px;height:18px;accent-color:var(--s1);cursor:pointer;flex-shrink:0}
+#ilm-completion-box span{font-size:14.5px;color:var(--ink)}
+#ilm-completion-box.done{background:var(--goldbg);border-color:var(--goldbd)}
+#ilm-completion-box.done span:after{content:" ✓";color:var(--s1)}
+body .ilm-nav-bar:not(.ilm-nav-top){max-width:var(--main);margin:18px auto;padding:14px 16px;background:var(--surface);border:1px solid var(--line);
+  border-radius:16px;box-shadow:none;font-family:'Cairo',sans-serif;color:var(--ink)}
+body .ilm-nav-bar:not(.ilm-nav-top):before{color:var(--ink-soft);font-size:12.5px;font-weight:700;margin-bottom:10px}
+body .ilm-nav-bar:not(.ilm-nav-top) .inv-link{background:var(--surface);border:1px solid var(--line);border-right:4px solid var(--s1);border-radius:12px;color:var(--ink);padding:10px 14px;min-height:44px;box-shadow:none}
+body .ilm-nav-bar:not(.ilm-nav-top) .inv-link:hover{background:var(--goldbg);transform:none}
+body .ilm-nav-bar:not(.ilm-nav-top) .inv-day{color:var(--s1);font-size:12px;font-weight:800}
+body .ilm-nav-bar:not(.ilm-nav-top) .inv-ttl{color:var(--ink);font-family:'Amiri',serif;font-size:18px;line-height:1.5}
+body .ilm-nav-bar:not(.ilm-nav-top) .inv-subj{color:var(--ink-soft)}
+body .ilm-nav-bar:not(.ilm-nav-top) .inv-disabled{background:transparent;border:1px dashed var(--line);color:#a3a7b3;border-radius:12px;min-height:44px}
+body .ilm-nav-bar:not(.ilm-nav-top) select{background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:10px;min-height:44px;font-family:'Cairo',sans-serif}
+.wrap>.ilm-export-section{max-width:var(--main);margin:30px auto 0}
+
+/* ===== الغلاف (داخل المتن) ===== */
+.hero{color:#fff;text-align:center;border-radius:20px;padding:46px 22px 38px;margin:4px 0 18px;
+  background:
+   radial-gradient(1.5px 1.5px at 12% 22%,#fff 50%,transparent 51%),
+   radial-gradient(1px 1px at 28% 68%,#fff 50%,transparent 51%),
+   radial-gradient(1.5px 1.5px at 44% 14%,#f3d58a 50%,transparent 51%),
+   radial-gradient(1px 1px at 63% 40%,#fff 50%,transparent 51%),
+   radial-gradient(2px 2px at 78% 18%,#fff 50%,transparent 51%),
+   radial-gradient(1px 1px at 88% 62%,#f3d58a 50%,transparent 51%),
+   radial-gradient(1px 1px at 6% 80%,#fff 50%,transparent 51%),
+   radial-gradient(1.5px 1.5px at 52% 84%,#fff 50%,transparent 51%),
+   radial-gradient(ellipse at 50% 120%,#3b4c8a 0%,transparent 60%),
+   linear-gradient(180deg,var(--night) 0%,var(--night2) 100%)}
+.hero .kicker{font-family:'Reem Kufi',sans-serif;color:var(--star);font-size:15px}
+.hero h1{font-family:'Amiri',serif;font-size:clamp(32px,5.5vw,42px);margin:12px 0 8px;line-height:1.35;color:#fff}
+.hero .meta{font-size:15px;color:#dfe4f4;max-width:640px;margin:0 auto;line-height:1.9}
+.hero .meta:after{content:"✦";display:block;color:var(--star);margin-top:14px;
+  background:linear-gradient(90deg,transparent 20%,rgba(243,213,138,.6) 21%,rgba(243,213,138,.6) 44%,transparent 45%,transparent 55%,rgba(243,213,138,.6) 56%,rgba(243,213,138,.6) 79%,transparent 80%) center/100% 1px no-repeat}
+.main>.ai-warn{display:none}
+.layer-key{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 18px;
+  font-size:14px;color:var(--ink-soft);margin:0 0 22px;line-height:1.95}
+.layer-key b{color:var(--ink)}
+
+/* ===== المقاطع ===== */
+.sec{margin:46px 0 0;scroll-margin-top:calc(var(--tbh) + 14px)}
+.sec>h2{font-family:'Amiri',serif;font-size:clamp(25px,4vw,31px);font-weight:700;line-height:1.45;color:#fff;
+  border-radius:16px;padding:14px 20px;margin-bottom:8px;
+  background:var(--acc,var(--s1));background-image:linear-gradient(135deg,rgba(20,28,56,.25),rgba(255,255,255,.10))}
+[data-theme="night"] .sec>h2{color:#10131f}
+.sec .range{font-size:13px;color:var(--ink-soft);margin:0 0 14px}
+.sticky-head{position:sticky;top:var(--tbh);z-index:40;background:var(--bg);border-bottom:1px solid var(--line);
+  font-size:13px;color:var(--acc,var(--brand));padding:6px 2px;margin-bottom:12px;font-family:'Reem Kufi',sans-serif}
+h3{font-family:'Amiri',serif;font-size:24px;color:var(--acc,var(--brand));margin:30px 0 8px;padding-right:12px;
+  border-right:4px solid var(--acc,var(--brand));scroll-margin-top:calc(var(--tbh) + 50px)}
+h4{font-size:19px;color:var(--ink);margin:20px 0 6px;font-weight:700}
+.gen-head{position:relative}
+.gen-head::after{content:'عنوان تنظيمي';position:absolute;inset-inline-end:0;top:6px;font-size:11.5px;font-weight:400;
+  color:var(--ink-soft);opacity:.65}
+p{margin:0 0 14px;text-align:right}
+.lead>p:first-of-type::first-line{font-weight:600;color:var(--night2)}
+[data-theme="night"] .lead>p:first-of-type::first-line{color:var(--star)}
+
+/* ===== بلوكات مسار الكتب ===== */
+.aya-block{background:var(--surface);border:1px solid var(--line);border-right:4px solid var(--sem-aya);
+  border-radius:12px;padding:12px 18px;margin:16px 0}
+.aya{font-family:'Amiri',serif;font-size:1.3em;line-height:2.3;color:var(--sem-aya);display:block}
+.aya-ref{font-size:.6em;color:var(--ink-soft);font-family:'Cairo',sans-serif;vertical-align:middle}
+.hadith-block{background:var(--surface);border:1px solid var(--line);border-right:4px solid var(--sem-hadith);
+  border-radius:12px;padding:12px 18px;margin:16px 0}
+.hadith-block .lbl{font-family:'Reem Kufi',sans-serif;font-size:13.5px;color:var(--sem-hadith);display:block;margin-bottom:6px}
+.naql-block{background:var(--goldbg);border:1px solid var(--goldbd);border-right:4px solid #7a6324;border-radius:12px;padding:12px 18px;margin:16px 0}
+.naql-block .who{display:inline-block;font-size:12.5px;font-weight:800;background:#7a6324;color:#fff;
+  border-radius:999px;padding:1px 12px;margin-bottom:8px}
+.faida{margin:18px 0;padding-inline-start:4px}
+.faida-head{display:flex;gap:10px;align-items:baseline;margin-bottom:6px}
+.faida-num{flex:0 0 auto;min-width:30px;height:30px;border-radius:50%;background:var(--acc,var(--brand));
+  color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-family:'Reem Kufi',sans-serif}
+.faida-ttl{font-family:'Reem Kufi',sans-serif;font-size:18px;color:var(--acc,var(--brand))}
+.divider{text-align:center;color:var(--goldbd);margin:28px 0;font-size:20px;letter-spacing:8px}
+.tag-add{display:inline-block;font-size:12px;background:var(--surface-2);color:var(--ink-soft);
+  border:1px solid var(--line);border-radius:999px;padding:1px 9px;margin-inline-start:6px}
+
+/* الخلاصة */
+.takeaway{border-radius:14px;padding:14px 18px;margin:24px 0;background:var(--night);color:#eef1fa}
+.takeaway h4{font-family:'Reem Kufi',sans-serif;color:var(--star);font-size:16px;margin:0 0 6px}
+.takeaway ul{margin:0;padding-inline-start:22px}
+.takeaway li{margin:4px 0}
+.takeaway .sem-aya{color:#a8e6c1}
+.takeaway .sem-name{color:#f3b0b2}
+.takeaway .sem-name.sem-sahabi{color:var(--star)}
+
+/* حواشي المؤلف (من الكتاب) */
+.book-fn{border-top:1px solid var(--line);margin-top:22px;padding-top:10px;font-size:14.5px;color:var(--ink-soft)}
+.book-fn .lbl{font-family:'Reem Kufi',sans-serif;font-size:13px;color:var(--ink);display:block;margin-bottom:4px}
+.book-fn ol{margin:0;padding-inline-start:20px;list-style:arabic-indic}
+.book-fn li{margin:3px 0}
+sup.fnr{color:var(--ink-soft);font-size:.68em}
+
+/* ===== الهوامش: عمود جانبي على الشاشات الواسعة، وتُفتح بالضغط على الرقم فيما دونها ===== */
+.nmark{display:inline-flex;align-items:center;justify-content:center;width:21px;height:21px;border-radius:50%;
+  background:var(--nc,var(--brand));color:#fff;font-size:12px;cursor:pointer;vertical-align:super;
+  margin:0 2px;font-family:'Cairo',sans-serif;border:none;line-height:1}
+.note{display:none;font-family:'Cairo',sans-serif;font-size:14px;line-height:1.85;color:var(--ink-soft);
+  background:var(--surface);border:1px solid var(--line);border-right:3px solid var(--nc,var(--brand));border-radius:10px;
+  padding:9px 12px;margin:10px 0 14px}
+.note.open{display:block}
+.note .nt{display:block;font-size:11.5px;font-weight:800;color:var(--nc,var(--brand));margin-bottom:2px}
+.note--tawthiq{--nc:var(--n-tawthiq)} .note--mustalah{--nc:var(--n-mustalah)}
+.note--tarjama{--nc:var(--n-tarjama)} .note--idah{--nc:var(--n-idah)}
+.note--rabt{--nc:var(--n-rabt)} .note--tashih{--nc:var(--n-tashih)} .note--siyaq{--nc:var(--n-siyaq)}
+.note.flash{box-shadow:0 0 0 3px rgba(243,213,138,.7)}
+@media (min-width:1340px){
+  .main .note{display:block;position:absolute;inset-inline-start:calc(100% + 26px);
+    width:min(290px,calc((100vw - var(--main))/2 - 50px));margin:0;font-size:13.5px;
+    box-shadow:0 3px 12px rgba(20,28,56,.06)}
+  .main .note:before{content:"";position:absolute;top:14px;inset-inline-start:-27px;width:22px;border-top:1px dashed var(--line)}
+}
+
+/* ===== الطبقة الدلالية ===== */
+.sem-aya{color:var(--sem-aya);font-family:'Amiri','Noto Naskh Arabic',serif;font-size:1.08em}
+.sem-hadith{color:var(--sem-hadith)}
+.sem-name{color:var(--sem-scholar)}
+.sem-name.sem-scholar{color:var(--sem-scholar);font-weight:700}
+.sem-name.sem-sahabi{color:var(--sem-sahabi);font-weight:700}
+
+/* ===== الأسئلة التفاعلية ===== */
+.quiz{background:#f2f3f8;border:1px solid #dadded;border-radius:16px;padding:16px 18px;margin:26px 0}
+[data-theme="night"] .quiz{background:var(--surface-2);border-color:var(--line)}
+.quiz h4{font-family:'Reem Kufi',sans-serif;font-size:17px;color:var(--night2);margin:0 0 4px}
+[data-theme="night"] .quiz h4{color:var(--star)}
+.quiz .score{display:inline-block;font-size:13px;font-weight:800;color:var(--night2);background:var(--surface);border:1px solid #dadded;border-radius:999px;padding:1px 12px;margin-bottom:6px}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0}
+.q .qt{font-weight:800;margin-bottom:8px}
+.opt{display:block;width:100%;text-align:right;font-family:'Cairo',sans-serif;font-size:15.5px;min-height:44px;line-height:1.7;
+  padding:8px 14px;margin:6px 0;border:1px solid #cfd3e3;border-radius:10px;background:var(--bg);color:var(--ink);cursor:pointer;white-space:normal}
+.opt:hover{border-color:var(--night2)}
+.opt.ok{background:#e4f1e7;border-color:#7fb38f}
+.opt.no{background:#f8e7e4;border-color:#d79b90}
+[data-theme="night"] .opt.ok{background:#1d3a28} [data-theme="night"] .opt.no{background:#3a1f1d}
+.expl{font-size:15px;color:var(--ink);background:var(--goldbg);border-radius:10px;padding:8px 12px;margin-top:6px}
+
+/* ===== البطاقات ===== */
+.cards{background:linear-gradient(180deg,var(--night),var(--night2));color:#fff;border-radius:20px;padding:30px 20px 34px;margin:46px 0 0}
+.cards h3{font-family:'Amiri',serif;font-size:30px;text-align:center;margin:0;padding:0;border:0;color:#fff!important}
+.cards>p{text-align:center;color:#c6cde6!important}
+.filters{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:12px 0 16px}
+.filters button{font-family:'Cairo',sans-serif;font-size:13px;min-height:34px;padding:4px 12px;border-radius:999px;
+  border:1.5px solid rgba(255,255,255,.3);background:transparent;color:#fff;cursor:pointer}
+.filters button.on{background:var(--star);color:var(--night);border-color:var(--star);font-weight:800}
+.ak{max-width:720px;margin:0 auto;overflow-wrap:break-word;background:#fff;border-radius:18px;padding:22px 24px;color:#26352e;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);cursor:pointer}
+.ak .deckcap{font-size:12px;color:#66766f;margin-bottom:10px;border-bottom:1px dashed #e1e0d8;padding-bottom:6px;overflow-wrap:anywhere}
+.ak .ak-back{display:none;margin-top:16px;padding-top:16px;border-top:1px solid #e1e0d8}
+.ak.on .ak-back{display:block}
+.ak .hint{margin-top:10px;font-size:12.5px;color:#66766f;text-align:center}
+.ak.on .hint{display:none}
+.cnav{display:flex;gap:10px;align-items:center;justify-content:center;margin-top:16px;flex-wrap:wrap}
+.cnav span{font-family:'Reem Kufi',sans-serif;color:var(--star)}
+.btn{font-family:'Cairo',sans-serif;font-size:14px;min-height:40px;padding:6px 14px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;cursor:pointer}
+.btn:hover{background:rgba(255,255,255,.16)}
+#cdl{background:var(--star);color:var(--night);border:0;font-weight:800}
+
+/* ===== الاستجابة ===== */
+@media (max-width:900px){
+  .wrap{padding:12px 12px 70px}
+  #ilm-completion-box{margin:14px 12px 0}
+  body .ilm-nav-bar:not(.ilm-nav-top){margin:14px 12px}
+  body{font-size:calc(var(--fs) - 1px)}
+  .hero{padding:34px 16px 28px;border-radius:16px}
+  h3{font-size:21px}
+  .tb-title{font-size:13.5px}
+}
+@media (max-width:640px){
+  .topbar-in{padding:6px 10px;gap:6px}
+  .tb-title{display:none}
+  #nav-top-slot{margin-inline-start:auto}
+  .tb-links{order:5;flex-basis:100%;padding-bottom:2px}
+  body .ilm-nav-top .inv-ttl{display:none}
+  .toc-tab{padding:8px 3px;font-size:11px;top:auto;bottom:22%;transform:none;opacity:.92}
+  .ak{padding:16px 14px}
+}
+@media print{
+  .topbar,.toc-tab,.side,.toc-back,.quiz,.cards,.ai-note{display:none!important}
+  body{background:#fff;color:#000;font-size:12pt}
+  .main .note,.note{display:block!important;position:static!important;width:auto!important;font-size:10pt;border:0;border-top:1px dotted #999;background:none;box-shadow:none}
+  .nmark{background:none;color:#000;border:1px solid #000}
+  .hero{background:none;color:#000}
+  .hero h1,.hero .meta{color:#000}
+}
+
+/* ===== إضافات القالب: فهرس بعناصر div، وعنوان البطاقات ===== */
+.toc-i{margin:2px 0}
+.toc-i>a{font-weight:700}
+.toc-sub{padding-inline-start:14px;border-inline-start:2px solid var(--line);margin:2px 0 8px;font-size:14px}
+.toc-sub a{color:var(--ink-soft);font-weight:400}
+#toclist>a{font-weight:700}
+.cards .ttl{font-family:'Amiri',serif;font-size:30px;text-align:center;color:#fff!important}
+.cards .sub{text-align:center;font-size:14px;color:#c6cde6;margin:4px 0 0}
+
+</style>
 </head>
-<body class="" data-page="lecture" data-lecture-id="stage0_qabas-wahhaj_10">
-  <div class="page">
-    <nav class="breadcrumbs"><a href="../../../index.html">الرئيسية</a><span class="sep">/</span><a href="../../index.html">المرحلة التمهيدية</a><span class="sep">/</span><a href="../index.html">القبس الوهاج (مختصر شرح المنهاج)</a><span class="sep">/</span><span aria-current="page">القبس الوهاج — من ص 205 إلى 224</span></nav>
-
-      <header class="lecture-header">
-        <h1>القبس الوهاج — من ص 205 إلى 224</h1>
-        <p class="lecture-meta">المادة: القبس الوهاج (مختصر شرح المنهاج) &nbsp;|&nbsp; الشيخ: محمد شميس &nbsp;|&nbsp; اليوم 19</p>
-        <label class="checkbox-line lecture-checkbox">
-          <input type="checkbox" data-lecture-id="stage0_qabas-wahhaj_10">
-          <span>إتمام هذه المحاضرة</span>
-        </label>
-      </header>
-
-      <div class="lecture-placeholder">
-        <p class="placeholder-hint">سيتم إضافة المحاضرة هنا لاحقًا (رابط يوتيوب / فيديو / ملف صوتي / PDF / نص المحاضرة / ملاحظاتي)</p>
-      </div>
-
-      <div class="lecture-nav">
-        <a href="../index.html" class="btn btn-outline">الرجوع إلى المادة</a>
-        <a href="../../index.html" class="btn btn-outline">الرجوع إلى المرحلة</a>
-      </div>
-
-      <div data-lecture-nav-extra></div>
-
+<body data-lecture-id="stage0_qabas-wahhaj_10">
+<div class="ai-note" role="note">⚠️ أُعدّ هذا المحتوى بمساعدة الذكاء الاصطناعي، وقد يحتوي أخطاء، ويُرجى مراجعته.</div>
+<div class="topbar" id="topbar">
+  <div class="topbar-in">
+    <button class="tb-btn tb-toc" id="tocBtn" type="button" aria-controls="toc" aria-expanded="false" title="فتح الفهرس وإغلاقه">☰ الفهرس</button>
+    <div class="tb-title">القبس الوهاج · الملف ١٠ — ص ٢٠٥–٢٢٤</div>
+    <div class="tb-links">
+      <a href="#s1">الباب الرابع والعشرون</a>
+      <a href="#s7">الباب الخامس والعشرون</a>
+      <a href="#s10">الباب السادس والعشرون</a>
+      <a href="#anki">البطاقات</a>
+    </div>
+    <span id="nav-top-slot"></span>
+    <div class="tb-tools">
+      <button class="tb-btn" id="fsm" type="button" title="تصغير الخط">أ−</button>
+      <button class="tb-btn" id="fsp" type="button" title="تكبير الخط">أ+</button>
+      <button class="tb-btn" id="thm" type="button" title="وضع القراءة الليلي">🌙</button>
+    </div>
   </div>
-  <script type="module" src="../../../firebase-sync-manhaj.js"></script>
-  <script src="../../../data.js"></script>
-  <script src="../../../script.js"></script>
+  <div class="progress" id="prog"></div>
+</div>
+<button class="toc-tab" id="tocTab" type="button" aria-controls="toc" aria-expanded="false" title="فتح الفهرس">☰<span>الفهرس</span></button>
+<div class="toc-back" id="tocBack" hidden></div>
+
+<label id="ilm-completion-box">
+  <input type="checkbox" data-lecture-id="stage0_qabas-wahhaj_10">
+  <span>تحديد هذه المحاضرة كمكتملة</span>
+</label>
+
+<div class="wrap">
+  <aside class="side">
+    <nav class="toc" id="toc" aria-label="فهرس الملف">
+      <div class="toc-head"><h4>فهرس الملف</h4><button class="toc-x" id="tocX" type="button" aria-label="إغلاق الفهرس">✕</button></div>
+      <div id="toclist"></div>
+    </nav>
+  </aside>
+
+  <main class="main" data-ilm-highlight-zone>
+    <header class="hero">
+      <div class="kicker">المرحلة التمهيدية · الملف ١٠ من ١١</div>
+      <h1>القبس الوهاج في تلخيص شرح المنهاج</h1>
+      <div class="meta">
+        الباب الرابع والعشرون: الحذر من الفتن · الباب الخامس والعشرون: أسباب ضعف المسلمين · الباب السادس والعشرون: السنن الإلهية<br>
+        من ص ٢٠٥ إلى ٢٢٤ &nbsp;|&nbsp; تأليف: مُحمد شُميس &nbsp;|&nbsp; تلخيص شرح الشيخ أحمد بن يوسف السيد لمتن «المنهاج من ميراث النبوة»
+      </div>
+    </header>
+
+    <div class="ai-warn">
+      ⚠️ أُعدّ هذا المحتوى بمساعدة الذكاء الاصطناعي، وقد يحتوي أخطاء، ويُرجى مراجعته. (المتن منقول من الكتاب، والهوامش والأسئلة والخلاصات والبطاقات إضافة.)
+    </div>
+
+    <div class="layer-key">
+      <b>كيف تقرأ هذه الصفحة:</b> النص الأسود المتصل هو <b>كلام المؤلف كما هو في الكتاب حرفيًا</b>. وكل ما ظهر في العمود الجانبي بعلامة ملوّنة (أو تحت الفقرة في الهاتف) هو <b>هامش من إعداد الصفحة وليس من الكتاب</b>. أما «حواشي المؤلف» أسفل كل مقطع فهي حواشي الكتاب نفسه. والألوان دلالة ثابتة: <span class="sem-aya">الآية خضراء</span>، <span class="sem-hadith">الحديث بنفسجي</span>، <span class="sem-name sem-sahabi">الأنبياء والصحابة كهرماني</span>، <span class="sem-name sem-scholar">العلماء أحمر عريض</span>، <span class="sem-name">وباقي الأعلام أحمر عادي</span>.
+    </div>
+
+    <!-- ===================== المقطع 1 ===================== -->
+    <section class="sec" id="s1" style="--acc:var(--s1)">
+      <div class="sticky-head">المقطع الأول · الباب الرابع والعشرون: العنوان والآيات</div>
+      <h2>الباب الرابع والعشرون — عنوان الباب والآيات (١–٣): الحذر من الفتن</h2>
+      <p class="range">ص ٢٠٥ – ص ٢٠٦</p>
+
+      <h3 id="s1a">الباب الرابع والعشرون</h3>
+      <div class="naql-block"><p>بَابٌ فِي الْحَذَرِ مِنَ الْفِتَنِ، وَمَا يُخْشَى عَلَى الصَّالِحِينَ مِنْ فِتْنَةِ الدُّنْيَا وَالتَّنَافُسِ فِيهَا</p></div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p>في هذا الباب إشارة إلى أنّ الفتن لا تختصّ بأهل الفساد، وإنّما الصالحون يُفتنون، فدخول العبد في طريق الاستقامة لا يعني أنه قد ضمن الوصول؛ لأن من شأن طريق الاستقامة أنّه طريق فيه الفتن والابتلاءات والتحدّيات.</p>
+      </div>
+      <h4>الآيات</h4>
+      <h3 id="s1b">الآية الأولى</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿مَّا كَانَ ٱللَّهُ لِيَذَرَ<sup class="fnr">(١)</sup> ٱلۡمُؤۡمِنِينَ عَلَىٰ مَآ أَنتُمۡ عَلَيۡهِ حَتَّىٰ يَمِيزَ ٱلۡخَبِيثَ مِنَ ٱلطَّيِّبِۗ﴾ <span class="aya-ref">[آل عمران: ١٧٩]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p>معنى الآية: أنّ الله لم يكن ليترك المجتمع المؤمن دون اختبار وابتلاء حقيقي يميّز المؤمن من المنافق، وعليه؛ فإذا وُجد أُناس مؤمنون يسيرون في طريق الاستقامة ويعملون لهذا الدين، وينصرون الله ورسوله ﷺ، وكان فيهم مَن هو خبيث ومنافق؛ فليتهيأ المؤمنون للفتن التي تنخلهم؛ فيسقط الخبيث، ويبقى الطيب، وهذا يكون خاصة إذا وصل المؤمنون لمرحلة يريدون بها الخير والرفعة ونصرة الإسلام والمسلمين.<button class="nmark note--siyaq" data-n="n1">١</button></p>
+      </div>
+      <aside class="note note--siyaq" id="n1"><span class="nt">سياق تاريخي</span>نزلت الآية في سياق غزوة أحد من سورة آل عمران، وفيها ظهر المنافقون بالرجوع عن القتال؛ فكانت الفتنة مميّزة للصفّ.</aside>
+      <h3 id="s1c">الآية الثانية</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿وَٱتَّقُواْ فِتۡنَةٗ لَّا تُصِيبَنَّ ٱلَّذِينَ ظَلَمُواْ مِنكُمۡ خَآصَّةٗۖ﴾ <span class="aya-ref">[الأنفال: ٢٥]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p>في هذه الآية تحذير للمؤمنين غير الظالمين من فتنة تعمّ الذين ظلموا أنفسهم، وغيرَهم، وتوارد غير واحد من المفسرين على أنّ السبب هنا: تعميم الظلم، مع عدم إنكاره وتغييره، فإذا عمّ الظلم ولم يُنكر ويُغيّر؛ فلتُتّقَ فتنة عامة يُراد بها العقاب.<button class="nmark note--idah" data-n="n2">٢</button></p>
+      </div>
+      <aside class="note note--idah" id="n2"><span class="nt">إيضاح</span>معنى <span class="sem-aya">﴿لَّا تُصِيبَنَّ ٱلَّذِينَ ظَلَمُواْ مِنكُمۡ خَآصَّةٗ﴾</span>: أنها لا تقتصر على الظالمين وحدهم، بل تعمّهم وتعمّ معهم من سكت عن ظلمهم.</aside>
+      <h3 id="s1d">الآية الثالثة</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿أَحَسِبَ ٱلنَّاسُ أَن يُتۡرَكُوٓاْ أَن يَقُولُوٓاْ ءَامَنَّا وَهُمۡ لَا يُفۡتَنُونَ﴾ <span class="aya-ref">[العنكبوت: ٢]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p>إذا ادّعى شخص أنه مؤمن بلسان حاله أو مقاله، وأنه يسير على مراد الله تعالى وسنة نبيه ﷺ فليبشر بالخير والرحمة والسكينة والطمأنينة، وليتهيّأ للاختبار، وهذا الاختبار يكون بالرخاء كما يكون بالشدة، قال سليمان عليه السلام: <span class="sem-aya">﴿هَٰذَا مِن فَضۡلِ رَبِّي لِيَبۡلُوَنِيٓ ءَأَشۡكُرُ أَمۡ أَكۡفُرُۖ﴾</span> <span class="aya-ref">[النمل: ٤٠]</span>.</p>
+      </div>
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>ليذر: ليدع.</li></ol>
+      </div>
+
+      <div class="quiz" data-sec="s1"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>الفتن لا تختص بأهل الفساد، فالصالحون يُفتنون، ودخول طريق الاستقامة لا يعني ضمان الوصول.</li>
+          <li>آية آل عمران ١٧٩: لا يترك الله المجتمع المؤمن دون ابتلاء يميز المؤمن من المنافق، خاصة إذا وصل المؤمنون لمرحلة نصرة الإسلام.</li>
+          <li>آية الأنفال ٢٥: إذا عمّ الظلم ولم يُنكر ويُغيّر فلتُتّق فتنة عامة يُراد بها العقاب.</li>
+          <li>آية العنكبوت ٢: من ادعى الإيمان فليبشر بالخير وليتهيأ للاختبار.</li>
+          <li>الاختبار يكون بالرخاء كما يكون بالشدة، كما قال سليمان عليه السلام: <span class="sem-aya">﴿لِيَبۡلُوَنِيٓ ءَأَشۡكُرُ أَمۡ أَكۡفُرُ﴾</span>.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 2 ===================== -->
+    <section class="sec" id="s2" style="--acc:var(--s2)">
+      <div class="sticky-head">المقطع الثاني · الباب الرابع والعشرون: الحديث ١</div>
+      <h2>الباب الرابع والعشرون — الحديث (١): «فيرقّق بعضها بعضًا»</h2>
+      <p class="range">ص ٢٠٧</p>
+
+      <h4>الأحاديث</h4>
+      <h3 id="s2a">الحديث الأول</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ عَبْدِ الرَّحْمَنِ بْنِ عَبْدِ رَبِّ الْكَعْبَةِ قَالَ:</span>
+        <p><span class="sem-hadith">دَخَلْتُ الْمَسْجِدَ فَإِذَا عَبْدُ اللهِ بْنُ عَمْرِو بْنِ الْعَاصِ جَالِسٌ فِي ظِلِّ الْكَعْبَةِ وَالنَّاسُ مُجْتَمِعُونَ عَلَيْهِ، فَأَتَيْتُهُمْ فَجَلَسْتُ إِلَيْهِ فَقَالَ: كُنَّا مَعَ رَسُولِ اللهِ ﷺ فِي سَفَرٍ فَنَزَلْنَا مَنْزِلًا، فَمِنَّا مَنْ يُصْلِحُ خِبَاءَهُ<sup class="fnr">(١)</sup> وَمِنَّا مَنْ يَنْتَضِلُ<sup class="fnr">(٢)</sup> وَمِنَّا مَنْ هُوَ فِي جَشَرِهِ<sup class="fnr">(٣)</sup> إِذْ نَادَى مُنَادِي رَسُولِ اللهِ ﷺ: الصَّلَاةَ جَامِعَةً، فَاجْتَمَعْنَا إِلَى رَسُولِ اللهِ ﷺ فَقَالَ: «إِنَّهُ لَمْ يَكُنْ نَبِيٌّ قَبْلِي إِلَّا كَانَ حَقًّا عَلَيْهِ أَنْ يَدُلَّ أُمَّتَهُ عَلَى خَيْرِ مَا يَعْلَمُهُ لَهُمْ وَيُنْذِرَهُمْ شَرَّ مَا يَعْلَمُهُ لَهُمْ، وَإِنَّ أُمَّتَكُمْ هَذِهِ جُعِلَ عَافِيَتُهَا فِي أَوَّلِهَا، وَسَيُصِيبُ آخِرَهَا بَلَاءٌ وَأُمُورٌ تُنْكِرُونَهَا، وَتَجِيءُ فِتْنَةٌ فَيُرَقِّقُ بَعْضُهَا بَعْضًا<sup class="fnr">(٤)</sup>، وَتَجِيءُ الْفِتْنَةُ فَيَقُولُ الْمُؤْمِنُ: هَذِهِ مُهْلِكَتِي ثُمَّ تَنْكَشِفُ، وَتَجِيءُ الْفِتْنَةُ فَيَقُولُ الْمُؤْمِنُ: هَذِهِ هَذِهِ، فَمَنْ أَحَبَّ أَنْ يُزَحْزَحَ عَنِ النَّارِ وَيُدْخَلَ الْجَنَّةَ فَلْتَأْتِهِ مَنِيَّتُهُ وَهُوَ يُؤْمِنُ بِاللهِ وَالْيَوْمِ الْآخِرِ، وَلْيَأْتِ إِلَى النَّاسِ الَّذِي يُحِبُّ أَنْ يُؤْتَى إِلَيْهِ، وَمَنْ بَايَعَ إِمَامًا فَأَعْطَاهُ صَفْقَةَ يَدِهِ وَثَمَرَةَ قَلْبِهِ فَلْيُطِعْهُ إِنِ اسْتَطَاعَ، فَإِنْ جَاءَ آخَرُ يُنَازِعُهُ فَاضْرِبُوا عُنُقَ الْآخَرِ»<sup class="fnr">(٥)</sup>.</span><button class="nmark note--idah" data-n="n3">٣</button></p>
+      </div>
+      <aside class="note note--idah" id="n3"><span class="nt">إيضاح</span>لم يذكر المؤلف فوائد مستقلة لهذا الحديث، وفوائده داخلة في الفوائد الجامعة بعد الحديث الخامس؛ وموضع الشاهد منه: «وَسَيُصِيبُ آخِرَهَا بَلَاءٌ وَأُمُورٌ تُنْكِرُونَهَا»، ثم بيان طريق النجاة: الإيمان بالله واليوم الآخر، وأن يأتي إلى الناس ما يحبّ أن يُؤتى إليه، ولزوم الجماعة.</aside>
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>يصلح خباءه: الخباء: ما يُعمل من وبر، أو صوف، وقد يكون من شَعر.</li>
+        <li>ينتضل: أي: يرمي بالسهام تدربًا ومداومة.</li>
+        <li>من هو في جشره: أي: في إخراج الدواب إلى المرعى.</li>
+        <li>فيرقق بعضها بعضًا: أي: أن الثاني منها يجعل الأول خفيفًا لعظمه.</li>
+        <li>أخرجه مسلم (١٨٤٤).</li></ol>
+      </div>
+
+      <div class="quiz" data-sec="s2"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>كان حقًّا على كل نبي أن يدلّ أمته على خير ما يعلمه لهم وينذرهم شر ما يعلمه لهم.</li>
+          <li>جُعلت عافية هذه الأمة في أولها، وسيصيب آخرها بلاء وأمور تُنكر.</li>
+          <li>تجيء الفتن فيرقّق بعضها بعضًا: الثانية تجعل الأولى خفيفة لعظمها.</li>
+          <li>طريق النجاة: أن تأتيه منيته وهو يؤمن بالله واليوم الآخر، وأن يأتي إلى الناس ما يحب أن يؤتى إليه، وأن يطيع إمامه ما استطاع.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 3 ===================== -->
+    <section class="sec" id="s3" style="--acc:var(--s3)">
+      <div class="sticky-head">المقطع الثالث · الباب الرابع والعشرون: الأحاديث ٢–٥</div>
+      <h2>الباب الرابع والعشرون — الأحاديث (٢–٥): الخوف على الأمة من فتنة الدنيا</h2>
+      <p class="range">ص ٢٠٨ – ص ٢١٠</p>
+
+      <h3 id="s3a">الحديث الثاني</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ عَمْرِو بْنِ عَوْفٍ ﵁ قَالَ: قَالَ رَسُولُ اللهِ ﷺ بَعْدَ أَنْ قَدِمَ أَبُو عُبَيْدَةَ بِمَالٍ مِنَ الْبَحْرَيْنِ:</span>
+        <p><span class="sem-hadith">«فَأَبْشِرُوا وَأَمِّلُوا مَا يَسُرُّكُمْ، فَوَاللهِ لَا الْفَقْرَ أَخْشَى عَلَيْكُمْ وَلَكِنْ أَخْشَى عَلَيْكُمْ أَنْ تُبْسَطَ عَلَيْكُمُ الدُّنْيَا كَمَا بُسِطَتْ عَلَى مَنْ كَانَ قَبْلَكُمْ فَتَنَافَسُوهَا كَمَا تَنَافَسُوهَا وَتُهْلِكَكُمْ كَمَا أَهْلَكَتْهُمْ»<sup class="fnr">(١)</sup>.</span></p>
+      </div>
+      <h3 id="s3b">الحديث الثالث</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ عُقْبَةَ بْنِ عَامِرٍ ﵁ قَالَ: قَالَ رَسُولُ اللهِ ﷺ:</span>
+        <p><span class="sem-hadith">«إِنِّي فَرَطُكُمْ عَلَى الْحَوْضِ<sup class="fnr">(٢)</sup>، وَإِنَّ عَرْضَهُ كَمَا بَيْنَ أَيْلَةَ<sup class="fnr">(٣)</sup> إِلَى الْجُحْفَةِ<sup class="fnr">(٤)</sup>، إِنِّي لَسْتُ أَخْشَى عَلَيْكُمْ أَنْ تُشْرِكُوا بَعْدِي وَلَكِنِّي أَخْشَى عَلَيْكُمُ الدُّنْيَا أَنْ تَنَافَسُوا فِيهَا وَتَقْتَتِلُوا فَتَهْلِكُوا كَمَا هَلَكَ مَنْ كَانَ قَبْلَكُمْ». قَالَ عُقْبَةُ: فَكَانَتْ آخِرَ مَا رَأَيْتُ رَسُولَ اللهِ ﷺ عَلَى الْمِنْبَرِ<sup class="fnr">(٥)</sup>.</span></p>
+      </div>
+      <h3 id="s3c">الحديث الرابع</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ عَبْدِ اللهِ بْنِ عَمْرِو بْنِ الْعَاصِ ﵄ عَنْ رَسُولِ اللهِ ﷺ أَنَّهُ قَالَ:</span>
+        <p><span class="sem-hadith">«إِذَا فُتِحَتْ عَلَيْكُمْ فَارِسُ وَالرُّومُ أَيُّ قَوْمٍ أَنْتُمْ؟»، قَالَ عَبْدُ الرَّحْمَنِ بْنُ عَوْفٍ: نَقُولُ كَمَا أَمَرَنَا اللهُ، قَالَ رَسُولُ اللهِ ﷺ: «أَوْ غَيْرَ ذَلِكَ، تَتَنَافَسُونَ ثُمَّ تَتَحَاسَدُونَ ثُمَّ تَتَدَابَرُونَ ثُمَّ تَتَبَاغَضُونَ أَوْ نَحْوَ ذَلِكَ، ثُمَّ تَنْطَلِقُونَ فِي مَسَاكِينِ الْمُهَاجِرِينَ فَتَجْعَلُونَ بَعْضَهُمْ عَلَى رِقَابِ بَعْضٍ<sup class="fnr">(٦)</sup>»<sup class="fnr">(٧)</sup>.</span></p>
+      </div>
+      <h3 id="s3d">الحديث الخامس</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ أَبِي سَعِيدٍ ﵁ قَالَ: قَالَ رَسُولُ اللهِ ﷺ:</span>
+        <p><span class="sem-hadith">«إِنَّ أَكْثَرَ مَا أَخَافُ عَلَيْكُمْ مَا يُخْرِجُ اللهُ لَكُمْ مِنْ بَرَكَاتِ الْأَرْضِ»، قِيلَ: وَمَا بَرَكَاتُ الْأَرْضِ؟ قَالَ: «زَهْرَةُ الدُّنْيَا»<sup class="fnr">(٨)</sup>.</span></p>
+      </div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> هذه الأحاديث يجمعها جامع مشترك وهو حرص النبي ﷺ على أمّته وتحذيره إيّاهم من الفتن، وتنبيهه إياهم مبكّرًا لأنواع من الفتن ستعترض طريقهم.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> هذه الفتن التي حُذّر منها وقع شيء منها في زمن الصحابة ﵃، وشيء لم يقع إلّا بعدهم، وشيء لم يقع إلا في زماننا هذا.</p>
+      <p><b>الْفَائِدَةُ الثَّالِثَةُ:</b> مجموع هذه الأحاديث يلفت الانتباه لعدّة أمور:</p>
+      <p>• خطورة أمر الفتن.<br>
+      • اهتمام النبي ﷺ بشأن الأمة.<br>
+      • أن سلوك طريق الاستقامة وحده لا يكفي، بل ينبغي التنبه مع سلوكه إلى العوائق التي تعترض هذا الطريق.</p>
+      <p><b>الْفَائِدَةُ الرَّابِعَةُ:</b> ذكر الفتن من الأمور المهمة في الثبات على الطريق، فالثبات لا يكون إلا بإدراك وقوع الفتن والاستعداد لها بالخوف والمحاذرة.</p>
+      <p><b>الْفَائِدَةُ الْخَامِسَةُ:</b> الابتلاءات التي تعرض للسالك إلى الله متنوعة ومختلفة، فشيء منها في الأمراض، وشيء في تسلّط الأعداء، وشيء في المال والخير، غير أنّ من أشدّ ما خافه النبي ﷺ على أمّته: «فتنة الدنيا».<button class="nmark note--idah" data-n="n4">٤</button></p>
+      <aside class="note note--idah" id="n4"><span class="nt">إيضاح</span>في الأحاديث تدرّج مقصود: نفى ﷺ الخوف من الفقر ومن الشرك، وأثبت الخوف من بسط الدنيا والتنافس فيها؛ ثم بيّن في حديث فارس والروم مراحل الأثر: تنافس ثم تحاسد ثم تدابر ثم تباغض.</aside>
+      <p><b>الْفَائِدَةُ السَّادِسَةُ:</b> إذا رأيت شبابًا حريصين على العلم ونفع الإسلام والمسلمين ثم وجدت لديهم نقصًا في أمور الدنيا؛ فلا تحزن عليهم، واعلم أنّهم فقدوا عنصرًا من عناصر التفرّق.</p>
+      <p><b>الْفَائِدَةُ السَّابِعَةُ:</b> قد يصبر الصالحون على الشدائد والمصاعب لكنّهم قد لا يصبرون على النِّعَم والرَّخاء.</p>
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>أخرجه <span class="sem-name sem-scholar">البخاري</span> (٣١٥٨)، ومسلم (٢٩٦١).</li>
+        <li>إني فرطكم على الحوض: أي: سابقكم عليه.</li>
+        <li>أيلة: مدينة على ساحل البحر بين المدينة ودمشق ومصر.</li>
+        <li>الجحفة: موضع بين مكة والمدينة.</li>
+        <li>أخرجه <span class="sem-name sem-scholar">البخاري</span> (٤٠٤٢)، ومسلم (٢٢٩٦).</li>
+        <li>فتجعلون بعضهم على رقاب بعض: أي: تولّون بعضهم على بعض حتى يذلّوهم ويظلموهم.</li>
+        <li>أخرجه مسلم (٢٩٦٢).</li>
+        <li>أخرجه <span class="sem-name sem-scholar">البخاري</span> (٦٤٢٧)، ومسلم (١٠٥٢).</li></ol>
+      </div>
+
+      <div class="quiz" data-sec="s3"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>أحاديث الباب يجمعها حرص النبي ﷺ على أمته وتحذيرها مبكرًا من أنواع الفتن، وقع بعضها في زمن الصحابة وبعضها بعدهم وبعضها في زماننا.</li>
+          <li>سلوك طريق الاستقامة وحده لا يكفي، بل يلزم التنبّه للعوائق، والثبات يكون بإدراك وقوع الفتن والاستعداد لها.</li>
+          <li>الابتلاءات متنوعة، ومن أشد ما خافه النبي ﷺ على أمته فتنة الدنيا: «لا الفقر أخشى عليكم».</li>
+          <li>الشاب الحريص على العلم إذا نقصته الدنيا فقد فقد عنصرًا من عناصر التفرق.</li>
+          <li>قد يصبر الصالحون على الشدائد ولا يصبرون على النعم والرخاء.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 4 ===================== -->
+    <section class="sec" id="s4" style="--acc:var(--s4)">
+      <div class="sticky-head">المقطع الرابع · الباب الرابع والعشرون: الحديث ٦</div>
+      <h2>الباب الرابع والعشرون — الحديث (٦): عرض الفتن على القلوب</h2>
+      <p class="range">ص ٢١٠ – ص ٢١١</p>
+
+      <h3 id="s4a">الحديث السادس</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ حُذَيْفَةَ ﵁ قَالَ:</span>
+        <p><span class="sem-hadith">كُنَّا عِنْدَ عُمَرَ فَقَالَ: أَيُّكُمْ سَمِعَ رَسُولَ اللهِ ﷺ يَذْكُرُ الْفِتَنَ؟ فَقَالَ قَوْمٌ: نَحْنُ سَمِعْنَاهُ، فَقَالَ: لَعَلَّكُمْ تَعْنُونَ فِتْنَةَ الرَّجُلِ فِي أَهْلِهِ وَجَارِهِ؟، قَالُوا: أَجَلْ، قَالَ: تِلْكَ تُكَفِّرُهَا الصَّلَاةُ وَالصِّيَامُ وَالصَّدَقَةُ، وَلَكِنْ أَيُّكُمْ سَمِعَ النَّبِيَّ ﷺ يَذْكُرُ الَّتِي تَمُوجُ مَوْجَ الْبَحْرِ؟ قَالَ حُذَيْفَةُ: فَأَسْكَتَ الْقَوْمُ فَقُلْتُ: أَنَا، قَالَ: أَنْتَ لِلَّهِ أَبُوكَ، قَالَ حُذَيْفَةُ: سَمِعْتُ رَسُولَ اللهِ ﷺ يَقُولُ: «تُعْرَضُ الْفِتَنُ عَلَى الْقُلُوبِ كَالْحَصِيرِ عُودًا عُودًا، فَأَيُّ قَلْبٍ أُشْرِبَهَا نُكِتَ فِيهِ نُكْتَةٌ سَوْدَاءُ، وَأَيُّ قَلْبٍ أَنْكَرَهَا نُكِتَ فِيهِ نُكْتَةٌ بَيْضَاءُ، حَتَّى تَصِيرَ عَلَى قَلْبَيْنِ: عَلَى أَبْيَضَ مِثْلِ الصَّفَا فَلَا تَضُرُّهُ فِتْنَةٌ مَا دَامَتِ السَّمَاوَاتُ وَالْأَرْضُ، وَالْآخَرُ أَسْوَدُ مُرْبَادًّا<sup class="fnr">(١)</sup> كَالْكُوزِ<sup class="fnr">(٢)</sup> مُجَخِّيًا<sup class="fnr">(٣)</sup> لَا يَعْرِفُ مَعْرُوفًا وَلَا يُنْكِرُ مُنْكَرًا إِلَّا مَا أُشْرِبَ مِنْ هَوَاهُ<sup class="fnr">(٤)</sup>»<sup class="fnr">(٥)</sup>.</span></p>
+      </div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> الصالحون وإن كانوا في منزلة <span class="sem-name sem-sahabi">عمر</span> تقلقهم الفتن وتشغل بالهم.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> الفتن التي تقع في القلوب تقع بشكل تراكمي، وليس على صورة واحدة؛ لذلك قد يبدأ الإنسان ببعض الفتن ويظنّ أنه يملك أمره؛ فيتشرّب فتنة على إثر فتنة حتى يصل إلى مرحلة لا يملك فيها قراره، وقد كان يملكه.</p>
+      <p><b>الْفَائِدَةُ الثَّالِثَةُ:</b> من أعظم أسباب نور القلب: تجاوز الفتن وعدم الوقوع فيها.<button class="nmark note--idah" data-n="n5">٥</button></p>
+      <aside class="note note--idah" id="n5"><span class="nt">إيضاح</span>وجه التراكم في لفظ الحديث: «كالحصير عودًا عودًا»، فالفتن تُعرض واحدة بعد واحدة كما تُنسج أعواد الحصير، وتتراكم النُّكت حتى يصير القلب على إحدى الصورتين.</aside>
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>أسود مربادًا: أي: شدة البياض في سواد.</li>
+        <li>الكوز: إناء بعروة يُشرب فيه الماء.</li>
+        <li>مجخيًا: مقلوبًا.</li>
+        <li>ما أُشرب من هواه: أي: ما تهواه نفسه بغير إذن شرعي.</li>
+        <li>أخرجه مسلم (١٤٤).</li></ol>
+      </div>
+
+      <div class="quiz" data-sec="s4"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>الصالحون وإن كانوا في منزلة <span class="sem-name sem-sahabi">عمر</span> ﵁ تقلقهم الفتن وتشغل بالهم.</li>
+          <li>فتنة الرجل في أهله وجاره تكفّرها الصلاة والصيام والصدقة، والأشد التي تموج موج البحر.</li>
+          <li>الفتن تقع في القلوب بشكل تراكمي، فيتشرّب الإنسان فتنة بعد فتنة حتى لا يملك قراره وقد كان يملكه.</li>
+          <li>القلب إما أبيض مثل الصفا لا تضره فتنة، وإما أسود مربادّ كالكوز مجخيًا لا يعرف معروفًا ولا ينكر منكرًا إلا ما أُشرب من هواه.</li>
+          <li>من أعظم أسباب نور القلب تجاوز الفتن وعدم الوقوع فيها.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 5 ===================== -->
+    <section class="sec" id="s5" style="--acc:var(--s5)">
+      <div class="sticky-head">المقطع الخامس · الباب الرابع والعشرون: الحديثان ٧–٨</div>
+      <h2>الباب الرابع والعشرون — الحديثان (٧–٨): المبادرة بالأعمال، وإيقاظ صواحب الحجر</h2>
+      <p class="range">ص ٢١١ – ص ٢١٢</p>
+
+      <h3 id="s5a">الحديث السابع</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ أَبِي هُرَيْرَةَ ﵁ أَنَّ رَسُولَ اللهِ ﷺ قَالَ:</span>
+        <p><span class="sem-hadith">«بَادِرُوا بِالْأَعْمَالِ فِتَنًا كَقِطَعِ اللَّيْلِ الْمُظْلِمِ، يُصْبِحُ الرَّجُلُ مُؤْمِنًا وَيُمْسِي كَافِرًا أَوْ يُمْسِي مُؤْمِنًا وَيُصْبِحُ كَافِرًا، يَبِيعُ دِينَهُ بِعَرَضٍ مِنَ الدُّنْيَا»<sup class="fnr">(١)</sup>.</span></p>
+      </div>
+      <h3 id="s5b">الحديث الثامن</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ أُمِّ سَلَمَةَ ﵂ قَالَتِ:</span>
+        <p><span class="sem-hadith">اسْتَيْقَظَ النَّبِيُّ ﷺ ذَاتَ لَيْلَةٍ فَقَالَ: «سُبْحَانَ اللهِ مَاذَا أُنْزِلَ اللَّيْلَةَ مِنَ الْفِتَنِ وَمَاذَا فُتِحَ مِنَ الْخَزَائِنِ! أَيْقِظُوا صَوَاحِبَاتِ الْحُجَرِ<sup class="fnr">(٢)</sup> فَرُبَّ كَاسِيَةٍ فِي الدُّنْيَا عَارِيَةٍ فِي الْآخِرَةِ»<sup class="fnr">(٣)</sup>.</span></p>
+      </div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> تنبغي المبادرة بالأعمال في وقت الرخاء والعافية لأمرين:</p>
+      </div>
+      <p>• لأنّ هذه الأعمال لها أثر في الوقاية من الفتن حينما تأتي.<br>
+      • لأن حين الفتن قد لا يُتاح للإنسان العمل.</p>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> «قيام الليل» من أهم الأعمال التي ينبغي المبادرة إليها لاجتناب الفتن.</p>
+      <p><b>الْفَائِدَةُ الثَّالِثَةُ:</b> مَن لم يكن له رصيد من العمل والاستقامة قد تأتي عليه أيام من الفتن يتقلّب فيها تقلّبًا سريعًا، حتى إنّ دينه الذي هو أثمن ما يملكه يبيعه بعرَضٍ من الدنيا.</p>
+      <p><b>الْفَائِدَةُ الرَّابِعَةُ:</b> الفتن التي تنزل إنما هي من أقدار الله تعالى.</p>
+      <p><b>الْفَائِدَةُ الْخَامِسَةُ:</b> ينبغي الحرص على الأهل كما فعل النبي ﷺ.<button class="nmark note--idah" data-n="n6">٦</button></p>
+      <aside class="note note--idah" id="n6"><span class="nt">إيضاح</span>وجه الدلالة على قيام الليل: أن النبي ﷺ لما أخبر بنزول الفتن ليلًا أمر بإيقاظ أهله، فجعل القيام أول ما يُتّقى به ما أُنزل من الفتن.</aside>
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>أخرجه مسلم (١١٨).</li>
+        <li>صواحبات الحجر: أي: زوجات النبيّ ﷺ.</li>
+        <li>أخرجه <span class="sem-name sem-scholar">البخاري</span> (١١٥).</li></ol>
+      </div>
+
+      <div class="quiz" data-sec="s5"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>تنبغي المبادرة بالأعمال وقت الرخاء والعافية: لأنها تقي من الفتن حين تأتي، ولأن العمل قد لا يُتاح حين الفتن.</li>
+          <li>قيام الليل من أهم الأعمال التي يُبادر إليها لاجتناب الفتن.</li>
+          <li>من لا رصيد له من العمل والاستقامة قد يتقلب سريعًا في الفتن حتى يبيع دينه بعرض من الدنيا.</li>
+          <li>الفتن التي تنزل من أقدار الله تعالى.</li>
+          <li>ينبغي الحرص على الأهل كما أمر النبي ﷺ بإيقاظ صواحب الحجر.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 6 ===================== -->
+    <section class="sec" id="s6" style="--acc:var(--s6)">
+      <div class="sticky-head">المقطع السادس · الباب الرابع والعشرون: الحديثان ٩–١٠</div>
+      <h2>الباب الرابع والعشرون — الحديثان (٩–١٠): التعوّذ من الفتن، والعبادة في الهرج</h2>
+      <p class="range">ص ٢١٢ – ص ٢١٣</p>
+
+      <h3 id="s6a">الحديث التاسع</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ زَيْدِ بْنِ ثَابِتٍ ﵁ قَالَ:</span>
+        <p><span class="sem-hadith">بَيْنَمَا النَّبِيُّ ﷺ فِي حَائِطٍ لِبَنِي النَّجَّارِ عَلَى بَغْلَةٍ لَهُ وَنَحْنُ مَعَهُ إِذْ حَادَتْ بِهِ فَكَادَتْ تُلْقِيهِ، وَإِذَا أَقْبُرٌ سِتَّةٌ أَوْ خَمْسَةٌ أَوْ أَرْبَعَةٌ، قَالَ: كَذَا كَانَ يَقُولُ الْجُرَيْرِيُّ، فَقَالَ: «مَنْ يَعْرِفُ أَصْحَابَ هَذِهِ الْأَقْبُرِ؟»، فَقَالَ رَجُلٌ: أَنَا، قَالَ: «فَمَتَى مَاتَ هَؤُلَاءِ؟»، قَالَ: مَاتُوا فِي الْإِشْرَاكِ، فَقَالَ: «إِنَّ هَذِهِ الْأُمَّةَ تُبْتَلَى فِي قُبُورِهَا، فَلَوْلَا أَنْ لَا تَدَافَنُوا لَدَعَوْتُ اللهَ أَنْ يُسْمِعَكُمْ مِنْ عَذَابِ الْقَبْرِ الَّذِي أَسْمَعُ مِنْهُ»، ثُمَّ أَقْبَلَ عَلَيْنَا بِوَجْهِهِ فَقَالَ: «تَعَوَّذُوا بِاللهِ مِنْ عَذَابِ النَّارِ»، قَالُوا: نَعُوذُ بِاللهِ مِنْ عَذَابِ النَّارِ، فَقَالَ: «تَعَوَّذُوا بِاللهِ مِنْ عَذَابِ الْقَبْرِ»، قَالُوا: نَعُوذُ بِاللهِ مِنْ عَذَابِ الْقَبْرِ، قَالَ: «تَعَوَّذُوا بِاللهِ مِنَ الْفِتَنِ مَا ظَهَرَ مِنْهَا وَمَا بَطَنَ»، قَالُوا: نَعُوذُ بِاللهِ مِنَ الْفِتَنِ مَا ظَهَرَ مِنْهَا وَمَا بَطَنَ، قَالَ: «تَعَوَّذُوا بِاللهِ مِنْ فِتْنَةِ الدَّجَّالِ»، قَالُوا: نَعُوذُ بِاللهِ مِنْ فِتْنَةِ الدَّجَّالِ<sup class="fnr">(١)</sup>.</span><button class="nmark note--tarjama" data-n="n7">٧</button></p>
+      </div>
+      <aside class="note note--tarjama" id="n7"><span class="nt">ترجمة عَلَم</span>الجُرَيري: سعيد بن إياس، من رواة هذا الحديث، والعبارة «كذا كان يقول <span class="sem-name sem-scholar">الجريري</span>» من الراوي عنه؛ تنبيهًا على أن الشكّ في عدد القبور منه.</aside>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> هذا الحديث يبين شدّة حرص النبي ﷺ في بيانه لأمّته الأمور التي من الممكن أن يزلّوا بسببها.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> الاستعاذة بالله من وسائل اتّقاء الفتن.</p>
+      <h3 id="s6b">الحديث العاشر</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ مَعْقِلِ بْنِ يَسَارٍ ﵁ أَنَّ النَّبِيَّ ﷺ قَالَ:</span>
+        <p><span class="sem-hadith">«الْعِبَادَةُ فِي الْهَرْجِ كَهِجْرَةٍ إِلَيَّ»<sup class="fnr">(٢)</sup>.</span></p>
+      </div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> الهرج: اختلاط الأحوال بالفتن والقتل.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> في هذا الحديث يبيّن النبي ﷺ أن العبادة في حال الهرج كهجرة إليه؛ لأن تلك الأوقات ليست أوقات عبادة لعامة الناس، فالذي يستطيع المواظبة على العبادة في تلك الحال يكون أجره عند الله عظيمًا.</p>
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>أخرجه مسلم (٢٨٦٧).</li>
+        <li>أخرجه مسلم (٢٩٤٨).</li></ol>
+      </div>
+
+      <div class="quiz" data-sec="s6"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>حديث <span class="sem-name sem-sahabi">زيد بن ثابت</span> يبيّن شدة حرص النبي ﷺ على بيان ما قد تزلّ الأمة بسببه.</li>
+          <li>أمر ﷺ بالتعوذ من عذاب النار، وعذاب القبر، والفتن ما ظهر منها وما بطن، وفتنة الدجال.</li>
+          <li>الاستعاذة بالله من وسائل اتقاء الفتن.</li>
+          <li>الهرج: اختلاط الأحوال بالفتن والقتل، والعبادة فيه كهجرة إلى النبي ﷺ.</li>
+          <li>أجر المواظب على العبادة في الهرج عظيم؛ لأن تلك الأوقات ليست أوقات عبادة لعامة الناس.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 7 ===================== -->
+    <section class="sec" id="s7" style="--acc:var(--s7)">
+      <div class="sticky-head">المقطع السابع · الباب الخامس والعشرون: العنوان والآيتان</div>
+      <h2>الباب الخامس والعشرون — عنوان الباب والآيتان: أسباب ضعف المسلمين</h2>
+      <p class="range">ص ٢١٤ – ص ٢١٥</p>
+
+      <h3 id="s7a">الباب الخامس والعشرون</h3>
+      <div class="naql-block"><p>بَابٌ فِي فَهْمِ أَسْبَابِ ضَعْفِ الْمُسْلِمِينَ وَاخْتِلَالِ أَحْوَالِهِمْ، وَإِخْبَارِ النَّبِيِّ ﷺ عَنْ ذَلِكَ</p></div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> هذا الباب مهم جدًّا بالنسبة لموضوع الكتاب؛ لأنه قد اختيرت أحاديثه وآياته لتكون نبراسًا ومنهاجًا للشاب المسلم الذي يريد أن يثبت على دينه وينفع أمّته، ويطمح أن يكون مصلحًا، فمن المهمات لمن يريد أن يكون مصلحًا أن يعرف شيئًا من أسباب ضعف المسلمين.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> مع الحاجة الماسّة للمصلح بأن يعرف أسباب ضعف المسلمين نجد أن النبي ﷺ لكمال رحمته وشفقته وحرصه وبيانه بيّن لأمّته خير ما يعلمه لهم، وحذّرهم شرّ ما يعلمه لهم.</p>
+      <h4>الآيات</h4>
+      <h3 id="s7b">الآية الأولى</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿أَوَلَمَّآ أَصَٰبَتۡكُم مُّصِيبَةٞ قَدۡ أَصَبۡتُم مِّثۡلَيۡهَا قُلۡتُمۡ أَنَّىٰ هَٰذَاۖ قُلۡ هُوَ مِنۡ عِندِ أَنفُسِكُمۡۗ إِنَّ ٱللَّهَ عَلَىٰ كُلِّ شَيۡءٖ قَدِيرٞ﴾ <span class="aya-ref">[آل عمران: ١٦٥]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p>في المصائب التي أتت من الخارج يريد الله تعالى منّا أن نلتفت للأسباب الداخلية لها، ونحن اليوم في واقعنا نواجه مشكلات كثيرة متنوعة جاءتنا من أعداء المسلمين في الخارج ومن المنافقين، لكن لا ينبغي أن نضع أعباء المشكلة كلّها على هؤلاء، وإنّما من المهمّ أن نفتّش في النقص والخلل الذي فينا متسائلين: هل أدّينا الدور الحقيقي الذي علينا؟ وهل قمنا بمسؤولية الإصلاح وإنكار المنكر؟ هل قمنا بمسؤولية اجتماع الكلمة؟.<button class="nmark note--siyaq" data-n="n8">٨</button></p>
+      </div>
+      <aside class="note note--siyaq" id="n8"><span class="nt">سياق تاريخي</span>الآية في سياق مصيبة أُحد، و<span class="sem-aya">﴿قَدۡ أَصَبۡتُم مِّثۡلَيۡهَا﴾</span> إشارة إلى ما أصاب المسلمون من المشركين يوم بدر؛ فجاء الجواب عن سؤالهم <span class="sem-aya">﴿أَنَّىٰ هَٰذَا﴾</span> بردّه إلى أنفسهم.</aside>
+      <h3 id="s7c">الآية الثانية</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿إِنَّ ٱللَّهَ لَا يُغَيِّرُ مَا بِقَوۡمٍ حَتَّىٰ يُغَيِّرُواْ مَا بِأَنفُسِهِمۡۗ وَإِذَآ أَرَادَ ٱللَّهُ بِقَوۡمٖ سُوٓءٗا فَلَا مَرَدَّ لَهُۥۚ وَمَا لَهُم مِّن دُونِهِۦ مِن وَالٍ﴾ <span class="aya-ref">[الرعد: ١١]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p>الله تعالى لا يغيّر على أمّة من الأمم حال العافية والرخاء الذي هم فيه إلى نقيض ذلك من شتات الحال، والخوف بعد الأمن والتمزّق إلا إذا كان هناك شيء من داخل هؤلاء الناس قد غيّروه، فإذا كنا ننظر في أسباب ضعف المسلمين فينبغي أن ننظر في أنفسنا وأحوالنا.</p>
+      </div>
+      <div class="quiz" data-sec="s7"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>هذا الباب مهم لموضوع الكتاب؛ فمن المهمات لمن يريد أن يكون مصلحًا أن يعرف شيئًا من أسباب ضعف المسلمين.</li>
+          <li>النبي ﷺ لكمال رحمته بيّن لأمته خير ما يعلمه لهم وحذّرهم شر ما يعلمه لهم.</li>
+          <li>آية آل عمران ١٦٥: في المصائب الآتية من الخارج يريد الله أن نلتفت لأسبابها الداخلية.</li>
+          <li>لا نضع أعباء المشكلة كلها على الأعداء والمنافقين، بل نفتش في خللنا: الإصلاح، وإنكار المنكر، واجتماع الكلمة.</li>
+          <li>آية الرعد ١١: لا يغيّر الله حال العافية عن أمة إلا إذا غيّروا شيئًا من داخلهم.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 8 ===================== -->
+    <section class="sec" id="s8" style="--acc:var(--s1)">
+      <div class="sticky-head">المقطع الثامن · الباب الخامس والعشرون: الحديث ١</div>
+      <h2>الباب الخامس والعشرون — الحديث (١): تداعي الأمم و«الوهن»</h2>
+      <p class="range">ص ٢١٦ – ص ٢١٧</p>
+
+      <h4>الأحاديث</h4>
+      <h3 id="s8a">الحديث الأول</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ ثَوْبَانَ ﵁ قَالَ: قَالَ رَسُولُ اللهِ ﷺ:</span>
+        <p><span class="sem-hadith">«يُوشِكُ الْأُمَمُ أَنْ تَدَاعَى عَلَيْكُمْ كَمَا تَدَاعَى الْأَكَلَةُ إِلَى قَصْعَتِهَا<sup class="fnr">(١)</sup>»، فَقَالَ قَائِلٌ: وَمِنْ قِلَّةٍ نَحْنُ يَوْمَئِذٍ؟ قَالَ: «بَلْ أَنْتُمْ يَوْمَئِذٍ كَثِيرٌ وَلَكِنَّكُمْ غُثَاءٌ كَغُثَاءِ السَّيْلِ<sup class="fnr">(٢)</sup>، وَلَيَنْزَعَنَّ اللهُ مِنْ صُدُورِ عَدُوِّكُمُ الْمَهَابَةَ مِنْكُمْ، وَلَيَقْذِفَنَّ اللهُ فِي قُلُوبِكُمُ الْوَهْنَ»، فَقَالَ قَائِلٌ: يَا رَسُولَ اللهِ وَمَا الْوَهْنُ؟ قَالَ: «حُبُّ الدُّنْيَا وَكَرَاهِيَةُ الْمَوْتِ»<sup class="fnr">(٣)</sup>.</span></p>
+        <p><span class="sem-hadith">وهذا الحديث من أعجب الأحاديث وأدقها في وصف مشكلة الأمة الإسلامية اليوم.</span></p>
+      </div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> هذا الحديث عجيب في بيان حال الأمة الإسلامية اليوم، ومطابق لما نحن فيه من الإشكال، فهو يتحدّث عن حالة تتداعى فيها الأمم على أمّة الإسلام، وهذا التداعي فيه من الاستهانة بأمّة الإسلام ما يجعلهم كأنما يتداعون إلى قصعة يأكلون ما فيها من خيرات.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> في هذا الحديث جمع بين أمرين:</p>
+      <p>• المشكلة الخارجية.<br>
+      • السبب الداخلي الذي لأجله ترسّخت المشكلة الخارجية.</p>
+      <p><b>الْفَائِدَةُ الثَّالِثَةُ:</b> يتحدّث النبي ﷺ عن زمان نحن أولى مَن يدخل فيه، وأولى مَن يصدق عليه أنه داخل فيمن تحدّث عنهم النبي ﷺ.</p>
+      <p><b>الْفَائِدَةُ الرَّابِعَةُ:</b> ما ذُكر من نزع المهابة من صدور أعدائنا بخلاف ما كان في زمن النبي ﷺ الذي كان يُنصر بالرعب.</p>
+      <p><b>الْفَائِدَةُ الْخَامِسَةُ:</b> إذا تثاقل المسلمون إلى الأرض، ورضوا بأن يتعلّقوا بشيء من زُخرف الحياة، ولا يكونوا على استعداد للبذل والتضحية والتخلّي عن المكتسبات في سبيل نصرة الإسلام والمسلمين؛ فاعلم أن في هذه الحال يتسلّط أعداءُ الإسلام عليهم، أما إذا تسلّطوا عليهم وقلوبهم قد استدبرت الدنيا واستقبلت الآخرة، وامتلأت قلوبهم حبًّا لله ورسوله ﷺ وأمة الإسلام؛ فإن أعداء الإسلام وإن تسلّطوا وبثّوا ما بثّوا من السموم؛ فإنهم سيواجهون بنيانًا مرصوصًا يواجه مثل هذه الفتن.</p>
+      <p><b>الْفَائِدَةُ السَّادِسَةُ:</b> نحن اليوم في أمسّ الحاجة لإعادة المعنى والهُويّة والقيمة، وتثبيت مرجعية الوحي، وتثبيت الإيمان في النفوس، وإعادة بناء وصياغة الشخصية المسلمة من جديد؛ لأن هذا بإذن الله سيكون سببًا لإعادة بناء قوام الأمة الإسلامية.<button class="nmark note--idah" data-n="n9">٩</button></p>
+      <aside class="note note--idah" id="n9"><span class="nt">إيضاح</span>المقابلة بين الأمرين في لفظ الحديث: المشكلة الخارجية «تداعي الأمم» و«نزع المهابة»، والسبب الداخلي «غثاء كغثاء السيل» و«الوهن: حب الدنيا وكراهية الموت»؛ فالكثرة وحدها لم تنفع.</aside>
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>قصعتها: القصعة: وعاء يؤكل فيه.</li>
+        <li>غثاء السيل: ما يجيء فوق السيل مما يحتمله من الزبد والوسخ وغيره.</li>
+        <li>أخرجه أبو داود (٤٢٩٧)، وأحمد (٢٢٣٩٧).</li></ol>
+      </div>
+
+      <div class="quiz" data-sec="s8"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>حديث <span class="sem-name sem-sahabi">ثوبان</span> من أعجب الأحاديث وأدقها في وصف مشكلة الأمة اليوم: تتداعى عليها الأمم استهانةً كما يُتداعى إلى قصعة.</li>
+          <li>جمع الحديث بين المشكلة الخارجية والسبب الداخلي الذي رسّخها: الوهن، وهو حب الدنيا وكراهية الموت.</li>
+          <li>نزع المهابة من صدور الأعداء بخلاف زمن النبي ﷺ الذي كان يُنصر بالرعب.</li>
+          <li>إذا تثاقل المسلمون إلى الأرض تسلط عليهم الأعداء، وإذا استدبرت قلوبهم الدنيا واجه الأعداء بنيانًا مرصوصًا.</li>
+          <li>الحاجة ماسّة لإعادة المعنى والهوية، وتثبيت مرجعية الوحي والإيمان، وإعادة بناء الشخصية المسلمة.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 9 ===================== -->
+    <section class="sec" id="s9" style="--acc:var(--s2)">
+      <div class="sticky-head">المقطع التاسع · الباب الخامس والعشرون: الحديثان ٢–٣</div>
+      <h2>الباب الخامس والعشرون — الحديثان (٢–٣): السنوات الخدّاعات، وبيع العينة</h2>
+      <p class="range">ص ٢١٨ – ص ٢٢٠</p>
+
+      <h3 id="s9a">الحديث الثاني</h3>
+      <div class="hadith-block"><span class="lbl">عَنْ أَبِي هُرَيْرَةَ ﵁ قَالَ: قَالَ رَسُولُ اللهِ ﷺ:</span>
+        <p><span class="sem-hadith">«سَيَأْتِي عَلَى النَّاسِ سَنَوَاتٌ خَدَّاعَاتٌ: يُصَدَّقُ فِيهَا الْكَاذِبُ وَيُكَذَّبُ فِيهَا الصَّادِقُ، وَيُؤْتَمَنُ فِيهَا الْخَائِنُ وَيُخَوَّنُ فِيهَا الْأَمِينُ، وَيَنْطِقُ فِيهَا الرُّوَيْبِضَةُ»، قِيلَ: وَمَا الرُّوَيْبِضَةُ؟ قَالَ: «الرَّجُلُ التَّافِهُ فِي أَمْرِ الْعَامَّةِ»<sup class="fnr">(١)</sup>.</span></p>
+        <p><span class="sem-hadith">وأخرجه أحمدُ كذلك من حديث أنس بن مالك ﵁<sup class="fnr">(٢)</sup>، وفيه: «إِنَّ أَمَامَ الدَّجَّالِ سِنِينَ خَدَّاعَةً يُكَذَّبُ فِيهَا الصَّادِقُ».</span></p>
+        <p><span class="sem-hadith">وأخرجه البزّارُ<sup class="fnr">(٣)</sup> من حديث عوف بن مالك ﵁، وفيه: «إِنَّ بَيْنَ يَدَيِ السَّاعَةِ...».</span></p>
+        <p><span class="sem-hadith">وهذا الحديث مروي من وجوه متعددة لعله يقوى بها ويرقى للقبول إن شاء الله.</span></p>
+        <p><span class="sem-hadith">وهو كذلك من الأحاديث العجيبة في وصف شيء من مشكلة الواقع الذي تعيشه الأمة اليوم.</span></p>
+      </div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> عند قراءة هذا الحديث يتخايل أمام أعيننا صور التافهين الذين تصدّروا في كثير من المجتمعات والوسائل، وصاروا هم مَن يرسم المعايير، ويتّخذ القرار، يضعون للناس معايير في غاية التفاهة والانحطاط، وتبدّل المعاني، فيُصدّق الكاذب، ويُكذّب الصادق، ويؤتمن الخائن، ويُخوّن الأمين، وليس هناك قطع بأن هذا الحديث يتنزّل على زماننا، لكن المتأمّل البصير يرى مقدار التطابق الكبير بين ما ورد في هذا الحديث وزماننا.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> مما نخرج به من هذا الحديث: أنه ينبغي على الإنسان أن يأخذ الحذر والحيطة، ولا يغترّ بانتشار بعض المفاهيم، وتكالب كثير من الناس عليها؛ لأن النبي ﷺ يحذّرنا من انقلاب المعايير، وقد سبق الكلام في هذا الكتاب عن أهميّة ضبط المعايير عبر مرجعية الوحي؛ لأنّ الإنسان متى ما فقد المرجعية الحقيقية التي يستطيع من خلالها ضبط المعايير ومحاكمة الأشياء؛ فإنّه سيكون عرضة لاختلال المعايير والتأثّر كلّما كان هناك طرف آخر أعلى صوتًا.<button class="nmark note--mustalah" data-n="n10">١٠</button></p>
+      <aside class="note note--mustalah" id="n10"><span class="nt">تعريف مصطلح</span>«الرُّوَيبضة»: تصغير «الرابضة»، وهو العاجز الذي ربض عن معالي الأمور وقعد عن طلبها، وقد فسّره النبي ﷺ في الحديث بـ«الرجل التافه في أمر العامة».</aside>
+      <h3 id="s9b">الحديث الثالث</h3>
+      <div class="hadith-block"><span class="lbl">عَنِ ابْنِ عُمَرَ ﵄ قَالَ: سَمِعْتُ رَسُولَ اللهِ ﷺ يَقُولُ:</span>
+        <p><span class="sem-hadith">«إِذَا تَبَايَعْتُمْ بِالْعِينَةِ وَأَخَذْتُمْ أَذْنَابَ الْبَقَرِ<sup class="fnr">(٤)</sup> وَرَضِيتُمْ بِالزَّرْعِ وَتَرَكْتُمُ الْجِهَادَ؛ سَلَّطَ اللهُ عَلَيْكُمْ ذُلًّا لَا يَنْزِعُهُ حَتَّى تَرْجِعُوا إِلَى دِينِكُمْ»<sup class="fnr">(٥)</sup>.</span></p>
+      </div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> في هذا الحديث تحذير من الركون إلى الدنيا والاستغراق فيها، والتعلّق القلبي بها.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> في الحديث ذكر النبي ﷺ صورة من صور البيع وهي: «العينة» وهو بيع يظهر فيه شدة الحرص على المال، وصورتها: أن يبيع رجل رجلًا سلعة بثمن مؤجّل، ثم يشتريها منه معجّلة بثمن أقلّ، فالسلعة وسيط لا معنى له، وهي بذلك قريبة من صور الربا.</p>
+      <p><b>الْفَائِدَةُ الثَّالِثَةُ:</b> لا يُفهم من الحديث ذمّ الاشتغال بالزراعة، لكنّ الذمّ يقع على مَن كان هذا همه الوحيد الذي يشغل كلّ تفكيره، ويرضى به غير ملتفت لغيره، وكأنّه هو الأولى بالنسبة لغيره؛ لذلك نجد أن النبي ﷺ أتبع ذلك بذكر ترك الجهاد، فهناك ركون إلى الدنيا، مع ترك البذل والتضحية في سبيل الله، وإذا اجتمع هذا في الأمة فإن الله يُسلّط عليها ذلًّا لا ينزعه حتى يرجع الناس إلى دينهم.</p>
+      <p><b>الْفَائِدَةُ الرَّابِعَةُ:</b> مهما كانت هناك أسباب خارجية في ضعف الأمة، إلا أن هناك أسبابًا تعود إلى أنفسنا، وتعلّقنا بالدنيا وحبنا لها ورضانا بها.<button class="nmark note--idah" data-n="n11">١١</button></p>
+      <aside class="note note--idah" id="n11"><span class="nt">إيضاح</span>مثال العينة: يبيعه سلعة بألف إلى سنة، ثم يشتريها منه نقدًا بثمانمائة؛ فيرجع الأمر إلى دفع ثمانمائة وأخذ ألف بعد سنة، والسلعة بينهما صورة لا تُقصد.</aside>
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>أخرجه ابن ماجه (٤٠٣٦)، وأحمد (٧٩١٢).</li>
+        <li>أحمد (١٣٢٩٨).</li>
+        <li>البزّار (٢٧٤٠).</li>
+        <li>أخذتم أذناب البقر: أي: اشتغلتم بالزرع عن الجهاد.</li>
+        <li>أخرجه أبو داود (٣٤٦٢).</li></ol>
+      </div>
+
+      <div class="quiz" data-sec="s9"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>حديث السنوات الخدّاعات: يُصدَّق الكاذب ويُكذَّب الصادق، ويُؤتمن الخائن ويُخوَّن الأمين، وينطق الرويبضة: الرجل التافه في أمر العامة.</li>
+          <li>الحديث مروي من وجوه متعددة لعله يقوى بها، والمتأمل يرى التطابق الكبير بينه وبين زماننا دون قطع بتنزيله عليه.</li>
+          <li>ينبغي الحذر من الاغترار بانتشار المفاهيم، وضبط المعايير بمرجعية الوحي حتى لا يتأثر الإنسان بكل صوت أعلى.</li>
+          <li>حديث العينة: تحذير من الركون إلى الدنيا، والعينة بيع بثمن مؤجل ثم شراء بثمن معجّل أقل، قريبة من صور الربا.</li>
+          <li>الذم ليس للزراعة بل لمن جعلها همه الوحيد مع ترك الجهاد، فيُسلّط الذل حتى الرجوع إلى الدين.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+
+    <!-- ===================== المقطع 10 ===================== -->
+    <section class="sec" id="s10" style="--acc:var(--s3)">
+      <div class="sticky-head">المقطع العاشر · الباب السادس والعشرون: العنوان والآيات ١–٤</div>
+      <h2>الباب السادس والعشرون — عنوان الباب والآيات (١–٤): السنن الإلهية</h2>
+      <p class="range">ص ٢٢١ – ص ٢٢٥</p>
+
+      <h3 id="s10a">الباب السادس والعشرون</h3>
+      <div class="naql-block"><p>بَابٌ فِي السُّنَنِ الْإِلَهِيَّةِ وَأَهَمِّيَّةِ مُوَافَقَتِهَا فِي الْإِصْلَاحِ وَإِقَامَةِ الدِّينِ وَسِيَاسَةِ النَّاسِ وَدَعْوَتِهِمْ</p></div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p>اشتركت الآيات الثلاث الأولى من هذا الباب في الحديث عن سنّة الله في «إهلاك المكذّبين والظالمين»، وقد ذُكر فيها صنفان من الناس، وهم: «المنافقون»، و«المكذّبون والمعرضون».</p>
+      </div>
+      <h4>الآيات</h4>
+      <h3 id="s10b">الآية الأولى</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿سُنَّةَ ٱللَّهِ فِي ٱلَّذِينَ خَلَوۡاْ مِن قَبۡلُۖ وَلَن تَجِدَ لِسُنَّةِ ٱللَّهِ تَبۡدِيلٗا﴾ <span class="aya-ref">[الأحزاب: ٦٢]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> هذه الآية تتحدث عن المنافقين؛ وقد جاءت في سورة الأحزاب بعد قول الله تعالى: <span class="sem-aya">﴿۞لَّئِن لَّمۡ يَنتَهِ ٱلۡمُنَٰفِقُونَ وَٱلَّذِينَ فِي قُلُوبِهِم مَّرَضٞ وَٱلۡمُرۡجِفُونَ فِي ٱلۡمَدِينَةِ لَنُغۡرِيَنَّكَ بِهِمۡ ثُمَّ لَا يُجَاوِرُونَكَ فِيهَآ إِلَّا قَلِيلٗا ٦٠ مَّلۡعُونِينَۖ أَيۡنَمَا ثُقِفُوٓاْ أُخِذُواْ وَقُتِّلُواْ تَقۡتِيلٗا﴾</span>، وتدل هذه الآية على أن المنافقين إذا لم ينتهوا عمّا يقومون به من الأذى؛ فإنّ الله سيسلّط نبيّه ﷺ عليهم.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> اختلف المفسرون على قولين في عدم تحقق ما وقع في هذه الآية:</p>
+      <p>• أنهم رجعوا إلى كتمانهم وإسرارهم وانتهوا، وهذا أرجح من الثاني، وهو قول <span class="sem-name sem-scholar">قتادة</span> ﵀.<br>
+      • أن إخلاف الوعيد جائز من باب الكرم الإلهي.</p>
+      <p>قال الإمام <span class="sem-name sem-scholar">ابن كثير</span> ﵀ في تفسير الآية: «أي: هذه سنَّتُهُ في المنافقينَ إذا تمرَّدوا عَلَى نفاقِهم وكفرِهم ولم يرجعوا عمّا هم فيه؛ أنَّ أهلَ الإيمانِ يسلَّطونَ عليهم ويقهرونَهم»<sup class="fnr">(١)</sup>.</p>
+      <p><b>الْفَائِدَةُ الثَّالِثَةُ:</b> اختلف المفسرون في تفسير قوله تعالى: <span class="sem-aya">﴿ٱلَّذِينَ خَلَوۡاْ مِن قَبۡلُ﴾</span> على قولين:</p>
+      <p>• أي: من أعداء النبيّ ﷺ الذين سلّطه الله عليهم، وانتصر عليهم في بدر، وسلّطه على يهود بني قريظة، فكما فعل ذلك في هؤلاء؛ فإنّ من سنة الله أن يسلّطه على هؤلاء المنافقين.<br>
+      • أي: من الأمم السابقة؛ فسنّة الله أنه يسلّط أولياءه على أعدائه في مثل هذه الأحوال.<button class="nmark note--mustalah" data-n="n12">١٢</button></p>
+      <aside class="note note--mustalah" id="n12"><span class="nt">تعريف مصطلح</span>«السُّنّة» في القرآن: الطريقة المطّردة التي يجري عليها فعل الله في خلقه، فلا تتبدّل بتبدّل الأشخاص والأزمان؛ ولهذا خُتمت آيات الباب بنفي التبديل والتحويل.</aside>
+      <h3 id="s10c">الآية الثانية</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿فَهَلۡ يَنظُرُونَ إِلَّا سُنَّتَ ٱلۡأَوَّلِينَۚ فَلَن تَجِدَ لِسُنَّتِ ٱللَّهِ تَبۡدِيلٗاۖ وَلَن تَجِدَ لِسُنَّتِ ٱللَّهِ تَحۡوِيلًا﴾ <span class="aya-ref">[فاطر: ٤٣]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p>هذه الآية جاءت في سورة فاطر في سياق الحديث عن المستكبرين والماكرين السوء، فالله يُخبر نبيّه أن سنّته فيمن جاءته البينات والحجج ورفضها وكذّب أن يُنزل بهم بأسه ويهلكهم، فهل ينظر هؤلاء إلا أن ينزل بهم كما نزل بالأولين؟.</p>
+      </div>
+      <h3 id="s10d">الآية الثالثة</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿فَلَمۡ يَكُ يَنفَعُهُمۡ إِيمَٰنُهُمۡ لَمَّا رَأَوۡاْ بَأۡسَنَا<sup class="fnr">(٢)</sup>ۖ سُنَّتَ ٱللَّهِ ٱلَّتِي قَدۡ خَلَتۡ فِي عِبَادِهِۦۖ وَخَسِرَ هُنَالِكَ ٱلۡكَٰفِرُونَ﴾ <span class="aya-ref">[غافر: ٨٥]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p><b>الْفَائِدَةُ الْأُولَى:</b> هذه الآية تدلّ على أنّ من سنة الله: أنّ الظالمين لا ينفعهم إيمانهم حين يرون البأس.</p>
+      </div>
+      <p><b>الْفَائِدَةُ الثَّانِيَةُ:</b> ويمكن تقسيم إهلاك الله للظالمين إلى نوعين:</p>
+      <p><b>الأول:</b> إهلاك بخرق العادة في السنن الكونية؛ كما حصل في إهلاك قوم نوح عليه السلام.<br>
+      <b>الثاني:</b> إهلاك الظالمين بتسليط المؤمنين عليهم.</p>
+      <p>فالنوع الأول من الآيات الظاهرة، والثاني من الآيات الخفية التي تأتي ضمن سياق التدافع بين الحق والباطل، والتوبة لا تقبل من الظالمين حين ينزل بهم البأس؛ إذا كان البأس من النوع الأول، أما إذا كان من النوع الثاني؛ فإن التوبة تُقبل<sup class="fnr">(٣)</sup>، وسبب ذلك: أنّ الأوّل لا تُترك معه فرصة لإحسان العمل؛ لأنه إهلاك تامّ، والسنن الإلهية التي ذكر الله في كتابه أنّها ستقع لنبيّه محمد ﷺ فيما يتعلق بإهلاك الظالمين إنما هي من النوع الثاني.<button class="nmark note--idah" data-n="n13">١٣</button></p>
+      <aside class="note note--idah" id="n13"><span class="nt">إيضاح</span>ويشهد للنوع الثاني أن كثيرًا ممن قاتلوا النبي ﷺ ثم أسلموا قُبل منهم، وهو معنى قوله تعالى: <span class="sem-aya">﴿قُل لِّلَّذِينَ كَفَرُوٓاْ إِن يَنتَهُواْ يُغۡفَرۡ لَهُم مَّا قَدۡ سَلَفَ﴾</span> <span class="aya-ref">[الأنفال: ٣٨]</span>.</aside>
+      <h3 id="s10e">الآية الرابعة</h3>
+      <div class="aya-block"><span class="aya">قال الله تعالى: ﴿قَدۡ خَلَتۡ مِن قَبۡلِكُمۡ سُنَنٞ فَسِيرُواْ فِي ٱلۡأَرۡضِ فَٱنظُرُواْ كَيۡفَ كَانَ عَٰقِبَةُ ٱلۡمُكَذِّبِينَ﴾ <span class="aya-ref">[آل عمران: ١٣٧]</span></span>.</div>
+      <h4>الْفَوَائِدُ:</h4>
+      <div class="lead">
+      <p>قال <span class="sem-name sem-scholar">أبو جعفر الطبري</span>: يعني بقوله تعالى ذكره: <span class="sem-aya">﴿قَدۡ خَلَتۡ مِن قَبۡلِكُمۡ سُنَنٞ﴾</span>، مضت وسلفت منّي فيمن كان قبلكم يا معشر أصحاب محمد وأهل الإيمان به من نحو قوم عاد وثمود وقوم هود وقوم لوط وغيرهم من سلاف الأمم قبلكم سنن، يعني: مَثُلات سِيرَ بها فيهم وفيمن كذّبوا به من أنبيائهم الذين أرسلوا إليهم، بإمهالي أهلَ التكذيب بهم واستدراجي إياهم حتى بلغ الكتاب فيهم أجله الذي أجّلته لإدالة أنبيائهم وأهل الإيمان بهم عليهم، ثم أحللت بهم عقوبتي وأنزلتُ بساحتهم نِقمي فتركتهم لمن بعدهم أمثالًا وعبرًا <span class="sem-aya">﴿فَسِيرُواْ فِي ٱلۡأَرۡضِ فَٱنظُرُواْ كَيۡفَ كَانَ عَٰقِبَةُ ٱلۡمُكَذِّبِينَ﴾</span>، يقول: فسيروا - أيها الظانّون أنّ إدالتي مَنْ أدلت من أهل الشرك يوم أُحد على محمد وأصحابه لغير استدراج منّي لمن أشرك بي وكفر برسلي وخالف أمري - في ديار الأمم الذين كانوا قبلكم ممن كان على مثل الذي عليه هؤلاء المكذبون برسولي والجاحدون وحدانيتي، فانظروا كيف كان عاقبة تكذيبهم أنبيائي وما الذي آل إليه غِبُّ خلافهم أمري وإنكارهم وحدانيتي فتعلموا عند ذلك أنّ إدالتي من أدلت من المشركين على نبيي محمد وأصحابه بأحد إنما هي استدراج وإمهال ليبلغ الكتاب أجله الذي أجلت لهم، ثم إما أن يؤول حالهم إلى مثل ما آل إليه حال الأمم الذين سلفوا قبلهم: من تعجيل العقوبة عليهم أو ينيبوا إلى طاعتي واتباع رسولي»<sup class="fnr">(٤)</sup>.<button class="nmark note--mustalah" data-n="n14">١٤</button></p>
+      </div>
+      <aside class="note note--mustalah" id="n14"><span class="nt">تعريف مصطلح</span>«الإدالة»: جعل الدولة والغلبة لطرف بعد طرف؛ و«المَثُلات»: العقوبات التي تصير مثلًا وعبرة لمن بعدهم.</aside>
+      <div class="book-fn"><span class="lbl">حواشي المؤلف (من الكتاب)</span>
+        <ol><li>تفسير <span class="sem-name sem-scholar">ابن كثير</span> (٦/ ٤٨٣).</li>
+        <li>بأسنا: عقابنا.</li>
+        <li>يُنظر تفسير الآية من «التحرير والتنوير» ل<span class="sem-name sem-scholar">ابن عاشور</span>.</li>
+        <li>تفسير <span class="sem-name sem-scholar">الطبري</span>: (٦/ ٧٠ – ٧١).</li></ol>
+      </div>
+
+      <div class="quiz" data-sec="s10"><h4>تثبّت قبل ما تكمل</h4><div class="score"></div><div class="qs"></div></div>
+
+      <div class="takeaway">
+        <h4>خلاصة المقطع <span class="tag-add">إضافة ليست من الكتاب</span></h4>
+        <ul>
+          <li>الآيات الثلاث الأولى في سنة الله في إهلاك المكذبين والظالمين، وذُكر فيها صنفان: المنافقون، والمكذبون المعرضون.</li>
+          <li>آية الأحزاب ٦٢: إذا لم ينته المنافقون عن الأذى سلّط الله عليهم نبيه ﷺ، والأرجح في عدم وقوعه أنهم رجعوا إلى كتمانهم وانتهوا (قول <span class="sem-name sem-scholar">قتادة</span>).</li>
+          <li>آية فاطر ٤٣: سنة الله فيمن جاءته البينات فكذّب أن يُنزل به بأسه كما نزل بالأولين.</li>
+          <li>آية غافر ٨٥: لا ينفع الظالمين إيمانهم حين يرون البأس في الإهلاك بخرق العادة، أما الإهلاك بتسليط المؤمنين فتُقبل معه التوبة.</li>
+          <li>آية آل عمران ١٣٧ عند <span class="sem-name sem-scholar">الطبري</span>: إدالة المشركين يوم أحد استدراج وإمهال، ثم إما تعجيل العقوبة أو الإنابة.</li>
+        </ul>
+      </div>
+    </section>
+    <div class="divider">✻ ✻ ✻</div>
+</main>
+</div>
+
+<!-- ===================== بطاقات المراجعة (خارج منطقة الهايلايت) ===================== -->
+<div class="wrap" style="padding-top:0">
+  <div class="main">
+    <section class="cards" id="anki">
+      <div class="ttl" style="font-size:22px;color:var(--brand)">بطاقات المراجعة (Anki)</div>
+      <div class="sub">بطاقات مستقلة عن الصفحة: كل بطاقة مفهومة بعد شهور بلا رجوع للكتاب. اضغط البطاقة لقلبها. <span id="cards-count"></span></div>
+      <div class="filters" id="filters"></div>
+      <div class="ak" id="ak" tabindex="0">
+        <div class="deckcap" id="ak-deck"></div>
+        <div id="ak-front"></div>
+        <div class="ak-back" id="ak-back"></div>
+        <div class="hint">اضغط لإظهار الإجابة</div>
+      </div>
+      <div class="cnav">
+        <button class="btn" type="button" id="ak-prev">◀ السابقة</button>
+        <span id="ak-counter">٠ / ٠</span>
+        <button class="btn" type="button" id="ak-next">التالية ▶</button>
+        <button class="btn" type="button" id="ak-dl">⬇ تحميل ملف Anki (TSV)</button>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div id="ilm-custom-nav"></div>
+
+<script>
+const QUIZ_DATA = [
+ {"id": "q1", "sectionId": "s1", "question": "شخص يقول: ما دمت قد دخلت طريق الاستقامة فقد ضمنت الوصول. بمَ يرد عليه فوائد الباب؟", "options": ["هو محق", "الفتن لا تختص بأهل الفساد، والصالحون يُفتنون، وطريق الاستقامة فيه الفتن والابتلاءات", "الفتن للعلماء فقط", "الاستقامة تمنع الابتلاء"], "correctIndex": 1, "explanation": "دخول طريق الاستقامة لا يعني ضمان الوصول؛ لأن من شأنه أنه طريق فيه الفتن والابتلاءات والتحديات."},
+ {"id": "q2", "sectionId": "s1", "question": "ما السبب الذي توارد عليه غير واحد من المفسرين لعموم الفتنة في آية ﴿وَٱتَّقُواْ فِتۡنَةٗ لَّا تُصِيبَنَّ ٱلَّذِينَ ظَلَمُواْ مِنكُمۡ خَآصَّةٗ﴾؟", "options": ["كثرة الأموال", "تعميم الظلم مع عدم إنكاره وتغييره", "قلة العلماء", "الحروب الخارجية"], "correctIndex": 1, "explanation": "توارد غير واحد من المفسرين على أن السبب تعميم الظلم مع عدم إنكاره وتغييره."},
+ {"id": "q3", "sectionId": "s2", "question": "ما معنى «فيرقّق بعضها بعضًا» في حديث عبد الله بن عمرو؟", "options": ["أن الفتن تضعف مع الوقت", "أن الثانية منها تجعل الأولى خفيفة لعظمها", "أن الناس يعتادونها", "أن بعضها يُنسي بعضًا لقلّتها"], "correctIndex": 1, "explanation": "أي: أن الثاني منها يجعل الأول خفيفًا لعظمه."},
+ {"id": "q4", "sectionId": "s3", "question": "ما الذي نفى النبي ﷺ أنه يخشاه على أمته في حديثي عمرو بن عوف وعقبة بن عامر؟", "options": ["الدنيا والتنافس فيها", "الفقر، والشرك بعده", "الاقتتال", "بسط الدنيا"], "correctIndex": 1, "explanation": "قال: «فوالله لا الفقر أخشى عليكم»، و«إني لست أخشى عليكم أن تشركوا بعدي»، وإنما خشي عليهم الدنيا والتنافس فيها."},
+ {"id": "q5", "sectionId": "s3", "question": "شاب حريص على العلم ونفع المسلمين لكنه قليل الحظ من الدنيا، وأهله يحزنون عليه. ماذا يقول المؤلف؟", "options": ["حزنهم في محله", "لا تحزن عليهم؛ فقد فقدوا عنصرًا من عناصر التفرق", "يجب عليه ترك العلم للكسب", "هذا دليل على فشله"], "correctIndex": 1, "explanation": "إذا رأيت شبابًا حريصين على العلم ونفع الإسلام ثم وجدت لديهم نقصًا في الدنيا فلا تحزن عليهم، فقد فقدوا عنصرًا من عناصر التفرق."},
+ {"id": "q6", "sectionId": "s4", "question": "ما الفتنة التي قال عمر ﵁ إنها تكفّرها الصلاة والصيام والصدقة؟", "options": ["الفتنة التي تموج موج البحر", "فتنة الرجل في أهله وجاره", "فتنة الدجال", "فتنة القبر"], "correctIndex": 1, "explanation": "قال: تلك - أي فتنة الرجل في أهله وجاره - تكفرها الصلاة والصيام والصدقة."},
+ {"id": "q7", "sectionId": "s4", "question": "رجل يتساهل في فتن صغيرة ويقول: أنا أملك أمري. ما الخطر الذي يبيّنه حديث عرض الفتن على القلوب؟", "options": ["لا خطر في الصغائر", "الفتن تقع بشكل تراكمي، فيتشرّب فتنة بعد فتنة حتى لا يملك قراره وقد كان يملكه", "الفتن لا تؤثر في القلوب", "القلب لا يتغير"], "correctIndex": 1, "explanation": "الفتن تقع في القلوب بشكل تراكمي، فقد يظن أنه يملك أمره ثم يصل إلى مرحلة لا يملك فيها قراره."},
+ {"id": "q8", "sectionId": "s5", "question": "لماذا تنبغي المبادرة بالأعمال في وقت الرخاء والعافية؟", "options": ["لأن الأجر فيه أكبر فقط", "لأنها تقي من الفتن حين تأتي، ولأن العمل قد لا يُتاح حين الفتن", "لأن الرخاء لا يدوم فقط", "لأن الفتن لا تأتي في الرخاء"], "correctIndex": 1, "explanation": "لأن هذه الأعمال لها أثر في الوقاية من الفتن حين تأتي، ولأن حين الفتن قد لا يُتاح العمل."},
+ {"id": "q9", "sectionId": "s5", "question": "ما العمل الذي نصّ المؤلف على أنه من أهم ما يُبادر إليه لاجتناب الفتن؟", "options": ["الصدقة", "قيام الليل", "الحج", "الاعتكاف"], "correctIndex": 1, "explanation": "«قيام الليل» من أهم الأعمال التي ينبغي المبادرة إليها لاجتناب الفتن."},
+ {"id": "q10", "sectionId": "s6", "question": "ما معنى «الهرج» في حديث «العبادة في الهرج كهجرة إليّ»؟", "options": ["الفرح والسرور", "اختلاط الأحوال بالفتن والقتل", "كثرة الأسواق", "شدة الحر"], "correctIndex": 1, "explanation": "الهرج: اختلاط الأحوال بالفتن والقتل."},
+ {"id": "q11", "sectionId": "s6", "question": "لماذا كان أجر العبادة في الهرج عظيمًا؟", "options": ["لأنها أطول", "لأن تلك الأوقات ليست أوقات عبادة لعامة الناس", "لأنها في المسجد الحرام", "لأنها جماعية"], "correctIndex": 1, "explanation": "لأن تلك الأوقات ليست أوقات عبادة لعامة الناس، فالمواظب فيها أجره عظيم."},
+ {"id": "q12", "sectionId": "s7", "question": "مصلح يحمّل الأعداء الخارجيين وحدهم كل أسباب ضعف المسلمين. بمَ ترد عليه آية ﴿قُلۡ هُوَ مِنۡ عِندِ أَنفُسِكُمۡ﴾؟", "options": ["هو محق تمامًا", "يريد الله منا أن نلتفت للأسباب الداخلية ونفتش في خللنا: الإصلاح، وإنكار المنكر، واجتماع الكلمة", "الأعداء لا أثر لهم", "لا فائدة من البحث في الأسباب"], "correctIndex": 1, "explanation": "لا ينبغي وضع أعباء المشكلة كلها على الأعداء، بل نفتّش في النقص والخلل الذي فينا."},
+ {"id": "q13", "sectionId": "s8", "question": "ما «الوهن» كما فسّره النبي ﷺ في حديث ثوبان؟", "options": ["الضعف البدني", "حب الدنيا وكراهية الموت", "قلة العدد", "الفقر"], "correctIndex": 1, "explanation": "قال: «حب الدنيا وكراهية الموت»."},
+ {"id": "q14", "sectionId": "s8", "question": "هل كانت مشكلة الأمة في حديث تداعي الأمم قلة العدد؟", "options": ["نعم كانوا قلة", "لا، بل هم يومئذ كثير ولكنهم غثاء كغثاء السيل", "لم يذكر الحديث العدد", "كانوا متوسطي العدد"], "correctIndex": 1, "explanation": "قال ﷺ: «بل أنتم يومئذ كثير ولكنكم غثاء كغثاء السيل»."},
+ {"id": "q15", "sectionId": "s9", "question": "من «الرويبضة» كما فسّره النبي ﷺ؟", "options": ["العالم الربّاني", "الرجل التافه في أمر العامة", "الحاكم العادل", "الفقير المسكين"], "correctIndex": 1, "explanation": "قال ﷺ: «الرجل التافه في أمر العامة»."},
+ {"id": "q16", "sectionId": "s9", "question": "ما صورة بيع «العينة» كما ذكرها المؤلف؟", "options": ["بيع السلعة قبل قبضها", "أن يبيع رجلًا سلعة بثمن مؤجل ثم يشتريها منه معجّلة بثمن أقل", "بيع الثمر قبل نضجه", "البيع على بيع الأخ"], "correctIndex": 1, "explanation": "أن يبيع رجل رجلًا سلعة بثمن مؤجّل، ثم يشتريها منه معجّلة بثمن أقل؛ فالسلعة وسيط لا معنى له."},
+ {"id": "q17", "sectionId": "s9", "question": "هل يُفهم من حديث «وأخذتم أذناب البقر ورضيتم بالزرع» ذمّ الزراعة؟", "options": ["نعم ذم مطلق", "لا، الذم لمن جعلها همه الوحيد ورضي بها مع ترك الجهاد", "الحديث في مدح الزراعة", "الحديث خاص بالبادية"], "correctIndex": 1, "explanation": "لا يُفهم ذم الاشتغال بالزراعة، لكن الذم على من كان هذا همه الوحيد، ولذا أتبعه بترك الجهاد."},
+ {"id": "q18", "sectionId": "s10", "question": "ما الأرجح عند المفسرين في عدم تحقق تسليط النبي ﷺ على المنافقين كما في آية الأحزاب؟", "options": ["أن إخلاف الوعيد جائز", "أنهم رجعوا إلى كتمانهم وإسرارهم وانتهوا (قول قتادة)", "أنه تحقق فعلًا", "أن الآية منسوخة"], "correctIndex": 1, "explanation": "الأرجح أنهم رجعوا إلى كتمانهم وإسرارهم وانتهوا، وهو قول قتادة."},
+ {"id": "q19", "sectionId": "s10", "question": "متى تُقبل توبة الظالمين حين ينزل بهم البأس بحسب المؤلف؟", "options": ["لا تقبل أبدًا", "إذا كان البأس بتسليط المؤمنين عليهم لا بخرق العادة", "إذا كان البأس بخرق العادة", "دائمًا تقبل"], "correctIndex": 1, "explanation": "التوبة لا تُقبل إذا كان البأس من النوع الأول (خرق العادة)، وتُقبل إذا كان من النوع الثاني (تسليط المؤمنين)."}
+];
+
+/* ===== CARDS_DATA — بطاقات Anki (9-ط) · يولّدها ويصدّرها ilm-anki.js ===== */
+const CARDS_DATA = [
+ {"id": "c01", "sectionId": "s1", "level": 1, "anchor": "الصالحون يُفتنون", "pattern": "calm", "q": "هل تختص الفتن بأهل الفساد؟ وهل دخول طريق الاستقامة ضمان للوصول؟", "a": "لا تختص بأهل الفساد، فالصالحون يُفتنون. ودخول طريق الاستقامة لا يعني ضمان الوصول؛ لأن من شأنه أنه طريق فيه الفتن والابتلاءات والتحديات.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "في هذا الباب إشارة إلى أنّ الفتن لا تختصّ بأهل الفساد"},
+ {"id": "c02", "sectionId": "s1", "level": 1, "anchor": "آل عمران ١٧٩: ﴿حَتَّىٰ يَمِيزَ ٱلۡخَبِيثَ مِنَ ٱلطَّيِّبِ﴾", "pattern": "quran", "q": "﴿مَّا كَانَ ٱللَّهُ لِيَذَرَ ٱلۡمُؤۡمِنِينَ عَلَىٰ مَآ أَنتُمۡ عَلَيۡهِ حَتَّىٰ يَمِيزَ ٱلۡخَبِيثَ مِنَ ٱلطَّيِّبِ﴾ [آل عمران: ١٧٩]\nما معنى الآية، ومتى يتهيأ المؤمنون للفتن خاصة؟", "a": "لم يكن الله ليترك المجتمع المؤمن دون اختبار حقيقي يميز المؤمن من المنافق؛ فإذا كان في العاملين للدين خبيث ومنافق فليتهيأ المؤمنون للفتن التي تنخلهم فيسقط الخبيث ويبقى الطيب، خاصة إذا وصلوا لمرحلة يريدون بها الخير والرفعة ونصرة الإسلام. (ليذر: ليدع)", "blocks": [{"type": "ans", "s": "لم يكن", "e": "من المنافق؛", "core": true}, {"type": "wajh", "s": "فإذا كان", "e": "(ليذر: ليدع)"}], "marks": [], "review": "", "src": "معنى الآية: أنّ الله لم يكن ليترك المجتمع المؤمن"},
+ {"id": "c03", "sectionId": "s1", "level": 1, "anchor": "الأنفال ٢٥: فتنة تعمّ", "pattern": "quran", "q": "﴿وَٱتَّقُواْ فِتۡنَةٗ لَّا تُصِيبَنَّ ٱلَّذِينَ ظَلَمُواْ مِنكُمۡ خَآصَّةٗ﴾ [الأنفال: ٢٥]\nمن تحذّر الآية، وما سبب عموم الفتنة عند المفسرين؟", "a": "تحذّر المؤمنين غير الظالمين من فتنة تعم الظالمين وغيرهم. والسبب عند غير واحد من المفسرين: تعميم الظلم مع عدم إنكاره وتغييره، فإذا عمّ ولم يُنكر فلتُتّق فتنة عامة يُراد بها العقاب.", "blocks": [{"type": "ans", "s": "تحذّر المؤمنين", "e": "الظالمين وغيرهم.", "core": true}, {"type": "wajh", "s": "والسبب عند", "e": "بها العقاب."}], "marks": [], "review": "", "src": "تعميم الظلم، مع عدم إنكاره وتغييره"},
+ {"id": "c04", "sectionId": "s1", "level": 1, "anchor": "العنكبوت ٢: الاختبار بالرخاء والشدة", "pattern": "quran", "q": "﴿أَحَسِبَ ٱلنَّاسُ أَن يُتۡرَكُوٓاْ أَن يَقُولُوٓاْ ءَامَنَّا وَهُمۡ لَا يُفۡتَنُونَ﴾ [العنكبوت: ٢]\nبمَ يبشر من ادعى الإيمان، وبمَ يكون اختباره؟", "a": "يبشر بالخير والرحمة والسكينة والطمأنينة، وليتهيأ للاختبار، ويكون بالرخاء كما يكون بالشدة؛ قال سليمان عليه السلام: ﴿هَٰذَا مِن فَضۡلِ رَبِّي لِيَبۡلُوَنِيٓ ءَأَشۡكُرُ أَمۡ أَكۡفُرُۖ﴾ [النمل: ٤٠].", "blocks": [{"type": "ans", "s": "يبشر بالخير", "e": "يكون بالشدة؛", "core": true}, {"type": "wajh", "s": "قال سليمان", "e": "[النمل: ٤٠]."}], "marks": [], "review": "", "src": "وهذا الاختبار يكون بالرخاء كما يكون بالشدة"},
+ {"id": "c05", "sectionId": "s2", "level": 1, "anchor": "حق كل نبي على أمته", "pattern": "quran", "q": "ما الذي كان حقًّا على كل نبي قبل النبي ﷺ كما في حديث عبد الله بن عمرو؟", "a": "«إِنَّهُ لَمْ يَكُنْ نَبِيٌّ قَبْلِي إِلَّا كَانَ حَقًّا عَلَيْهِ أَنْ يَدُلَّ أُمَّتَهُ عَلَى خَيْرِ مَا يَعْلَمُهُ لَهُمْ وَيُنْذِرَهُمْ شَرَّ مَا يَعْلَمُهُ لَهُمْ». (مسلم ١٨٤٤)", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "أَنْ يَدُلَّ أُمَّتَهُ عَلَى خَيْرِ مَا يَعْلَمُهُ لَهُمْ"},
+ {"id": "c06", "sectionId": "s2", "level": 1, "anchor": "«جُعل عافيتها في أولها»", "pattern": "quran", "q": "كيف وصف النبي ﷺ حال أمته في أولها وآخرها، وكيف تجيء الفتن؟", "a": "«وَإِنَّ أُمَّتَكُمْ هَذِهِ جُعِلَ عَافِيَتُهَا فِي أَوَّلِهَا، وَسَيُصِيبُ آخِرَهَا بَلَاءٌ وَأُمُورٌ تُنْكِرُونَهَا، وَتَجِيءُ فِتْنَةٌ فَيُرَقِّقُ بَعْضُهَا بَعْضًا، وَتَجِيءُ الْفِتْنَةُ فَيَقُولُ الْمُؤْمِنُ: هَذِهِ مُهْلِكَتِي ثُمَّ تَنْكَشِفُ، وَتَجِيءُ الْفِتْنَةُ فَيَقُولُ الْمُؤْمِنُ: هَذِهِ هَذِهِ». فيرقق بعضها بعضًا: الثانية تجعل الأولى خفيفة لعظمها.", "blocks": [{"type": "ans", "s": "«وَإِنَّ أُمَّتَكُمْ", "e": "فِي أَوَّلِهَا،", "core": true}, {"type": "wajh", "s": "وَسَيُصِيبُ آخِرَهَا", "e": "خفيفة لعظمها."}], "marks": [], "review": "", "src": "جُعِلَ عَافِيَتُهَا فِي أَوَّلِهَا"},
+ {"id": "c07", "sectionId": "s2", "level": 1, "anchor": "طريق النجاة من الفتن", "pattern": "quran", "q": "ما الذي أرشد إليه النبي ﷺ من أحب أن يُزحزح عن النار ويُدخل الجنة في زمن الفتن؟", "a": "«فَلْتَأْتِهِ مَنِيَّتُهُ وَهُوَ يُؤْمِنُ بِاللهِ وَالْيَوْمِ الْآخِرِ، وَلْيَأْتِ إِلَى النَّاسِ الَّذِي يُحِبُّ أَنْ يُؤْتَى إِلَيْهِ، وَمَنْ بَايَعَ إِمَامًا فَأَعْطَاهُ صَفْقَةَ يَدِهِ وَثَمَرَةَ قَلْبِهِ فَلْيُطِعْهُ إِنِ اسْتَطَاعَ...».", "blocks": [{"type": "ans", "s": "«فَلْتَأْتِهِ مَنِيَّتُهُ", "e": "وَالْيَوْمِ الْآخِرِ،", "core": true}, {"type": "wajh", "s": "وَلْيَأْتِ إِلَى", "e": "إِنِ اسْتَطَاعَ...»."}], "marks": [], "review": "", "src": "وَلْيَأْتِ إِلَى النَّاسِ الَّذِي يُحِبُّ أَنْ يُؤْتَى إِلَيْهِ"},
+ {"id": "c08", "sectionId": "s3", "level": 1, "anchor": "«لا الفقر أخشى عليكم»", "pattern": "quran", "q": "ما الذي خشيه النبي ﷺ على أمته لما قدم أبو عبيدة بمال من البحرين؟", "a": "«فَوَاللهِ لَا الْفَقْرَ أَخْشَى عَلَيْكُمْ وَلَكِنْ أَخْشَى عَلَيْكُمْ أَنْ تُبْسَطَ عَلَيْكُمُ الدُّنْيَا كَمَا بُسِطَتْ عَلَى مَنْ كَانَ قَبْلَكُمْ فَتَنَافَسُوهَا كَمَا تَنَافَسُوهَا وَتُهْلِكَكُمْ كَمَا أَهْلَكَتْهُمْ». (البخاري ٣١٥٨، ومسلم ٢٩٦١)", "blocks": [{"type": "ans", "all": true}], "marks": [], "review": "", "src": "فَوَاللهِ لَا الْفَقْرَ أَخْشَى عَلَيْكُمْ"},
+ {"id": "c09", "sectionId": "s3", "level": 1, "anchor": "«لست أخشى عليكم أن تشركوا بعدي»", "pattern": "quran", "q": "ماذا قال النبي ﷺ في آخر ما رآه عقبة بن عامر على المنبر؟", "a": "«إِنِّي فَرَطُكُمْ عَلَى الْحَوْضِ ... إِنِّي لَسْتُ أَخْشَى عَلَيْكُمْ أَنْ تُشْرِكُوا بَعْدِي وَلَكِنِّي أَخْشَى عَلَيْكُمُ الدُّنْيَا أَنْ تَنَافَسُوا فِيهَا وَتَقْتَتِلُوا فَتَهْلِكُوا كَمَا هَلَكَ مَنْ كَانَ قَبْلَكُمْ». (البخاري ٤٠٤٢، ومسلم ٢٢٩٦) فرطكم: سابقكم.", "blocks": [{"type": "ans", "s": "«إِنِّي فَرَطُكُمْ", "e": "الْحَوْضِ ...", "core": true}, {"type": "wajh", "s": "إِنِّي لَسْتُ", "e": "فرطكم: سابقكم."}], "marks": [], "review": "", "src": "إِنِّي لَسْتُ أَخْشَى عَلَيْكُمْ أَنْ تُشْرِكُوا بَعْدِي"},
+ {"id": "c10", "sectionId": "s3", "level": 2, "anchor": "«إذا فُتحت عليكم فارس والروم»", "pattern": "quran", "q": "ما المراحل التي وصفها النبي ﷺ لحال الناس إذا فُتحت عليهم فارس والروم؟", "a": "«تَتَنَافَسُونَ ثُمَّ تَتَحَاسَدُونَ ثُمَّ تَتَدَابَرُونَ ثُمَّ تَتَبَاغَضُونَ أَوْ نَحْوَ ذَلِكَ، ثُمَّ تَنْطَلِقُونَ فِي مَسَاكِينِ الْمُهَاجِرِينَ فَتَجْعَلُونَ بَعْضَهُمْ عَلَى رِقَابِ بَعْضٍ». (مسلم ٢٩٦٢) أي: تولّون بعضهم على بعض حتى يذلّوهم ويظلموهم.", "blocks": [{"type": "ans", "s": "«تَتَنَافَسُونَ ثُمَّ", "e": "رِقَابِ بَعْضٍ».", "core": true}, {"type": "wajh", "s": "(مسلم ٢٩٦٢)", "e": "يذلّوهم ويظلموهم."}], "marks": [], "review": "", "src": "تَتَنَافَسُونَ ثُمَّ تَتَحَاسَدُونَ"},
+ {"id": "c11", "sectionId": "s3", "level": 1, "anchor": "«زهرة الدنيا»", "pattern": "quran", "q": "ما أكثر ما خافه النبي ﷺ على أمته كما في حديث أبي سعيد ﵁؟", "a": "«إِنَّ أَكْثَرَ مَا أَخَافُ عَلَيْكُمْ مَا يُخْرِجُ اللهُ لَكُمْ مِنْ بَرَكَاتِ الْأَرْضِ»، قيل: وما بركات الأرض؟ قال: «زَهْرَةُ الدُّنْيَا». (البخاري ٦٤٢٧، ومسلم ١٠٥٢)", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "زَهْرَةُ الدُّنْيَا"},
+ {"id": "c12", "sectionId": "s3", "level": 1, "anchor": "ما تلفت إليه أحاديث الفتن", "pattern": "calm", "q": "ما الجامع المشترك لأحاديث الفتن، وما الأمور التي يلفت مجموعها الانتباه إليها؟", "a": "الجامع: حرص النبي ﷺ على أمته وتحذيرها مبكرًا من أنواع الفتن. ويلفت مجموعها إلى: خطورة الفتن، واهتمام النبي ﷺ بشأن الأمة، وأن سلوك طريق الاستقامة وحده لا يكفي بل ينبغي التنبه للعوائق.", "blocks": [{"type": "ans", "s": "الجامع: حرص", "e": "أنواع الفتن.", "core": true}, {"type": "ans", "s": "ويلفت مجموعها", "e": "التنبه للعوائق.", "nolabel": true}], "marks": [], "review": "", "src": "مجموع هذه الأحاديث يلفت الانتباه لعدّة أمور"},
+ {"id": "c13", "sectionId": "s3", "level": 2, "anchor": "متى وقعت الفتن المحذَّر منها؟", "pattern": "calm", "q": "هل وقعت الفتن التي حذّر منها النبي ﷺ كلها في زمن واحد؟", "a": "لا؛ وقع شيء منها في زمن الصحابة ﵃، وشيء لم يقع إلا بعدهم، وشيء لم يقع إلا في زماننا هذا.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "وقع شيء منها في زمن الصحابة"},
+ {"id": "c14", "sectionId": "s3", "level": 1, "anchor": "الثبات بإدراك الفتن، وأشدها فتنة الدنيا", "pattern": "calm", "q": "كيف يكون الثبات على الطريق؟ وما أشد ما خافه النبي ﷺ على أمته من الابتلاءات؟", "a": "لا يكون إلا بإدراك وقوع الفتن والاستعداد لها بالخوف والمحاذرة. والابتلاءات متنوعة: في الأمراض، وتسلط الأعداء، والمال والخير، ومن أشد ما خافه ﷺ: «فتنة الدنيا».", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "فالثبات لا يكون إلا بإدراك وقوع الفتن"},
+ {"id": "c15", "sectionId": "s3", "level": 2, "anchor": "الصبر على الشدة دون الرخاء", "pattern": "calm", "q": "على أي شيء قد يصبر الصالحون ولا يصبرون على مقابله؟ وما الموقف من شاب حريص على العلم قلّت دنياه؟", "a": "قد يصبرون على الشدائد والمصاعب ولا يصبرون على النعم والرخاء. والشاب الحريص على العلم إذا نقصته الدنيا فلا تحزن عليه؛ فقد فقد عنصرًا من عناصر التفرق.", "blocks": [{"type": "ans", "s": "قد يصبرون", "e": "النعم والرخاء.", "core": true}, {"type": "ans", "s": "والشاب الحريص", "e": "عناصر التفرق.", "nolabel": true}], "marks": [], "review": "", "src": "قد يصبر الصالحون على الشدائد والمصاعب"},
+ {"id": "c16", "sectionId": "s4", "level": 1, "anchor": "فتنة الرجل في أهله، والتي تموج موج البحر", "pattern": "quran", "q": "بمَ تُكفّر فتنة الرجل في أهله وجاره كما قال عمر ﵁؟ وعن أي فتنة سأل؟", "a": "«تِلْكَ تُكَفِّرُهَا الصَّلَاةُ وَالصِّيَامُ وَالصَّدَقَةُ، وَلَكِنْ أَيُّكُمْ سَمِعَ النَّبِيَّ ﷺ يَذْكُرُ الَّتِي تَمُوجُ مَوْجَ الْبَحْرِ؟». والصالحون وإن كانوا في منزلة عمر تقلقهم الفتن وتشغل بالهم.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "تِلْكَ تُكَفِّرُهَا الصَّلَاةُ وَالصِّيَامُ وَالصَّدَقَةُ"},
+ {"id": "c17", "sectionId": "s4", "level": 1, "anchor": "«تُعرض الفتن على القلوب كالحصير»", "pattern": "quran", "q": "كيف تُعرض الفتن على القلوب، وما حال القلب الذي أُشربها والذي أنكرها؟", "a": "«تُعْرَضُ الْفِتَنُ عَلَى الْقُلُوبِ كَالْحَصِيرِ عُودًا عُودًا، فَأَيُّ قَلْبٍ أُشْرِبَهَا نُكِتَ فِيهِ نُكْتَةٌ سَوْدَاءُ، وَأَيُّ قَلْبٍ أَنْكَرَهَا نُكِتَ فِيهِ نُكْتَةٌ بَيْضَاءُ». (مسلم ١٤٤)", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "تُعْرَضُ الْفِتَنُ عَلَى الْقُلُوبِ كَالْحَصِيرِ"},
+ {"id": "c18", "sectionId": "s4", "level": 1, "anchor": "القلبان: الأبيض والأسود المربادّ", "pattern": "compare", "q": "على أي قلبين تصير القلوب بعد عرض الفتن؟", "a": "«عَلَى أَبْيَضَ مِثْلِ الصَّفَا فَلَا تَضُرُّهُ فِتْنَةٌ مَا دَامَتِ السَّمَاوَاتُ وَالْأَرْضُ، وَالْآخَرُ أَسْوَدُ مُرْبَادًّا كَالْكُوزِ مُجَخِّيًا لَا يَعْرِفُ مَعْرُوفًا وَلَا يُنْكِرُ مُنْكَرًا إِلَّا مَا أُشْرِبَ مِنْ هَوَاهُ».\nالكوز: إناء بعروة يُشرب فيه. مجخيًا: مقلوبًا. ما أُشرب من هواه: ما تهواه نفسه بغير إذن شرعي.", "blocks": [{"type": "ans", "s": "«عَلَى أَبْيَضَ", "e": "السَّمَاوَاتُ وَالْأَرْضُ،", "core": true}, {"type": "ans", "s": "وَالْآخَرُ أَسْوَدُ", "e": "إذن شرعي.", "nolabel": true}], "marks": [], "review": "", "src": "عَلَى أَبْيَضَ مِثْلِ الصَّفَا"},
+ {"id": "c19", "sectionId": "s4", "level": 1, "anchor": "الفتن تراكمية، ونور القلب", "pattern": "calm", "q": "كيف تقع الفتن في القلوب؟ وما من أعظم أسباب نور القلب؟", "a": "تقع بشكل تراكمي لا على صورة واحدة؛ فقد يبدأ ببعضها ويظن أنه يملك أمره، فيتشرّب فتنة بعد فتنة حتى لا يملك قراره وقد كان يملكه. ومن أعظم أسباب نور القلب: تجاوز الفتن وعدم الوقوع فيها.", "blocks": [{"type": "ans", "s": "تقع بشكل", "e": "صورة واحدة؛", "core": true}, {"type": "ans", "s": "فقد يبدأ", "e": "الوقوع فيها.", "nolabel": true}], "marks": [], "review": "", "src": "الفتن التي تقع في القلوب تقع بشكل تراكمي"},
+ {"id": "c20", "sectionId": "s5", "level": 1, "anchor": "«بادروا بالأعمال فتنًا كقطع الليل المظلم»", "pattern": "quran", "q": "بمَ أمر النبي ﷺ قبل الفتن التي كقطع الليل المظلم، وكيف يكون حال الرجل فيها؟", "a": "«بَادِرُوا بِالْأَعْمَالِ فِتَنًا كَقِطَعِ اللَّيْلِ الْمُظْلِمِ، يُصْبِحُ الرَّجُلُ مُؤْمِنًا وَيُمْسِي كَافِرًا أَوْ يُمْسِي مُؤْمِنًا وَيُصْبِحُ كَافِرًا، يَبِيعُ دِينَهُ بِعَرَضٍ مِنَ الدُّنْيَا». (مسلم ١١٨)", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "بَادِرُوا بِالْأَعْمَالِ فِتَنًا"},
+ {"id": "c21", "sectionId": "s5", "level": 1, "anchor": "«أيقظوا صواحبات الحجر»", "pattern": "quran", "q": "ماذا قال النبي ﷺ لما استيقظ ذات ليلة كما في حديث أم سلمة ﵂؟", "a": "«سُبْحَانَ اللهِ مَاذَا أُنْزِلَ اللَّيْلَةَ مِنَ الْفِتَنِ وَمَاذَا فُتِحَ مِنَ الْخَزَائِنِ! أَيْقِظُوا صَوَاحِبَاتِ الْحُجَرِ فَرُبَّ كَاسِيَةٍ فِي الدُّنْيَا عَارِيَةٍ فِي الْآخِرَةِ». (البخاري ١١٥) صواحبات الحجر: زوجاته ﷺ.", "blocks": [{"type": "ans", "all": true}], "marks": [], "review": "", "src": "أَيْقِظُوا صَوَاحِبَاتِ الْحُجَرِ"},
+ {"id": "c22", "sectionId": "s5", "level": 1, "anchor": "لماذا المبادرة بالأعمال في الرخاء؟", "pattern": "calm", "q": "لماذا تنبغي المبادرة بالأعمال في وقت الرخاء والعافية؟ وما أهمها لاجتناب الفتن؟", "a": "١- لأنها تقي من الفتن حين تأتي.\n٢- لأن حين الفتن قد لا يُتاح للإنسان العمل.\nومن أهمها: «قيام الليل».", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "تنبغي المبادرة بالأعمال في وقت الرخاء والعافية لأمرين"},
+ {"id": "c23", "sectionId": "s5", "level": 2, "anchor": "من لا رصيد له يبيع دينه", "pattern": "calm", "q": "ما حال من لم يكن له رصيد من العمل والاستقامة في أيام الفتن؟ وما الدرسان الآخران من حديث أم سلمة؟", "a": "قد يتقلب فيها تقلبًا سريعًا حتى يبيع دينه - أثمن ما يملك - بعرض من الدنيا. والفتن من أقدار الله تعالى، وينبغي الحرص على الأهل كما فعل النبي ﷺ.", "blocks": [{"type": "ans", "s": "قد يتقلب", "e": "من الدنيا.", "core": true}, {"type": "ans", "s": "والفتن من", "e": "النبي ﷺ.", "nolabel": true}], "marks": [], "review": "", "src": "مَن لم يكن له رصيد من العمل والاستقامة"},
+ {"id": "c24", "sectionId": "s6", "level": 1, "anchor": "التعوّذ من الفتن ما ظهر منها وما بطن", "pattern": "quran", "q": "ما الأمور الأربعة التي أمر النبي ﷺ أصحابه بالتعوذ منها في حديث زيد بن ثابت ﵁؟", "a": "«تَعَوَّذُوا بِاللهِ مِنْ عَذَابِ النَّارِ»، «... مِنْ عَذَابِ الْقَبْرِ»، «... مِنَ الْفِتَنِ مَا ظَهَرَ مِنْهَا وَمَا بَطَنَ»، «... مِنْ فِتْنَةِ الدَّجَّالِ». (مسلم ٢٨٦٧) والاستعاذة بالله من وسائل اتقاء الفتن.", "blocks": [{"type": "ans", "s": "«تَعَوَّذُوا بِاللهِ", "e": "النَّارِ»، «...", "core": true}, {"type": "wajh", "s": "مِنْ عَذَابِ", "e": "اتقاء الفتن."}], "marks": [], "review": "", "src": "تَعَوَّذُوا بِاللهِ مِنَ الْفِتَنِ مَا ظَهَرَ مِنْهَا وَمَا بَطَنَ"},
+ {"id": "c25", "sectionId": "s6", "level": 2, "anchor": "«إن هذه الأمة تُبتلى في قبورها»", "pattern": "quran", "q": "ما الذي منع النبي ﷺ أن يدعو الله أن يُسمع أصحابه عذاب القبر؟", "a": "«إِنَّ هَذِهِ الْأُمَّةَ تُبْتَلَى فِي قُبُورِهَا، فَلَوْلَا أَنْ لَا تَدَافَنُوا لَدَعَوْتُ اللهَ أَنْ يُسْمِعَكُمْ مِنْ عَذَابِ الْقَبْرِ الَّذِي أَسْمَعُ مِنْهُ». والحديث يبيّن شدة حرصه ﷺ على بيان ما قد تزل الأمة بسببه.", "blocks": [{"type": "ans", "s": "«إِنَّ هَذِهِ", "e": "أَسْمَعُ مِنْهُ».", "core": true}, {"type": "wajh", "s": "والحديث يبيّن", "e": "الأمة بسببه."}], "marks": [], "review": "", "src": "إِنَّ هَذِهِ الْأُمَّةَ تُبْتَلَى فِي قُبُورِهَا"},
+ {"id": "c26", "sectionId": "s6", "level": 1, "anchor": "«العبادة في الهرج كهجرة إليّ»", "pattern": "quran", "q": "ما فضل العبادة في الهرج، وما معنى الهرج، ولماذا عظم أجرها؟", "a": "«الْعِبَادَةُ فِي الْهَرْجِ كَهِجْرَةٍ إِلَيَّ». (مسلم ٢٩٤٨) الهرج: اختلاط الأحوال بالفتن والقتل. وعظم أجرها لأن تلك الأوقات ليست أوقات عبادة لعامة الناس.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "الْعِبَادَةُ فِي الْهَرْجِ كَهِجْرَةٍ إِلَيَّ"},
+ {"id": "c27", "sectionId": "s7", "level": 1, "anchor": "أهمية معرفة أسباب ضعف المسلمين", "pattern": "calm", "q": "لماذا كان باب أسباب ضعف المسلمين مهمًّا جدًّا لموضوع الكتاب؟", "a": "لأن أحاديث الكتاب وآياته اختيرت لتكون نبراسًا ومنهاجًا للشاب المسلم الذي يريد أن يثبت على دينه وينفع أمته ويطمح أن يكون مصلحًا، ومن المهمات للمصلح أن يعرف شيئًا من أسباب ضعف المسلمين. والنبي ﷺ لكمال رحمته بيّن لأمته خير ما يعلمه لهم وحذّرهم شرّ ما يعلمه لهم.", "blocks": [{"type": "ans", "all": true}], "marks": [], "review": "", "src": "هذا الباب مهم جدًّا بالنسبة لموضوع الكتاب"},
+ {"id": "c28", "sectionId": "s7", "level": 1, "anchor": "آل عمران ١٦٥: ﴿قُلۡ هُوَ مِنۡ عِندِ أَنفُسِكُمۡ﴾", "pattern": "quran", "q": "﴿أَوَلَمَّآ أَصَٰبَتۡكُم مُّصِيبَةٞ قَدۡ أَصَبۡتُم مِّثۡلَيۡهَا قُلۡتُمۡ أَنَّىٰ هَٰذَاۖ قُلۡ هُوَ مِنۡ عِندِ أَنفُسِكُمۡ﴾ [آل عمران: ١٦٥]\nماذا يريد الله منا في المصائب التي تأتي من الخارج؟", "a": "أن نلتفت لأسبابها الداخلية، فلا نضع أعباء المشكلة كلها على الأعداء والمنافقين، بل نفتش في النقص والخلل الذي فينا: هل أدّينا دورنا؟ هل قمنا بمسؤولية الإصلاح وإنكار المنكر واجتماع الكلمة؟", "blocks": [{"type": "ans", "s": "أن نلتفت", "e": "الذي فينا:", "core": true}, {"type": "wajh", "s": "هل أدّينا", "e": "واجتماع الكلمة؟"}], "marks": [], "review": "", "src": "يريد الله تعالى منّا أن نلتفت للأسباب الداخلية لها"},
+ {"id": "c29", "sectionId": "s7", "level": 1, "anchor": "الرعد ١١: ﴿إِنَّ ٱللَّهَ لَا يُغَيِّرُ مَا بِقَوۡمٍ﴾", "pattern": "quran", "q": "﴿إِنَّ ٱللَّهَ لَا يُغَيِّرُ مَا بِقَوۡمٍ حَتَّىٰ يُغَيِّرُواْ مَا بِأَنفُسِهِمۡ﴾ [الرعد: ١١]\nمتى يغيّر الله حال العافية عن أمة؟", "a": "لا يغيّر الله حال العافية والرخاء عن أمة إلى شتات الحال والخوف والتمزق إلا إذا كان هناك شيء من داخلهم قد غيّروه؛ فإذا نظرنا في أسباب ضعف المسلمين فلننظر في أنفسنا وأحوالنا.", "blocks": [{"type": "ans", "all": true}], "marks": [], "review": "", "src": "الله تعالى لا يغيّر على أمّة من الأمم حال العافية"},
+ {"id": "c30", "sectionId": "s8", "level": 1, "anchor": "حديث تداعي الأمم", "pattern": "quran", "q": "«يُوشِكُ الْأُمَمُ أَنْ تَدَاعَى عَلَيْكُمْ كَمَا تَدَاعَى الْأَكَلَةُ إِلَى قَصْعَتِهَا» — أكان ذلك من قلة؟ وما الوهن؟", "a": "«بَلْ أَنْتُمْ يَوْمَئِذٍ كَثِيرٌ وَلَكِنَّكُمْ غُثَاءٌ كَغُثَاءِ السَّيْلِ، وَلَيَنْزَعَنَّ اللهُ مِنْ صُدُورِ عَدُوِّكُمُ الْمَهَابَةَ مِنْكُمْ، وَلَيَقْذِفَنَّ اللهُ فِي قُلُوبِكُمُ الْوَهْنَ»، والوهن: «حُبُّ الدُّنْيَا وَكَرَاهِيَةُ الْمَوْتِ». (أبو داود ٤٢٩٧، وأحمد ٢٢٣٩٧) غثاء السيل: ما يحمله من الزبد والوسخ.", "blocks": [{"type": "ans", "s": "«بَلْ أَنْتُمْ", "e": "كَغُثَاءِ السَّيْلِ،", "core": true}, {"type": "wajh", "s": "وَلَيَنْزَعَنَّ اللهُ", "e": "الزبد والوسخ."}], "marks": [], "review": "", "src": "حُبُّ الدُّنْيَا وَكَرَاهِيَةُ الْمَوْتِ"},
+ {"id": "c31", "sectionId": "s8", "level": 1, "anchor": "الأمران في حديث ثوبان", "pattern": "compare", "q": "ما الأمران اللذان جمع بينهما حديث تداعي الأمم؟ وما الفرق بين زماننا وزمن النبي ﷺ في المهابة؟", "a": "١- المشكلة الخارجية (تداعي الأمم استهانةً كأنهم يتداعون إلى قصعة).\n٢- السبب الداخلي الذي لأجله ترسخت المشكلة الخارجية.\nونزع المهابة من صدور الأعداء بخلاف زمن النبي ﷺ الذي كان يُنصر بالرعب.", "blocks": [{"type": "ans", "s": "١- المشكلة", "e": "إلى قصعة).", "core": true}, {"type": "ans", "s": "٢- السبب", "e": "يُنصر بالرعب.", "nolabel": true}], "marks": [], "review": "", "src": "في هذا الحديث جمع بين أمرين"},
+ {"id": "c32", "sectionId": "s8", "level": 1, "anchor": "متى يتسلط الأعداء، ومتى يواجهون بنيانًا مرصوصًا؟", "pattern": "compare", "q": "متى يتسلط أعداء الإسلام على المسلمين؟ ومتى يواجهون بنيانًا مرصوصًا؟", "a": "يتسلطون إذا تثاقل المسلمون إلى الأرض ورضوا بزخرف الحياة ولم يستعدوا للبذل والتضحية والتخلي عن المكتسبات. أما إذا كانت قلوبهم قد استدبرت الدنيا واستقبلت الآخرة وامتلأت حبًّا لله ورسوله ﷺ وأمة الإسلام، فإن الأعداء وإن تسلطوا وبثوا السموم سيواجهون بنيانًا مرصوصًا.", "blocks": [{"type": "ans", "s": "يتسلطون إذا", "e": "عن المكتسبات.", "core": true}, {"type": "ans", "s": "أما إذا", "e": "بنيانًا مرصوصًا.", "nolabel": true}], "marks": [], "review": "", "src": "إذا تثاقل المسلمون إلى الأرض"},
+ {"id": "c33", "sectionId": "s8", "level": 2, "anchor": "ما نحتاجه لإعادة بناء الأمة", "pattern": "calm", "q": "ما الذي نحن في أمسّ الحاجة إليه اليوم لإعادة بناء قوام الأمة الإسلامية؟", "a": "إعادة المعنى والهوية والقيمة، وتثبيت مرجعية الوحي، وتثبيت الإيمان في النفوس، وإعادة بناء وصياغة الشخصية المسلمة من جديد.", "blocks": [{"type": "ans", "all": true, "core": false}], "marks": [], "review": "", "src": "نحن اليوم في أمسّ الحاجة لإعادة المعنى"},
+ {"id": "c34", "sectionId": "s9", "level": 1, "anchor": "السنوات الخدّاعات", "pattern": "quran", "q": "ماذا يحدث في السنوات الخدّاعات كما في حديث أبي هريرة ﵁؟ ومن الرويبضة؟", "a": "«يُصَدَّقُ فِيهَا الْكَاذِبُ وَيُكَذَّبُ فِيهَا الصَّادِقُ، وَيُؤْتَمَنُ فِيهَا الْخَائِنُ وَيُخَوَّنُ فِيهَا الْأَمِينُ، وَيَنْطِقُ فِيهَا الرُّوَيْبِضَةُ»، والرويبضة: «الرَّجُلُ التَّافِهُ فِي أَمْرِ الْعَامَّةِ». (ابن ماجه ٤٠٣٦، وأحمد ٧٩١٢) وله شواهد عن أنس (أحمد ١٣٢٩٨) وعوف بن مالك (البزار ٢٧٤٠)، لعله يقوى بها.", "blocks": [{"type": "ans", "s": "«يُصَدَّقُ فِيهَا", "e": "الرُّوَيْبِضَةُ»، والرويبضة:", "core": true}, {"type": "wajh", "s": "«الرَّجُلُ التَّافِهُ", "e": "يقوى بها."}], "marks": [], "review": "", "src": "سَنَوَاتٌ خَدَّاعَاتٌ"},
+ {"id": "c35", "sectionId": "s9", "level": 2, "anchor": "التافهون ورسم المعايير", "pattern": "calm", "q": "ما الصورة التي تتخايل عند قراءة حديث السنوات الخدّاعات؟ وهل يُقطع بتنزيله على زماننا؟", "a": "صور التافهين الذين تصدّروا في كثير من المجتمعات والوسائل، وصاروا يرسمون المعايير ويتخذون القرار بمعايير في غاية التفاهة، وتبدلت المعاني. وليس هناك قطع بتنزيله على زماننا، لكن المتأمل البصير يرى مقدار التطابق الكبير.", "blocks": [{"type": "ans", "s": "صور التافهين", "e": "وتبدلت المعاني.", "core": true}, {"type": "ans", "s": "وليس هناك", "e": "التطابق الكبير.", "nolabel": true}], "marks": [], "review": "", "src": "يتخايل أمام أعيننا صور التافهين"},
+ {"id": "c36", "sectionId": "s9", "level": 1, "anchor": "ضبط المعايير بمرجعية الوحي", "pattern": "calm", "q": "ما الذي ينبغي على الإنسان أمام انقلاب المعايير، ولماذا؟", "a": "أن يأخذ الحذر والحيطة ولا يغتر بانتشار بعض المفاهيم وتكالب الناس عليها، وأن يضبط المعايير بمرجعية الوحي؛ لأنه متى فقد المرجعية الحقيقية صار عرضة لاختلال المعايير والتأثر بكل طرف أعلى صوتًا.", "blocks": [{"type": "ans", "s": "أن يأخذ", "e": "بمرجعية الوحي؛", "core": true}, {"type": "ans", "s": "لأنه متى", "e": "أعلى صوتًا.", "nolabel": true}], "marks": [], "review": "", "src": "ينبغي على الإنسان أن يأخذ الحذر والحيطة"},
+ {"id": "c37", "sectionId": "s9", "level": 1, "anchor": "«إذا تبايعتم بالعينة»", "pattern": "quran", "q": "ما الأمور التي إذا اجتمعت سلّط الله على الأمة ذلًّا لا ينزعه حتى ترجع إلى دينها؟", "a": "«إِذَا تَبَايَعْتُمْ بِالْعِينَةِ وَأَخَذْتُمْ أَذْنَابَ الْبَقَرِ وَرَضِيتُمْ بِالزَّرْعِ وَتَرَكْتُمُ الْجِهَادَ؛ سَلَّطَ اللهُ عَلَيْكُمْ ذُلًّا لَا يَنْزِعُهُ حَتَّى تَرْجِعُوا إِلَى دِينِكُمْ». (أبو داود ٣٤٦٢) أخذتم أذناب البقر: اشتغلتم بالزرع عن الجهاد. والحديث تحذير من الركون إلى الدنيا والتعلق القلبي بها.", "blocks": [{"type": "ans", "s": "«إِذَا تَبَايَعْتُمْ", "e": "وَتَرَكْتُمُ الْجِهَادَ؛", "core": true}, {"type": "wajh", "s": "سَلَّطَ اللهُ", "e": "القلبي بها."}], "marks": [], "review": "", "src": "إِذَا تَبَايَعْتُمْ بِالْعِينَةِ"},
+ {"id": "c38", "sectionId": "s9", "level": 2, "anchor": "صورة العينة", "pattern": "calm", "q": "ما صورة بيع «العينة»، ولماذا كانت قريبة من الربا؟", "a": "أن يبيع رجل رجلًا سلعة بثمن مؤجّل، ثم يشتريها منه معجّلة بثمن أقل؛ فالسلعة وسيط لا معنى له، فهي قريبة من صور الربا، وفيها شدة الحرص على المال.", "blocks": [{"type": "ans", "s": "أن يبيع", "e": "بثمن أقل؛", "core": true}, {"type": "ans", "s": "فالسلعة وسيط", "e": "على المال.", "nolabel": true}], "marks": [], "review": "", "src": "وصورتها: أن يبيع رجل رجلًا سلعة بثمن مؤجّل"},
+ {"id": "c39", "sectionId": "s9", "level": 1, "anchor": "الذم ليس للزراعة", "pattern": "calm", "q": "هل يذم الحديث الاشتغال بالزراعة؟ وما الدرس الكلي في أسباب ضعف الأمة؟", "a": "لا، الذم لمن جعلها همه الوحيد الذي يشغل كل تفكيره ورضي بها غير ملتفت لغيرها، ولذلك أتبعها بترك الجهاد: ركون إلى الدنيا مع ترك البذل والتضحية. ومهما كانت الأسباب الخارجية فهناك أسباب تعود إلى أنفسنا وتعلقنا بالدنيا وحبنا لها ورضانا بها.", "blocks": [{"type": "ans", "s": "لا، الذم", "e": "بترك الجهاد:", "core": true}, {"type": "ans", "s": "ركون إلى", "e": "ورضانا بها.", "nolabel": true}], "marks": [], "review": "", "src": "لا يُفهم من الحديث ذمّ الاشتغال بالزراعة"},
+ {"id": "c40", "sectionId": "s10", "level": 1, "anchor": "الأحزاب ٦٢: سنة الله في المنافقين", "pattern": "quran", "q": "﴿سُنَّةَ ٱللَّهِ فِي ٱلَّذِينَ خَلَوۡاْ مِن قَبۡلُۖ وَلَن تَجِدَ لِسُنَّةِ ٱللَّهِ تَبۡدِيلٗا﴾ [الأحزاب: ٦٢]\nعمّن تتحدث الآية، وعلامَ تدل؟ وما قول ابن كثير؟", "a": "عن المنافقين، وجاءت بعد قوله: ﴿لَّئِن لَّمۡ يَنتَهِ ٱلۡمُنَٰفِقُونَ ... لَنُغۡرِيَنَّكَ بِهِمۡ﴾؛ فتدل على أنهم إذا لم ينتهوا عن الأذى سلّط الله نبيّه ﷺ عليهم. قال ابن كثير: «هذه سنَّتُهُ في المنافقينَ إذا تمرَّدوا عَلَى نفاقِهم وكفرِهم ولم يرجعوا عمّا هم فيه؛ أنَّ أهلَ الإيمانِ يسلَّطونَ عليهم ويقهرونَهم» (٦/ ٤٨٣).", "blocks": [{"type": "ans", "s": "عن المنافقين،", "e": "بعد قوله:", "core": true}, {"type": "wajh", "s": "﴿لَّئِن لَّمۡ", "e": "(٦/ ٤٨٣)."}], "marks": [], "review": "", "src": "هذه الآية تتحدث عن المنافقين"},
+ {"id": "c41", "sectionId": "s10", "level": 2, "anchor": "قولان في عدم تحقق الوعيد", "pattern": "compare", "q": "ما القولان في عدم تحقق تسليط النبي ﷺ على المنافقين؟ وما القولان في ﴿ٱلَّذِينَ خَلَوۡاْ مِن قَبۡلُ﴾؟", "a": "في عدم التحقق: ١- أنهم رجعوا إلى كتمانهم وانتهوا (الأرجح، وهو قول قتادة). ٢- أن إخلاف الوعيد جائز من باب الكرم الإلهي.\nوفي ﴿ٱلَّذِينَ خَلَوۡاْ﴾: ١- أعداء النبي ﷺ الذين سلطه الله عليهم في بدر وبني قريظة. ٢- الأمم السابقة.", "blocks": [{"type": "ans", "s": "في عدم", "e": "عدم التحقق:", "core": true}, {"type": "ans", "s": "١- أنهم", "e": "الأمم السابقة.", "nolabel": true}], "marks": [], "review": "", "src": "اختلف المفسرون على قولين في عدم تحقق ما وقع في هذه الآية"},
+ {"id": "c42", "sectionId": "s10", "level": 1, "anchor": "فاطر ٤٣ وغافر ٨٥", "pattern": "quran", "q": "﴿فَلَن تَجِدَ لِسُنَّتِ ٱللَّهِ تَبۡدِيلٗاۖ وَلَن تَجِدَ لِسُنَّتِ ٱللَّهِ تَحۡوِيلًا﴾ [فاطر: ٤٣]، ﴿فَلَمۡ يَكُ يَنفَعُهُمۡ إِيمَٰنُهُمۡ لَمَّا رَأَوۡاْ بَأۡسَنَا﴾ [غافر: ٨٥]\nما السنتان المذكورتان في الآيتين؟", "a": "فاطر: سنة الله فيمن جاءته البينات والحجج فرفضها وكذّب أن يُنزل بهم بأسه ويهلكهم كما نزل بالأولين.\nغافر: أن الظالمين لا ينفعهم إيمانهم حين يرون البأس (بأسنا: عقابنا).", "blocks": [{"type": "ans", "s": "فاطر: سنة", "e": "نزل بالأولين.", "core": true}, {"type": "wajh", "s": "غافر: أن", "e": "(بأسنا: عقابنا)."}], "marks": [], "review": "", "src": "فالله يُخبر نبيّه أن سنّته فيمن جاءته البينات"},
+ {"id": "c43", "sectionId": "s10", "level": 1, "anchor": "نوعا إهلاك الظالمين", "pattern": "compare", "q": "ما نوعا إهلاك الله للظالمين؟ ومتى تُقبل التوبة عند نزول البأس؟", "a": "الأول: إهلاك بخرق العادة في السنن الكونية كإهلاك قوم نوح (من الآيات الظاهرة)، ولا تُقبل معه التوبة لأنه إهلاك تام لا يترك فرصة لإحسان العمل.\nالثاني: إهلاك بتسليط المؤمنين عليهم (من الآيات الخفية في سياق التدافع)، وتُقبل معه التوبة. والسنن التي ذُكر أنها ستقع لنبينا ﷺ من النوع الثاني.", "blocks": [{"type": "ans", "s": "الأول: إهلاك", "e": "الآيات الظاهرة)،", "core": true}, {"type": "ans", "s": "ولا تُقبل", "e": "النوع الثاني.", "nolabel": true}], "marks": [], "review": "", "src": "ويمكن تقسيم إهلاك الله للظالمين إلى نوعين"},
+ {"id": "c44", "sectionId": "s10", "level": 2, "anchor": "آل عمران ١٣٧ عند الطبري", "pattern": "quran", "q": "﴿قَدۡ خَلَتۡ مِن قَبۡلِكُمۡ سُنَنٞ فَسِيرُواْ فِي ٱلۡأَرۡضِ فَٱنظُرُواْ كَيۡفَ كَانَ عَٰقِبَةُ ٱلۡمُكَذِّبِينَ﴾ [آل عمران: ١٣٧]\nكيف فسّر الطبري «السنن» هنا، وما الحكمة من إدالة المشركين يوم أحد؟", "a": "السنن: مَثُلات سِير بها في الأمم المكذبة؛ بإمهالهم واستدراجهم حتى يبلغ الكتاب أجله ثم إحلال العقوبة بهم. وإدالة المشركين يوم أحد استدراج وإمهال ليبلغ الكتاب أجله، ثم إما أن يؤول حالهم إلى تعجيل العقوبة، أو ينيبوا إلى الطاعة واتباع الرسول. (تفسير الطبري ٦/ ٧٠–٧١)", "blocks": [{"type": "ans", "s": "السنن: مَثُلات", "e": "الأمم المكذبة؛", "core": true}, {"type": "wajh", "s": "بإمهالهم واستدراجهم", "e": "٦/ ٧٠–٧١)"}], "marks": [], "review": "", "src": "مَثُلات سِيرَ بها فيهم"}
+];
+
+/* ===== أدوات ===== */
+const $=(s,c)=>(c||document).querySelector(s), $$=(s,c)=>[...(c||document).querySelectorAll(s)];
+const AR=n=>String(n).replace(/\d/g,d=>"٠١٢٣٤٥٦٧٨٩"[d]);
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const SEC_NAMES={"s1": "الباب الرابع والعشرون: العنوان والآيات", "s2": "الباب الرابع والعشرون: الحديث ١", "s3": "الباب الرابع والعشرون: الأحاديث ٢–٥", "s4": "الباب الرابع والعشرون: الحديث ٦", "s5": "الباب الرابع والعشرون: الحديثان ٧–٨", "s6": "الباب الرابع والعشرون: الحديثان ٩–١٠", "s7": "الباب الخامس والعشرون: العنوان والآيتان", "s8": "الباب الخامس والعشرون: الحديث ١", "s9": "الباب الخامس والعشرون: الحديثان ٢–٣", "s10": "الباب السادس والعشرون: العنوان والآيات ١–٤"};
+
+/* ===== الفهرس الجانبي (بعناصر div/a حتى لا يدخل في فهرسة الهايلايت) ===== */
+(function(){
+  const list=$("#toclist");
+  $$(".sec").forEach(sec=>{
+    const h2=$("h2",sec); if(!h2) return;
+    const box=document.createElement("div"); box.className="toc-i";
+    box.innerHTML='<a href="#'+sec.id+'">'+h2.textContent+'</a>';
+    const subs=$$("h3[id]",sec);
+    if(subs.length){
+      const sub=document.createElement("div"); sub.className="toc-sub";
+      subs.forEach(h=>{const a=document.createElement("a");a.href="#"+h.id;a.textContent=h.textContent;sub.appendChild(a)});
+      box.appendChild(sub);
+    }
+    list.appendChild(box);
+  });
+  const a=document.createElement("a"); a.href="#anki"; a.textContent="بطاقات المراجعة"; list.appendChild(a);
+})();
+
+/* ===== الأسئلة التفاعلية ===== */
+(function(){
+  $$(".quiz").forEach(box=>{
+    const sid=box.dataset.sec, qs=QUIZ_DATA.filter(q=>q.sectionId===sid), host=$(".qs",box);
+    host.innerHTML=qs.map(q=>'<div class="q" data-q="'+q.id+'"><div class="qt">'+q.question+'</div>'+
+      q.options.map((o,i)=>'<button class="opt" data-i="'+i+'">'+o+'</button>').join("")+
+      '<div class="expl" hidden></div></div>').join("");
+    $(".score",box).textContent="النتيجة: ٠ / "+AR(qs.length);
+  });
+  document.addEventListener("click",e=>{
+    const btn=e.target.closest(".opt"); if(!btn) return;
+    const qEl=btn.closest(".q"), box=btn.closest(".quiz");
+    const q=QUIZ_DATA.find(x=>x.id===qEl.dataset.q); if(!q) return;
+    const i=+btn.dataset.i, ok=i===q.correctIndex;
+    $$(".opt",qEl).forEach(b=>b.classList.remove("ok","no"));
+    btn.classList.add(ok?"ok":"no");
+    if(ok) $$(".opt",qEl)[q.correctIndex].classList.add("ok");
+    const ex=$(".expl",qEl); ex.hidden=false; ex.textContent=(ok?"صحيح. ":"غير صحيح. ")+q.explanation;
+    if(ok) qEl.dataset.done="1";
+    const qs=QUIZ_DATA.filter(x=>x.sectionId===box.dataset.sec);
+    $(".score",box).textContent="النتيجة: "+AR($$('.q[data-done="1"]',box).length)+" / "+AR(qs.length);
+  });
+})();
+
+/* ===== الهامش: فتح/طي على الشاشات الصغيرة، وإبراز على الكبيرة ===== */
+document.addEventListener("click",e=>{
+  const m=e.target.closest(".nmark"); if(!m) return;
+  const n=document.getElementById(m.dataset.n); if(!n) return;
+  if(window.matchMedia("(max-width:1339px)").matches){ n.classList.toggle("open"); if(n.classList.contains("open")) n.scrollIntoView({block:"nearest"}); }
+  else { $$(".note.flash").forEach(x=>x.classList.remove("flash")); n.classList.add("flash"); n.scrollIntoView({block:"nearest"}); setTimeout(()=>n.classList.remove("flash"),1400); }
+});
+
+/* ===== شريط التنقل والتحكم ===== */
+(function(){
+  let fs=parseFloat(store.get("qw_fs")||"17.5");
+  const apply=()=>{document.documentElement.style.setProperty("--fs",fs+"px");store.set("qw_fs",fs)};
+  if(store.get("qw_fs")) apply();
+  $("#fsp").addEventListener("click",()=>{fs=Math.min(fs+1,24);apply()});
+  $("#fsm").addEventListener("click",()=>{fs=Math.max(fs-1,15);apply()});
+  const thm=$("#thm");
+  const setT=t=>{document.documentElement.setAttribute("data-theme",t);thm.textContent=t==="night"?"☀️":"🌙";store.set("qw_theme",t)};
+  setT(store.get("qw_theme")||"day");
+  thm.addEventListener("click",()=>setT(document.documentElement.getAttribute("data-theme")==="night"?"day":"night"));
+})();
+
+/* ===== شريط التقدم + تتبع الموضع + تظليل الفهرس ===== */
+(function(){
+  const QW_POS_KEY="qw_pos_10.html";
+  const bar=$("#prog"), links=$$("#toclist a"), secs=$$(".sec");
+  let t=0;
+  function onScroll(){
+    const h=document.documentElement.scrollHeight-window.innerHeight;
+    bar.style.width=(h>0?(window.scrollY/h)*100:0)+"%";
+    let cur=null; secs.forEach(s=>{ if(s.getBoundingClientRect().top<=120) cur=s.id });
+    links.forEach(a=>a.classList.toggle("on",cur&&a.getAttribute("href")==="#"+cur));
+    clearTimeout(t); t=setTimeout(()=>store.set(QW_POS_KEY,String(window.scrollY)),400);
+  }
+  window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
+  const y=parseInt(store.get(QW_POS_KEY)||"0",10);
+  if(y>200 && !location.hash) window.scrollTo(0,y);
+})();
+</script>
+
+<script type="module" src="../../../firebase-sync-manhaj.js"></script>
+<script src="../../../ilm-track.js"></script>
+<script src="../../../data.js"></script>
+<script src="../../../ilm-anki.js" data-lecture="10"></script>
+<script>
+/* ===== واجهة البطاقات: العرض والتصدير من ilm-anki.js وحدها (9-ص) ===== */
+(function(){
+  var filter='', idx=0, ak=document.getElementById('ak');
+  function view(){ return filter ? CARDS_DATA.filter(function(c){ return c.sectionId===filter; }) : CARDS_DATA; }
+  function render(){
+    var v=view(); if(!v.length) return;
+    if(idx>=v.length) idx=0; if(idx<0) idx=v.length-1;
+    var c=v[idx];
+    ak.classList.remove('on');
+    try{
+      document.getElementById('ak-deck').textContent='الرزمة: '+ILM_ANKI.deck(c)+' · '+ILM_ANKI.tags(c);
+      document.getElementById('ak-front').innerHTML=ILM_ANKI.front(c);
+      document.getElementById('ak-back').innerHTML=ILM_ANKI.back(c);
+    }catch(err){ document.getElementById('ak-front').textContent=err.message; }
+    document.getElementById('ak-counter').textContent=AR(idx+1)+' / '+AR(v.length);
+  }
+  function go(d){ idx+=d; render(); }
+  var fb=document.getElementById('filters');
+  function mk(key,label){
+    var b=document.createElement('button'); b.type='button'; b.textContent=label; b.dataset.f=key;
+    b.addEventListener('click',function(){ filter=key; idx=0; fb.querySelectorAll('button').forEach(function(x){ x.classList.toggle('on',x.dataset.f===key); }); render(); });
+    fb.appendChild(b); return b;
+  }
+  mk('','الكل ('+AR(CARDS_DATA.length)+')').classList.add('on');
+  Object.keys(SEC_NAMES).forEach(function(k){ var n=CARDS_DATA.filter(function(c){ return c.sectionId===k; }).length; if(n) mk(k,SEC_NAMES[k]+' ('+AR(n)+')'); });
+  ak.addEventListener('click',function(e){ if(e.target.closest('a')) return; ak.classList.toggle('on'); });
+  ak.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); ak.classList.toggle('on'); } });
+  document.getElementById('ak-next').addEventListener('click',function(){ go(1); });
+  document.getElementById('ak-prev').addEventListener('click',function(){ go(-1); });
+  document.getElementById('ak-dl').addEventListener('click',function(){ try{ ILM_ANKI.download(CARDS_DATA); }catch(err){ alert(err.message); } });
+  document.getElementById('cards-count').textContent='('+AR(CARDS_DATA.length)+' بطاقة)';
+  render();
+})();
+</script>
+<script src="../../../ilm-nav.js"></script>
+<script>
+(function(){
+  var box=document.getElementById('ilm-completion-box');
+  var cb=box?box.querySelector('input[data-lecture-id]'):null;
+  if(!cb) return;
+  var lid=cb.getAttribute('data-lecture-id');
+  function render(done){ cb.checked=done; box.classList.toggle('done',done); }
+  if(window.IlmTrack){ window.IlmTrack.ready.then(function(){ render(window.IlmTrack.isDone(lid)); }); }
+  cb.addEventListener('change',function(){ if(window.IlmTrack) window.IlmTrack.setDone(lid,cb.checked); render(cb.checked); });
+})();
+</script>
+<script>
+/* ===== هوية «سماء التفكر»: الشريط العلوي، والفهرس المنزلق، وعمود الهوامش =====
+   لا يضيف ولا يحذف أي عنصر داخل منطقة التظليل؛ يغيّر المواضع بالأنماط فقط (12-ب). */
+(function(){
+  var root = document.documentElement, tb = document.getElementById('topbar');
+  function setH(){ if(tb) root.style.setProperty('--tbh', tb.offsetHeight + 'px'); }
+
+  /* السابق/التالي من ilm-nav داخل الشريط العلوي، كما في «مقدمات تمهيدية» */
+  function moveNav(){
+    var t = document.querySelector('.ilm-nav-top'), slot = document.getElementById('nav-top-slot');
+    if(t && slot && !slot.contains(t)) slot.appendChild(t);
+    setH();
+  }
+
+  /* الفهرس المنزلق */
+  var side = document.querySelector('.side'), back = document.getElementById('tocBack');
+  function openToc(v){
+    if(!side) return;
+    side.classList.toggle('open', v);
+    document.body.classList.toggle('toc-open', v);
+    if(back) back.hidden = !v;
+    ['tocBtn','tocTab'].forEach(function(id){ var b = document.getElementById(id); if(b) b.setAttribute('aria-expanded', v ? 'true' : 'false'); });
+    if(v){ var on = side.querySelector('a.on'); if(on) on.scrollIntoView({block:'center'}); }
+  }
+  ['tocBtn','tocTab'].forEach(function(id){
+    var b = document.getElementById(id);
+    if(b) b.addEventListener('click', function(){ openToc(!side.classList.contains('open')); });
+  });
+  var x = document.getElementById('tocX'); if(x) x.addEventListener('click', function(){ openToc(false); });
+  if(back) back.addEventListener('click', function(){ openToc(false); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') openToc(false); });
+  if(side) side.addEventListener('click', function(e){ if(e.target.closest('a')) openToc(false); });
+
+  /* تظليل رابط المقطع الحالي في الشريط العلوي */
+  var chips = [].slice.call(document.querySelectorAll('.tb-links a'));
+  var secs = [].slice.call(document.querySelectorAll('.sec'));
+  function markChip(){
+    var cur = null, lim = (tb ? tb.offsetHeight : 60) + 40;
+    secs.forEach(function(s){ if(s.getBoundingClientRect().top <= lim) cur = s.id; });
+    chips.forEach(function(a){ a.classList.toggle('on', !!cur && a.getAttribute('href') === '#' + cur); });
+  }
+  window.addEventListener('scroll', markChip, {passive:true});
+
+  /* عمود الهوامش: كل هامش بمحاذاة رقمه في المتن، بلا تراكب */
+  var main = document.querySelector('.main'), wide = window.matchMedia('(min-width:1340px)');
+  function layoutNotes(){
+    if(!main) return;
+    var notes = [].slice.call(main.querySelectorAll('aside.note'));
+    notes.forEach(function(n){ n.style.top = ''; });
+    if(!wide.matches) return;
+    var base = main.getBoundingClientRect().top, last = -1e9;
+    notes.forEach(function(n){
+      var m = main.querySelector('.nmark[data-n="' + n.id + '"]');
+      var top = (m ? m.getBoundingClientRect().top : n.getBoundingClientRect().top) - base - 8;
+      if(top < last + 12) top = last + 12;
+      n.style.top = top + 'px';
+      last = top + n.offsetHeight;
+    });
+  }
+  var t = 0;
+  function relayout(){ clearTimeout(t); t = setTimeout(function(){ setH(); layoutNotes(); }, 60); }
+  window.addEventListener('resize', relayout);
+  if(wide.addEventListener) wide.addEventListener('change', relayout);
+  if(window.ResizeObserver && main) new ResizeObserver(relayout).observe(main);
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(relayout);
+
+  function init(){ moveNav(); markChip(); layoutNotes(); }
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+  window.addEventListener('load', function(){ moveNav(); relayout(); });
+})();
+
+</script>
+<script src="../../../ilm-highlight.js" data-lecture-id="stage0_qabas-wahhaj_10"></script>
+<script src="../../../ilm-semantic.js" data-hadith="off"></script>
 </body>
 </html>
