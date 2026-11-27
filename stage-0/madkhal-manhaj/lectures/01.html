@@ -327,6 +327,15 @@ body .ilm-nav-top .ist-btn b{font-size:12px;font-weight:700;color:#e6e9f5!import
 body .ilm-nav-top .ist-btn small{display:none}
 body .ilm-nav-top .ist-test.tried{border-color:var(--star)!important}
 body .ilm-nav-top .ist-test.full{border-color:#9fd3b4!important}
+/* زرار الاختبار والخريطة مثبتين في طرف الشريط العلوي خارج منطقة السحب */
+#tb-study{flex:0 0 auto;display:flex}
+#tb-study:empty{display:none}
+#tb-study .ist-row{display:flex!important;margin:0;gap:4px;flex-wrap:nowrap}
+#tb-study .ist-btn,#tb-study .ist-btn:hover{flex:0 0 auto;flex-direction:row;min-width:0;padding:1px 10px;min-height:26px;line-height:1.4;background:var(--star)!important;border:1px solid var(--star)!important;border-radius:999px!important}
+#tb-study .ist-btn b{font-size:12px;font-weight:800;color:var(--night)!important}
+#tb-study .ist-btn small{display:none}
+#tb-study .ist-map,#tb-study .ist-map:hover{background:rgba(255,255,255,.1)!important;border-color:rgba(255,255,255,.35)!important}
+#tb-study .ist-map b{color:#fff!important}
 /* جدول بثلاثة أعمدة عند الحاجة */
 .cmp-row.c3{grid-template-columns:1fr 1.4fr 1.4fr}
 @media (max-width:640px){.cmp-row.c3{grid-template-columns:1fr}}
@@ -353,6 +362,7 @@ body .ilm-nav-top .ist-test.full{border-color:#9fd3b4!important}
       <a href="#anki">البطاقات</a>
       <span id="nav-top-slot"></span>
     </div>
+    <div id="tb-study"></div>
   </div>
   <div class="progress" id="prog"></div>
 </div>
@@ -1264,7 +1274,13 @@ window.addEventListener('scroll', function(){
 })();
 </script>
 <script src="../../../ilm-nav.js"></script>
-<script>(function(){function mv(){var t=document.querySelector('.ilm-nav-top'),slot=document.getElementById('nav-top-slot');if(t&&slot)slot.appendChild(t);}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mv);else mv();})();</script>
+<script>(function(){
+  function mv(){var t=document.querySelector('.ilm-nav-top'),slot=document.getElementById('nav-top-slot');if(t&&slot&&t.parentNode!==slot)slot.appendChild(t);}
+  /* زرار «📝 اختبار» و«🧠 خريطة» خارج منطقة السحب في الشريط العلوي، فيظهران دائمًا (حتى على الهاتف) */
+  function study(){var r=document.querySelector('.topbar .ilm-nav-top .ist-row'),dst=document.getElementById('tb-study');if(!r||!dst)return;dst.innerHTML='';dst.appendChild(r);}
+  function run(){mv();study();var tb=document.querySelector('.topbar');if(tb&&window.MutationObserver)new MutationObserver(function(){mv();study();}).observe(tb,{childList:true,subtree:true});}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
+})();</script>
 <script>
 (function(){
   var box = document.getElementById('ilm-completion-box');
