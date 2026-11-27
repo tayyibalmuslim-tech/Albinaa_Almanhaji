@@ -250,6 +250,34 @@ body .ilm-nav-top .inv-day{color:var(--star);font-size:12px}
 body .ilm-nav-top .inv-ttl{color:#fff;font-family:'Cairo',sans-serif;font-size:12.5px;font-weight:700}
 @media(max-width:620px){body .ilm-nav-top .inv-ttl{display:none}body .ilm-nav-top .inv-row{display:flex}}
 @media print{.topbar,#anki,.qz,details.video,.dl{display:none}}
+/* الخريطة الذهنية الختامية (7-هـ/ج-ب) */
+.mm-more{margin-top:12px;font-size:14.5px}
+.mm-more a{text-decoration:none;font-weight:800;color:var(--night2)}
+.cmap{max-width:1100px;margin:46px auto 0;padding:20px 18px 22px;background:var(--paper);border:1px solid var(--line);border-radius:20px}
+.cmap .cm-h{font-family:'Amiri',serif;font-size:30px;color:var(--night);margin:0 0 4px}
+.cmap .cm-sub{font-size:15px;color:var(--muted);margin:0 0 12px;line-height:1.8}
+.cm-frame{position:relative;height:min(76vh,760px);min-height:420px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#f4f0e4}
+.cm-frame iframe{display:block;width:100%;height:100%;border:0}
+.cm-touch{display:none;z-index:2;position:absolute;inset:auto 0 0 0;margin:0 auto 14px;width:max-content;align-items:center;gap:6px;font-family:'Cairo',sans-serif;font-size:15px;font-weight:800;color:#fff;background:rgba(20,28,56,.88);border:0;border-radius:12px;padding:8px 16px;cursor:pointer}
+.cm-frame:not(.live)::after{content:"";position:absolute;inset:46px 0 0 0;display:none}
+.cm-tools{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0}
+.cm-full{font-size:14px;font-weight:800;text-decoration:none;background:var(--night);color:#fff;border-radius:10px;padding:4px 14px}
+@media (pointer:coarse){.cm-frame:not(.live) .cm-touch{display:flex}.cm-frame:not(.live)::after{display:block}}
+.cm-frame.live{outline:3px solid var(--star);outline-offset:-3px}
+@media (max-width:580px){.cmap{margin:36px 8px 0;padding:16px 10px 18px}.cm-frame{height:72vh}}
+@media print{.cmap{display:none}}
+/* ===== شريط علوي مضغوط: سطر واحد، والروابط تتحرك أفقيًا ===== */
+.topbar-in{flex-wrap:nowrap;padding:4px 12px;gap:10px}
+.tb-title{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:0 1 auto;min-width:0;max-width:32%}
+.tb-links{flex-wrap:nowrap;overflow-x:auto;flex:1 1 auto;min-width:0;justify-content:flex-start;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tb-links::-webkit-scrollbar{display:none}
+.tb-links a{flex:0 0 auto;white-space:nowrap;font-size:12px;padding:2px 9px}
+#nav-top-slot{display:flex;flex:0 0 auto}
+body .ilm-nav-top .inv-row{flex-wrap:nowrap;gap:4px}
+body .ilm-nav-top .inv-link{min-height:24px;padding:1px 9px;font-size:12px;white-space:nowrap}
+body .ilm-nav-top .inv-ttl{font-family:'Cairo',sans-serif;font-size:12px;line-height:1.4}
+body .ilm-nav-top .inv-day{font-size:11px}
+@media (max-width:620px){.tb-title{display:none}.topbar-in{padding:4px 8px}}
 </style>
 
 <style id="ilm-sem-css">
@@ -279,6 +307,7 @@ body .ilm-nav-top .inv-ttl{color:#fff;font-family:'Cairo',sans-serif;font-size:1
       <a href="#s3">العبودية</a>
       <a href="#s4">اليوم الآخر</a>
       <a href="#s5">الثمرات</a>
+      <a href="#cmap">الخريطة</a>
       <a href="#anki">البطاقات</a>
       <span id="nav-top-slot"></span>
     </div>
@@ -312,6 +341,7 @@ body .ilm-nav-top .inv-ttl{color:#fff;font-family:'Cairo',sans-serif;font-size:1
     <div class="oidea"><small>الفكرة المحورية — صياغة تحريرية</small>القرآن يهدي قلبًا مستعدًّا، وهذا الاستعداد يُبنى بأربع حقائق: معرفة الله، والإيمان برسوله ﷺ، والعبودية له، واستحضار اليوم الآخر.</div>
     <div class="orow"><b>ترتيب السير:</b> العلم بالله أولًا لأنه الأساس الذي تنبني عليه البقية، ثم الثمرات التي تخرج بها من الحقائق الأربع.</div>
     <div class="mindmap" id="mindmap"></div>
+    <div class="mm-more"><a href="#cmap">🧠 الخريطة الذهنية التفصيلية لمحتوى المحاضرة (للمراجعة) ↓</a></div>
   </div>
 
   <div class="toc">
@@ -330,6 +360,7 @@ body .ilm-nav-top .inv-ttl{color:#fff;font-family:'Cairo',sans-serif;font-size:1
     <a class="l" href="#s5"><b style="background:var(--c5)">✦</b>الثمرات والوصايا</a>
     <a class="s" href="#t-hidaya">الهداية أعظم مطلب</a>
     <a class="s" href="#t-ihtida">أن تتغير نظرتك إلى القرآن</a>
+    <a class="l" href="#cmap"><b style="background:var(--night2)">🧠</b>الخريطة الذهنية للمحاضرة</a>
     <a class="l" href="#anki"><b style="background:var(--night2)">❈</b>بطاقات المراجعة</a>
   </div>
 </div>
@@ -659,6 +690,14 @@ body .ilm-nav-top .inv-ttl{color:#fff;font-family:'Cairo',sans-serif;font-size:1
 </section>
 
 </main>
+
+<!-- ==================== الخريطة الذهنية الختامية (7-هـ/ج-ب) — خارج منطقة الهايلايت ==================== -->
+<div class="cmap" id="cmap">
+  <div class="cm-h">الخريطة الذهنية للمحاضرة</div>
+  <div class="cm-sub">خريطة منطقية من اليمين إلى اليسار: اضغط على أي عنوان يظهر شرحه ومثاله، وعلى الرقم الذي بجواره لطيّ الفرع أو فتحه. للتكبير: Ctrl مع عجلة الماوس، أو إصبعان على الهاتف. جرّب أن تطوي الفروع وتتذكّر ما تحتها قبل أن تفتحها.</div>
+  <div class="cm-frame" id="cm-frame"><iframe src="../../../mindmap.html?id=stage0_muqaddimat_01&amp;embed=1" title="الخريطة الذهنية للمحاضرة" loading="lazy"></iframe><button type="button" class="cm-touch" id="cm-touch">👆 اضغط هنا لتحريك الخريطة</button></div>
+  <div class="cm-tools"><a class="cm-full" href="../../../mindmap.html?id=stage0_muqaddimat_01">⛶ افتح الخريطة بملء الشاشة</a></div>
+</div>
 
 <!-- ==================== البطاقات (خارج منطقة الهايلايت) ==================== -->
 <div id="anki">
@@ -1246,5 +1285,14 @@ window.addEventListener('scroll', function(){
 </script>
 <script src="../../../ilm-highlight.js" data-lecture-id="stage0_muqaddimat_01"></script>
 <script src="../../../ilm-semantic.js" data-hadith="off"></script>
+<script>
+/* ===== الخريطة الختامية: التحريك على اللمس بعد الضغط ===== */
+(function(){
+  var f = document.getElementById('cm-frame'), t = document.getElementById('cm-touch');
+  if(!f || !t) return;
+  t.addEventListener('click', function(){ f.classList.add('live'); });
+  document.addEventListener('touchstart', function(e){ if(!f.contains(e.target)) f.classList.remove('live'); }, {passive:true});
+})();
+</script>
 </body>
 </html>
