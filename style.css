@@ -677,3 +677,12 @@ a.day-title:hover, a.lecture-title:hover{ color: var(--green); }
 .lecture-nav-ttl{ font-size:13.5px; }
 .lecture-nav-subj{ font-size:11px; opacity:.7; font-weight:500; }
 .lecture-nav-subj.is-other{ opacity:.95; color:#8a6a1f; font-weight:600; }
+
+/* زرار «📝 اختبار» و«🧠 خريطة» في صفوف المحاضرات (ilm-study.js) */
+.lecture-tools:empty{ display:none; }
+.lecture-tools{ margin-inline-start:auto; }
+@media (max-width:620px){
+  .lecture-item, .day-item{ flex-wrap:wrap; }
+  .lecture-tools.ist-has{ order:3; width:100%; }
+  .lecture-tools .ist-btn{ flex:1; flex-direction:row; justify-content:space-between; gap:8px; padding:6px 12px; }
+}
