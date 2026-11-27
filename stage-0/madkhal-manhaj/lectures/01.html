@@ -1,40 +1,1262 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>المدخل إلى المنهاج - المرحلة التمهيدية</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="../../../style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المدخل إلى المنهاج - المحاضرة 01 - المدخل إلى المنهاج من ميراث النبوة | البناء المنهجي · المرحلة التمهيدية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../anki/final.css">
+<style>
+/* ===== هوية «سماء التفكر»: غلاف ليلي نجمي، ومتن عاجي هادئ =====
+   ألوان الأقسام بعيدة عن الألوان الدلالية المحجوزة (5-ب):
+   1 العلم بالله نيلي · 2 الإيمان بالنبي ﷺ فيروزي غامق · 3 العبودية رصاصي
+   4 اليوم الآخر بُنّي ترابي · 5 الثمرات ليلي مع ذهبي فاتح للزخرفة فقط */
+:root{
+  --bg:#faf8f3; --paper:#fffefa; --ink:#1f2433; --muted:#596074; --line:#e4dfd2;
+  --night:#141c38; --night2:#263463; --star:#f3d58a; --goldbg:#f7efd9; --goldbd:#e3d3a6;
+  --c1:#2b3a75; --c1s:#e9ecf7;
+  --c2:#106a7a; --c2s:#e3f1f3;
+  --c3:#4b4f63; --c3s:#ecedf2;
+  --c4:#6b4f3a; --c4s:#f3ece6;
+  --c5:#1f2a4f; --c5s:#eceff7;
+  --fix:#b45309; --fixs:#fdf0e4;
+  --add:#3d5a80; --adds:#eaf0f7;
+  --sem-aya:#14532d; --sem-name:#8f1d21; --sem-sahabi:#8a5a00;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Cairo',system-ui,sans-serif;font-size:17.5px;line-height:1.95;text-align:right}
+a{color:var(--c1)}
+.wrap{max-width:800px;margin:0 auto;padding:0 18px}
+
+/* شريط علوي */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(20,28,56,.97);color:#fff}
+.topbar-in{max-width:1180px;margin:0 auto;padding:7px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.tb-title{font-family:'Reem Kufi',sans-serif;font-size:15px;color:var(--star)}
+.tb-links{display:flex;gap:4px;flex-wrap:wrap}
+.tb-links a{color:#e6e9f5;text-decoration:none;font-size:12.5px;padding:3px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.2)}
+.tb-links a:hover{background:rgba(243,213,138,.18)}
+.progress{height:3px;background:var(--star);width:0}
+
+/* الغلاف */
+.cover{color:#fff;text-align:center;padding:52px 18px 42px;
+  background:
+   radial-gradient(1.5px 1.5px at 12% 22%,#fff 50%,transparent 51%),
+   radial-gradient(1px 1px at 28% 68%,#fff 50%,transparent 51%),
+   radial-gradient(1.5px 1.5px at 44% 14%,#f3d58a 50%,transparent 51%),
+   radial-gradient(1px 1px at 63% 40%,#fff 50%,transparent 51%),
+   radial-gradient(2px 2px at 78% 18%,#fff 50%,transparent 51%),
+   radial-gradient(1px 1px at 88% 62%,#f3d58a 50%,transparent 51%),
+   radial-gradient(1px 1px at 6% 80%,#fff 50%,transparent 51%),
+   radial-gradient(1.5px 1.5px at 52% 84%,#fff 50%,transparent 51%),
+   radial-gradient(1px 1px at 35% 38%,#fff 50%,transparent 51%),
+   radial-gradient(ellipse at 50% 120%,#3b4c8a 0%,transparent 60%),
+   linear-gradient(180deg,var(--night) 0%,var(--night2) 100%)}
+.kicker{font-family:'Reem Kufi',sans-serif;color:var(--star);font-size:15px}
+.series{font-size:13.5px;color:#c6cde6;margin-top:4px}
+.cover h1{font-family:'Amiri',serif;font-size:clamp(36px,6vw,44px);margin:12px 0 6px;line-height:1.35}
+.cover .sub{font-size:16px;color:#dfe4f4;max-width:640px;margin:0 auto;line-height:1.9}
+.orn{display:flex;align-items:center;justify-content:center;gap:12px;margin:18px auto;color:var(--star);max-width:300px}
+.orn i{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--star),transparent)}
+
+/* بطاقة المصدر + الفيديو */
+.srcbar{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 6px;font-size:13.5px;color:var(--muted)}
+.srcbar span{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:3px 12px}
+details.video{margin:14px 0;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:10px 16px}
+details.video summary{cursor:pointer;font-weight:700;color:var(--c1);min-height:32px}
+.vid{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;margin-top:10px}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* لوحة التوجيه */
+.orient{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px 22px;margin:22px 0}
+.orient .oq{font-family:'Amiri',serif;font-size:24px;color:var(--night);line-height:1.6}
+.orient .olab{display:inline-block;font-size:12.5px;font-weight:800;color:#fff;background:var(--night2);border-radius:999px;padding:1px 12px;margin-bottom:6px}
+.orient .oidea{margin-top:12px;padding:10px 14px;border-radius:12px;background:var(--goldbg);border:1px solid var(--goldbd)}
+.orient .oidea small{display:block;font-size:12.5px;color:var(--muted)}
+.orient .orow{margin-top:10px;font-size:15.5px;color:var(--muted)}
+
+/* الخريطة الذهنية (MAP_DATA) */
+.mindmap{display:flex;align-items:stretch;gap:14px;margin-top:16px}
+.mm-center{flex:0 0 150px;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:16px;background:var(--night);color:var(--star);font-family:'Reem Kufi',sans-serif;font-size:18px;padding:12px}
+.mm-branches{flex:1;display:flex;flex-direction:column;gap:8px}
+.mm-node{display:flex;flex-wrap:wrap;align-items:center;gap:6px;border-right:4px solid var(--c1);background:#fff;border-radius:10px;padding:7px 10px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);border-left:1px solid var(--line)}
+.mm-node a{text-decoration:none;color:var(--ink)}
+.mm-main{font-weight:800}
+.mm-kid{font-size:14px;padding:2px 10px;border-radius:999px;background:var(--c1s)}
+.mm-n1{border-right-color:var(--c1)} .mm-n2{border-right-color:var(--c2)} .mm-n3{border-right-color:var(--c3)} .mm-n4{border-right-color:var(--c4)} .mm-n5{border-right-color:var(--c5)}
+
+/* الفهرس */
+.toc{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px 22px;margin:22px 0}
+.toc .ttl{font-family:'Reem Kufi',sans-serif;color:var(--night);font-size:18px;margin-bottom:4px}
+.toc a{display:block;text-decoration:none;color:var(--ink);line-height:2}
+.toc a.l{font-weight:800}
+.toc a.s{padding-right:26px;font-size:15px;color:var(--muted)}
+.toc b{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;color:#fff;font-size:12px;margin-left:6px}
+
+/* الأقسام */
+section.part{margin:48px 0 30px}
+.sec-head{display:flex;gap:14px;align-items:center;border-radius:16px;padding:14px 20px;color:#fff;margin-bottom:16px}
+.sec-head .num{font-family:'Reem Kufi',sans-serif;font-size:32px;line-height:1;color:var(--star)}
+.sec-head small{display:block;font-size:13px;opacity:.88}
+.sec-head h2{margin:0;font-family:'Amiri',serif;font-size:clamp(27px,4vw,32px);line-height:1.4;font-weight:700}
+.p0 .sec-head{background:linear-gradient(135deg,var(--night),var(--night2))}
+.p1 .sec-head{background:linear-gradient(135deg,var(--c1),#3f509c)}
+.p2 .sec-head{background:linear-gradient(135deg,var(--c2),#1b8597)}
+.p3 .sec-head{background:linear-gradient(135deg,var(--c3),#646a83)}
+.p4 .sec-head{background:linear-gradient(135deg,var(--c4),#8a684d)}
+.p5 .sec-head{background:linear-gradient(135deg,var(--c5),#33406c)}
+h3{font-family:'Amiri',serif;font-size:24px;margin:28px 0 8px;padding-right:12px;border-right:4px solid var(--line);line-height:1.5}
+.p0 h3{border-color:var(--night2);color:var(--night2)}
+.p1 h3{border-color:var(--c1);color:var(--c1)}
+.p2 h3{border-color:var(--c2);color:var(--c2)}
+.p3 h3{border-color:var(--c3);color:var(--c3)}
+.p4 h3{border-color:var(--c4);color:var(--c4)}
+.p5 h3{border-color:var(--c5);color:var(--c5)}
+h4{font-size:19px;margin:22px 0 4px;color:var(--ink)}
+p{margin:8px 0}
+ul.pl,ol.pl{margin:6px 0;padding-right:22px}
+ul.pl li,ol.pl li{margin:4px 0}
+.where,.next{font-size:15px;border-radius:10px;padding:7px 12px;margin:10px 0;background:var(--goldbg);border:1px dashed var(--goldbd)}
+.where b,.next b{color:var(--night2)}
+
+blockquote.q{font-family:'Amiri',serif;font-size:22px;line-height:2;background:var(--paper);border:1px solid var(--line);border-right:4px solid #4f8f68;border-radius:10px;margin:12px 0;padding:10px 18px}
+blockquote.q .ref{display:block;font-family:'Cairo',sans-serif;font-size:13.5px;color:var(--muted)}
+blockquote.poem{border-right-color:var(--c3)}
+.aya{font-family:'Amiri',serif;font-size:1.12em}
+main .sem-aya,main .sem-hadith{font-weight:400}
+
+/* الصناديق */
+.box{border-radius:12px;padding:12px 16px;margin:16px 0;border:1px solid var(--line);background:var(--paper)}
+.box .tag{display:inline-block;font-size:12.5px;font-weight:800;padding:1px 10px;border-radius:999px;margin-bottom:4px;color:#fff}
+.box.key{background:var(--goldbg);border-color:var(--goldbd)} .box.key .tag{background:#7a6324}
+.box.def{background:var(--c1s);border-color:#c5cde9} .box.def .tag{background:var(--c1)}
+.box.fixb{background:var(--fixs);border-color:#efc79f} .box.fixb .tag{background:var(--fix)}
+.box.addb{background:var(--adds);border-color:#c3d0e2} .box.addb .tag{background:var(--add)}
+.box.story{background:#f6f4f9;border-color:#ddd8e6} .box.story .tag{background:var(--c3)}
+
+/* الهياكل (div فقط — لا تدخل في فهرسة الهايلايت) */
+.struct-cap{font-size:13px;font-weight:800;color:var(--muted);margin:16px 0 6px}
+.chain{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;margin:12px 0}
+.chain span{padding:6px 16px;border-radius:999px;background:var(--c2s);color:var(--c2);font-weight:800;border:1px solid #bcdde2}
+.chain i{font-style:normal;color:var(--muted)}
+.cmp{display:grid;gap:8px;margin:12px 0}
+.cmp-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cmp-h{font-size:13px;font-weight:800;color:#fff;background:var(--night2);border-radius:8px;padding:4px 10px}
+.cmp-c{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.cmp-c.aya{font-family:'Amiri',serif;font-size:19px}
+.tree{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px;margin:16px 0}
+.tree .root{display:block;width:max-content;max-width:100%;margin:0 auto 12px;padding:7px 22px;border-radius:12px;background:var(--c1);color:#fff;font-weight:800;text-align:center}
+.tree .branches{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px}
+.tree .br{border:1px solid var(--line);border-top:4px solid var(--c3);border-radius:10px;padding:10px;text-align:center;background:#fff}
+.tree .br .bt{display:block;color:var(--c3);font-weight:800;font-size:16.5px}
+.tree .br .arr{color:var(--muted);font-size:13px;margin:2px 0}
+.tree .br .res{display:inline-block;margin:2px;padding:2px 10px;border-radius:999px;background:var(--c3s);font-size:14px}
+.tree .foot{text-align:center;color:var(--muted);font-size:14px;margin-top:10px}
+.argument{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:14px 0;background:#fff}
+.argument .ar{display:flex;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line)}
+.argument .ar:last-child{border-bottom:0}
+.argument .al{flex:0 0 92px;font-size:13px;font-weight:800;color:var(--c3)}
+.argument .av{flex:1}
+
+/* الخلاصة */
+.sum{border-radius:14px;padding:14px 18px;margin:20px 0;background:var(--night);color:#eef1fa}
+.sum .st{font-family:'Reem Kufi',sans-serif;color:var(--star);font-size:16px;margin-bottom:4px}
+.sum ul{margin:0;padding-right:22px}
+.sum li{margin:3px 0}
+
+/* أسئلة تثبيت الفهم (div/button فقط) */
+.qz{background:#f2f3f8;border:1px solid #dadded;border-radius:16px;padding:16px 18px;margin:24px 0}
+.qz-head{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.qz-title{font-family:'Reem Kufi',sans-serif;color:var(--night2);font-size:17px}
+.qz-score{font-size:13.5px;font-weight:800;color:var(--night2);background:#fff;border:1px solid #dadded;border-radius:999px;padding:2px 12px}
+.qz-item{background:#fff;border:1px solid #e3e5ef;border-radius:12px;padding:12px 14px;margin:10px 0}
+.qz-q{font-weight:800;margin-bottom:8px}
+.qz-opt{display:block;width:100%;min-height:44px;text-align:right;font-family:'Cairo',sans-serif;font-size:15.5px;line-height:1.7;padding:8px 14px;margin:6px 0;border-radius:10px;border:1px solid #cfd3e3;background:#fafbfe;color:var(--ink);cursor:pointer;white-space:normal}
+.qz-opt:hover{border-color:var(--night2)}
+.qz-opt.ok{background:#e4f1e7;border-color:#7fb38f}
+.qz-opt.no{background:#f8e7e4;border-color:#d79b90}
+.qz-exp{display:none;margin-top:6px;padding:8px 12px;border-radius:10px;background:var(--goldbg);font-size:15px}
+.qz-item.done .qz-exp{display:block}
+.qz-item.done .qz-opt{pointer-events:none}
+.qz-retry{display:none;font-family:'Cairo',sans-serif;font-size:13px;margin-top:6px;padding:4px 14px;min-height:34px;border-radius:999px;border:1px solid var(--night2);background:transparent;color:var(--night2);cursor:pointer}
+.qz-item.done .qz-retry{display:inline-block}
+
+/* البطاقات */
+#anki{background:linear-gradient(180deg,var(--night),var(--night2));color:#fff;padding:42px 0 50px;margin-top:40px}
+#anki .ah{font-family:'Amiri',serif;font-size:30px;text-align:center;margin:0}
+#anki .asub{text-align:center;color:#c6cde6;font-size:14px;margin:4px 0 14px}
+.filters{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:16px}
+.filters button{font-family:'Cairo',sans-serif;font-size:13px;min-height:34px;padding:4px 12px;border-radius:999px;border:1.5px solid rgba(255,255,255,.3);background:transparent;color:#fff;cursor:pointer}
+.filters button.on{background:var(--star);color:var(--night);border-color:var(--star);font-weight:800}
+.ak{max-width:720px;margin:0 auto;overflow-wrap:break-word;background:#fff;border-radius:18px;padding:22px 24px;color:#26352e;box-shadow:0 10px 30px rgba(0,0,0,.3);cursor:pointer}
+.ak .deckcap{font-size:12px;color:#66766f;margin-bottom:10px;border-bottom:1px dashed #e1e0d8;padding-bottom:6px;overflow-wrap:anywhere;word-break:break-word}
+.ak .ak-back{display:none;margin-top:16px;padding-top:16px;border-top:1px solid #e1e0d8}
+.ak.on .ak-back{display:block}
+.ak .hint{margin-top:10px;font-size:12.5px;color:#66766f;text-align:center}
+.ak.on .hint{display:none}
+.ctrl{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:16px}
+.ctrl button{font-size:20px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;cursor:pointer}
+.counter{font-family:'Reem Kufi',sans-serif;color:var(--star)}
+.dl{display:block;margin:18px auto 0;font-family:'Cairo',sans-serif;font-weight:800;min-height:44px;padding:10px 24px;border-radius:999px;border:0;background:var(--star);color:var(--night);cursor:pointer}
+.dl-note{text-align:center;font-size:12.5px;color:#aab3d4;margin-top:8px}
+
+footer{text-align:center;color:var(--muted);font-size:14px;padding:24px 16px 80px;line-height:1.9}
+
+@media (max-width:640px){
+  body{font-size:17px}
+  .mindmap{flex-direction:column}
+  .mm-center{flex-basis:auto}
+  .cmp-row{grid-template-columns:1fr}
+  .argument .ar{flex-direction:column;gap:2px}
+  .argument .al{flex-basis:auto}
+  blockquote.q{font-size:20px}
+  .ak{padding:16px 14px}
+}
+
+/* ===== شريط التنقل (ilm-nav.js) — فاتح وهادئ بهوية المحاضرة ===== */
+body .ilm-nav-bar{max-width:800px;margin:18px auto;padding:14px 16px;background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:none;font-family:'Cairo',sans-serif;color:var(--ink)}
+body .ilm-nav-bar:before{color:var(--muted);font-size:12.5px;font-weight:700;margin-bottom:10px}
+body .ilm-nav-bar .inv-row{gap:8px}
+body .ilm-nav-bar .inv-link{background:#fff;border:1px solid var(--line);border-right:4px solid var(--c1);border-radius:12px;color:var(--ink);padding:10px 14px;min-height:44px;box-shadow:none}
+body .ilm-nav-bar .inv-link:hover{background:var(--c1s);border-color:var(--c1);transform:none}
+body .ilm-nav-bar .inv-day{color:var(--c1);font-size:12px;font-weight:800}
+body .ilm-nav-bar .inv-ttl{color:var(--ink);font-family:'Amiri',serif;font-size:18px;line-height:1.5}
+body .ilm-nav-bar .inv-subj{color:var(--muted)}
+body .ilm-nav-bar .inv-subj-other{color:#7a6324}
+body .ilm-nav-bar .inv-disabled{background:transparent;border:1px dashed var(--line);color:#a3a7b3;border-radius:12px;min-height:44px;opacity:1}
+body .ilm-nav-bar .inv-jump{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+body .ilm-nav-bar .inv-jump label{color:var(--muted)}
+body .ilm-nav-bar select{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:10px;min-height:44px;font-family:'Cairo',sans-serif}
+body .ilm-nav-bar select:focus{border-color:var(--c1);box-shadow:0 0 0 3px var(--c1s)}
+@media(max-width:620px){body .ilm-nav-bar{margin:14px 12px}body .ilm-nav-bar .inv-link{text-align:right}}
+/* تنبيه الذكاء الاصطناعي: شريط رفيع بهوية الصفحة */
+.ai-note{background:var(--night);color:#e9dcb3;font-size:12.5px;line-height:1.7;text-align:center;padding:6px 14px;border-bottom:1px solid rgba(243,213,138,.25)}
+/* صندوق الإتمام: مدمج في المتن تحت الغلاف */
+#ilm-completion-box{display:flex;align-items:center;gap:10px;margin:18px 0 0;padding:10px 16px;background:var(--paper);border:1px solid var(--line);border-right:4px solid var(--c1);border-radius:12px;cursor:pointer;user-select:none;font-weight:700}
+#ilm-completion-box input{width:18px;height:18px;accent-color:var(--c1);cursor:pointer;flex-shrink:0}
+#ilm-completion-box span{font-size:14.5px;color:var(--ink)}
+#ilm-completion-box.done{background:var(--c1s);border-color:var(--c1)}
+#ilm-completion-box.done span:after{content:" ✓";color:var(--c1)}
+/* السابق/التالي داخل الفهرس المثبت */
+#nav-top-slot{flex:0 0 auto;display:inline-flex;margin-inline-start:6px}
+body .ilm-nav-top{max-width:none;margin:0;padding:0;background:none;border:0;border-radius:0;box-shadow:none;color:#fff}
+body .ilm-nav-top:before,body .ilm-nav-top .inv-jump,body .ilm-nav-top .inv-subj,body .ilm-nav-top .inv-disabled{display:none}
+body .ilm-nav-top .inv-row{display:flex;gap:6px}
+body .ilm-nav-top .inv-link{flex-direction:row;align-items:center;gap:6px;min-height:30px;padding:2px 12px;border:1px solid var(--star);border-radius:999px;background:rgba(243,213,138,.1);color:var(--star);text-align:center}
+body .ilm-nav-top .inv-link:hover{background:rgba(243,213,138,.22);transform:none}
+body .ilm-nav-top .inv-day{color:var(--star);font-size:12px}
+body .ilm-nav-top .inv-ttl{color:#fff;font-family:'Cairo',sans-serif;font-size:12.5px;font-weight:700}
+@media(max-width:620px){body .ilm-nav-top .inv-ttl{display:none}body .ilm-nav-top .inv-row{display:flex}}
+@media print{.topbar,#anki,.qz,details.video,.dl{display:none}}
+</style>
+<style id="ilm-sem-css">
+/* ===== الطبقة الدلالية للألوان — آلية العمل 5.11 / بند 5-ب =====
+   أخضر = آية | أحمر = عَلَم (عريض للعلماء) | كهرماني عريض = نبي أو صحابي
+   الأحاديث معطّلة في المحاضرات (data-hadith="off"). */
+.sem-aya{color:var(--sem-aya)}
+.sem-name{color:var(--sem-name)}
+.sem-scholar{font-weight:700}
+.sem-sahabi{color:var(--sem-sahabi);font-weight:700}
+.quran,.aya,.ayah,.ayat,.quran *{color:var(--sem-aya)}
+@media print{.sem-aya,.sem-name,.sem-sahabi{color:#000}}
+</style>
+<style id="identity">
+/* ===== هوية «ميراث النبوة»: غلاف بترولي عميق وزخرفة رملية — تخطيط اليوم الأول بألوان مختلفة =====
+   ألوان الأقسام بعيدة عن الألوان الدلالية المحجوزة (5-ب):
+   1 الربط بالواقع أزرق مخطوط · 2 البنية بُنّي ورقي · 3 السياق رصاصي · 4 الاستفادة تركوازي داكن · 5 الختام بترولي */
+:root{
+  --bg:#f7f6f1; --paper:#fffffb; --ink:#1c2a2e; --muted:#566468; --line:#dfe2da;
+  --night:#0f3b42; --night2:#22616b; --star:#ecd3a0; --goldbg:#f5eedd; --goldbd:#ddcca2;
+  --c1:#2a4d7f; --c1s:#e7edf6;
+  --c2:#6b4f3a; --c2s:#f3ece6;
+  --c3:#4b4f63; --c3s:#ecedf2;
+  --c4:#0f6b6b; --c4s:#e2f1f0;
+  --c5:#16454c; --c5s:#e6eff0;
+}
+.cover{background:
+   radial-gradient(circle at 15% 25%,rgba(236,211,160,.18) 0 2px,transparent 3px),
+   radial-gradient(circle at 80% 20%,rgba(236,211,160,.14) 0 2px,transparent 3px),
+   repeating-linear-gradient(45deg,rgba(255,255,255,.035) 0 2px,transparent 2px 22px),
+   repeating-linear-gradient(-45deg,rgba(255,255,255,.035) 0 2px,transparent 2px 22px),
+   linear-gradient(180deg,var(--night) 0%,var(--night2) 100%)}
+.topbar{background:rgba(15,59,66,.97)}
+.p1 .sec-head{background:linear-gradient(135deg,var(--c1),#3d66a3)}
+.p4 .sec-head{background:linear-gradient(135deg,var(--c4),#178585)}
+.p5 .sec-head{background:linear-gradient(135deg,var(--c5),#24646d)}
+.qz{background:#eff4f3;border-color:#d4e1df}
+.qz-item{border-color:#dde7e5}
+.cm-touch{background:rgba(15,59,66,.9)}
+</style>
+
+<style id="lec-extra">
+/* ===== إضافات 5.12: رابط الخريطة الختامية + قسمها (خارج منطقة الهايلايت) ===== */
+.mm-more{margin-top:12px;font-size:14.5px}
+.mm-more a{text-decoration:none;font-weight:800;color:var(--night2)}
+.cmap{max-width:1100px;margin:46px auto 0;padding:20px 18px 22px;background:var(--paper);border:1px solid var(--line);border-radius:20px}
+.cmap .cm-h{font-family:'Amiri',serif;font-size:30px;color:var(--night);margin:0 0 4px}
+.cmap .cm-sub{font-size:15px;color:var(--muted);margin:0 0 12px;line-height:1.8}
+.cm-frame{position:relative;height:min(76vh,760px);min-height:420px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#f4f0e4}
+.cm-frame iframe{display:block;width:100%;height:100%;border:0}
+.cm-touch{display:none;z-index:2;position:absolute;inset:auto 0 0 0;margin:0 auto 14px;width:max-content;align-items:center;gap:6px;font-family:'Cairo',sans-serif;font-size:15px;font-weight:800;color:#fff;background:rgba(20,28,56,.88);border:0;border-radius:12px;padding:8px 16px;cursor:pointer}
+.cm-frame:not(.live)::after{content:"";position:absolute;inset:46px 0 0 0;display:none}
+.cm-tools{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0}
+.cm-full{font-size:14px;font-weight:800;text-decoration:none;background:var(--night);color:#fff;border-radius:10px;padding:4px 14px}
+@media (pointer:coarse){.cm-frame:not(.live) .cm-touch{display:flex}.cm-frame:not(.live)::after{display:block}}
+.cm-frame.live{outline:3px solid var(--star);outline-offset:-3px}
+@media (max-width:580px){.cmap{margin:36px 8px 0;padding:16px 10px 18px}.cm-frame{height:72vh}}
+@media print{.cmap{display:none}}
+/* جدول بثلاثة أعمدة عند الحاجة */
+.cmp-row.c3{grid-template-columns:1fr 1.4fr 1.4fr}
+@media (max-width:640px){.cmp-row.c3{grid-template-columns:1fr}}
+.num-steps{display:grid;gap:8px;margin:12px 0}
+.num-steps .ns{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:9px 12px}
+.num-steps .ns b{flex:0 0 28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--night2);color:#fff;font-size:13px}
+</style>
+
 </head>
-<body class="" data-page="lecture" data-lecture-id="stage0_madkhal-manhaj_01">
-  <div class="page">
-    <nav class="breadcrumbs"><a href="../../../index.html">الرئيسية</a><span class="sep">/</span><a href="../../index.html">المرحلة التمهيدية</a><span class="sep">/</span><a href="../index.html">المدخل إلى المنهاج</a><span class="sep">/</span><span aria-current="page">المدخل إلى المنهاج</span></nav>
+<body data-lecture-id="stage0_madkhal-manhaj_01">
+<div class="ai-note" role="note">⚠️ أُعدّ هذا المحتوى بمساعدة الذكاء الاصطناعي، وقد يحتوي أخطاء، ويُرجى مراجعته.</div>
 
-      <header class="lecture-header">
-        <h1>المدخل إلى المنهاج</h1>
-        <p class="lecture-meta">المادة: المدخل إلى المنهاج &nbsp;|&nbsp; الشيخ: أحمد السيد &nbsp;|&nbsp; اليوم 3</p>
-        <label class="checkbox-line lecture-checkbox">
-          <input type="checkbox" data-lecture-id="stage0_madkhal-manhaj_01">
-          <span>إتمام هذه المحاضرة</span>
-        </label>
-      </header>
-
-      <div class="lecture-video-embed" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin:20px 0;">
-        <iframe src="https://www.youtube.com/embed/TwcAyIFb3Bg" title="المدخل إلى المنهاج" style="position:absolute;top:0;right:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-      </div>
-
-      <div class="lecture-nav">
-        <a href="../index.html" class="btn btn-outline">الرجوع إلى المادة</a>
-        <a href="../../index.html" class="btn btn-outline">الرجوع إلى المرحلة</a>
-      </div>
-
-      <div data-lecture-nav-extra></div>
-
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="tb-title">المدخل إلى المنهاج — المحاضرة 01</div>
+    <div class="tb-links">
+      <a href="#orient">التوجيه</a>
+      <a href="#s1">الربط بالواقع</a>
+      <a href="#s2">البنية</a>
+      <a href="#s3">السياق</a>
+      <a href="#s4">الاستفادة</a>
+      <a href="#s5">الختام</a>
+      <a href="#cmap">الخريطة</a>
+      <a href="#anki">البطاقات</a>
+      <span id="nav-top-slot"></span>
+    </div>
   </div>
-  <script type="module" src="../../../firebase-sync-manhaj.js"></script>
-  <script src="../../../data.js"></script>
-  <script src="../../../script.js"></script>
+  <div class="progress" id="prog"></div>
+</div>
+
+<header class="cover">
+  <div class="kicker">البناء المنهجي · المستوى الأول · المرحلة التمهيدية</div>
+  <div class="series">مادة «المدخل إلى المنهاج» — المحاضرة 01 (اليوم 3) · الشيخ أحمد السيد</div>
+  <h1>المدخل إلى «المنهاج من ميراث النبوة»</h1>
+  <div class="sub">مفتاح المتن: لماذا صُنّف، وممّ يتكوّن، وفي أي مشروع جاء، وكيف يُنتفع به حتى يصير الوحي نورًا في الواقع الخاص والعام</div>
+  <div class="orn"><i></i><b>✦</b><i></i></div>
+</header>
+
+<div class="wrap">
+  <label id="ilm-completion-box">
+    <input type="checkbox" data-lecture-id="stage0_madkhal-manhaj_01">
+    <span>تحديد هذه المحاضرة كمكتملة</span>
+  </label>
+  <div class="srcbar"><span>نوع المادة: تفريغ محاضرة</span><span>المسار: محاضرات (إعادة تنظيم بلا حذف)</span><span id="cards-count">بطاقات المراجعة</span></div>
+  <details class="video">
+    <summary>▶ استمع للمحاضرة أولًا، ثم اقرأ الملف بعدها (لا تقرأ أثناء الاستماع)</summary>
+    <div class="vid"><iframe src="https://www.youtube.com/embed/TwcAyIFb3Bg" title="المدخل إلى «المنهاج من ميراث النبوة»" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+  </details>
+
+  <!-- لوحة التوجيه (7-ز/ب) — div فقط -->
+  <div class="orient" id="orient">
+    <div class="olab">السؤال المركزي</div>
+    <div class="oq">«لماذا صُنّف «المنهاج من ميراث النبوة»، وكيف نستفيد منه؟»</div>
+    <div class="oidea"><small>الفكرة المحورية — صياغة تحريرية</small>المنهاج انتقاءٌ من الكتاب والسنة، معياره ما يحتاجه المصلح لصلاح نفسه وغيره، جاء ركنًا من مشروع «صناعة المصلحين» ليعيد ربط الوحي بالواقع كما كان في زمن النبوة؛ وأعلى الانتفاع به تنزيله على الواقع.</div>
+    <div class="orow"><b>ترتيب السير:</b> بالترتيب الذي اختاره الشيخ: الغاية (الربط بالواقع) أولًا لأنها تفسّر ما بعدها، ثم البنية التي حققتها، ثم السياق الذي جاءت فيه، ثم طريقة الاستفادة، وختام يجمعها.</div>
+    <div class="mindmap" id="mindmap"></div>
+    <div class="mm-more"><a href="#cmap">🧠 الخريطة الذهنية التفصيلية لمحتوى المحاضرة (للمراجعة) ↓</a></div>
+  </div>
+
+  <div class="toc">
+    <div class="ttl">محتويات الملف</div>
+    <a class="l" href="#intro"><b style="background:var(--night)">✦</b>المدخل: لماذا مدخل للمنهاج؟</a>
+    <a class="l" href="#s1"><b style="background:var(--c1)">١</b>الربط بين الوحي والواقع</a>
+    <a class="s" href="#t-waqi">الواقع الخاص والعام</a>
+    <a class="s" href="#t-nubuwwa">منهج النبوة في التلقي</a>
+    <a class="s" href="#t-tanasub">آيات تناسب المرحلة</a>
+    <a class="s" href="#t-tabari">«وكذلك نجزي» والطبري</a>
+    <a class="s" href="#t-ittisa">اتساع الحياة بالعمل</a>
+    <a class="l" href="#s2"><b style="background:var(--c2)">٢</b>بنية الكتاب ومعياره</a>
+    <a class="s" href="#t-intiqa">الانتقاء منهج علمي</a>
+    <a class="s" href="#t-miyar">معيار الانتقاء</a>
+    <a class="s" href="#t-awail">تأسيس مرجعية الوحي</a>
+    <a class="l" href="#s3"><b style="background:var(--c3)">٣</b>سياق الكتاب</a>
+    <a class="s" href="#t-thabit">الثابت والمتغير</a>
+    <a class="s" href="#t-bawsala">«بوصلة المصلح»</a>
+    <a class="l" href="#s4"><b style="background:var(--c4)">٤</b>كيف نستفيد منه؟</a>
+    <a class="s" href="#t-ahamm">الأهم: الربط بالواقع</a>
+    <a class="l" href="#s5"><b style="background:var(--c5)">✦</b>الختام: المدخل في أربعة أسطر</a>
+    <a class="l" href="#cmap"><b style="background:var(--night2)">🧠</b>الخريطة الذهنية للمحاضرة</a>
+    <a class="l" href="#anki"><b style="background:var(--night2)">❈</b>بطاقات المراجعة</a>
+  </div>
+</div>
+
+<main class="wrap" data-ilm-highlight-zone>
+
+<!-- ==================== المدخل ==================== -->
+<section class="part p0" id="intro">
+  <div class="sec-head"><div class="num">✦</div><div><small>المدخل — توجيه</small><h2>لماذا مدخلٌ إلى «المنهاج من ميراث النبوة»؟</h2></div></div>
+  <p>هذا المجلس بعنوان <strong>المدخل إلى «المنهاج من ميراث النبوة»</strong>. والمدخل محاضرة <strong>تمهيدية تعريفية</strong> تضع المتن في سياقه، بحيث إذا كان مقرَّرًا في الدراسة أو في برنامج علمي — في البناء المنهجي أو غيره — كانت هذه المحاضرة <strong>كالمفتاح</strong> للدخول إلى متن المنهاج.</p>
+  <h3 id="t-madakhil">متى تُعمل المداخل؟</h3>
+  <p>فكرة المداخل إنما تكون <strong>للأمور المهمة</strong>: إذا عملت شيئًا يمهّد للدخول إلى كتاب أو علم فلأهميته، بحيث يحتاج إلى مثل هذا التمهيد. وأحيانًا يكون المدخل <strong>لصعوبة</strong> الأمر الذي تريد الدخول إليه.</p>
+  <p>و«المنهاج من ميراث النبوة» — بحمد الله — <strong>ليس صعبًا، لكنه مهم</strong>؛ فيُعمل له هذا المدخل. وفي الوقت نفسه قد يُشكل على البعض <strong>الطريقة المثلى للاستفادة من المتن</strong>، فتأتي هذه المحاضرة لتعين الطالب على الاستفادة القصوى منه بطريقة صحيحة سليمة.</p>
+  <div class="struct-cap">نقاط المدخل الأربع كما رتّبها الشيخ</div>
+  <div class="num-steps">
+    <div class="ns"><b>١</b><div>أهمية الارتباط بمرجعية الوحي، وربطها بالواقع الذي يعيشه المسلم.</div></div>
+    <div class="ns"><b>٢</b><div>ممّ يتكوّن المتن، وعلى أي معيار بُني.</div></div>
+    <div class="ns"><b>٣</b><div>السياق الذي جاء فيه الكتاب وصُنّف.</div></div>
+    <div class="ns"><b>٤</b><div>كيف نستفيد من هذا الكتاب.</div></div>
+  </div>
+  <div class="qz" data-section="intro"></div>
+  <div class="sum"><div class="st">خلاصة المدخل</div><ul>
+    <li>المدخل محاضرة تمهيدية تعريفية تضع المتن في سياقه، وهي كالمفتاح له.</li>
+    <li>المداخل تُعمل للأمر المهم، وأحيانًا للأمر الصعب.</li>
+    <li>المنهاج ليس صعبًا لكنه مهم، وقد تُشكل طريقة الاستفادة منه.</li>
+    <li>المدخل في أربع نقاط: الربط بالواقع، والبنية، والسياق، وطريقة الاستفادة.</li>
+  </ul></div>
+</section>
+
+<!-- ==================== النقطة 1 ==================== -->
+<section class="part p1" id="s1">
+  <div class="sec-head"><div class="num">١</div><div><small>النقطة الأولى — تأسيس مفهوم واستدلال</small><h2>الربط بين مرجعية الوحي والواقع</h2></div></div>
+
+  <p>النقطة الأولى: <strong>أهمية الارتباط بمرجعية الوحي</strong> — أي بالكتاب والسنة — لتنزيلها على الواقع الذي يعيشه الإنسان المسلم؛ أي <strong>أهمية الربط بين الكتاب والسنة وبين واقع المسلم</strong>.</p>
+
+  <h3 id="t-waqi">صورتا الواقع: الخاص والعام</h3>
+  <div class="struct-cap">الأطراف: الواقع الخاص / الواقع العام</div>
+  <div class="cmp">
+    <div class="cmp-row"><div class="cmp-h">الواقع الخاص</div><div class="cmp-h">الواقع العام</div></div>
+    <div class="cmp-row"><div class="cmp-c">ما يتعلق بحياتك أنت: سلوكك، والتحديات التي تواجهها، والفتن المحيطة بك، ومدى التزامك بالفرائض، ومدى إيمانك، ومدى صلاح قلبك وفساده.</div><div class="cmp-c">واقع المسلمين وواقع الأمة: التدافع بين الحق والباطل، والحروب التي تقوم بين المسلمين وأعدائهم، والمشكلات الكبرى التي تعصف بالأمة في أي زمن.</div></div>
+    <div class="cmp-row"><div class="cmp-c">يجب أن يكون أهم نور يرشد الإنسان فيه هو الوحي: ميراث النبوة، كتاب الله وسنة رسوله ﷺ.</div><div class="cmp-c">يجب أن يكون هناك ارتباط بين مرجعية الوحي وبين هذا الواقع العام.</div></div>
+    <div class="cmp-row"><div class="cmp-c">المفترض أن كل إنسان يستطيع أن يربط بين الكتاب والسنة وبين واقعه الخاص.</div><div class="cmp-c">الربط ليس مهمة سهلة: يحسنه من يملك بصيرة معيّنة، وعلمًا معيّنًا، وأدوات معيّنة لفهم النص، ومعرفة كبيرة بالواقع كذلك.</div></div>
+  </div>
+
+  <h3 id="t-ghaya">غاية «المنهاج من ميراث النبوة»</h3>
+  <div class="box key"><span class="tag">المعنى المركزي</span><p>لو قال قائل: لماذا صُنّف هذا الكتاب؟ ما الغرض والغاية والمقصد منه؟ فالجواب: <strong>لتحقيق حالة الارتباط بين مرجعية الوحي — الكتاب والسنة — من جهة، وبين الواقع الخاص والواقع العام الذي يعيشه الإنسان المؤمن وتعيشه الأمة الإسلامية من جهة أخرى</strong>؛ يعيشه في حياته الخاصة، وينظر من خلالها إلى حياة الأمة العامة.</p></div>
+
+  <h3 id="t-nubuwwa">هكذا كان الحال في زمن النبي ﷺ</h3>
+  <p>هذا الربط بين الوحي وبين الواقع هو <strong>الصورة التي كان عليها الحال في زمن النبي ﷺ</strong>، ثم بدأت الأمور تتغير بعد ذلك شيئًا فشيئًا.</p>
+  <p>فلو قلنا: ما منهاج النبوة في تلقّي الوحي وتفعيله والتفاعل مع الكتاب والسنة؟ ما منهج النبي ﷺ في تلقّي القرآن وتلقينه والبناء عليه؟ فالجواب: إن من أهم مفردات هذا المنهج ومعالمه <strong>الربط الواضح بين الكتاب والسنة وبين الأحداث والوقائع والمجريات</strong> التي تحدث في واقع الصحابة وواقع الأمة في تلك المرحلة.</p>
+
+  <h4>الدليل الأول: نزول القرآن مفرَّقًا</h4>
+  <blockquote class="q">﴿وَقَالَ الَّذِينَ كَفَرُوا لَوْلَا نُزِّلَ عَلَيْهِ الْقُرْآنُ جُمْلَةً وَاحِدَةً ۚ كَذَٰلِكَ لِنُثَبِّتَ بِهِ فُؤَادَكَ﴾<span class="ref">الفرقان: 32</span></blockquote>
+  <p>﴿لِنُثَبِّتَ بِهِ فُؤَادَكَ﴾: هذا للواقع الخاص — ولكن الخاص بالنبي ﷺ هو في الحقيقة <strong>عام</strong>؛ لأنه القدوة العظمى والموجّه لكل الأمة، فأي شيء لواقعه الخاص ﷺ هو للواقع العام.</p>
+  <p>والقرآن نزل مفرّقًا، وذكر العلماء في هذا التفريق وصفًا: أنه <strong>مفرّق على الأحداث</strong>. وهناك أدلة واضحة في القرآن أنه نزل مرتبطًا بالأحداث؛ فكثير من الآيات مرتبطة بأحداث معينة حصلت في ذلك الزمن، وبخاصة الآيات المرتبطة بالغزوات والمعارك.</p>
+
+  <h4 id="t-ghazawat">الدليل الثاني: سور نزلت على الغزوات</h4>
+  <div class="struct-cap">الأطراف: السورة / الحدث / من آياتها</div>
+  <div class="cmp">
+    <div class="cmp-row c3"><div class="cmp-h">السورة</div><div class="cmp-h">الحدث</div><div class="cmp-h">من آياتها</div></div>
+    <div class="cmp-row c3"><div class="cmp-c">الأنفال</div><div class="cmp-c">غزوة بدر؛ وتفاصيل آياتها تفاصيل المعركة. واسمها «الأنفال» أي الغنائم التي كانت في بدر تحديدًا، نزلت بسببها وإن كان حكمها عامًّا.</div><div class="cmp-c aya">﴿كَمَا أَخْرَجَكَ رَبُّكَ مِن بَيْتِكَ بِالْحَقِّ﴾ ﴿إِذْ تَسْتَغِيثُونَ رَبَّكُمْ﴾ ﴿إِذْ يُوحِي رَبُّكَ إِلَى الْمَلَائِكَةِ أَنِّي مَعَكُمْ﴾ ﴿إِن تَسْتَفْتِحُوا فَقَدْ جَاءَكُمُ الْفَتْحُ﴾ ﴿وَاذْكُرُوا إِذْ أَنتُمْ قَلِيلٌ مُّسْتَضْعَفُونَ فِي الْأَرْضِ﴾</div></div>
+    <div class="cmp-row c3"><div class="cmp-c">آل عمران</div><div class="cmp-c">غزوة أحد: آيات كثيرة مرتبطة بأحداثها</div><div class="cmp-c aya">﴿أَوَلَمَّا أَصَابَتْكُم مُّصِيبَةٌ قَدْ أَصَبْتُم مِّثْلَيْهَا قُلْتُمْ أَنَّىٰ هَٰذَا ۖ قُلْ هُوَ مِنْ عِندِ أَنفُسِكُمْ﴾ ﴿إِنَّ الَّذِينَ تَوَلَّوْا مِنكُمْ يَوْمَ الْتَقَى الْجَمْعَانِ إِنَّمَا اسْتَزَلَّهُمُ الشَّيْطَانُ بِبَعْضِ مَا كَسَبُوا﴾</div></div>
+    <div class="cmp-row c3"><div class="cmp-c">البقرة</div><div class="cmp-c">من ناحية الغزوات: إشارة إلى سرية عبد الله بن جحش التي بعثها النبي ﷺ، وحصل فيها قتل في الشهر الحرام. وأما ارتباطها بالواقع عمومًا فواسع.</div><div class="cmp-c aya">﴿يَسْأَلُونَكَ عَنِ الشَّهْرِ الْحَرَامِ قِتَالٍ فِيهِ ۖ قُلْ قِتَالٌ فِيهِ كَبِيرٌ﴾</div></div>
+    <div class="cmp-row c3"><div class="cmp-c">الأحزاب</div><div class="cmp-c">نزلت مفصّلة على أحداث ووقائع معركة الخندق</div><div class="cmp-c">—</div></div>
+    <div class="cmp-row c3"><div class="cmp-c">التوبة</div><div class="cmp-c">تتناول أكثر من حدث، وأهم ما تناولته من الغزوات غزوة تبوك</div><div class="cmp-c aya">﴿وَيَوْمَ حُنَيْنٍ ۙ إِذْ أَعْجَبَتْكُمْ كَثْرَتُكُمْ﴾</div></div>
+  </div>
+  <div class="box fixb"><span class="tag">تصحيح</span><p>ذكر الشيخ أن سرية عبد الله بن جحش كانت «في بداية رجب». <strong>والمشهور في كتب السيرة</strong> أن القتال وقع في <strong>آخر يوم من رجب</strong>، وتردّد أصحاب السرية: أهو من رجب أم من شعبان؟ — وهذا لا يغيّر موضع الشاهد: أن الآية نزلت على حدث القتال في الشهر الحرام.</p></div>
+  <div class="box addb"><span class="tag">إضافة تحريرية</span><p>آيات الأنفال المذكورة بترتيبها: 5، 9، 12، 19، 26. وآيتا آل عمران: 165، 155. وآية البقرة: 217. وآية التوبة: 25. وأورد الشيخ آية «حنين» ضمن الآيات التي تعلّق على الأحداث وتبيّن أسباب الهزيمة والنصر.</p></div>
+  <p>لاحظ كيف الارتباط ليس مرة ولا مرتين، ولا في سورة ولا سورتين. ولا شك أن الصحابة حين يتلقّون القرآن <strong>غضًّا طريًّا</strong>، للتوّ ما نزل، مرتبطًا في مضمونه بما رأوه بأعينهم في الواقع قبل قليل — يكون مقدار تأثير الآيات عليهم <strong>عظيمًا جدًّا</strong>. لماذا؟ لأنهم عاشوا الواقع بأعينهم، ثم جاءت أنوار الوحي لتقول لهم: هذا صحيح وهذا خطأ، هذا حق وهذا باطل، ذاك الفعل أخطأتم فيه وذاك أصبتم فيه، هذا سبب الهزيمة وهذا سبب النصر.</p>
+  <div class="chain"><span>نزول مفرّق على الأحداث</span><i>←</i><span>تلقٍّ غضّ مرتبط بما رأوه</span><i>←</i><span>تأثير عظيم</span></div>
+
+  <h3 id="t-fajwa">ثم تغيّر الزمن</h3>
+  <p>فلما تأتي إلى الصحابي لا تحتاج أن تقول له: القرآن نزل ليكون منيرًا للواقع ويجب أن يرتبط بواقعك الخاص؛ هو أصلًا تلقّى القرآن بهذه الطريقة، ولا يعرف القرآن إلا بها.</p>
+  <div class="box fixb"><span class="tag">تصحيح تصوّر</span><p>لما تغيّر الزمن صار الواحد يدرس القرآن <strong>كمادة نظرية منفصلة</strong>، وتضخّمت أحيانًا بعض الأشياء: <strong>تضخّم الأداء واللفظ على حساب المعنى</strong>؛ فأصبحت هناك <strong>فجوة</strong> بين المسلم وبين الاهتداء بالقرآن ليكون ملامسًا لواقعه.</p></div>
+  <p>ولذلك نحن اليوم بحاجة إلى <strong>تجديد</strong> هذا المعنى — والتأكيد على كلمة التجديد — وهو <strong>إعادة فاعلية النص القرآني والحديث النبوي في واقع الأمة اليوم</strong>، على ألا تنحصر هذه الفاعلية في الواقع الخاص المرتبط باستقامة الإنسان في ذاته، بل <strong>تنير في الواقع العام</strong> أيضًا.</p>
+
+  <h3 id="t-tanasub">الدليل الثالث: آيات تناسب طبيعة المرحلة بلا نصٍّ على حدث</h3>
+  <p>والارتباط بالواقع ليس خاصًّا بالآيات التي فيها تعليق مباشر على الأحداث كآيات الغزوات؛ بل — <strong>وهذه نقطة قد يغفل عنها البعض</strong> — كثير من الآيات وإن لم يكن فيها نص صريح على حدث معين، إلا أنها <strong>نزلت متناسبة مع طبيعة الحدث</strong>.</p>
+  <h4>مثال: قصص الأنبياء في المكي</h4>
+  <p>أين ذُكر أكثرها: في المكي أم المدني؟ في <strong>المكي</strong>. وهذا متناسب مع طبيعة المرحلة؛ لأن من أهم الغايات التي تتحقق بقصص الأنبياء: أن يصبر المؤمنون كما صبروا، ويثبتوا كما ثبتوا، ويتذكروا المصاعب التي مرّوا بها فيثبتوا ويصبروا كما صبر أولو العزم من الرسل. ومرحلة مكة أنسب لهذا — وإن كان في المدينة ابتلاء — فطبيعة المرحلة المكية اقتضت قصص الأنبياء بهذا التفصيل.</p>
+  <p><strong>بل حتى نوع الإشارة إلى القصة الواحدة</strong> ينزل بحسب المرحلة: فسورة العنكبوت — وهي من آخر ما نزل في مكة — هي <strong>السورة الوحيدة</strong> التي أُشير فيها إلى طول مدة دعوة نوح:</p>
+  <blockquote class="q">﴿فَلَبِثَ فِيهِمْ أَلْفَ سَنَةٍ إِلَّا خَمْسِينَ عَامًا﴾<span class="ref">العنكبوت: 14 — جاءت بعد طول مدة عيش النبي ﷺ والصحابة في الابتلاء بمكة</span></blockquote>
+  <p>وهكذا التفاصيل التي يُظن أنها بسيطة تأتي متوافقة مع الأحداث.</p>
+
+  <h3 id="t-tabari">البصير من العلماء: الطبري مثالًا</h3>
+  <p>ولذلك <strong>البصير من العلماء</strong> هو الذي ينتبه للآية وعلاقتها بالحدث في السيرة النبوية ولو لم يأتِ فيها نص؛ كما كان يفعل الإمام الطبري إمام المفسرين، فقد كان يكثر في تفسيره من هذه القضية.</p>
+  <blockquote class="q">﴿وَلَمَّا بَلَغَ أَشُدَّهُ آتَيْنَاهُ حُكْمًا وَعِلْمًا ۚ وَكَذَٰلِكَ نَجْزِي الْمُحْسِنِينَ﴾<span class="ref">يوسف: 22</span></blockquote>
+  <div class="box def"><span class="tag">القاعدة: «وكذلك نجزي»</span><p>إذا رأيت في القرآن لفظ <strong>«وكذلك نجزي»</strong> — بغض النظر عما بعده: المحسنين أو الظالمين أو غيرهم — فاعلم أن هذا اللفظ <strong>ينقل القصة من الخاص إلى العام</strong>: من أن تكون خاصة بقوم لوط أو بيوسف عليه السلام ومن معه، لترتبط القصة <strong>بالصفة</strong>.</p></div>
+  <p>فـ«ولما بلغ أشده» عن يوسف عليه السلام، و«وكذلك نجزي المحسنين» نقلت القضية من يوسف إلى المحسنين. ومثله في السورة نفسها: <span class="aya">﴿إِنَّهُ مَن يَتَّقِ وَيَصْبِرْ فَإِنَّ اللَّهَ لَا يُضِيعُ أَجْرَ الْمُحْسِنِينَ﴾</span> [يوسف: 90] — يشمل كل من اتقى وصبر، وإن كان المقصود بها ابتداءً يوسف عليه السلام.</p>
+  <p><strong>وموضع الشاهد:</strong> لما جاء الطبري إلى ﴿وَكَذَٰلِكَ نَجْزِي الْمُحْسِنِينَ﴾ قال ما معناه:</p>
+  <blockquote class="q">«هذا اللفظ وإن كان ظاهره أنه يتناول كل محسن، فإن المقصود به محمد ﷺ؛ يقول الله له: كما نجّيت يوسف من كيد إخوته، وآويته ونصرته، فكذلك سأفعل بك يا محمد، وسأنجيك من قومك وسأنصرك»<span class="ref">الطبري — نقله الشيخ بالمعنى</span></blockquote>
+  <p>لاحظ كيف ربط بين آية ليس فيها نص على شيء من السيرة النبوية، فهِم أنها <strong>مرتبطة بحال النبي ﷺ واحتياجه</strong>. والنبي ﷺ كان يفهم ذلك بطبيعة الحال: أن الآيات تنزل لتلامس الواقع الذي يعيشه ومن معه. ولذلك قال الله:</p>
+  <blockquote class="q">﴿وَكُلًّا نَّقُصُّ عَلَيْكَ مِنْ أَنبَاءِ الرُّسُلِ مَا نُثَبِّتُ بِهِ فُؤَادَكَ﴾<span class="ref">هود: 120 — ليس لمجرد زيادة معلومات، بل ليثبت به فؤاده</span></blockquote>
+  <div class="box addb"><span class="tag">إضافة تحريرية</span><p>قول الطبري أورده الشيخ بالمعنى لا بلفظه، فلا يُنسب لفظه إلى «جامع البيان» دون مراجعة.</p></div>
+
+  <h3 id="t-ittisa">كلما اتسعت حياتك بالعمل اتسعت ملامسة القرآن لها</h3>
+  <p>كلما ازداد الإنسان إيمانًا وعملًا — وبخاصة العمل المرتبط بنصرة الإسلام والصبر والثبات — <strong>اتسعت حياته</strong> بهذا الإيمان والعمل، فازداد إمكان ارتباطه بالقرآن وربطه بالواقع. لماذا؟ لأن <strong>موضوعات القرآن كثيرة</strong>، وأحيانًا تكون حياة الإنسان محدودة قليلة الموضوعات، فلا يجد ملامسة بين حياته وبين موضوعات القرآن؛ لأن حياته لم تتسع باتساعها.</p>
+  <div class="struct-cap">الأطراف: حال الإنسان / الآيات التي تلامسه أكثر</div>
+  <div class="cmp">
+    <div class="cmp-row"><div class="cmp-h">حال الإنسان</div><div class="cmp-h">الآيات التي تلامسه أكثر</div></div>
+    <div class="cmp-row"><div class="cmp-c">المريض</div><div class="cmp-c">يأنس بالآيات التي فيها ذكر أيوب عليه السلام؛ لأنها مسّت واقعه</div></div>
+    <div class="cmp-row"><div class="cmp-c">الأسير أو المسجون</div><div class="cmp-c">يأنس بسورة يوسف وبالآيات التي ذُكر فيها يوسف عليه السلام</div></div>
+    <div class="cmp-row"><div class="cmp-c">المبتلى في ذات الله، الصابر على الأذى في سبيله</div><div class="cmp-c">تلامسه الآيات التي فيها ما تعرّض له الأنبياء والصبر الذي صبروه</div></div>
+    <div class="cmp-row"><div class="cmp-c">الداعي المخلص الذي يدعو بأحسن الأساليب، ثم يُواجه بعدم الاستجابة واللامبالاة بل بالكلام البذيء</div><div class="cmp-c">يأنس بالآيات التي فيها أنه قد استُهزئ بالرسل وأنهم صبروا</div></div>
+  </div>
+  <div class="box key"><span class="tag">القاعدة</span><p>كلما اتسعت حياة الإنسان من حيث <strong>العمل</strong> — وبخاصة العمل المرتبط بإقامة الدين والدعوة إلى الله والصبر على الأذى في سبيله — <strong>ازداد إمكان ملامسة الآيات والأحاديث النبوية له</strong>.</p></div>
+
+  <p><strong>خلاصة النقطة الأولى:</strong> المسلم يحتاج إلى الارتباط والربط بين الكتاب والسنة من جهة، وبين واقعه الخاص والعام من جهة أخرى؛ ومتن المنهاج صُنّف ليحقق <strong>خطوةً أو جزءًا أو ركنًا</strong> من أركان هذا الربط. ولا شك أن هذا المقصد يتحقق بدرجة أكبر حين يؤخذ المتن بطريقة صحيحة؛ فأن تأخذه <strong>بشرحه أفضل</strong> من أن تأخذه وحده، لأن الشرح يلامس الأمور المرتبطة بالواقع.</p>
+
+  <div class="qz" data-section="s1"></div>
+  <div class="sum"><div class="st">خلاصة النقطة الأولى</div><ul>
+    <li>الواقع خاص (حياتك وقلبك) وعام (الأمة وتدافعها)؛ ربط الأول للجميع، وربط الثاني لذوي البصيرة والعلم بالنص والواقع.</li>
+    <li>غاية المنهاج: تحقيق الارتباط بين الوحي وبين الواقعين.</li>
+    <li>الربط كان منهج النبوة: نزول مفرّق على الأحداث، وسور على الغزوات، وآيات تناسب طبيعة المرحلة.</li>
+    <li>«وكذلك نجزي» تنقل القصة من الخاص إلى العام، والطبري ربط آية يوسف بحال النبي ﷺ.</li>
+    <li>تغيّر الزمن فصار القرآن مادة نظرية ونشأت فجوة؛ فنحتاج تجديد فاعلية النص في الواقعين.</li>
+    <li>اتساع الحياة بالعمل يوسّع ملامسة القرآن لها، وأخذ المتن بشرحه أفضل.</li>
+  </ul></div>
+</section>
+
+<!-- ==================== النقطة 2 ==================== -->
+<section class="part p2" id="s2">
+  <div class="sec-head"><div class="num">٢</div><div><small>النقطة الثانية — تصنيف ومعيار</small><h2>بنية الكتاب: ممّ يتكوّن؟ وعلى أي معيار بُني؟</h2></div></div>
+
+  <h3 id="t-mukawwinat">مكوّنات المتن</h3>
+  <p>هذا المتن يتكوّن من <strong>32 بابًا</strong>، كل باب يحتوي مجموعة من الآيات ومجموعة من الأحاديث. فالمنهاج <strong>متن</strong>، وليس رواية ولا قصة ولا كتابًا للشرح العلمي التفصيلي. وفيه <strong>197 حديثًا</strong> و<strong>126 آية</strong>.</p>
+  <div class="box addb"><span class="tag">إضافة تحريرية</span><p>ورد في محاضرة «فتعلمنا الإيمان» (المحاضرة 01 من هذه المرحلة) أن في المنهاج 170 حديثًا، والعدد المذكور هنا 197 حديثًا و126 آية؛ فيُراجَع العدد على المتن نفسه.</p></div>
+
+  <h3 id="t-intiqa">الانتقاء منهج علمي قديم</h3>
+  <p>آيات القرآن وأحاديث النبي ﷺ أكثر من ذلك بكثير؛ فنحن نتحدث عن <strong>حالة انتقاء</strong>. وفكرة الانتقاء من الكتاب والسنة وجمعه في كتاب معين <strong>منهج علمي سار عليه المسلمون على مرّ التاريخ</strong>: يأتي كثير من العلماء فيأخذون من الكتاب والسنة — أو من السنة فقط — مجموعة من الآيات والأحاديث، فيجمعونها وينظمونها لموضوع معين أو بشروط معينة.</p>
+  <div class="struct-cap">من صور الانتقاء عبر التاريخ</div>
+  <ul class="pl">
+    <li><strong>الإمام البخاري:</strong> جمع في صحيحه آيات وأحاديث — لا أحاديث فقط — بما يحقق شرطًا معيّنًا: في الأحاديث اشترط صحة معينة، وفي الآيات ما يتناسب مع الأحاديث التي انتقاها. فيبوّب الباب، ثم يذكر الآيات المرتبطة به، ثم الأحاديث بأسانيده.</li>
+    <li>وهكذا <strong>كتب السنة</strong> عمومًا تنتقي بحسب قصد المصنِّف.</li>
+    <li>ثم تنوّعت صور الانتقاء في الأزمنة المتأخرة كثيرًا؛ ومن أشهرها <strong>«رياض الصالحين»</strong> للإمام النووي، وفيه آيات وأحاديث معًا: «باب كذا: قال الله تعالى…» فيذكر آيات، ثم الأحاديث.</li>
+    <li>والنووي نفسه انتقى أقل من ذلك بكثير في <strong>«الأربعين النووية»</strong>.</li>
+    <li>والمنذري انتقى أحاديث <strong>«الترغيب والترهيب»</strong>: كل حديث فيه ذكر ثواب عمل أو عقاب أو زجر عن عمل.</li>
+    <li>وكثير من العلماء جمع أحاديث تحت عنوان واحد، مثل <strong>الجهاد</strong> أو <strong>الزهد</strong>.</li>
+  </ul>
+  <h4>السؤال الباقي: ما المعيار؟</h4>
+  <p>فقضية الانتقاء قضية علمية سار عليها العلماء؛ <strong>لكن يبقى السؤال: ما معيارك في الانتقاء؟ وما الموضوع الذي لأجله انتقيت؟</strong> فلماذا اختيرت هذه الأبواب الـ32، وبناءً عليها اختير ما تحتها من الآيات والأحاديث عرضًا وترتيبًا؟</p>
+
+  <h3 id="t-miyar">معيار الانتقاء: الاستقامة الخاصة والعامة</h3>
+  <div class="box def"><span class="tag">المعيار</span><p>حصل هذا الانتقاء <strong>ليحقق حالة من الاستقامة الخاصة والعامة</strong>. وبعبارة أخرى: <strong>ما الذي يحتاجه المصلح لصلاح نفسه ولصلاح غيره؟</strong> هذه الفكرة التي بُنيت عليها أبواب المنهاج، وانتُقيت لأجلها الآيات والأحاديث.</p></div>
+  <p>وهذا يذكّرنا بالنقطة الأولى: الربط بين القرآن والسنة وبين الواقع الخاص والعام. فالمتن جُمع باستحضار أن الذي سيدرسه ويفهمه ويحفظه وينطلق منه ويعمل به يتطلب:</p>
+  <ul class="pl">
+    <li><strong>الاستقامة في حياته الخاصة:</strong> في التزام الفرائض، وتحقيق التقوى، واجتناب المعاصي.</li>
+    <li><strong>والاستقامة فيما يتعلق بواقع الأمة العام</strong>، والصواب في الموقف من الأمور العامة المرتبطة بالأمة.</li>
+  </ul>
+  <div class="box fixb"><span class="tag">تصحيح تصوّر</span><p>الأبواب <strong>لم تُنتقَ</strong> باعتبار الجانب السلوكي التزكوي فقط، ولا باعتبار الترغيب والترهيب، ولا باعتبار الصحة والضعف — وإن كان شرط الصحة مراعًى في الكتاب وذُكرت ضوابطه في المقدمة — <strong>وإنما المراعى</strong>: كيف يسير المسلم في حياته الخاصة في استقامته في ذاته، وفي تحمّله مسؤولية دوره في الحياة العامة للأمة الإسلامية.</p></div>
+  <div class="box fixb"><span class="tag">تصحيح تصوّر: ما ليس هو الكتاب</span><p>المنهاج <strong>ليس مصدرًا لأحاديث الأحكام</strong> وأبواب الفقه؛ فمن أراد أدلة الطهارة والصلاة والزكاة والحج والصيام والجهاد والطلاق فليرجع إلى كتب لها إطار واحد هو أحاديث الأحكام، مثل: «عمدة الأحكام»، و«بلوغ المرام»، و«المحرر»، و«المنتقى»، و«الإلمام». <strong>وليس خاصًّا بالسلوك</strong> كذلك، وإن كان فيه من السلوك ما فيه؛ ففيه عناية بقضية الإصلاح العام.</p></div>
+
+  <h4>أبواب تشهد لحضور الواقع العام</h4>
+  <p>من يقرأ المنهاج سيجد أبوابًا كثيرة مرتبطة بواقع الأمة وبالمسؤولية العامة، مثل:</p>
+  <ul class="pl">
+    <li>الباب الثاني عشر: في المسؤولية العامة تجاه الإسلام والمسلمين.</li>
+    <li>الرابع عشر: في فضل الإصلاح والدعوة إلى الله، وأهمية الأمر بالمعروف والنهي عن المنكر.</li>
+    <li>الخامس عشر: في صفات المصلحين، وما ينبغي أن يكون عليه العاملون للإسلام.</li>
+    <li>السادس عشر: في أهمية الوعي بسبيل المجرمين، والحذر من أعداء الإسلام وكيدهم، والتنبه من مكر المنافقين.</li>
+    <li>السابع عشر: العناية بالشباب، وتقديم ذوي العلم منهم، وتفعيل أدوارهم في العمل الإسلامي.</li>
+    <li>الثامن عشر: دور المرأة في بث العلم ونصرة الإسلام.</li>
+    <li>وفي الثالث: أهمية الصحبة الصالحة، وفضل الحب في الله، وخطورة التفرق والتنازع واختلاف الكلمة.</li>
+    <li>الخامس: في فهم أسباب ضعف المسلمين واختلال أحوالهم، وإخبار النبي ﷺ عن ذلك.</li>
+    <li>السادس: في السنن الإلهية، وأهمية موافقتها في الإصلاح.</li>
+  </ul>
+  <p>فحضور معنى الواقع العام، وصلاح المسلم في ذاته ثم خروجه بالصلاح الذاتي إلى الصلاح العام المرتبط بالأمة — <strong>مقصود</strong> في هذا المتن.</p>
+
+  <h3 id="t-awail">الأبواب الأولى: تأسيس قيمة مرجعية الوحي</h3>
+  <p>الأبواب الأولى تحقق الشق الأول من النقطة الأولى — مرجعية الوحي: قيمتها، والمطلوب تجاهها، وبعض النقاط في فهمها، وأنها يجب أن تكون <strong>معيارًا لإصلاح الأفكار والمعايير</strong>. فهي <strong>أبواب مؤسِّسة لقيمة مرجعية الوحي</strong>. وتأسيس هذه القيمة يحصل بأمرين:</p>
+  <div class="struct-cap">تأسيس قيمة مرجعية الوحي — الأصل وفرعاه</div>
+  <div class="tree">
+    <span class="root">تأسيس قيمة مرجعية الوحي</span>
+    <div class="branches">
+      <div class="br"><span class="bt">الأول: البراهين والحجج</span><div class="arr">↓</div><span class="res">الاحتجاج للقرآن والسنة</span><span class="res">الرد على الشبهات</span><span class="res">دلائل العظمة وجمال الموضوعات</span></div>
+      <div class="br"><span class="bt">الثاني: التفعيل في الواقع</span><div class="arr">↓</div><span class="res">الاهتداء العملي</span><span class="res">رؤية النور والبركة والبصيرة</span></div>
+    </div>
+  </div>
+  <p><strong>الأمر الأول:</strong> البراهين والحجج التي تدل على صحة مرجعية الوحي وقيمتها ومكانتها؛ ويدخل فيه الاحتجاج للقرآن والانتصار له، والاحتجاج للسنة، والرد على الشبهات حولهما، والدلائل التي تدل على عظمتهما وجمال موضوعاتهما.</p>
+  <p><strong>الأمر الثاني:</strong> تثبيت مكانة مرجعية الوحي لا بالبراهين النظرية، بل <strong>بتفعيلها في الواقع</strong>. فإن قلت: كيف تزيد قيمتها بتفعيلها؟ أقول: لأنك إذا جرّبت الاهتداء بها في الواقع سترى من النور والبركة والهداية والبصيرة <strong>ما يدلّك على ربانيتها</strong>، وهذا لا يتحقق بمجرد الاستدلال النظري البرهاني، بل بالاهتداء العملي:</p>
+  <blockquote class="q">﴿وَلَوْ أَنَّهُمْ فَعَلُوا مَا يُوعَظُونَ بِهِ لَكَانَ خَيْرًا لَّهُمْ وَأَشَدَّ تَثْبِيتًا ۝ وَإِذًا لَّآتَيْنَاهُم مِّن لَّدُنَّا أَجْرًا عَظِيمًا ۝ وَلَهَدَيْنَاهُمْ صِرَاطًا مُّسْتَقِيمًا﴾<span class="ref">النساء: 66–68 — وهذا من فائدة العمل بالعلم</span></blockquote>
+
+  <h3 id="t-dawabit">ضوابط أخرى في البناء</h3>
+  <ul class="pl">
+    <li><strong>محكمات الدين:</strong> رُوعي في الاختيار أن تكون هذه الأبواب — أو كثير منها — <strong>من محكمات الدين</strong>.</li>
+    <li><strong>الترتيب داخل الباب:</strong> الآيات القرآنية، ثم الأحاديث النبوية، ثم قليل جدًّا من <strong>آثار الصحابة</strong> رضي الله عنهم عُزّزت بها بعض الأبواب.</li>
+    <li><strong>الصحة:</strong> رُوعي في الأحاديث مبدأ الصحة في الجملة أو الصلاح في الجملة، لكن <strong>عامة أحاديث المتن من الصحيحين</strong>: من البخاري ومسلم بالاتفاق، أو بانفراد أحدهما.</li>
+    <li><strong>ترتيب الأبواب:</strong> <strong>شبه منظم</strong>، لا منظم تنظيمًا دقيقًا بحيث وُضع كل باب بضبط تام قبل الذي يليه؛ ففيه ما هو منظم متناسب، وفيه ما هو مفرّق، <strong>والقيمة تكمل بالمجموع لا بالأبواب على حدة</strong>.</li>
+  </ul>
+
+  <div class="qz" data-section="s2"></div>
+  <div class="sum"><div class="st">خلاصة النقطة الثانية</div><ul>
+    <li>المنهاج متن: 32 بابًا، فيها 126 آية و197 حديثًا، مرتبة آياتٍ ثم أحاديثَ ثم آثارًا قليلة.</li>
+    <li>الانتقاء منهج علمي قديم (البخاري، رياض الصالحين، الأربعون، الترغيب والترهيب)، والسؤال عن معياره.</li>
+    <li>معياره: الاستقامة الخاصة والعامة — ما يحتاجه المصلح لصلاح نفسه وغيره — لا السلوك وحده ولا الأحكام.</li>
+    <li>الأبواب الأولى تؤسس قيمة مرجعية الوحي بالبراهين وبالتفعيل العملي.</li>
+    <li>رُوعي فيه المحكمات والصحة في الجملة (وعامة أحاديثه من الصحيحين)، وترتيبه شبه منظم وقيمته بالمجموع.</li>
+  </ul></div>
+</section>
+
+<!-- ==================== النقطة 3 ==================== -->
+<section class="part p3" id="s3">
+  <div class="sec-head"><div class="num">٣</div><div><small>النقطة الثالثة — تسلسل وتفريق</small><h2>سياق الكتاب: جزءٌ من مشروع «صناعة المصلحين»</h2></div></div>
+
+  <p>السياق غير البنية: البنية أبواب، وكل باب آيات وأحاديث، ولماذا اختيرت. أما السياق فأعمّ من ذلك وقبله: <strong>السياق الزمني والشخصي والمنهجي العام</strong> الذي صُنّف فيه الكتاب. هل أتى منفردًا عن سياق معين، أم متصلًا بسياق؟</p>
+  <p>قد يأتي كتاب ليس متصلًا بواقع معين ولا بمشروع علمي معين؛ يناقش مسألة علمية مهمة، أو فائدة لشرح كتاب، أو غير ذلك. أما المنهاج فقد <strong>أتى متصلًا بسياق</strong>: منهجية معينة، أو <strong>مشروع منهجي في الإصلاح وفي التأصيل لفكرة الإصلاح</strong>، ضمن مجموعة مؤلفات أُريد بها إيصال نتيجة معينة.</p>
+
+  <h3 id="t-sual">سؤال المشروع</h3>
+  <div class="box key"><span class="tag">السؤال</span><p>ما <strong>المنهج الإصلاحي المستخرَج من الكتاب والسنة</strong>، والذي <strong>يتفق مع حال الأمة اليوم</strong>؟</p></div>
+  <p>وهذا السؤال يتضمن نقطتين:</p>
+  <ul class="pl">
+    <li>أن هناك <strong>منهجًا إصلاحيًّا في الكتاب والسنة</strong>.</li>
+    <li>أن هذا المنهج قد يحتاج إلى <strong>اجتهاد في تنزيله على كل واقع بحسبه</strong>.</li>
+  </ul>
+
+  <h3 id="t-thabit">الثابت والمتغير في الإصلاح</h3>
+  <p>فإن قلت: أليس المنهج الإصلاحي واحدًا؟ فلا تقل: «يتناسب مع حال الأمة اليوم» ولا بالأمس ولا في المستقبل. أقول: <strong>كلامك فيه صواب وخطأ</strong>:</p>
+  <div class="struct-cap">الأطراف: ما لا يتغير / ما يتغير</div>
+  <div class="cmp">
+    <div class="cmp-row"><div class="cmp-h">لا يتغير بحسب الزمان والمكان</div><div class="cmp-h">يتغير بحسب الزمان والمكان</div></div>
+    <div class="cmp-row"><div class="cmp-c">المرجعية والأساس وثوابت الأحكام؛ ومنطلقات الإصلاح وقواعده الكبرى المتعلقة بالعبودية لله والارتباط بالكتاب والسنة.</div><div class="cmp-c">الأولويات الإصلاحية.</div></div>
+  </div>
+  <p>ومن الأدلة على ذلك ما قصّه الله عن الأنبياء من <strong>تغيّر الأولويات الإصلاحية بين نبي وآخر بحسب زمانه</strong>، مع اشتراكهم في الأولوية الكبرى المتفق عليها: العبودية لله وحده وتخليصها من الشوائب.</p>
+  <div class="struct-cap">الأطراف: النبي / ما يُذكر معه من الإصلاح</div>
+  <div class="cmp">
+    <div class="cmp-row"><div class="cmp-h">النبي</div><div class="cmp-h">ما يُذكر معه من الإصلاح</div></div>
+    <div class="cmp-row"><div class="cmp-c">لوط عليه السلام</div><div class="cmp-c">الإصلاح المتعلق بمشكلة كانت منتشرة في زمانه: الفاحشة</div></div>
+    <div class="cmp-row"><div class="cmp-c">شعيب عليه السلام</div><div class="cmp-c">الظلم والغش في الاقتصاد: التطفيف في المكيال والميزان</div></div>
+    <div class="cmp-row"><div class="cmp-c">موسى عليه السلام</div><div class="cmp-c">تحرير المستضعفين، وهو مكرر في قصته: <span class="aya">﴿أَنْ أَرْسِلْ مَعَنَا بَنِي إِسْرَائِيلَ﴾</span> [الشعراء: 17]</div></div>
+  </div>
+  <p>إذن: هل تتغير أولويات الإصلاح ما بين زمن وآخر؟ <strong>نعم</strong>. وهل تتغير منطلقات الإصلاح وقواعده الكبرى المتعلقة بالعبودية لله والارتباط بالكتاب والسنة؟ <strong>لا</strong>.</p>
+
+  <h3 id="t-bawsala">«بوصلة المصلح»: واجب الوقت</h3>
+  <p>فهذا المتن أتى ضمن <strong>مشروع تأصيلي</strong> لاستخراج منهجية الإصلاح في الكتاب والسنة، ولتنزيلها على الواقع. وهذا المشروع شُرح بشكل مفصّل في كتاب آخر: <strong>«بوصلة المصلح»</strong>؛ وهو كتاب فيه <strong>مسح للواقع</strong> من جهة، و<strong>مسح لأهم الأدلة الشرعية</strong> من جهة أخرى، لتخريج الجواب عن سؤال عظيم: <strong>ما واجب الوقت اليوم من حيث الإصلاح؟</strong></p>
+  <div class="box def"><span class="tag">النتيجة</span><p>تم الخلوص — بعد بحث شرعي وبحث واقعي — إلى أن <strong>واجب الوقت هو صناعة المصلحين لسدّ الثغور العامة في الأمة</strong>، وأن التركيز اليوم على صناعة المصلحين.</p></div>
+
+  <h3 id="t-alaqa">علاقة المنهاج بالبوصلة</h3>
+  <p>كان من مفردات فكرة صناعة المصلحين أن تكون هناك <strong>قواعد كبرى مشتركة</strong> بين المصلحين، و<strong>مفاهيم شرعية محكمة مشتركة</strong>، متفق عليها لكونها من محكمات الكتاب والسنة. <strong>وهذه المفاهيم الأساسية هي التي وُضعت في «المنهاج من ميراث النبوة»</strong>.</p>
+  <p>فكأن المنهاج يقول: هذه <strong>من أهم المعاني</strong> — لا نحصر — التي ينبغي التزوّد بها من كتاب الله وسنة رسوله ﷺ في سياق سير المصلح الذي يُصنع اليوم ليكون تأثيره غدًا بإذن الله.</p>
+  <div class="struct-cap">الأطراف: «بوصلة المصلح» / «المنهاج من ميراث النبوة»</div>
+  <div class="cmp">
+    <div class="cmp-row"><div class="cmp-h">بوصلة المصلح</div><div class="cmp-h">المنهاج من ميراث النبوة</div></div>
+    <div class="cmp-row"><div class="cmp-c">يشرح السياق بصورته الكاملة: مسح الواقع ومسح الأدلة، ليجيب عن واجب الوقت.</div><div class="cmp-c">يغطي ركنًا من أركان صناعة المصلحين: المفاهيم المحكمة المشتركة بينهم، بالصيغة العملية في طور بناء المصلح.</div></div>
+  </div>
+  <p>ولذلك يُحثّ من يقرأ المنهاج أو شرحه أو يحفظه أن <strong>يطّلع على البوصلة</strong> حتى يفهم السياق؛ <strong>لا أقول إنه شرط للفهم</strong>، ولكن حتى يعزّز فهم هذا السياق.</p>
+
+  <div class="qz" data-section="s3"></div>
+  <div class="sum"><div class="st">خلاصة النقطة الثالثة</div><ul>
+    <li>المنهاج لم يأتِ منفردًا، بل متصلًا بمشروع منهجي في الإصلاح والتأصيل له.</li>
+    <li>سؤال المشروع: ما المنهج الإصلاحي المستخرج من الكتاب والسنة المتفق مع حال الأمة اليوم؟</li>
+    <li>الثابت: المرجعية وثوابت الأحكام وقواعد الإصلاح الكبرى؛ والمتغير: الأولويات — كما في لوط وشعيب وموسى.</li>
+    <li>«بوصلة المصلح» خلصت إلى أن واجب الوقت صناعة المصلحين لسد الثغور العامة.</li>
+    <li>المنهاج يحمل المفاهيم المحكمة المشتركة بين المصلحين، والاطلاع على البوصلة يعزّز الفهم وليس شرطًا.</li>
+  </ul></div>
+</section>
+
+<!-- ==================== النقطة 4 ==================== -->
+<section class="part p4" id="s4">
+  <div class="sec-head"><div class="num">٤</div><div><small>النقطة الرابعة — تطبيق</small><h2>كيف نستفيد من هذا الكتاب؟</h2></div></div>
+
+  <h3 id="t-shuruh">الشروح الموجودة والمطلوبة</h3>
+  <p>كما يسّر الله تصنيف الكتاب يسّر شرحه:</p>
+  <ul class="pl">
+    <li><strong>الشرح المرئي:</strong> في الأساس سلسلة من <strong>30 حلقة تقريبًا</strong> قدّمها الشيخ في شرح الكتاب، وهي موجودة.</li>
+    <li><strong>«القبس الوهاج»:</strong> لُخّصت هذه السلسلة مكتوبةً في هذا الكتاب، قام به أحد الإخوة الأفاضل: الأخ محمد شميس؛ فصار من السهل أن يقرأ الإنسان المتن ويقرأ معالم الشرح الأساسية.</li>
+  </ul>
+  <div class="box key"><span class="tag">رأي الشيخ</span><p>لا بد من الاطلاع على الشرح، <strong>على أن هذا الشرح ليس كافيًا</strong>؛ فالمتن قُدّم في الساحة ليكون هناك أكثر من وسيلة لخدمة هذه المعاني وإيصالها.</p></div>
+  <p>والمتن — برأي الشيخ — لا يزال يحتاج إلى:</p>
+  <ul class="pl">
+    <li><strong>شرح موسّع:</strong> شرح علمي يقوم به بعض طلبة العلم أو المشايخ.</li>
+    <li><strong>شرح مبسّط:</strong> وقد حصل فعلًا من بعض الطلاب الذين يبسّطون الكتاب لطلابهم من الجيل الصاعد — فالكتاب مقرر في كثير من الحلقات والمحاضن التربوية — وهذا التبسيط جيد ومهم، ولعل هناك مشروعًا قائمًا اليوم لإخراج شرح ميسّر من أحد الطلاب.</li>
+  </ul>
+
+  <h3 id="t-fia">الشرح بحسب الفئة</h3>
+  <ul class="pl">
+    <li><strong>الشرح الأساسي:</strong> الشرح المرئي أو ملخصه «القبس الوهاج».</li>
+    <li><strong>إن كانوا طلبة علم:</strong> يُقدَّم شرح علمي أوسع من الشرح المقدَّم: الآيات تُفسَّر آية آية بصيغة موسعة، والأحاديث حديثًا حديثًا، مع الربط بالواقع بصورة مفصّلة.</li>
+    <li><strong>إن كانوا من الجيل الصاعد</strong> ذكورًا أو إناثًا: يُسهَّل الشرح ويُقدَّم ما يناسبهم.</li>
+  </ul>
+
+  <h3 id="t-wasail">وسائل أخرى غير الشرح</h3>
+  <p><strong>الخطب والمحاضرات والصيغ الإعلامية:</strong> بعض خطباء الجمعة خطبوا بمضمون باب من أبواب المنهاج؛ أي <strong>تضمين الآيات والأحاديث بصياغة تناسب الخطبة</strong>، ونقل مضمون الأبواب لا بصيغة «باب كذا، الحديث الأول، الحديث الثاني»؛ بل تُصاغ خطبة أو محاضرة أو أطروحة معيّنة تحقق مقصود الباب، دون أن يُقال بالضرورة: هذا شرح المنهاج أو هذا بابه كذا. وهذه الطريقة يمكن أن تخرج بصيغة إعلامية، أو خطب، أو محاضرات، أو بمختلف الطرق، <strong>وكل سياق ومقام بحسبه</strong>.</p>
+  <p><strong>الحفظ:</strong> من أهم وسائل الاستفادة، وقد حصل كثيرًا بفضل الله؛ فالقائمون على <strong>مبادرة نمير</strong> كرّروا مسابقة حفظ المنهاج، ودخل فيها عدد كبير ذكورًا وإناثًا، وصار فيها ضبط وإتقان، حتى إن بعض الاختبارات تُدقّق في ترتيب الأحاديث، وأحيانًا يُعجز الحفّاظُ المختبِرين عن أن يُخطّئوهم في لفظة أو في ترتيب، فضلًا عن سياق حديث.</p>
+
+  <h3 id="t-ahamm">الأهم: الربط بالواقع</h3>
+  <div class="struct-cap">مراتب الاستفادة كما رتّبها الشيخ</div>
+  <div class="num-steps">
+    <div class="ns"><b>١</b><div><strong>المتن:</strong> القراءة والحفظ — والحفظ ليس شرطًا.</div></div>
+    <div class="ns"><b>٢</b><div><strong>الشرح:</strong> مع تكثير فكرة الشرح: مبسّط، أو متوسط، أو موسّع.</div></div>
+    <div class="ns"><b>٣</b><div><strong>والأهم من ذلك كله: الربط</strong> بين الباب وبين الواقع، وبين آيات الباب وأحاديثه وبين الواقع.</div></div>
+  </div>
+  <div class="box def"><span class="tag">القاعدة</span><p>والأهم أن يكون الربط حاصلًا <strong>بمجموع الأبواب</strong>: كلما خرجت من باب تكون قد ربطت بينه وبين واقعك، ثم الثاني، ثم الثالث، ثم الرابع؛ و<strong>بمجموع الكتاب</strong> يُفترض أن تخرج بنتيجة عملية متقدمة في الربط بين مرجعية الوحي وبين الواقع.</p></div>
+  <p>وإن شاء الله ستكون هناك أعمال تخدم الكتاب وتدريسه؛ فهناك من يجمع الآن مادة في <strong>كيف يدرّس المربي هذا الكتاب</strong>، و<strong>ما الأهداف التربوية من كل باب</strong> — وهذه صورة من صور الربط بالواقع.</p>
+
+  <div class="qz" data-section="s4"></div>
+  <div class="sum"><div class="st">خلاصة النقطة الرابعة</div><ul>
+    <li>الموجود: شرح مرئي نحو 30 حلقة، وملخصه المكتوب «القبس الوهاج».</li>
+    <li>الاطلاع على الشرح لا بد منه لكنه ليس كافيًا؛ فالمتن يحتاج شرحًا موسعًا وآخر مبسطًا.</li>
+    <li>الشرح بحسب الفئة: أوسع لطلبة العلم، وأسهل للجيل الصاعد.</li>
+    <li>وسائل أخرى: الخطب والمحاضرات والصيغ الإعلامية بمضمون الأبواب، والحفظ (مبادرة نمير).</li>
+    <li>الأهم: الربط بالواقع بابًا بابًا، ثم بمجموع الكتاب.</li>
+  </ul></div>
+</section>
+
+<!-- ==================== الختام ==================== -->
+<section class="part p5" id="s5">
+  <div class="sec-head"><div class="num">✦</div><div><small>الختام — كما لخّصه الشيخ</small><h2>المدخل في أربعة أسطر</h2></div></div>
+  <p>ختم الشيخ المجلس بإجمال ما ذكره:</p>
+  <div class="num-steps">
+    <div class="ns"><b>١</b><div>أهمية الربط بين مرجعية الوحي وبين الواقع، وأنه الحال الذي كان في زمن النبي ﷺ، ثم بدأ يُفتقد في الأمة شيئًا فشيئًا، فنحتاج اليوم إلى <strong>تجديده</strong>. والاستفادة منه في الواقع الخاص دائرتها <strong>كل المسلمين</strong>، وفي الواقع العام لذوي البصائر والعلم والمعرفة بالواقع والوحي وأدوات الاستنباط.</div></div>
+    <div class="ns"><b>٢</b><div>بنية الكتاب: الانتقاء منهج علمائي سار عليه العلماء عبر التاريخ، كلٌّ بحسب موضوعه ومعاييره، وهذا الانتقاء ليس شيئًا جديدًا، إلا أن معياره ملاحظة تحقيق <strong>الصلاح الخاص والإصلاح العام</strong>؛ فليس مصدرًا لأحاديث الأحكام، وليس خاصًّا بالسلوك، وهو آيات وأحاديث.</div></div>
+    <div class="ns"><b>٣</b><div>السياق: أتى متصلًا لا منفصلًا، بمشروع منهجي يجيب: ما منهجية الإصلاح في الكتاب والسنة، وما أولوياتها اليوم؟ والإجابة بشموليتها في «بوصلة المصلح»، والمنهاج جزء منها بالصيغة العملية في طور بناء المصلح، ضمن <strong>الكتل المفاهيمية المرتبطة بالكتاب والسنة</strong>.</div></div>
+    <div class="ns"><b>٤</b><div>الاستفادة: لا يُكتفى بقراءة المتن ولا بحفظه، بل المهم العناية بشرحه، <strong>والأهم تنزيل معانيه على الواقع</strong> بالأبواب المنفصلة وبالمجموع المتصل، مع توسيع الشروح بحسب الفئة والمقام.</div></div>
+  </div>
+  <p>نسأل الله أن يغفر لنا ويرحمنا ويهدينا ويسددنا، وألا يحرمنا بركة العلم ولا بركة السنة، وأن يجعلنا من أهل القرآن والمتبعين لنبيه ﷺ، وأن يبارك في هذا الانتقاء وفي هذا الكتاب، ويعيننا جميعًا على الاستفادة منه بأمثل طريق، وأن يجعلنا من الشاكرين المنيبين المتقين.</p>
+
+  <div class="qz" data-section="s5"></div>
+  <div class="sum"><div class="st">خلاصة الختام</div><ul>
+    <li>الربط بالوحي يحتاج اليوم إلى تجديد، وهو للجميع في الخاص ولذوي البصيرة في العام.</li>
+    <li>المنهاج انتقاء معياره الصلاح الخاص والإصلاح العام.</li>
+    <li>هو ركن عملي من مشروع «بوصلة المصلح».</li>
+    <li>الاستفادة الحقة: الشرح ثم تنزيل المعاني على الواقع.</li>
+  </ul></div>
+</section>
+
+</main>
+
+<!-- ==================== الخريطة الذهنية الختامية (7-هـ/ج-ب) — خارج منطقة الهايلايت ==================== -->
+<div class="cmap" id="cmap">
+  <div class="cm-h">الخريطة الذهنية للمحاضرة</div>
+  <div class="cm-sub">خريطة منطقية من اليمين إلى اليسار: اضغط على أي عنوان يظهر شرحه ومثاله، وعلى الرقم الذي بجواره لطيّ الفرع أو فتحه. للتكبير: Ctrl مع عجلة الماوس، أو إصبعان على الهاتف. جرّب أن تطوي الفروع وتتذكّر ما تحتها قبل أن تفتحها.</div>
+  <div class="cm-frame" id="cm-frame"><iframe src="../../../mindmap.html?id=stage0_madkhal-manhaj_01&amp;embed=1" title="الخريطة الذهنية للمحاضرة" loading="lazy"></iframe><button type="button" class="cm-touch" id="cm-touch">👆 اضغط هنا لتحريك الخريطة</button></div>
+  <div class="cm-tools"><a class="cm-full" href="../../../mindmap.html?id=stage0_madkhal-manhaj_01">⛶ افتح الخريطة بملء الشاشة</a></div>
+</div>
+
+<!-- ==================== البطاقات (خارج منطقة الهايلايت) ==================== -->
+<div id="anki">
+  <div class="wrap">
+    <div class="ah">بطاقات المراجعة</div>
+    <div class="asub">راجعها بعد يومين من دراسة الملف · اضغط البطاقة لإظهار الجواب · ← → للتنقل</div>
+    <div class="filters" id="filters"></div>
+    <div class="ak" id="ak" role="button" tabindex="0">
+      <div class="deckcap" id="ak-deck"></div>
+      <div id="ak-front"></div>
+      <div class="ak-back" id="ak-back"></div>
+      <div class="hint">اضغط لإظهار الجواب</div>
+    </div>
+    <div class="ctrl">
+      <button type="button" id="ak-next" aria-label="التالي">←</button>
+      <div class="counter" id="ak-counter"></div>
+      <button type="button" id="ak-prev" aria-label="السابق">→</button>
+    </div>
+    <button class="dl" type="button" id="ak-dl">⬇ تحميل ملف Anki (TSV)</button>
+    <div class="dl-note">عند الاستيراد: نوع الملاحظة «أساسي» فقط، واترك خانة «وسم كل الملحوظات» فارغة — لكل بطاقة رزمتها ووسمها.</div>
+  </div>
+</div>
+
+<div class="wrap"><div id="ilm-custom-nav"></div></div>
+
+<footer>
+  <b>المدخل إلى المنهاج — المحاضرة 01: المدخل إلى «المنهاج من ميراث النبوة»</b><br>
+  البناء المنهجي · المستوى الأول · المرحلة التمهيدية · اليوم 3 · الشيخ أحمد السيد<br>
+  ملف دراسي مبني على تفريغ المحاضرة — أُعدّ بمساعدة الذكاء الاصطناعي، ويُرجى مراجعته
+</footer>
+
+<script src="../../../maps/madkhal-manhaj.js"></script>
+<script>
+/* ===== MAP_DATA — خريطة المحاور للتوجيه (7-هـ/ج)، والعنصر الثاني إحالة إلى الخريطة الختامية (7-هـ/ج-ب) ===== */
+const MAP_DATA = [{
+  id: "map01", sectionId: "orient", center: "المدخل إلى المنهاج",
+  nodes: [
+    {text: "الربط بين الوحي والواقع", target: "s1", children: [{text: "الخاص والعام", target: "t-waqi"}, {text: "منهج النبوة", target: "t-nubuwwa"}, {text: "وكذلك نجزي", target: "t-tabari"}, {text: "اتساع الحياة", target: "t-ittisa"}]},
+    {text: "بنية الكتاب", target: "s2", children: [{text: "الانتقاء", target: "t-intiqa"}, {text: "المعيار", target: "t-miyar"}, {text: "تأسيس المرجعية", target: "t-awail"}, {text: "الضوابط", target: "t-dawabit"}]},
+    {text: "سياق الكتاب", target: "s3", children: [{text: "الثابت والمتغير", target: "t-thabit"}, {text: "بوصلة المصلح", target: "t-bawsala"}, {text: "العلاقة بينهما", target: "t-alaqa"}]},
+    {text: "طريقة الاستفادة", target: "s4", children: [{text: "الشروح", target: "t-shuruh"}, {text: "الخطب والحفظ", target: "t-wasail"}, {text: "الربط بالواقع", target: "t-ahamm"}]},
+    {text: "الختام", target: "s5", children: []}
+  ]
+}, (window.MOAD_MAPS || {})["stage0_madkhal-manhaj_01"] || null];
+
+/* ===== QUIZ_DATA — أسئلة تثبيت الفهم (7-ب) ===== */
+const QUIZ_DATA = [
+ {id:"q01", sectionId:"intro", question:"لماذا عُمل مدخل لـ«المنهاج من ميراث النبوة»؟", options:["لأنه كتاب صعب","لأنه مهم، ولأن طريقة الاستفادة المثلى منه قد تُشكل","لأنه بلا شرح"], correctIndex:1, explanation:"المداخل تُعمل للمهم وأحيانًا للصعب، والمنهاج ليس صعبًا لكنه مهم."},
+ {id:"q02", sectionId:"intro", question:"ما وظيفة المدخل بالنسبة للمتن؟", options:["بديل عن قراءة المتن","كالمفتاح: محاضرة تمهيدية تعريفية تضع المتن في سياقه","شرح تفصيلي لكل حديث"], correctIndex:1, explanation:"يُدخل به إلى المتن إذا كان مقررًا في الدراسة أو برنامج علمي."},
+ {id:"q03", sectionId:"s1", question:"شاب يقرأ آيات الصبر فيربطها بفتنة تمرّ به في نفسه، وعالِم يقرأ آيات السنن فينزلها على حروب الأمة. أي العبارتين أدق؟", options:["كلاهما متاح لكل مسلم بالقدر نفسه","ربط الأول متاح لكل أحد، والثاني يحتاج بصيرة وعلمًا بأدوات فهم النص ومعرفة كبيرة بالواقع","الثاني أسهل من الأول"], correctIndex:1, explanation:"الواقع الخاص يربطه كل إنسان، والعام لا يحسن تنزيل النصوص عليه إلا ذوو البصيرة والعلم بالنص والواقع."},
+ {id:"q04", sectionId:"s1", question:"﴿كَذَٰلِكَ لِنُثَبِّتَ بِهِ فُؤَادَكَ﴾ خطاب للنبي ﷺ في واقعه الخاص. لماذا يُعدّ للواقع العام أيضًا؟", options:["لأنه نزل جملة واحدة","لأنه ﷺ القدوة العظمى والموجّه للأمة، فما لواقعه الخاص هو للعام","لأن الآية مدنية"], correctIndex:1, explanation:"الخاص بالنبي ﷺ هو في الحقيقة عام لأنه القدوة."},
+ {id:"q05", sectionId:"s1", question:"لماذا كان تأثير الآيات على الصحابة عظيمًا جدًّا؟", options:["لأنهم حفظوها بسرعة","لأنهم تلقّوها غضة مرتبطة بما رأوه بأعينهم قبل قليل، فبيّنت لهم الصواب والخطأ فيه","لأنها نزلت جملة واحدة"], correctIndex:1, explanation:"عاشوا الواقع ثم جاءت أنوار الوحي: هذا حق وهذا باطل، هذا سبب الهزيمة وهذا سبب النصر."},
+ {id:"q06", sectionId:"s1", question:"أكثر قصص الأنبياء في القرآن المكي. ما وجه تناسب ذلك مع المرحلة؟", options:["أن المكي أقصر سورًا","أن من غاياتها الصبر والثبات كما صبر الأنبياء، وطبيعة مرحلة مكة اقتضت ذلك","أن أهل مكة لم يعرفوا الأنبياء"], correctIndex:1, explanation:"الآيات تنزل متناسبة مع طبيعة الحدث ولو لم يُنص فيها على حدث."},
+ {id:"q07", sectionId:"s1", question:"قرأت في قصة نبي: «وكذلك نجزي المحسنين». ماذا يفيد هذا اللفظ؟", options:["أن الجزاء خاص بذلك النبي","أنه ينقل القصة من الخاص إلى العام فترتبط بالصفة","أن القصة انتهت"], correctIndex:1, explanation:"«وكذلك نجزي» أيًّا كان ما بعدها تربط القصة بالصفة، فيدخل فيها كل محسن."},
+ {id:"q08", sectionId:"s1", question:"فسّر الطبري ﴿وَكَذَٰلِكَ نَجْزِي الْمُحْسِنِينَ﴾ في قصة يوسف بأن المقصود به محمد ﷺ. ما الذي يمثّله هذا؟", options:["خطأ في التفسير","بصيرة العالم في ربط الآية بحال النبي ﷺ واحتياجه ولو لم يأتِ نص","تخصيص الآية بيوسف وحده"], correctIndex:1, explanation:"البصير من العلماء ينتبه لعلاقة الآية بالحدث في السيرة ولو لم يأتِ فيها نص."},
+ {id:"q09", sectionId:"s1", question:"مريض يأنس بآيات أيوب، وداعية يُستهزأ به يأنس بآيات صبر الرسل. ما القاعدة التي تفسّر ذلك؟", options:["أن القرآن لا يلامس إلا أصحاب البلاء","كلما اتسعت حياة الإنسان بالعمل والبلاء في سبيل الله اتسعت ملامسة الآيات له","أن هذه الآيات أسهل من غيرها"], correctIndex:1, explanation:"موضوعات القرآن كثيرة، والحياة المحدودة لا تجد ملامسة إلا إذا اتسعت باتساع موضوعاته."},
+ {id:"q10", sectionId:"s2", question:"ما المعيار الذي انتُقيت به أبواب المنهاج؟", options:["الترغيب والترهيب","الجانب السلوكي التزكوي وحده","ما يحتاجه المصلح لصلاح نفسه ولصلاح غيره: الاستقامة الخاصة والعامة"], correctIndex:2, explanation:"لم تُنتقَ باعتبار السلوك فقط ولا الترغيب ولا الصحة، وإن رُوعيت الصحة."},
+ {id:"q11", sectionId:"s2", question:"طالب يريد أدلة أحكام الطهارة والصلاة والطلاق. هل «المنهاج» هو الكتاب المناسب؟", options:["نعم، هو أوسع كتب الأحكام","لا؛ فليس مصدرًا لأحاديث الأحكام، والمناسب نحو «عمدة الأحكام» و«بلوغ المرام»","نعم، لأن عامة أحاديثه من الصحيحين"], correctIndex:1, explanation:"لكتب أحاديث الأحكام إطار واحد هو الأحكام، والمنهاج معياره الصلاح الخاص والإصلاح العام."},
+ {id:"q12", sectionId:"s2", question:"بأي أمرين تتأسس قيمة مرجعية الوحي في الأبواب الأولى؟", options:["الحفظ والتكرار","البراهين والحجج، وتفعيلها في الواقع بالاهتداء العملي","الشروح والحواشي"], correctIndex:1, explanation:"التفعيل يُريك من النور والبركة ما يدلك على ربانيتها، كما في ﴿وَلَوْ أَنَّهُمْ فَعَلُوا مَا يُوعَظُونَ بِهِ﴾."},
+ {id:"q13", sectionId:"s2", question:"قال قارئ: «ترتيب أبواب المنهاج غير دقيق، فلا قيمة لقراءتها متتابعة». ما التصحيح؟", options:["الترتيب دقيق تمامًا","الترتيب شبه منظم، والقيمة تكمل بالمجموع لا بالأبواب على حدة","الأبواب لا علاقة بينها"], correctIndex:1, explanation:"فيه ما هو منظم متناسب وما هو مفرّق، والقيمة بالمجموع."},
+ {id:"q14", sectionId:"s3", question:"ما الذي يتغير بحسب الزمان والمكان في المنهج الإصلاحي؟", options:["المرجعية وثوابت الأحكام","الأولويات الإصلاحية","قواعد العبودية لله"], correctIndex:1, explanation:"المرجعية والثوابت والقواعد الكبرى لا تتغير، والأولويات تتغير."},
+ {id:"q15", sectionId:"s3", question:"ما الدليل على تغيّر الأولويات الإصلاحية بين زمن وآخر؟", options:["اختلاف الأنبياء في التوحيد","ما قصّه الله عن الأنبياء: الفاحشة مع لوط، والتطفيف مع شعيب، وتحرير المستضعفين مع موسى","كثرة الكتب"], correctIndex:1, explanation:"مع اشتراكهم جميعًا في الأولوية الكبرى: العبودية لله وحده."},
+ {id:"q16", sectionId:"s3", question:"ما واجب الوقت الذي خلص إليه كتاب «بوصلة المصلح»؟", options:["تأليف الكتب","صناعة المصلحين لسد الثغور العامة في الأمة","الاكتفاء بالإصلاح الذاتي"], correctIndex:1, explanation:"بعد مسح للواقع ومسح لأهم الأدلة الشرعية."},
+ {id:"q17", sectionId:"s3", question:"ما علاقة «المنهاج» بـ«بوصلة المصلح»؟", options:["المنهاج مختصر البوصلة","البوصلة تشرح السياق كاملًا، والمنهاج يغطي ركنًا: المفاهيم المحكمة المشتركة بين المصلحين","لا علاقة بينهما"], correctIndex:1, explanation:"والاطلاع على البوصلة يعزز فهم السياق، وليس شرطًا للفهم."},
+ {id:"q18", sectionId:"s4", question:"حفظ طالب المنهاج كاملًا وأتقن ترتيبه. ما الذي ينقصه ليبلغ أهم استفادة؟", options:["لا شيء","الشرح، والأهم ربط الأبواب بالواقع بابًا بابًا وبمجموع الكتاب","حفظ كتاب آخر"], correctIndex:1, explanation:"الحفظ ليس شرطًا، والأهم من ذلك كله الربط بين الباب والواقع."},
+ {id:"q19", sectionId:"s4", question:"خطيب أراد أن يخطب بمضمون باب من المنهاج. ما الطريقة التي ذُكرت؟", options:["أن يقرأ الباب بصيغة: الحديث الأول، الحديث الثاني","أن يصوغ خطبة تتضمن الآيات والأحاديث وتحقق مقصود الباب، دون أن يلزم أن يقول: هذا شرح المنهاج","أن يمتنع عن ذلك"], correctIndex:1, explanation:"كل سياق ومقام بحسبه: خطب، محاضرات، صيغ إعلامية."},
+ {id:"q20", sectionId:"s4", question:"كيف يُقدَّم شرح المنهاج لطلبة العلم مقارنة بالجيل الصاعد؟", options:["بالصيغة نفسها للجميع","لطلبة العلم شرح علمي أوسع آية آية وحديثًا حديثًا، وللجيل الصاعد شرح مسهَّل","للجيل الصاعد أوسع"], correctIndex:1, explanation:"الشرح بحسب الفئة المتلقية."},
+ {id:"q21", sectionId:"s5", question:"ختم الشيخ بالتأكيد على كلمة «التجديد». ما المقصود بها؟", options:["تغيير المرجعية","إعادة فاعلية النص القرآني والحديث النبوي في واقع الأمة اليوم، خاصًّا وعامًّا","تجديد طبعات الكتاب"], correctIndex:1, explanation:"معنى الربط كان زمن النبي ﷺ ثم بدأ يُفتقد شيئًا فشيئًا، فيحتاج إلى تجديد."}
+];
+
+/* ===== أعلام البطاقات (5-ب/6) ===== */
+const ANKI_NAMES = {
+  sahabi: ["النبي ﷺ", "يوسف", "نوح", "أيوب", "لوط", "شعيب", "موسى", "عبد الله بن جحش"],
+  scholar: ["الطبري", "البخاري", "النووي", "المنذري", "أحمد السيد", "محمد شميس"],
+  name: []
+};
+
+/* ===== CARDS_DATA — بطاقات Anki (9-ط) · يولّدها ويصدّرها ilm-anki.js ===== */
+const CARDS_DATA = [
+ {id:"c01", sectionId:"intro", level:2, anchor:"المداخل", pattern:"calm",
+  q:"«المدخل» إلى كتاب أو علم: ما هو، ومتى يُعمل؟",
+  a:"محاضرة تمهيدية تعريفية تضع المتن في سياقه، فتكون كالمفتاح له. وتُعمل للأمور المهمة لأهميتها، وأحيانًا لصعوبة الأمر المراد الدخول إليه.",
+  blocks:[{type:"def", s:"محاضرة تمهيدية", e:"كالمفتاح له.", core:true}, {type:"wajh", s:"وتُعمل للأمور", e:"الدخول إليه."}],
+  marks:[{t:"focus", w:"ما هو"}, {t:"focus", w:"متى يُعمل"}], review:"", src:"والمدخل يعني هو محاضره تمهيديه تعريفيه"},
+ {id:"c02", sectionId:"intro", level:2, anchor:"لماذا مدخل للمنهاج", pattern:"calm",
+  q:"«المنهاج من ميراث النبوة»: لماذا يُعمل له مدخل وهو ليس كتابًا صعبًا؟",
+  a:"لأنه مهم، ولأن الطريقة المثلى للاستفادة منه قد تُشكل على البعض؛ فيعين المدخل على الاستفادة القصوى منه بطريقة صحيحة.",
+  blocks:[{type:"ans", s:"لأنه مهم،", e:"على البعض؛", core:true}, {type:"wajh", s:"فيعين المدخل", e:"بطريقة صحيحة."}],
+  marks:[{t:"focus", w:"لماذا"}], review:"", src:"المنهاج من ميراث النبوه الحمد لله ليس صعبا"},
+ {id:"c03", sectionId:"intro", level:1, anchor:"نقاط المدخل", pattern:"method",
+  q:"ما النقاط الأربع التي يتناولها المدخل إلى «المنهاج من ميراث النبوة»؟",
+  a:"الأولى: أهمية الربط بين مرجعية الوحي والواقع. الثانية: بنية الكتاب ومعيار بنائه. الثالثة: سياق الكتاب. الرابعة: كيف نستفيد منه.",
+  blocks:[{type:"steps", seq:true, items:[{s:"الأولى: أهمية", e:"والواقع."}, {s:"الثانية: بنية", e:"بنائه."}, {s:"الثالثة: سياق", e:"الكتاب."}, {s:"الرابعة: كيف", e:"منه."}]}],
+  marks:[{t:"focus", w:"الأربع"}], review:"", src:"ساتناول هذا التعريف وهذا المدخل من خلال"},
+
+ {id:"c04", sectionId:"s1", level:2, anchor:"الواقع الخاص", pattern:"calm",
+  q:"عند ربط الوحي بواقع المسلم: ما المقصود بـ«الواقع الخاص»، وما الذي يرشد فيه؟",
+  a:"ما يتعلق بحياتك أنت: سلوكك، والتحديات والفتن المحيطة بك، والتزامك بالفرائض، وإيمانك، وصلاح قلبك وفساده. ويجب أن يكون أهم نور يرشد فيه الوحي: كتاب الله وسنة رسوله ﷺ.",
+  blocks:[{type:"def", s:"ما يتعلق", e:"وفساده.", core:true, lead:"ما يتعلق بحياتك أنت:"}, {type:"wajh", s:"ويجب أن", e:"رسوله ﷺ."}],
+  marks:[{t:"focus", w:"الواقع الخاص"}], review:"", src:"الواقع الخاص هو الذي يتعلق بحياتك انت"},
+ {id:"c05", sectionId:"s1", level:2, anchor:"الواقع العام", pattern:"calm",
+  q:"عند ربط الوحي بواقع المسلم: ما المقصود بـ«الواقع العام»؟",
+  a:"واقع المسلمين والأمة: التدافع بين الحق والباطل، والحروب بين المسلمين وأعدائهم، والمشكلات الكبرى التي تعصف بالأمة في أي زمن.",
+  blocks:[{type:"def", all:true, core:true, lead:"واقع المسلمين والأمة:"}],
+  marks:[{t:"focus", w:"الواقع العام"}], review:"", src:"الواقع العام المقصود به واقع المسلمين"},
+ {id:"c06", sectionId:"s1", level:4, anchor:"من يربط الوحي بالواقع", pattern:"compare",
+  q:"الربط بين الكتاب والسنة وبين الواقع الخاص، والربط بينهما وبين الواقع العام: ما الفرق بينهما في من يستطيعه؟",
+  a:"الواقع الخاص يُفترض أن كل إنسان يستطيع أن يربط بينه وبين الكتاب والسنة. أما الواقع العام فلا يحسن تنزيل الآيات والأحاديث عليه إلا من يملك بصيرة وعلمًا وأدوات لفهم النص ومعرفة كبيرة بالواقع.",
+  blocks:[{type:"cols", parts:[{s:"الواقع الخاص", e:"الكتاب والسنة."}, {s:"أما الواقع", e:"كبيرة بالواقع."}]}],
+  marks:[{t:"focus", w:"الفرق"}], review:"", src:"الربط بين الوحي وبين الواقع العام ليس مهمه سهله"},
+ {id:"c07", sectionId:"s1", level:1, anchor:"غاية المنهاج", pattern:"calm",
+  q:"لماذا صُنّف «المنهاج من ميراث النبوة»؟ ما غايته ومقصده؟",
+  a:"لتحقيق حالة الارتباط بين مرجعية الوحي وبين الواقع. أي بين الكتاب والسنة من جهة، والواقع الخاص الذي يعيشه المؤمن والواقع العام الذي تعيشه الأمة من جهة أخرى.",
+  blocks:[{type:"ans", s:"لتحقيق حالة", e:"وبين الواقع.", core:true}, {type:"wajh", s:"أي بين", e:"جهة أخرى."}],
+  marks:[{t:"focus", w:"غايته ومقصده"}], review:"", src:"لتحقيق حاله الارتباط بين مرجعيه الوحي"},
+ {id:"c08", sectionId:"s1", level:1, anchor:"منهاج النبوة في تلقي الوحي", pattern:"calm",
+  q:"ما من أهم معالم منهج النبي ﷺ في تلقّي القرآن وتلقينه والبناء عليه؟",
+  a:"الربط الواضح بين الكتاب والسنة وبين الأحداث والوقائع التي تحدث في واقع الصحابة والأمة. وهذه هي الصورة التي كان عليها الحال زمنه ﷺ، ثم بدأت تتغير شيئًا فشيئًا.",
+  blocks:[{type:"ans", s:"الربط الواضح", e:"الصحابة والأمة.", core:true}, {type:"wajh", s:"وهذه هي", e:"شيئًا فشيئًا."}],
+  marks:[{t:"focus", w:"أهم معالم"}], review:"", src:"من اهم مفردات هذا المنهج ومن اهم معالم"},
+ {id:"c09", sectionId:"s1", level:3, anchor:"الفرقان 32", pattern:"quran",
+  q:"﴿وَقَالَ الَّذِينَ كَفَرُوا لَوْلَا نُزِّلَ عَلَيْهِ الْقُرْآنُ جُمْلَةً وَاحِدَةً ۚ كَذَٰلِكَ لِنُثَبِّتَ بِهِ فُؤَادَكَ﴾\nما وجه الدلالة في الآية على ربط الوحي بالواقع؟",
+  a:"أن القرآن نزل مفرّقًا، وقد وصف العلماء هذا التفريق بأنه مفرّق على الأحداث. وتثبيت فؤاد النبي ﷺ لواقعه الخاص، وهو في الحقيقة عام لأنه القدوة العظمى والموجّه للأمة.",
+  blocks:[{type:"ans", s:"أن القرآن", e:"على الأحداث.", core:true}, {type:"wajh", s:"وتثبيت فؤاد", e:"والموجّه للأمة."}],
+  marks:[{t:"focus", w:"وجه الدلالة"}], review:"", src:"الكفار قالوا لولا نزل عليه القران"},
+ {id:"c10", sectionId:"s1", level:2, anchor:"الخاص بالنبي ﷺ عام", pattern:"calm",
+  q:"ما يأتي في القرآن لواقع النبي ﷺ الخاص، كتثبيت فؤاده: لماذا يُعدّ للواقع العام؟",
+  a:"لأنه ﷺ القدوة العظمى والموجّه لكل الأمة، فأي شيء لواقعه الخاص هو في الحقيقة للواقع العام.",
+  blocks:[{type:"ans", all:true, core:true}],
+  marks:[{t:"focus", w:"لماذا"}], review:"", src:"ولكن الخاص للنبي صلى الله عليه وسلم هو"},
+ {id:"c11", sectionId:"s1", level:3, anchor:"سورة الأنفال وبدر", pattern:"quran",
+  q:"﴿كَمَا أَخْرَجَكَ رَبُّكَ مِن بَيْتِكَ بِالْحَقِّ﴾ ﴿إِذْ تَسْتَغِيثُونَ رَبَّكُمْ﴾ ﴿إِذْ يُوحِي رَبُّكَ إِلَى الْمَلَائِكَةِ أَنِّي مَعَكُمْ﴾ ﴿إِن تَسْتَفْتِحُوا فَقَدْ جَاءَكُمُ الْفَتْحُ﴾ ﴿وَاذْكُرُوا إِذْ أَنتُمْ قَلِيلٌ مُّسْتَضْعَفُونَ فِي الْأَرْضِ﴾\nبأي حدث ترتبط هذه الآيات، وعلامَ تدل؟",
+  a:"بغزوة بدر؛ فتفاصيل آيات سورة الأنفال تفاصيل المعركة. وهي من الأدلة على أن القرآن نزل مرتبطًا بالأحداث.",
+  blocks:[{type:"ans", s:"بغزوة بدر؛", e:"تفاصيل المعركة.", core:true}, {type:"wajh", s:"وهي من", e:"مرتبطًا بالأحداث."}],
+  marks:[{t:"focus", w:"بأي حدث"}], review:"", src:"كما اخرجك ربك من بيتك بالحق بعدين"},
+ {id:"c12", sectionId:"s1", level:4, anchor:"اسم «الأنفال»", pattern:"calm",
+  q:"لماذا سُمّيت سورة الأنفال بهذا الاسم، وهل حكمها خاص بسبب نزولها؟",
+  a:"الأنفال هي الغنائم، والمقصود غنائم غزوة بدر تحديدًا؛ نزلت بسببها، وإن كان حكمها عامًّا.",
+  blocks:[{type:"ans", all:true, core:true}],
+  marks:[{t:"focus", w:"لماذا سُمّيت"}], review:"", src:"واصلا اسمها سوره الانفال اللي هي الغنائم"},
+ {id:"c13", sectionId:"s1", level:3, anchor:"آل عمران 165 · 155", pattern:"quran",
+  q:"﴿أَوَلَمَّا أَصَابَتْكُم مُّصِيبَةٌ قَدْ أَصَبْتُم مِّثْلَيْهَا قُلْتُمْ أَنَّىٰ هَٰذَا ۖ قُلْ هُوَ مِنْ عِندِ أَنفُسِكُمْ﴾ ﴿إِنَّ الَّذِينَ تَوَلَّوْا مِنكُمْ يَوْمَ الْتَقَى الْجَمْعَانِ إِنَّمَا اسْتَزَلَّهُمُ الشَّيْطَانُ بِبَعْضِ مَا كَسَبُوا﴾\nبأي غزوة ترتبط الآيتان، وماذا بيّنتا للصحابة؟",
+  a:"بغزوة أحد؛ فسورة آل عمران فيها آيات كثيرة مرتبطة بأحداثها. وقد بيّنت لهم سبب الهزيمة: ما أصابهم من عند أنفسهم، وما استزلهم الشيطان ببعض ما كسبوا.",
+  blocks:[{type:"ans", s:"بغزوة أحد؛", e:"مرتبطة بأحداثها.", core:true}, {type:"wajh", s:"وقد بيّنت", e:"ما كسبوا."}],
+  marks:[{t:"focus", w:"بأي غزوة"}], review:"", src:"ان الذين تولوا منكم يوم التقى الجمعان"},
+ {id:"c14", sectionId:"s1", level:3, anchor:"البقرة 217", pattern:"quran",
+  q:"﴿يَسْأَلُونَكَ عَنِ الشَّهْرِ الْحَرَامِ قِتَالٍ فِيهِ ۖ قُلْ قِتَالٌ فِيهِ كَبِيرٌ﴾\nبأي حدث ترتبط هذه الآية؟",
+  a:"بسرية عبد الله بن جحش التي بعثها النبي ﷺ، فحصل فيها قتل في الشهر الحرام. وهي من ناحية الغزوات في سورة البقرة، أما ارتباط السورة بالواقع عمومًا فواسع.",
+  blocks:[{type:"ans", s:"بسرية عبد", e:"الشهر الحرام.", core:true}, {type:"wajh", s:"وهي من", e:"عمومًا فواسع."}],
+  marks:[{t:"focus", w:"بأي حدث"}], review:"المشهور في السيرة أن القتال كان في آخر يوم من رجب، والشيخ قال «بداية رجب»؛ فلم يُذكر التوقيت في البطاقة.", src:"يسالونك عن شهر الحرام قتال فيه"},
+ {id:"c15", sectionId:"s1", level:3, anchor:"سور نزلت على الغزوات", pattern:"method",
+  q:"سورتا الأحزاب والتوبة: بأي غزوتين ارتبطت كلٌّ منهما في نزولها؟",
+  a:"كلتاهما من أدلة نزول القرآن على الأحداث. الأحزاب: نزلت مفصّلة على أحداث معركة الخندق. التوبة: تتناول أكثر من حدث، وأهم ما تناولته من الغزوات غزوة تبوك.",
+  blocks:[{type:"rule", s:"كلتاهما من", e:"على الأحداث.", core:true}, {type:"steps", seq:false, items:[{s:"الأحزاب: نزلت", e:"معركة الخندق."}, {s:"التوبة: تتناول", e:"غزوة تبوك."}]}],
+  marks:[{t:"focus", w:"بأي غزوتين"}], review:"", src:"وعندك بعد ذلك سوره الاحزاب نزلت مفصله"},
+ {id:"c16", sectionId:"s1", level:3, anchor:"التوبة 25", pattern:"quran",
+  q:"﴿وَيَوْمَ حُنَيْنٍ ۙ إِذْ أَعْجَبَتْكُمْ كَثْرَتُكُمْ﴾\nمن أي جنس من الآيات هذه الآية في باب ربط الوحي بالواقع؟",
+  a:"من الآيات التي تعلّق على الأحداث فتبيّن للصحابة ما أخطؤوا فيه وما أصابوا، وسبب الهزيمة وسبب النصر.",
+  blocks:[{type:"ans", all:true, core:true}],
+  marks:[{t:"focus", w:"أي جنس"}], review:"", src:"ويوم حنين اذ اعجبتكم كثرتكم"},
+ {id:"c17", sectionId:"s1", level:2, anchor:"أثر التلقي الغض", pattern:"calm",
+  q:"لماذا كان مقدار تأثير الآيات على الصحابة عظيمًا جدًّا؟",
+  a:"لأنهم تلقّوا القرآن غضًّا طريًّا مرتبطًا بما رأوه بأعينهم في الواقع قبل قليل. ثم جاءت أنوار الوحي لتقول لهم: هذا حق وهذا باطل، ذاك الفعل أخطأتم فيه وذاك أصبتم فيه.",
+  blocks:[{type:"ans", s:"لأنهم تلقّوا", e:"قبل قليل.", core:true}, {type:"wajh", s:"ثم جاءت", e:"أصبتم فيه."}],
+  marks:[{t:"focus", w:"لماذا"}], review:"", src:"لا شك ان الصحابه حين يتلقون القران غضا"},
+ {id:"c18", sectionId:"s1", level:4, anchor:"الصحابي ومن بعده", pattern:"compare",
+  q:"تلقّي الصحابي للقرآن، ودراسة المتأخرين له: ما الفرق في صلتهما بالواقع؟",
+  a:"الصحابي لا يحتاج أن تقول له: القرآن نزل لينير الواقع؛ فهو لا يعرف القرآن إلا بهذه الطريقة. بينما صار المتأخر يدرسه كمادة نظرية منفصلة، وتضخّم الأداء واللفظ على حساب المعنى، فنشأت فجوة بينه وبين الاهتداء بالقرآن.",
+  blocks:[{type:"cols", parts:[{s:"الصحابي لا", e:"بهذه الطريقة."}, {s:"بينما صار", e:"الاهتداء بالقرآن."}]}],
+  marks:[{t:"focus", w:"الفرق"}], review:"", src:"بعد ذلك لما تغير الزمن صار الواحد يجي"},
+ {id:"c19", sectionId:"s1", level:1, anchor:"تجديد فاعلية النص", pattern:"calm",
+  q:"بعد أن افتُقد ربط الوحي بالواقع شيئًا فشيئًا: ما الذي تحتاجه الأمة اليوم؟",
+  a:"تجديد هذا المعنى: إعادة فاعلية النص القرآني والحديث النبوي في واقع الأمة اليوم. وألا تنحصر هذه الفاعلية في الواقع الخاص المرتبط باستقامة الإنسان في ذاته، بل تنير في الواقع العام.",
+  blocks:[{type:"ans", s:"تجديد هذا", e:"الأمة اليوم.", core:true}, {type:"wajh", s:"وألا تنحصر", e:"الواقع العام."}],
+  marks:[{t:"focus", w:"تحتاجه الأمة"}], review:"", src:"نحن اليوم بحاجه الى تجديد هذا المعنى"},
+ {id:"c20", sectionId:"s1", level:2, anchor:"التناسب مع طبيعة الحدث", pattern:"calm",
+  q:"هل يقتصر ارتباط القرآن بالواقع على الآيات التي فيها تعليق مباشر على الأحداث؟",
+  a:"لا؛ فكثير من الآيات نزلت متناسبة مع طبيعة الحدث، وإن لم يكن فيها نص صريح عليه. وهذه نقطة قد يغفل عنها البعض.",
+  blocks:[{type:"ans", s:"لا؛ فكثير", e:"طبيعة الحدث،", core:true}, {type:"wajh", s:"وإن لم", e:"صريح عليه."}, {type:"alert", s:"وهذه نقطة", e:"عنها البعض."}],
+  marks:[{t:"focus", w:"يقتصر"}], review:"", src:"هناك كثير من الايات القرانيه وان لم يكن"},
+ {id:"c21", sectionId:"s1", level:3, anchor:"قصص الأنبياء في المكي", pattern:"calm",
+  q:"أكثر قصص الأنبياء ذُكر في السور المكية: ما وجه تناسب ذلك مع طبيعة المرحلة؟",
+  a:"لأن من أهم غايات قصص الأنبياء أن يصبر المؤمنون كما صبروا ويثبتوا كما ثبتوا. وطبيعة المرحلة المكية اقتضت قصصهم بهذا التفصيل، وإن كان في المدينة ابتلاء أيضًا.",
+  blocks:[{type:"ans", s:"لأن من", e:"كما ثبتوا.", core:true}, {type:"wajh", s:"وطبيعة المرحلة", e:"ابتلاء أيضًا."}],
+  marks:[{t:"focus", w:"وجه تناسب"}], review:"", src:"لان قصص الانبياء من اهم ال الغايات"},
+ {id:"c22", sectionId:"s1", level:3, anchor:"العنكبوت 14", pattern:"quran",
+  q:"﴿فَلَبِثَ فِيهِمْ أَلْفَ سَنَةٍ إِلَّا خَمْسِينَ عَامًا﴾\nما الذي يُستفاد من موضع ورود هذه الإشارة إلى طول دعوة نوح؟",
+  a:"أن نوع الإشارة إلى القصة ينزل بحسب المرحلة؛ فالعنكبوت من آخر ما نزل في مكة، وهي السورة الوحيدة التي أشير فيها إلى طول مدة دعوته، بعد طول ابتلاء النبي ﷺ والصحابة بمكة.",
+  blocks:[{type:"ans", s:"أن نوع", e:"بحسب المرحلة؛", core:true}, {type:"wajh", s:"فالعنكبوت من", e:"والصحابة بمكة."}],
+  marks:[{t:"focus", w:"موضع ورود"}], review:"", src:"فلبث فيهم 1000 سنه الا 50 عاما"},
+ {id:"c23", sectionId:"s1", level:2, anchor:"البصير من العلماء", pattern:"calm",
+  q:"من هو «البصير من العلماء» في باب ربط الآيات بالواقع؟",
+  a:"الذي ينتبه للآية وعلاقتها بالحدث في السيرة النبوية ولو لم يأتِ فيها نص؛ كما كان يفعل الإمام الطبري، يكثر من ذلك في تفسيره.",
+  blocks:[{type:"ans", s:"الذي ينتبه", e:"فيها نص؛", core:true}, {type:"wajh", s:"كما كان", e:"في تفسيره."}],
+  marks:[{t:"focus", w:"البصير"}], review:"", src:"ولذلك البصير من العلماء هو الذي ينتبه"},
+ {id:"c24", sectionId:"s1", level:2, anchor:"قاعدة «وكذلك نجزي»", pattern:"method",
+  q:"ما دلالة لفظ «وكذلك نجزي» إذا ورد في قصة قرآنية؟",
+  a:"ينقل القصة من الخاص إلى العام، فترتبط بالصفة لا بأصحابها. وهذا أيًّا كان ما بعده: المحسنين أو الظالمين أو غيرهم.",
+  blocks:[{type:"rule", s:"ينقل القصة", e:"لا بأصحابها.", core:true}, {type:"alert", s:"وهذا أيًّا", e:"أو غيرهم."}],
+  marks:[{t:"focus", w:"وكذلك نجزي"}], review:"", src:"اذا رايت هذا اللفظ وكذلك نجزي فاعلم"},
+ {id:"c25", sectionId:"s1", level:3, anchor:"يوسف 22 عند الطبري", pattern:"quran",
+  q:"﴿وَلَمَّا بَلَغَ أَشُدَّهُ آتَيْنَاهُ حُكْمًا وَعِلْمًا ۚ وَكَذَٰلِكَ نَجْزِي الْمُحْسِنِينَ﴾\nإلى من صرف الطبري المقصود بـ«وكذلك نجزي المحسنين»، وما معناه عنده؟",
+  a:"إلى محمد ﷺ، وإن كان ظاهره يتناول كل محسن. والمعنى: كما نجّيت يوسف من كيد إخوته وآويته ونصرته، فكذلك أفعل بك يا محمد، فأنجيك من قومك وأنصرك.",
+  blocks:[{type:"ans", s:"إلى محمد", e:"كل محسن.", core:true}, {type:"wajh", s:"والمعنى: كما", e:"قومك وأنصرك."}],
+  marks:[{t:"focus", w:"صرف الطبري"}], review:"قول الطبري نقله الشيخ بالمعنى.", src:"الطبري لما جاء الى هذه الايه وكذلك"},
+ {id:"c26", sectionId:"s1", level:3, anchor:"يوسف 90", pattern:"quran",
+  q:"﴿إِنَّهُ مَن يَتَّقِ وَيَصْبِرْ فَإِنَّ اللَّهَ لَا يُضِيعُ أَجْرَ الْمُحْسِنِينَ﴾\nمن يشمل هذا الحكم مع أن السياق في يوسف عليه السلام؟",
+  a:"يشمل كل من اتقى وصبر، وإن كان المقصود بها ابتداءً يوسف عليه السلام.",
+  blocks:[{type:"ans", all:true, core:true}],
+  marks:[{t:"focus", w:"من يشمل"}], review:"", src:"انه من يتقي ويصبر فان الله لا يضيع"},
+ {id:"c27", sectionId:"s1", level:3, anchor:"هود 120", pattern:"quran",
+  q:"﴿وَكُلًّا نَّقُصُّ عَلَيْكَ مِنْ أَنبَاءِ الرُّسُلِ مَا نُثَبِّتُ بِهِ فُؤَادَكَ﴾\nما الغاية من قصص الرسل بنص الآية؟",
+  a:"تثبيت فؤاد النبي ﷺ، لا مجرد زيادة معلومات؛ فالآيات تنزل لتلامس الواقع الذي يعيشه ومن معه.",
+  blocks:[{type:"ans", s:"تثبيت فؤاد", e:"زيادة معلومات؛", core:true}, {type:"wajh", s:"فالآيات تنزل", e:"ومن معه."}],
+  marks:[{t:"focus", w:"الغاية"}], review:"", src:"وكلا نقص عليك من انباء الرسل ما نثبت"},
+ {id:"c28", sectionId:"s1", level:2, anchor:"اتساع الحياة بالعمل", pattern:"calm",
+  q:"لماذا لا يجد بعض الناس ملامسة بين حياتهم وبين موضوعات القرآن، وما الذي يوسّع هذه الملامسة؟",
+  a:"لأن موضوعات القرآن كثيرة، وحياتهم محدودة لم تتسع باتساعها. ويوسّعها الإيمان والعمل، وبخاصة العمل لإقامة الدين والدعوة والصبر على الأذى في سبيل الله.",
+  blocks:[{type:"ans", s:"لأن موضوعات", e:"باتساعها.", core:true}, {type:"wajh", s:"ويوسّعها الإيمان", e:"سبيل الله."}],
+  marks:[{t:"focus", w:"لماذا"}], review:"", src:"لان موضوعات القران كثيره واحيانا تكون"},
+ {id:"c29", sectionId:"s1", level:5, anchor:"أمثلة ملامسة الآيات", pattern:"method",
+  q:"كيف يأنس كل صاحب حال بآيات توافق حاله؟ مثّل بالمريض والأسير والمبتلى والداعية.",
+  a:"تلامسه الآيات التي مسّت واقعه. المريض: بآيات أيوب. الأسير أو المسجون: بسورة يوسف. المبتلى في ذات الله: بما تعرّض له الأنبياء وصبرهم. الداعية الذي يُستهزأ به: بآيات استهزاء الأقوام بالرسل وصبرهم.",
+  blocks:[{type:"rule", s:"تلامسه الآيات", e:"مسّت واقعه.", core:true}, {type:"steps", seq:false, items:[{s:"المريض: بآيات", e:"أيوب."}, {s:"الأسير أو", e:"سورة يوسف."}, {s:"المبتلى في", e:"وصبرهم."}, {s:"الداعية الذي", e:"بالرسل وصبرهم."}]}],
+  marks:[{t:"focus", w:"يأنس"}], review:"", src:"الا ترون ان المريض يانس بالايات"},
+ {id:"c30", sectionId:"s1", level:2, anchor:"المتن بشرحه", pattern:"calm",
+  q:"متى يتحقق مقصد المنهاج — ربط الوحي بالواقع — بدرجة أكبر؟",
+  a:"حين يؤخذ المتن بطريقة صحيحة؛ فأخذه بشرحه أفضل من أخذه وحده، لأن الشرح يلامس الأمور المرتبطة بالواقع.",
+  blocks:[{type:"ans", s:"حين يؤخذ", e:"بطريقة صحيحة؛", core:true}, {type:"wajh", s:"فأخذه بشرحه", e:"المرتبطة بالواقع."}],
+  marks:[{t:"focus", w:"بدرجة أكبر"}], review:"", src:"فان تاخذه مثلا بشرحه افضل من ان تاخذه"},
+
+ {id:"c31", sectionId:"s2", level:6, anchor:"مكوّنات المتن", pattern:"calm",
+  q:"«المنهاج من ميراث النبوة»: ممّ يتكوّن، وما نوعه بين الكتب؟",
+  a:"32 بابًا، فيها 197 حديثًا و126 آية. وهو متن، ليس رواية ولا قصة ولا كتابًا للشرح العلمي التفصيلي.",
+  blocks:[{type:"ans", s:"32 بابًا،", e:"و126 آية.", core:true}, {type:"wajh", s:"وهو متن،", e:"العلمي التفصيلي."}],
+  marks:[{t:"focus", w:"ممّ يتكوّن"}], review:"ورد في محاضرة اليوم الأول أنه 170 حديثًا.", src:"هذا المتن يتكون من 32 بابا"},
+ {id:"c32", sectionId:"s2", level:2, anchor:"الانتقاء منهج علمي", pattern:"calm",
+  q:"انتقاء آيات وأحاديث من الكتاب والسنة وجمعها في كتاب: ما حكم هذه الفكرة من حيث المنهج، وما السؤال الذي يبقى بعدها؟",
+  a:"منهج علمي سار عليه المسلمون على مرّ التاريخ. ويبقى السؤال: ما معيارك في الانتقاء، وما الموضوع الذي لأجله انتقيت؟",
+  blocks:[{type:"ans", s:"منهج علمي", e:"مرّ التاريخ.", core:true}, {type:"alert", s:"ويبقى السؤال:", e:"لأجله انتقيت؟"}],
+  marks:[{t:"focus", w:"السؤال"}], review:"", src:"فكره الانتقاء من الكتاب والسنه وجمع"},
+ {id:"c33", sectionId:"s2", level:6, anchor:"صحيح البخاري انتقاء", pattern:"calm",
+  q:"كيف يمثّل «صحيح البخاري» منهج الانتقاء من الكتاب والسنة؟",
+  a:"جمع آيات وأحاديث لا أحاديث فقط، بما يحقق شرطًا معيّنًا: صحة معينة في الأحاديث، وآيات تتناسب معها. فيبوّب الباب، ثم يذكر الآيات، ثم الأحاديث بأسانيده.",
+  blocks:[{type:"ans", s:"جمع آيات", e:"شرطًا معيّنًا:", core:true}, {type:"wajh", s:"صحة معينة", e:"الأحاديث بأسانيده."}],
+  marks:[{t:"focus", w:"صحيح البخاري"}], review:"", src:"فمثلا الامام البخاري الخاري جمع من الايات"},
+ {id:"c34", sectionId:"s2", level:6, anchor:"كتب منتقاة", pattern:"method",
+  q:"من أمثلة الكتب المنتقاة من السنة بعد البخاري: ما هي، وما معيار انتقاء كلٍّ منها؟",
+  a:"كتب السنة عمومًا تنتقي بحسب قصد المصنف. «رياض الصالحين» للنووي: آيات وأحاديث في أبواب. «الأربعون النووية»: انتقاء أقل بكثير. «الترغيب والترهيب» للمنذري: كل حديث فيه ثواب عمل أو عقابه. كتب جمعت أحاديث تحت عنوان واحد كالجهاد أو الزهد.",
+  blocks:[{type:"rule", s:"كتب السنة", e:"قصد المصنف.", core:true}, {type:"steps", seq:false, items:[{s:"«رياض الصالحين»", e:"في أبواب."}, {s:"«الأربعون النووية»:", e:"أقل بكثير."}, {s:"«الترغيب والترهيب»", e:"أو عقابه."}, {s:"كتب جمعت", e:"أو الزهد."}]}],
+  marks:[{t:"focus", w:"معيار انتقاء"}], review:"ظهر البطاقة قائمة مغلقة مترابطة تجاوزت 60 كلمة قليلًا.", src:"من اشهر الكتب المنتقاه كتاب رياض الصالحين"},
+ {id:"c35", sectionId:"s2", level:1, anchor:"معيار انتقاء المنهاج", pattern:"calm",
+  q:"على أي معيار انتُقيت أبواب «المنهاج من ميراث النبوة» وآياته وأحاديثه؟",
+  a:"ليحقق حالة من الاستقامة الخاصة والعامة. أي: ما الذي يحتاجه المصلح لصلاح نفسه ولصلاح غيره.",
+  blocks:[{type:"ans", s:"ليحقق حالة", e:"الخاصة والعامة.", core:true}, {type:"wajh", s:"أي: ما", e:"ولصلاح غيره."}],
+  marks:[{t:"focus", w:"أي معيار"}], review:"", src:"هذا الانتقاء حصل ليحقق حاله من الاستقامه"},
+ {id:"c36", sectionId:"s2", level:2, anchor:"شقّا الاستقامة", pattern:"method",
+  q:"المنهاج جُمع لمن يتطلب الاستقامة: ما شقّا هذه الاستقامة؟",
+  a:"استقامتان. الخاصة: في التزام الفرائض وتحقيق التقوى واجتناب المعاصي. العامة: فيما يتعلق بواقع الأمة، والصواب في الموقف من الأمور العامة المرتبطة بها.",
+  blocks:[{type:"rule", s:"استقامتان.", e:"استقامتان.", core:true, nolabel:true}, {type:"steps", seq:false, items:[{s:"الخاصة: في", e:"اجتناب المعاصي."}, {s:"العامة: فيما", e:"المرتبطة بها."}]}],
+  marks:[{t:"focus", w:"شقّا"}], review:"", src:"يتطلب الاستقامه في حياته الخاصه"},
+ {id:"c37", sectionId:"s2", level:4, anchor:"ما لم تُنتقَ عليه الأبواب", pattern:"calm",
+  q:"هل انتُقيت أبواب المنهاج باعتبار الجانب السلوكي التزكوي، أو الترغيب والترهيب، أو الصحة والضعف؟",
+  a:"لا؛ لم تُنتقَ باعتبار أي منها وحده، وإن كان شرط الصحة مراعًى وذُكرت ضوابطه في المقدمة. والمراعى: كيف يستقيم المسلم في ذاته، ويتحمل مسؤولية دوره في حياة الأمة.",
+  blocks:[{type:"ans", s:"لا؛ لم", e:"منها وحده،", core:true}, {type:"alert", s:"وإن كان", e:"في المقدمة."}, {type:"wajh", s:"والمراعى: كيف", e:"حياة الأمة."}],
+  marks:[{t:"focus", w:"باعتبار"}], review:"", src:"الابواب لم تنتقى باعتبار مثلا الجانب"},
+ {id:"c38", sectionId:"s2", level:4, anchor:"المنهاج وكتب الأحكام", pattern:"compare",
+  q:"«المنهاج من ميراث النبوة» وكتب أحاديث الأحكام: ما الفرق بينهما في الإطار؟",
+  a:"كتب أحاديث الأحكام لها إطار واحد هو أدلة الطهارة والصلاة والزكاة والحج والصيام والطلاق، مثل «عمدة الأحكام» و«بلوغ المرام» و«المحرر» و«المنتقى» و«الإلمام». أما المنهاج فليس مصدرًا لأحاديث الأحكام، وليس خاصًّا بالسلوك، بل فيه عناية بالإصلاح العام.",
+  blocks:[{type:"cols", parts:[{s:"كتب أحاديث", e:"و«الإلمام»."}, {s:"أما المنهاج", e:"بالإصلاح العام."}]}],
+  marks:[{t:"focus", w:"الفرق"}], review:"مقارنة مترابطة تجاوزت 60 كلمة قليلًا.", src:"اذا هذا الباب ليس مصدرا مثلا لاحاديث"},
+ {id:"c39", sectionId:"s2", level:6, anchor:"أبواب الواقع العام", pattern:"method",
+  q:"من أبواب المنهاج المرتبطة بالمسؤولية العامة: ما موضوعات الأبواب 12 و14 و15 و16؟",
+  a:"تشهد لحضور الواقع العام في المتن. 12: المسؤولية العامة تجاه الإسلام والمسلمين. 14: فضل الإصلاح والدعوة والأمر بالمعروف والنهي عن المنكر. 15: صفات المصلحين والعاملين للإسلام. 16: الوعي بسبيل المجرمين والحذر من كيد الأعداء ومكر المنافقين.",
+  blocks:[{type:"rule", s:"تشهد لحضور", e:"في المتن.", core:true}, {type:"steps", seq:false, items:[{s:"12: المسؤولية", e:"والمسلمين."}, {s:"14: فضل", e:"عن المنكر."}, {s:"15: صفات", e:"للإسلام."}, {s:"16: الوعي", e:"المنافقين."}]}],
+  marks:[{t:"focus", w:"موضوعات"}], review:"", src:"مثل باب ايش الباب الثاني عشر"},
+ {id:"c40", sectionId:"s2", level:6, anchor:"أبواب الواقع العام 2", pattern:"method",
+  q:"من أبواب المنهاج المرتبطة بالواقع العام أيضًا: ما موضوعات الأبواب 17 و18 و3 و5 و6؟",
+  a:"17: العناية بالشباب وتفعيل أدوارهم. 18: دور المرأة في بث العلم ونصرة الإسلام. 3: الصحبة الصالحة وخطورة التفرق. 5: أسباب ضعف المسلمين واختلال أحوالهم. 6: السنن الإلهية وموافقتها في الإصلاح.",
+  blocks:[{type:"steps", seq:false, items:[{s:"17: العناية", e:"أدوارهم."}, {s:"18: دور", e:"الإسلام."}, {s:"3: الصحبة", e:"التفرق."}, {s:"5: أسباب", e:"أحوالهم."}, {s:"6: السنن", e:"الإصلاح."}]}],
+  marks:[{t:"focus", w:"موضوعات"}], review:"", src:"والسابع عشر باب العنايه بالشباب"},
+ {id:"c41", sectionId:"s2", level:1, anchor:"تأسيس قيمة مرجعية الوحي", pattern:"method",
+  q:"الأبواب الأولى من المنهاج مؤسِّسة لقيمة مرجعية الوحي: بأي أمرين يحصل هذا التأسيس؟",
+  a:"بأمرين. الأول: البراهين والحجج على صحتها وقيمتها ومكانتها، كالاحتجاج للقرآن والسنة والرد على الشبهات ودلائل عظمتهما. الثاني: تفعيلها في الواقع بالاهتداء العملي.",
+  blocks:[{type:"rule", s:"بأمرين.", e:"بأمرين.", core:true, nolabel:true}, {type:"steps", seq:false, items:[{s:"الأول: البراهين", e:"دلائل عظمتهما."}, {s:"الثاني: تفعيلها", e:"بالاهتداء العملي."}]}],
+  marks:[{t:"focus", w:"بأي أمرين"}], review:"", src:"تاسيس قيمه مرجعيه الوحي يحصل من خلال امرين"},
+ {id:"c42", sectionId:"s2", level:2, anchor:"علّة التفعيل", pattern:"calm",
+  q:"لماذا تزيد قيمة مرجعية الوحي عند الإنسان بتفعيلها في الواقع، لا بالبراهين وحدها؟",
+  a:"لأن الاهتداء بها في الواقع يُريك ما يدلّك على ربانيتها. فإذا جرّبته رأيت من النور والبركة والهداية والبصيرة، وهذا لا يتحقق بمجرد الاستدلال النظري البرهاني.",
+  blocks:[{type:"ans", s:"لأن الاهتداء", e:"على ربانيتها.", core:true}, {type:"wajh", s:"فإذا جرّبته", e:"والبصيرة،"}, {type:"alert", s:"وهذا لا", e:"النظري البرهاني."}],
+  marks:[{t:"focus", w:"لماذا"}], review:"", src:"لانك اذا جربت الاهتداء بمرجعيه الوحي"},
+ {id:"c43", sectionId:"s2", level:3, anchor:"النساء 66–68", pattern:"quran",
+  q:"﴿وَلَوْ أَنَّهُمْ فَعَلُوا مَا يُوعَظُونَ بِهِ لَكَانَ خَيْرًا لَّهُمْ وَأَشَدَّ تَثْبِيتًا … وَلَهَدَيْنَاهُمْ صِرَاطًا مُّسْتَقِيمًا﴾\nعلامَ يُستشهد بالآيات في باب مرجعية الوحي؟",
+  a:"على فائدة العمل بالعلم: أن تفعيل الوحي والاهتداء العملي به يثمر التثبيت والأجر والهداية.",
+  blocks:[{type:"ans", all:true, core:true}],
+  marks:[{t:"focus", w:"علامَ"}], review:"", src:"ولو انهم فعلوا ما يوعظون به"},
+ {id:"c44", sectionId:"s2", level:2, anchor:"ضوابط بناء المنهاج", pattern:"method",
+  q:"ما الضوابط التي رُوعيت في اختيار أبواب المنهاج وترتيب ما تحتها؟",
+  a:"ضوابط في الاختيار والترتيب. المحكمات: أن تكون الأبواب أو كثير منها من محكمات الدين. الترتيب: الآيات ثم الأحاديث ثم آثار قليلة جدًّا عن الصحابة. الصحة: في الجملة، وعامة الأحاديث من الصحيحين.",
+  blocks:[{type:"rule", s:"ضوابط في", e:"والترتيب.", core:true, nolabel:true}, {type:"steps", seq:false, items:[{s:"المحكمات: أن", e:"محكمات الدين."}, {s:"الترتيب: الآيات", e:"عن الصحابة."}, {s:"الصحة: في", e:"من الصحيحين."}]}],
+  marks:[{t:"focus", w:"الضوابط"}], review:"", src:"روعي في اختيارها ان تكون هذه الابواب"},
+ {id:"c45", sectionId:"s2", level:2, anchor:"ترتيب الأبواب", pattern:"method",
+  q:"هل ترتيب أبواب المنهاج منظم تنظيمًا دقيقًا؟ وأين تكمل قيمته؟",
+  a:"هو شبه منظم: فيه ما هو منظم متناسب، وفيه ما هو مفرّق. والقيمة تكمل بالمجموع لا بالأبواب على حدة.",
+  blocks:[{type:"rule", s:"هو شبه", e:"ما هو مفرّق.", core:true}, {type:"wajh", s:"والقيمة تكمل", e:"على حدة."}],
+  marks:[{t:"focus", w:"تكمل قيمته"}], review:"", src:"يمكن ان يقال انه شبه منظم"},
+
+ {id:"c46", sectionId:"s3", level:4, anchor:"السياق والبنية", pattern:"compare",
+  q:"عند التعريف بكتاب: ما الفرق بين «بنيته» و«سياقه»؟",
+  a:"البنية: أبوابه، وما في كل باب من آيات وأحاديث، ولماذا اختيرت. أما السياق فأعمّ من ذلك وقبله: السياق الزمني والشخصي والمنهجي العام الذي صُنّف فيه، أمتصل هو بسياق أم منفرد.",
+  blocks:[{type:"cols", parts:[{s:"البنية: أبوابه،", e:"ولماذا اختيرت."}, {s:"أما السياق", e:"أم منفرد."}]}],
+  marks:[{t:"focus", w:"الفرق"}], review:"", src:"الان السياق غير البنيه بنيه الكتاب"},
+ {id:"c47", sectionId:"s3", level:1, anchor:"سياق المنهاج", pattern:"calm",
+  q:"هل جاء «المنهاج من ميراث النبوة» كتابًا منفردًا يناقش مسألة علمية، أم متصلًا بسياق؟",
+  a:"متصلًا بسياق: مشروع منهجي في الإصلاح وفي التأصيل لفكرة الإصلاح. فهو ضمن مجموعة مؤلفات أُريد بها إيصال نتيجة معينة.",
+  blocks:[{type:"ans", s:"متصلًا بسياق:", e:"لفكرة الإصلاح.", core:true}, {type:"wajh", s:"فهو ضمن", e:"نتيجة معينة."}],
+  marks:[{t:"focus", w:"منفردًا"}, {t:"focus", w:"متصلًا"}], review:"", src:"اتى متصلا بسياق وهذا السياق هو عباره"},
+ {id:"c48", sectionId:"s3", level:1, anchor:"سؤال المشروع", pattern:"method",
+  q:"ما السؤال الذي جاء المشروع المنهجي — الذي منه المنهاج — ليجيب عنه، وما النقطتان اللتان يتضمنهما؟",
+  a:"ما المنهج الإصلاحي المستخرج من الكتاب والسنة والمتفق مع حال الأمة اليوم؟ الأولى: أن هناك منهجًا إصلاحيًّا في الكتاب والسنة. الثانية: أنه قد يحتاج إلى اجتهاد في تنزيله على كل واقع بحسبه.",
+  blocks:[{type:"rule", s:"ما المنهج", e:"الأمة اليوم؟", core:true}, {type:"steps", seq:false, items:[{s:"الأولى: أن", e:"الكتاب والسنة."}, {s:"الثانية: أنه", e:"واقع بحسبه."}]}],
+  marks:[{t:"focus", w:"السؤال"}, {t:"focus", w:"النقطتان"}], review:"", src:"ما المنهج الاصلاحي المستخرج من الكتاب والسنه"},
+ {id:"c49", sectionId:"s3", level:4, anchor:"الثابت والمتغير في الإصلاح", pattern:"compare",
+  q:"«أليس المنهج الإصلاحي واحدًا لا يتغير؟» — ما الصواب والخطأ في هذه العبارة؟",
+  a:"إن قُصد المرجعية والأساس وثوابت الأحكام وقواعد الإصلاح الكبرى المتعلقة بالعبودية والارتباط بالكتاب والسنة فنعم، لا تتغير بحسب الزمان والمكان. وإن قُصدت الأولويات الإصلاحية فإنها تتغير بحسب الزمان والمكان.",
+  blocks:[{type:"cols", parts:[{s:"إن قُصد", e:"الزمان والمكان."}, {s:"وإن قُصدت", e:"الزمان والمكان."}]}],
+  marks:[{t:"focus", w:"الصواب والخطأ"}], review:"", src:"اقول لك كلامك فيه صواب وخطا"},
+ {id:"c50", sectionId:"s3", level:3, anchor:"أولويات الأنبياء", pattern:"method",
+  q:"ما الدليل من قصص الأنبياء على أن الأولويات الإصلاحية تتغير بحسب الزمان؟ اذكر لوطًا وشعيبًا وموسى.",
+  a:"يُذكر مع كل نبي إصلاح مشكلة زمانه، مع اشتراكهم في الأولوية الكبرى: العبودية لله وحده. لوط: الفاحشة. شعيب: الظلم والغش والتطفيف في المكيال والميزان. موسى: تحرير المستضعفين.",
+  blocks:[{type:"rule", s:"يُذكر مع", e:"لله وحده.", core:true}, {type:"steps", seq:false, items:[{s:"لوط: الفاحشة.", e:"لوط: الفاحشة."}, {s:"شعيب: الظلم", e:"والميزان."}, {s:"موسى: تحرير", e:"المستضعفين."}]}],
+  marks:[{t:"focus", w:"الدليل"}], review:"", src:"فاولويه الاصلاح عند لوط عليه السلام"},
+ {id:"c51", sectionId:"s3", level:3, anchor:"الشعراء 17", pattern:"quran",
+  q:"﴿أَنْ أَرْسِلْ مَعَنَا بَنِي إِسْرَائِيلَ﴾\nعلامَ يُستشهد بها في باب أولويات الإصلاح؟",
+  a:"على أن الأولوية الإصلاحية التي تُذكر مع موسى عليه السلام هي تحرير المستضعفين، وهي مكررة في قصته.",
+  blocks:[{type:"ans", all:true, core:true}],
+  marks:[{t:"focus", w:"علامَ"}], review:"", src:"ان ارسل معنا بني اسرائيل وهذا مكرر"},
+ {id:"c52", sectionId:"s3", level:6, anchor:"كتاب «بوصلة المصلح»", pattern:"calm",
+  q:"«بوصلة المصلح»: ما مضمونه، وعن أي سؤال يجيب؟",
+  a:"فيه مسح للواقع من جهة، ومسح لأهم الأدلة الشرعية من جهة أخرى. ليجيب: ما واجب الوقت اليوم من حيث الإصلاح؟ وفيه شُرح المشروع المنهجي الذي منه المنهاج.",
+  blocks:[{type:"ans", s:"فيه مسح", e:"جهة أخرى.", core:true}, {type:"wajh", s:"ليجيب: ما", e:"منه المنهاج."}],
+  marks:[{t:"focus", w:"مضمونه"}], review:"", src:"كتاب فيه مسح للواقع من جهه ومسح لاهم"},
+ {id:"c53", sectionId:"s3", level:1, anchor:"واجب الوقت", pattern:"calm",
+  q:"ما «واجب الوقت» اليوم من حيث الإصلاح، كما خلص إليه البحث الشرعي والواقعي في «بوصلة المصلح»؟",
+  a:"صناعة المصلحين لسد الثغور العامة في الأمة، والتركيز اليوم على صناعتهم.",
+  blocks:[{type:"ans", all:true, core:true}],
+  marks:[{t:"focus", w:"واجب الوقت"}], review:"", src:"ان واجب الوقت هو صناعه المصلحين"},
+ {id:"c54", sectionId:"s3", level:1, anchor:"موقع المنهاج من صناعة المصلحين", pattern:"calm",
+  q:"ما موقع «المنهاج من ميراث النبوة» من فكرة صناعة المصلحين؟",
+  a:"فيه المفاهيم الشرعية المحكمة المشتركة بين المصلحين. فمن مفردات صناعتهم أن تكون بينهم قواعد ومفاهيم كبرى متفق عليها لكونها من محكمات الكتاب والسنة.",
+  blocks:[{type:"ans", s:"فيه المفاهيم", e:"بين المصلحين.", core:true}, {type:"wajh", s:"فمن مفردات", e:"الكتاب والسنة."}],
+  marks:[{t:"focus", w:"موقع"}], review:"", src:"هذه المفاهيم الاساسيه هي التي وضعت"},
+ {id:"c55", sectionId:"s3", level:4, anchor:"البوصلة والمنهاج", pattern:"compare",
+  q:"«بوصلة المصلح» و«المنهاج من ميراث النبوة»: ما الفرق بين وظيفتيهما في المشروع؟",
+  a:"البوصلة تشرح السياق بصورته الكاملة. بينما المنهاج يغطي ركنًا من أركان صناعة المصلحين، ولذلك يُحثّ قارئه على الاطلاع على البوصلة، لا شرطًا للفهم بل تعزيزًا له.",
+  blocks:[{type:"cols", parts:[{s:"البوصلة تشرح", e:"بصورته الكاملة."}, {s:"بينما المنهاج", e:"تعزيزًا له."}]}],
+  marks:[{t:"focus", w:"الفرق"}], review:"", src:"فالذي يشرح السياق بصورته الكامله هو بوصله"},
+
+ {id:"c56", sectionId:"s4", level:6, anchor:"شروح المنهاج الموجودة", pattern:"calm",
+  q:"ما الشروح الموجودة لـ«المنهاج من ميراث النبوة»؟",
+  a:"شرح مرئي في سلسلة نحو 30 حلقة قدّمها الشيخ أحمد السيد. ولُخّص مكتوبًا في كتاب «القبس الوهاج»، لخّصه الأخ محمد شميس.",
+  blocks:[{type:"ans", s:"شرح مرئي", e:"أحمد السيد.", core:true}, {type:"wajh", s:"ولُخّص مكتوبًا", e:"محمد شميس."}],
+  marks:[{t:"focus", w:"الشروح"}], review:"اسم الملخِّص (محمد شميس) من بيانات المشروع؛ وفي التفريغ «الأخ محمد».", src:"وهذا الشرح في الاساس هو مرئي في سلسله"},
+ {id:"c57", sectionId:"s4", level:2, anchor:"كفاية الشرح", pattern:"method",
+  q:"هل يكفي الشرح المقدَّم للمنهاج؟ وما الشروح التي لا يزال يحتاجها؟",
+  a:"لا بد من الاطلاع عليه، لكنه ليس كافيًا. شرح موسّع: شرح علمي يقوم به بعض طلبة العلم أو المشايخ. شرح مبسّط: يبسّط الكتاب للجيل الصاعد، وقد حصل من بعض الطلاب.",
+  blocks:[{type:"rule", s:"لا بد", e:"ليس كافيًا.", core:true}, {type:"steps", seq:false, items:[{s:"شرح موسّع:", e:"أو المشايخ."}, {s:"شرح مبسّط:", e:"بعض الطلاب."}]}],
+  marks:[{t:"focus", w:"يكفي"}], review:"", src:"على اني اقول انه هذا الشرح ليس كافيا"},
+ {id:"c58", sectionId:"s4", level:2, anchor:"الشرح بحسب الفئة", pattern:"compare",
+  q:"شرح المنهاج لطلبة العلم، وشرحه للجيل الصاعد: ما الفرق بينهما؟",
+  a:"لطلبة العلم شرح علمي أوسع: الآيات تُفسَّر آية آية، والأحاديث حديثًا حديثًا، مع ربط مفصّل بالواقع. بينما الجيل الصاعد ذكورًا أو إناثًا يُسهَّل لهم الشرح ويُقدَّم ما يناسبهم.",
+  blocks:[{type:"cols", parts:[{s:"لطلبة العلم", e:"مفصّل بالواقع."}, {s:"بينما الجيل", e:"ما يناسبهم."}]}],
+  marks:[{t:"focus", w:"الفرق"}], review:"", src:"فاذا كانوا طلبه علم فجيد انه يكون هناك"},
+ {id:"c59", sectionId:"s4", level:5, anchor:"خطب الجمعة بمضمون الأبواب", pattern:"calm",
+  q:"بعض خطباء الجمعة خطبوا بمضمون باب من المنهاج: كيف تكون هذه الطريقة؟",
+  a:"تُضمَّن الآيات والأحاديث بصياغة تناسب الخطبة، فتحقق مقصود الباب دون صيغة «الحديث الأول، الحديث الثاني»، ودون أن يلزم أن يقال: هذا شرح المنهاج. وتخرج بصيغة إعلامية أو خطب أو محاضرات، وكل مقام بحسبه.",
+  blocks:[{type:"ans", s:"تُضمَّن الآيات", e:"تناسب الخطبة،", core:true}, {type:"wajh", s:"فتحقق مقصود", e:"مقام بحسبه."}],
+  marks:[{t:"focus", w:"كيف"}], review:"", src:"بعض الخطباء خطباء الجمعه خطبوا بمضمون"},
+ {id:"c60", sectionId:"s4", level:5, anchor:"حفظ المنهاج", pattern:"calm",
+  q:"ما الذي حصل في حفظ متن المنهاج، وما مدى ضبط حفّاظه؟",
+  a:"حصل كثيرًا؛ فكرّر القائمون على مبادرة نمير مسابقة حفظه، ودخلها عدد كبير ذكورًا وإناثًا. وبلغ الضبط أن تُدقَّق الاختبارات في ترتيب الأحاديث، ويُعجز الحفّاظ المختبِرين عن تخطئتهم في لفظة أو ترتيب.",
+  blocks:[{type:"ans", s:"حصل كثيرًا؛", e:"ذكورًا وإناثًا.", core:true}, {type:"wajh", s:"وبلغ الضبط", e:"أو ترتيب."}],
+  marks:[{t:"focus", w:"حفظ"}], review:"اسم المبادرة كما ورد في التفريغ («نمير»)، ويُراجَع.", src:"القائمين على مبادره نمير الحفاظ"},
+ {id:"c61", sectionId:"s4", level:1, anchor:"مراتب الاستفادة", pattern:"method",
+  q:"ما مراتب الاستفادة من المنهاج، وأيها الأهم؟",
+  a:"الأهم من ذلك كله الربط بالواقع. الأولى: المتن قراءةً وحفظًا، والحفظ ليس شرطًا. الثانية: الشرح، مبسّطًا أو متوسطًا أو موسّعًا. الثالثة: الربط بين الباب وآياته وأحاديثه وبين الواقع.",
+  blocks:[{type:"rule", s:"الأهم من", e:"بالواقع.", core:true}, {type:"steps", seq:true, items:[{s:"الأولى: المتن", e:"ليس شرطًا."}, {s:"الثانية: الشرح،", e:"أو موسّعًا."}, {s:"الثالثة: الربط", e:"وبين الواقع."}]}],
+  marks:[{t:"focus", w:"الأهم"}], review:"", src:"خلاصه الكلام انه الاستفاده ا اولا"},
+ {id:"c62", sectionId:"s4", level:2, anchor:"الربط بمجموع الأبواب", pattern:"method",
+  q:"ربط المنهاج بالواقع: هل يكفي بابًا بابًا، أم يلزم شيء آخر؟",
+  a:"الأهم أن يكون الربط حاصلًا بمجموع الأبواب. فكلما خرجت من باب ربطت بينه وبين واقعك، وبمجموع الكتاب تخرج بنتيجة عملية متقدمة في الربط بين مرجعية الوحي والواقع.",
+  blocks:[{type:"rule", s:"الأهم أن", e:"بمجموع الأبواب.", core:true}, {type:"wajh", s:"فكلما خرجت", e:"الوحي والواقع."}],
+  marks:[{t:"focus", w:"بمجموع"}], review:"", src:"والاهم من ذلك هو ان يكون الربط حاصلا"},
+ {id:"c63", sectionId:"s4", level:6, anchor:"أعمال قادمة لخدمة المنهاج", pattern:"calm",
+  q:"ما العمل الذي يُجمع حاليًّا لخدمة تدريس «المنهاج من ميراث النبوة»؟",
+  a:"مادة في كيف يدرّس المربي هذا الكتاب، والأهداف التربوية من كل باب؛ وهي صورة من صور الربط بالواقع.",
+  blocks:[{type:"ans", all:true, core:true}],
+  marks:[{t:"focus", w:"يُجمع حاليًّا"}], review:"", src:"يوجد من يجمع الان ا ماده في"},
+ {id:"c64", sectionId:"s5", level:2, anchor:"دائرة الاستفادة من الوحي", pattern:"compare",
+  q:"الاستفادة من مرجعية الوحي في الواقع الخاص، والاستفادة منها في الواقع العام: ما دائرة كلٍّ منهما؟",
+  a:"في الواقع الخاص دائرة الاستفادة كل المسلمين. أما في الواقع العام فليست للكل، بل لذوي البصائر والعلم والمعرفة بالواقع والوحي، وأدوات الاستنباط.",
+  blocks:[{type:"cols", parts:[{s:"في الواقع", e:"كل المسلمين."}, {s:"أما في", e:"وأدوات الاستنباط."}]}],
+  marks:[{t:"focus", w:"دائرة"}], review:"", src:"ان الذي يستفيد من الوحي في الواقع الخاص"},
+ {id:"c65", sectionId:"s5", level:1, anchor:"المدخل مجملًا", pattern:"method",
+  q:"كيف أجمل الشيخ المدخل إلى «المنهاج من ميراث النبوة» في أربع نقاط؟",
+  a:"الربط: تجديد ربط الوحي بالواقع الخاص والعام. البنية: انتقاء معياره الصلاح الخاص والإصلاح العام. السياق: ركن عملي من مشروع «بوصلة المصلح». الاستفادة: الشرح، والأهم تنزيل المعاني على الواقع.",
+  blocks:[{type:"steps", seq:true, items:[{s:"الربط: تجديد", e:"الخاص والعام."}, {s:"البنية: انتقاء", e:"الإصلاح العام."}, {s:"السياق: ركن", e:"«بوصلة المصلح»."}, {s:"الاستفادة: الشرح،", e:"على الواقع."}]}],
+  marks:[{t:"focus", w:"أربع نقاط"}], review:"", src:"بهذا اكون قد ذكرت الامور التاليه"}
+];
+
+
+/* ===== رسم خريطة التوجيه ===== */
+(function(){
+  var M = MAP_DATA[0], box = document.getElementById('mindmap');
+  var c = document.createElement('div'); c.className = 'mm-center'; c.textContent = M.center; box.appendChild(c);
+  var br = document.createElement('div'); br.className = 'mm-branches';
+  M.nodes.forEach(function(n, i){
+    var row = document.createElement('div'); row.className = 'mm-node mm-n' + (i + 1);
+    var a = document.createElement('a'); a.href = '#' + n.target; a.className = 'mm-main'; a.textContent = n.text; row.appendChild(a);
+    (n.children || []).forEach(function(k){
+      var s = document.createElement('a'); s.href = '#' + k.target; s.className = 'mm-kid'; s.textContent = k.text; row.appendChild(s);
+    });
+    br.appendChild(row);
+  });
+  box.appendChild(br);
+})();
+
+/* ===== الخريطة الختامية: التحريك على اللمس بعد الضغط ===== */
+(function(){
+  var f = document.getElementById('cm-frame'), t = document.getElementById('cm-touch');
+  if(!f || !t) return;
+  t.addEventListener('click', function(){ f.classList.add('live'); });
+  document.addEventListener('touchstart', function(e){ if(!f.contains(e.target)) f.classList.remove('live'); }, {passive:true});
+})();
+
+/* ===== رسم الأسئلة (event delegation، بلا تخزين) ===== */
+(function(){
+  document.querySelectorAll('.qz[data-section]').forEach(function(box){
+    var sec = box.getAttribute('data-section');
+    var items = QUIZ_DATA.filter(function(q){ return q.sectionId === sec; });
+    var head = document.createElement('div'); head.className = 'qz-head';
+    var t = document.createElement('div'); t.className = 'qz-title'; t.textContent = '✦ تثبيت الفهم';
+    var sc = document.createElement('div'); sc.className = 'qz-score'; sc.textContent = 'النتيجة: 0 / ' + items.length;
+    head.appendChild(t); head.appendChild(sc); box.appendChild(head);
+    items.forEach(function(q){
+      var it = document.createElement('div'); it.className = 'qz-item'; it.dataset.id = q.id;
+      var qq = document.createElement('div'); qq.className = 'qz-q'; qq.textContent = q.question; it.appendChild(qq);
+      q.options.forEach(function(o, i){
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'qz-opt'; b.dataset.i = i; b.textContent = o; it.appendChild(b);
+      });
+      var ex = document.createElement('div'); ex.className = 'qz-exp'; ex.textContent = q.explanation; it.appendChild(ex);
+      var rt = document.createElement('button'); rt.type = 'button'; rt.className = 'qz-retry'; rt.textContent = 'أعد المحاولة'; it.appendChild(rt);
+      box.appendChild(it);
+    });
+    function score(){ sc.textContent = 'النتيجة: ' + box.querySelectorAll('.qz-item.right').length + ' / ' + items.length; }
+    box.addEventListener('click', function(e){
+      var el = e.target, it = el.closest('.qz-item'); if(!it) return;
+      var q = QUIZ_DATA.find(function(x){ return x.id === it.dataset.id; });
+      if(el.classList.contains('qz-opt') && !it.classList.contains('done')){
+        var i = +el.dataset.i;
+        el.classList.add(i === q.correctIndex ? 'ok' : 'no');
+        if(i !== q.correctIndex) it.querySelectorAll('.qz-opt')[q.correctIndex].classList.add('ok');
+        it.classList.add('done'); if(i === q.correctIndex) it.classList.add('right');
+        score();
+      } else if(el.classList.contains('qz-retry')){
+        it.classList.remove('done', 'right');
+        it.querySelectorAll('.qz-opt').forEach(function(b){ b.classList.remove('ok', 'no'); });
+        score();
+      }
+    });
+  });
+})();
+
+/* ===== شريط التقدم ===== */
+window.addEventListener('scroll', function(){
+  var h = document.documentElement;
+  document.getElementById('prog').style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+});
+</script>
+
+<script type="module" src="../../../firebase-sync-manhaj.js"></script>
+<script src="../../../ilm-track.js"></script>
+<script src="../../../data.js"></script>
+<script src="../../../ilm-anki.js" data-lecture="01"></script>
+<script>
+/* ===== واجهة البطاقات: العرض والتصدير من ilm-anki.js وحدها (9-ص) ===== */
+(function(){
+  var SEC = {"intro": "المدخل", "s1": "الربط بالواقع", "s2": "البنية", "s3": "السياق", "s4": "الاستفادة", "s5": "الختام"};
+  var filter = '', idx = 0, ak = document.getElementById('ak');
+  function view(){ return filter ? CARDS_DATA.filter(function(c){ return c.sectionId === filter; }) : CARDS_DATA; }
+  function render(){
+    var v = view(); if(!v.length) return;
+    if(idx >= v.length) idx = 0; if(idx < 0) idx = v.length - 1;
+    var c = v[idx];
+    ak.classList.remove('on');
+    document.getElementById('ak-deck').textContent = 'الرزمة: ' + ILM_ANKI.deck(c) + ' · ' + ILM_ANKI.tags(c);
+    document.getElementById('ak-front').innerHTML = ILM_ANKI.front(c);
+    document.getElementById('ak-back').innerHTML = ILM_ANKI.back(c);
+    document.getElementById('ak-counter').textContent = (idx + 1) + ' / ' + v.length;
+  }
+  function go(d){ idx += d; render(); }
+  var fb = document.getElementById('filters');
+  function mk(key, label){
+    var b = document.createElement('button'); b.type = 'button'; b.textContent = label; b.dataset.f = key;
+    b.addEventListener('click', function(){ filter = key; idx = 0; fb.querySelectorAll('button').forEach(function(x){ x.classList.toggle('on', x.dataset.f === key); }); render(); });
+    fb.appendChild(b); return b;
+  }
+  mk('', 'الكل (' + CARDS_DATA.length + ')').classList.add('on');
+  Object.keys(SEC).forEach(function(k){ mk(k, SEC[k] + ' (' + CARDS_DATA.filter(function(c){ return c.sectionId === k; }).length + ')'); });
+  ak.addEventListener('click', function(e){ if(e.target.closest('a')) return; ak.classList.toggle('on'); });
+  ak.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); ak.classList.toggle('on'); } });
+  document.getElementById('ak-next').addEventListener('click', function(){ go(1); });
+  document.getElementById('ak-prev').addEventListener('click', function(){ go(-1); });
+  document.getElementById('ak-dl').addEventListener('click', function(){
+    try { ILM_ANKI.download(CARDS_DATA); } catch(err){ alert(err.message); }
+  });
+  document.addEventListener('keydown', function(e){
+    var t = e.target && e.target.tagName; if(t === 'INPUT' || t === 'TEXTAREA' || t === 'SELECT') return;
+    if(e.key === 'ArrowLeft') go(1); if(e.key === 'ArrowRight') go(-1);
+  });
+  document.getElementById('cards-count').textContent = CARDS_DATA.length + ' بطاقة مراجعة';
+  render();
+})();
+</script>
+<script src="../../../ilm-nav.js"></script>
+<script>(function(){function mv(){var t=document.querySelector('.ilm-nav-top'),slot=document.getElementById('nav-top-slot');if(t&&slot)slot.appendChild(t);}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mv);else mv();})();</script>
+<script>
+(function(){
+  var box = document.getElementById('ilm-completion-box');
+  var cb = box ? box.querySelector('input[data-lecture-id]') : null;
+  if(!cb) return;
+  var lid = cb.getAttribute('data-lecture-id');
+  function render(done){ cb.checked = done; box.classList.toggle('done', done); }
+  if(window.IlmTrack){ window.IlmTrack.ready.then(function(){ render(window.IlmTrack.isDone(lid)); }); }
+  cb.addEventListener('change', function(){ if(window.IlmTrack) window.IlmTrack.setDone(lid, cb.checked); render(cb.checked); });
+})();
+</script>
+<script src="../../../ilm-highlight.js" data-lecture-id="stage0_madkhal-manhaj_01"></script>
+<script src="../../../ilm-semantic.js" data-hadith="off"></script>
 </body>
 </html>

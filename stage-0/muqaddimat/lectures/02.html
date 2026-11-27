@@ -1,40 +1,1113 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>القلب المنيب - المرحلة التمهيدية</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="../../../style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مقدمات تمهيدية - المحاضرة 02 - القلب المنيب | البناء المنهجي · المرحلة التمهيدية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../anki/final.css">
+<style>
+/* ===== هوية «سماء التفكر»: غلاف ليلي نجمي، ومتن عاجي هادئ =====
+   ألوان الأقسام بعيدة عن الألوان الدلالية المحجوزة (5-ب):
+   1 العلم بالله نيلي · 2 الإيمان بالنبي ﷺ فيروزي غامق · 3 العبودية رصاصي
+   4 اليوم الآخر بُنّي ترابي · 5 الثمرات ليلي مع ذهبي فاتح للزخرفة فقط */
+:root{
+  --bg:#faf8f3; --paper:#fffefa; --ink:#1f2433; --muted:#596074; --line:#e4dfd2;
+  --night:#141c38; --night2:#263463; --star:#f3d58a; --goldbg:#f7efd9; --goldbd:#e3d3a6;
+  --c1:#2b3a75; --c1s:#e9ecf7;
+  --c2:#106a7a; --c2s:#e3f1f3;
+  --c3:#4b4f63; --c3s:#ecedf2;
+  --c4:#6b4f3a; --c4s:#f3ece6;
+  --c5:#1f2a4f; --c5s:#eceff7;
+  --fix:#b45309; --fixs:#fdf0e4;
+  --add:#3d5a80; --adds:#eaf0f7;
+  --sem-aya:#14532d; --sem-name:#8f1d21; --sem-sahabi:#8a5a00;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Cairo',system-ui,sans-serif;font-size:17.5px;line-height:1.95;text-align:right}
+a{color:var(--c1)}
+.wrap{max-width:800px;margin:0 auto;padding:0 18px}
+
+/* شريط علوي */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(20,28,56,.97);color:#fff}
+.topbar-in{max-width:1180px;margin:0 auto;padding:7px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.tb-title{font-family:'Reem Kufi',sans-serif;font-size:15px;color:var(--star)}
+.tb-links{display:flex;gap:4px;flex-wrap:wrap}
+.tb-links a{color:#e6e9f5;text-decoration:none;font-size:12.5px;padding:3px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.2)}
+.tb-links a:hover{background:rgba(243,213,138,.18)}
+.progress{height:3px;background:var(--star);width:0}
+
+/* الغلاف */
+.cover{color:#fff;text-align:center;padding:52px 18px 42px;
+  background:
+   radial-gradient(1.5px 1.5px at 12% 22%,#fff 50%,transparent 51%),
+   radial-gradient(1px 1px at 28% 68%,#fff 50%,transparent 51%),
+   radial-gradient(1.5px 1.5px at 44% 14%,#f3d58a 50%,transparent 51%),
+   radial-gradient(1px 1px at 63% 40%,#fff 50%,transparent 51%),
+   radial-gradient(2px 2px at 78% 18%,#fff 50%,transparent 51%),
+   radial-gradient(1px 1px at 88% 62%,#f3d58a 50%,transparent 51%),
+   radial-gradient(1px 1px at 6% 80%,#fff 50%,transparent 51%),
+   radial-gradient(1.5px 1.5px at 52% 84%,#fff 50%,transparent 51%),
+   radial-gradient(1px 1px at 35% 38%,#fff 50%,transparent 51%),
+   radial-gradient(ellipse at 50% 120%,#3b4c8a 0%,transparent 60%),
+   linear-gradient(180deg,var(--night) 0%,var(--night2) 100%)}
+.kicker{font-family:'Reem Kufi',sans-serif;color:var(--star);font-size:15px}
+.series{font-size:13.5px;color:#c6cde6;margin-top:4px}
+.cover h1{font-family:'Amiri',serif;font-size:clamp(36px,6vw,44px);margin:12px 0 6px;line-height:1.35}
+.cover .sub{font-size:16px;color:#dfe4f4;max-width:640px;margin:0 auto;line-height:1.9}
+.orn{display:flex;align-items:center;justify-content:center;gap:12px;margin:18px auto;color:var(--star);max-width:300px}
+.orn i{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--star),transparent)}
+
+/* بطاقة المصدر + الفيديو */
+.srcbar{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 6px;font-size:13.5px;color:var(--muted)}
+.srcbar span{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:3px 12px}
+details.video{margin:14px 0;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:10px 16px}
+details.video summary{cursor:pointer;font-weight:700;color:var(--c1);min-height:32px}
+.vid{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;margin-top:10px}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* لوحة التوجيه */
+.orient{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px 22px;margin:22px 0}
+.orient .oq{font-family:'Amiri',serif;font-size:24px;color:var(--night);line-height:1.6}
+.orient .olab{display:inline-block;font-size:12.5px;font-weight:800;color:#fff;background:var(--night2);border-radius:999px;padding:1px 12px;margin-bottom:6px}
+.orient .oidea{margin-top:12px;padding:10px 14px;border-radius:12px;background:var(--goldbg);border:1px solid var(--goldbd)}
+.orient .oidea small{display:block;font-size:12.5px;color:var(--muted)}
+.orient .orow{margin-top:10px;font-size:15.5px;color:var(--muted)}
+
+/* الخريطة الذهنية (MAP_DATA) */
+.mindmap{display:flex;align-items:stretch;gap:14px;margin-top:16px}
+.mm-center{flex:0 0 150px;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:16px;background:var(--night);color:var(--star);font-family:'Reem Kufi',sans-serif;font-size:18px;padding:12px}
+.mm-branches{flex:1;display:flex;flex-direction:column;gap:8px}
+.mm-node{display:flex;flex-wrap:wrap;align-items:center;gap:6px;border-right:4px solid var(--c1);background:#fff;border-radius:10px;padding:7px 10px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);border-left:1px solid var(--line)}
+.mm-node a{text-decoration:none;color:var(--ink)}
+.mm-main{font-weight:800}
+.mm-kid{font-size:14px;padding:2px 10px;border-radius:999px;background:var(--c1s)}
+.mm-n1{border-right-color:var(--c1)} .mm-n2{border-right-color:var(--c2)} .mm-n3{border-right-color:var(--c3)} .mm-n4{border-right-color:var(--c4)} .mm-n5{border-right-color:var(--c5)}
+
+/* الفهرس */
+.toc{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px 22px;margin:22px 0}
+.toc .ttl{font-family:'Reem Kufi',sans-serif;color:var(--night);font-size:18px;margin-bottom:4px}
+.toc a{display:block;text-decoration:none;color:var(--ink);line-height:2}
+.toc a.l{font-weight:800}
+.toc a.s{padding-right:26px;font-size:15px;color:var(--muted)}
+.toc b{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;color:#fff;font-size:12px;margin-left:6px}
+
+/* الأقسام */
+section.part{margin:48px 0 30px}
+.sec-head{display:flex;gap:14px;align-items:center;border-radius:16px;padding:14px 20px;color:#fff;margin-bottom:16px}
+.sec-head .num{font-family:'Reem Kufi',sans-serif;font-size:32px;line-height:1;color:var(--star)}
+.sec-head small{display:block;font-size:13px;opacity:.88}
+.sec-head h2{margin:0;font-family:'Amiri',serif;font-size:clamp(27px,4vw,32px);line-height:1.4;font-weight:700}
+.p0 .sec-head{background:linear-gradient(135deg,var(--night),var(--night2))}
+.p1 .sec-head{background:linear-gradient(135deg,var(--c1),#3f509c)}
+.p2 .sec-head{background:linear-gradient(135deg,var(--c2),#1b8597)}
+.p3 .sec-head{background:linear-gradient(135deg,var(--c3),#646a83)}
+.p4 .sec-head{background:linear-gradient(135deg,var(--c4),#8a684d)}
+.p5 .sec-head{background:linear-gradient(135deg,var(--c5),#33406c)}
+h3{font-family:'Amiri',serif;font-size:24px;margin:28px 0 8px;padding-right:12px;border-right:4px solid var(--line);line-height:1.5}
+.p0 h3{border-color:var(--night2);color:var(--night2)}
+.p1 h3{border-color:var(--c1);color:var(--c1)}
+.p2 h3{border-color:var(--c2);color:var(--c2)}
+.p3 h3{border-color:var(--c3);color:var(--c3)}
+.p4 h3{border-color:var(--c4);color:var(--c4)}
+.p5 h3{border-color:var(--c5);color:var(--c5)}
+h4{font-size:19px;margin:22px 0 4px;color:var(--ink)}
+p{margin:8px 0}
+ul.pl,ol.pl{margin:6px 0;padding-right:22px}
+ul.pl li,ol.pl li{margin:4px 0}
+.where,.next{font-size:15px;border-radius:10px;padding:7px 12px;margin:10px 0;background:var(--goldbg);border:1px dashed var(--goldbd)}
+.where b,.next b{color:var(--night2)}
+
+blockquote.q{font-family:'Amiri',serif;font-size:22px;line-height:2;background:var(--paper);border:1px solid var(--line);border-right:4px solid #4f8f68;border-radius:10px;margin:12px 0;padding:10px 18px}
+blockquote.q .ref{display:block;font-family:'Cairo',sans-serif;font-size:13.5px;color:var(--muted)}
+blockquote.poem{border-right-color:var(--c3)}
+.aya{font-family:'Amiri',serif;font-size:1.12em}
+main .sem-aya,main .sem-hadith{font-weight:400}
+
+/* الصناديق */
+.box{border-radius:12px;padding:12px 16px;margin:16px 0;border:1px solid var(--line);background:var(--paper)}
+.box .tag{display:inline-block;font-size:12.5px;font-weight:800;padding:1px 10px;border-radius:999px;margin-bottom:4px;color:#fff}
+.box.key{background:var(--goldbg);border-color:var(--goldbd)} .box.key .tag{background:#7a6324}
+.box.def{background:var(--c1s);border-color:#c5cde9} .box.def .tag{background:var(--c1)}
+.box.fixb{background:var(--fixs);border-color:#efc79f} .box.fixb .tag{background:var(--fix)}
+.box.addb{background:var(--adds);border-color:#c3d0e2} .box.addb .tag{background:var(--add)}
+.box.story{background:#f6f4f9;border-color:#ddd8e6} .box.story .tag{background:var(--c3)}
+
+/* الهياكل (div فقط — لا تدخل في فهرسة الهايلايت) */
+.struct-cap{font-size:13px;font-weight:800;color:var(--muted);margin:16px 0 6px}
+.chain{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;margin:12px 0}
+.chain span{padding:6px 16px;border-radius:999px;background:var(--c2s);color:var(--c2);font-weight:800;border:1px solid #bcdde2}
+.chain i{font-style:normal;color:var(--muted)}
+.cmp{display:grid;gap:8px;margin:12px 0}
+.cmp-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cmp-h{font-size:13px;font-weight:800;color:#fff;background:var(--night2);border-radius:8px;padding:4px 10px}
+.cmp-c{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.cmp-c.aya{font-family:'Amiri',serif;font-size:19px}
+.tree{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px;margin:16px 0}
+.tree .root{display:block;width:max-content;max-width:100%;margin:0 auto 12px;padding:7px 22px;border-radius:12px;background:var(--c1);color:#fff;font-weight:800;text-align:center}
+.tree .branches{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px}
+.tree .br{border:1px solid var(--line);border-top:4px solid var(--c3);border-radius:10px;padding:10px;text-align:center;background:#fff}
+.tree .br .bt{display:block;color:var(--c3);font-weight:800;font-size:16.5px}
+.tree .br .arr{color:var(--muted);font-size:13px;margin:2px 0}
+.tree .br .res{display:inline-block;margin:2px;padding:2px 10px;border-radius:999px;background:var(--c3s);font-size:14px}
+.tree .foot{text-align:center;color:var(--muted);font-size:14px;margin-top:10px}
+.argument{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:14px 0;background:#fff}
+.argument .ar{display:flex;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line)}
+.argument .ar:last-child{border-bottom:0}
+.argument .al{flex:0 0 92px;font-size:13px;font-weight:800;color:var(--c3)}
+.argument .av{flex:1}
+
+/* الخلاصة */
+.sum{border-radius:14px;padding:14px 18px;margin:20px 0;background:var(--night);color:#eef1fa}
+.sum .st{font-family:'Reem Kufi',sans-serif;color:var(--star);font-size:16px;margin-bottom:4px}
+.sum ul{margin:0;padding-right:22px}
+.sum li{margin:3px 0}
+
+/* أسئلة تثبيت الفهم (div/button فقط) */
+.qz{background:#f2f3f8;border:1px solid #dadded;border-radius:16px;padding:16px 18px;margin:24px 0}
+.qz-head{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.qz-title{font-family:'Reem Kufi',sans-serif;color:var(--night2);font-size:17px}
+.qz-score{font-size:13.5px;font-weight:800;color:var(--night2);background:#fff;border:1px solid #dadded;border-radius:999px;padding:2px 12px}
+.qz-item{background:#fff;border:1px solid #e3e5ef;border-radius:12px;padding:12px 14px;margin:10px 0}
+.qz-q{font-weight:800;margin-bottom:8px}
+.qz-opt{display:block;width:100%;min-height:44px;text-align:right;font-family:'Cairo',sans-serif;font-size:15.5px;line-height:1.7;padding:8px 14px;margin:6px 0;border-radius:10px;border:1px solid #cfd3e3;background:#fafbfe;color:var(--ink);cursor:pointer;white-space:normal}
+.qz-opt:hover{border-color:var(--night2)}
+.qz-opt.ok{background:#e4f1e7;border-color:#7fb38f}
+.qz-opt.no{background:#f8e7e4;border-color:#d79b90}
+.qz-exp{display:none;margin-top:6px;padding:8px 12px;border-radius:10px;background:var(--goldbg);font-size:15px}
+.qz-item.done .qz-exp{display:block}
+.qz-item.done .qz-opt{pointer-events:none}
+.qz-retry{display:none;font-family:'Cairo',sans-serif;font-size:13px;margin-top:6px;padding:4px 14px;min-height:34px;border-radius:999px;border:1px solid var(--night2);background:transparent;color:var(--night2);cursor:pointer}
+.qz-item.done .qz-retry{display:inline-block}
+
+/* البطاقات */
+#anki{background:linear-gradient(180deg,var(--night),var(--night2));color:#fff;padding:42px 0 50px;margin-top:40px}
+#anki .ah{font-family:'Amiri',serif;font-size:30px;text-align:center;margin:0}
+#anki .asub{text-align:center;color:#c6cde6;font-size:14px;margin:4px 0 14px}
+.filters{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:16px}
+.filters button{font-family:'Cairo',sans-serif;font-size:13px;min-height:34px;padding:4px 12px;border-radius:999px;border:1.5px solid rgba(255,255,255,.3);background:transparent;color:#fff;cursor:pointer}
+.filters button.on{background:var(--star);color:var(--night);border-color:var(--star);font-weight:800}
+.ak{max-width:720px;margin:0 auto;overflow-wrap:break-word;background:#fff;border-radius:18px;padding:22px 24px;color:#26352e;box-shadow:0 10px 30px rgba(0,0,0,.3);cursor:pointer}
+.ak .deckcap{font-size:12px;color:#66766f;margin-bottom:10px;border-bottom:1px dashed #e1e0d8;padding-bottom:6px;overflow-wrap:anywhere;word-break:break-word}
+.ak .ak-back{display:none;margin-top:16px;padding-top:16px;border-top:1px solid #e1e0d8}
+.ak.on .ak-back{display:block}
+.ak .hint{margin-top:10px;font-size:12.5px;color:#66766f;text-align:center}
+.ak.on .hint{display:none}
+.ctrl{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:16px}
+.ctrl button{font-size:20px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;cursor:pointer}
+.counter{font-family:'Reem Kufi',sans-serif;color:var(--star)}
+.dl{display:block;margin:18px auto 0;font-family:'Cairo',sans-serif;font-weight:800;min-height:44px;padding:10px 24px;border-radius:999px;border:0;background:var(--star);color:var(--night);cursor:pointer}
+.dl-note{text-align:center;font-size:12.5px;color:#aab3d4;margin-top:8px}
+
+footer{text-align:center;color:var(--muted);font-size:14px;padding:24px 16px 80px;line-height:1.9}
+
+@media (max-width:640px){
+  body{font-size:17px}
+  .mindmap{flex-direction:column}
+  .mm-center{flex-basis:auto}
+  .cmp-row{grid-template-columns:1fr}
+  .argument .ar{flex-direction:column;gap:2px}
+  .argument .al{flex-basis:auto}
+  blockquote.q{font-size:20px}
+  .ak{padding:16px 14px}
+}
+
+/* ===== شريط التنقل (ilm-nav.js) — فاتح وهادئ بهوية المحاضرة ===== */
+body .ilm-nav-bar{max-width:800px;margin:18px auto;padding:14px 16px;background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:none;font-family:'Cairo',sans-serif;color:var(--ink)}
+body .ilm-nav-bar:before{color:var(--muted);font-size:12.5px;font-weight:700;margin-bottom:10px}
+body .ilm-nav-bar .inv-row{gap:8px}
+body .ilm-nav-bar .inv-link{background:#fff;border:1px solid var(--line);border-right:4px solid var(--c1);border-radius:12px;color:var(--ink);padding:10px 14px;min-height:44px;box-shadow:none}
+body .ilm-nav-bar .inv-link:hover{background:var(--c1s);border-color:var(--c1);transform:none}
+body .ilm-nav-bar .inv-day{color:var(--c1);font-size:12px;font-weight:800}
+body .ilm-nav-bar .inv-ttl{color:var(--ink);font-family:'Amiri',serif;font-size:18px;line-height:1.5}
+body .ilm-nav-bar .inv-subj{color:var(--muted)}
+body .ilm-nav-bar .inv-subj-other{color:#7a6324}
+body .ilm-nav-bar .inv-disabled{background:transparent;border:1px dashed var(--line);color:#a3a7b3;border-radius:12px;min-height:44px;opacity:1}
+body .ilm-nav-bar .inv-jump{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+body .ilm-nav-bar .inv-jump label{color:var(--muted)}
+body .ilm-nav-bar select{background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:10px;min-height:44px;font-family:'Cairo',sans-serif}
+body .ilm-nav-bar select:focus{border-color:var(--c1);box-shadow:0 0 0 3px var(--c1s)}
+@media(max-width:620px){body .ilm-nav-bar{margin:14px 12px}body .ilm-nav-bar .inv-link{text-align:right}}
+/* تنبيه الذكاء الاصطناعي: شريط رفيع بهوية الصفحة */
+.ai-note{background:var(--night);color:#e9dcb3;font-size:12.5px;line-height:1.7;text-align:center;padding:6px 14px;border-bottom:1px solid rgba(243,213,138,.25)}
+/* صندوق الإتمام: مدمج في المتن تحت الغلاف */
+#ilm-completion-box{display:flex;align-items:center;gap:10px;margin:18px 0 0;padding:10px 16px;background:var(--paper);border:1px solid var(--line);border-right:4px solid var(--c1);border-radius:12px;cursor:pointer;user-select:none;font-weight:700}
+#ilm-completion-box input{width:18px;height:18px;accent-color:var(--c1);cursor:pointer;flex-shrink:0}
+#ilm-completion-box span{font-size:14.5px;color:var(--ink)}
+#ilm-completion-box.done{background:var(--c1s);border-color:var(--c1)}
+#ilm-completion-box.done span:after{content:" ✓";color:var(--c1)}
+/* السابق/التالي داخل الفهرس المثبت */
+#nav-top-slot{flex:0 0 auto;display:inline-flex;margin-inline-start:6px}
+body .ilm-nav-top{max-width:none;margin:0;padding:0;background:none;border:0;border-radius:0;box-shadow:none;color:#fff}
+body .ilm-nav-top:before,body .ilm-nav-top .inv-jump,body .ilm-nav-top .inv-subj,body .ilm-nav-top .inv-disabled{display:none}
+body .ilm-nav-top .inv-row{display:flex;gap:6px}
+body .ilm-nav-top .inv-link{flex-direction:row;align-items:center;gap:6px;min-height:30px;padding:2px 12px;border:1px solid var(--star);border-radius:999px;background:rgba(243,213,138,.1);color:var(--star);text-align:center}
+body .ilm-nav-top .inv-link:hover{background:rgba(243,213,138,.22);transform:none}
+body .ilm-nav-top .inv-day{color:var(--star);font-size:12px}
+body .ilm-nav-top .inv-ttl{color:#fff;font-family:'Cairo',sans-serif;font-size:12.5px;font-weight:700}
+@media(max-width:620px){body .ilm-nav-top .inv-ttl{display:none}body .ilm-nav-top .inv-row{display:flex}}
+@media print{.topbar,#anki,.qz,details.video,.dl{display:none}}
+</style>
+<style id="ilm-sem-css">
+/* ===== الطبقة الدلالية للألوان — آلية العمل 5.11 / بند 5-ب =====
+   أخضر = آية | أحمر = عَلَم (عريض للعلماء) | كهرماني عريض = نبي أو صحابي
+   الأحاديث معطّلة في المحاضرات (data-hadith="off"). */
+.sem-aya{color:var(--sem-aya)}
+.sem-name{color:var(--sem-name)}
+.sem-scholar{font-weight:700}
+.sem-sahabi{color:var(--sem-sahabi);font-weight:700}
+.quran,.aya,.ayah,.ayat,.quran *{color:var(--sem-aya)}
+@media print{.sem-aya,.sem-name,.sem-sahabi{color:#000}}
+</style>
+
+
+<style id="lec-extra">
+/* ===== إضافات 5.12: رابط الخريطة الختامية + قسمها (خارج منطقة الهايلايت) ===== */
+.mm-more{margin-top:12px;font-size:14.5px}
+.mm-more a{text-decoration:none;font-weight:800;color:var(--night2)}
+.cmap{max-width:1100px;margin:46px auto 0;padding:20px 18px 22px;background:var(--paper);border:1px solid var(--line);border-radius:20px}
+.cmap .cm-h{font-family:'Amiri',serif;font-size:30px;color:var(--night);margin:0 0 4px}
+.cmap .cm-sub{font-size:15px;color:var(--muted);margin:0 0 12px;line-height:1.8}
+.cm-frame{position:relative;height:min(76vh,760px);min-height:420px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#f4f0e4}
+.cm-frame iframe{display:block;width:100%;height:100%;border:0}
+.cm-touch{display:none;z-index:2;position:absolute;inset:auto 0 0 0;margin:0 auto 14px;width:max-content;align-items:center;gap:6px;font-family:'Cairo',sans-serif;font-size:15px;font-weight:800;color:#fff;background:rgba(20,28,56,.88);border:0;border-radius:12px;padding:8px 16px;cursor:pointer}
+.cm-frame:not(.live)::after{content:"";position:absolute;inset:46px 0 0 0;display:none}
+.cm-tools{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0}
+.cm-full{font-size:14px;font-weight:800;text-decoration:none;background:var(--night);color:#fff;border-radius:10px;padding:4px 14px}
+@media (pointer:coarse){.cm-frame:not(.live) .cm-touch{display:flex}.cm-frame:not(.live)::after{display:block}}
+.cm-frame.live{outline:3px solid var(--star);outline-offset:-3px}
+@media (max-width:580px){.cmap{margin:36px 8px 0;padding:16px 10px 18px}.cm-frame{height:72vh}}
+@media print{.cmap{display:none}}
+/* جدول بثلاثة أعمدة عند الحاجة */
+.cmp-row.c3{grid-template-columns:1fr 1.4fr 1.4fr}
+@media (max-width:640px){.cmp-row.c3{grid-template-columns:1fr}}
+.num-steps{display:grid;gap:8px;margin:12px 0}
+.num-steps .ns{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:9px 12px}
+.num-steps .ns b{flex:0 0 28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--night2);color:#fff;font-size:13px}
+</style>
+
 </head>
-<body class="" data-page="lecture" data-lecture-id="stage0_muqaddimat_02">
-  <div class="page">
-    <nav class="breadcrumbs"><a href="../../../index.html">الرئيسية</a><span class="sep">/</span><a href="../../index.html">المرحلة التمهيدية</a><span class="sep">/</span><a href="../index.html">مقدمات تمهيدية</a><span class="sep">/</span><span aria-current="page">القلب المنيب</span></nav>
+<body data-lecture-id="stage0_muqaddimat_02">
+<div class="ai-note" role="note">⚠️ أُعدّ هذا المحتوى بمساعدة الذكاء الاصطناعي، وقد يحتوي أخطاء، ويُرجى مراجعته.</div>
 
-      <header class="lecture-header">
-        <h1>القلب المنيب</h1>
-        <p class="lecture-meta">المادة: مقدمات تمهيدية &nbsp;|&nbsp; الشيخ: أحمد السيد &nbsp;|&nbsp; اليوم 2</p>
-        <label class="checkbox-line lecture-checkbox">
-          <input type="checkbox" data-lecture-id="stage0_muqaddimat_02">
-          <span>إتمام هذه المحاضرة</span>
-        </label>
-      </header>
-
-      <div class="lecture-video-embed" style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin:20px 0;">
-        <iframe src="https://www.youtube.com/embed/qyyaKtVeW9w" title="القلب المنيب" style="position:absolute;top:0;right:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-      </div>
-
-      <div class="lecture-nav">
-        <a href="../index.html" class="btn btn-outline">الرجوع إلى المادة</a>
-        <a href="../../index.html" class="btn btn-outline">الرجوع إلى المرحلة</a>
-      </div>
-
-      <div data-lecture-nav-extra></div>
-
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="tb-title">القلب المنيب · مقدمات تمهيدية — المحاضرة 02</div>
+    <div class="tb-links">
+      <a href="#orient">التوجيه</a>
+      <a href="#intro">المدخل</a>
+      <a href="#s1">في القرآن</a>
+      <a href="#s2">معناها</a>
+      <a href="#s3">سمة المنيب</a>
+      <a href="#s4">الخاتمة</a>
+      <a href="#cmap">الخريطة</a>
+      <a href="#anki">البطاقات</a>
+      <span id="nav-top-slot"></span>
+    </div>
   </div>
-  <script type="module" src="../../../firebase-sync-manhaj.js"></script>
-  <script src="../../../data.js"></script>
-  <script src="../../../script.js"></script>
+  <div class="progress" id="prog"></div>
+</div>
+
+<header class="cover">
+  <div class="kicker">البناء المنهجي · المستوى الأول · المرحلة التمهيدية</div>
+  <div class="series">مادة «مقدمات تمهيدية» — المحاضرة 02 (اليوم 2) · الشيخ أحمد السيد</div>
+  <h1>القلب المنيب</h1>
+  <div class="sub">الإنابة بوابةٌ باطنية كبرى: بها يتذكّر العبد ويُهدى ويدخل الجنة، فهي الشرط الداخلي قبل كل عمل ظاهر</div>
+  <div class="orn"><i></i><b>✦</b><i></i></div>
+</header>
+
+<div class="wrap">
+  <label id="ilm-completion-box">
+    <input type="checkbox" data-lecture-id="stage0_muqaddimat_02">
+    <span>تحديد هذه المحاضرة كمكتملة</span>
+  </label>
+  <div class="srcbar"><span>نوع المادة: تفريغ محاضرة</span><span>المسار: محاضرات (إعادة تنظيم بلا حذف)</span><span id="cards-count">بطاقات المراجعة</span></div>
+  <details class="video">
+    <summary>▶ استمع للمحاضرة أولًا، ثم اقرأ الملف بعدها (لا تقرأ أثناء الاستماع)</summary>
+    <div class="vid"><iframe src="https://www.youtube.com/embed/qyyaKtVeW9w" title="القلب المنيب" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+  </details>
+
+  <!-- لوحة التوجيه (7-ز/ب) — div فقط -->
+  <div class="orient" id="orient">
+    <div class="olab">السؤال المركزي</div>
+    <div class="oq">«ما الشرط الباطن الذي لا تُثمر الأعمال الظاهرة كاملةً إلا به؟»</div>
+    <div class="oidea"><small>الفكرة المحورية — صياغة تحريرية</small>الإنابة — رجوعٌ إلى الله بإقبالٍ خالص وإعراضٍ عمّا سواه — هي البوابة التي يُفتح بها التذكّر والهداية، فمن أصلح قلبه بها استقام له ما بعدها.</div>
+    <div class="orow"><b>ترتيب السير:</b> نبدأ بمنزلة الإنابة بين الأعمال القلبية، ثم آياتها في القرآن، ثم معناها، ثم سمة المنيب في يومه، ونختم بالعودة إلى القلب قبل رمضان.</div>
+    <div class="mindmap" id="mindmap"></div>
+    <div class="mm-more"><a href="#cmap">🧠 الخريطة الذهنية التفصيلية لمحتوى المحاضرة (للمراجعة) ↓</a></div>
+  </div>
+
+  <div class="toc">
+    <div class="ttl">محتويات الملف</div>
+    <a class="l" href="#intro"><b style="background:var(--night)">✦</b>المدخل: الإنابة بوابة للخير</a>
+    <a class="s" href="#t-khushu">الخشوع انعكاس لطبيعة القلب</a>
+    <a class="l" href="#s1"><b style="background:var(--c1)">١</b>الإنابة في القرآن</a>
+    <a class="s" href="#t-ghafir">لا تذكّر إلا بالإنابة</a>
+    <a class="s" href="#t-qaf">«وجاء بقلب منيب»</a>
+    <a class="l" href="#s2"><b style="background:var(--c2)">٢</b>ما الإنابة؟</a>
+    <a class="s" href="#t-rujua">الرجوع</a>
+    <a class="s" href="#t-iqbal">الإقبال</a>
+    <a class="s" href="#t-iarad">الإعراض عمّا سواه</a>
+    <a class="l" href="#s3"><b style="background:var(--c3)">٣</b>من هو المنيب؟</a>
+    <a class="s" href="#t-anbiya">الإنابة ليست للمذنبين وحدهم</a>
+    <a class="s" href="#t-tajdid">يجدّد رجوعه دائمًا</a>
+    <a class="s" href="#t-athar">أثر الإنابة على الظاهر</a>
+    <a class="l" href="#s4"><b style="background:var(--c4)">✦</b>الخاتمة: فتّش في قلبك</a>
+    <a class="l" href="#cmap"><b style="background:var(--night2)">🧠</b>الخريطة الذهنية للمحاضرة</a>
+    <a class="l" href="#anki"><b style="background:var(--night2)">❈</b>بطاقات المراجعة</a>
+  </div>
+</div>
+
+<main class="wrap" data-ilm-highlight-zone>
+
+<!-- ==================== المدخل ==================== -->
+<section class="part p0" id="intro">
+  <div class="sec-head"><div class="num">✦</div><div><small>المدخل — تأسيس مفهوم</small><h2>الإنابة بوابة للخير، لا منزلة منفصلة</h2></div></div>
+
+  <p>موضوع اللقاء: <strong>القلب المنيب</strong>، والإنابة، والمنيب، والمنيبون. وهي صفة عجيبة في القرآن؛ لأن القرآن يعرضها <strong>لا على أنها صفة مستقلة</strong>، بل على أنها <strong>صفة مؤثّرة</strong> في أحوال مرتبطة بالإنسان المؤمن.</p>
+  <p>بمعنى أن من حقق الإنابة لم يحقق فقط منزلة دينية، أو عملًا قلبيًّا مجرّدًا؛ بل حقق شيئًا هو عبارة عن <strong>بوابة للخير</strong>.</p>
+
+  <h3 id="t-bawwaba">الأعمال القلبية: سابقة ومؤدّية</h3>
+  <p>الأعمال الصالحة والأعمال القلبية بعضها يُعدّ مرتبطًا بما بعده ومؤدّيًا إلى نتيجة أخرى، وبعضها شرط سابق لغيره.</p>
+  <p><strong>مثال الثبات واليقين:</strong> لا تتصور ثباتًا على الدين بدون يقين. فحين تذكر اليقين لا تذكره على أنه فقط يجعل الإنسان مؤمنًا مطمئنًّا، بل تذكر معه البوابة التي يفتحها للإنسان، ومن أهم البوابات التي يفتحها اليقين أنه يقود إلى الثبات:</p>
+  <div class="chain"><span>اليقين</span><i>←</i><span>الثبات على الدين</span></div>
+  <p>وهكذا الأعمال الصالحة؛ من المهم والحسن للمؤمن إذا نظر فيها أن ينظر إليها باعتبار: هل هي عمل صالح مجرّد؟ أم هي عمل صالح يقود إلى أعمال صالحة أخرى ويفتح نوافذ إليها؟</p>
+  <p>والإنابة — كصفة وكعمل — من <strong>الأعمال القلبية التي تفتح أبواب الخير</strong>. ولذلك حين جاءت في القرآن لم تأتِ على صيغة «من كان منيبًا فله الجنة» فقط، بل جاءت أبوابًا أخرى تنفتح للإنسان، ويكون مآلها ومؤدّاها إلى جنة الخلد بإذن الله.</p>
+
+  <h3 id="t-shart">لماذا الحديث عن القلب المنيب الآن؟</h3>
+  <p>ليس الحديث لإبراز فضل الإنابة فقط، بل لنقول: <strong>إذا أردت</strong> أن تستفيد من القرآن، وأن تخشع في الصلاة، وأن تحقق منزلة عند الله، وأن يُفتح عليك، وأن تُقاد إلى الخير عند التباس الأمور، وأن تُرزق الهدى والسداد — <strong>فتلبّس بالإنابة وتمسّك بها</strong>.</p>
+  <p>ونحن مقبلون على شهر رمضان، والإنسان في هذا الشهر يحتاج إلى تحقيق <strong>الشروط الباطنة والداخلية</strong> حتى يستفيد من الأعمال الظاهرة.</p>
+  <div class="box fixb"><span class="tag">تصحيح تصوّر</span>
+    <p>حين يُذكر رمضان ينصرف ذهن كثير من المسلمين إلى الأعمال الظاهرة: هل أحفظ القرآن أم أقرأ قراءة تدبرية؟ هل المهم أن أختم؟ هل يُستحسن التركيز على القراءة بلا حفظ لأختم عدة ختمات؟ وصلاة التراويح: ثماني ركعات أم إحدى عشرة أم عشرون؟</p>
+    <p>وتركيز الأسئلة على الأعمال الظاهرة دليل خير، لكن <strong>لن تستفيد من الأعمال الظاهرة — ولا حتى من قراءة القرآن — الاستفادة الكاملة إلا إذا تحققت بعض الشروط الداخلية</strong>.</p>
+  </div>
+
+  <h3 id="t-khushu">الخشوع انعكاس لطبيعة القلب</h3>
+  <p>سُئل بعض المعتنين بباب السلوك عن سبب الخشوع في الصلاة، فكان جوابه:</p>
+  <blockquote class="q">«إن الخشوع في الصلاة إنما هو انعكاس لطبيعة قلبك وطبيعة نفسك في باقي اليوم، وفي باقي حياتك»<span class="ref">جواب بعض المعتنين بباب السلوك — نقله الشيخ مستحسنًا</span></blockquote>
+  <p>بمعنى أنه <strong>لا يوجد زرّ</strong> تضغطه قبل الصلاة فيجعلك خاشعًا، وليست هي وسيلة أو اثنتين أو ثلاثًا تفعلها فتكون خاشعًا؛ وإنما هي <strong>استعدادات قلبية وسلوك معيّن</strong> يسلكه الإنسان.</p>
+  <p>فالاستفادة العظمى — في رمضان أو في حياة المسلم عمومًا — لا تكون بالتركيز على كم ختمة، ولا كم ركعة، ولا على الأعمال الظاهرة؛ وإنما الاهتمام والتركيز في أساسه على: <strong>كيف أهيّئ قلبي وأجعله قابلًا للاتعاظ والاعتبار والاستفادة</strong> من هذه الأعمال، في رمضان أو في غيره.</p>
+  <p>والله سبحانه لمّا ذكر الصيام في ظرف رمضان جعل الثمرة في الأخير: <span class="aya">﴿لَعَلَّكُمْ تَتَّقُونَ﴾</span> [البقرة: 183].</p>
+
+  <div class="box key"><span class="tag">الفكرة المركزية</span><p>ما المسلك الباطني الذي يسلكه الإنسان ليعالج الناحية الظاهرة؟ الجواب: <strong>التركيز على قضية الإنابة تحديدًا</strong>. فالإنابة هي <strong>البوابة الباطنية الكبرى</strong> لتحقيق الاستفادة من الآيات، ومن العبر — لا العبر القرآنية فقط، بل حتى العبر الكونية.</p></div>
+  <p>فاحرص على الإنابة؛ يستقم لك ما بعدها.</p>
+
+  <div class="next"><b>الخيط التالي:</b> نمرّ على آيات الإنابة لننظر كيف يعرضها الله على أنها السبب والبوابة والمنطلق.</div>
+  <div class="qz" data-section="intro"></div>
+  <div class="sum"><div class="st">خلاصة المدخل</div><ul>
+    <li>الإنابة في القرآن صفة مؤثرة فيما بعدها، وبوابة للخير، لا منزلة منفصلة.</li>
+    <li>الأعمال القلبية بعضها شرط سابق لغيره: لا ثبات بلا يقين.</li>
+    <li>الأعمال الظاهرة لا تُثمر كاملة إلا بتحقق الشروط الداخلية.</li>
+    <li>الخشوع انعكاس لحال القلب في باقي اليوم، لا زرٌّ يُضغط قبل الصلاة.</li>
+    <li>الإنابة هي البوابة الباطنية الكبرى للانتفاع بالآيات والعبر الشرعية والكونية.</li>
+  </ul></div>
+</section>
+
+<!-- ==================== القسم 1 ==================== -->
+<section class="part p1" id="s1">
+  <div class="sec-head"><div class="num">١</div><div><small>القسم الأول — إثبات واستدلال</small><h2>الإنابة في القرآن: شرط التذكّر وطريق الهداية</h2></div></div>
+
+  <div class="where"><b>أين نحن:</b> بعد أن تقرّر أن الإنابة صفة مؤثرة، هذه آيات تُظهر أثرها: هي السبب والبوابة والمنطلق.</div>
+
+  <h3 id="t-ghafir">لا تذكّر إلا بالإنابة</h3>
+  <blockquote class="q">﴿هُوَ الَّذِي يُرِيكُمْ آيَاتِهِ وَيُنَزِّلُ لَكُم مِّنَ السَّمَاءِ رِزْقًا ۚ وَمَا يَتَذَكَّرُ إِلَّا مَن يُنِيبُ﴾<span class="ref">غافر: 13</span></blockquote>
+  <p>الآية لا تقول فقط: «لكي تتذكر فكن منيبًا»، بل تقول: <strong>لا يمكنك أن تتذكر إلا إذا كنت منيبًا</strong>. والتذكر هنا هو <strong>الاعتبار والاستفادة</strong>. فالقضية الآن <strong>قضية شرطية</strong>.</p>
+  <p>وبداية الآية تشير إلى <strong>الآيات الكونية</strong> لا الآيات الشرعية: ﴿يُرِيكُمْ آيَاتِهِ وَيُنَزِّلُ لَكُم مِّنَ السَّمَاءِ رِزْقًا﴾.</p>
+
+  <h3 id="t-huda">يهدي إليه من ينيب</h3>
+  <blockquote class="q">﴿اللَّهُ يَجْتَبِي إِلَيْهِ مَن يَشَاءُ وَيَهْدِي إِلَيْهِ مَن يُنِيبُ﴾<span class="ref">الشورى: 13</span></blockquote>
+  <p>لاحظ: ﴿مَن يُنِيبُ﴾ ليس له أجر معيّن فقط، بل <strong>الله يهديه إليه</strong>. وتأكيد هذا المعنى في سورة الرعد:</p>
+  <blockquote class="q">﴿قُلْ إِنَّ اللَّهَ يُضِلُّ مَن يَشَاءُ وَيَهْدِي إِلَيْهِ مَنْ أَنَابَ﴾<span class="ref">الرعد: 27</span></blockquote>
+
+  <h3 id="t-zumar">«أولئك الذين هداهم الله»</h3>
+  <p>ولذلك لا تتعجب أن يكون من المفردات التي وُصف بها الذين هداهم الله أنهم <strong>أنابوا</strong>:</p>
+  <blockquote class="q">﴿وَالَّذِينَ اجْتَنَبُوا الطَّاغُوتَ أَن يَعْبُدُوهَا وَأَنَابُوا إِلَى اللَّهِ لَهُمُ الْبُشْرَىٰ ۚ فَبَشِّرْ عِبَادِ ۝ الَّذِينَ يَسْتَمِعُونَ الْقَوْلَ فَيَتَّبِعُونَ أَحْسَنَهُ ۚ أُولَٰئِكَ الَّذِينَ هَدَاهُمُ اللَّهُ﴾<span class="ref">الزمر: 17–18</span></blockquote>
+
+  <h3 id="t-qaf">«وجاء بقلب منيب»</h3>
+  <p>ولما أتى الحديث عن الجنة في سورة ق:</p>
+  <blockquote class="q">﴿وَأُزْلِفَتِ الْجَنَّةُ لِلْمُتَّقِينَ غَيْرَ بَعِيدٍ ۝ هَٰذَا مَا تُوعَدُونَ لِكُلِّ أَوَّابٍ حَفِيظٍ ۝ مَّنْ خَشِيَ الرَّحْمَٰنَ بِالْغَيْبِ وَجَاءَ بِقَلْبٍ مُّنِيبٍ﴾<span class="ref">ق: 31–33</span></blockquote>
+  <p>جاء متى؟ <strong>يوم القيامة</strong>. فهل كان قلبه منيبًا يوم القيامة فقط، أم ظلّ منيبًا في حياته إلى أن لقي الله؟ المعنى: <strong>أنهى حياته منيبًا</strong>؛ فهو مثل قوله تعالى: <span class="aya">﴿وَلَا تَمُوتُنَّ إِلَّا وَأَنتُم مُّسْلِمُونَ﴾</span> [آل عمران: 102].</p>
+  <p>ووقت الموت لا يعرفه الإنسان، فليست كل الخيارات متاحة؛ لكن المقصود: <strong>استمرّوا على العمل حتى الموت</strong>. فـ«جاء بقلب منيب» من أعمال الجنة. ولاحظ أنه قال <strong>قلب</strong> منيب؛ لأن الإنابة ليست عملًا خارجيًّا فقط.</p>
+
+  <div class="struct-cap">ما ترتّب على الإنابة في الآيات — الأطراف: الآية / ثمرة الإنابة</div>
+  <div class="cmp">
+    <div class="cmp-row"><div class="cmp-h">الآية</div><div class="cmp-h">ثمرة الإنابة</div></div>
+    <div class="cmp-row"><div class="cmp-c aya">﴿وَمَا يَتَذَكَّرُ إِلَّا مَن يُنِيبُ﴾ [غافر: 13]</div><div class="cmp-c">التذكّر: الاعتبار والاستفادة — شرط لا يتحقق إلا به</div></div>
+    <div class="cmp-row"><div class="cmp-c aya">﴿وَيَهْدِي إِلَيْهِ مَن يُنِيبُ﴾ [الشورى: 13]</div><div class="cmp-c">الله يهديه إليه</div></div>
+    <div class="cmp-row"><div class="cmp-c aya">﴿وَيَهْدِي إِلَيْهِ مَنْ أَنَابَ﴾ [الرعد: 27]</div><div class="cmp-c">الله يهديه إليه — تأكيد للمعنى</div></div>
+    <div class="cmp-row"><div class="cmp-c aya">﴿وَأَنَابُوا إِلَى اللَّهِ لَهُمُ الْبُشْرَىٰ﴾ [الزمر: 17]</div><div class="cmp-c">من صفات «الذين هداهم الله»</div></div>
+    <div class="cmp-row"><div class="cmp-c aya">﴿وَجَاءَ بِقَلْبٍ مُّنِيبٍ﴾ [ق: 33]</div><div class="cmp-c">من أعمال الجنة</div></div>
+  </div>
+
+  <div class="box key"><span class="tag">النتيجة</span><p>الإنابة ليست قضية فرعية أو ثانوية؛ هي <strong>قضية من القضايا المركزية في القرآن</strong>: بها يُهدى الإنسان إلى ربه، ويتذكّر ويستفيد من العبر، ويدخل الجنة لأنه جاء بقلب منيب.</p></div>
+
+  <div class="qz" data-section="s1"></div>
+  <div class="sum"><div class="st">خلاصة القسم الأول</div><ul>
+    <li>﴿وَمَا يَتَذَكَّرُ إِلَّا مَن يُنِيبُ﴾: الإنابة شرط للتذكّر (الاعتبار والاستفادة)، وسياقها الآيات الكونية.</li>
+    <li>آيتا الشورى والرعد: الله يهدي إليه من ينيب.</li>
+    <li>آية الزمر: الإنابة من صفات الذين هداهم الله.</li>
+    <li>آية ق: «جاء بقلب منيب» أي أنهى حياته منيبًا، وهي من أعمال الجنة.</li>
+    <li>الإنابة قضية مركزية في القرآن، ومحلّها القلب.</li>
+  </ul></div>
+</section>
+
+<!-- ==================== القسم 2 ==================== -->
+<section class="part p2" id="s2">
+  <div class="sec-head"><div class="num">٢</div><div><small>القسم الثاني — تأسيس مفهوم وتفريق</small><h2>ما الإنابة؟ رجوعٌ وإقبالٌ وإعراضٌ عمّا سواه</h2></div></div>
+
+  <p>في الإنابة صفات متعددة يمكن أن تنتظم تحتها. وسأذكر مجموعة من الملامح والمعالم، ثم سمة الشخص المنيب، حتى تتضح القضية.</p>
+
+  <div class="struct-cap">معاني الإنابة — الأصل وفروعه</div>
+  <div class="tree">
+    <span class="root">الإنابة</span>
+    <div class="branches">
+      <div class="br"><span class="bt">أولًا: الرجوع</span><div class="arr">↓</div><span class="res">صلتها بالتوبة</span></div>
+      <div class="br"><span class="bt">ثانيًا: الإقبال</span><div class="arr">↓</div><span class="res">المنيب هو المقبل</span></div>
+      <div class="br"><span class="bt">ثالثًا: الإعراض عمّا سواه</span><div class="arr">↓</div><span class="res">إقبال خالص صافٍ</span></div>
+    </div>
+    <div class="foot">فالمنيب: راجعٌ ثم مقبل، أو مقبلٌ بعد رجوع</div>
+  </div>
+
+  <h3 id="t-rujua">المعنى الأول: الرجوع</h3>
+  <p>الإنابة لا تُتصوَّر دون معنى <strong>الرجوع</strong>. وكلمة الرجوع تذكّرك بعمل آخر هو <strong>التوبة</strong>؛ فبين التوبة والإنابة علاقة.</p>
+  <div class="struct-cap">الرجوع من ماذا؟ — الأطراف: التوبة / الإنابة</div>
+  <div class="cmp">
+    <div class="cmp-row"><div class="cmp-h">التوبة</div><div class="cmp-h">الإنابة</div></div>
+    <div class="cmp-row"><div class="cmp-c">رجوع من الذنوب والمعاصي — من حيث الأساس</div><div class="cmp-c">الرجوع من الذنوب والمعاصي يُسمّى إنابة أيضًا، وتزيد عليه: الرجوع حتى من أحوال لا تُصنَّف ذنوبًا</div></div>
+  </div>
+  <p>أرأيت تلك <strong>الوحشة</strong> التي تعتري الإنسان في طريقه إلى الله؟ أحيانًا يشعر بفتور، بجفاء، بجفوة، بوحشة، بشيء من جفاف الروح؛ وقد لا يكون على ذنب معيّن، ولكن ربما <strong>طال عليه الأمد</strong>، وتأخر في مراجعة نفسه، وكان عهده بالقرآن بعيدًا. <strong>الذي ينتبه في تلك اللحظة فيرجع مباشرة إلى الله: هذا المنيب.</strong></p>
+  <h4>أحوال الرجوع</h4>
+  <p>فالإنابة ليست بالضرورة رجوعًا من ذنب، وإنما <strong>الرجوع الدائم إلى الله</strong> في هذه الأحوال:</p>
+  <ul class="pl">
+    <li>حال <strong>الذنب</strong>.</li>
+    <li>وحال <strong>التقصير في الطاعة</strong>.</li>
+    <li>وحال <strong>الوحشة</strong> التي تعتري القلب.</li>
+    <li>وحال <strong>نقص العمل</strong>.</li>
+    <li>وحتى حال <strong>مجرد الشعور بالضعف</strong>.</li>
+  </ul>
+  <p>الشعور بالضعف: حين تأتي لحظة تشعر فيها أنك إنسان ضعيف، وأنك ذرة في هذه الأرض، واحد من بين مليارات البشر؛ فما الذي يجعلك محلّ النظر الإلهي؟ <strong>الانكسار والضعف</strong> الذي ينالك في تلك اللحظة، فتُقبل على الله طالبًا منه أن يجعلك ممن يرحمهم — هذا الرجوع إنابة.</p>
+  <div class="box key"><span class="tag">القاعدة</span><p>دواعي الرجوع تحت الإنابة ليست داعي الذنب فقط، بل أيضًا داعي <strong>الاحتياج</strong>، و<strong>الشعور بالتقصير</strong>، وحتى <strong>تغيّر الأحوال</strong>.</p></div>
+
+  <h3 id="t-iqbal">المعنى الثاني: الإقبال</h3>
+  <p>في الإنابة صفة <strong>الإقبال</strong>؛ فالمنيب هو المقبل. فنستطيع أن نقول: هو <strong>مقبلٌ بعد رجوع</strong>، أو هو <strong>راجعٌ ثم مقبل</strong>.</p>
+
+  <h3 id="t-iarad">المعنى الثالث: الإقبال مع الإعراض عمّا سواه</h3>
+  <p>ويذكره بعضهم مع الإقبال: <strong>الإقبال على الله مع الإعراض عمّا سواه</strong>. والإعراض والانحراف والميل عمّا سوى الله معنى يكون أحيانًا مقصودًا مقدَّمًا.</p>
+  <p>ولذلك إمام الأنبياء وأبوهم إبراهيم أكثر ما وُصف في القرآن بأنه <strong>حنيف</strong>، والحنيف هو <strong>المائل</strong>. مائل عن ماذا؟ عن الشرك: لما كان إبراهيم في قوم يتحدثون بالشرك ويدعون إليه وينافحون عنه ويقاتلون لأجله، وكان هو من بينهم قد انحرف عن عقيدة قومه ومال عنها إلى إسلام الوجه لله وحده — سُمّي حنيفًا. وهذا المعنى امتدحه الله به وكرّره في مدحه.</p>
+  <div class="struct-cap">الحنيف والإنابة — الأطراف: الحنيف / الإنابة</div>
+  <div class="cmp">
+    <div class="cmp-row"><div class="cmp-h">الحنيف</div><div class="cmp-h">الإنابة</div></div>
+    <div class="cmp-row"><div class="cmp-c">المائل عن الشرك إلى إسلام الوجه لله وحده</div><div class="cmp-c">فيها قريب من هذا المعنى، لكن لا من جهة الشرك والانحراف عنه؛ بل إقبال على الله وإعراض عمّا سواه</div></div>
+  </div>
+  <p>وهذا الإقبال على الله بلسان الحال: <em>يا رب، أنا لا أريد أن أطلب إلا أنت، ولا أريد أن ألتمس فرج كربتي إلا عندك، ولا صلاح حالي إلا عندك؛ وإقبالي ورجائي وخوفي وخشيتي هي في إقبالي عليك أنت وحدك. وأرى الناس من حولي يتقاسمون الحاجات وتتشعب قلوبهم في الأودية، وأما أنا يا ربي فأُعرض وأُقبل بقلبي إليك وحدك.</em></p>
+  <div class="box def"><span class="tag">التعريف</span><p>الإنابة ليست مطلق الرجوع، ولا مجرد الرجوع؛ بل <strong>رجوعٌ بإقبال خالصٍ صافٍ</strong>: فيه إقبال على الله، وإعراضٌ وانكفاءٌ عمّا سواه.</p></div>
+
+  <h3 id="t-mufassirin">عبارات المفسرين</h3>
+  <p>بعض المفسرين حين يذكر الإنابة يعبّر بعبارات يُفهم منها هذا المعنى. ومن ذلك — والشيخ متردد هل القائل ابن سعدي أو البغوي:</p>
+  <blockquote class="q">«المنيب هو الذي يُقبل على الله منجذبةً دواعيه إليه»<span class="ref">بعض المفسرين — تردد الشيخ في نسبتها بين ابن سعدي والبغوي</span></blockquote>
+  <p>أي إن كل ما لديّ، وكل ما أفعله، وكل ما أستحضره وقت العبادة هو الإقبال عليك وحدك يا ربي. وبعضهم يضيف معنى <strong>الإسراع</strong> في الإقبال كذلك.</p>
+  <p>وبعض المفسرين حين يأتي إلى «منيب» أو «أناب» أو «أُنيب» يقول: هو <strong>الراجع إلى الله في جميع أموره</strong>.</p>
+  <div class="box key"><span class="tag">الخلاصة الجامعة</span><p>نستطيع أن نقول: الإنابة تجمع <strong>المعنيين الأساسيين</strong>: <strong>الرجوع</strong> — بالمعاني التي ذُكرت، في جميع الأمور — و<strong>الرجوع مع إقبال خالص</strong> فيه إعراض وانكفاء عمّا سوى الله.</p></div>
+
+  <div class="qz" data-section="s2"></div>
+  <div class="sum"><div class="st">خلاصة القسم الثاني</div><ul>
+    <li>الإنابة: رجوع، وإقبال، وإعراض عمّا سوى الله.</li>
+    <li>التوبة رجوع من الذنوب أساسًا، والإنابة تشملها وتزيد: رجوع من الوحشة والفتور والتقصير والضعف.</li>
+    <li>الحنيف المائل عن الشرك؛ والإنابة قريب منه لكن من جهة إخلاص الإقبال لا من جهة الشرك.</li>
+    <li>عبارات المفسرين: المقبل على الله منجذبة دواعيه إليه، والراجع إليه في جميع أموره، وبعضهم يزيد الإسراع.</li>
+    <li>جامعها: رجوع بإقبال خالص صافٍ.</li>
+  </ul></div>
+</section>
+
+<!-- ==================== القسم 3 ==================== -->
+<section class="part p3" id="s3">
+  <div class="sec-head"><div class="num">٣</div><div><small>القسم الثالث — تطبيق وتصحيح تصوّر</small><h2>من هو المنيب في حياته اليومية؟</h2></div></div>
+
+  <div class="where"><b>أين نحن:</b> بعد مفردات الإنابة، ننتقل إلى سمة الشخص المنيب كما تظهر في يومه.</div>
+
+  <h3 id="t-mihwar">محور ارتكاز لا يبتعد عنه</h3>
+  <p>الشخص المنيب هو الذي لديه دائمًا <strong>محور ارتكازي</strong> لا يستطيع أن يبتعد عنه.</p>
+  <div class="box story"><span class="tag">المثال: الطفل وأمه</span>
+    <p>أرأيتم الطفل الصغير حين يكون مع أمه، ثم يأتي إلى أناس في زيارة؟</p>
+    <p>يلعب، ويلعب، ويلعب، ولا يُكمل قليلًا حتى يرجع إلى أمه.</p>
+    <p>هذا الشخص المنيب: لا يستطيع الانفكاك عن ربه سبحانه؛ ما يأخذ قليلًا حتى يبادر ويبحث: هيّا، وهلمّ، والآن. ولا يؤجّل ولا يؤخّر.</p>
+  </div>
+
+  <h3 id="t-anbiya">الإنابة ليست للمذنبين وحدهم</h3>
+  <p>ولذلك لا تستغرب ما ثبت عن النبي ﷺ في الحديث الصحيح أنه قال: «إني لأستغفر الله وأتوب إليه في اليوم أكثر من سبعين مرة». فما المعنى الذي كان يراعيه ﷺ في استغفاره وتوبته سبعين مرة في اليوم؟ من المؤكد أن القضية ليست وجود الذنوب؛ <strong>هي قضية الإنابة</strong>.</p>
+  <div class="box addb"><span class="tag">إضافة تحريرية: التخريج</span><p>صحيح البخاري (رقم 6307) من حديث أبي هريرة رضي الله عنه.</p></div>
+  <p>ولا تتعجب كذلك أن يكون إمام الحنفاء إبراهيم عليه السلام قد وصفه الله بقوله:</p>
+  <blockquote class="q">﴿إِنَّ إِبْرَاهِيمَ لَحَلِيمٌ أَوَّاهٌ مُّنِيبٌ﴾<span class="ref">هود: 75</span></blockquote>
+  <p>فالإنابة ليست صفة للمذنبين والعصاة؛ هي للنبي ﷺ وللأنبياء.</p>
+  <div class="struct-cap">إنابة الأنبياء — الأطراف: النبي / النص</div>
+  <div class="cmp">
+    <div class="cmp-row"><div class="cmp-h">النبي</div><div class="cmp-h">النص</div></div>
+    <div class="cmp-row"><div class="cmp-c">إبراهيم عليه السلام</div><div class="cmp-c aya">﴿إِنَّ إِبْرَاهِيمَ لَحَلِيمٌ أَوَّاهٌ مُّنِيبٌ﴾ [هود: 75]</div></div>
+    <div class="cmp-row"><div class="cmp-c">داود عليه السلام</div><div class="cmp-c aya">﴿فَاسْتَغْفَرَ رَبَّهُ وَخَرَّ رَاكِعًا وَأَنَابَ﴾ [ص: 24]</div></div>
+    <div class="cmp-row"><div class="cmp-c">سليمان عليه السلام</div><div class="cmp-c aya">﴿وَلَقَدْ فَتَنَّا سُلَيْمَانَ وَأَلْقَيْنَا عَلَىٰ كُرْسِيِّهِ جَسَدًا ثُمَّ أَنَابَ﴾ [ص: 34]</div></div>
+    <div class="cmp-row"><div class="cmp-c">محمد ﷺ</div><div class="cmp-c">يستغفر الله ويتوب إليه في اليوم أكثر من سبعين مرة</div></div>
+  </div>
+  <p>داود أناب، وسليمان أناب، وإبراهيم منيب، والذين هداهم الله أنابوا، والذين يدخلون الجنة جاؤوا بقلب منيب، ومحمد ﷺ يستغفر الله ويتوب إليه كل يوم سبعين مرة — هذه كلها <strong>إنابة</strong>.</p>
+
+  <h3 id="t-tajdid">يجدّد رجوعه دائمًا</h3>
+  <p>فما سمة المنيب في يومه؟ هو <strong>الشخص الذي يجدّد رجوعه إلى الله دائمًا</strong>. ولذلك ثبت عن ابن تيمية أنه قال:</p>
+  <blockquote class="q">«إني لأجدّد إسلامي كل يوم»<span class="ref">ابن تيمية</span></blockquote>
+  <div class="box fixb"><span class="tag">تصحيح التفريغ</span><p>ورد في التفريغ «إني لأجدد اسمي كل يوم»، والصواب من سياق الشرح «إسلامي». والأثر نقله عنه تلميذه ابن القيم في «مدارج السالكين» بنحو: «أنا إلى الآن أجدد إسلامي كل وقت».</p></div>
+  <p>وليس المقصود أن يقول: «أشهد أن لا إله إلا الله وأن محمدًا رسول الله، أنا الآن دخلت في الإسلام» — حتى لا تصير القضية <strong>وسوسة</strong>. وإنما المقصود: <strong>تجديد أصل علاقة الإنسان بربه</strong> من حيث إقباله إليه، وتعزيز عقيدته الأساسية في الله، وما يتعلق بمركزيات العبودية العظمى عنده.</p>
+  <p>هذا هو الشخص المنيب: <strong>يُديم الرجوع إلى الله</strong>.</p>
+
+  <h3 id="t-inshighal">المنيب زمن الانشغال</h3>
+  <div class="box story"><span class="tag">المثال: أيام الاختبارات</span>
+    <p>شخص عنده اختبارات لمدة أسبوعين أو ثلاثة، بالكاد يحافظ على الصلوات الخمس في تلك الفترة لأنه مضغوط جدًّا، خاصة لو كانت السنة الأخيرة، أو عنده مشاريع بحث وتخرج.</p>
+    <p>من الطبيعي جدًّا في مثل هذه الأحوال أن <strong>تقلّ العبادة الظاهرة</strong>، والإسلام يراعي أن عند الإنسان مؤثرات خارجية — أيًّا كانت: أحيانًا هموم، وأحيانًا غيرها.</p>
+    <p>ولكن الشخص المنيب <strong>لا يمكن أن يغفو قلبه</strong> في مدة الانشغالات. قد يقلّ العمل الظاهر، لكن قلبه قد تعوّد على <strong>الزاد اليومي</strong> بينه وبين ربه.</p>
+    <p>فإذا نقص هذا الزاد تجده <strong>كالأم التي فقدت طفلها</strong>: حائرة، والهة، لا يقرّ لها قرار، ولا تجد لها سكونًا حتى تجد ابنها.</p>
+  </div>
+  <h4>لا تسكّنه مُسعِدات الدنيا</h4>
+  <p>وهذا حال المؤمن الذي تعوّد على الزاد اليومي القلبي الروحي: مهما وُجدت الشواغل الخارجية تجده مضطربًا قلقًا تائهًا لا يرويه أي شيء. أعطه ما شئت من المُسعِدات والمُسكِّنات الخارجية: رحلة، سفر إلى أي مكان، مال، وكل السعادات التي يمكن أن يحصّلها تحت عنوان الدنيا — <strong>كلها مصنّفة لديه في خانة غير خانة السعادة التي يشعر بها كل يوم</strong>. فلا يقرّ له قرار، ولا يلتئم له قلب، ولا يستقر له حال، <strong>حتى يجدّد رجوعه إلى الله</strong>.</p>
+
+  <h3 id="t-athar">أثر الإنابة على الظاهر</h3>
+  <p>هذا الرجوع قد يكون رجوعًا قلبيًّا؛ لكن الإنابة <strong>غالبًا يظهر عليها أثر</strong>: مصدرها قلبي، وينعكس على جسم الإنسان أو أعماله الظاهرة شيء منها. فالشعور بالاحتياج لله، ثم اضطراب القلب، ثم بحثه عن الرواء والارتواء، يُعبَّر عنه بصور:</p>
+  <div class="struct-cap">صور التعبير عن الإنابة — الأصل وفروعه</div>
+  <div class="tree">
+    <span class="root">أثر الإنابة الظاهر</span>
+    <div class="branches">
+      <div class="br"><span class="bt">سجود</span><div class="arr">↓</div><span class="res">ركعتان يسجد فيهما</span></div>
+      <div class="br"><span class="bt">دعاء</span></div>
+      <div class="br"><span class="bt">ذكر معيّن</span></div>
+      <div class="br"><span class="bt">أي وسيلة تعبدية محيطة</span><div class="arr">↓</div><span class="res">صدقة على جار فقير</span></div>
+    </div>
+  </div>
+  <p><strong>السجود:</strong> يصلّي ركعتين يسجد فيهما لله، فتجده ارتاح. ولاحظ أنه لم يصلّ الركعتين لينجح في الاختبارات، ولا ليزول همّه — مع أن الصلاة لأجل أن تدعو ليزول همّك عبادة عظيمة؛ إذا نزلت بك نازلة فصلّيت لأجل أن يرفعها الله عنك ودعوت فهذه عبادة. لكن المقصود هنا شيء آخر:</p>
+  <div class="struct-cap">سجودان — الأطراف: السجود لرفع نازلة / سجود المنيب</div>
+  <div class="cmp">
+    <div class="cmp-row"><div class="cmp-h">الصلاة لرفع النازلة</div><div class="cmp-h">سجود المنيب</div></div>
+    <div class="cmp-row"><div class="cmp-c">نزلت به نازلة فصلّى لأجل أن يرفعها الله عنه ودعا — عبادة عظيمة</div><div class="cmp-c">يسجد لأنه لا يستطيع إلا أن يسجد: لا يقدر أن يعيش، ولا يقدر أن يُكمل، لا بد أن يسجد</div></div>
+  </div>
+  <p><strong>الصدقة:</strong> قد يتذكر جاره الفقير المحتاج وهو يشعر بقدر من التقصير تجاه الله، فيذهب ليلتمس طريق رجوعه إلى الله — تحت عنوان الإنابة — بصدقته على جاره.</p>
+
+  <h3 id="t-sadaqa">اجتماع المعاني القلبية في الصدقة</h3>
+  <p>الإنسان يتصدق، وفي نفسه معانٍ مختلفة:</p>
+  <ul class="pl">
+    <li><strong>معنى الواجب:</strong> تُخرج الزكاة المفروضة، فالمعنى المسيطر: هذا واجب عليّ، أُخرجه إرضاءً لله وإبراءً للذمة.</li>
+    <li><strong>معنى الرحمة:</strong> خرجت فوجدت المسكين جالسًا بثياب بالية، تعرف أن حاله كسيرة، فتنكسر له فتعطيه رحمةً به.</li>
+    <li><strong>معنى الإنابة:</strong> يا رب، أشعر بقدر من التقصير معك، ومن عناوين رجوعي أني تصدقت على هذا؛ لأني أعلم أنك تحب أن أتصدق على الفقير. فهنا صارت الصدقة <strong>عنوان رجوع</strong>.</li>
+  </ul>
+  <div class="box key"><span class="tag">القاعدة</span><p>كلما استطاع المؤمن أن <strong>يجمع عدة معانٍ قلبية في العمل الصالح الواحد</strong> فهذا أعظم.</p></div>
+  <p>وهنا يمكن أن تستحضر قول النبي ﷺ: «اتقوا النار ولو بشق تمرة» — أي تتصدقون بها — «فمن لم يجد فبكلمة طيبة». ولماذا الكلمة الطيبة؟ لأنه ثبت في الحديث عن النبي ﷺ: «الكلمة الطيبة صدقة».</p>
+  <div class="box addb"><span class="tag">إضافة تحريرية: التخريج</span><p>«اتقوا النار ولو بشق تمرة، فمن لم يجد فبكلمة طيبة»: صحيح البخاري (رقم 6023) وصحيح مسلم (رقم 1016) من حديث عدي بن حاتم رضي الله عنه. و«الكلمة الطيبة صدقة»: صحيح البخاري (رقم 2989) وصحيح مسلم (رقم 1009) من حديث أبي هريرة رضي الله عنه.</p></div>
+
+  <div class="box def"><span class="tag">التعريف: الشخص المنيب</span><p>هو الذي <strong>يديم الرجوع إلى الله في حياته، بل في يومه</strong>. وكلما علت منزلة الإنابة عند الإنسان كثُر مصداقها بكثرة رجوعه حتى في اليوم الواحد — كما يعبّر عنه قوله ﷺ: «إني لأستغفر الله وأتوب إليه في اليوم أكثر من سبعين مرة».</p></div>
+
+  <div class="qz" data-section="s3"></div>
+  <div class="sum"><div class="st">خلاصة القسم الثالث</div><ul>
+    <li>المنيب له محور ارتكاز لا يبتعد عنه، كالطفل يلعب ثم يرجع إلى أمه.</li>
+    <li>الإنابة ليست للمذنبين وحدهم: إبراهيم وداود وسليمان ومحمد ﷺ موصوفون بها.</li>
+    <li>سمته: تجديد الرجوع دائمًا — «إني لأجدد إسلامي كل يوم» — تجديدًا لأصل العلاقة بالله لا وسوسة.</li>
+    <li>زمن الانشغال قد يقلّ الظاهر، لكن قلب المنيب لا يغفو، ولا تسكّنه مسعدات الدنيا حتى يرجع.</li>
+    <li>أثرها يظهر غالبًا: سجود أو دعاء أو ذكر أو صدقة، وجمع المعاني القلبية في العمل الواحد أعظم.</li>
+  </ul></div>
+</section>
+
+<!-- ==================== الخاتمة ==================== -->
+<section class="part p4" id="s4">
+  <div class="sec-head"><div class="num">✦</div><div><small>الخاتمة — تطبيق</small><h2>فتّش في قلبك قبل الأعمال الظاهرة</h2></div></div>
+  <p>نختم بمثل ما ابتدأنا: إذا كنا نتكلم عن شهر رمضان، أو عن عبادات ظاهرة معيّنة، فلا تبحث عن الأمور الخارجية الظاهرة فقط. <strong>أول ما تبحث: غُص في داخل نفسك، وفتّش في ثنايا هذا القلب.</strong></p>
+  <p>فإن وجدته قلبًا غير منيب — قلبًا يمكن أن يطول عليه الأمد ولا يشعر بالاحتياج، ولا يشعر بالجفاف والشقاء — فهنا <strong>العلاج يحتاج أن يكون للقلب</strong>. ولا شك أن العمل الصالح الظاهر يؤثّر، لكن الفكرة أن ترجع إلى <strong>الأساس، إلى المنبع، إلى المنزع الأساسي</strong>.</p>
+  <div class="box story"><span class="tag">المثال: الطفل الصغير جدًّا</span>
+    <p>حتى يصبح القلب مثل ذاك الطفل الصغير جدًّا الذي لم يُكمل العامين أو العامين والنصف، وقد ظلّ ويظلّ كل وقته في اليوم مع أمه.</p>
+    <p>حتى إذا ذهب إلى أناس أو شيء يلتهي به قليلًا، لا يستطيع إلا أن يرجع إلى أمه، باحثًا عمّا اعتاد عليه من رعايتها وحنانها وعطفها.</p>
+    <p>وهكذا المؤمن: قد يلتهي ببعض الأمور، لكنه سرعان ما لا يستطيع حتى يبادر فيرجع، باحثًا عمّا اعتاد عليه من الاتصال بعبوديته لله، وما يعطيه الله من <strong>المعرفة في القلب، والسكينة في النفس، والرواء في الروح</strong>.</p>
+  </div>
+  <p>نسأل الله أن يجعلنا من المنيبين الصالحين، وأن يغفر لنا ويرحمنا:</p>
+  <blockquote class="q">﴿وَأَنِيبُوا إِلَىٰ رَبِّكُمْ وَأَسْلِمُوا لَهُ مِن قَبْلِ أَن يَأْتِيَكُمُ الْعَذَابُ ثُمَّ لَا تُنصَرُونَ﴾<span class="ref">الزمر: 54</span></blockquote>
+
+  <div class="qz" data-section="s4"></div>
+  <div class="sum"><div class="st">خلاصة الخاتمة</div><ul>
+    <li>قبل الأعمال الظاهرة: فتّش في قلبك أولًا.</li>
+    <li>علامة القلب غير المنيب: يطول عليه الأمد ولا يشعر بالاحتياج ولا بالجفاف.</li>
+    <li>علاجه للقلب نفسه: الرجوع إلى المنبع والمنزع الأساسي.</li>
+    <li>المطلوب قلب كالطفل لا يطيق البعد عن أمه، يرجع إلى ما اعتاده من المعرفة والسكينة والرواء.</li>
+  </ul></div>
+</section>
+
+</main>
+
+<!-- ==================== الخريطة الذهنية الختامية (7-هـ/ج-ب) — خارج منطقة الهايلايت ==================== -->
+<div class="cmap" id="cmap">
+  <div class="cm-h">الخريطة الذهنية للمحاضرة</div>
+  <div class="cm-sub">خريطة منطقية من اليمين إلى اليسار: اضغط على أي عنوان يظهر شرحه ومثاله، وعلى الرقم الذي بجواره لطيّ الفرع أو فتحه. للتكبير: Ctrl مع عجلة الماوس، أو إصبعان على الهاتف. جرّب أن تطوي الفروع وتتذكّر ما تحتها قبل أن تفتحها.</div>
+  <div class="cm-frame" id="cm-frame"><iframe src="../../../mindmap.html?id=stage0_muqaddimat_02&amp;embed=1" title="الخريطة الذهنية للمحاضرة" loading="lazy"></iframe><button type="button" class="cm-touch" id="cm-touch">👆 اضغط هنا لتحريك الخريطة</button></div>
+  <div class="cm-tools"><a class="cm-full" href="../../../mindmap.html?id=stage0_muqaddimat_02">⛶ افتح الخريطة بملء الشاشة</a></div>
+</div>
+
+<!-- ==================== البطاقات (خارج منطقة الهايلايت) ==================== -->
+<div id="anki">
+  <div class="wrap">
+    <div class="ah">بطاقات المراجعة</div>
+    <div class="asub">راجعها بعد يومين من دراسة الملف · اضغط البطاقة لإظهار الجواب · ← → للتنقل</div>
+    <div class="filters" id="filters"></div>
+    <div class="ak" id="ak" role="button" tabindex="0">
+      <div class="deckcap" id="ak-deck"></div>
+      <div id="ak-front"></div>
+      <div class="ak-back" id="ak-back"></div>
+      <div class="hint">اضغط لإظهار الجواب</div>
+    </div>
+    <div class="ctrl">
+      <button type="button" id="ak-next" aria-label="التالي">←</button>
+      <div class="counter" id="ak-counter"></div>
+      <button type="button" id="ak-prev" aria-label="السابق">→</button>
+    </div>
+    <button class="dl" type="button" id="ak-dl">⬇ تحميل ملف Anki (TSV)</button>
+    <div class="dl-note">عند الاستيراد: نوع الملاحظة «أساسي» فقط، واترك خانة «وسم كل الملحوظات» فارغة — لكل بطاقة رزمتها ووسمها.</div>
+  </div>
+</div>
+
+<div class="wrap"><div id="ilm-custom-nav"></div></div>
+
+<footer>
+  <b>مقدمات تمهيدية — المحاضرة 02: القلب المنيب</b><br>
+  البناء المنهجي · المستوى الأول · المرحلة التمهيدية · اليوم 2 · الشيخ أحمد السيد<br>
+  ملف دراسي مبني على تفريغ المحاضرة — أُعدّ بمساعدة الذكاء الاصطناعي، ويُرجى مراجعته
+</footer>
+
+<script src="../../../maps/muqaddimat.js"></script>
+<script>
+/* ===== MAP_DATA — خريطة المحاور للتوجيه (7-هـ/ج)، والعنصر الثاني إحالة إلى الخريطة الختامية (7-هـ/ج-ب) ===== */
+const MAP_DATA = [{
+  id: "map01", sectionId: "orient", center: "القلب المنيب",
+  nodes: [
+    {text: "بوابة للخير", target: "intro", children: [{text: "سابقة ومؤدّية", target: "t-bawwaba"}, {text: "الشرط الباطن", target: "t-shart"}, {text: "الخشوع انعكاس", target: "t-khushu"}]},
+    {text: "الإنابة في القرآن", target: "s1", children: [{text: "شرط التذكّر", target: "t-ghafir"}, {text: "طريق الهداية", target: "t-huda"}, {text: "بقلب منيب", target: "t-qaf"}]},
+    {text: "معنى الإنابة", target: "s2", children: [{text: "الرجوع", target: "t-rujua"}, {text: "الإقبال", target: "t-iqbal"}, {text: "الإعراض عمّا سواه", target: "t-iarad"}]},
+    {text: "سمة المنيب", target: "s3", children: [{text: "محور ارتكاز", target: "t-mihwar"}, {text: "إنابة الأنبياء", target: "t-anbiya"}, {text: "تجديد الرجوع", target: "t-tajdid"}, {text: "الأثر الظاهر", target: "t-athar"}]},
+    {text: "فتّش في قلبك", target: "s4", children: []}
+  ]
+}, (window.MOAD_MAPS || {})["stage0_muqaddimat_02"] || null];
+
+/* ===== QUIZ_DATA — أسئلة تثبيت الفهم (7-ب) ===== */
+const QUIZ_DATA = [
+ {id:"q01", sectionId:"intro", question:"كيف يعرض القرآن صفة الإنابة؟", options:["منزلة دينية مستقلة جزاؤها الجنة فقط","صفة مؤثرة تفتح أبوابًا أخرى من الخير مآلها الجنة","عمل ظاهر من أعمال الجوارح"], correctIndex:1, explanation:"لم تأتِ على صيغة «من كان منيبًا فله الجنة» فقط، بل أبوابًا تنفتح للإنسان: التذكر والهداية ثم الجنة."},
+ {id:"q02", sectionId:"intro", question:"لا يُتصوَّر ثبات على الدين بدون يقين. ما نوع العلاقة بين اليقين والثبات هنا؟", options:["اليقين بوابة تقود إلى الثبات","الثبات شرط سابق لليقين","لا علاقة بينهما"], correctIndex:0, explanation:"من أهم البوابات التي يفتحها اليقين أنه يقود إلى الثبات؛ فالعمل القلبي يُنظر إليه بما يفتحه بعده."},
+ {id:"q03", sectionId:"intro", question:"طالب يسأل قبل رمضان: أختم ثلاث ختمات أم أصلي عشرين ركعة؟ ما أولى ما يُنبَّه إليه؟", options:["أن عدد الختمات هو الأهم","أن يهيئ قلبه أولًا ليقبل الاتعاظ والاستفادة؛ فلا تُثمر الأعمال الظاهرة كاملة إلا بالشروط الداخلية","أن يترك الأعمال الظاهرة"], correctIndex:1, explanation:"أسئلة الظاهر دليل خير، لكن التركيز في أساسه على تهيئة القلب، والإنابة هي البوابة الباطنية الكبرى."},
+ {id:"q04", sectionId:"s1", question:"﴿وَمَا يَتَذَكَّرُ إِلَّا مَن يُنِيبُ﴾ — ما الذي تفيده صيغة الآية؟", options:["أن الإنابة تُستحب لمن أراد التذكر","أن التذكر لا يمكن إلا بالإنابة؛ فهي قضية شرطية","أن التذكر سبب الإنابة"], correctIndex:1, explanation:"الآية لا تقول «لكي تتذكر فكن منيبًا» فقط، بل: لا يمكنك أن تتذكر إلا إذا كنت منيبًا."},
+ {id:"q05", sectionId:"s1", question:"آية غافر ﴿هُوَ الَّذِي يُرِيكُمْ آيَاتِهِ وَيُنَزِّلُ لَكُم مِّنَ السَّمَاءِ رِزْقًا﴾ تتحدث عن أي الآيات؟", options:["الآيات الشرعية","الآيات الكونية","آيات الأحكام"], correctIndex:1, explanation:"بداية الآية تشير إلى الآيات الكونية؛ فالإنابة شرط للاعتبار بها أيضًا."},
+ {id:"q06", sectionId:"s1", question:"ما ثمرة الإنابة في آيتي الشورى والرعد؟", options:["أن الله يهدي المنيب إليه","زيادة الرزق","النصر على الأعداء"], correctIndex:0, explanation:"﴿وَيَهْدِي إِلَيْهِ مَن يُنِيبُ﴾ و﴿وَيَهْدِي إِلَيْهِ مَنْ أَنَابَ﴾ — ليس أجرًا معيّنًا فقط، بل الهداية إليه."},
+ {id:"q07", sectionId:"s1", question:"﴿وَجَاءَ بِقَلْبٍ مُّنِيبٍ﴾ — جاء يوم القيامة. ما المعنى المقصود؟", options:["أن قلبه صار منيبًا يوم القيامة فقط","أنه أنهى حياته منيبًا واستمر على ذلك حتى لقي الله","أنه أناب مرة في حياته"], correctIndex:1, explanation:"هو كقوله ﴿وَلَا تَمُوتُنَّ إِلَّا وَأَنتُم مُّسْلِمُونَ﴾: الاستمرار على العمل حتى الموت."},
+ {id:"q08", sectionId:"s2", question:"شاب لا يعرف على نفسه ذنبًا معيّنًا، لكنه يجد فتورًا وجفاف روح لطول الأمد وبُعد عهده بالقرآن، فانتبه فرجع إلى الله مباشرة. ماذا يُسمّى رجوعه؟", options:["ليس إنابة لأنه لم يذنب","إنابة؛ فالإنابة رجوع حتى من أحوال لا تُصنَّف ذنوبًا","توبة فقط"], correctIndex:1, explanation:"التوبة رجوع من الذنوب أساسًا، والإنابة تزيد: الرجوع الدائم حال الوحشة والفتور والتقصير والضعف."},
+ {id:"q09", sectionId:"s2", question:"ما الفرق بين وصف «الحنيف» وصفة الإنابة؟", options:["لا فرق بينهما","الحنيف المائل عن الشرك إلى إسلام الوجه لله، والإنابة قريب منه لكن من جهة إقبال القلب على الله والإعراض عما سواه","الحنيف خاص بالعبادات الظاهرة"], correctIndex:1, explanation:"سُمّي إبراهيم حنيفًا لميله عن شرك قومه، والإنابة فيها إعراض قريب من هذا لكن لا من جهة الشرك."},
+ {id:"q10", sectionId:"s2", question:"أي العبارات أدق في وصف الإنابة؟", options:["مطلق الرجوع","رجوع بإقبال خالص صافٍ فيه إعراض عمّا سوى الله","الإقبال على الله دون رجوع"], correctIndex:1, explanation:"الإنابة ليست مطلق الرجوع ولا مجرده؛ بل رجوع مع إقبال خالص وانكفاء عمّا سواه."},
+ {id:"q11", sectionId:"s2", question:"من دواعي الرجوع التي تدخل تحت الإنابة:", options:["الذنب وحده","الذنب، والتقصير، والوحشة، ونقص العمل، والشعور بالضعف","الشعور بالقوة والاستغناء"], correctIndex:1, explanation:"داعي الذنب ليس وحده؛ بل الاحتياج والشعور بالتقصير وحتى تغيّر الأحوال."},
+ {id:"q12", sectionId:"s3", question:"لماذا كان النبي ﷺ يستغفر الله ويتوب إليه في اليوم أكثر من سبعين مرة؟", options:["لكثرة ذنوبه","هي قضية الإنابة لا قضية وجود الذنوب","لتعليم الصحابة عدد الاستغفار فقط"], correctIndex:1, explanation:"من المؤكد أن القضية ليست وجود الذنوب، بل الإنابة: تجديد الرجوع إلى الله."},
+ {id:"q13", sectionId:"s3", question:"ما المقصود بقول ابن تيمية «إني لأجدد إسلامي كل يوم»؟", options:["أن ينطق بالشهادتين كأنه دخل الإسلام الآن","تجديد أصل علاقته بربه من حيث الإقبال، وتعزيز عقيدته ومركزيات العبودية","الشك في صحة إسلامه"], correctIndex:1, explanation:"ليس المقصود أن تصير القضية وسوسة، بل تجديد أصل العلاقة بالله."},
+ {id:"q14", sectionId:"s3", question:"طالب في أيام اختبارات شديدة قلّت عبادته الظاهرة. ما علامة أنه منيب؟", options:["أن عبادته الظاهرة لم تنقص أبدًا","أن قلبه لا يغفو: يضطرب لنقص زاده اليومي ولا يسكّنه شيء حتى يجدد رجوعه","أن ينسى الأمر حتى تنتهي الاختبارات"], correctIndex:1, explanation:"قلة العمل الظاهر زمن الانشغال طبيعي، لكن قلب المنيب كالأم التي فقدت طفلها حتى يجد زاده."},
+ {id:"q15", sectionId:"s3", question:"صلى رجل ركعتين لأنه «لا يستطيع إلا أن يسجد» وقد اضطرب قلبه. كيف يُوصف هذا السجود؟", options:["سجود لرفع نازلة","سجود المنيب: أثر ظاهر لإنابة قلبية","سجود لا قيمة له"], correctIndex:1, explanation:"الصلاة لرفع النازلة عبادة عظيمة، لكن المقصود هنا سجود من لا يقدر أن يُكمل حتى يسجد."},
+ {id:"q16", sectionId:"s3", question:"تصدّق رجل على جاره الفقير وهو يشعر بالتقصير مع الله، فقصد بصدقته أن تكون عنوان رجوع. ما المعنى القلبي البارز هنا؟", options:["إبراء الذمة من الزكاة","الإنابة","الرحمة وحدها"], correctIndex:1, explanation:"صارت الصدقة عنوان رجوع، وكلما جمع المؤمن عدة معانٍ قلبية في العمل الواحد فهو أعظم."},
+ {id:"q17", sectionId:"s4", question:"ما أول ما يُبحث عنه قبل الانشغال بالعبادات الظاهرة؟", options:["عدد الركعات","حال القلب: هل هو قلب منيب؟","أفضل وقت للختم"], correctIndex:1, explanation:"غُص في داخل نفسك وفتّش في ثنايا القلب؛ فإن وجدته غير منيب فالعلاج للقلب."},
+ {id:"q18", sectionId:"s4", question:"ما علامة القلب غير المنيب كما ذُكرت في الخاتمة؟", options:["يطول عليه الأمد ولا يشعر بالاحتياج ولا بالجفاف والشقاء","يكثر من الأعمال الظاهرة","يشعر بالتقصير دائمًا"], correctIndex:0, explanation:"هنا يحتاج العلاج أن يكون للقلب، بالرجوع إلى المنبع والمنزع الأساسي."}
+];
+
+/* ===== أعلام البطاقات (5-ب/6) ===== */
+const ANKI_NAMES = {
+  sahabi: ["إبراهيم", "داود", "سليمان", "النبي ﷺ"],
+  scholar: ["ابن تيمية", "ابن القيم", "ابن سعدي", "البغوي"],
+  name: []
+};
+
+/* ===== CARDS_DATA — بطاقات Anki (9-ط) · يولّدها ويصدّرها ilm-anki.js ===== */
+const CARDS_DATA = [
+ {id:"c01", sectionId:"intro", level:1, anchor:"الإنابة في القرآن", pattern:"calm",
+  q:"كيف يعرض القرآن صفة الإنابة: صفةً مستقلة، أم صفةً مؤثرة فيما بعدها؟",
+  a:"صفة مؤثرة، وبوابة للخير. فمن حقق الإنابة لم يحقق منزلة دينية أو عملًا قلبيًّا مجرّدًا فقط، بل فُتحت له أبواب أخرى يكون مآلها إلى الجنة.",
+  blocks:[{type:"ans", s:"صفة مؤثرة،", e:"للخير.", core:true}, {type:"wajh", s:"فمن حقق", e:"إلى الجنة."}],
+  marks:[{t:"focus", w:"مستقلة"}, {t:"focus", w:"مؤثرة"}], review:"", src:"وانما صفه مؤثره في ا احوال مرتبطه"},
+ {id:"c02", sectionId:"intro", level:2, anchor:"الأعمال القلبية بوابات", pattern:"method",
+  q:"اليقين والثبات على الدين: ما القاعدة في النظر إلى الأعمال الصالحة والقلبية التي يمثّل لها هذا المثال؟",
+  a:"يُنظر إلى العمل الصالح: هل هو عمل مجرّد، أم يقود إلى أعمال صالحة أخرى ويفتح نوافذ إليها؟ ومثاله: لا ثبات على الدين بدون يقين، فمن أهم البوابات التي يفتحها اليقين أنه يقود إلى الثبات.",
+  blocks:[{type:"rule", s:"يُنظر إلى", e:"نوافذ إليها؟", core:true}, {type:"wajh", s:"ومثاله: لا", e:"إلى الثبات."}],
+  marks:[{t:"focus", w:"القاعدة"}], review:"", src:"انت لا تتصور ثباتا على الدين بدون"},
+ {id:"c03", sectionId:"intro", level:1, anchor:"الشرط الباطن قبل الظاهر", pattern:"calm",
+  q:"لماذا لا يكفي التركيز على الأعمال الظاهرة في رمضان — كعدد الختمات والركعات — لتحصيل الاستفادة العظمى؟",
+  a:"لأن الأعمال الظاهرة لا تُثمر كاملة إلا بشروط داخلية. فلا يُستفاد منها — ولا حتى من قراءة القرآن — الاستفادة الكاملة إلا بتحققها، والتركيز في أساسه: كيف أهيّئ قلبي وأجعله قابلًا للاتعاظ والاعتبار.",
+  blocks:[{type:"ans", s:"لأن الأعمال", e:"بشروط داخلية.", core:true}, {type:"wajh", s:"فلا يُستفاد", e:"للاتعاظ والاعتبار."}],
+  marks:[{t:"focus", w:"لماذا"}], review:"", src:"لن تستفيد من الاعمال الظاهره لن تستفيد"},
+ {id:"c04", sectionId:"intro", level:4, anchor:"أسئلة رمضان", pattern:"compare",
+  q:"قبل رمضان: ما الفرق بين التصوّر الشائع لطريق الاستفادة والتصوّر الصحيح الذي يُقرَّر في باب الإنابة؟",
+  a:"الشائع ينصرف إلى الأعمال الظاهرة: أحفظ أم أتدبر؟ أختم أم لا؟ ثماني ركعات أم عشرون؟ أما الصحيح فالتركيز أولًا على تهيئة القلب بالإنابة، مع أن أسئلة الظاهر دليل خير.",
+  blocks:[{type:"cols", parts:[{s:"الشائع ينصرف", e:"أم عشرون؟"}, {s:"أما الصحيح", e:"دليل خير."}]}],
+  marks:[{t:"focus", w:"الفرق"}], review:"", src:"كثير من من المسلمين ينصرف ذهنه الى"},
+ {id:"c05", sectionId:"intro", level:2, anchor:"سبب الخشوع في الصلاة", pattern:"calm",
+  q:"سُئل بعض المعتنين بالسلوك عن سبب الخشوع في الصلاة. ما جوابه، وما معناه؟",
+  a:"الخشوع انعكاس لطبيعة قلبك ونفسك في باقي اليوم وباقي حياتك. أي لا يوجد زرّ تضغطه قبل الصلاة فتخشع، ولا وسيلة أو وسيلتان، وإنما استعدادات قلبية وسلوك يسلكه الإنسان.",
+  blocks:[{type:"ans", s:"الخشوع انعكاس", e:"وباقي حياتك.", core:true}, {type:"wajh", s:"أي لا", e:"يسلكه الإنسان."}],
+  marks:[{t:"focus", w:"سبب الخشوع"}], review:"", src:"ان الخشوع في الصلاه انما هو انعكاس"},
+ {id:"c06", sectionId:"intro", level:3, anchor:"البقرة 183", pattern:"quran",
+  q:"﴿لَعَلَّكُمْ تَتَّقُونَ﴾\nلمّا ذكر الله الصيام في رمضان ختم بهذه الثمرة. ما الذي يُستفاد منها في باب الاستعداد لرمضان؟",
+  a:"أن الله جعل ثمرة الصيام في الأخير التقوى. فالاهتمام في أساسه بتهيئة القلب ليقبل الاتعاظ، لا بالأعمال الظاهرة وحدها.",
+  blocks:[{type:"ans", s:"أن الله", e:"الأخير التقوى.", core:true}, {type:"wajh", s:"فالاهتمام في", e:"الظاهرة وحدها."}],
+  marks:[{t:"focus", w:"ثمرة"}], review:"", src:"جعل الثمره لعلكم"},
+ {id:"c07", sectionId:"intro", level:1, anchor:"البوابة الباطنية الكبرى", pattern:"calm",
+  q:"ما المسلك الباطني الذي ينبغي التركيز عليه ليُعالَج به الجانب الظاهر من العبادة، ولماذا؟",
+  a:"التركيز على قضية الإنابة تحديدًا. لأنها البوابة الباطنية الكبرى لتحقيق الاستفادة من الآيات ومن العبر، القرآنية منها والكونية.",
+  blocks:[{type:"ans", s:"التركيز على", e:"الإنابة تحديدًا.", core:true}, {type:"wajh", s:"لأنها البوابة", e:"منها والكونية."}],
+  marks:[{t:"focus", w:"المسلك الباطني"}], review:"", src:"الجواب هو التركيز على قضيه الانابه"},
+
+ {id:"c08", sectionId:"s1", level:3, anchor:"غافر 13", pattern:"quran",
+  q:"﴿هُوَ الَّذِي يُرِيكُمْ آيَاتِهِ وَيُنَزِّلُ لَكُم مِّنَ السَّمَاءِ رِزْقًا ۚ وَمَا يَتَذَكَّرُ إِلَّا مَن يُنِيبُ﴾\nما وجه الدلالة في الآية على منزلة الإنابة؟",
+  a:"أن الإنابة شرط للتذكّر: لا يمكن أن تتذكر إلا إذا كنت منيبًا. والتذكر هنا هو الاعتبار والاستفادة، والآية لا تقول فقط: لكي تتذكر فكن منيبًا.",
+  blocks:[{type:"ans", s:"أن الإنابة", e:"كنت منيبًا.", core:true}, {type:"wajh", s:"والتذكر هنا", e:"فكن منيبًا."}],
+  marks:[{t:"focus", w:"وجه الدلالة"}], review:"", src:"وما يتذكر الا من ينيب الايه الايه"},
+ {id:"c09", sectionId:"s1", level:3, anchor:"غافر 13 — نوع الآيات", pattern:"quran",
+  q:"﴿هُوَ الَّذِي يُرِيكُمْ آيَاتِهِ وَيُنَزِّلُ لَكُم مِّنَ السَّمَاءِ رِزْقًا﴾\nإلى أي نوع من الآيات تشير بداية الآية، وما أثر ذلك في فهم الإنابة؟",
+  a:"إلى الآيات الكونية لا الشرعية. فالإنابة شرط للاعتبار حتى بالعبر الكونية، لا القرآنية وحدها.",
+  blocks:[{type:"ans", s:"إلى الآيات", e:"لا الشرعية.", core:true}, {type:"wajh", s:"فالإنابة شرط", e:"القرآنية وحدها."}],
+  marks:[{t:"focus", w:"أي نوع"}], review:"", src:"تشير الى الايات ال الايات الايش"},
+ {id:"c10", sectionId:"s1", level:3, anchor:"الشورى 13", pattern:"quran",
+  q:"﴿اللَّهُ يَجْتَبِي إِلَيْهِ مَن يَشَاءُ وَيَهْدِي إِلَيْهِ مَن يُنِيبُ﴾\nما الذي رتّبته الآية على الإنابة؟",
+  a:"أن الله يهدي المنيب إليه. فليس للمنيب أجر معيّن فقط، بل الهداية إلى الله نفسها.",
+  blocks:[{type:"ans", s:"أن الله", e:"المنيب إليه.", core:true}, {type:"wajh", s:"فليس للمنيب", e:"الله نفسها."}],
+  marks:[{t:"focus", w:"رتّبته"}], review:"", src:"الله يجتبي اليه من يشاء ويهدي"},
+ {id:"c11", sectionId:"s1", level:3, anchor:"الرعد 27", pattern:"quran",
+  q:"﴿قُلْ إِنَّ اللَّهَ يُضِلُّ مَن يَشَاءُ وَيَهْدِي إِلَيْهِ مَنْ أَنَابَ﴾\nما علاقة هذه الآية بآية الشورى ﴿وَيَهْدِي إِلَيْهِ مَن يُنِيبُ﴾؟",
+  a:"تأكيد للمعنى نفسه: الله يهدي إليه من أناب، فتكرر هذا المعنى في القرآن مرتين.",
+  blocks:[{type:"ans", all:true, core:true}],
+  marks:[{t:"focus", w:"علاقة"}], review:"", src:"تاكيد هذا المعنى في سوره الرعد"},
+ {id:"c12", sectionId:"s1", level:3, anchor:"الزمر 17–18", pattern:"quran",
+  q:"﴿وَالَّذِينَ اجْتَنَبُوا الطَّاغُوتَ أَن يَعْبُدُوهَا وَأَنَابُوا إِلَى اللَّهِ لَهُمُ الْبُشْرَىٰ … أُولَٰئِكَ الَّذِينَ هَدَاهُمُ اللَّهُ﴾\nما موقع الإنابة في وصف الذين هداهم الله؟",
+  a:"هي من المفردات التي وُصف بها الذين هداهم الله: أنهم أنابوا إلى الله. فلا يُتعجب من ذلك ما دام الله يهدي إليه من ينيب.",
+  blocks:[{type:"ans", s:"هي من", e:"إلى الله.", core:true}, {type:"wajh", s:"فلا يُتعجب", e:"من ينيب."}],
+  marks:[{t:"focus", w:"موقع الإنابة"}], review:"", src:"والذين اجتنبوا الطاغوت ان يعبدوها"},
+ {id:"c13", sectionId:"s1", level:3, anchor:"ق 31–33", pattern:"quran",
+  q:"﴿وَأُزْلِفَتِ الْجَنَّةُ لِلْمُتَّقِينَ … مَّنْ خَشِيَ الرَّحْمَٰنَ بِالْغَيْبِ وَجَاءَ بِقَلْبٍ مُّنِيبٍ﴾\nالمجيء يوم القيامة؛ فما المقصود بمجيئه بقلب منيب؟",
+  a:"أنه أنهى حياته منيبًا: ظلّ قلبه منيبًا إلى أن لقي الله. وهو كقوله ﴿وَلَا تَمُوتُنَّ إِلَّا وَأَنتُم مُّسْلِمُونَ﴾، أي الاستمرار على العمل حتى الموت.",
+  blocks:[{type:"ans", s:"أنه أنهى", e:"لقي الله.", core:true}, {type:"wajh", s:"وهو كقوله", e:"حتى الموت."}],
+  marks:[{t:"focus", w:"المقصود"}], review:"", src:"وجاء بقلب منيب اي انه انهى حياته"},
+ {id:"c14", sectionId:"s1", level:3, anchor:"آل عمران 102", pattern:"quran",
+  q:"﴿وَلَا تَمُوتُنَّ إِلَّا وَأَنتُم مُّسْلِمُونَ﴾\nوقت الموت لا يعرفه الإنسان؛ فما المقصود بالأمر إذن، كما يُستشهد به على «وجاء بقلب منيب»؟",
+  a:"ليست كل الخيارات متاحة للإنسان في وقت موته، لكن المقصود أن يستمر على العمل حتى الموت.",
+  blocks:[{type:"ans", all:true, core:true}],
+  marks:[{t:"focus", w:"المقصود"}], review:"", src:"تعرف وقت الموت يعني ليست كل الخيارات"},
+ {id:"c15", sectionId:"s1", level:2, anchor:"«بقلب منيب»", pattern:"calm",
+  q:"في آية ق: ﴿وَجَاءَ بِقَلْبٍ مُّنِيبٍ﴾ — لماذا وُصف القلب بالإنابة؟",
+  a:"لأن الإنابة ليست عملًا خارجيًّا فقط؛ محلها القلب.",
+  blocks:[{type:"ans", all:true, core:true}],
+  marks:[{t:"focus", w:"لماذا"}], review:"", src:"ولاحظوا قلب منيب لانه الانابه ليست"},
+ {id:"c16", sectionId:"s1", level:1, anchor:"مركزية الإنابة", pattern:"method",
+  q:"ما الثمرات التي رتّبها القرآن على الإنابة، فصارت بها قضية مركزية لا فرعية؟",
+  a:"بها يُهدى الإنسان إلى ربه، ويتذكّر ويستفيد من العبر، ويدخل الجنة لأنه جاء بقلب منيب. الأولى: الهداية إليه. الثانية: التذكر والاعتبار. الثالثة: دخول الجنة.",
+  blocks:[{type:"rule", s:"بها يُهدى", e:"بقلب منيب.", core:true}, {type:"steps", seq:false, items:[{s:"الأولى: الهداية", e:"إليه."}, {s:"الثانية: التذكر", e:"والاعتبار."}, {s:"الثالثة: دخول", e:"الجنة."}]}],
+  marks:[{t:"focus", w:"الثمرات"}], review:"", src:"التي تجعل الانسان يكون مهديا الى ربه"},
+
+ {id:"c17", sectionId:"s2", level:1, anchor:"معاني الإنابة", pattern:"method",
+  q:"ما المعاني التي تنتظم تحت صفة الإنابة؟",
+  a:"ثلاثة معانٍ. الأول: الرجوع. الثاني: الإقبال. الثالث: الإقبال على الله مع الإعراض عمّا سواه.",
+  blocks:[{type:"rule", s:"ثلاثة معانٍ.", e:"ثلاثة معانٍ.", core:true}, {type:"steps", seq:false, items:[{s:"الأول: الرجوع.", e:"الأول: الرجوع."}, {s:"الثاني: الإقبال.", e:"الثاني: الإقبال."}, {s:"الثالث: الإقبال", e:"عمّا سواه."}]}],
+  marks:[{t:"focus", w:"المعاني"}], review:"", src:"الانابه فيها ا خلينا نقول صفات متعدده"},
+ {id:"c18", sectionId:"s2", level:2, anchor:"تعريف الإنابة", pattern:"calm",
+  q:"ما الإنابة على وجه الدقة: هل هي مطلق الرجوع؟",
+  a:"ليست مطلق الرجوع ولا مجرد الرجوع، بل رجوع بإقبال خالص صافٍ: فيه إقبال على الله، وإعراض وانكفاء عمّا سواه.",
+  blocks:[{type:"def", all:true, core:true}],
+  marks:[{t:"focus", w:"مطلق الرجوع"}], review:"", src:"اذا الانابه هي ليست مطلق الرجوع"},
+ {id:"c19", sectionId:"s2", level:2, anchor:"المصطلح من حدّه", pattern:"calm",
+  q:"رجوعٌ إلى الله بإقبال خالص صافٍ، فيه إقبال عليه وإعراض وانكفاء عمّا سواه، في جميع الأمور — ما اسم هذه الصفة القلبية؟",
+  a:"الإنابة، وصاحبها المنيب.",
+  blocks:[{type:"ans", all:true, core:true}],
+  marks:[{t:"focus", w:"ما اسم"}], review:"", src:"رجوع باقبال خالص صافي ها فيه اقبال"},
+ {id:"c20", sectionId:"s2", level:4, anchor:"التوبة والإنابة", pattern:"compare",
+  q:"كلاهما فيه معنى الرجوع: ما الفرق بين التوبة والإنابة من جهة ما يُرجع منه؟",
+  a:"التوبة رجوع من الذنوب والمعاصي من حيث الأساس. بينما الإنابة تشمل الرجوع من الذنوب وتزيد عليه: الرجوع حتى من أحوال لا تُصنَّف ذنوبًا.",
+  blocks:[{type:"cols", parts:[{s:"التوبة رجوع", e:"حيث الأساس."}, {s:"بينما الإنابة", e:"تُصنَّف ذنوبًا."}]}],
+  marks:[{t:"focus", w:"الفرق"}], review:"", src:"التوبه تكون بالرجوع من ماذا"},
+ {id:"c21", sectionId:"s2", level:2, anchor:"إنابة الوحشة", pattern:"calm",
+  q:"فتور وجفاء ووحشة وجفاف روح، بلا ذنب معيّن، بل لطول الأمد وتأخر مراجعة النفس وبُعد العهد بالقرآن: من المنيب في هذه الحال؟",
+  a:"الذي ينتبه في تلك اللحظة فيرجع مباشرة إلى الله.",
+  blocks:[{type:"ans", all:true, core:true}],
+  marks:[{t:"focus", w:"من المنيب"}], review:"", src:"الذي ينتبه في تلك اللحظه فيرجع مباشره"},
+ {id:"c22", sectionId:"s2", level:2, anchor:"أحوال الرجوع", pattern:"method",
+  q:"الإنابة رجوع دائم إلى الله: في أي الأحوال يكون هذا الرجوع؟",
+  a:"ليس بالضرورة من ذنب. حال الذنب. حال التقصير في الطاعة. حال الوحشة التي تعتري القلب. حال نقص العمل. حال مجرد الشعور بالضعف.",
+  blocks:[{type:"rule", s:"ليس بالضرورة", e:"من ذنب.", core:true}, {type:"steps", seq:false, items:[{s:"حال الذنب.", e:"حال الذنب."}, {s:"حال التقصير", e:"في الطاعة."}, {s:"حال الوحشة", e:"تعتري القلب."}, {s:"حال نقص", e:"نقص العمل."}, {s:"حال مجرد", e:"بالضعف."}]}],
+  marks:[{t:"focus", w:"أي الأحوال"}], review:"", src:"الرجوع الدائم الى الله سبحانه وتعالى حال الذنب"},
+ {id:"c23", sectionId:"s2", level:5, anchor:"لحظة الشعور بالضعف", pattern:"calm",
+  q:"حين يشعر الإنسان أنه ضعيف، ذرة في الأرض، واحد من مليارات البشر: ما الذي يجعله محلّ النظر الإلهي؟",
+  a:"الانكسار والضعف الذي يناله في تلك اللحظة، فيُقبل على الله طالبًا أن يجعله ممن يرحمهم؛ وهذا الرجوع إنابة.",
+  blocks:[{type:"ans", s:"الانكسار والضعف", e:"تلك اللحظة،", core:true}, {type:"wajh", s:"فيُقبل على", e:"الرجوع إنابة."}],
+  marks:[{t:"focus", w:"محلّ النظر الإلهي"}], review:"", src:"الانكسار والضعف ذاك الذي ينالك"},
+ {id:"c24", sectionId:"s2", level:2, anchor:"دواعي الرجوع", pattern:"method",
+  q:"ما القاعدة في دواعي الرجوع التي تدخل تحت الإنابة؟",
+  a:"ليس داعي الذنب فقط، بل أيضًا داعي الاحتياج، والشعور بالتقصير، وحتى تغيّر الأحوال.",
+  blocks:[{type:"rule", all:true, core:true}],
+  marks:[{t:"focus", w:"دواعي الرجوع"}], review:"", src:"دواعي الرجوع بسبب الانابه او تحت الانابه"},
+ {id:"c25", sectionId:"s2", level:2, anchor:"الإنابة والإقبال", pattern:"calm",
+  q:"ما المعنى الثاني في الإنابة بعد الرجوع، وكيف يجتمع معه؟",
+  a:"الإقبال؛ فالمنيب هو المقبل. فهو مقبل بعد رجوع، أو راجع ثم مقبل.",
+  blocks:[{type:"ans", s:"الإقبال؛ فالمنيب", e:"هو المقبل.", core:true}, {type:"wajh", s:"فهو مقبل", e:"ثم مقبل."}],
+  marks:[{t:"focus", w:"المعنى الثاني"}], review:"", src:"الانابه فيها صفه الاقبال فيها صفه الاقبال"},
+ {id:"c26", sectionId:"s2", level:2, anchor:"تعريف الحنيف", pattern:"calm",
+  q:"أكثر ما وُصف به إبراهيم عليه السلام في القرآن أنه «حنيف»: ما معنى الحنيف، ولماذا سُمّي به؟",
+  a:"الحنيف هو المائل عن الشرك. سُمّي به لأنه كان في قوم يدعون إلى الشرك وينافحون عنه ويقاتلون لأجله، فانحرف عن عقيدتهم ومال إلى إسلام الوجه لله وحده.",
+  blocks:[{type:"def", s:"الحنيف هو", e:"عن الشرك.", core:true}, {type:"wajh", s:"سُمّي به", e:"لله وحده."}],
+  marks:[{t:"focus", w:"الحنيف"}], review:"", src:"والحنيف هو المائل هو المائل"},
+ {id:"c27", sectionId:"s2", level:4, anchor:"الحنيف والإنابة", pattern:"compare",
+  q:"في كلٍّ من «الحنيف» و«الإنابة» معنى الميل والإعراض: ما الفرق بينهما؟",
+  a:"الحنيف ميل وانحراف عن الشرك إلى إسلام الوجه لله. أما الإنابة ففيها قريب من هذا المعنى لكن لا من جهة الشرك، بل إقبال القلب على الله وحده وإعراضه عمّا سواه.",
+  blocks:[{type:"cols", parts:[{s:"الحنيف ميل", e:"الوجه لله."}, {s:"أما الإنابة", e:"عمّا سواه."}]}],
+  marks:[{t:"focus", w:"الفرق"}], review:"", src:"الانابه فيها قريب من هذا المعنى ولكن"},
+ {id:"c28", sectionId:"s2", level:2, anchor:"لسان حال المنيب", pattern:"calm",
+  q:"الإقبال على الله مع الإعراض عمّا سواه: كيف يُعبَّر عنه بلسان حال المنيب؟",
+  a:"لا أطلب إلا أنت يا رب، ورجائي وخوفي وخشيتي في إقبالي عليك وحدك. ولا ألتمس فرج كربتي ولا صلاح حالي إلا عندك؛ والناس يتقاسمون الحاجات وتتشعب قلوبهم في الأودية، وأنا أُقبل بقلبي إليك وحدك.",
+  blocks:[{type:"ans", s:"لا أطلب", e:"عليك وحدك.", core:true}, {type:"wajh", s:"ولا ألتمس", e:"إليك وحدك."}],
+  marks:[{t:"focus", w:"لسان حال"}], review:"", src:"يا رب انا لا اريد ان اطلب الا انت"},
+ {id:"c29", sectionId:"s2", level:2, anchor:"عبارات المفسرين", pattern:"calm",
+  q:"بمَ عبّر بعض المفسرين عن المنيب؟",
+  a:"هو الذي يُقبل على الله منجذبة دواعيه إليه، وبعضهم يضيف معنى الإسراع في الإقبال. وبعضهم يقول: هو الراجع إلى الله في جميع أموره.",
+  blocks:[{type:"ans", s:"هو الذي", e:"دواعيه إليه،", core:true}, {type:"wajh", s:"وبعضهم يضيف", e:"جميع أموره."}],
+  marks:[{t:"focus", w:"المنيب"}], review:"تردد الشيخ في نسبة العبارة الأولى بين ابن سعدي والبغوي، فلم تُنسب.", src:"هو المنيب هو الذي يقبل على الله منجذبه"},
+ {id:"c30", sectionId:"s2", level:1, anchor:"جامع معنى الإنابة", pattern:"calm",
+  q:"ما المعنيان الأساسيان اللذان تجمعهما الإنابة؟",
+  a:"الرجوع إلى الله في جميع الأمور، والرجوع مع إقبال خالص فيه إعراض وانكفاء عمّا سوى الله.",
+  blocks:[{type:"ans", all:true, core:true}],
+  marks:[{t:"focus", w:"المعنيان الأساسيان"}], review:"", src:"نستطيع ان نقول ان الانابه تجمع المعنيين"},
+
+ {id:"c31", sectionId:"s3", level:2, anchor:"سمة المنيب", pattern:"calm",
+  q:"ما سمة الشخص المنيب في حياته اليومية؟",
+  a:"له دائمًا محور ارتكازي لا يستطيع أن يبتعد عنه. فلا يستطيع الانفكاك عن ربه؛ ما يأخذ قليلًا حتى يبادر ويرجع، ولا يؤجّل ولا يؤخّر.",
+  blocks:[{type:"ans", s:"له دائمًا", e:"يبتعد عنه.", core:true}, {type:"wajh", s:"فلا يستطيع", e:"ولا يؤخّر."}],
+  marks:[{t:"focus", w:"سمة"}], review:"", src:"الشخص المنيب هو الذي لديه دائما محور"},
+ {id:"c32", sectionId:"s3", level:5, anchor:"مثال الطفل وأمه", pattern:"calm",
+  q:"الطفل الصغير مع أمه في زيارة: يلعب ويلعب ثم لا يُكمل قليلًا حتى يرجع إليها. ما الذي يمثّله هذا المثال؟",
+  a:"الشخص المنيب: لا يستطيع الانفكاك عن ربه، فلا يلبث أن يبادر بالرجوع إليه.",
+  blocks:[{type:"ans", all:true, core:true}],
+  marks:[{t:"focus", w:"يمثّله"}], review:"", src:"ارايتم طفل صغير حين يكون مع امي"},
+ {id:"c33", sectionId:"s3", level:3, anchor:"حديث «أكثر من سبعين مرة»", pattern:"quran",
+  q:"قال النبي ﷺ: «إني لأستغفر الله وأتوب إليه في اليوم أكثر من سبعين مرة».\nما المعنى الذي كان يراعيه ﷺ في هذا الاستغفار والتوبة؟",
+  a:"قضية الإنابة، لا وجود الذنوب. وكلما علت منزلة الإنابة كثُر مصداقها بكثرة الرجوع حتى في اليوم الواحد.",
+  blocks:[{type:"ans", s:"قضية الإنابة،", e:"وجود الذنوب.", core:true}, {type:"wajh", s:"وكلما علت", e:"اليوم الواحد."}],
+  marks:[{t:"focus", w:"المعنى"}, {t:"hadith", w:"«إني لأستغفر الله وأتوب إليه في اليوم أكثر من سبعين مرة»"}], review:"", src:"اني لاستغفر الله واتوب اليه في اليوم"},
+ {id:"c34", sectionId:"s3", level:3, anchor:"هود 75", pattern:"quran",
+  q:"﴿إِنَّ إِبْرَاهِيمَ لَحَلِيمٌ أَوَّاهٌ مُّنِيبٌ﴾\nما الذي تدل عليه هذه الآية في شأن من توصف به الإنابة؟",
+  a:"أن الإنابة ليست صفة للمذنبين والعصاة وحدهم، بل هي للنبي ﷺ وللأنبياء؛ فإمام الحنفاء إبراهيم وصفه الله بأنه منيب.",
+  blocks:[{type:"ans", s:"أن الإنابة", e:"العصاة وحدهم،", core:true}, {type:"wajh", s:"بل هي", e:"بأنه منيب."}],
+  marks:[{t:"focus", w:"من توصف به"}], review:"", src:"ان ابراهيم لحليم اواه منيب جيد"},
+ {id:"c35", sectionId:"s3", level:3, anchor:"ص 24 — داود", pattern:"quran",
+  q:"﴿فَاسْتَغْفَرَ رَبَّهُ وَخَرَّ رَاكِعًا وَأَنَابَ﴾\nبمَ وصفت الآية داود عليه السلام؟",
+  a:"بالإنابة بعد الاستغفار والركوع؛ فداود أناب، وهو من الأنبياء الذين وُصفوا بالإنابة.",
+  blocks:[{type:"ans", all:true, core:true}],
+  marks:[{t:"focus", w:"وصفت"}], review:"", src:"استغفر ربه وخر راكعا"},
+ {id:"c36", sectionId:"s3", level:3, anchor:"ص 34 — سليمان", pattern:"quran",
+  q:"﴿وَلَقَدْ فَتَنَّا سُلَيْمَانَ وَأَلْقَيْنَا عَلَىٰ كُرْسِيِّهِ جَسَدًا ثُمَّ أَنَابَ﴾\nما الشاهد في الآية لباب الإنابة؟",
+  a:"أن سليمان عليه السلام أناب؛ فالإنابة من صفات الأنبياء.",
+  blocks:[{type:"ans", all:true, core:true}],
+  marks:[{t:"focus", w:"الشاهد"}], review:"", src:"ولقد فتنا سليمان والقينا على كرسيه"},
+ {id:"c37", sectionId:"s3", level:2, anchor:"تجديد الرجوع", pattern:"calm",
+  q:"ما الذي يفعله المنيب في يومه، بوصفه سمةً ثابتة له؟",
+  a:"يجدّد رجوعه إلى الله دائمًا، ويديم الرجوع إليه.",
+  blocks:[{type:"ans", all:true, core:true}],
+  marks:[{t:"focus", w:"في يومه"}], review:"", src:"هو الشخص الذي يجدد رجوعه الى الله دائما"},
+ {id:"c38", sectionId:"s3", level:6, anchor:"ابن تيمية: «أجدد إسلامي»", pattern:"calm",
+  q:"ابن تيمية: «إني لأجدد إسلامي كل يوم». ما المقصود به، وما الذي لا يُقصد منه؟",
+  a:"المقصود تجديد أصل علاقة الإنسان بربه من حيث إقباله إليه. ويشمل تعزيز عقيدته الأساسية في الله ومركزيات العبودية العظمى عنده. وليس المقصود أن ينطق بالشهادتين كأنه دخل الإسلام الآن، حتى لا تصير القضية وسوسة.",
+  blocks:[{type:"ans", s:"المقصود تجديد", e:"إقباله إليه.", core:true}, {type:"wajh", s:"ويشمل تعزيز", e:"العظمى عنده."}, {type:"alert", s:"وليس المقصود", e:"القضية وسوسة."}],
+  marks:[{t:"focus", w:"المقصود"}], review:"ورد في التفريغ «اسمي» والصواب «إسلامي».", src:"ولذلك ثبت عن ابن تيميه انه قال"},
+ {id:"c39", sectionId:"s3", level:5, anchor:"المنيب زمن الاختبارات", pattern:"calm",
+  q:"طالب في اختبارات أسبوعين أو ثلاثة، بالكاد يحافظ على الصلوات الخمس، فقلّت عبادته الظاهرة: كيف يكون حال قلبه إن كان منيبًا؟",
+  a:"لا يغفو قلبه في مدة الانشغال؛ قد يقلّ العمل الظاهر، لكن قلبه تعوّد على الزاد اليومي بينه وبين ربه، فإذا نقص اضطرب حتى يجدد رجوعه. وقلة العبادة الظاهرة في مثل هذه الأحوال طبيعية، والإسلام يراعيها.",
+  blocks:[{type:"ans", s:"لا يغفو", e:"مدة الانشغال؛", core:true}, {type:"wajh", s:"قد يقلّ", e:"يجدد رجوعه."}, {type:"alert", s:"وقلة العبادة", e:"والإسلام يراعيها."}],
+  marks:[{t:"focus", w:"حال قلبه"}], review:"", src:"ولكن الشخص المنيب لا يمكن ان يغفو"},
+ {id:"c40", sectionId:"s3", level:5, anchor:"الأم التي فقدت طفلها", pattern:"calm",
+  q:"المؤمن الذي تعوّد الزاد اليومي الروحي إذا نقص زاده: بمَ شُبّه حاله، وهل تسكّنه مُسعِدات الدنيا؟",
+  a:"بالأم التي فقدت طفلها: حائرة والهة لا يقرّ لها قرار حتى تجده. ولا تسكّنه رحلة ولا سفر ولا مال، فكلها مصنّفة عنده في خانة غير خانة سعادته اليومية حتى يجدد رجوعه إلى الله.",
+  blocks:[{type:"ans", s:"بالأم التي", e:"حتى تجده.", core:true}, {type:"wajh", s:"ولا تسكّنه", e:"إلى الله."}],
+  marks:[{t:"focus", w:"شُبّه"}], review:"", src:"تجده كالام التي فقدت طفله"},
+ {id:"c41", sectionId:"s3", level:2, anchor:"أثر الإنابة الظاهر", pattern:"method",
+  q:"الإنابة مصدرها القلب: هل يظهر لها أثر على الجوارح، وما صوره؟",
+  a:"غالبًا يظهر عليها أثر ينعكس على الجسم أو الأعمال الظاهرة. سجود. دعاء. ذكر معيّن. استثمار أي وسيلة تعبدية محيطة، كالصدقة على جار فقير.",
+  blocks:[{type:"rule", s:"غالبًا يظهر", e:"الأعمال الظاهرة.", core:true}, {type:"steps", seq:false, items:[{s:"سجود.", e:"سجود."}, {s:"دعاء.", e:"دعاء."}, {s:"ذكر معيّن.", e:"ذكر معيّن."}, {s:"استثمار أي", e:"جار فقير."}]}],
+  marks:[{t:"focus", w:"صوره"}], review:"", src:"الانابه غالبا يظهر عليها اثر"},
+ {id:"c42", sectionId:"s3", level:4, anchor:"سجودان", pattern:"compare",
+  q:"الصلاة لرفع نازلة، وسجود المنيب: ما الفرق بينهما في الباعث؟",
+  a:"الأولى صلاة لأجل أن يرفع الله النازلة مع الدعاء، وهي عبادة عظيمة. أما سجود المنيب فلأنه لا يستطيع إلا أن يسجد: لا يقدر أن يعيش ولا أن يُكمل حتى يسجد.",
+  blocks:[{type:"cols", parts:[{s:"الأولى صلاة", e:"عبادة عظيمة."}, {s:"أما سجود", e:"حتى يسجد."}]}],
+  marks:[{t:"focus", w:"الباعث"}], review:"", src:"انا اتكلم عن انه يسجد لله سبحانه وتعالى لانه"},
+ {id:"c43", sectionId:"s3", level:2, anchor:"المعاني القلبية في الصدقة", pattern:"method",
+  q:"المعاني القلبية التي قد تكون في نفس المتصدق: ما هي؟",
+  a:"قد تتعدد في العمل الواحد. الواجب: إخراج الزكاة المفروضة إرضاءً لله وإبراءً للذمة. الرحمة: الانكسار للمسكين ذي الثياب البالية. الإنابة: الشعور بالتقصير مع الله، فتصير الصدقة عنوان رجوع.",
+  blocks:[{type:"rule", s:"قد تتعدد", e:"العمل الواحد.", core:true}, {type:"steps", seq:false, items:[{s:"الواجب: إخراج", e:"للذمة."}, {s:"الرحمة: الانكسار", e:"البالية."}, {s:"الإنابة: الشعور", e:"عنوان رجوع."}]}],
+  marks:[{t:"focus", w:"المعاني القلبية"}], review:"", src:"تعرفوا الان الانسان يتصدق احيانا"},
+ {id:"c44", sectionId:"s3", level:2, anchor:"جمع المعاني في العمل", pattern:"method",
+  q:"ما القاعدة في المعاني القلبية التي يستحضرها المؤمن في العمل الصالح الواحد؟",
+  a:"كلما استطاع أن يجمع عدة معانٍ قلبية في العمل الصالح فهذا أعظم.",
+  blocks:[{type:"rule", all:true, core:true}],
+  marks:[{t:"focus", w:"القاعدة"}], review:"", src:"كلما استطاع الانسان المؤمن ان يجمع عده"},
+ {id:"c45", sectionId:"s3", level:3, anchor:"حديث «ولو بشق تمرة»", pattern:"quran",
+  q:"قال النبي ﷺ: «اتقوا النار ولو بشق تمرة، فمن لم يجد فبكلمة طيبة».\nما صلته بالإنابة، وما معنى «ولو بشق تمرة»؟",
+  a:"يُستحضر حين تكون الصدقة عنوان رجوع إلى الله. ومعنى «ولو بشق تمرة»: تتصدقون بها، فمن لم يجد فبكلمة طيبة.",
+  blocks:[{type:"ans", s:"يُستحضر حين", e:"إلى الله.", core:true}, {type:"wajh", s:"ومعنى «ولو", e:"بكلمة طيبة."}],
+  marks:[{t:"focus", w:"صلته"}, {t:"hadith", w:"«اتقوا النار ولو بشق تمرة، فمن لم يجد فبكلمة طيبة»"}], review:"", src:"وهنا يمكن ان تستحضر اتقوا النار"},
+ {id:"c46", sectionId:"s3", level:3, anchor:"حديث «الكلمة الطيبة صدقة»", pattern:"quran",
+  q:"في حديث «اتقوا النار ولو بشق تمرة»: لماذا جُعلت الكلمة الطيبة بديلًا لمن لم يجد؟",
+  a:"لأنه ثبت عن النبي ﷺ: «الكلمة الطيبة صدقة».",
+  blocks:[{type:"ans", all:true, core:true}],
+  marks:[{t:"focus", w:"لماذا"}, {t:"hadith", w:"«الكلمة الطيبة صدقة»"}], review:"", src:"ان كلمه طيبه صدقه هكذا ثبت"},
+ {id:"c47", sectionId:"s3", level:2, anchor:"تعريف الشخص المنيب", pattern:"calm",
+  q:"من هو الشخص المنيب، وبمَ تُقاس علوّ منزلته في الإنابة؟",
+  a:"هو الذي يديم الرجوع إلى الله في حياته، بل في يومه. وكلما علت منزلة الإنابة عنده كثر مصداقها بكثرة رجوعه حتى في اليوم الواحد.",
+  blocks:[{type:"def", s:"هو الذي", e:"في يومه.", core:true}, {type:"wajh", s:"وكلما علت", e:"اليوم الواحد."}],
+  marks:[{t:"focus", w:"علوّ منزلته"}], review:"", src:"فمن هو الشخص المنيب؟ هو الشخص الذي"},
+
+ {id:"c48", sectionId:"s4", level:1, anchor:"فتّش في قلبك", pattern:"calm",
+  q:"عند الإقبال على رمضان أو على عبادات ظاهرة: ما أول ما يُبحث عنه؟",
+  a:"أن تغوص في داخل نفسك وتفتّش في ثنايا قلبك، لا أن تبحث عن الأمور الخارجية الظاهرة فقط.",
+  blocks:[{type:"ans", all:true, core:true}],
+  marks:[{t:"focus", w:"أول ما يُبحث"}], review:"", src:"اول ما تبحث غص غص في داخل نفسك"},
+ {id:"c49", sectionId:"s4", level:2, anchor:"علامة القلب غير المنيب", pattern:"calm",
+  q:"ما علامة القلب غير المنيب، وأين يكون علاجه؟",
+  a:"قلب يطول عليه الأمد ولا يشعر بالاحتياج ولا بالجفاف والشقاء. وعلاجه يكون للقلب نفسه، بالرجوع إلى الأساس والمنبع والمنزع الأساسي، مع أن العمل الصالح الظاهر يؤثّر.",
+  blocks:[{type:"ans", s:"قلب يطول", e:"والشقاء.", core:true}, {type:"wajh", s:"وعلاجه يكون", e:"الظاهر يؤثّر."}],
+  marks:[{t:"focus", w:"علامة"}], review:"", src:"ان وجدته قلبا يمكن ان يطول عليه الامد"},
+ {id:"c50", sectionId:"s4", level:5, anchor:"الطفل لم يُكمل العامين", pattern:"calm",
+  q:"الطفل الذي لم يُكمل العامين، يلتهي قليلًا ثم لا يستطيع إلا أن يرجع إلى أمه: إلى أي حال للمؤمن يُراد أن يصل قلبه بهذا المثال؟",
+  a:"قد يلتهي ببعض الأمور، لكنه سرعان ما يبادر فيرجع، باحثًا عمّا اعتاده من الاتصال بعبوديته لله، وما يعطيه الله من المعرفة في القلب والسكينة في النفس والرواء في الروح.",
+  blocks:[{type:"ans", s:"قد يلتهي", e:"يبادر فيرجع،", core:true}, {type:"wajh", s:"باحثًا عمّا", e:"في الروح."}],
+  marks:[{t:"focus", w:"أي حال"}], review:"", src:"وهكذا الانسان المؤمن قد يلتهي ببعض الامور"},
+ {id:"c51", sectionId:"s4", level:3, anchor:"الزمر 54", pattern:"quran",
+  q:"﴿وَأَنِيبُوا إِلَىٰ رَبِّكُمْ وَأَسْلِمُوا لَهُ مِن قَبْلِ أَن يَأْتِيَكُمُ الْعَذَابُ ثُمَّ لَا تُنصَرُونَ﴾\nبمَ أمرت الآية، ومتى؟",
+  a:"بالإنابة إلى الله والإسلام له، قبل أن يأتي العذاب حين لا نصرة.",
+  blocks:[{type:"ans", all:true, core:true}],
+  marks:[{t:"focus", w:"بمَ أمرت"}], review:"", src:"وانيب الى ربكم واسلموا له من قبل"}
+];
+
+
+/* ===== رسم خريطة التوجيه ===== */
+(function(){
+  var M = MAP_DATA[0], box = document.getElementById('mindmap');
+  var c = document.createElement('div'); c.className = 'mm-center'; c.textContent = M.center; box.appendChild(c);
+  var br = document.createElement('div'); br.className = 'mm-branches';
+  M.nodes.forEach(function(n, i){
+    var row = document.createElement('div'); row.className = 'mm-node mm-n' + (i + 1);
+    var a = document.createElement('a'); a.href = '#' + n.target; a.className = 'mm-main'; a.textContent = n.text; row.appendChild(a);
+    (n.children || []).forEach(function(k){
+      var s = document.createElement('a'); s.href = '#' + k.target; s.className = 'mm-kid'; s.textContent = k.text; row.appendChild(s);
+    });
+    br.appendChild(row);
+  });
+  box.appendChild(br);
+})();
+
+/* ===== الخريطة الختامية: التحريك على اللمس بعد الضغط ===== */
+(function(){
+  var f = document.getElementById('cm-frame'), t = document.getElementById('cm-touch');
+  if(!f || !t) return;
+  t.addEventListener('click', function(){ f.classList.add('live'); });
+  document.addEventListener('touchstart', function(e){ if(!f.contains(e.target)) f.classList.remove('live'); }, {passive:true});
+})();
+
+/* ===== رسم الأسئلة (event delegation، بلا تخزين) ===== */
+(function(){
+  document.querySelectorAll('.qz[data-section]').forEach(function(box){
+    var sec = box.getAttribute('data-section');
+    var items = QUIZ_DATA.filter(function(q){ return q.sectionId === sec; });
+    var head = document.createElement('div'); head.className = 'qz-head';
+    var t = document.createElement('div'); t.className = 'qz-title'; t.textContent = '✦ تثبيت الفهم';
+    var sc = document.createElement('div'); sc.className = 'qz-score'; sc.textContent = 'النتيجة: 0 / ' + items.length;
+    head.appendChild(t); head.appendChild(sc); box.appendChild(head);
+    items.forEach(function(q){
+      var it = document.createElement('div'); it.className = 'qz-item'; it.dataset.id = q.id;
+      var qq = document.createElement('div'); qq.className = 'qz-q'; qq.textContent = q.question; it.appendChild(qq);
+      q.options.forEach(function(o, i){
+        var b = document.createElement('button'); b.type = 'button'; b.className = 'qz-opt'; b.dataset.i = i; b.textContent = o; it.appendChild(b);
+      });
+      var ex = document.createElement('div'); ex.className = 'qz-exp'; ex.textContent = q.explanation; it.appendChild(ex);
+      var rt = document.createElement('button'); rt.type = 'button'; rt.className = 'qz-retry'; rt.textContent = 'أعد المحاولة'; it.appendChild(rt);
+      box.appendChild(it);
+    });
+    function score(){ sc.textContent = 'النتيجة: ' + box.querySelectorAll('.qz-item.right').length + ' / ' + items.length; }
+    box.addEventListener('click', function(e){
+      var el = e.target, it = el.closest('.qz-item'); if(!it) return;
+      var q = QUIZ_DATA.find(function(x){ return x.id === it.dataset.id; });
+      if(el.classList.contains('qz-opt') && !it.classList.contains('done')){
+        var i = +el.dataset.i;
+        el.classList.add(i === q.correctIndex ? 'ok' : 'no');
+        if(i !== q.correctIndex) it.querySelectorAll('.qz-opt')[q.correctIndex].classList.add('ok');
+        it.classList.add('done'); if(i === q.correctIndex) it.classList.add('right');
+        score();
+      } else if(el.classList.contains('qz-retry')){
+        it.classList.remove('done', 'right');
+        it.querySelectorAll('.qz-opt').forEach(function(b){ b.classList.remove('ok', 'no'); });
+        score();
+      }
+    });
+  });
+})();
+
+/* ===== شريط التقدم ===== */
+window.addEventListener('scroll', function(){
+  var h = document.documentElement;
+  document.getElementById('prog').style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+});
+</script>
+
+<script type="module" src="../../../firebase-sync-manhaj.js"></script>
+<script src="../../../ilm-track.js"></script>
+<script src="../../../data.js"></script>
+<script src="../../../ilm-anki.js" data-lecture="02"></script>
+<script>
+/* ===== واجهة البطاقات: العرض والتصدير من ilm-anki.js وحدها (9-ص) ===== */
+(function(){
+  var SEC = {"intro": "المدخل", "s1": "في القرآن", "s2": "معناها", "s3": "سمة المنيب", "s4": "الخاتمة"};
+  var filter = '', idx = 0, ak = document.getElementById('ak');
+  function view(){ return filter ? CARDS_DATA.filter(function(c){ return c.sectionId === filter; }) : CARDS_DATA; }
+  function render(){
+    var v = view(); if(!v.length) return;
+    if(idx >= v.length) idx = 0; if(idx < 0) idx = v.length - 1;
+    var c = v[idx];
+    ak.classList.remove('on');
+    document.getElementById('ak-deck').textContent = 'الرزمة: ' + ILM_ANKI.deck(c) + ' · ' + ILM_ANKI.tags(c);
+    document.getElementById('ak-front').innerHTML = ILM_ANKI.front(c);
+    document.getElementById('ak-back').innerHTML = ILM_ANKI.back(c);
+    document.getElementById('ak-counter').textContent = (idx + 1) + ' / ' + v.length;
+  }
+  function go(d){ idx += d; render(); }
+  var fb = document.getElementById('filters');
+  function mk(key, label){
+    var b = document.createElement('button'); b.type = 'button'; b.textContent = label; b.dataset.f = key;
+    b.addEventListener('click', function(){ filter = key; idx = 0; fb.querySelectorAll('button').forEach(function(x){ x.classList.toggle('on', x.dataset.f === key); }); render(); });
+    fb.appendChild(b); return b;
+  }
+  mk('', 'الكل (' + CARDS_DATA.length + ')').classList.add('on');
+  Object.keys(SEC).forEach(function(k){ mk(k, SEC[k] + ' (' + CARDS_DATA.filter(function(c){ return c.sectionId === k; }).length + ')'); });
+  ak.addEventListener('click', function(e){ if(e.target.closest('a')) return; ak.classList.toggle('on'); });
+  ak.addEventListener('keydown', function(e){ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); ak.classList.toggle('on'); } });
+  document.getElementById('ak-next').addEventListener('click', function(){ go(1); });
+  document.getElementById('ak-prev').addEventListener('click', function(){ go(-1); });
+  document.getElementById('ak-dl').addEventListener('click', function(){
+    try { ILM_ANKI.download(CARDS_DATA); } catch(err){ alert(err.message); }
+  });
+  document.addEventListener('keydown', function(e){
+    var t = e.target && e.target.tagName; if(t === 'INPUT' || t === 'TEXTAREA' || t === 'SELECT') return;
+    if(e.key === 'ArrowLeft') go(1); if(e.key === 'ArrowRight') go(-1);
+  });
+  document.getElementById('cards-count').textContent = CARDS_DATA.length + ' بطاقة مراجعة';
+  render();
+})();
+</script>
+<script src="../../../ilm-nav.js"></script>
+<script>(function(){function mv(){var t=document.querySelector('.ilm-nav-top'),slot=document.getElementById('nav-top-slot');if(t&&slot)slot.appendChild(t);}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mv);else mv();})();</script>
+<script>
+(function(){
+  var box = document.getElementById('ilm-completion-box');
+  var cb = box ? box.querySelector('input[data-lecture-id]') : null;
+  if(!cb) return;
+  var lid = cb.getAttribute('data-lecture-id');
+  function render(done){ cb.checked = done; box.classList.toggle('done', done); }
+  if(window.IlmTrack){ window.IlmTrack.ready.then(function(){ render(window.IlmTrack.isDone(lid)); }); }
+  cb.addEventListener('change', function(){ if(window.IlmTrack) window.IlmTrack.setDone(lid, cb.checked); render(cb.checked); });
+})();
+</script>
+<script src="../../../ilm-highlight.js" data-lecture-id="stage0_muqaddimat_02"></script>
+<script src="../../../ilm-semantic.js" data-hadith="off"></script>
 </body>
 </html>
