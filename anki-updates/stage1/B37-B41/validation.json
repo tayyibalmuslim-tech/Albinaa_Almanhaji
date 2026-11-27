@@ -1,0 +1,156 @@
+{
+  "summary": {
+    "batches": "B37-B41",
+    "content_sections": 10,
+    "notes": 97,
+    "interactive_questions_unchanged": 23,
+    "cards": 125,
+    "new_cards": 28,
+    "revised_cards": 30,
+    "central_audit": "pass_no_warnings",
+    "runtime_export_and_filters": "pass",
+    "duplicate_dom_ids": 0
+  },
+  "audit": {
+    "scanned": 3,
+    "withCards": 3,
+    "failed": 0,
+    "results": [
+      {
+        "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/mu_alajat-al-quran/lectures/01.html",
+        "cards": 51,
+        "fail": [],
+        "warn": [],
+        "track": "محاضرة",
+        "quota": {
+          "L12": 75,
+          "names": 0,
+          "stories": 4
+        }
+      },
+      {
+        "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/mu_alajat-al-quran/lectures/02.html",
+        "cards": 30,
+        "fail": [],
+        "warn": [],
+        "track": "محاضرة",
+        "quota": {
+          "L12": 70,
+          "names": 0,
+          "stories": 10
+        }
+      },
+      {
+        "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/mu_alajat-al-quran/lectures/03.html",
+        "cards": 44,
+        "fail": [],
+        "warn": [],
+        "track": "محاضرة",
+        "quota": {
+          "L12": 77,
+          "names": 0,
+          "stories": 7
+        }
+      }
+    ]
+  },
+  "runtime": [
+    {
+      "file": "stage-1/mu_alajat-al-quran/lectures/01.html",
+      "before": 38,
+      "after": 51,
+      "export_rows": 51,
+      "interactive_questions": 10,
+      "content_sections": 4,
+      "inline_syntax": "pass",
+      "actual_exporter_and_download": "pass",
+      "filters_flip_navigation_all_cards": "pass",
+      "noncard_content_identical": true,
+      "environment": "Node VM minimal DOM; no visual browser test claimed"
+    },
+    {
+      "file": "stage-1/mu_alajat-al-quran/lectures/02.html",
+      "before": 27,
+      "after": 30,
+      "export_rows": 30,
+      "interactive_questions": 5,
+      "content_sections": 1,
+      "inline_syntax": "pass",
+      "actual_exporter_and_download": "pass",
+      "filters_flip_navigation_all_cards": "pass",
+      "noncard_content_identical": true,
+      "environment": "Node VM minimal DOM; no visual browser test claimed"
+    },
+    {
+      "file": "stage-1/mu_alajat-al-quran/lectures/03.html",
+      "before": 32,
+      "after": 44,
+      "export_rows": 44,
+      "interactive_questions": 8,
+      "content_sections": 5,
+      "inline_syntax": "pass",
+      "actual_exporter_and_download": "pass",
+      "filters_flip_navigation_all_cards": "pass",
+      "noncard_content_identical": true,
+      "environment": "Node VM minimal DOM; no visual browser test claimed"
+    }
+  ],
+  "html": {
+    "stage-1/mu_alajat-al-quran/lectures/01.html": {
+      "notes": 46,
+      "duplicate_dom_ids": 0,
+      "html_balance": "pass"
+    },
+    "stage-1/mu_alajat-al-quran/lectures/02.html": {
+      "notes": 23,
+      "duplicate_dom_ids": 0,
+      "html_balance": "pass"
+    },
+    "stage-1/mu_alajat-al-quran/lectures/03.html": {
+      "notes": 28,
+      "duplicate_dom_ids": 0,
+      "html_balance": "pass"
+    }
+  },
+  "primary_references": [
+    {
+      "url": "https://quran.ksu.edu.sa/tafseer/katheer/sura3-aya125.html",
+      "use": "شرط المدد، والخلاف في تفسير موضع الوعد وعدده؛ لا يعمم على كل مواجهة."
+    },
+    {
+      "url": "https://quran.ksu.edu.sa/tafseer/saadi/sura3-aya145.html",
+      "use": "الأجل وإرادة ثواب الدنيا أو الآخرة في الآية المثبتة في صدر المقطع."
+    },
+    {
+      "url": "https://quran.ksu.edu.sa/tafseer/saadi/sura3-aya140.html",
+      "use": "المداولة وتمييز المؤمنين وحكمة الابتلاء."
+    },
+    {
+      "url": "https://www.islamweb.net/ar/library/content/109/55/",
+      "use": "الاعتصام: الرؤيا للبشارة والنذارة ولا تنشئ حكمًا."
+    },
+    {
+      "url": "https://quran.ksu.edu.sa/tafseer/saadi/sura3-aya159.html",
+      "use": "العفو والاستغفار واللين والشورى، مع بقاء التدبير والتوكل."
+    },
+    {
+      "url": "https://www.islamweb.net/ar/library/content/0/2622/?idfrom=2583&idto=2583&start=",
+      "use": "صحيح البخاري: اللفظ الثابت في وصية أبي بكر لعمر بالاستمساك بغرز النبي."
+    },
+    {
+      "url": "https://islamweb.org/ar/library/content/6/14494/",
+      "use": "مسند أحمد: حديث تمني النبي أن يكون مع أصحاب نحص الجبل."
+    },
+    {
+      "url": "https://quran.ksu.edu.sa/tafseer/saadi/sura60-aya8.html",
+      "use": "البر والقسط لمن لم يقاتل المؤمنين، لاستكمال محترز الولاء الديني."
+    }
+  ],
+  "scope_limits": [
+    "المتاح متن الكتاب في المستودع وهوامشه وآياته، لا مقابلة بصوت أو طبعة مستقلة غير متاحة.",
+    "المادة كتاب نصي وإن صنفها كاشف الفحص المركزي آليًا كمحاضرة.",
+    "الأقسام عشرة: تسعة علمية وتوطئية وخاتمة دعائية بلا بطاقة أو سؤال؛ الاختبارات في الأقسام العلمية والتوطئة.",
+    "مجموعات بطاقات الملف 02 هي a1–a5، وكلها تحت قسم المتن s4؛ لا يعاد بناء الفلاتر.",
+    "التحقق من البطاقات لا يعد فحصًا علميًا نهائيًا لكل عبارة في المتن الأصلي الذي بقي حرفيًا كما هو."
+  ]
+}
