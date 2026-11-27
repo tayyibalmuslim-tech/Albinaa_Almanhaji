@@ -218,6 +218,13 @@
     '.ilm-nav-bar .ist-btn,.ilm-nav-bar .ist-btn:hover{background:#fff!important;color:#14211D!important;border:1px solid #D3D9D2!important;border-radius:12px!important;text-decoration:none!important;box-shadow:none!important;transform:none!important}',
     '.ilm-nav-bar .ist-btn b{color:#14211D!important}.ilm-nav-bar .ist-btn small{color:#77837D!important}',
     '.ilm-nav-bar .ist-test.tried{background:#FBF4E6!important}.ilm-nav-bar .ist-test.full{background:#EFF4F1!important}',
+    /* داخل الشريط العلوي: زرّان صغيران في نفس سطر التنقّل، حتى لا يكبر الشريط */
+    'body .ilm-nav-top{display:flex!important;align-items:center;gap:4px;flex-wrap:nowrap}',
+    'body .ilm-nav-top .ist-row{margin:0!important;gap:4px;flex-wrap:nowrap;flex:0 0 auto}',
+    'body .ilm-nav-top .ist-btn.ist-big{flex:0 0 auto;gap:0;min-height:24px;padding:1px 9px!important;border-radius:999px!important}',
+    'body .ilm-nav-top .ist-btn b{font-size:12px!important;white-space:nowrap}body .ilm-nav-top .ist-btn small{display:none}',
+    /* على الهاتف: الزرّان في الشريط السفلي فقط (الاختبار بعد القراءة)، فلا يأخذ الشريط العلوي سطرًا زائدًا */
+    '@media (max-width:620px){body .ilm-nav-top .ist-row{display:none!important}}',
     '@media print{.ist-row,[data-ist]{display:none}}'
   ].join('\n');
   document.head.appendChild(css);
