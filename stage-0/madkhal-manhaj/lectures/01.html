@@ -307,6 +307,18 @@ body .ilm-nav-top .inv-ttl{color:#fff;font-family:'Cairo',sans-serif;font-size:1
 .cm-frame.live{outline:3px solid var(--star);outline-offset:-3px}
 @media (max-width:580px){.cmap{margin:36px 8px 0;padding:16px 10px 18px}.cm-frame{height:72vh}}
 @media print{.cmap{display:none}}
+/* ===== شريط علوي مضغوط: سطر واحد، والروابط تتحرك أفقيًا ===== */
+.topbar-in{flex-wrap:nowrap;padding:4px 12px;gap:10px}
+.tb-title{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:0 1 auto;min-width:0;max-width:32%}
+.tb-links{flex-wrap:nowrap;overflow-x:auto;flex:1 1 auto;min-width:0;justify-content:flex-start;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tb-links::-webkit-scrollbar{display:none}
+.tb-links a{flex:0 0 auto;white-space:nowrap;font-size:12px;padding:2px 9px}
+#nav-top-slot{display:flex;flex:0 0 auto}
+body .ilm-nav-top .inv-row{flex-wrap:nowrap;gap:4px}
+body .ilm-nav-top .inv-link{min-height:24px;padding:1px 9px;font-size:12px;white-space:nowrap}
+body .ilm-nav-top .inv-ttl{font-family:'Cairo',sans-serif;font-size:12px;line-height:1.4}
+body .ilm-nav-top .inv-day{font-size:11px}
+@media (max-width:620px){.tb-title{display:none}.topbar-in{padding:4px 8px}}
 /* جدول بثلاثة أعمدة عند الحاجة */
 .cmp-row.c3{grid-template-columns:1fr 1.4fr 1.4fr}
 @media (max-width:640px){.cmp-row.c3{grid-template-columns:1fr}}
