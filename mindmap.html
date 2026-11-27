@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#22344f">
+<title>الخريطة الذهنية — البناء المنهجي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* عارض الخرائط الذهنية — نسخة مستودع «البناء المنهجي» من النسخة المرجعية في moad-shr3ia (آلية العمل 5.12 — 7-هـ/ج-ب)
+   خريطة منطقية من اليمين للشمال: المحاضرة يمين، وكل مستوى عمود، والأوراق تحت بعض.
+   العُقد عناوين فقط، والشرح والمثال في كارت بيظهر لما تدوس على العقدة.
+   ?id=stage{n}_{key}_{NN}   &embed=1 للعرض جوه صفحة المحاضرة — والبيانات من maps/{key}.js */
+:root{
+  --ink:#22344f; --ink-2:#34507a; --paper:#f4f0e4; --card:#fffdf8; --line:#e3dccb; --muted:#6f6b60;
+  --root:#c0304a;
+  --f-body:'Cairo','Segoe UI',Tahoma,sans-serif; --f-title:'Amiri','Cairo',serif;
+  --hg:30px;  /* المسافة الأفقية بين المستويات */
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow:hidden;background:var(--paper);color:var(--ink);font-family:var(--f-body)}
+body{display:flex;flex-direction:column;-webkit-tap-highlight-color:transparent}
+
+/* شريط الأدوات */
+.bar{flex:0 0 auto;display:flex;align-items:center;gap:8px;padding:8px 12px;padding-top:max(8px,env(safe-area-inset-top));background:var(--ink);color:#fff;z-index:5;flex-wrap:wrap}
+.bar .back{color:#fff;text-decoration:none;font-weight:800;font-size:14px;background:rgba(255,255,255,.12);border-radius:10px;padding:4px 10px;white-space:nowrap}
+.bar h1{flex:1;min-width:140px;margin:0;font-family:var(--f-title);font-size:20px;font-weight:700;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .tools{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.bar button,.bar select,.bar .full{font:inherit;font-size:13.5px;font-weight:700;color:var(--ink);background:#fff;border:0;border-radius:9px;padding:4px 10px;cursor:pointer;height:30px;text-decoration:none;display:inline-flex;align-items:center;white-space:nowrap}
+.bar button.on{background:#f2c98f}
+.bar select{max-width:190px}
+.bar .full{display:none}
+.ai{flex:0 0 auto;background:#fbf3e3;color:#6b5a3a;font-size:12.5px;text-align:center;padding:3px 10px;border-bottom:1px solid var(--line)}
+
+/* وضع التضمين جوه صفحة المحاضرة */
+body.embed .bar{padding:6px 8px;background:#2b3d5c}
+body.embed .bar h1,body.embed .bar .back,body.embed .ai{display:none}
+body.embed .bar .tools{width:100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+body.embed .bar .tools::-webkit-scrollbar{display:none}
+body.embed .bar .tools>*{flex:0 0 auto}
+body.embed .bar .full{display:inline-flex;background:#f2c98f}
+
+/* مساحة العرض */
+#view{position:relative;flex:1;overflow:hidden;touch-action:none;cursor:grab;
+  background-image:radial-gradient(#d9d1bd 1px,transparent 1px);background-size:22px 22px}
+#view.drag{cursor:grabbing}
+#stage{position:absolute;top:0;left:0;transform-origin:0 0;padding:30px 40px;width:max-content}
+.zoom{position:absolute;left:12px;bottom:max(14px,env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:6px;z-index:4}
+.zoom button{width:40px;height:40px;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--ink);font:inherit;font-size:20px;font-weight:800;cursor:pointer;box-shadow:0 2px 8px rgba(34,52,79,.15)}
+.zoom .pct{font-size:11.5px;text-align:center;color:var(--muted);font-weight:700}
+
+/* الخريطة المنطقية: صف = [العقدة][عمود الفروع]، والخطوط بالـ pseudo elements */
+.tree ul{list-style:none;margin:0 var(--hg) 0 0;padding:0;display:flex;flex-direction:column;justify-content:center;position:relative;--pc:var(--bc,#b9b2a2)}
+.tree ul::before{content:"";position:absolute;right:calc(-1 * var(--hg));top:50%;width:var(--hg);border-top:2px solid var(--pc)}
+.tree li{display:flex;align-items:center;position:relative;padding:4px var(--hg) 4px 0}
+.tree li::before{content:"";position:absolute;right:0;top:50%;width:var(--hg);border-top:2px solid var(--pc)}
+.tree li::after{content:"";position:absolute;right:0;top:0;bottom:0;border-right:2px solid var(--pc)}
+.tree li:first-child::after{top:50%}
+.tree li:last-child::after{bottom:50%}
+.tree li:only-child::after{display:none}
+.tree li.closed>ul{display:none}
+.tree>ul{margin:0}
+.tree>ul::before{display:none}
+.tree>ul>li{padding:0}
+.tree>ul>li::before,.tree>ul>li::after{display:none}
+
+/* شكل العُقد */
+.nd{position:relative;display:inline-flex;align-items:center;cursor:pointer;user-select:none;max-width:250px;border-radius:12px;line-height:1.5;font-weight:700;transition:box-shadow .15s}
+.nd .t{padding:5px 12px}
+.nd:hover{box-shadow:0 0 0 3px color-mix(in srgb,var(--bc) 25%,transparent)}
+.nd.sel{box-shadow:0 0 0 3px var(--bc)}
+.lv0{max-width:none;white-space:nowrap;background:var(--bc);color:#fff;font-family:var(--f-title);font-size:23px;border-radius:18px;padding:6px 8px;box-shadow:0 6px 14px rgba(34,52,79,.18)}
+.lv1{background:var(--bc);color:#fff;font-family:var(--f-title);font-size:19px;border-radius:14px;box-shadow:0 3px 10px rgba(34,52,79,.15)}
+.lv2{background:#fff;color:var(--ink);font-size:15.5px;border:2px solid var(--bc)}
+.lv3{background:var(--card);color:var(--ink);font-size:14.5px;border:1px solid var(--line);border-right:4px solid var(--bc);border-radius:4px 10px 10px 4px}
+.nd .tg{flex:0 0 auto;width:22px;height:22px;margin-left:6px;border-radius:50%;border:0;font:inherit;font-size:12px;font-weight:800;line-height:22px;padding:0;cursor:pointer;background:rgba(255,255,255,.9);color:var(--ink)}
+.lv2 .tg,.lv3 .tg{background:var(--bc);color:#fff}
+li.closed>.nd .tg{outline:2px dashed var(--bc);outline-offset:1px}
+li.closed>.nd.lv0 .tg,li.closed>.nd.lv1 .tg{outline-color:#fff}
+.nd .dot{flex:0 0 auto;width:7px;height:7px;border-radius:50%;background:var(--bc);margin-left:10px;opacity:.55}
+.lv0 .dot,.lv1 .dot{background:#fff}
+.nd .sm{display:none;font-size:12.5px;font-weight:400;color:#4d4a43;padding:0 12px 6px;line-height:1.6}
+body.full .nd{flex-direction:column;align-items:stretch}
+body.full .nd .sm{display:block}
+body.full .lv0 .sm,body.full .lv1 .sm{color:#fff;opacity:.92}
+body.full .nd .tg,body.full .nd .dot{position:absolute;left:4px;top:7px}
+body.full .nd .t{padding-left:30px}
+
+/* كارت التفاصيل */
+#detail{position:absolute;z-index:6;left:50%;bottom:max(14px,env(safe-area-inset-bottom));transform:translateX(-50%);width:min(440px,calc(100% - 24px));max-height:70%;overflow:auto;background:var(--card);border:1px solid var(--line);border-top:6px solid var(--bc,#888);border-radius:14px;box-shadow:0 10px 30px rgba(34,52,79,.25);padding:10px 14px 12px}
+#detail[hidden]{display:none}
+#detail .dh{display:flex;align-items:flex-start;gap:8px}
+#detail .dp{font-size:12px;color:var(--muted);font-weight:700}
+#detail h2{margin:0;font-family:var(--f-title);font-size:21px;color:var(--ink);line-height:1.5}
+#detail .x{border:0;background:transparent;font-size:18px;color:var(--muted);cursor:pointer;padding:0 4px}
+#detail .note{margin:4px 0 0;font-size:15.5px;line-height:1.8;color:#3a3833}
+#detail .ex{margin:8px 0 0;font-size:17px;line-height:1.8;color:#22325c;background:#f6f1e4;border-radius:9px;padding:4px 10px}
+#detail .ex .aya{color:#14532d;font-weight:700}
+#detail .acts{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+#detail .acts a{font:inherit;font-size:13px;font-weight:800;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:9px;padding:3px 10px}
+#detail .kids{margin-top:8px;font-size:13px;color:var(--muted)}
+
+.empty{max-width:520px;margin:60px auto;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center;line-height:1.9}
+
+@media (max-width:640px){
+  .bar{gap:6px;padding:6px 8px;padding-top:max(6px,env(safe-area-inset-top))}
+  .bar h1{font-size:16px;min-width:0}
+  .bar .back{font-size:13px;padding:3px 8px}
+  .bar .tools{width:100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  .bar .tools::-webkit-scrollbar{display:none}
+  .bar .tools>*{flex:0 0 auto}
+  .bar select{max-width:160px}
+  .ai{font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .zoom{bottom:auto;top:10px}
+}
+@media print{
+  html,body{overflow:visible;height:auto}
+  .bar,.zoom,#detail{display:none}
+  #view{overflow:visible;background:none}
+  #stage{position:static;transform:none!important}
+  body .nd .sm{display:block}
+}
+</style>
+</head>
+<body>
+  <header class="bar">
+    <a class="back" id="back" href="index.html">→ التطبيق</a>
+    <h1 id="ttl">الخريطة الذهنية</h1>
+    <div class="tools">
+      <select id="focus" aria-label="اعرض فرعًا واحدًا"></select>
+      <button type="button" data-act="open">افتح الكل</button>
+      <button type="button" data-act="l2">الفروع الرئيسية</button>
+      <button type="button" id="fullb" data-act="full" title="اعرض الشرح تحت كل عنوان جوه الخريطة">📖 الشرح في الخريطة</button>
+      <button type="button" data-act="fit">ملء الشاشة</button>
+      <a class="full" id="fulllink" target="_top" href="#">⛶ افتحها كبيرة</a>
+    </div>
+  </header>
+  <div class="ai">⚠️ الخريطة منظّمة بمساعدة الذكاء الاصطناعي من ملخص المحاضرة، وقد تحتوي أخطاء؛ راجعها مع الشرح. اضغط على أي عنوان يظهر شرحه.</div>
+  <div id="view">
+    <div id="stage"><div class="tree" id="tree"></div></div>
+    <div class="zoom"><button type="button" data-z="in" aria-label="تكبير">+</button><div class="pct" id="pct">100%</div><button type="button" data-z="out" aria-label="تصغير">−</button></div>
+    <div id="detail" hidden role="dialog" aria-live="polite"></div>
+  </div>
+
+<script>
+(function () {
+  "use strict";
+  var params = new URLSearchParams(location.search);
+  var id = params.get("id") || "";
+  var EMBED = params.get("embed") === "1";
+  // مستودع البناء المنهجي: stage{n}_{subjectKey}_{NN} — ويُقبل أيضًا moad_{key}_{NN} للتوافق مع النسخة المرجعية
+  var key = (id.match(/^(?:moad|stage\d+)_(.+)_\d+$/) || [])[1] || "";
+  var COLORS = ["#c9930c", "#2b6a9c", "#2e8b57", "#7d4fa8", "#c76a1e", "#1f8a8a", "#6b7a2a"];
+  var tree = document.getElementById("tree"), view = document.getElementById("view"), stage = document.getElementById("stage"), det = document.getElementById("detail");
+  var M = null, focusIdx = -1, NODES = [];
+  var tx = 0, ty = 0, sc = 1;
+
+  if (EMBED) document.body.classList.add("embed");
+  document.getElementById("fulllink").href = "mindmap.html?id=" + encodeURIComponent(id);
+
+  function esc(s) { return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+  function aya(s) { return esc(s).replace(/﴿[^﴾]*﴾/g, function (m) { return '<span class="aya">' + m + "</span>"; }); }
+
+  // بيانات الخرائط من maps/{key}.js
+  var s0 = document.createElement("script");
+  s0.src = "maps/" + key + ".js";
+  s0.onload = start; s0.onerror = start;
+  document.head.appendChild(s0);
+
+  function start() {
+    M = window.MOAD_MAPS && window.MOAD_MAPS[id];
+    if (!M) { tree.innerHTML = '<div class="empty">مفيش خريطة ذهنية للمحاضرة دي لسه.<br><a href="index.html">ارجع للتطبيق</a></div>'; return; }
+    document.title = "الخريطة الذهنية — " + M.title;
+    document.getElementById("ttl").textContent = "🧠 " + M.title;
+    document.getElementById("back").href = M.lecture || "index.html";
+    document.getElementById("back").textContent = M.lecture ? "→ المحاضرة" : "→ التطبيق";
+    var sel = document.getElementById("focus");
+    sel.innerHTML = '<option value="-1">كل الخريطة</option>' + M.nodes.map(function (n, i) { return '<option value="' + i + '">فرع: ' + esc(n.text) + "</option>"; }).join("");
+    sel.addEventListener("change", function () { focusIdx = +sel.value; hideDetail(); draw(); fit(true); });
+    draw();
+    if (window.innerWidth < 640) closeFrom(1); // على الموبايل: ابدأ بالفروع الرئيسية، واضغط الرقم لفتح أي فرع
+    requestAnimationFrame(function () { fit(true); });
+  }
+
+  function nodeHtml(n, depth, color, path) {
+    var kids = n.children || [], i = NODES.length;
+    NODES.push({ n: n, depth: depth, color: color, path: path });
+    var lv = depth > 3 ? 3 : depth;
+    var sm = [n.note ? esc(n.note) : "", n.ex ? aya(n.ex) : ""].filter(Boolean).join(" — ");
+    var html = "<li" + (depth <= 1 ? ' style="--bc:' + color + '"' : "") + ">" +
+      '<div class="nd lv' + lv + '" data-i="' + i + '"><span class="t">' + esc(n.text) + "</span>" +
+      (sm ? '<span class="sm">' + sm + "</span>" : "") +
+      (kids.length ? '<button type="button" class="tg" data-tg="' + i + '" aria-label="اطوِ أو افتح" title="اطوِ / افتح">' + kids.length + "</button>" : (sm ? '<span class="dot"></span>' : "")) +
+      "</div>";
+    if (kids.length) {
+      html += "<ul>" + kids.map(function (k, j) {
+        return nodeHtml(k, depth + 1, depth === 0 ? COLORS[j % COLORS.length] : color, path.concat(n.text));
+      }).join("") + "</ul>";
+    }
+    return html + "</li>";
+  }
+
+  function draw() {
+    NODES = [];
+    var rootNode = focusIdx >= 0 ? M.nodes[focusIdx] : { text: M.center, children: M.nodes };
+    var rootColor = focusIdx >= 0 ? COLORS[focusIdx % COLORS.length] : "var(--root)";
+    tree.innerHTML = "<ul>" + nodeHtml(rootNode, 0, rootColor, focusIdx >= 0 ? [M.center] : []) + "</ul>";
+    if (focusIdx >= 0) {
+      // في وضع الفرع الواحد: كل الفروع بلون الفرع
+      tree.querySelectorAll("li").forEach(function (li) { li.style.setProperty("--bc", rootColor); });
+      NODES.forEach(function (o) { o.color = rootColor; });
+    }
+  }
+
+  function closeFrom(level) {
+    tree.querySelectorAll("li").forEach(function (li) {
+      if (!li.querySelector(":scope > ul")) return;
+      var d = 0, p = li.parentElement; while (p && p !== tree) { if (p.tagName === "LI") d++; p = p.parentElement; }
+      li.classList.toggle("closed", d >= level);
+    });
+  }
+
+  /* ---- كارت التفاصيل ---- */
+  function showDetail(i) {
+    var o = NODES[i]; if (!o) return;
+    var n = o.n, kids = n.children || [];
+    tree.querySelectorAll(".nd.sel").forEach(function (x) { x.classList.remove("sel"); });
+    var el = tree.querySelector('.nd[data-i="' + i + '"]'); if (el) el.classList.add("sel");
+    det.style.setProperty("--bc", o.color);
+    var go = n.target && M.lecture ? '<a href="' + esc(M.lecture) + "#" + esc(n.target) + '" target="' + (EMBED ? "_parent" : "_blank") + '" rel="noopener">↩ اقرا الشرح في المحاضرة</a>' : "";
+    det.innerHTML = '<div class="dh"><div style="flex:1">' + (o.path.length ? '<div class="dp">' + o.path.map(esc).join(" ‹ ") + "</div>" : "") +
+      "<h2>" + esc(n.text) + '</h2></div><button type="button" class="x" data-close aria-label="اقفل">✕</button></div>' +
+      (n.note ? '<p class="note">' + esc(n.note) + "</p>" : "") +
+      (n.ex ? '<div class="ex">' + aya(n.ex) + "</div>" : "") +
+      (kids.length ? '<div class="kids">تحتها: ' + kids.map(function (k) { return esc(k.text); }).join("، ") + "</div>" : "") +
+      (go ? '<div class="acts">' + go + "</div>" : "");
+    det.hidden = false;
+  }
+  function hideDetail() { det.hidden = true; tree.querySelectorAll(".nd.sel").forEach(function (x) { x.classList.remove("sel"); }); }
+  det.addEventListener("click", function (e) { if (e.target.closest("[data-close]")) hideDetail(); });
+
+  /* ---- التحويل (سحب وتكبير) ---- */
+  function apply() {
+    stage.style.transform = "translate(" + tx + "px," + ty + "px) scale(" + sc + ")";
+    document.getElementById("pct").textContent = Math.round(sc * 100) + "%";
+  }
+  function zoomAt(f, cx, cy) {
+    var ns = Math.min(2.5, Math.max(0.15, sc * f));
+    tx = cx - (cx - tx) * (ns / sc); ty = cy - (cy - ty) * (ns / sc); sc = ns; apply();
+  }
+  function fit(first) {
+    var vw = view.clientWidth, vh = view.clientHeight, w = stage.offsetWidth, h = stage.offsetHeight;
+    var s = Math.min(vw / w, vh / h, 1.15);
+    var minRead = vw < 500 ? 0.5 : 0.8;
+    if (first && s < minRead - 0.02) {
+      // الخريطة أكبر من الشاشة: ابدأ بحجم مقروء من ناحية المحاضرة (اليمين)، ومتوسّطة رأسيًا
+      s = minRead;
+      sc = s; tx = vw - w * s; ty = (vh - h * s) / 2;
+      apply(); return;
+    }
+    sc = s; tx = (vw - w * s) / 2; ty = (vh - h * s) / 2; apply();
+  }
+
+  var pts = {}, drag = null, moved = false, pinch = null, downEl = null;
+  view.addEventListener("pointerdown", function (e) {
+    if (e.target.closest("a,select,.zoom,#detail")) return;
+    downEl = e.target;
+    view.setPointerCapture(e.pointerId);
+    pts[e.pointerId] = { x: e.clientX, y: e.clientY };
+    var ids = Object.keys(pts);
+    if (ids.length === 1) { drag = { x: e.clientX, y: e.clientY, tx: tx, ty: ty }; moved = false; }
+    if (ids.length === 2) {
+      var a = pts[ids[0]], b = pts[ids[1]];
+      pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), s: sc }; drag = null; moved = true;
+    }
+  });
+  view.addEventListener("pointermove", function (e) {
+    if (!pts[e.pointerId]) return;
+    pts[e.pointerId] = { x: e.clientX, y: e.clientY };
+    var ids = Object.keys(pts), r = view.getBoundingClientRect();
+    if (pinch && ids.length === 2) {
+      var a = pts[ids[0]], b = pts[ids[1]], d = Math.hypot(a.x - b.x, a.y - b.y);
+      zoomAt((pinch.s * d / pinch.d) / sc, (a.x + b.x) / 2 - r.left, (a.y + b.y) / 2 - r.top);
+    } else if (drag) {
+      var dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+      if (Math.abs(dx) + Math.abs(dy) > 6) { moved = true; view.classList.add("drag"); }
+      if (moved) { tx = drag.tx + dx; ty = drag.ty + dy; apply(); }
+    }
+  });
+  view.addEventListener("pointerup", function (e) {
+    delete pts[e.pointerId];
+    if (Object.keys(pts).length < 2) pinch = null;
+    if (!Object.keys(pts).length) {
+      view.classList.remove("drag");
+      if (drag && !moved) tap(downEl);
+      drag = null;
+    }
+  });
+  view.addEventListener("pointercancel", function (e) { delete pts[e.pointerId]; drag = null; pinch = null; view.classList.remove("drag"); });
+  view.addEventListener("wheel", function (e) {
+    if (EMBED && !e.ctrlKey) return; // جوه صفحة المحاضرة: العجلة تحرّك الصفحة، و Ctrl+العجلة للتكبير
+    e.preventDefault();
+    var r = view.getBoundingClientRect();
+    if (e.ctrlKey || !e.shiftKey && Math.abs(e.deltaY) >= Math.abs(e.deltaX)) zoomAt(Math.exp(-e.deltaY * 0.0015), e.clientX - r.left, e.clientY - r.top);
+    else { tx -= e.deltaX; ty -= e.deltaY; apply(); }
+  }, { passive: false });
+
+  // الضغط: على الرقم = طيّ/فتح، وعلى العنوان = كارت الشرح، وعلى الفاضي = قفل الكارت
+  function tap(el) {
+    if (!el || !el.closest) return;
+    var tg = el.closest("[data-tg]");
+    if (tg) {
+      var nd = tg.closest(".nd"), li = nd.parentElement, before = nd.getBoundingClientRect();
+      li.classList.toggle("closed");
+      var after = nd.getBoundingClientRect();
+      tx += before.left - after.left; ty += before.top - after.top; apply();
+      if (!li.classList.contains("closed")) reveal(li);
+      return;
+    }
+    var n = el.closest(".nd");
+    if (n) showDetail(+n.getAttribute("data-i"));
+    else hideDetail();
+  }
+
+  // بعد فتح فرع: حرّك الخريطة بحيث فروعه تبان، من غير ما العقدة نفسها تخرج من الشاشة
+  function reveal(li) {
+    var ul = li.querySelector(":scope > ul"), nd = li.querySelector(":scope > .nd"); if (!ul) return;
+    var vr = view.getBoundingClientRect(), u = ul.getBoundingClientRect(), n = nd.getBoundingClientRect();
+    var dx = 0, dy = 0;
+    if (u.left < vr.left + 8) dx = Math.min(vr.left + 8 - u.left, vr.right - 8 - n.right);
+    if (u.height < vr.height - 16) {
+      if (u.top < vr.top + 8) dy = vr.top + 8 - u.top;
+      else if (u.bottom > vr.bottom - 8) dy = vr.bottom - 8 - u.bottom;
+    } else dy = vr.top + 8 - u.top;
+    if (dx || dy) { stage.style.transition = "transform .25s"; tx += dx; ty += dy; apply(); setTimeout(function () { stage.style.transition = ""; }, 260); }
+  }
+
+  document.querySelector(".zoom").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-z]"); if (!b) return;
+    zoomAt(b.getAttribute("data-z") === "in" ? 1.25 : 0.8, view.clientWidth / 2, view.clientHeight / 2);
+  });
+  document.querySelector(".bar").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-act]"); if (!b) return;
+    var act = b.getAttribute("data-act");
+    if (act === "fit") fit();
+    else if (act === "full") { document.body.classList.toggle("full"); b.classList.toggle("on"); fit(true); }
+    else { closeFrom(act === "l2" ? 1 : 99); fit(act === "open"); }
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.target.tagName === "SELECT") return;
+    if (e.key === "Escape") hideDetail();
+    else if (e.key === "+" || e.key === "=") zoomAt(1.2, view.clientWidth / 2, view.clientHeight / 2);
+    else if (e.key === "-") zoomAt(0.83, view.clientWidth / 2, view.clientHeight / 2);
+    else if (e.key === "0") fit();
+  });
+  window.addEventListener("resize", function () { fit(true); });
+})();
+</script>
+</body>
+</html>
