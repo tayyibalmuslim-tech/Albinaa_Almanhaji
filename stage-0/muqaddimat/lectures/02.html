@@ -293,6 +293,14 @@ body .ilm-nav-top .inv-link{min-height:24px;padding:1px 9px;font-size:12px;white
 body .ilm-nav-top .inv-ttl{font-family:'Cairo',sans-serif;font-size:12px;line-height:1.4}
 body .ilm-nav-top .inv-day{font-size:11px}
 @media (max-width:620px){.tb-title{display:none}.topbar-in{padding:4px 8px}}
+/* أزرار «📝 اختبار» و«🧠 خريطة» (ilm-study.js) داخل الشريط العلوي: في نفس السطر، بشكل الحبوب الصغيرة */
+body .ilm-nav-top{display:flex;align-items:center;gap:4px;flex-wrap:nowrap}
+body .ilm-nav-top .ist-row{order:2;margin:0;gap:4px;flex-wrap:nowrap}
+body .ilm-nav-top .ist-btn,body .ilm-nav-top .ist-btn:hover{flex:0 0 auto;flex-direction:row;min-width:0;padding:1px 9px;min-height:24px;line-height:1.4;background:rgba(255,255,255,.08)!important;border:1px solid rgba(255,255,255,.28)!important;border-radius:999px!important}
+body .ilm-nav-top .ist-btn b{font-size:12px;font-weight:700;color:#e6e9f5!important}
+body .ilm-nav-top .ist-btn small{display:none}
+body .ilm-nav-top .ist-test.tried{border-color:var(--star)!important}
+body .ilm-nav-top .ist-test.full{border-color:#9fd3b4!important}
 /* جدول بثلاثة أعمدة عند الحاجة */
 .cmp-row.c3{grid-template-columns:1fr 1.4fr 1.4fr}
 @media (max-width:640px){.cmp-row.c3{grid-template-columns:1fr}}
