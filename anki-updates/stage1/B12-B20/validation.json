@@ -1,0 +1,239 @@
+{
+  "central_audit": {
+    "scanned": 7,
+    "withCards": 7,
+    "failed": 0,
+    "results": [
+      {
+        "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/fiqh/lectures/01.html",
+        "cards": 36,
+        "fail": [],
+        "warn": [],
+        "track": "محاضرة",
+        "quota": {
+          "L12": 50,
+          "names": 6,
+          "stories": 6
+        }
+      },
+      {
+        "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/fiqh/lectures/02.html",
+        "cards": 36,
+        "fail": [],
+        "warn": [],
+        "track": "محاضرة",
+        "quota": {
+          "L12": 56,
+          "names": 6,
+          "stories": 8
+        }
+      },
+      {
+        "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/fiqh/lectures/03.html",
+        "cards": 41,
+        "fail": [],
+        "warn": [],
+        "track": "محاضرة",
+        "quota": {
+          "L12": 59,
+          "names": 10,
+          "stories": 5
+        }
+      },
+      {
+        "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/fiqh/lectures/04.html",
+        "cards": 28,
+        "fail": [],
+        "warn": [],
+        "track": "محاضرة",
+        "quota": {
+          "L12": 82,
+          "names": 7,
+          "stories": 0
+        }
+      },
+      {
+        "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/fiqh/lectures/05.html",
+        "cards": 36,
+        "fail": [],
+        "warn": [
+          "1 بطاقة بضمير غائب بلا مرساة (9-أ)"
+        ],
+        "track": "محاضرة",
+        "quota": {
+          "L12": 56,
+          "names": 6,
+          "stories": 3
+        }
+      },
+      {
+        "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/fiqh/lectures/06.html",
+        "cards": 65,
+        "fail": [],
+        "warn": [],
+        "track": "محاضرة",
+        "quota": {
+          "L12": 58,
+          "names": 6,
+          "stories": 2
+        }
+      },
+      {
+        "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/fiqh/lectures/07.html",
+        "cards": 58,
+        "fail": [],
+        "warn": [],
+        "track": "محاضرة",
+        "quota": {
+          "L12": 57,
+          "names": 0,
+          "stories": 5
+        }
+      }
+    ]
+  },
+  "runtime": [
+    {
+      "file": "stage-1/fiqh/lectures/01.html",
+      "before": 31,
+      "after": 36,
+      "export_rows": 36,
+      "interactive_questions": 20,
+      "unchanged_noncard_content": "pass",
+      "inline_syntax": "pass",
+      "ui_render_flip_filters": "pass",
+      "environment": "Node VM with minimal DOM mocks"
+    },
+    {
+      "file": "stage-1/fiqh/lectures/02.html",
+      "before": 32,
+      "after": 36,
+      "export_rows": 36,
+      "interactive_questions": 22,
+      "unchanged_noncard_content": "pass",
+      "inline_syntax": "pass",
+      "ui_render_flip_filters": "pass",
+      "environment": "Node VM with minimal DOM mocks"
+    },
+    {
+      "file": "stage-1/fiqh/lectures/03.html",
+      "before": 33,
+      "after": 41,
+      "export_rows": 41,
+      "interactive_questions": 13,
+      "unchanged_noncard_content": "pass",
+      "inline_syntax": "pass",
+      "ui_render_flip_filters": "pass",
+      "environment": "Node VM with minimal DOM mocks"
+    },
+    {
+      "file": "stage-1/fiqh/lectures/04.html",
+      "before": 20,
+      "after": 28,
+      "export_rows": 28,
+      "interactive_questions": 9,
+      "unchanged_noncard_content": "pass",
+      "inline_syntax": "pass",
+      "ui_render_flip_filters": "pass",
+      "environment": "Node VM with minimal DOM mocks"
+    },
+    {
+      "file": "stage-1/fiqh/lectures/05.html",
+      "before": 32,
+      "after": 36,
+      "export_rows": 36,
+      "interactive_questions": 13,
+      "unchanged_noncard_content": "pass",
+      "inline_syntax": "pass",
+      "ui_render_flip_filters": "pass",
+      "environment": "Node VM with minimal DOM mocks"
+    },
+    {
+      "file": "stage-1/fiqh/lectures/06.html",
+      "before": 56,
+      "after": 65,
+      "export_rows": 65,
+      "interactive_questions": 0,
+      "unchanged_noncard_content": "pass",
+      "inline_syntax": "pass",
+      "ui_render_flip_filters": "pass",
+      "environment": "Node VM with minimal DOM mocks"
+    },
+    {
+      "file": "stage-1/fiqh/lectures/07.html",
+      "before": 53,
+      "after": 58,
+      "export_rows": 58,
+      "interactive_questions": 13,
+      "unchanged_noncard_content": "pass",
+      "inline_syntax": "pass",
+      "ui_render_flip_filters": "pass",
+      "environment": "Node VM with minimal DOM mocks"
+    }
+  ],
+  "dom_counts": {
+    "1": {
+      "h2": 14,
+      "section_article_elements": 12
+    },
+    "2": {
+      "h2": 12,
+      "section_article_elements": 10
+    },
+    "3": {
+      "h2": 7,
+      "section_article_elements": 5
+    },
+    "4": {
+      "h2": 6,
+      "section_article_elements": 4
+    },
+    "5": {
+      "h2": 7,
+      "section_article_elements": 5
+    },
+    "6": {
+      "h2": 5,
+      "section_article_elements": 3
+    },
+    "7": {
+      "section_article_elements": 5,
+      "h2": 5
+    }
+  },
+  "new_cards": 43,
+  "revised_cards": 59,
+  "old_cards_deleted": 0,
+  "source_references": [
+    {
+      "url": "https://iifa-aifi.org/ar/1950.html",
+      "use": "قرار 70 (8/1): حقيقة التلفيق، والتمييز بين اتباع الأسهل بهوى والأخذ بالرخص بضوابط؛ تصحيح fiqh05#8 وfiqh07#41 و#44."
+    },
+    {
+      "url": "https://www.islamweb.net/ar/library/content/99/374/",
+      "use": "الموافقات للشاطبي، كتاب الاجتهاد، المسألة الثانية: الوصفان هما فهم المقاصد والتمكن من الاستنباط؛ تصحيح fiqh06#40."
+    },
+    {
+      "url": "https://www.islamicbook.ws/asol/albhr-almhit-fi-aswl-alfqh-018.html",
+      "use": "البحر المحيط للزركشي: مذاهب الأصوليين في إحداث قول ثالث؛ منع ادعاء اتفاق على المنع مطلقًا، fiqh05#3."
+    },
+    {
+      "url": "https://www.islamweb.net/ar/library/content/35/1204/",
+      "use": "البحر المحيط: خلاف الأصوليين في الاعتداد بخلاف منكري القياس، fiqh07#9."
+    }
+  ],
+  "reviewed_warning": "الضمير في السؤال القديم fiqh05#14 يعود إلى دعوى إغلاق الاجتهاد المسماة في صدر السؤال؛ مرساته موجودة، فالتنبيه هنا لفظي.",
+  "discarded_duplicate_drafts": [
+    "بقاء القول مع اندراس المدرسة مغطى قديمًا.",
+    "أثر شروح الاستقرار داخل تقسيم الأطوار مغطى.",
+    "اقتناء الكتب ليس علمًا مغطى.",
+    "توثيق المذهب من كتبه مغطى.",
+    "سياق البحث الإلكتروني مغطى.",
+    "إفراد المقاصد بالتصنيف لا يغني عن الأدوات مغطى.",
+    "عدم قبول خبر لا ينفي حجية السنة مغطى.",
+    "تجزؤ الاجتهاد وحدوده مغطى.",
+    "احترام المخالف دون تصحيح خطئه ضمن ضوابط الخلاف.",
+    "المذاكرة والاسترجاع مغطى.",
+    "إعادة المتن والتطبيق التدريبي مغطى."
+  ]
+}
