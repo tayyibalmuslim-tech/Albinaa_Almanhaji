@@ -192,9 +192,21 @@
     }
   }
 
+  // زرار «📝 اختبار» و«🧠 خريطة» داخل الشريطين (ilm-study.js — آلية 5.13)
+  function study() {
+    if (!ctx.subject) return;
+    var go = function () { window.IlmStudy && window.IlmStudy.mountLecture(LID, ctx.subject.key); };
+    if (window.IlmStudy) { go(); return; }
+    var s = document.createElement('script');
+    s.src = TO_STAGE + '../ilm-study.js';
+    s.onload = go;
+    document.head.appendChild(s);
+  }
+
+  function start() { mount(); study(); }
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', mount);
+    document.addEventListener('DOMContentLoaded', start);
   } else {
-    mount();
+    start();
   }
 })();

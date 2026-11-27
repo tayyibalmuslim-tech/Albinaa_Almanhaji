@@ -4,6 +4,18 @@
 // =========================================================
 
 const STORAGE_PREFIX = 'ilm_';
+
+// أدوات المذاكرة (زرار الاختبار والخريطة الذهنية) — ilm-study.js في جذر المستودع
+const ILM_ROOT = (document.currentScript && document.currentScript.src) ? new URL('.', document.currentScript.src).href : '';
+function studyFill() {
+  if (window.IlmStudy) { window.IlmStudy.fill(); return; }
+  if (studyFill.loading) return;
+  studyFill.loading = true;
+  const s = document.createElement('script');
+  s.src = ILM_ROOT + 'ilm-study.js';
+  s.onload = () => window.IlmStudy && window.IlmStudy.fill();
+  document.head.appendChild(s);
+}
 const LOG_KEY = STORAGE_PREFIX + 'activity_log';
 const SYNC_TS_KEY = STORAGE_PREFIX + 'sync_ts'; // آخر وقت تغيّرت فيه بيانات هذا الجهاز محليًا
 
@@ -631,6 +643,7 @@ function renderStagePage() {
                 <div class="day-subject">${escapeHtml(d.subjectName)}</div>
               </div>
             </div>
+            <span class="lecture-tools" data-ist="${d.lectureId}" data-ist-key="${d.subjectKey}"></span>
             <label class="checkbox-line">
               <input type="checkbox" data-lecture-id="${d.lectureId}" ${checked}>
             </label>
@@ -658,6 +671,7 @@ function renderStagePage() {
 
   setupTabs();
   wireCheckboxes(renderStagePage);
+  studyFill();
 }
 
 function setupTabs() {
@@ -708,6 +722,7 @@ function renderSubjectPage() {
             <a class="lecture-title" href="${l.file}">${escapeHtml(l.title)}</a>
             <span class="lecture-day-badge">اليوم ${l.day}</span>
           </div>
+          <span class="lecture-tools" data-ist="${l.id}" data-ist-key="${subjectKey}"></span>
           <label class="checkbox-line">
             <input type="checkbox" data-lecture-id="${l.id}" ${checked}>
           </label>
@@ -717,6 +732,7 @@ function renderSubjectPage() {
   }
 
   wireCheckboxes(renderSubjectPage);
+  studyFill();
 }
 
 /* =========================================================
