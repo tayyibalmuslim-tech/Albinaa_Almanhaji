@@ -1,0 +1,220 @@
+{
+  "summary": {
+    "batches": "B31-B36",
+    "content_sections": 42,
+    "notes": 171,
+    "interactive_questions_unchanged": 84,
+    "cards": 203,
+    "new_cards": 58,
+    "revised_cards": 40,
+    "central_audit": "pass_no_warnings",
+    "runtime_export_and_filters": "pass",
+    "duplicate_dom_ids": 0
+  },
+  "audit": {
+    "scanned": 5,
+    "withCards": 5,
+    "failed": 0,
+    "results": [
+      {
+        "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/raqaeq-al-quran/lectures/01.html",
+        "cards": 38,
+        "fail": [],
+        "warn": [],
+        "track": "محاضرة",
+        "quota": {
+          "L12": 58,
+          "names": 0,
+          "stories": 3
+        }
+      },
+      {
+        "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/raqaeq-al-quran/lectures/02.html",
+        "cards": 31,
+        "fail": [],
+        "warn": [],
+        "track": "محاضرة",
+        "quota": {
+          "L12": 65,
+          "names": 0,
+          "stories": 6
+        }
+      },
+      {
+        "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/raqaeq-al-quran/lectures/03.html",
+        "cards": 35,
+        "fail": [],
+        "warn": [],
+        "track": "محاضرة",
+        "quota": {
+          "L12": 69,
+          "names": 0,
+          "stories": 0
+        }
+      },
+      {
+        "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/raqaeq-al-quran/lectures/04.html",
+        "cards": 58,
+        "fail": [],
+        "warn": [],
+        "track": "محاضرة",
+        "quota": {
+          "L12": 66,
+          "names": 0,
+          "stories": 2
+        }
+      },
+      {
+        "file": "/workspace/scratch/fb1bd0028d0f/Albinaa_Almanhaji/stage-1/raqaeq-al-quran/lectures/05.html",
+        "cards": 41,
+        "fail": [],
+        "warn": [],
+        "track": "محاضرة",
+        "quota": {
+          "L12": 59,
+          "names": 0,
+          "stories": 2
+        }
+      }
+    ]
+  },
+  "runtime": [
+    {
+      "file": "stage-1/raqaeq-al-quran/lectures/01.html",
+      "before": 26,
+      "after": 38,
+      "export_rows": 38,
+      "interactive_questions": 14,
+      "content_sections": 7,
+      "inline_syntax": "pass",
+      "actual_exporter": "pass",
+      "filters_flip_navigation_all_cards": "pass",
+      "noncard_content_identical_except_counts": true,
+      "environment": "Node VM minimal DOM; no browser visual test claimed"
+    },
+    {
+      "file": "stage-1/raqaeq-al-quran/lectures/02.html",
+      "before": 23,
+      "after": 31,
+      "export_rows": 31,
+      "interactive_questions": 14,
+      "content_sections": 7,
+      "inline_syntax": "pass",
+      "actual_exporter": "pass",
+      "filters_flip_navigation_all_cards": "pass",
+      "noncard_content_identical_except_counts": true,
+      "environment": "Node VM minimal DOM; no browser visual test claimed"
+    },
+    {
+      "file": "stage-1/raqaeq-al-quran/lectures/03.html",
+      "before": 28,
+      "after": 35,
+      "export_rows": 35,
+      "interactive_questions": 14,
+      "content_sections": 7,
+      "inline_syntax": "pass",
+      "actual_exporter": "pass",
+      "filters_flip_navigation_all_cards": "pass",
+      "noncard_content_identical_except_counts": true,
+      "environment": "Node VM minimal DOM; no browser visual test claimed"
+    },
+    {
+      "file": "stage-1/raqaeq-al-quran/lectures/04.html",
+      "before": 42,
+      "after": 58,
+      "export_rows": 58,
+      "interactive_questions": 28,
+      "content_sections": 14,
+      "inline_syntax": "pass",
+      "actual_exporter": "pass",
+      "filters_flip_navigation_all_cards": "pass",
+      "noncard_content_identical_except_counts": true,
+      "environment": "Node VM minimal DOM; no browser visual test claimed"
+    },
+    {
+      "file": "stage-1/raqaeq-al-quran/lectures/05.html",
+      "before": 26,
+      "after": 41,
+      "export_rows": 41,
+      "interactive_questions": 14,
+      "content_sections": 7,
+      "inline_syntax": "pass",
+      "actual_exporter": "pass",
+      "filters_flip_navigation_all_cards": "pass",
+      "noncard_content_identical_except_counts": true,
+      "environment": "Node VM minimal DOM; no browser visual test claimed"
+    }
+  ],
+  "html": {
+    "stage-1/raqaeq-al-quran/lectures/01.html": {
+      "notes": 40,
+      "duplicate_dom_ids": 0,
+      "html_balance": "pass"
+    },
+    "stage-1/raqaeq-al-quran/lectures/02.html": {
+      "notes": 30,
+      "duplicate_dom_ids": 0,
+      "html_balance": "pass"
+    },
+    "stage-1/raqaeq-al-quran/lectures/03.html": {
+      "notes": 25,
+      "duplicate_dom_ids": 0,
+      "html_balance": "pass"
+    },
+    "stage-1/raqaeq-al-quran/lectures/04.html": {
+      "notes": 44,
+      "duplicate_dom_ids": 0,
+      "html_balance": "pass"
+    },
+    "stage-1/raqaeq-al-quran/lectures/05.html": {
+      "notes": 32,
+      "duplicate_dom_ids": 0,
+      "html_balance": "pass"
+    }
+  },
+  "primary_references": [
+    {
+      "url": "https://quran.ksu.edu.sa/tafseer/saadi/sura73-aya20.html",
+      "use": "التخفيف في قيام الليل واعتبار النشاط والراحة."
+    },
+    {
+      "url": "https://quran.ksu.edu.sa/tafseer/saadi/sura9-aya101.html",
+      "use": "خفاء بعض المنافقين؛ شاهد إضافي لضبط التعميم."
+    },
+    {
+      "url": "https://quran.ksu.edu.sa/tafseer/saadi/sura49-aya12.html",
+      "use": "اجتناب اتهام المسلمين بالظنون."
+    },
+    {
+      "url": "https://www.islamweb.net/amp/ar/library/content/22/2478/",
+      "use": "نص فتوى تأخير الصلاة: الإصرار والاستتابة، لا تعميمها على الأعذار."
+    },
+    {
+      "url": "https://www.islamweb.net/amp/ar/library/content/305/958/",
+      "use": "تعدد تفسير حبوط العمل في حديث ترك العصر."
+    },
+    {
+      "url": "https://quran-tafsir.net/katheer/sura34-aya39.html",
+      "use": "الخلف في النفقة بالبدل والثواب، دون اشتراط مقدار عاجل."
+    },
+    {
+      "url": "https://www.islamweb.net/ar/library/content/1016/712/",
+      "use": "تنوع وجوه إجابة الدعاء."
+    },
+    {
+      "url": "https://quran.ksu.edu.sa/tafseer/saadi/sura4-aya34.html",
+      "use": "التدرج والضرب غير المبرح والكف عند حصول المقصود."
+    },
+    {
+      "url": "https://islamweb.com/ar/library/content/47/2084/",
+      "use": "نص النهي عن ضرب الوجه والتقبيح."
+    }
+  ],
+  "scope_limits": [
+    "المصدر المتاح متن HTML وبطاقاته وهوامشه، لا مقابلة جديدة بصوت أو طبعة أخرى.",
+    "المادة كتاب نصي وإن صنفها كاشف الفحص المركزي آليًا ضمن المحاضرات؛ ذلك لا يغير نوعها.",
+    "الحفاظ حرفيًا على المتن والهوامش والخلاصة وQUIZ_DATA والسكريبتات وترتيب البلوكات؛ تغيير CARDS_DATA والأعداد فقط.",
+    "التصدير الكامل للملف 04 يشمل B34 وB35؛ ملفات الجديد تفصل الدفعتين.",
+    "لا ادعاء بأن التوثيق النصي يغني عن فهم القرآن أو الرجوع للعلماء في النوازل."
+  ]
+}
